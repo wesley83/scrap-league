@@ -379,8 +379,8 @@ async function authenticate(secret) {
     privateBackupSaved: true,
   };
 }
-async function deploy() {
-  await verifyRelease(root);
+async function deploy(publicationAuthorization = null) {
+  const verified = await verifyRelease(root, "local", publicationAuthorization);
   if (!authenticated) throw Error("Authenticate and read the baseline first");
   const release = JSON.parse(
     await fs.readFile(path.join(root, "dist/release.json"), "utf8"),
@@ -449,9 +449,9 @@ async function deploy() {
       type: live.type,
     });
   }
-  await verifyRelease(root, "staged");
-  // Native routes are entry points too. Promote only after provider acceptance;
-  // their included shells are immutable, already staged and publicly verified.
+  await verifyRelease(root, "staged", publicationAuthorization);
+  // Native routes are entry points too. Require staged acceptance or the exact
+  // candidate authorization; included shells are already publicly verified.
   for (const file of nativeEntries) {
     written.push(await put(file.name, file.bytes));
     const live = await read(file.name, true);
@@ -527,6 +527,19 @@ async function deploy() {
     origin,
     authoringHost: dav,
     release: release.release,
+    sourceHash: verified.source.hash,
+    outputHash: verified.outputHash,
+    publicationAuthorization: publicationAuthorization
+      ? {
+          path: publicationAuthorization,
+          sha256: sha(
+            await fs.readFile(path.join(root, publicationAuthorization)),
+          ),
+        }
+      : null,
+    productAcceptance: publicationAuthorization
+      ? "Incomplete outcomes retained; explicitly authorized candidate publication"
+      : "Required pre-promotion acceptance passed",
     publication:
       "Immutable assets and authored content staged and publicly verified before conditional root entry promotion",
     htmlSerializationAdjusted: sha(index) !== sha(publicIndex.bytes),
@@ -562,7 +575,7 @@ if (
   let buffer = "",
     busy = false;
   console.log(
-    "Ready for hidden JSON input: auth, deploy, prepare-rollback, rollback, quit.",
+    "Ready for hidden JSON input: auth, deploy, publish-candidate, prepare-rollback, rollback, quit.",
   );
   process.stdin.on("data", async (chunk) => {
     if (chunk.includes("\u0003")) process.exit(0);
@@ -588,13 +601,15 @@ if (
           ? await authenticate(c.key)
           : c.op === "deploy"
             ? await deploy()
-            : c.op === "prepare-rollback"
-              ? await prepareRollback(c.baseline)
-              : c.op === "rollback"
-                ? await rollback()
-                : (() => {
-                    throw Error("Unsupported operation");
-                  })();
+            : c.op === "publish-candidate"
+              ? await deploy(c.authorization || "missing")
+              : c.op === "prepare-rollback"
+                ? await prepareRollback(c.baseline)
+                : c.op === "rollback"
+                  ? await rollback()
+                  : (() => {
+                      throw Error("Unsupported operation");
+                    })();
       console.log(JSON.stringify(result));
     } catch (e) {
       console.log(JSON.stringify({ error: e.message }));

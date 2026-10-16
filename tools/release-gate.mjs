@@ -142,7 +142,11 @@ export async function verifyCandidateArtifacts(root) {
     source,
   };
 }
-export async function verifyRelease(root, stage = "local") {
+export async function verifyRelease(
+  root,
+  stage = "local",
+  publicationAuthorization = null,
+) {
   const stages = ["local", "staged", "live"];
   if (!stages.includes(stage))
     throw Error("Unknown release verification stage");
@@ -150,9 +154,10 @@ export async function verifyRelease(root, stage = "local") {
   const requirements = JSON.parse(
     await readFile(path.join(root, "requirements.json"), "utf8"),
   );
-  const receipt = JSON.parse(
-    await readFile(path.join(root, "audit/current-acceptance.json"), "utf8"),
+  const receiptBytes = await readFile(
+    path.join(root, "audit/current-acceptance.json"),
   );
+  const receipt = JSON.parse(receiptBytes);
   if (
     new Set(requirements.required.map((r) => r.id)).size !==
       requirements.required.length ||
@@ -167,6 +172,20 @@ export async function verifyRelease(root, stage = "local") {
     receipt.release !== candidate.release
   )
     throw Error("Acceptance receipt does not match this exact candidate");
+  // Explicit candidate publication is separate from passing product acceptance.
+  // Default package/release/CI callers never supply this authorization.
+  let knownIncomplete = new Set();
+  if (publicationAuthorization) {
+    const { readPublicationAuthorization } =
+      await import("./candidate-publication.mjs");
+    knownIncomplete = await readPublicationAuthorization(
+      root,
+      publicationAuthorization,
+      candidate,
+      receipt,
+      receiptBytes,
+    );
+  }
   for (const requirement of requirements.required) {
     if (
       !requirement.outcome ||
@@ -176,11 +195,13 @@ export async function verifyRelease(root, stage = "local") {
       throw Error("Incomplete acceptance contract: " + requirement.id);
     if (stages.indexOf(requirement.stage) > stages.indexOf(stage)) continue;
     const evidence = receipt.requirements?.find((r) => r.id === requirement.id);
-    if (evidence?.status !== "passed" || !evidence.artifacts?.length)
+    if (evidence?.status !== "passed" && !knownIncomplete.has(requirement.id))
       throw Error(
         "Required acceptance is missing or not passed: " + requirement.id,
       );
-    for (const artifact of evidence.artifacts) {
+    if (evidence.status === "passed" && !evidence.artifacts?.length)
+      throw Error("Required acceptance is missing evidence: " + requirement.id);
+    for (const artifact of evidence.artifacts || []) {
       if (
         !artifact.path.startsWith("audit/") ||
         artifact.path.includes("..") ||

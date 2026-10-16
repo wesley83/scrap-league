@@ -76,6 +76,49 @@ test("release gate refuses missing asset, stale source, omitted evidence and fai
     await save();
     await verifyRelease(fixture, "local");
     await assert.rejects(verifyRelease(fixture, "staged"), /P08/);
+    receipt.requirements.find((r) => r.id === "P08").status = "blocked";
+    receipt.requirements.find((r) => r.id === "P08").note =
+      "No provider procedure";
+    await save();
+    const authorization = "audit/deployment-authorization-2026-10-16.json";
+    const auth = {
+      version: 1,
+      operation: "publish-candidate",
+      origin: "https://hire-poker-8313.onpagelove.com",
+      authorizedBy: "Wesley",
+      request: "Commit, push, deploy",
+      context: "Synthetic authorization fixture only",
+      utc: "2026-10-16T16:30:00Z",
+      release: candidate.release,
+      sourceHash: candidate.source.hash,
+      outputHash: candidate.outputHash,
+      acceptanceHash: sha(
+        await fs.readFile(path.join(fixture, "audit/current-acceptance.json")),
+      ),
+      knownIncomplete: [
+        { id: "P08", status: "blocked", note: "No provider procedure" },
+      ],
+    };
+    await fs.writeFile(path.join(fixture, authorization), JSON.stringify(auth));
+    await verifyRelease(fixture, "staged", authorization);
+    await assert.rejects(verifyRelease(fixture, "staged"), /P08/);
+    await fs.appendFile(path.join(fixture, "audit/fixture.txt"), "tampered");
+    await assert.rejects(
+      verifyRelease(fixture, "staged", authorization),
+      /evidence changed/,
+    );
+    await fs.writeFile(
+      path.join(fixture, "audit/fixture.txt"),
+      "synthetic refusal fixture",
+    );
+    await fs.appendFile(
+      path.join(fixture, "audit/current-acceptance.json"),
+      " ",
+    );
+    await assert.rejects(
+      verifyRelease(fixture, "staged", authorization),
+      /exact candidate and ledger/,
+    );
     receipt.requirements.find((r) => r.id === "P08").status = "passed";
     receipt.requirements.find((r) => r.id === "J02").artifacts = [];
     await save();
