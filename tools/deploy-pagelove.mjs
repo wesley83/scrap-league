@@ -11,8 +11,16 @@ const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.webmanifest':'application/manifest+json','.txt':'text/plain; charset=utf-8'};
 let key='',baseline=new Map(),backupDirectory='',authenticated=false;
 
-export function htmlIdentity(bytes){
+function knownProviderFooter(element){
+ if(!element||element.localName!=='div'||element.attributes.length!==1||!element.hasAttribute('style'))return false;
+ const styleIs=(raw,expected)=>{const entries=raw.split(';').map(x=>x.trim()).filter(Boolean).map(x=>{const i=x.indexOf(':');return[x.slice(0,i).trim(),x.slice(i+1).trim()];});return entries.length===Object.keys(expected).length&&entries.every(([k,v])=>expected[k]===v)&&new Set(entries.map(([k])=>k)).size===entries.length;};
+ if(!styleIs(element.getAttribute('style'),{position:'fixed',bottom:'0',left:'0',right:'0',padding:'8px',background:'#f0f0f0','text-align':'center','font-size':'12px',color:'#666','z-index':'9999',opacity:'0.8','border-top':'1px solid #ddd'}))return false;
+ const children=[...element.children],link=children[0];
+ return children.length===1&&link.localName==='a'&&link.children.length===0&&link.attributes.length===2&&link.getAttribute('href')==='https://pagelove.com/'&&styleIs(link.getAttribute('style')||'',{color:'#4a90d9','text-decoration':'none'})&&link.textContent.trim()==='Pagelove'&&element.textContent.replace(/\s+/g,' ').trim()==='Powered by Pagelove';
+}
+export function htmlIdentity(bytes,allowProviderFooter=false){
  const doc=new DOMParser().parseFromString(bytes.toString('utf8'),'text/html');
+ if(allowProviderFooter&&knownProviderFooter(doc.body.lastElementChild))doc.body.lastElementChild.remove();
  doc.documentElement.normalize();
  function visit(n){
   if(n.nodeType===3){const text=n.textContent.replace(/\r\n/g,'\n');return /^(SCRIPT|STYLE|PRE)$/.test(n.parentNode?.nodeName)?text.trim():text.replace(/\s+/g,' ').trim();}
@@ -22,6 +30,7 @@ export function htmlIdentity(bytes){
  return sha(JSON.stringify(visit(doc.documentElement)));
 }
 export const equivalent=(name,a,b)=>name.endsWith('.html')?htmlIdentity(a)===htmlIdentity(b):a.equals(b);
+export const publicEquivalent=(name,a,b)=>name.endsWith('.html')?htmlIdentity(a,true)===htmlIdentity(b,true):a.equals(b);
 
 async function request(base,name,options={}){
  if(![origin,dav].includes(base)||!name.startsWith('/')||name.includes('..')||name.includes('?')||name.includes('#'))throw Error('Unpinned request');
@@ -76,11 +85,11 @@ async function deploy(){
  for(const file of files){written.push(await put(file.name,file.bytes,file.immutable));console.log(JSON.stringify({staged:file.name}));}
  // Public dependencies must be available before the root page starts referencing them.
  const publicFiles=[];
- for(const file of files){const live=await read(file.name,true);if(live.status!==200||!equivalent(file.name,file.bytes,live.bytes))throw Error('Public dependency mismatch: '+file.name);publicFiles.push({path:file.name,status:live.status,sha256:sha(live.bytes),bytes:live.bytes.length,type:live.type});}
+ for(const file of files){const live=await read(file.name,true);if(live.status!==200||!publicEquivalent(file.name,file.bytes,live.bytes))throw Error('Public dependency mismatch: '+file.name);publicFiles.push({path:file.name,status:live.status,sha256:sha(live.bytes),bytes:live.bytes.length,type:live.type});}
  const index=await fs.readFile(path.join(root,'dist/index.html'));
  written.push(await put('/index.html',index));
  const publicIndex=await read('/',true);
- if(publicIndex.status!==200||!equivalent('/index.html',index,publicIndex.bytes))throw Error('Public entry semantic mismatch');
+ if(publicIndex.status!==200||!publicEquivalent('/index.html',index,publicIndex.bytes))throw Error('Public entry semantic mismatch');
  // Pagelove may serialize authored HTML. Verify its semantics, then pin the exact
  // served bytes in the offline inventory; script/style bytes remain strict.
  const published=structuredClone(release);published.files.find(f=>f.url==='./').hash=sha(publicIndex.bytes);
