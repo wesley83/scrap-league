@@ -53,3 +53,5 @@ See [implementation status](IMPLEMENTATION-STATUS.md), [current automated tests]
 The local game and editor work without a Pagelove credential. Owner publication and discovery are implemented for the selected host, with conditional real-provider probes. The [deployment receipt](audit/deployment.json) records the last completed public asset/native-route readback. Casual boards remain disabled until actual public validation, retention and supported policy activation pass. WebDAV is trusted owner authoring and intentionally bypasses platform validation/triggers.
 
 Real-hardware sessions, human playtesting and perceptual listening are outside required scope by user instruction. Available-browser and automated checks remain required. This candidate does not yet pass every production release row in ACCEPTANCE.md.
+
+If the racing view is blank, open **Settings → Repair graphics**. This rebuilds the view using safer graphics without erasing your progress. During a race, the clock stays paused until you choose Resume. Phones use safer graphics by default; the setting can also be toggled in Settings.

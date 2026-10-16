@@ -1,0 +1,11 @@
+{
+  "results": "{\n  \"utc\": \"2026-10-16T17:11:19.759Z\",\n  \"release\": \"sl-171632fc05f6f0\",\n  \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36\",\n  \"rows\": [\n    {\n      \"name\": \"Portrait racing and missed graphics event\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"size\": [\n          412,\n          855\n        ],\n        \"title\": \"SALT FLAT SPRINT / DAILY SPEC\",\n        \"stoppedTime\": \"00:00.925\",\n        \"missedEventPaused\": true,\n        \"freshCanvas\": true,\n        \"explicitResume\": true,\n        \"scope\": \"Desktop browser with 412x915 iframe; real WEBGL_lose_context fault, propagation intentionally suppressed. Not a physical Pixel/Edge test.\"\n      }\n    },\n    {\n      \"name\": \"Landscape, normal restoration and settings repair\",\n      \"status\": \"failed\",\n      \"error\": \"Timed out waiting for game state\"\n    }\n  ]\n}",
+  "logs": [
+    {
+      "level": "error",
+      "message": "Graphics buffer validation failed with WebGL error 1282",
+      "timestamp": "2026-10-16T17:11:04.802Z",
+      "url": "http://127.0.0.1:4393/releases/sl-171632fc05f6f0/renderer.js"
+    }
+  ]
+}

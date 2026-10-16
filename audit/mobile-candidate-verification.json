@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-16T17:13:43.974Z",
+  "release": "sl-644d25b8e44419",
+  "sourceHash": "b61ec4769e1d99f4402598bb72968955bf853a7c1071c77942d2774b8a64351a",
+  "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
+  "browserFixtures": 4,
+  "tests": 86,
+  "publication": "explicit candidate authorization; full product acceptance remains incomplete"
+}

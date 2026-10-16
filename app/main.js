@@ -79,7 +79,81 @@ let content,
 const keys = new Set(),
   held = new Set();
 let steering = 0;
+let repairingGraphics = false;
+let graphicsSnapshot;
 const sound = new Sound();
+function graphicsInterrupted(reason = "The racing view stopped drawing.") {
+  accumulator = 0;
+  clearInput();
+  sound.stop();
+  if (view === "race")
+    pause(reason + " Your race clock is stopped. Repair graphics to continue.");
+  else
+    notify(
+      reason + " Open Settings and choose Repair graphics. Saved work is kept.",
+      true,
+    );
+}
+function createWorld(canvas) {
+  const created = new World(
+    canvas,
+    graphicsInterrupted,
+    async () => {
+      if (world !== created || created.disposed) return;
+      // Restored drivers can leave old program/buffer handles invalid. Use the
+      // same fresh-surface path as an explicit repair, with conservative detail.
+      await repairGraphics(true);
+    },
+    { safeGraphics: settings.safeGraphics },
+  );
+  return created;
+}
+async function repairGraphics(safe = true) {
+  if (repairingGraphics) return;
+  repairingGraphics = true;
+  const old = world;
+  if (old && !old.disposed)
+    graphicsSnapshot = {
+      track: old?.track,
+      sourceCars: old?.sourceCars,
+      cinematicState: old?.cinematicState,
+      angle: old?.angle,
+    };
+  if (view === "race")
+    pause("Rebuilding the racing view. Your race clock is stopped.");
+  clearInput();
+  accumulator = 0;
+  settings.safeGraphics = safe;
+  try {
+    // A failed canvas can remain unusable after a context restore. Replace the
+    // surface and renderer together; keep the live simulation and saved data.
+    old?.dispose();
+    world = null;
+    const canvas = q("world").cloneNode(false);
+    canvas.width = canvas.height = 1;
+    q("world").replaceWith(canvas);
+    world = createWorld(canvas);
+    Object.assign(world, graphicsSnapshot);
+    await world.rebuild(race, view, settings);
+    lastTime = performance.now();
+    lastRender = 0;
+    if (view === "race") pause("Graphics restored. Resume when you are ready.");
+    else notify("Graphics restored" + (safe ? " with safer graphics." : "."));
+  } catch (error) {
+    if (world) world.contextLost = true;
+    graphicsInterrupted(
+      "Graphics could not restart. Try Repair graphics again or reload the game.",
+    );
+    console.error("Graphics repair failed", error);
+  } finally {
+    repairingGraphics = false;
+    try {
+      await store?.set("settings", settings);
+    } catch {
+      notify("Graphics settings could not be saved.", true);
+    }
+  }
+}
 function notify(message, error = false) {
   q("toast").textContent = message;
   q("toast").hidden = false;
@@ -590,7 +664,9 @@ function pause(reason = "Take a breath. The race clock is stopped.") {
   clearInput();
   sound.stop();
   const actions = [
-    { label: "Resume", action: resume },
+    world && !world.contextLost
+      ? { label: "Resume", action: resume }
+      : { label: "Repair graphics", action: () => repairGraphics() },
     { label: "Settings", action: settingsDialog },
     { label: "Restart race", action: () => restart() },
     {
@@ -601,8 +677,8 @@ function pause(reason = "Take a breath. The race clock is stopped.") {
   dialog("PAUSED", reason, actions);
 }
 function resume() {
-  if (world?.contextLost) {
-    notify("Graphics are still recovering. Your race remains paused.", true);
+  if (!world?.available() || !world.render(race, view, settings, 0)) {
+    graphicsInterrupted();
     return;
   }
   q("modal").close();
@@ -1166,6 +1242,7 @@ function settingsDialog() {
     assist: "Gentle steering assistance (next race)",
     northUp: "Fixed north-up camera",
     lowEffects: "Reduced visual effects",
+    safeGraphics: "Safer graphics (lower detail)",
     reducedMotion: "Reduced motion",
     ghost: "Show compatible personal-best ghost",
     touch: "Show touch controls",
@@ -1184,6 +1261,10 @@ function settingsDialog() {
     (c) =>
       (c.onchange = async () => {
         settings[c.dataset.setting] = c.checked;
+        if (c.dataset.setting === "safeGraphics") {
+          await repairGraphics(c.checked);
+          return;
+        }
         sound.enabled = settings.sound;
         sound.musicEnabled = settings.music;
         document.body.classList.toggle("touch", settings.touch);
@@ -1221,6 +1302,16 @@ function settingsDialog() {
     )
     .join("")}</div>`;
   body.append(controls);
+  const repair = document.createElement("button"),
+    graphicsStatus = document.createElement("p");
+  repair.textContent = "Repair graphics";
+  repair.onclick = () => repairGraphics();
+  graphicsStatus.className = "muted";
+  graphicsStatus.textContent =
+    "Blank racing view? Repair graphics rebuilds it with lower detail and keeps your progress. Release " +
+    new URL(".", import.meta.url).pathname.split("/").filter(Boolean).at(-1) +
+    ".";
+  body.prepend(repair, graphicsStatus);
   controls.querySelector("#touch-layout").value = settings.touchLayout;
   const persistPreferences = async () => {
     applyPreferences();
@@ -1858,6 +1949,13 @@ function frame(now) {
   const elapsed = Math.min(0.1, wallElapsed);
   lastTime = now;
   try {
+    if (
+      race &&
+      view === "race" &&
+      !world?.available() &&
+      race.state !== "paused"
+    )
+      graphicsInterrupted();
     if (race && view === "race") {
       pollGamepadPause();
       if (race.state === "resuming") {
@@ -2113,26 +2211,7 @@ async function init() {
     boards = new Boards(store);
     if (boards.enabled) boards.pump().catch((e) => notify(e.message, true));
     await document.fonts.load("100px LeagueDisplay");
-    world = new World(
-      q("world"),
-      () => {
-        if (view === "race")
-          pause(
-            "Graphics were interrupted. Your race is paused while the scene recovers.",
-          );
-        else
-          notify(
-            "Graphics were interrupted. Your saved work is safe while the scene recovers.",
-            true,
-          );
-      },
-      async () => {
-        await world.rebuild(race, view, settings);
-        if (view === "race")
-          pause("Graphics restored. Resume when you are ready.");
-        else notify("Graphics restored.");
-      },
-    );
+    world = createWorld(q("world"));
     workshop = new Workshop(q("screen-workshop"), {
       store,
       templates: content.tracks.map((t) => t.track),

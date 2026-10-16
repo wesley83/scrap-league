@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "utc": "2026-10-16T16:42:49.981Z",
-  "release": "sl-eca6f97d1308a3",
-  "sourceHash": "6095fdba162a2288fdbde6a490d9b3dc8f397e5a4d3e11036542f50a8bbf532e",
-  "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
+  "utc": "2026-10-16T17:13:43.698Z",
+  "release": "sl-644d25b8e44419",
+  "sourceHash": "b61ec4769e1d99f4402598bb72968955bf853a7c1071c77942d2774b8a64351a",
+  "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
   "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
   "status": "not-accepted",
   "evidenceReuse": {
     "path": "audit/remediation-browser-evidence-reuse.json",
     "sha256": "e4142468888b5f742999ae87600ac7c9ec7ab9f44dafe907df38762159bf32d9",
-    "note": "Retained eleven-flow browser and isolated performance evidence uses sl-9dcfecb358e003. The only later runtime differences are captured-rules grouping in builds.js and boards.js; 21 other compared runtime/content/style files are byte-identical. All 82 tests pass on e908b82; current release update and garage/share fixtures are separately retained."
+    "note": "The original comparison covers the pre-mobile candidate only. This repair changes renderer.js, main.js and preferences.js and adds graphics-policy.js. Final exact-release graphics fixtures and 86 regression tests are retained separately; the earlier twenty-minute soak is historical and is not claimed for this renderer."
   },
   "requirements": [
     {
@@ -37,6 +37,10 @@
         {
           "path": "audit/remediation-browser-final.json",
           "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
         }
       ]
     },
@@ -73,6 +77,10 @@
         {
           "path": "audit/remediation-browser-final.json",
           "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
         }
       ]
     },
@@ -211,7 +219,7 @@
           "sha256": "b27b2a0fbde191d3667bc2095212f458a2059daf7692ef2a2a45c4f6dd4f295f"
         },
         {
-          "path": "audit/deployment-browser-verification.json",
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
           "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
         }
       ]
@@ -232,11 +240,15 @@
       "id": "J16",
       "stage": "local",
       "status": "passed",
-      "note": "Current browser graphics loss/rebuild, viewport/input interruption, explicit resume and focus checks pass.",
+      "note": "Final exact-release portrait/landscape browser faults pass: suppressed context-loss event, creation failure, fresh-canvas retry, ordinary restore, unchanged stopped clock and explicit resume. Earlier input-disconnect/viewport fixtures remain retained. The physical Pixel/Edge trigger is unconfirmed and is not a required hardware-testing gate.",
       "artifacts": [
         {
           "path": "audit/remediation-browser-final.json",
           "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
         }
       ]
     },
@@ -379,11 +391,11 @@
           "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
         },
         {
-          "path": "audit/deployment-live-readback.json",
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
           "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
         },
         {
-          "path": "audit/deployment-browser-verification.json",
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
           "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
         }
       ]
@@ -425,6 +437,10 @@
         {
           "path": "audit/remediation-browser-final.json",
           "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
         }
       ]
     },
@@ -503,11 +519,11 @@
           "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
         },
         {
-          "path": "audit/deployment.json",
+          "path": "audit/mobile-baseline/deployment.json",
           "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
         },
         {
-          "path": "audit/deployment-live-readback.json",
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
           "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
         }
       ]
@@ -591,19 +607,19 @@
     {
       "id": "C06",
       "stage": "live",
-      "status": "passed",
-      "note": "Release sl-eca6f97d1308a3 published from commit 6a7ff1c under explicit candidate authorization. Publisher verified 108 public files; independent readback checked exact metadata asset bytes, root/worker/manifest, 24 official composed routes and three fallback routes. Live browser verified the new release, offline pack, driving startup and editable native route.",
+      "status": "not-run",
+      "note": "Prior live release readback is preserved under audit/mobile-baseline. Public promotion and readback of the mobile graphics repair are pending.",
       "artifacts": [
         {
-          "path": "audit/deployment.json",
+          "path": "audit/mobile-baseline/deployment.json",
           "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
         },
         {
-          "path": "audit/deployment-live-readback.json",
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
           "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
         },
         {
-          "path": "audit/deployment-browser-verification.json",
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
           "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
         },
         {
@@ -653,6 +669,10 @@
         {
           "path": "audit/screenshots/remediation-yard.jpg",
           "sha256": "cfab60732e8614832e806671a45315810787f8840a92131dbcb0064f4f4334b2"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
         }
       ]
     },
@@ -660,7 +680,7 @@
       "id": "C10",
       "stage": "local",
       "status": "partial",
-      "note": "All 83 tests passed locally and on hosted commit 6a7ff1c. Ordinary exact-candidate acceptance still refuses J01. Scoped publication was separately authorized; incomplete product outcomes remain recorded.",
+      "note": "All 86 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -681,6 +701,10 @@
         {
           "path": "audit/deployment-hosted-default-refusal.txt",
           "sha256": "e95b55af84d0f38c146d0f69c5a65df625a7db54fec536d97bef3e5ef4d4188b"
+        },
+        {
+          "path": "audit/mobile-graphics-tests-final.txt",
+          "sha256": "0564bf8e070ae7c4cc6cda1500c9eb17d02c72518ebba940525030bf75bb3947"
         }
       ]
     }

@@ -28,6 +28,7 @@ export function defaultSettings({
     assist: false,
     northUp: false,
     lowEffects: false,
+    safeGraphics: coarse,
     reducedMotion,
     ghost: true,
     touch: coarse,

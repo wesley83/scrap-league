@@ -1,0 +1,191 @@
+{
+  "utc": "2026-10-16T17:09:12.091Z",
+  "release": "sl-c777800311dbe2",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "rows": [
+    {
+      "name": "Portrait racing and missed graphics event",
+      "status": "passed",
+      "detail": {
+        "size": [
+          412,
+          855
+        ],
+        "title": "SALT FLAT SPRINT / DAILY SPEC",
+        "stoppedTime": "00:00.950",
+        "missedEventPaused": true,
+        "freshCanvas": true,
+        "explicitResume": true,
+        "scope": "Desktop browser with 412x915 iframe; real WEBGL_lose_context fault, propagation intentionally suppressed. Not a physical Pixel/Edge test."
+      }
+    },
+    {
+      "name": "Failed repair stays paused and retry recovers",
+      "status": "passed",
+      "detail": {
+        "injectedCreationFailure": true,
+        "timePreserved": true,
+        "retryRecovered": true
+      }
+    },
+    {
+      "name": "Landscape, normal restoration and settings repair",
+      "status": "failed",
+      "error": "Timed out waiting for game state"
+    },
+    {
+      "name": "All circuits and scenes in both graphics profiles",
+      "status": "passed",
+      "detail": {
+        "detail": [
+          {
+            "safeGraphics": true,
+            "circuit": "yard-loop",
+            "calls": 54,
+            "triangles": 11740
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "tin-can-alley",
+            "calls": 54,
+            "triangles": 12404
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "gravel-shift",
+            "calls": 55,
+            "triangles": 12852
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "dockside-dash",
+            "calls": 58,
+            "triangles": 13384
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "container-switchback",
+            "calls": 56,
+            "triangles": 12740
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "salt-flat-sprint",
+            "calls": 58,
+            "triangles": 16208
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "furnace-bend",
+            "calls": 55,
+            "triangles": 11956
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "mudworks",
+            "calls": 56,
+            "triangles": 14656
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "crusher-circuit",
+            "calls": 56,
+            "triangles": 13728
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "night-sort",
+            "calls": 55,
+            "triangles": 15024
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "redline-ridge",
+            "calls": 57,
+            "triangles": 15708
+          },
+          {
+            "safeGraphics": true,
+            "circuit": "the-big-salvage",
+            "calls": 58,
+            "triangles": 16020
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "yard-loop",
+            "calls": 54,
+            "triangles": 11740
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "tin-can-alley",
+            "calls": 54,
+            "triangles": 12404
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "gravel-shift",
+            "calls": 55,
+            "triangles": 12852
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "dockside-dash",
+            "calls": 58,
+            "triangles": 13384
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "container-switchback",
+            "calls": 56,
+            "triangles": 12740
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "salt-flat-sprint",
+            "calls": 58,
+            "triangles": 16208
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "furnace-bend",
+            "calls": 55,
+            "triangles": 11956
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "mudworks",
+            "calls": 56,
+            "triangles": 14656
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "crusher-circuit",
+            "calls": 56,
+            "triangles": 13728
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "night-sort",
+            "calls": 55,
+            "triangles": 15024
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "redline-ridge",
+            "calls": 57,
+            "triangles": 15708
+          },
+          {
+            "safeGraphics": false,
+            "circuit": "the-big-salvage",
+            "calls": 58,
+            "triangles": 16020
+          }
+        ],
+        "garages": 2,
+        "cinematicRebuilds": 10
+      }
+    }
+  ]
+}

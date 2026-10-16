@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DOMParser } from "linkedom";
 const root = fileURLToPath(new URL("../", import.meta.url));
+const port = Number(process.env.REVIEW_PORT || 4392);
 let offline = false;
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -21,6 +22,21 @@ http
   .createServer(async (req, res) => {
     try {
       const url = new URL(req.url, "http://127.0.0.1:4392");
+      if (url.pathname === "/__review__/mobile.js") {
+        res.setHeader("Content-Type", "text/javascript");
+        res.end(await fs.readFile(path.join(root, "tools/mobile-review.js")));
+        return;
+      }
+      if (url.pathname === "/__review__/mobile") {
+        const release = JSON.parse(
+          await fs.readFile(path.join(root, "dist/release.json"), "utf8"),
+        );
+        res.setHeader("Content-Type", "text/html; charset=utf-8");
+        res.end(
+          `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Mobile graphics verification</title></head><body style="background:#ece6d5;color:#202721;font:16px system-ui"><h1>Mobile graphics verification</h1><p>Local fault fixtures / <span id="release">${release.release}</span></p><div id="actions"></div><pre id="results" style="white-space:pre-wrap"></pre><iframe id="game" title="Game under test" src="/" style="width:412px;height:915px;border:0"></iframe><script type="module" src="/__review__/mobile.js"></script></body></html>`,
+        );
+        return;
+      }
       if (url.pathname === "/__review__/scorecard" && req.method === "POST") {
         const chunks = [];
         let size = 0;
@@ -181,6 +197,6 @@ http
       res.end(error.message);
     }
   })
-  .listen(4392, "127.0.0.1", () =>
-    console.log("Review laboratory: http://127.0.0.1:4392/__review__/"),
+  .listen(port, "127.0.0.1", () =>
+    console.log(`Review laboratory: http://127.0.0.1:${port}/__review__/`),
   );

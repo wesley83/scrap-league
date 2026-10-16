@@ -4,12 +4,12 @@
   "origin": "https://hire-poker-8313.onpagelove.com",
   "authorizedBy": "Wesley",
   "request": "Commit, push, deploy",
-  "context": "The user explicitly requested publication immediately after the assistant disclosed that the repaired PWA install/close/offline-reopen journey remained unverified, and after the fuller acceptance-gap report. This authorizes this candidate publication with those recorded limitations, without marking them passed or permanently removing them.",
-  "utc": "2026-10-16T16:35:32.791Z",
-  "release": "sl-eca6f97d1308a3",
-  "sourceHash": "6095fdba162a2288fdbde6a490d9b3dc8f397e5a4d3e11036542f50a8bbf532e",
-  "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
-  "acceptanceHash": "c0a914b30d2a444fb6af3064a540574dd28e41c2e438cffffb1d36d4a0effe2a",
+  "context": "Persistent explicit commit/push/deploy authorization, continued by the user reporting the live phone rendering failure and identifying Pixel 11 Pro / Edge. This is the graphics repair to that same game and destination. Prior product-acceptance limitations remain; the exact device trigger is not claimed as established. Historical authorization and deployment are preserved in audit/mobile-baseline.",
+  "utc": "2026-10-16T17:13:43.719Z",
+  "release": "sl-644d25b8e44419",
+  "sourceHash": "b61ec4769e1d99f4402598bb72968955bf853a7c1071c77942d2774b8a64351a",
+  "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
+  "acceptanceHash": "a476cc134eb7588f58a130810d7d243401764869c6cc6c8b8b9874e5684cff1d",
   "knownIncomplete": [
     {
       "id": "J01",
@@ -79,7 +79,7 @@
     {
       "id": "P07",
       "status": "partial",
-      "note": "Native primitive probes and five local production-wrapper routes passed. Earlier method memory-budget 500 retained; final static route provider readback pending."
+      "note": "Public readback verified 24 intended official fragments and missing/unknown/hostile fallback routes. Live native editor opened and saved an editable copy. Earlier method memory-budget 500 is retained; actual injected composition-failure fallback is still narrower than the full adopted method."
     },
     {
       "id": "P08",
@@ -109,19 +109,17 @@
     {
       "id": "M06",
       "status": "blocked",
-      "note": "Not all required rows pass; no current production promotion or final public readback."
+      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
     },
     {
       "id": "C06",
       "status": "not-run",
-      "note": "No current candidate production promotion; final public status/type/hash/route readback not run."
+      "note": "Prior live release readback is preserved under audit/mobile-baseline. Public promotion and readback of the mobile graphics repair are pending."
     },
     {
       "id": "C10",
       "status": "partial",
-      "note": "All 83 automated tests passed after adding exact-candidate publication authorization and its refusal fixtures. Required end-to-end/provider rows remain incomplete; ordinary acceptance stays refused. The user separately authorized publishing this candidate with recorded limitations."
+      "note": "All 86 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed."
     }
-  ],
-  "publicBoards": "disabled",
-  "deploymentControls": "Exact artifact/evidence hashes, pinned host, conditional writes, private backups, preservation of old assets/player data and public readback remain mandatory."
+  ]
 }

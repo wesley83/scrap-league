@@ -2,18 +2,30 @@ import { sceneProgress } from "./scenes.js";
 import * as THREE from "./vendor/three.module.js";
 import { nearest, atDistance } from "./track.js";
 import { wrap } from "./model.js";
+import {
+  drawingSize,
+  graphicsProfile,
+  surfaceFailure,
+} from "./graphics-policy.js";
 const C = { asphalt: 0x424943, gravel: 0x9a8d6e, mud: 0x675746 };
 export class World {
-  constructor(canvas, onLost, onRestored) {
+  constructor(canvas, onLost, onRestored, { safeGraphics = false } = {}) {
     this.canvas = canvas;
+    this.onLost = onLost;
+    this.profile = graphicsProfile(safeGraphics);
+    this.safeGraphics = safeGraphics;
     this.renderer = new THREE.WebGLRenderer({
       canvas,
-      antialias: true,
-      alpha: false,
-      powerPreference: "high-performance",
+      ...this.profile,
     });
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
-    this.renderer.shadowMap.enabled = true;
+    this.renderer.debug.onShaderError = () => {
+      throw Error("The browser could not draw the 3D scene.");
+    };
+    this.maxDimension = Math.min(
+      4096,
+      this.renderer.capabilities.maxTextureSize,
+    );
+    this.renderer.shadowMap.enabled = !safeGraphics;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.scene = new THREE.Scene();
@@ -44,30 +56,59 @@ export class World {
     this.materials = new Map();
     this.boxGeo = new THREE.BoxGeometry(1, 1, 1);
     this.cylinderGeo = new THREE.CylinderGeometry(1, 1, 1, 10);
-    canvas.addEventListener("webglcontextlost", (e) => {
+    this.lostListener = (e) => {
       e.preventDefault();
-      this.contextLost = true;
-      onLost?.();
-    });
-    canvas.addEventListener("webglcontextrestored", async () => {
+      this.fail("The graphics connection was lost.");
+    };
+    this.restoredListener = async () => {
+      if (this.disposed) return;
       try {
         await onRestored?.();
-        this.contextLost = false;
       } catch (e) {
-        this.contextLost = true;
         console.error("Graphics recovery failed", e);
-        onLost?.();
+        this.fail("Graphics recovery failed. Try repairing the view.");
       }
-    });
+    };
+    canvas.addEventListener("webglcontextlost", this.lostListener);
+    canvas.addEventListener("webglcontextrestored", this.restoredListener);
+  }
+  fail(reason) {
+    const first = !this.contextLost;
+    this.contextLost = true;
+    this.failure = reason;
+    if (first) this.onLost?.(reason);
+    return false;
+  }
+  available() {
+    if (this.disposed || this.contextLost) return false;
+    const reason = surfaceFailure(this.renderer.getContext());
+    return reason ? this.fail(reason) : true;
+  }
+  dispose() {
+    this.disposed = true;
+    this.canvas.removeEventListener("webglcontextlost", this.lostListener);
+    this.canvas.removeEventListener(
+      "webglcontextrestored",
+      this.restoredListener,
+    );
+    this.clear();
+    for (const material of this.materials.values()) material.dispose();
+    this.boxGeo.dispose();
+    this.cylinderGeo.dispose();
+    this.sun.shadow.map?.dispose();
+    this.renderer.dispose();
+    if (!this.renderer.getContext().isContextLost())
+      this.renderer.forceContextLoss();
   }
   async rebuild(race, view, settings) {
+    this.contextLost = false;
+    this.needsValidation = true;
     if (view === "scene" && this.cinematicState) {
       const { elapsed, final } = this.cinematicState;
       this.cinematic(this.track, this.sourceCars[0].spec, final);
       this.cinematicState.elapsed = elapsed;
       this.renderer.compile(this.scene, this.camera);
-      this.contextLost = false;
-      this.render(race, view, settings, 0);
+      if (!this.render(race, view, settings, 0)) throw Error(this.failure);
       return;
     }
     const cars =
@@ -78,14 +119,13 @@ export class World {
     else if (race && ["race", "result"].includes(view)) this.load(race.track);
     else if (this.track) this.load(this.track);
     this.setCars(cars);
-    if (race && ["race", "result"].includes(view))
-      this.setGhost(
-        race.cars.find((c) => c.id === "player").spec,
-        race.bestGhost,
-      );
+    if (race && ["race", "result"].includes(view)) {
+      const player = race.cars.find((c) => c.id === "player");
+      this.target.set(player.x, 0, player.z);
+      this.setGhost(player.spec, race.bestGhost);
+    }
     this.renderer.compile(this.scene, this.camera);
-    this.render(race, view, settings, 0);
-    this.contextLost = false;
+    if (!this.render(race, view, settings, 0)) throw Error(this.failure);
   }
   mat(color) {
     if (!this.materials.has(color))
@@ -728,13 +768,22 @@ export class World {
     this.cinematicState.restoration.push(g);
   }
   resize() {
-    const w = this.canvas.clientWidth,
-      h = this.canvas.clientHeight;
+    const w = Math.max(1, this.canvas.clientWidth),
+      h = Math.max(1, this.canvas.clientHeight),
+      size = drawingSize(
+        w,
+        h,
+        devicePixelRatio,
+        this.profile,
+        this.maxDimension,
+      );
     if (
-      this.canvas.width !== Math.floor(w * this.renderer.getPixelRatio()) ||
-      this.canvas.height !== Math.floor(h * this.renderer.getPixelRatio())
-    )
-      this.renderer.setSize(w, h, false);
+      this.canvas.width !== size.width ||
+      this.canvas.height !== size.height
+    ) {
+      this.renderer.setSize(size.width, size.height, false);
+      this.needsValidation = true;
+    }
     this.aspect = w / Math.max(h, 1);
   }
   frameOverview(immediate = false) {
@@ -754,9 +803,34 @@ export class World {
     this.camera.updateProjectionMatrix();
   }
   render(race, view, settings, dt = 0.016) {
+    if (!this.available()) return false;
+    try {
+      this.draw(race, view, settings, dt);
+      if (!this.available()) return false;
+      // Inspect GL errors only after allocation/recovery, not on every frame.
+      if (this.needsValidation) {
+        const gl = this.renderer.getContext();
+        const error = gl.getError();
+        if (error !== gl.NO_ERROR) {
+          console.error(
+            "Graphics buffer validation failed with WebGL error",
+            error,
+          );
+          return this.fail("The browser could not prepare the racing view.");
+        }
+        this.needsValidation = false;
+      }
+      return true;
+    } catch (error) {
+      console.error("Graphics rendering failed", error);
+      return this.fail(error.message || "The racing view stopped drawing.");
+    }
+  }
+  draw(race, view, settings, dt = 0.016) {
     this.resize();
     this.view = view;
-    this.renderer.shadowMap.enabled = !settings.lowEffects;
+    this.renderer.shadowMap.enabled =
+      !this.safeGraphics && !settings.lowEffects;
     if (view === "scene" && this.cinematicState) {
       const shot = this.cinematicState;
       shot.elapsed = Math.min(4.5, shot.elapsed + dt);
