@@ -1,0 +1,26 @@
+✔ owner publication refuses wrong host and stale baseline without a write (33.9122ms)
+✔ conditional PUT and semantic readback acknowledge publication (15.4702ms)
+✔ ambiguous create reconciles without a second write (6.2457ms)
+✔ casual run validator rejects extra fields, bad arithmetic, bounds and controls (0.9307ms)
+AI lap evidence [{"track":"yard-loop","time":36,"contacts":0,"resets":0,"gate":0},{"track":"tin-can-alley","time":49,"contacts":0,"resets":0,"gate":0},{"track":"gravel-shift","time":42,"contacts":0,"resets":0,"gate":0},{"track":"dockside-dash","time":47,"contacts":0,"resets":0,"gate":0},{"track":"container-switchback","time":56,"contacts":0,"resets":0,"gate":0},{"track":"salt-flat-sprint","time":56,"contacts":0,"resets":0,"gate":0},{"track":"furnace-bend","time":54,"contacts":0,"resets":0,"gate":0},{"track":"mudworks","time":48,"contacts":0,"resets":0,"gate":0},{"track":"crusher-circuit","time":63,"contacts":0,"resets":0,"gate":0},{"track":"night-sort","time":57,"contacts":0,"resets":0,"gate":0},{"track":"redline-ridge","time":54,"contacts":0,"resets":0,"gate":0},{"track":"the-big-salvage","time":68,"contacts":0,"resets":0,"gate":0}]
+✔ 12 authoritative documents round trip with all owned fields (80.528ms)
+✔ independent rounded rectangle length and arc endpoint (0.286ms)
+✔ all 81 unique legal builds, masses and tire tradeoffs (0.7781ms)
+✔ hostile/unknown imports are rejected before reconstruction (9.4523ms)
+✔ geometry gaps, disconnected roads, overlaps and missing respawns fail (7.5056ms)
+✔ finite gate accepts forward center crossing, rejects reverse and outside (0.2568ms)
+✔ swept circle catches high-speed wall and ignores parallel miss (0.3187ms)
+✔ out-of-order finish gives no lap or charge; reset preserves sequence (0.3611ms)
+✔ legal gates award once and exact crossing time rounds splits once (1.826ms)
+✔ pause does not advance simulation, boost or timers (0.3849ms)
+✔ DNF history records elapsed time without rewriting completed lap splits (1.7339ms)
+✔ Workshop completion never awards League progress or cup points (0.3103ms)
+✔ all circuits finish through legal AI controls without teleports (4370.3969ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5060.1096

@@ -1,0 +1,13 @@
+# Pagelove deployment
+
+The selected public site is https://hire-poker-8313.onpagelove.com/ and its owner authoring endpoint is https://dav-hire-poker-8313.onpagelove.com/. Repository: https://github.com/wesley83/scrap-league.
+
+Build with the pinned dependencies and run the checks described in `PLAY.md`. `dist/release.json` is the inventory for the current release. Older local release folders are not uploaded. The initial public repository includes the prebuilt current release for immediate local play; source changes still require a fresh build.
+
+Run `node tools/deploy-pagelove.mjs` in a terminal. It accepts newline-terminated JSON through hidden standard input. Send `{"op":"auth","key":"<owner key>"}` to authenticate and read the destination baseline. After the authenticated result, send `{"op":"deploy"}`. Send `{"op":"quit"}` when finished. The key exists only in process memory and is sent only to the pinned HTTPS authoring endpoint. Never paste a real key into a shell command, source file, issue, or public repository.
+
+The publisher validates local release hashes, uploads immutable release dependencies and authored HTML content, and verifies their public readback before promoting the root entry. Mutable files use ETag conditions; absent files use `If-None-Match`. A lost write response is reconciled by readback without blindly sending another write. Existing content is backed up under ignored `.local/deployment-baselines/` before replacement; no remote file deletion is performed. Keep that directory private.
+
+Pagelove may serialize HTML. The publisher checks semantic identity, preserving script/style text, then pins the exact served root HTML hash in the deployed service-worker inventory. Other asset types must match byte-for-byte. The local `dist/` inventory remains unchanged; `audit/deployment.json` records the served hashes and whether this adjustment was necessary. A root-page deployment and its worker are sequential promotions, not a platform-wide atomic transaction. If publication stops after promotion, inspect the receipt/baselines and resume against a fresh baseline; do not delete old release folders needed by installed clients.
+
+This deployment publishes the playable game, offline assets and authoritative content documents. Shared leaderboards, catalog discovery and owner Workshop publishing UI remain separate application work. Owner WebDAV intentionally bypasses platform schema validation and triggers; it is trusted authoring, not a public application-validation boundary.

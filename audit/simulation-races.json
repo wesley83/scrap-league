@@ -1,0 +1,366 @@
+{
+  "kind": "Headless real simulation; player driven by legal AI controls. Not a human/browser completion.",
+  "utc": "2026-10-16T11:06:42.677Z",
+  "races": [
+    {
+      "track": "yard-loop",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 40394,
+      "dnf": false,
+      "finishes": 2,
+      "contacts": 996,
+      "resets": 0
+    },
+    {
+      "track": "tin-can-alley",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 53795,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 1088,
+      "resets": 0
+    },
+    {
+      "track": "gravel-shift",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 46102,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 2644,
+      "resets": 0
+    },
+    {
+      "track": "dockside-dash",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 51835,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 2542,
+      "resets": 0
+    },
+    {
+      "track": "container-switchback",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 62235,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 2068,
+      "resets": 0
+    },
+    {
+      "track": "salt-flat-sprint",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 60180,
+      "dnf": false,
+      "finishes": 5,
+      "contacts": 4672,
+      "resets": 0
+    },
+    {
+      "track": "furnace-bend",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 60380,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 2084,
+      "resets": 0
+    },
+    {
+      "track": "mudworks",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 52444,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 2560,
+      "resets": 0
+    },
+    {
+      "track": "crusher-circuit",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 68568,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 1448,
+      "resets": 0
+    },
+    {
+      "track": "night-sort",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 61243,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 2840,
+      "resets": 0
+    },
+    {
+      "track": "redline-ridge",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 58596,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 4118,
+      "resets": 0
+    },
+    {
+      "track": "the-big-salvage",
+      "difficulty": "relaxed",
+      "laps": 1,
+      "elapsedMs": 72749,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 3094,
+      "resets": 0
+    },
+    {
+      "track": "yard-loop",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 102996,
+      "dnf": false,
+      "finishes": 2,
+      "contacts": 818,
+      "resets": 0
+    },
+    {
+      "track": "tin-can-alley",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 142877,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 962,
+      "resets": 0
+    },
+    {
+      "track": "gravel-shift",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 120737,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 2258,
+      "resets": 0
+    },
+    {
+      "track": "dockside-dash",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 136772,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 6948,
+      "resets": 0
+    },
+    {
+      "track": "container-switchback",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 163677,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 1978,
+      "resets": 0
+    },
+    {
+      "track": "salt-flat-sprint",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 160275,
+      "dnf": false,
+      "finishes": 5,
+      "contacts": 7546,
+      "resets": 0
+    },
+    {
+      "track": "furnace-bend",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 158278,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 1776,
+      "resets": 0
+    },
+    {
+      "track": "mudworks",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 138708,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 6074,
+      "resets": 0
+    },
+    {
+      "track": "crusher-circuit",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 182294,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 2234,
+      "resets": 0
+    },
+    {
+      "track": "night-sort",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 163223,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 4652,
+      "resets": 0
+    },
+    {
+      "track": "redline-ridge",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 157002,
+      "dnf": false,
+      "finishes": 5,
+      "contacts": 3772,
+      "resets": 0
+    },
+    {
+      "track": "the-big-salvage",
+      "difficulty": "club",
+      "laps": 3,
+      "elapsedMs": 196881,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 4586,
+      "resets": 0
+    },
+    {
+      "track": "yard-loop",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 33892,
+      "dnf": false,
+      "finishes": 2,
+      "contacts": 656,
+      "resets": 0
+    },
+    {
+      "track": "tin-can-alley",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 46610,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 846,
+      "resets": 0
+    },
+    {
+      "track": "gravel-shift",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 39380,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 2182,
+      "resets": 0
+    },
+    {
+      "track": "dockside-dash",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 44935,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 1520,
+      "resets": 0
+    },
+    {
+      "track": "container-switchback",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 52420,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 1664,
+      "resets": 0
+    },
+    {
+      "track": "salt-flat-sprint",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 52657,
+      "dnf": false,
+      "finishes": 5,
+      "contacts": 3976,
+      "resets": 0
+    },
+    {
+      "track": "furnace-bend",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 51292,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 1518,
+      "resets": 0
+    },
+    {
+      "track": "mudworks",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 45457,
+      "dnf": false,
+      "finishes": 4,
+      "contacts": 2408,
+      "resets": 0
+    },
+    {
+      "track": "crusher-circuit",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 59167,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 886,
+      "resets": 0
+    },
+    {
+      "track": "night-sort",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 53494,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 1930,
+      "resets": 0
+    },
+    {
+      "track": "redline-ridge",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 51812,
+      "dnf": false,
+      "finishes": 5,
+      "contacts": 1838,
+      "resets": 0
+    },
+    {
+      "track": "the-big-salvage",
+      "difficulty": "expert",
+      "laps": 1,
+      "elapsedMs": 63779,
+      "dnf": false,
+      "finishes": 3,
+      "contacts": 2321,
+      "resets": 0
+    }
+  ]
+}

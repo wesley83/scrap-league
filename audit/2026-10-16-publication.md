@@ -1,0 +1,23 @@
+# Scrap League public repository and Pagelove publication
+
+## SL-PUB-001 · 2026-10-16T11:24:00Z · Codex · Authorized plan
+
+User requested a public repository under `wesley83`, commit/push of the game, and deployment to `https://hire-poker-8313.onpagelove.com/` through the explicitly supplied authoring host. This authorizes the public code publication and site deployment. The owner credential is used only in memory for the pinned authoring endpoint and is never written to source, audit, Git, or public assets.
+
+Plan: prepare a standalone checkout containing this game's source, design/reference documents, tests and current prebuilt release; exclude unrelated parent-project files, dependencies, private backups and credentials. Verify GitHub identity and repository availability, create `wesley83/scrap-league` as public, commit and push. Read the target baseline, retain recoverable local copies of changed entry files, stage immutable dependencies with conditional writes and hash readback, then promote the root entry and service worker. Verify public responses and real browser startup/Workshop. Record release/file hashes, commit and deployment evidence. Existing application limitations remain explicit; hosting the game does not by itself enable shared boards or owner track publishing.
+
+Initial evidence: GitHub CLI identifies the authenticated account as `wesley83`; target repository does not yet exist. The first sandboxed CLI read could not access its configuration; an approved escalated read succeeded. Parent Git tracks no files under `games/scrap-league`, so a separately prepared repository will not commit unrelated parent history. Honcho tools remain unavailable. The Sites skill's validation/handoff guidance applies; the user's explicit Pagelove destination takes precedence over registering a different Sites host. No personal Dokploy endpoint is used.
+
+Affected files planned: deployment tooling and guide, public README/status links, publication audit/receipts, standalone Git metadata. Verification pending.
+
+## SL-PUB-002 · 2026-10-16T11:27:44.2925037Z · Codex · Publication preparation
+
+Added pinned-host deployment tooling, hidden-input credential handling, baseline backups under ignored .local/, conditional writes with ambiguous-outcome readback, public asset verification, and semantic HTML identity plus exact served-byte offline inventory. Added DEPLOYMENT.md, scoped contributor instructions and updated README/status to distinguish site hosting from disconnected shared application features. A public source snapshot will include only this game and its current distribution.
+
+Verification: two deployment identity regressions passed. The source scan found no credential-shaped literals. Live authenticated DAV preflight returned 207; root index, worker and release manifest each returned 404, and the public root returned 404. No existing game entry will be replaced. The first sandboxed unauthenticated fetch failed; the approved network-capable publisher succeeded. The browser/search fetch also could not access the initially empty site. The original game simulation/browser evidence remains valid because gameplay sources and the built distribution are unchanged. Affected files: tools/deploy-pagelove.mjs, tests/deployment.test.mjs, AGENTS.md, DEPLOYMENT.md, .gitignore, README.md, IMPLEMENTATION-STATUS.md and this audit. Repository creation/push and remote writes remain pending.
+
+## SL-PUB-003 · 2026-10-16T11:28:39.8851039Z · Codex · Standalone repository review
+
+Prepared a new standalone checkout from 110 explicit game/package files, plus its SHA-256 snapshot receipt. No parent-project history, dependencies, private backup or credential was copied. The initial branch is codex/initial-release. The existing current dist release is intentionally tracked for immediate local play; older builds remain excluded.
+
+Review: all 111 staged files were inspected by inventory, and the staged credential-pattern scan returned no matches. Default whitespace checking flagged imported CRLF/blank-EOF and an upstream Three.js indentation line; those bytes are preserved to retain the already-tested runtime hashes and upstream vendor source. A check acknowledging CRLF and excluding blank-EOF/upstream indentation passed. No gameplay change or new full simulation claim is associated with this publication preparation. Two new deployment HTML/asset identity regressions passed. Commit/push are the next authorized action; deployment remains pending.

@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-16T11:15:00Z",
+  "reviewer": "Codex through documented CUA browser controls",
+  "release": "sl-6e6641f094887e",
+  "environment": "Windows, Codex in-app Chromium browser, http://127.0.0.1:4390",
+  "method": "Normal visible UI and keyboard controls. No hidden application state, forced completion, or injected driving commands. DOM reads were read-only.",
+  "checks": [
+    {"name":"Start screen and garage", "result":"Passed at desktop and narrow widths; procedural garage car and selectable assemblies reviewed."},
+    {"name":"Race input", "result":"Keyboard acceleration and steering moved the car; checkpoint crossing increased boost charge. Six-car League start, pause/resume/leave and checkpoint reset exercised."},
+    {"name":"Create track", "result":"Built a new blank four-piece loop through the UI: start 60 m, right hairpin radius 20 m, straight 60 m, right hairpin radius 20 m. Closed route and suggested gates/grid. Validator reported 246 m and Race-ready."},
+    {"name":"Complete editor test lap", "result":"Set one test lap using the numeric control, drove with normal keyboard input and auto-accelerate, used two checkpoint resets, finished in 02:53.824. Result saved; return to editor displayed Test lap completed. No simulated finish shortcut used."},
+    {"name":"Paint and history", "result":"Painted a road gravel; Undo restored asphalt; Redo restored gravel. Draft survived reload/update."},
+    {"name":"HTML files", "result":"Export produced track-6e67e9cf.html (13,866 bytes). Import preview reported 12 pieces, 651 m, Race-ready; Import as a new copy created a separate saved draft."},
+    {"name":"Numeric editing", "result":"Inspected editable grid/spawn fields; lap count committed on native keyboard blur. The object list exposed roads, gates, six grid slots and respawns."},
+    {"name":"Narrow layout", "result":"Inspected 320 x 740 garage, Workshop and race/touch HUD. Workshop/body scroll widths were 305 px at 320 px inner width; Test drive right edge was 292.67 px. No horizontal overflow observed. Vertical scrolling remains intentional."},
+    {"name":"Offline update", "result":"Used Check offline pack then Apply update. Final document base was ./releases/sl-6e6641f094887e/. Existing draft and completed-lap badge survived."},
+    {"name":"Actual server-off play", "result":"Stopped the owned preview server and confirmed HTTP requests could no longer connect. Browser reload still loaded the final release through its installed worker; Workshop recovered the 246 m circuit and launched a real 3D test drive."},
+    {"name":"Trash UI", "result":"Move current draft to Trash is present. Restore/expiry paths were not browser-exercised; no draft deleted during this final review."},
+    {"name":"Console", "result":"Final captured warning/error log returned an empty array."},
+    {"name":"Handoff", "result":"Temporary viewport override reset. Touch and auto-accelerate settings returned to false. Existing progression preserved. Game left on start screen and marked as a deliverable. Owned game server stopped; offline pack remains installed in this browser."}
+  ],
+  "screenshots": "Start, garage, race and Workshop screenshots were visually inspected in native tool output. No standalone screenshot files are included.",
+  "observed_issue": "An earlier Workshop result announced an unlock while stored progression differed from the in-memory copy. Pure progression code already excludes Workshop awards. Added a regression proving Workshop cannot grant League progress/points, and restricted unlock announcements to League mode. Existing stored user progression was preserved; its earlier change was not attributed without evidence.",
+  "not_certified": ["physical touch device", "physical gamepad", "Firefox and Safari", "screen reader", "audio listening", "200% zoom", "sustained device frame-time budget", "human balance", "complete League cup via browser", "ghost replay comparison via browser", "all offline corruption/quota/multiclient faults", "real Pagelove provider writes or shared boards"]
+}

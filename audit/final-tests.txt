@@ -1,0 +1,30 @@
+✔ owner publication refuses wrong host and stale baseline without a write (53.4202ms)
+✔ conditional PUT and semantic readback acknowledge publication (30.8736ms)
+✔ ambiguous create reconciles without a second write (9.25ms)
+✔ casual run validator rejects extra fields, bad arithmetic, bounds and controls (1.5167ms)
+✔ all 81 builds accelerate, brake, remain finite and respect boost capacity (1140.581ms)
+Completed 36 six-car races without a forced finish.
+✔ three-lap six-car races across twelve tracks / three difficulties (155208.7159ms)
+✔ campaign commits once, DNF does not advance, standings use points and wins (1.8727ms)
+✔ daily schedule covers every 12-day block with no consecutive duplicate (0.3827ms)
+AI lap evidence [{"track":"yard-loop","time":36,"contacts":0,"resets":0,"gate":0},{"track":"tin-can-alley","time":49,"contacts":0,"resets":0,"gate":0},{"track":"gravel-shift","time":42,"contacts":0,"resets":0,"gate":0},{"track":"dockside-dash","time":47,"contacts":0,"resets":0,"gate":0},{"track":"container-switchback","time":56,"contacts":0,"resets":0,"gate":0},{"track":"salt-flat-sprint","time":56,"contacts":0,"resets":0,"gate":0},{"track":"furnace-bend","time":54,"contacts":0,"resets":0,"gate":0},{"track":"mudworks","time":48,"contacts":0,"resets":0,"gate":0},{"track":"crusher-circuit","time":63,"contacts":0,"resets":0,"gate":0},{"track":"night-sort","time":57,"contacts":0,"resets":0,"gate":0},{"track":"redline-ridge","time":54,"contacts":0,"resets":0,"gate":0},{"track":"the-big-salvage","time":68,"contacts":0,"resets":0,"gate":0}]
+✔ 12 authoritative documents round trip with all owned fields (120.7075ms)
+✔ independent rounded rectangle length and arc endpoint (0.4424ms)
+✔ all 81 unique legal builds, masses and tire tradeoffs (1.0095ms)
+✔ hostile/unknown imports are rejected before reconstruction (14.7302ms)
+✔ geometry gaps, disconnected roads, overlaps and missing respawns fail (13.959ms)
+✔ finite gate accepts forward center crossing, rejects reverse and outside (0.481ms)
+✔ swept circle catches high-speed wall and ignores parallel miss (0.6288ms)
+✔ out-of-order finish gives no lap or charge; reset preserves sequence (0.8535ms)
+✔ legal gates award once and exact crossing time rounds splits once (2.8878ms)
+✔ pause does not advance simulation, boost or timers (0.5925ms)
+✔ DNF history records elapsed time without rewriting completed lap splits (1.4374ms)
+✔ all circuits finish through legal AI controls without teleports (4656.5626ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 157106.3574
