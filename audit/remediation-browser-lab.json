@@ -1,6 +1,6 @@
 {
-  "release": "sl-9dcfecb358e003",
-  "utc": "2026-10-16T15:39:38.188Z",
+  "release": "sl-eca6f97d1308a3",
+  "utc": "2026-10-16T16:03:04.980Z",
   "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
   "viewport": {
     "width": 1280,
@@ -9,346 +9,57 @@
   "method": "Browser-executed source tests via local review controls; injected faults are labeled",
   "results": [
     {
-      "name": "Apply verified update between runs",
-      "status": "passed",
-      "detail": {
-        "before": "./releases/sl-92595a0b385359/",
-        "expected": "sl-9dcfecb358e003",
-        "after": "./releases/sl-9dcfecb358e003/",
-        "explicitSafeActivation": true
-      },
-      "utc": "2026-10-16T15:33:50.967Z"
-    },
-    {
-      "name": "Injected gamepad, large text and touch interruption",
-      "status": "passed",
-      "detail": {
-        "emulatedGamepad": true,
-        "rangeAdjustment": true,
-        "startPauseResume": true,
-        "disconnect": true,
-        "touchCancellation": true,
-        "textScale": "200% computed body font, settings dialog",
-        "scope": "Injected browser input; no physical controller or device claim"
-      },
-      "utc": "2026-10-16T15:34:23.744Z"
-    },
-    {
-      "name": "Settings, input and graphics interruption",
-      "status": "passed",
-      "detail": {
-        "pause": true,
-        "settingsReturnedToPause": true,
-        "contextRebuilt": true,
-        "explicitResume": true,
-        "focus": true
-      },
-      "utc": "2026-10-16T15:36:07.423Z"
-    },
-    {
-      "name": "Scene and renderer budgets",
+      "name": "Garage comparison, equip and ordinary-input test",
       "status": "passed",
       "detail": {
         "rows": [
           {
-            "track": "yard-loop",
-            "coldRenderMs": 154.40000000596046,
-            "calls": 54,
-            "triangles": 11740
+            "id": "mixed",
+            "description": "Predictable grip across mixed surfaces.",
+            "asphalt": 1,
+            "gravel": 0.88,
+            "mud": 0.66
           },
           {
-            "track": "tin-can-alley",
-            "coldRenderMs": 111.09999999403954,
-            "calls": 54,
-            "triangles": 12404
+            "id": "rally",
+            "description": "Better loose-surface control, less asphalt peak grip.",
+            "asphalt": 0.92,
+            "gravel": 1.02,
+            "mud": 0.82
           },
           {
-            "track": "gravel-shift",
-            "coldRenderMs": 83.90000000596046,
-            "calls": 55,
-            "triangles": 12852
-          },
-          {
-            "track": "dockside-dash",
-            "coldRenderMs": 67.69999998807907,
-            "calls": 58,
-            "triangles": 13384
-          },
-          {
-            "track": "container-switchback",
-            "coldRenderMs": 85.5,
-            "calls": 56,
-            "triangles": 12740
-          },
-          {
-            "track": "salt-flat-sprint",
-            "coldRenderMs": 72.2000000178814,
-            "calls": 58,
-            "triangles": 16208
-          },
-          {
-            "track": "furnace-bend",
-            "coldRenderMs": 74,
-            "calls": 55,
-            "triangles": 11956
-          },
-          {
-            "track": "mudworks",
-            "coldRenderMs": 63.79999998211861,
-            "calls": 56,
-            "triangles": 14656
-          },
-          {
-            "track": "crusher-circuit",
-            "coldRenderMs": 91.2999999821186,
-            "calls": 56,
-            "triangles": 13728
-          },
-          {
-            "track": "night-sort",
-            "coldRenderMs": 81.40000000596046,
-            "calls": 55,
-            "triangles": 15024
-          },
-          {
-            "track": "redline-ridge",
-            "coldRenderMs": 80.19999998807907,
-            "calls": 57,
-            "triangles": 15708
-          },
-          {
-            "track": "the-big-salvage",
-            "coldRenderMs": 84.80000001192093,
-            "calls": 58,
-            "triangles": 16020
+            "id": "road",
+            "description": "The strongest paved-road grip.",
+            "asphalt": 1.1,
+            "gravel": 0.72,
+            "mud": 0.48
           }
         ],
-        "scenes": [
-          {
-            "title": "THE GATES ARE OPEN.",
-            "held": true,
-            "calls": 33
-          },
-          {
-            "title": "TAKE IT TO THE DOCKS.",
-            "held": true,
-            "calls": 35
-          },
-          {
-            "title": "KEEP THE FURNACE LIT.",
-            "held": true,
-            "calls": 34
-          },
-          {
-            "title": "ONE LAST NIGHT SHIFT.",
-            "held": true,
-            "calls": 34
-          },
-          {
-            "title": "THE YARD IS YOURS.",
-            "held": true,
-            "calls": 33
-          }
-        ],
-        "allBuilds": 81,
-        "gpuWithinBudget": true,
-        "scope": "Real WebGL rendering with source modules; scene fixture does not grant campaign completion"
+        "selected": "rally",
+        "speedKmh": 18,
+        "compared": true,
+        "equipped": true,
+        "driven": true,
+        "returnPreserved": true,
+        "scope": "Workshop test garage; all parts are legitimately available. Bench handling measurements are a separate receipt."
       },
-      "utc": "2026-10-16T15:36:47.374Z"
+      "utc": "2026-10-16T16:02:33.534Z"
     },
     {
-      "name": "Offline corruption and repair",
+      "name": "Browser invitation success, cancellation and fallbacks",
       "status": "passed",
       "detail": {
-        "missingEntryRefused": true,
-        "repairVerified": true
+        "success": "shared",
+        "cancelled": "cancelled",
+        "clipboard": "copied",
+        "fallback": "manual",
+        "date": "2026-10-16",
+        "url": "https://hire-poker-8313.onpagelove.com/#daily=2026-10-16",
+        "cancellationSideEffects": 0,
+        "statePreserved": true,
+        "scope": "Production share function executed by a browser fixture with injected navigator APIs; no OS share sheet or external message sent."
       },
-      "utc": "2026-10-16T15:37:19.536Z"
-    },
-    {
-      "name": "Offline reload with network unavailable",
-      "status": "passed",
-      "detail": {
-        "network503": true,
-        "offlineGame": true,
-        "workshop": true,
-        "scope": "Existing browser process, newly loaded document"
-      },
-      "utc": "2026-10-16T15:37:56.440Z"
-    },
-    {
-      "name": "Storage abort, reopen and backup",
-      "status": "passed",
-      "detail": {
-        "database": "Real browser IndexedDB; isolated disposable database",
-        "abort": true,
-        "conflict": true,
-        "reopen": true,
-        "backup": true
-      },
-      "utc": "2026-10-16T15:38:08.403Z"
-    },
-    {
-      "name": "Audio signal and voice budget",
-      "status": "passed",
-      "detail": [
-        {
-          "scene": "yard",
-          "voices": 24,
-          "peak": 0.0699876993894577,
-          "rms": 0.00914010834319481
-        },
-        {
-          "scene": "docks",
-          "voices": 24,
-          "peak": 0.07079418748617172,
-          "rms": 0.009135273111455478
-        },
-        {
-          "scene": "foundry",
-          "voices": 24,
-          "peak": 0.06938961148262024,
-          "rms": 0.009108347198441894
-        },
-        {
-          "scene": "final",
-          "voices": 24,
-          "peak": 0.07215208560228348,
-          "rms": 0.009116636681027048
-        }
-      ],
-      "utc": "2026-10-16T15:38:15.099Z"
-    },
-    {
-      "name": "Startup import failure fallback",
-      "status": "passed",
-      "detail": {
-        "failure": "The yard could not open. Failed to fetch dynamically imported module: http://127.0.0.1:4392/startup-fault/releases/sl-9dcfecb358e003/main.js Your saved progress and drafts are kept.",
-        "reloadVisible": true
-      },
-      "utc": "2026-10-16T15:38:26.158Z"
-    },
-    {
-      "name": "Native route client and local include fallback",
-      "status": "passed",
-      "detail": {
-        "rows": [
-          {
-            "path": "/track/yard-loop",
-            "stage": "view-start",
-            "dialog": "Yard Loop",
-            "sourceTrack": "51000000-0000-4000-8000-000000000001"
-          },
-          {
-            "path": "/editor/yard-loop",
-            "stage": "view-workshop",
-            "dialog": "",
-            "sourceTrack": "51000000-0000-4000-8000-000000000001"
-          },
-          {
-            "path": "/track/unknown-fixture",
-            "stage": "view-start",
-            "dialog": "Choose a circuit",
-            "sourceTrack": null
-          },
-          {
-            "path": "/editor/",
-            "stage": "view-start",
-            "dialog": "Choose a circuit",
-            "sourceTrack": null
-          },
-          {
-            "path": "/track/%3Cscript%3E",
-            "stage": "view-start",
-            "dialog": "Choose a circuit",
-            "sourceTrack": null
-          }
-        ],
-        "scope": "Local native-include emulation with production wrapper and client modules; actual provider primitive evidence is recorded separately."
-      },
-      "utc": "2026-10-16T15:38:52.821Z"
-    },
-    {
-      "name": "All official circuits through Workshop UI",
-      "status": "passed",
-      "detail": {
-        "rows": [
-          {
-            "slug": "yard-loop",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "tin-can-alley",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "gravel-shift",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "dockside-dash",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "container-switchback",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "salt-flat-sprint",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "furnace-bend",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "mudworks",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "crusher-circuit",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "night-sort",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "redline-ridge",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          },
-          {
-            "slug": "the-big-salvage",
-            "uiCopy": true,
-            "numericEditUndo": true,
-            "canonicalRoundTrip": true
-          }
-        ],
-        "scope": "Current official copies opened, edited, undone and serialized through actual UI. Original official authoring was CLI; that history is not rewritten."
-      },
-      "utc": "2026-10-16T15:39:01.777Z"
+      "utc": "2026-10-16T16:02:54.946Z"
     }
   ]
 }

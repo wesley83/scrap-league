@@ -1,0 +1,125 @@
+{
+  "utc": "2026-10-16T16:01:35.610Z",
+  "before": "sl-9dcfecb358e003",
+  "after": "sl-eca6f97d1308a3",
+  "equal": [
+    {
+      "name": "ai-profile.js",
+      "beforeSha256": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
+      "afterSha256": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029"
+    },
+    {
+      "name": "audio.js",
+      "beforeSha256": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
+      "afterSha256": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e"
+    },
+    {
+      "name": "bootstrap.js",
+      "beforeSha256": "d96f09f4dbdb6a7e3f191b3e3d788c91469696ea07c06f602ac1d13bb6005cf7",
+      "afterSha256": "d96f09f4dbdb6a7e3f191b3e3d788c91469696ea07c06f602ac1d13bb6005cf7"
+    },
+    {
+      "name": "collision.js",
+      "beforeSha256": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
+      "afterSha256": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6"
+    },
+    {
+      "name": "content.json",
+      "beforeSha256": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c",
+      "afterSha256": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c"
+    },
+    {
+      "name": "continuation.js",
+      "beforeSha256": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
+      "afterSha256": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88"
+    },
+    {
+      "name": "editor-commands.js",
+      "beforeSha256": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
+      "afterSha256": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694"
+    },
+    {
+      "name": "main.js",
+      "beforeSha256": "83b729007cddf5a523b32b9af4595ef055e83bbdac012d001e3ab469aeeecc2a",
+      "afterSha256": "83b729007cddf5a523b32b9af4595ef055e83bbdac012d001e3ab469aeeecc2a"
+    },
+    {
+      "name": "model.js",
+      "beforeSha256": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
+      "afterSha256": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1"
+    },
+    {
+      "name": "offline.js",
+      "beforeSha256": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "afterSha256": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98"
+    },
+    {
+      "name": "pagelove.js",
+      "beforeSha256": "fef6f93535bcf907489973dcc934852eeb0074a8393a9d91a4717f99819f46fd",
+      "afterSha256": "fef6f93535bcf907489973dcc934852eeb0074a8393a9d91a4717f99819f46fd"
+    },
+    {
+      "name": "preferences.js",
+      "beforeSha256": "657223162a6414a825c7103cb05e68aa5f0540e268941511c7720608b8b86efc",
+      "afterSha256": "657223162a6414a825c7103cb05e68aa5f0540e268941511c7720608b8b86efc"
+    },
+    {
+      "name": "publication.js",
+      "beforeSha256": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193",
+      "afterSha256": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193"
+    },
+    {
+      "name": "renderer.js",
+      "beforeSha256": "dbafabc75b30e25977dfd5ca16dd3f3c808ce6089aad0f7fb2a37255ef294c2c",
+      "afterSha256": "dbafabc75b30e25977dfd5ca16dd3f3c808ce6089aad0f7fb2a37255ef294c2c"
+    },
+    {
+      "name": "scenes.js",
+      "beforeSha256": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f",
+      "afterSha256": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f"
+    },
+    {
+      "name": "sharing.js",
+      "beforeSha256": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084",
+      "afterSha256": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084"
+    },
+    {
+      "name": "simulation.js",
+      "beforeSha256": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d",
+      "afterSha256": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d"
+    },
+    {
+      "name": "storage.js",
+      "beforeSha256": "2b9e99d37fd313d27b4df74d2b14ed31e225f3dc29b87122a08e7c5b5ce500dd",
+      "afterSha256": "2b9e99d37fd313d27b4df74d2b14ed31e225f3dc29b87122a08e7c5b5ce500dd"
+    },
+    {
+      "name": "style.css",
+      "beforeSha256": "73c2beba91c320753d2d3afdf37fd1a1f15d5f95bcea31495727400cfeca52c4",
+      "afterSha256": "73c2beba91c320753d2d3afdf37fd1a1f15d5f95bcea31495727400cfeca52c4"
+    },
+    {
+      "name": "track.js",
+      "beforeSha256": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
+      "afterSha256": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c"
+    },
+    {
+      "name": "workshop.js",
+      "beforeSha256": "67f29dc16baa7c0e4029236cfb886f5ca6bf781a9df1fac7b1ed08ce6aa0f794",
+      "afterSha256": "67f29dc16baa7c0e4029236cfb886f5ca6bf781a9df1fac7b1ed08ce6aa0f794"
+    }
+  ],
+  "differences": [
+    {
+      "name": "boards.js",
+      "beforeSha256": "ec14c11b55ab7475f19ae416effda0dd09dbbfff172fe542122cde702304388f",
+      "afterSha256": "26d7d836307b4db1c166a716fb99f7363054c349f1bed6eaa20f588a29689c8c"
+    },
+    {
+      "name": "builds.js",
+      "beforeSha256": "a37fa9a9f257273fd48594244b62c9971c7e0ae6242629f5d642c2ae441dab06",
+      "afterSha256": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f"
+    }
+  ],
+  "note": "Browser input, editor, storage, scenes, audio, simulation, rendering and content bytes are identical. Only builds.js comparisonKey and boards.js boardKey changed to group captured physics revisions correctly, covered by the 82-test hosted suite. New review fixtures/documentation do not alter these runtime bytes."
+}

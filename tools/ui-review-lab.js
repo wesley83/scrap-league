@@ -1,5 +1,210 @@
 export function uiChecks({ frame, prefix, wait, until, check }) {
   return {
+    "Garage comparison, equip and ordinary-input test": async () => {
+      const win = frame.contentWindow,
+        doc = win.document;
+      await until(() => doc.querySelector("#loading")?.hidden);
+      doc.querySelector("#home").click();
+      await until(() => doc.querySelector("#stage").className === "view-start");
+      doc.querySelector("#workshop-button").click();
+      await until(() => doc.querySelector("#work-garage"));
+      doc.querySelector("#work-garage").click();
+      await until(
+        () => doc.querySelector("#stage").className === "view-garage",
+      );
+      const content = await (await fetch(prefix + "content.json")).json();
+      const tires = content.parts.filter((p) => p.slot === "tires");
+      const rows = [];
+      for (const part of tires) {
+        const select = doc.querySelector('[data-slot="tires"]');
+        select.value = part.id;
+        select.dispatchEvent(new win.Event("change", { bubbles: true }));
+        const text = doc.querySelector("#part-slots").textContent;
+        check(
+          text.includes(part.description),
+          "Visible part description differs from canonical definition",
+        );
+        check(
+          doc
+            .querySelector("#garage-stats")
+            .textContent.includes(part.asphalt.toFixed(2)),
+          "Visible asphalt grip differs from measured specification",
+        );
+        rows.push({
+          id: part.id,
+          description: part.description,
+          asphalt: part.asphalt,
+          gravel: part.gravel,
+          mud: part.mud,
+        });
+      }
+      const alternate = tires.find((p) => p.id === "rally");
+      const equip = doc.querySelector('[data-slot="tires"]');
+      equip.value = alternate.id;
+      equip.dispatchEvent(new win.Event("change", { bubbles: true }));
+      const selected = doc.querySelector('[data-slot="tires"]').value;
+      doc.querySelector("#garage-back").click();
+      await until(
+        () => doc.querySelector("#stage").className === "view-workshop",
+      );
+      doc.querySelector("#work-garage").click();
+      check(
+        doc.querySelector('[data-slot="tires"]').value === selected,
+        "Equipped test build was lost",
+      );
+      doc.querySelector("#garage-test").click();
+      await until(() => doc.querySelector("#stage").className === "view-race");
+      await until(() => doc.querySelector("#countdown").textContent === "");
+      win.dispatchEvent(
+        new win.KeyboardEvent("keydown", {
+          code: "ArrowUp",
+          key: "ArrowUp",
+          bubbles: true,
+        }),
+      );
+      await wait(1000);
+      win.dispatchEvent(
+        new win.KeyboardEvent("keyup", {
+          code: "ArrowUp",
+          key: "ArrowUp",
+          bubbles: true,
+        }),
+      );
+      const speed = +doc.querySelector("#hud-speed").textContent;
+      check(speed > 0, "Ordinary input did not drive equipped build");
+      doc.querySelector("#pause-button").click();
+      [...doc.querySelectorAll("#modal-actions button")]
+        .find((b) => b.textContent === "Return to editor")
+        .click();
+      await until(
+        () => doc.querySelector("#stage").className === "view-garage",
+      );
+      check(
+        doc.querySelector('[data-slot="tires"]').value === selected,
+        "Test return lost selected part",
+      );
+      doc.querySelector("#garage-back").click();
+      await until(
+        () => doc.querySelector("#stage").className === "view-workshop",
+      );
+      doc.querySelector("#home").click();
+      return {
+        rows,
+        selected,
+        speedKmh: speed,
+        compared: true,
+        equipped: true,
+        driven: true,
+        returnPreserved: true,
+        scope:
+          "Workshop test garage; all parts are legitimately available. Bench handling measurements are a separate receipt.",
+      };
+    },
+    "Browser invitation success, cancellation and fallbacks": async () => {
+      const { resultInvitation, shareInvitation } = await import(
+        prefix + "sharing.js"
+      );
+      const doc = frame.contentDocument;
+      await until(() => doc.querySelector("#loading")?.hidden);
+      const state = doc.querySelector("#stage").className;
+      const result = Object.freeze({
+        id: "review-share",
+        trackName: "Yard Loop",
+        mode: "daily",
+        laps: 3,
+        elapsedMs: 123456,
+        classification: [{ id: "player" }],
+      });
+      const invitation = resultInvitation(result, {
+        date: "2026-10-16",
+        slug: "yard-loop",
+      });
+      let sent,
+        copied,
+        manual,
+        callbackCount = 0;
+      const success = await shareInvitation(invitation, {
+        navigator: {
+          share: async (payload) => {
+            sent = payload;
+          },
+        },
+      });
+      const cancelled = await shareInvitation(invitation, {
+        navigator: {
+          share: async () => {
+            throw new DOMException("User cancelled", "AbortError");
+          },
+          clipboard: {
+            writeText: async () => {
+              callbackCount++;
+            },
+          },
+        },
+        manual: () => {
+          callbackCount++;
+        },
+      });
+      check(
+        cancelled === "cancelled" && callbackCount === 0,
+        "Cancel fell through to another transfer",
+      );
+      const clipboard = await shareInvitation(invitation, {
+        navigator: {
+          share: async () => {
+            throw new DOMException("Denied", "NotAllowedError");
+          },
+          clipboard: {
+            writeText: async (text) => {
+              copied = text;
+            },
+          },
+        },
+      });
+      const fallback = await shareInvitation(invitation, {
+        navigator: {
+          clipboard: {
+            writeText: async () => {
+              throw new DOMException("Denied", "NotAllowedError");
+            },
+          },
+        },
+        manual: (text) => {
+          manual = text;
+        },
+      });
+      check(
+        success === "shared" &&
+          sent.text === invitation.text &&
+          sent.url === invitation.url,
+        "Share payload lost text or link",
+      );
+      check(
+        clipboard === "copied" && copied === invitation.complete,
+        "Clipboard payload incomplete",
+      );
+      check(
+        fallback === "manual" && manual === invitation.complete,
+        "Manual fallback incomplete",
+      );
+      check(
+        doc.querySelector("#stage").className === state &&
+          result.elapsedMs === 123456,
+        "Sharing changed result or UI state",
+      );
+      return {
+        success,
+        cancelled,
+        clipboard,
+        fallback,
+        date: invitation.date,
+        url: invitation.url,
+        cancellationSideEffects: callbackCount,
+        statePreserved: true,
+        scope:
+          "Production share function executed by a browser fixture with injected navigator APIs; no OS share sheet or external message sent.",
+      };
+    },
     "Injected gamepad, large text and touch interruption": async () => {
       const win = frame.contentWindow,
         doc = win.document;

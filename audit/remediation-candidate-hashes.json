@@ -1,7 +1,7 @@
 {
-  "utc": "2026-10-16T15:49:48.541Z",
+  "utc": "2026-10-16T16:03:27.894Z",
   "release": "sl-eca6f97d1308a3",
-  "sourceHash": "d23025c9b2b7b590282f7b85ffb24064617ae41763cf71779371264d3d71c533",
+  "sourceHash": "30855407432170502fccab53b2cfe925e992f4765665a73e8769017216e67b09",
   "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
   "files": {
     ".gitattributes": "0e6f8afa2d9fab1c42c4ebac64337195e479a3a5967c2e105acab235b432da9c",
@@ -14,7 +14,7 @@
     "CONTENT-CATALOG.md": "5e0da789d20c2bbe272e66650e3ec9c39565178ea166683f4b6a4ca5926355f7",
     "DEPLOYMENT.md": "579fc7ce7d4700fc8143457824d53bfd8eae8c123c59b80ae5300486994582ea",
     "GAME-DESIGN.md": "44d8be6fe62b0fd2f9d5e8be5ec81c19a133979f4a998dcb85e23ecaabd54e38",
-    "IMPLEMENTATION-STATUS.md": "694f62c1938d68f1aa339f53a0480186775a51fe2761fb5e560e5325d1184a62",
+    "IMPLEMENTATION-STATUS.md": "a74165fe50aab43f99e3d5ea2ff665e93bf715484a8f748bf971ee0e9679aa5b",
     "PLAY.md": "4baad8aec9aeb7a992a8503c2363331c0650f8452507459a67ec39b8c015fcc5",
     "README.md": "cfd549d9a5d4a13f77451f5f1d776380c3b8e84d10c237908f02b79781bd7ef1",
     "START-GAME.cmd": "46f147579368d2f7873cff68afb343fd7c200ff9ecce127a30cbeea0608e1c5a",
@@ -141,7 +141,7 @@
     "tools/review-server.mjs": "34d85f6cde205a628ae931581f6323694806310924eda6eba9709e48ba8857c4",
     "tools/rollback.mjs": "16f6e3dba8fb28f458424aca6638b99274cbfb38ea157b42fd12c3c662087476",
     "tools/serve.mjs": "defebcf250922a64ab7f909b621a6f24a41086710d90266b7e4fb86d4d8980f0",
-    "tools/ui-review-lab.js": "425cbd8aebae58641984097b628361c7ab5affcdd31762c8a8151bca00877930",
+    "tools/ui-review-lab.js": "7793f3834e90b05355db917f71d0e8b8c9fcc5f527b7b0269543fc020470ce8b",
     "tools/worker-runtime.js": "8368603ccd9ae2bd989c3dcf291cdb78176695bdca75137d5f01a71293ad5a73"
   }
 }

@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "utc": "2026-10-16T15:49:48.538Z",
+  "utc": "2026-10-16T16:03:27.891Z",
   "release": "sl-eca6f97d1308a3",
-  "sourceHash": "d23025c9b2b7b590282f7b85ffb24064617ae41763cf71779371264d3d71c533",
+  "sourceHash": "30855407432170502fccab53b2cfe925e992f4765665a73e8769017216e67b09",
   "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
   "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
   "status": "not-accepted",
+  "evidenceReuse": {
+    "path": "audit/remediation-browser-evidence-reuse.json",
+    "sha256": "e4142468888b5f742999ae87600ac7c9ec7ab9f44dafe907df38762159bf32d9",
+    "note": "Retained eleven-flow browser and isolated performance evidence uses sl-9dcfecb358e003. The only later runtime differences are captured-rules grouping in builds.js and boards.js; 21 other compared runtime/content/style files are byte-identical. All 82 tests pass on e908b82; current release update and garage/share fixtures are separately retained."
+  },
   "requirements": [
     {
       "id": "J01",
@@ -14,8 +19,8 @@
       "note": "Prior ordinary-drive browser evidence exists, but the full fresh-player finish journey has not been repeated on this candidate.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/browser-game-review.json",
@@ -42,8 +47,8 @@
       "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
@@ -58,8 +63,8 @@
       "note": "Three continuous legal-input twelve-event campaigns plus current held scene rendering fixtures pass; no forced finish substitutes for campaign completion.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
@@ -74,12 +79,12 @@
     {
       "id": "J05",
       "stage": "local",
-      "status": "partial",
-      "note": "All 81 builds and three surfaces measured. Complete compare/equip/test UI journey and matching visible descriptions remain to verify.",
+      "status": "passed",
+      "note": "Browser compared canonical tire tradeoffs and displayed grip, equipped Rally in the unrestricted Workshop garage, accelerated using ordinary keyboard input, and preserved the chosen part on return. All 81 builds and three surfaces have independent bench measurements.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
         },
         {
           "path": "audit/remediation-handling.json",
@@ -94,8 +99,8 @@
       "note": "Independent timing arithmetic and best/ghost transactions pass; complete compatible-ghost improvement UI journey remains to verify.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -118,8 +123,8 @@
       "note": "Earlier UI-built loop completed a normal lap. Current editor commands, topology and official-copy editing pass; full current pointer/keyboard/emulated-touch creator journey remains incomplete.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/browser-game-review.json",
@@ -138,8 +143,8 @@
       "note": "View/selection restoration, history, save-failure navigation and stored-revision tests pass. Complete current five-AI test/return/undo/reload UI sequence remains incomplete.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -150,8 +155,8 @@
       "note": "Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -174,8 +179,8 @@
       "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -186,8 +191,8 @@
       "note": "Available browser control cannot restart the browser process. Offline new-document load and isolated worker-runtime restart passed but are narrower than the adopted cold-relaunch outcome.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-browser-lab-first-pass.json",
@@ -199,11 +204,11 @@
       "id": "J14",
       "stage": "local",
       "status": "passed",
-      "note": "Current browser naturally discovered and explicitly activated sl-92595a0b385359 to sl-9dcfecb358e003 between runs.",
+      "note": "The browser naturally discovered and explicitly activated sl-9dcfecb358e003 to current sl-eca6f97d1308a3 between runs, preserving the game state and verified pack.",
       "artifacts": [
         {
-          "path": "audit/remediation-browser-final.json",
-          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+          "path": "audit/remediation-browser-update-eca6.json",
+          "sha256": "b27b2a0fbde191d3667bc2095212f458a2059daf7692ef2a2a45c4f6dd4f295f"
         }
       ]
     },
@@ -214,8 +219,8 @@
       "note": "Durable two-client timeout-after-acceptance reconciliation passes in fixtures. Actual public endpoint remains disabled pending provider validation/readiness.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -234,12 +239,16 @@
     {
       "id": "J17",
       "stage": "local",
-      "status": "partial",
-      "note": "Complete payload/cancel/failure fixtures and independently decoded scorecard pass. Real browser native-share permission/cancel surfaces have not all been exercised.",
+      "status": "passed",
+      "note": "Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
+        },
+        {
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
         },
         {
           "path": "audit/remediation-scorecard-verification.json",
@@ -270,8 +279,8 @@
       "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-browser-lab-first-pass.json",
@@ -286,8 +295,8 @@
       "note": "Result and best transaction aborts preserve rewards/best/ghost atomically; same-ID retries retain one consistent record.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -298,8 +307,8 @@
       "note": "Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-boundary-tests.txt",
@@ -318,8 +327,8 @@
           "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
         },
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -330,8 +339,8 @@
       "note": "Actual public application validation endpoint has not been enabled or verified. Client checks are not a server validation boundary.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -342,8 +351,8 @@
       "note": "Client exact-expiry filtering passed. Provider cleanup policy and separate physical storage inspection remain unverified.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -371,7 +380,7 @@
       "id": "P08",
       "stage": "staged",
       "status": "blocked",
-      "note": "No documented supported policy activation/readiness procedure was established. Source ETag, OPTIONS and warmup are not enforcement evidence.",
+      "note": "The user confirmed no supported provider policy activation/readiness procedure is available. Source ETag, OPTIONS and warmup cannot establish enforcement readiness; public boards remain disabled.",
       "artifacts": [
         {
           "path": "audit/remediation-provider-probe.json",
@@ -386,8 +395,8 @@
       "note": "Scoped conditional release/rollback fixtures preserve user documents and retained release dependencies; native resources do not duplicate executable policy schemas.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -398,8 +407,8 @@
       "note": "Independent model/geometry/collision/handling/recovery tests and current browser input interruption contracts pass.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-browser-final.json",
@@ -414,8 +423,8 @@
       "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-browser-ui-first-run.json",
@@ -430,8 +439,8 @@
       "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
@@ -450,8 +459,8 @@
       "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -466,8 +475,8 @@
           "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
         },
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -478,8 +487,8 @@
       "note": "Not all required rows pass; no current production promotion or final public readback.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -490,8 +499,8 @@
       "note": "Both posters decode and exact initial OG/Twitter metadata validates. Public HTTP readback remains required by C06 after promotion.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -502,8 +511,8 @@
       "note": "ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         },
         {
           "path": "audit/remediation-native-and-assets.json",
@@ -522,8 +531,8 @@
       "note": "Independent asset contract verifies source briefs, image dimensions, licensed fonts, vendor notices and required exports.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -531,19 +540,19 @@
       "id": "C04",
       "stage": "staged",
       "status": "passed",
-      "note": "Hosted regression suite passed; exact candidate job rejected J01 after successful identity/build checks; default-branch rules require both checks including for administrators.",
+      "note": "Hosted commit e908b82 passed all 82 regression tests and rejected incomplete J01 after successful build/identity verification. Both checks are required on the default branch, including for administrators.",
       "artifacts": [
         {
           "path": "audit/remediation-required-checks.json",
           "sha256": "27b7934a8ef0a3e360aa8fca365d71aec8a055410ca52b3f827dfcae6608761f"
         },
         {
-          "path": "audit/remediation-hosted-ci.json",
-          "sha256": "859b666a79ae96c1149e40c8ade33900b7541200eea2d0074ee9017d9ac2e633"
+          "path": "audit/remediation-hosted-ci-e908b82.json",
+          "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
         },
         {
-          "path": "audit/remediation-hosted-refusal.txt",
-          "sha256": "b5ca7ea644759b291a6b8f621f861eff562e7b2d0aab43530b2c48d891f5f261"
+          "path": "audit/remediation-hosted-refusal-e908b82.txt",
+          "sha256": "20a29bc11b9459340915893b2828f9e9048f3ad5970998ee2c0e4374f9b47cfa"
         }
       ]
     },
@@ -554,8 +563,8 @@
       "note": "Package/deployment share exact source-input identity and stage gates. Missing asset, stale source, missing evidence and failed provider acceptance are refused in isolated copies.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -573,8 +582,8 @@
       "note": "Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -585,8 +594,8 @@
       "note": "Conditional A-to-B-to-A root restoration reconciles ambiguity; stale/tampered plans fail before writing; unrelated records and immutable dependencies preserved.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
         }
       ]
     },
@@ -614,17 +623,17 @@
       "id": "C10",
       "stage": "local",
       "status": "partial",
-      "note": "Prior exact committed runtime passed 79 local/hosted tests. New midnight/queue fixtures passed locally; the added captured-rules comparison regression awaits hosted execution. Required end-to-end/provider rows remain incomplete.",
+      "note": "All 82 automated tests passed on hosted commit e908b82. Later changes affect review fixtures and documentation only; required end-to-end/provider rows do not all pass, so release remains refused.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-tests-e908b82.txt",
+          "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
+        },
+        {
+          "path": "audit/remediation-hosted-ci-e908b82.json",
+          "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
         }
       ]
     }
-  ],
-  "evidenceReuse": {
-    "browserRelease": "sl-9dcfecb358e003",
-    "subsequentRuntimeChange": "Only boardKey/comparisonKey captured physics revision grouping changed; no renderer, simulation, handling, input, editor, storage, scenes or audio behavior changed. The new ranking regression awaits hosted execution."
-  }
+  ]
 }
