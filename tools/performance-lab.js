@@ -29,6 +29,7 @@ export async function measurePerformance(
     work = [],
     simulations = [],
     renders = [],
+    sceneLoads = [],
     heaps = [],
     budgets = { calls: 0, triangles: 0 },
     start = performance.now();
@@ -40,6 +41,7 @@ export async function measurePerformance(
     accumulator = 0,
     cycles = 0;
   const load = (index) => {
+    const loadStart = performance.now();
     const track = compile(content.tracks[index % 12].track);
     race = {
       id: "performance-fixture",
@@ -65,6 +67,7 @@ export async function measurePerformance(
     world.load(track);
     world.setCars(race.cars);
     world.render(race, "race", settings, 0);
+    sceneLoads.push({ index, durationMs: performance.now() - loadStart });
     accumulator = 0;
   };
   try {
@@ -96,7 +99,7 @@ export async function measurePerformance(
             requestAnimationFrame(frame);
             return;
           }
-          if (frames > 20 && gap < 1000) samples.push(gap);
+          if (frames > 20 && gap > 0) samples.push(gap);
           const began = performance.now();
           accumulator += Math.min(0.1, gap / 1000);
           let steps = 0;
@@ -140,6 +143,10 @@ export async function measurePerformance(
       hiddenMs: hidden,
       frames,
       sceneCycles: cycles,
+      longestFrameMs: samples.reduce((maximum, ms) => Math.max(maximum, ms), 0),
+      framesOver50Ms: samples.filter((ms) => ms > 50).length,
+      framesOver1000Ms: samples.filter((ms) => ms > 1000).length,
+      sceneLoads,
       viewport: { width: canvas.clientWidth, height: canvas.clientHeight },
       visibleCanvas: (() => {
         const r = canvas.getBoundingClientRect();

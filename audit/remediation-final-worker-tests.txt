@@ -1,0 +1,17 @@
+✔ worker checks actual cached bytes, repairs corruption, and survives runtime restart (75.3278ms)
+✔ failed B installation preserves complete A; missing, corrupt and quota-failed B never report readiness (19.0861ms)
+✔ activation rejects stale acknowledgement, cancellation, expired request and newly opened window (28.2853ms)
+✔ duplicate activation clicks do not skip waiting twice; unsafe other tab blocks update (24.1408ms)
+✔ rollback to retained A restores A resources with server absent and does not touch application storage (14.4773ms)
+✔ new worker verifies retained release bytes and refuses corrupt or inventory-less offline responses (15.9053ms)
+✔ retirement keeps current, previous, open-client and legacy packs; a nonresponding client vetoes cleanup (1221.5573ms)
+✔ legacy client without update acknowledgement blocks explicit activation safely (44.1118ms)
+✔ release gate refuses missing asset, stale source, omitted evidence and failed provider gate (3402.8223ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3920.7219

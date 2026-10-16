@@ -6,6 +6,7 @@ export function boardKey(run) {
   return comparisonKey({
     mode: run.mode,
     trackRevision: run.trackRevision,
+    rulesRevision: run.rulesRevision,
     buildRevision: run.buildRevision,
     laps: run.laps,
     assist: run.assist,

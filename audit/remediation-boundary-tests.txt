@@ -1,0 +1,15 @@
+✔ strict run boundary rejects missing identifiers, unsupported content and mismatched captured daily (5.1428ms)
+✔ retention uses exact expiry and preserves active interleaved records and principal-time ties (3.48ms)
+✔ two outbox clients reconcile timeout-after-acceptance once with original id (42.3376ms)
+✔ failed refresh retains cached standings and removes expired rows offline (5.6247ms)
+✔ unconfigured board makes no network request and terminal history does not fill pending capacity (13.4563ms)
+✔ daily captured before UTC midnight survives finish, reopen and upload two days later (8.3302ms)
+✔ pending capacity preserves all queued identities and a permanent rejection is not retried (56.8169ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1297.7521

@@ -1,8 +1,8 @@
 {
-  "utc": "2026-10-16T15:24:07.142Z",
-  "release": "sl-92595a0b385359",
-  "sourceHash": "486c7fe9e6d5ce386d48ed1a4944eef8bdb417c8fdc5688457ca4f5f1d05f23d",
-  "outputHash": "241474c261a3fab1f92d35e8b66d2c2b71a667429c2165c3e10860366562f265",
+  "utc": "2026-10-16T15:49:48.541Z",
+  "release": "sl-eca6f97d1308a3",
+  "sourceHash": "d23025c9b2b7b590282f7b85ffb24064617ae41763cf71779371264d3d71c533",
+  "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
   "files": {
     ".gitattributes": "0e6f8afa2d9fab1c42c4ebac64337195e479a3a5967c2e105acab235b432da9c",
     ".github/workflows/release-checks.yml": "1415cce92d6c24517edc09edd815cdd00453cbd3c6cf285a01388b0833fcb14b",
@@ -21,9 +21,9 @@
     "TRACK-WORKSHOP.md": "bc1de8ae87ce10be62a31b7d76e107fdd49126892cda1a5fa9c7aaf4b74cb688",
     "app/ai-profile.js": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
     "app/audio.js": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
-    "app/boards.js": "ec14c11b55ab7475f19ae416effda0dd09dbbfff172fe542122cde702304388f",
+    "app/boards.js": "26d7d836307b4db1c166a716fb99f7363054c349f1bed6eaa20f588a29689c8c",
     "app/bootstrap.js": "d96f09f4dbdb6a7e3f191b3e3d788c91469696ea07c06f602ac1d13bb6005cf7",
-    "app/builds.js": "a37fa9a9f257273fd48594244b62c9971c7e0ae6242629f5d642c2ae441dab06",
+    "app/builds.js": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f",
     "app/collision.js": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
     "app/continuation.js": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
     "app/editor-commands.js": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
@@ -110,7 +110,7 @@
     "review-design.mjs": "c7287e3a314a5707b57bc9c9ab7edb194a8591ae29a4df35277b657a552d41ea",
     "tests/assets.test.mjs": "4d33db815e19f806bf4e0e3a28ca4c9cbfb3a56b26d1e63503587cbc2023e703",
     "tests/authoring.test.mjs": "b79269fa00c75fa5d40e14955e68004b4350b728669fb48989049f51999c9495",
-    "tests/boards.test.mjs": "881d0ce9f9b86756e45607fd9db966c673750fe6ec4392f9d1a7f2cd86e65d27",
+    "tests/boards.test.mjs": "0440d74fbc395ba6b60bdba8a2a439c4190b9e4ff579d72242487d872890f21f",
     "tests/campaign.test.mjs": "8a17124a4379845e072e6f0f79e33769d4e72f012f8ef8cb91568f0f5d2b147c",
     "tests/collision.test.mjs": "906a938f3c9a0b9cf9676987b2ceb87f25c9253bb1d94e600016a527ef836004",
     "tests/deployment.test.mjs": "ef42fb42a8d871526f50d1f88bf94c404cebd301d2fafe7d0ae5f3af6cd341d1",
@@ -134,14 +134,14 @@
     "tools/export-icons.mjs": "37e506dcc28a832821af1daf95deae13bd9a6a3cded60443ba00622add0df910",
     "tools/native-resources.mjs": "25cc23a762796c9a7c32f85c071f054b211e833c5a0e18903c03f22717f361b7",
     "tools/package-game.mjs": "7e89b9dae36b1bda27e45a997f658c2f5506d7bdf1b3187b0da9cb5593d8f70f",
-    "tools/performance-lab.js": "8d72ee1e896d8fb92e7040ea0e21a2180892133b5a2794abd8798ca373753308",
+    "tools/performance-lab.js": "0638ee6e1604bbdc7f308f6614242871bc8473b7af3b7731530ce9ef0f7dd121",
     "tools/probe-provider.mjs": "ba5b87a870fd50e9fb55ed5b162dac158904dba112de3dc00ea6ea4c2687646a",
     "tools/release-gate.mjs": "14f4d74e40e32d0ca961e9224f3e4daf407665b8094f5d5c46df56334eac912c",
-    "tools/review-lab.js": "8c1fc3043e1bad16980da6947af53065125495538ef2edc50776f719164c9416",
+    "tools/review-lab.js": "08eba093a1f40206a408bb17068512db61ff162cf29c35ed2959419c251a82ef",
     "tools/review-server.mjs": "34d85f6cde205a628ae931581f6323694806310924eda6eba9709e48ba8857c4",
     "tools/rollback.mjs": "16f6e3dba8fb28f458424aca6638b99274cbfb38ea157b42fd12c3c662087476",
     "tools/serve.mjs": "defebcf250922a64ab7f909b621a6f24a41086710d90266b7e4fb86d4d8980f0",
     "tools/ui-review-lab.js": "425cbd8aebae58641984097b628361c7ab5affcdd31762c8a8151bca00877930",
-    "tools/worker-runtime.js": "55eadf72a2439bc08a601eeb307d1378047f2553ad975d55dfcb72f0b6a701d1"
+    "tools/worker-runtime.js": "8368603ccd9ae2bd989c3dcf291cdb78176695bdca75137d5f01a71293ad5a73"
   }
 }

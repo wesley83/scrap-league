@@ -177,7 +177,11 @@ async function ask(client, token, deadline) {
     const timer = setTimeout(
       () => {
         channel.port1.close();
-        reject(Error("Another game window did not confirm a safe update."));
+        reject(
+          Error(
+            "Another game window did not confirm a safe update. Close older or unresponsive game windows, then retry from the yard.",
+          ),
+        );
       },
       Math.max(1, deadline - Date.now()),
     );

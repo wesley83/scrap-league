@@ -221,6 +221,9 @@ const actions = {
   },
 
   "Apply verified update between runs": async () => {
+    const expected = (
+      await (await fetch("/release.json", { cache: "no-store" })).json()
+    ).release;
     const doc = frame.contentDocument;
     doc.querySelector("#home").click();
     const before = doc.querySelector("base").getAttribute("href");
@@ -243,8 +246,12 @@ const actions = {
     const after = frame.contentDocument
       .querySelector("base")
       .getAttribute("href");
-    check(after.includes(release), "Update did not load expected release");
-    return { before, after, explicitSafeActivation: true };
+    check(
+      after.includes(expected),
+      `Update release mismatch: ${JSON.stringify({ before, expected, after })}`,
+    );
+    check(before !== after, "No version transition was observed");
+    return { before, expected, after, explicitSafeActivation: true };
   },
   "Storage abort, reopen and backup": async () => {
     const { openStore, freshProgress } = await import(prefix + "storage.js"),

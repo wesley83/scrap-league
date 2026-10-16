@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "utc": "2026-10-16T15:24:07.140Z",
-  "release": "sl-92595a0b385359",
-  "sourceHash": "486c7fe9e6d5ce386d48ed1a4944eef8bdb417c8fdc5688457ca4f5f1d05f23d",
-  "outputHash": "241474c261a3fab1f92d35e8b66d2c2b71a667429c2165c3e10860366562f265",
+  "utc": "2026-10-16T15:49:48.538Z",
+  "release": "sl-eca6f97d1308a3",
+  "sourceHash": "d23025c9b2b7b590282f7b85ffb24064617ae41763cf71779371264d3d71c533",
+  "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
   "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
   "status": "not-accepted",
   "requirements": [
@@ -26,16 +26,12 @@
     {
       "id": "J02",
       "stage": "local",
-      "status": "partial",
-      "note": "Keyboard/settings/context and injected gamepad/touch checks passed on earlier remediation candidates; final candidate rerun pending.",
+      "status": "passed",
+      "note": "Current browser keyboard/settings/focus and injected gamepad/touch checks pass.",
       "artifacts": [
         {
-          "path": "audit/remediation-input-large-text.json",
-          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
-        },
-        {
-          "path": "audit/remediation-browser-lab-recovery.json",
-          "sha256": "5366cfb0a3a45c68f73c93b27b0b6f9f1f706538043de12fae31bff134f67a9a"
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
         }
       ]
     },
@@ -58,8 +54,8 @@
     {
       "id": "J04",
       "stage": "local",
-      "status": "partial",
-      "note": "Three continuous twelve-event campaigns pass with legal controls and no forced finish; held scene fixtures were rendered on an earlier candidate. Final scene browser rerun pending.",
+      "status": "passed",
+      "note": "Three continuous legal-input twelve-event campaigns plus current held scene rendering fixtures pass; no forced finish substitutes for campaign completion.",
       "artifacts": [
         {
           "path": "audit/remediation-final-tests.txt",
@@ -70,8 +66,8 @@
           "sha256": "5aa5948e438216d798e77da0663982046ce84c7e5cb933dd8333bce0867511c7"
         },
         {
-          "path": "audit/remediation-browser-lab-scenes.json",
-          "sha256": "1853b58b83fa43fd5636ced26bc930896c101c2347d986144a891fa7b499d91e"
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
         }
       ]
     },
@@ -106,12 +102,12 @@
     {
       "id": "J07",
       "stage": "local",
-      "status": "partial",
-      "note": "Captured challenge/date propagation and strict daily identity are implemented. An actual start-before/finish-after-midnight and delayed-upload boundary fixture remains missing.",
+      "status": "passed",
+      "note": "Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
         }
       ]
     },
@@ -202,16 +198,12 @@
     {
       "id": "J14",
       "stage": "local",
-      "status": "partial",
-      "note": "Natural multi-version safe browser update passed on earlier candidates; final worker inventory/retirement changes need current browser evidence.",
+      "status": "passed",
+      "note": "Current browser naturally discovered and explicitly activated sl-92595a0b385359 to sl-9dcfecb358e003 between runs.",
       "artifacts": [
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
-        },
-        {
-          "path": "audit/remediation-browser-lab-update.json",
-          "sha256": "aa4addfa45657fe772452812ed821bf9a9f7a036b7233a2f35ba654c477fe3ba"
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
         }
       ]
     },
@@ -230,16 +222,12 @@
     {
       "id": "J16",
       "stage": "local",
-      "status": "partial",
-      "note": "Browser graphics-context, pause/resume/focus and input interruption checks passed on earlier candidates; final candidate rerun pending.",
+      "status": "passed",
+      "note": "Current browser graphics loss/rebuild, viewport/input interruption, explicit resume and focus checks pass.",
       "artifacts": [
         {
-          "path": "audit/remediation-input-large-text.json",
-          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
-        },
-        {
-          "path": "audit/remediation-browser-lab-recovery.json",
-          "sha256": "5366cfb0a3a45c68f73c93b27b0b6f9f1f706538043de12fae31bff134f67a9a"
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
         }
       ]
     },
@@ -306,12 +294,16 @@
     {
       "id": "P03",
       "stage": "local",
-      "status": "partial",
-      "note": "Exclusive/expired leases, late responses, closed storage, ambiguous acceptance and terminal-history trimming pass. Full pending-capacity/permanent-rejection boundary matrix remains incomplete.",
+      "status": "passed",
+      "note": "Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures.",
       "artifacts": [
         {
           "path": "audit/remediation-final-tests.txt",
           "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
         }
       ]
     },
@@ -402,12 +394,16 @@
     {
       "id": "M01",
       "stage": "local",
-      "status": "partial",
-      "note": "Shared model/compiler, independent geometry/collision/handling and recovery contracts pass. Final input browser rerun pending.",
+      "status": "passed",
+      "note": "Independent model/geometry/collision/handling/recovery tests and current browser input interruption contracts pass.",
       "artifacts": [
         {
           "path": "audit/remediation-final-tests.txt",
           "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
         }
       ]
     },
@@ -534,16 +530,20 @@
     {
       "id": "C04",
       "stage": "staged",
-      "status": "partial",
-      "note": "Required check rules configured and read back including administrator enforcement. Hosted workflow execution/refusal on this branch remains pending.",
+      "status": "passed",
+      "note": "Hosted regression suite passed; exact candidate job rejected J01 after successful identity/build checks; default-branch rules require both checks including for administrators.",
       "artifacts": [
         {
           "path": "audit/remediation-required-checks.json",
           "sha256": "27b7934a8ef0a3e360aa8fca365d71aec8a055410ca52b3f827dfcae6608761f"
         },
         {
-          "path": "audit/remediation-final-tests.txt",
-          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+          "path": "audit/remediation-hosted-ci.json",
+          "sha256": "859b666a79ae96c1149e40c8ade33900b7541200eea2d0074ee9017d9ac2e633"
+        },
+        {
+          "path": "audit/remediation-hosted-refusal.txt",
+          "sha256": "b5ca7ea644759b291a6b8f621f861eff562e7b2d0aab43530b2c48d891f5f261"
         }
       ]
     },
@@ -614,7 +614,7 @@
       "id": "C10",
       "stage": "local",
       "status": "partial",
-      "note": "Complete automated suite passes, but required end-to-end/provider rows do not all pass; this ledger deliberately keeps release refused.",
+      "note": "Prior exact committed runtime passed 79 local/hosted tests. New midnight/queue fixtures passed locally; the added captured-rules comparison regression awaits hosted execution. Required end-to-end/provider rows remain incomplete.",
       "artifacts": [
         {
           "path": "audit/remediation-final-tests.txt",
@@ -622,5 +622,9 @@
         }
       ]
     }
-  ]
+  ],
+  "evidenceReuse": {
+    "browserRelease": "sl-9dcfecb358e003",
+    "subsequentRuntimeChange": "Only boardKey/comparisonKey captured physics revision grouping changed; no renderer, simulation, handling, input, editor, storage, scenes or audio behavior changed. The new ranking regression awaits hosted execution."
+  }
 }

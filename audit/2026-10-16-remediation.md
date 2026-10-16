@@ -77,3 +77,27 @@ Timing correction: SL-FIX-012 used an estimated 15:14 timestamp; its edits actua
 The final runtime suite passed 79 tests in 118.0 seconds. Three asset/gate checks passed again after consolidating all package source inputs and clarifying C01/C06 stage ownership: local image/initial-metadata checks belong to C01; production HTTP readback remains required after promotion by C06. This removes a circular staging prerequisite without waiving public readback. No runtime changes followed that full suite.
 
 Created a candid 43-row current-acceptance ledger with exact source/output identities, per-artifact hashes and explicit partial/blocked outcomes. The actual local release gate refuses J01, as expected; no fabricated all-green receipt was created. Retained old evidence is labeled with its original candidate and cannot silently satisfy broader outcomes. The original guide's scope and augmentation review is complete locally; its Appendix A provenance remains unchanged. The ongoing rendering run tests sl-f1dfa500e23edf; later source differences affect offline inventory/retirement and documentation, while rendering/simulation modules are unchanged. Hosted CI and final browser update checks are next.
+
+
+## SL-FIX-015 · 2026-10-16T15:33:14.203Z · Codex · Hosted enforcement and sustained-test failure
+
+Committed and pushed 51d98d0 on codex/release-remediation and opened draft PR 1. Hosted Linux regression suite passed all 79 tests in 78.4 seconds. The separate candidate job refused J01 after successful build/source verification, establishing hosted gate enforcement. Exact source and evidence bytes were compared with staged Git blobs; no mismatches. Audit/dist/reference third-party bytes are preserved by attributes. Local full diff snapshot/hash retained before commit.
+
+Visible twenty-minute run sl-f1dfa500e23edf completed 68,952 frames, 40 scene cycles, hidden time zero, p95 17.4 ms and p99 34.8 ms: FAILED the unchanged p99 <=33 ms target. Two full CPU suites overlapped the run. Preserve that failure and repeat without competing test processes. The update harness then compared the actual update with its stale lab release instead of the current target and reported failure. Fix the harness to capture the served target before activation and include before/expected/after in any failure; improve the worker timeout instruction for legacy windows. Retest the actual update and final browser fixtures before the isolated soak. The original guide had one missed speaker/headphone listening imperative; corrected under PB-GUIDE-VERIFY-004 with Appendix A unchanged.
+
+
+## SL-FIX-016 · 2026-10-16T15:35:48.284Z · Codex · Remaining deterministic boundaries
+
+Before the isolated soak, add targeted captured-daily midnight/delayed-upload and pending-outbox capacity/permanent-rejection fixtures. These close specific missing local acceptance methods; they do not establish the disabled provider endpoint. The corrected browser update observed sl-92595a0b385359 to sl-9dcfecb358e003 with explicit safe activation. Remaining final browser checks are running.
+
+
+## SL-FIX-017 · 2026-10-16T15:43:29.927Z · Codex · Captured comparison identity
+
+Static review during the isolated soak found boardKey delegated to comparisonKey, which always inserted the currently loaded RULES rather than the record’s captured rulesRevision. Parsed historical records could therefore enter a current-rules board if their other fields matched. Fix comparisonKey to accept an explicit rulesRevision with current RULES as the default, pass the record revision from boards, and add a mixed-version ranking regression. This changes comparison grouping only, not vehicle assembly, physics or rendering; no game-runtime test process will run alongside the isolated soak. Targeted checks run after it.
+
+
+## SL-FIX-018 · 2026-10-16T15:49:48.640Z · Codex · Review evidence checkpoint
+
+Eleven final browser fixtures passed on sl-9dcfecb358e003, including the natural safe update, injected controls/200% settings text, graphics restoration, scene budgets, offline corruption/repair and unavailable-network reload, storage abort/backup, audio signals, startup failure fallback, local native routing and all official-copy edit/undo/source checks. Provider cleanup readback returned 404 for all eleven owned paths. These checks remain separate from actual cold browser-process relaunch and final provider deployment.
+
+The isolated soak runs the same simulation/renderer at a visible canvas with no concurrent local regression suite. Updated harness retains visible stalls over one second and explicit cold scene-load timings instead of excluding large gaps. The captured-rules comparison fix is the only subsequent runtime change; it does not alter performance code. Format/build and source-bound ledger updated, with the new regression explicitly awaiting hosted execution. Commit this review checkpoint and use hosted CI for the full suite so local timing is not disturbed by a test process.

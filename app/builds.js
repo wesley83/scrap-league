@@ -35,6 +35,7 @@ export function unlocked(part, progress) {
 export function comparisonKey({
   mode,
   trackRevision,
+  rulesRevision = RULES,
   buildRevision,
   laps,
   assist,
@@ -43,7 +44,7 @@ export function comparisonKey({
   return [
     mode,
     trackRevision,
-    RULES,
+    rulesRevision,
     buildRevision,
     laps,
     assist,

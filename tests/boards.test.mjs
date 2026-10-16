@@ -16,6 +16,7 @@ import {
 import { openStore } from "../app/storage.js";
 import { loadContent } from "../tools/content.mjs";
 import { RULES } from "../app/builds.js";
+import { resultOf } from "../app/simulation.js";
 const content = await loadContent(),
   keys = await contentKeys(content),
   run = {
@@ -102,6 +103,30 @@ test("retention uses exact expiry and preserves active interleaved records and p
   );
   assert.equal(ranked(rows, boardKey(run), at + RETENTION_MS).length, 0);
 });
+
+test("standings keep the captured physics revision in their comparison key", () => {
+  const at = 1700000000000;
+  const old = {
+    ...run,
+    id: crypto.randomUUID(),
+    rulesRevision: "scrap-physics-v1.0.0",
+    elapsedMs: 60000,
+    splits: [20000, 20000, 20000],
+  };
+  const rows = parseRuns(
+    "<ul>" + record(old, at) + record(run, at) + "</ul>",
+    DOMParser,
+  );
+  assert.notEqual(boardKey(old), boardKey(run));
+  assert.deepEqual(
+    ranked(rows, boardKey(run), at).map((x) => x.id),
+    [run.id],
+  );
+  assert.deepEqual(
+    ranked(rows, boardKey(old), at).map((x) => x.id),
+    [old.id],
+  );
+});
 test("two outbox clients reconcile timeout-after-acceptance once with original id", async () => {
   const store = await openStore({ factory: new IDBFactory() }),
     now = 1700000000000;
@@ -179,5 +204,109 @@ test("unconfigured board makes no network request and terminal history does not 
     });
   await store.enqueueRun(run);
   assert.ok((await store.keys("outbox:")).length <= 51);
+  store.close();
+});
+
+test("daily captured before UTC midnight survives finish, reopen and upload two days later", async (t) => {
+  t.mock.timers.enable({
+    apis: ["Date"],
+    now: Date.parse("2026-10-16T23:59:30Z"),
+  });
+  const day = new Date().toISOString().slice(0, 10);
+  const challenge = content.daily.find((d) => d.date === day),
+    captured = keys.daily.get(challenge.id);
+  const race = {
+    id: crypto.randomUUID(),
+    mode: "daily",
+    key: "captured-daily",
+    laps: 3,
+    challenge: challenge.id,
+    challengeDate: day,
+    buildRevision: captured.buildRevision,
+    trackRevision: keys.tracks.get(captured.trackId),
+    settingsSnapshot: { assist: false, autoAccelerate: false },
+    track: {
+      source: content.tracks.find((x) => x.track.id === captured.trackId).track,
+    },
+    cars: [
+      {
+        id: "player",
+        finishTime: 90,
+        lapTimes: [30, 30, 30],
+        contacts: 0,
+        resets: 0,
+        grid: 0,
+      },
+    ],
+  };
+  t.mock.timers.tick(90000);
+  const result = resultOf(race),
+    payload = submission(result, "Midnight fixture");
+  assert.equal(result.createdAt.slice(0, 10), "2026-10-17");
+  assert.equal(result.challengeDate, "2026-10-16");
+  assert.equal(recognized(payload, keys), true);
+  const factory = new IDBFactory();
+  let store = await openStore({ factory });
+  await store.enqueueRun(payload);
+  store.close();
+  t.mock.timers.tick(2 * 86400000);
+  store = await openStore({ factory });
+  let accepted = "",
+    requests = 0;
+  const board = new Boards(store, {
+    config,
+    Parser: DOMParser,
+    fetcher: async (_url, options) => {
+      if (options.method === "POST") {
+        requests++;
+        assert.match(options.body, new RegExp(challenge.id));
+        accepted = record(payload, Date.now());
+        return new Response("", { status: 201 });
+      }
+      return new Response(accepted, {
+        headers: { Date: new Date().toUTCString() },
+      });
+    },
+  });
+  await board.pump();
+  assert.equal(requests, 1);
+  assert.equal(
+    (await store.get("outbox:" + payload.id)).run.challenge,
+    challenge.id,
+  );
+  assert.equal((await store.get("outbox:" + payload.id)).state, "confirmed");
+  store.close();
+});
+
+test("pending capacity preserves all queued identities and a permanent rejection is not retried", async () => {
+  const store = await openStore({ factory: new IDBFactory() });
+  for (let i = 0; i < 100; i++)
+    await store.enqueueRun({ ...run, id: crypto.randomUUID() });
+  const before = (await store.keys("outbox:")).sort();
+  await assert.rejects(
+    store.enqueueRun({ ...run, id: crypto.randomUUID() }),
+    /queue is full/,
+  );
+  assert.deepEqual((await store.keys("outbox:")).sort(), before);
+  await store.reset("outbox");
+  await store.enqueueRun(run);
+  let writes = 0;
+  const board = new Boards(store, {
+    config,
+    Parser: DOMParser,
+    fetcher: async (_url, options) => {
+      if (options.method === "POST") {
+        writes++;
+        return new Response("Invalid", { status: 422 });
+      }
+      return new Response("");
+    },
+  });
+  await board.pump();
+  await board.pump();
+  assert.equal(writes, 1);
+  const rejected = await store.get("outbox:" + run.id);
+  assert.equal(rejected.state, "rejected");
+  assert.deepEqual(rejected.run, run);
   store.close();
 });
