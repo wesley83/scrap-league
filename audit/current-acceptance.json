@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "utc": "2026-10-16T17:20:27.795Z",
+  "utc": "2026-10-16T17:26:39.450Z",
   "release": "sl-644d25b8e44419",
   "sourceHash": "9a4608d1da80fa167ff3539381e2d58812f0a45d3e4eeb295d15bfeb1952aa10",
   "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
@@ -212,7 +212,7 @@
       "id": "J14",
       "stage": "local",
       "status": "passed",
-      "note": "Natural modern-version explicit update passed locally. On the deployed origin, the prior sl-b5f8aa986aa675 client detected the update; closing its only game tab and reopening loaded sl-eca6f97d1308a3 with progress and verified offline pack retained. This is not a browser-process restart.",
+      "note": "Prior two-version fixtures remain retained. Public browser discovered the new worker through Check offline pack, applied it through the normal all-window safe-update flow, and reopened the root on sl-644d25b8e44419 with 4/12 parts and 0/12 events retained. Cold process restart is not claimed.",
       "artifacts": [
         {
           "path": "audit/remediation-browser-update-eca6.json",
@@ -221,6 +221,10 @@
         {
           "path": "audit/mobile-baseline/deployment-browser-verification.json",
           "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        },
+        {
+          "path": "audit/deployment-browser-verification.json",
+          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
         }
       ]
     },
@@ -607,24 +611,24 @@
     {
       "id": "C06",
       "stage": "live",
-      "status": "not-run",
-      "note": "Prior live release readback is preserved under audit/mobile-baseline. Public promotion and readback of the mobile graphics repair are pending.",
+      "status": "passed",
+      "note": "Mobile graphics repair sl-644d25b8e44419 deployed from e68dc53 under persistent explicit candidate-publication authorization. Publisher verified 109 files. Independent readback verified assets, manifest/worker, 24 official native routes, three fallback routes and prior runtime retention. Live browser verified portrait/landscape driving, repair preserving stopped time, normal safe update and the new root/offline pack.",
       "artifacts": [
         {
-          "path": "audit/mobile-baseline/deployment.json",
-          "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
+          "path": "audit/deployment.json",
+          "sha256": "74b43a23e59315c393fff9ce79a46ac82ffa78af73365726274183600e89c3b2"
         },
         {
-          "path": "audit/mobile-baseline/deployment-live-readback.json",
-          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+          "path": "audit/deployment-live-readback.json",
+          "sha256": "c4dcc4e47f1cc28108d1d966762317a6c2e67851ed324a9c6d60ccf97b95ddac"
         },
         {
-          "path": "audit/mobile-baseline/deployment-browser-verification.json",
-          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+          "path": "audit/deployment-browser-verification.json",
+          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
         },
         {
-          "path": "audit/deployment-live-readback-method.mjs",
-          "sha256": "5261c4c091cc632643fd5a2c8c6f7860d38d488dd1c7d52f477b44d0faf5a3b9"
+          "path": "audit/mobile-live-readback-method.mjs",
+          "sha256": "c86ae5ebf73d9866a04fc37e97b4c79cda5aa5cffd182067bc8466b14ca11861"
         }
       ]
     },
@@ -673,6 +677,18 @@
         {
           "path": "audit/mobile-graphics-browser.json",
           "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/deployment-browser-verification.json",
+          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
+        },
+        {
+          "path": "audit/screenshots/mobile-graphics-live-portrait.png",
+          "sha256": "347e54f65062eaa83aa5310ed2882549de574b974b1b34c36da01898e1b43279"
+        },
+        {
+          "path": "audit/screenshots/mobile-graphics-live-landscape.png",
+          "sha256": "fa2c904f66e50036edfe276f432d46fdf7deee90f4e0a39ed86628c88b2c32d1"
         }
       ]
     },
@@ -680,7 +696,7 @@
       "id": "C10",
       "stage": "local",
       "status": "partial",
-      "note": "All 87 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed.",
+      "note": "All 87 tests passed locally and in the hosted Automated regression suite on deployed source e68dc53. The separate Exact candidate acceptance job still refuses J01. Candidate publication remains separately authorized; incomplete product outcomes and the unconfirmed physical-device trigger remain documented.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -705,6 +721,10 @@
         {
           "path": "audit/mobile-graphics-tests-final.txt",
           "sha256": "841f42bc826576604a313b0dce78b3c2819bceacf54814b278033c0279ef32ae"
+        },
+        {
+          "path": "audit/mobile-hosted-ci.json",
+          "sha256": "62007c86629970ba5b5ba256414777833b516bc6a562f1153f6fcd9cea8ec76f"
         }
       ]
     }

@@ -1,44 +1,40 @@
 {
-  "utc": "2026-10-16T16:42:49.981Z",
+  "utc": "2026-10-16T17:24:55.000Z",
+  "release": "sl-644d25b8e44419",
   "origin": "https://hire-poker-8313.onpagelove.com",
-  "release": "sl-eca6f97d1308a3",
-  "browser": "Codex in-app browser",
-  "documentClientViewport": {
-    "width": 1265,
-    "height": 720
+  "environment": "Codex in-app Chromium on Windows; responsive viewport, not physical Pixel/Edge",
+  "viewports": [
+    {
+      "width": 412,
+      "height": 915
+    },
+    {
+      "width": 915,
+      "height": 412
+    }
+  ],
+  "initialPublicVersion": "sl-eca6f97d1308a3",
+  "directUpdateLink": "https://hire-poker-8313.onpagelove.com/?update=sl-644d25b8e44419",
+  "directLinkLoadedExactNewRelease": true,
+  "normalSafeUpdateApplied": true,
+  "rootBase": "./releases/sl-644d25b8e44419/",
+  "offlinePack": "Verified after normal Apply update and root navigation",
+  "progressRetained": "4 of 12 parts, 0/12 events",
+  "drive": {
+    "mode": "Daily Spec / Salt Flat Sprint",
+    "input": "native W held 1400ms",
+    "observedSpeedKmh": 27,
+    "observedTime": "00:09.750"
   },
-  "input": "Native keyboard W held for 1200 ms; browser UI controls",
-  "update": {
-    "before": "sl-b5f8aa986aa675",
-    "oldClientDetected": "Update ready · check from Settings",
-    "action": "Closed the only public-origin game tab, then reopened the public root in the same browser process",
-    "after": "sl-eca6f97d1308a3",
-    "progressBefore": "4 of 12 parts · 0/12 events",
-    "progressAfter": "4 of 12 parts · 0/12 events",
-    "offlineStatus": "Offline pack verified"
-  },
-  "driving": {
-    "mode": "Driving lesson",
-    "speedKmh": 22,
-    "displayedElapsed": "00:10.325",
-    "pauseDialog": true,
-    "exitConfirmed": true,
-    "scope": "Startup/ordinary input/pause smoke test; not a completed lap"
-  },
-  "workshop": {
-    "path": "/editor/yard-loop",
-    "title": "Yard Loop editable copy",
-    "draftSaved": true,
-    "validation": "651 m · 12 pieces · Race-ready",
-    "offlineStatus": "Offline pack verified"
-  },
-  "console": {
-    "errors": [],
-    "warnings": []
+  "repair": {
+    "before": "00:19.400",
+    "after": "00:19.400",
+    "resumedTime": "00:40.217",
+    "explicitResume": true
   },
   "screenshots": [
-    "audit/screenshots/deployed-remediation-yard.jpg",
-    "audit/screenshots/deployed-remediation-workshop.jpg"
+    "audit/screenshots/mobile-graphics-live-portrait.png",
+    "audit/screenshots/mobile-graphics-live-landscape.png"
   ],
-  "limits": "Existing browser process and existing public-origin storage. No OS installation, complete race journey or cold browser-process relaunch claimed."
+  "scope": "Published responsive visual/driving/repair/update check. No full lap, cold process restart or physical-device trigger reproduction claimed."
 }
