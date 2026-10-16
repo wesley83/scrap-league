@@ -1,0 +1,720 @@
+{
+  "version": 2,
+  "utc": "2026-10-16T17:13:43.698Z",
+  "release": "sl-644d25b8e44419",
+  "sourceHash": "b61ec4769e1d99f4402598bb72968955bf853a7c1071c77942d2774b8a64351a",
+  "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
+  "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
+  "status": "not-accepted",
+  "evidenceReuse": {
+    "path": "audit/remediation-browser-evidence-reuse.json",
+    "sha256": "e4142468888b5f742999ae87600ac7c9ec7ab9f44dafe907df38762159bf32d9",
+    "note": "The original comparison covers the pre-mobile candidate only. This repair changes renderer.js, main.js and preferences.js and adds graphics-policy.js. Final exact-release graphics fixtures and 86 regression tests are retained separately; the earlier twenty-minute soak is historical and is not claimed for this renderer."
+  },
+  "requirements": [
+    {
+      "id": "J01",
+      "stage": "local",
+      "status": "partial",
+      "note": "Prior ordinary-drive browser evidence exists, but the full fresh-player finish journey has not been repeated on this candidate.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        }
+      ]
+    },
+    {
+      "id": "J02",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current browser keyboard/settings/focus and injected gamepad/touch checks pass.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        }
+      ]
+    },
+    {
+      "id": "J03",
+      "stage": "local",
+      "status": "partial",
+      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "c9eec29a86a0bb8279748826913a273cf95c68af605191128f7d7f546580dd7a"
+        }
+      ]
+    },
+    {
+      "id": "J04",
+      "stage": "local",
+      "status": "passed",
+      "note": "Three continuous legal-input twelve-event campaigns plus current held scene rendering fixtures pass; no forced finish substitutes for campaign completion.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "c9eec29a86a0bb8279748826913a273cf95c68af605191128f7d7f546580dd7a"
+        },
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        }
+      ]
+    },
+    {
+      "id": "J05",
+      "stage": "local",
+      "status": "passed",
+      "note": "Browser compared canonical tire tradeoffs and displayed grip, equipped Rally in the unrestricted Workshop garage, accelerated using ordinary keyboard input, and preserved the chosen part on return. All 81 builds and three surfaces have independent bench measurements.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+        },
+        {
+          "path": "audit/remediation-handling.json",
+          "sha256": "ed3cd21c2c3a6b3ec641002776a382373d642768b0ed0e1be3f6b5cbff10e6a9"
+        }
+      ]
+    },
+    {
+      "id": "J06",
+      "stage": "local",
+      "status": "partial",
+      "note": "Independent timing arithmetic and best/ghost transactions pass; complete compatible-ghost improvement UI journey remains to verify.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "J07",
+      "stage": "local",
+      "status": "passed",
+      "note": "Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
+        }
+      ]
+    },
+    {
+      "id": "J08",
+      "stage": "local",
+      "status": "partial",
+      "note": "Earlier UI-built loop completed a normal lap. Current editor commands, topology and official-copy editing pass; full current pointer/keyboard/emulated-touch creator journey remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        }
+      ]
+    },
+    {
+      "id": "J09",
+      "stage": "local",
+      "status": "partial",
+      "note": "View/selection restoration, history, save-failure navigation and stored-revision tests pass. Complete current five-AI test/return/undo/reload UI sequence remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "J10",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "J11",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        }
+      ]
+    },
+    {
+      "id": "J12",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "J13",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Available browser control cannot restart the browser process. Offline new-document load and isolated worker-runtime restart passed but are narrower than the adopted cold-relaunch outcome.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        }
+      ]
+    },
+    {
+      "id": "J14",
+      "stage": "local",
+      "status": "passed",
+      "note": "Natural modern-version explicit update passed locally. On the deployed origin, the prior sl-b5f8aa986aa675 client detected the update; closing its only game tab and reopening loaded sl-eca6f97d1308a3 with progress and verified offline pack retained. This is not a browser-process restart.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-update-eca6.json",
+          "sha256": "b27b2a0fbde191d3667bc2095212f458a2059daf7692ef2a2a45c4f6dd4f295f"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
+          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        }
+      ]
+    },
+    {
+      "id": "J15",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Durable two-client timeout-after-acceptance reconciliation passes in fixtures. Actual public endpoint remains disabled pending provider validation/readiness.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "J16",
+      "stage": "local",
+      "status": "passed",
+      "note": "Final exact-release portrait/landscape browser faults pass: suppressed context-loss event, creation failure, fresh-canvas retry, ordinary restore, unchanged stopped clock and explicit resume. Earlier input-disconnect/viewport fixtures remain retained. The physical Pixel/Edge trigger is unconfirmed and is not a required hardware-testing gate.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        }
+      ]
+    },
+    {
+      "id": "J17",
+      "stage": "local",
+      "status": "passed",
+      "note": "Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+        },
+        {
+          "path": "audit/remediation-scorecard-verification.json",
+          "sha256": "2b87dc719e4b61777dd3ac0bb283c10337e5a4cee17accfc081563398d5302d5"
+        }
+      ]
+    },
+    {
+      "id": "J18",
+      "stage": "local",
+      "status": "partial",
+      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remediation-browser-lab-scenes.json",
+          "sha256": "1853b58b83fa43fd5636ced26bc930896c101c2347d986144a891fa7b499d91e"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "stage": "local",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "stage": "local",
+      "status": "passed",
+      "note": "Result and best transaction aborts preserve rewards/best/ghost atomically; same-ID retries retain one consistent record.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Actual public application validation endpoint has not been enabled or verified. Client checks are not a server validation boundary.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Client exact-expiry filtering passed. Provider cleanup policy and separate physical storage inspection remain unverified.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Public readback verified 24 intended official fragments and missing/unknown/hostile fallback routes. Live native editor opened and saved an editable copy. Earlier method memory-budget 500 is retained; actual injected composition-failure fallback is still narrower than the full adopted method.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
+          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
+          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "The user confirmed no supported provider policy activation/readiness procedure is available. Source ETag, OPTIONS and warmup cannot establish enforcement readiness; public boards remain disabled.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Scoped conditional release/rollback fixtures preserve user documents and retained release dependencies; native resources do not duplicate executable policy schemas.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Independent model/geometry/collision/handling/recovery tests and current browser input interruption contracts pass.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "stage": "local",
+      "status": "partial",
+      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "stage": "local",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "c9eec29a86a0bb8279748826913a273cf95c68af605191128f7d7f546580dd7a"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Owner/native client implementation and primitive probes exist. Server validation/retention/readiness remain unresolved.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        },
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "stage": "live",
+      "status": "blocked",
+      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment.json",
+          "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
+          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+        }
+      ]
+    },
+    {
+      "id": "C01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Both posters decode and exact initial OG/Twitter metadata validates. Public HTTP readback remains required by C06 after promotion.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "stage": "local",
+      "status": "passed",
+      "note": "ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/screenshots/remediation-icons.jpg",
+          "sha256": "8ae2d0569c2d27bcaeeea7270eea9abf199dfd38a61bd4c3c00be6408abaf576"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Independent asset contract verifies source briefs, image dimensions, licensed fonts, vendor notices and required exports.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Hosted commit e908b82 passed all 82 regression tests and rejected incomplete J01 after successful build/identity verification. Both checks are required on the default branch, including for administrators.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-required-checks.json",
+          "sha256": "27b7934a8ef0a3e360aa8fca365d71aec8a055410ca52b3f827dfcae6608761f"
+        },
+        {
+          "path": "audit/remediation-hosted-ci-e908b82.json",
+          "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
+        },
+        {
+          "path": "audit/remediation-hosted-refusal-e908b82.txt",
+          "sha256": "20a29bc11b9459340915893b2828f9e9048f3ad5970998ee2c0e4374f9b47cfa"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "stage": "local",
+      "status": "passed",
+      "note": "Package/deployment share exact source-input identity and stage gates. Missing asset, stale source, missing evidence and failed provider acceptance are refused in isolated copies.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "stage": "live",
+      "status": "not-run",
+      "note": "Prior live release readback is preserved under audit/mobile-baseline. Public promotion and readback of the mobile graphics repair are pending.",
+      "artifacts": [
+        {
+          "path": "audit/mobile-baseline/deployment.json",
+          "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
+          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
+          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        },
+        {
+          "path": "audit/deployment-live-readback-method.mjs",
+          "sha256": "5261c4c091cc632643fd5a2c8c6f7860d38d488dd1c7d52f477b44d0faf5a3b9"
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "stage": "local",
+      "status": "passed",
+      "note": "Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "stage": "local",
+      "status": "passed",
+      "note": "Conditional A-to-B-to-A root restoration reconciles ambiguity; stale/tampered plans fail before writing; unrelated records and immutable dependencies preserved.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Retained browser receipts identify exact release, UA, viewport, method and screenshots; earlier candidates are explicitly labeled rather than relabeled as current.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/remediation-input-large-text.json",
+          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
+        },
+        {
+          "path": "audit/screenshots/remediation-yard.jpg",
+          "sha256": "cfab60732e8614832e806671a45315810787f8840a92131dbcb0064f4f4334b2"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "stage": "local",
+      "status": "partial",
+      "note": "All 86 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-hosted-ci-e908b82.json",
+          "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
+        },
+        {
+          "path": "audit/deployment-hosted-ci.json",
+          "sha256": "e0b4a27dc52b68eea0a8908e81fc632568f5ee48cf6ace7918d0a808bb694637"
+        },
+        {
+          "path": "audit/deployment-hosted-tests.txt",
+          "sha256": "75e454fdd4ba363f2faaed6075a7041c12d0512ba93172bdebcc2cbf368e15ad"
+        },
+        {
+          "path": "audit/deployment-hosted-default-refusal.txt",
+          "sha256": "e95b55af84d0f38c146d0f69c5a65df625a7db54fec536d97bef3e5ef4d4188b"
+        },
+        {
+          "path": "audit/mobile-graphics-tests-final.txt",
+          "sha256": "0564bf8e070ae7c4cc6cda1500c9eb17d02c72518ebba940525030bf75bb3947"
+        }
+      ]
+    }
+  ],
+  "publication": {
+    "release": "sl-eca6f97d1308a3",
+    "sourceCommit": "6a7ff1ce6890e3e4a656eecc17952e27130b197e",
+    "authorization": "audit/deployment-authorization-2026-10-16.json",
+    "prePublicationLedger": "audit/deployment-acceptance-before-publication.json",
+    "receipt": "audit/deployment.json",
+    "note": "Completed under explicit user authorization. Current ledger includes subsequent live evidence, so the prior ledger-bound authorization cannot be reused unchanged."
+  }
+}

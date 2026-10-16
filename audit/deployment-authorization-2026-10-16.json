@@ -5,11 +5,11 @@
   "authorizedBy": "Wesley",
   "request": "Commit, push, deploy",
   "context": "Persistent explicit commit/push/deploy authorization, continued by the user reporting the live phone rendering failure and identifying Pixel 11 Pro / Edge. This is the graphics repair to that same game and destination. Prior product-acceptance limitations remain; the exact device trigger is not claimed as established. Historical authorization and deployment are preserved in audit/mobile-baseline.",
-  "utc": "2026-10-16T17:13:43.719Z",
+  "utc": "2026-10-16T17:20:27.818Z",
   "release": "sl-644d25b8e44419",
-  "sourceHash": "b61ec4769e1d99f4402598bb72968955bf853a7c1071c77942d2774b8a64351a",
+  "sourceHash": "9a4608d1da80fa167ff3539381e2d58812f0a45d3e4eeb295d15bfeb1952aa10",
   "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
-  "acceptanceHash": "a476cc134eb7588f58a130810d7d243401764869c6cc6c8b8b9874e5684cff1d",
+  "acceptanceHash": "1bacccbde25dd1553907bd075e120585f8409a1ac12a8e600ef3effa0d235d42",
   "knownIncomplete": [
     {
       "id": "J01",
@@ -119,7 +119,7 @@
     {
       "id": "C10",
       "status": "partial",
-      "note": "All 86 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed."
+      "note": "All 87 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed."
     }
   ]
 }

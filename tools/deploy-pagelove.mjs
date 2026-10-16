@@ -255,16 +255,34 @@ async function read(name, publicRead = false) {
     throw Error("Read " + name + " returned " + r.status);
   return r;
 }
+export function backupRelativePath(name) {
+  if (["/index.html", "/sw.js", "/release.json"].includes(name))
+    return name.slice(1);
+  // Native route names such as :slug are URLs, not portable filenames.
+  return "resources/" + sha(Buffer.from(name)) + ".bin";
+}
+export async function saveBaseline(directory, name, response) {
+  const relative = backupRelativePath(name),
+    target = path.join(directory, relative);
+  await fs.mkdir(path.dirname(target), { recursive: true });
+  await fs.writeFile(target, response.bytes);
+  if (relative.startsWith("resources/"))
+    await fs.writeFile(
+      target + ".json",
+      JSON.stringify({
+        path: name,
+        etag: response.etag,
+        sha256: sha(response.bytes),
+      }),
+    );
+  return relative;
+}
 async function remember(name) {
   const r = await read(name);
   if (r.status === 200 && !r.etag)
     throw Error("Missing conditional-write ETag: " + name);
+  if (r.status === 200) await saveBaseline(backupDirectory, name, r);
   baseline.set(name, r);
-  if (r.status === 200) {
-    const target = path.join(backupDirectory, name.slice(1));
-    await fs.mkdir(path.dirname(target), { recursive: true });
-    await fs.writeFile(target, r.bytes);
-  }
   return r;
 }
 async function put(name, bytes, immutable = false) {

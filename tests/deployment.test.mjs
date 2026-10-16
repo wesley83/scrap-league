@@ -1,6 +1,52 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { equivalent, publicEquivalent } from "../tools/deploy-pagelove.mjs";
+import { backupRelativePath, saveBaseline } from "../tools/deploy-pagelove.mjs";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
+
+test("existing native colon routes have portable independent backups and root rollback paths remain readable", async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), "scrap-baseline-"));
+  try {
+    const names = [
+      "/editor/:slug",
+      "/track/:slug",
+      "/editor/index.html",
+      "/index.html",
+      "/sw.js",
+      "/release.json",
+      "/../CON:stream",
+    ];
+    const targets = new Set();
+    for (const name of names) {
+      const bytes = Buffer.from("before:" + name),
+        relative = backupRelativePath(name);
+      assert.ok(!relative.includes(":") && !relative.includes(".."));
+      assert.ok(!targets.has(relative));
+      targets.add(relative);
+      const saved = await saveBaseline(directory, name, {
+        bytes,
+        etag: '"before"',
+      });
+      assert.deepEqual(await fs.readFile(path.join(directory, saved)), bytes);
+      if (relative.startsWith("resources/")) {
+        const meta = JSON.parse(
+          await fs.readFile(path.join(directory, saved + ".json"), "utf8"),
+        );
+        assert.equal(meta.path, name);
+        assert.equal(meta.etag, '"before"');
+      }
+    }
+    for (const name of ["index.html", "sw.js", "release.json"])
+      assert.equal(
+        (await fs.readFile(path.join(directory, name))).toString(),
+        "before:/" + name,
+      );
+  } finally {
+    await fs.rm(directory, { recursive: true, force: true });
+  }
+});
 
 test("HTML publication tolerates serialization but rejects changed runtime references", () => {
   const a = Buffer.from(

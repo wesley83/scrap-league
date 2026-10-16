@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "utc": "2026-10-16T17:13:43.698Z",
+  "utc": "2026-10-16T17:20:27.795Z",
   "release": "sl-644d25b8e44419",
-  "sourceHash": "b61ec4769e1d99f4402598bb72968955bf853a7c1071c77942d2774b8a64351a",
+  "sourceHash": "9a4608d1da80fa167ff3539381e2d58812f0a45d3e4eeb295d15bfeb1952aa10",
   "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
   "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
   "status": "not-accepted",
   "evidenceReuse": {
     "path": "audit/remediation-browser-evidence-reuse.json",
     "sha256": "e4142468888b5f742999ae87600ac7c9ec7ab9f44dafe907df38762159bf32d9",
-    "note": "The original comparison covers the pre-mobile candidate only. This repair changes renderer.js, main.js and preferences.js and adds graphics-policy.js. Final exact-release graphics fixtures and 86 regression tests are retained separately; the earlier twenty-minute soak is historical and is not claimed for this renderer."
+    "note": "The original comparison covers the pre-mobile candidate only. This repair changes renderer.js, main.js and preferences.js and adds graphics-policy.js. Final exact-release graphics fixtures and 87 regression tests are retained separately; the earlier twenty-minute soak is historical and is not claimed for this renderer."
   },
   "requirements": [
     {
@@ -680,7 +680,7 @@
       "id": "C10",
       "stage": "local",
       "status": "partial",
-      "note": "All 86 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed.",
+      "note": "All 87 automated tests passed on the repaired runtime. Ordinary exact-candidate acceptance still refuses incomplete product journeys. Prior publication authorization persists for this bug-fix deployment; physical-device verification and the exact phone trigger are not claimed.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -704,7 +704,7 @@
         },
         {
           "path": "audit/mobile-graphics-tests-final.txt",
-          "sha256": "0564bf8e070ae7c4cc6cda1500c9eb17d02c72518ebba940525030bf75bb3947"
+          "sha256": "841f42bc826576604a313b0dce78b3c2819bceacf54814b278033c0279ef32ae"
         }
       ]
     }
