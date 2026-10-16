@@ -1,0 +1,305 @@
+{
+  "utc": "2026-10-16T16:38:31.157Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-eca6f97d1308a3",
+  "sourceHash": "6095fdba162a2288fdbde6a490d9b3dc8f397e5a4d3e11036542f50a8bbf532e",
+  "root": {
+    "status": 200,
+    "type": "text/html",
+    "sha256": "6f073df271b9346d9527e1dd5de73f91df3ecac5d0bad798d66e6a310310c7ba",
+    "base": "https://hire-poker-8313.onpagelove.com/releases/sl-eca6f97d1308a3/"
+  },
+  "manifest": {
+    "path": "/releases/sl-eca6f97d1308a3/manifest.webmanifest",
+    "status": 200,
+    "type": "application/manifest+json",
+    "id": "../../",
+    "start_url": "../../",
+    "scope": "../../",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "icon.svg",
+        "sizes": "any",
+        "type": "image/svg+xml",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/icon-maskable-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ]
+  },
+  "metadata": [
+    {
+      "selector": "link[rel=\"icon\"][href$=\"favicon.ico\"]",
+      "path": "/releases/sl-eca6f97d1308a3/icons/favicon.ico",
+      "status": 200,
+      "type": "image/x-icon",
+      "sha256": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039"
+    },
+    {
+      "selector": "link[rel=\"apple-touch-icon\"]",
+      "path": "/releases/sl-eca6f97d1308a3/icons/icon-180.png",
+      "status": 200,
+      "type": "image/png",
+      "sha256": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2"
+    },
+    {
+      "selector": "meta[property=\"og:image\"]",
+      "path": "/releases/sl-eca6f97d1308a3/social/og-landscape-v1.png",
+      "status": 200,
+      "type": "image/png",
+      "sha256": "84604d3df04518e0444a7cdd4a78775bd08b1ec5d2a0312ac2e84495ad091ec1"
+    },
+    {
+      "selector": "meta[name=\"twitter:image\"]",
+      "path": "/releases/sl-eca6f97d1308a3/social/og-landscape-v1.png",
+      "status": 200,
+      "type": "image/png",
+      "sha256": "84604d3df04518e0444a7cdd4a78775bd08b1ec5d2a0312ac2e84495ad091ec1"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/track/yard-loop",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "feaba1480aec87ee37b330ae65ca464550c6eb04fe2ea831c1dd9d34ecc0abe7",
+      "trackId": "51000000-0000-4000-8000-000000000001",
+      "composed": true
+    },
+    {
+      "path": "/editor/yard-loop",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "feaba1480aec87ee37b330ae65ca464550c6eb04fe2ea831c1dd9d34ecc0abe7",
+      "trackId": "51000000-0000-4000-8000-000000000001",
+      "composed": true
+    },
+    {
+      "path": "/track/tin-can-alley",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "9784b92c32a3be62c9b325362df06ada8328360e683865996f7631b566875c58",
+      "trackId": "51000000-0000-4000-8000-000000000022",
+      "composed": true
+    },
+    {
+      "path": "/editor/tin-can-alley",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "9784b92c32a3be62c9b325362df06ada8328360e683865996f7631b566875c58",
+      "trackId": "51000000-0000-4000-8000-000000000022",
+      "composed": true
+    },
+    {
+      "path": "/track/gravel-shift",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "6068dd20aa8987765661b70c8cd2a09fff92470623284f9a17a4d518ee1189f9",
+      "trackId": "51000000-0000-4000-8000-00000000004c",
+      "composed": true
+    },
+    {
+      "path": "/editor/gravel-shift",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "6068dd20aa8987765661b70c8cd2a09fff92470623284f9a17a4d518ee1189f9",
+      "trackId": "51000000-0000-4000-8000-00000000004c",
+      "composed": true
+    },
+    {
+      "path": "/track/dockside-dash",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "b1e96b4bf79dd33207e70cfc86dcf3d90b7da6713fa0721fc8e68cdd3722c4df",
+      "trackId": "51000000-0000-4000-8000-000000000073",
+      "composed": true
+    },
+    {
+      "path": "/editor/dockside-dash",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "b1e96b4bf79dd33207e70cfc86dcf3d90b7da6713fa0721fc8e68cdd3722c4df",
+      "trackId": "51000000-0000-4000-8000-000000000073",
+      "composed": true
+    },
+    {
+      "path": "/track/container-switchback",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "45790f0aad40de34e1ad3be0e8c74125fb9f89a9c50fd8d9b3e8129eb8586a87",
+      "trackId": "51000000-0000-4000-8000-00000000009f",
+      "composed": true
+    },
+    {
+      "path": "/editor/container-switchback",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "45790f0aad40de34e1ad3be0e8c74125fb9f89a9c50fd8d9b3e8129eb8586a87",
+      "trackId": "51000000-0000-4000-8000-00000000009f",
+      "composed": true
+    },
+    {
+      "path": "/track/salt-flat-sprint",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "a3a0c4baebdb3c1ba8f890c8245a78beff6be419e787e0804b019964e14297f9",
+      "trackId": "51000000-0000-4000-8000-0000000000ce",
+      "composed": true
+    },
+    {
+      "path": "/editor/salt-flat-sprint",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "a3a0c4baebdb3c1ba8f890c8245a78beff6be419e787e0804b019964e14297f9",
+      "trackId": "51000000-0000-4000-8000-0000000000ce",
+      "composed": true
+    },
+    {
+      "path": "/track/furnace-bend",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "dcf14e5c619475bf108d08d46cb36732d7d00f20f39dcab41c78fe68f87be3c7",
+      "trackId": "51000000-0000-4000-8000-000000000104",
+      "composed": true
+    },
+    {
+      "path": "/editor/furnace-bend",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "dcf14e5c619475bf108d08d46cb36732d7d00f20f39dcab41c78fe68f87be3c7",
+      "trackId": "51000000-0000-4000-8000-000000000104",
+      "composed": true
+    },
+    {
+      "path": "/track/mudworks",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "fb42edbf7dda8f0ca2fa8324f21363b7d6fe8fcbe2f6b202d8e7a5f9becb1589",
+      "trackId": "51000000-0000-4000-8000-000000000131",
+      "composed": true
+    },
+    {
+      "path": "/editor/mudworks",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "fb42edbf7dda8f0ca2fa8324f21363b7d6fe8fcbe2f6b202d8e7a5f9becb1589",
+      "trackId": "51000000-0000-4000-8000-000000000131",
+      "composed": true
+    },
+    {
+      "path": "/track/crusher-circuit",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "9e505124df82c36a8a97fabb413e1d9736eee7cd57e77fc8412b7bd9310ee1b3",
+      "trackId": "51000000-0000-4000-8000-00000000015e",
+      "composed": true
+    },
+    {
+      "path": "/editor/crusher-circuit",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "9e505124df82c36a8a97fabb413e1d9736eee7cd57e77fc8412b7bd9310ee1b3",
+      "trackId": "51000000-0000-4000-8000-00000000015e",
+      "composed": true
+    },
+    {
+      "path": "/track/night-sort",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "496fd84da3cdc0eefc242cad77dcff7fca967f1310c1f122cd86c14fa04ac985",
+      "trackId": "51000000-0000-4000-8000-000000000192",
+      "composed": true
+    },
+    {
+      "path": "/editor/night-sort",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "496fd84da3cdc0eefc242cad77dcff7fca967f1310c1f122cd86c14fa04ac985",
+      "trackId": "51000000-0000-4000-8000-000000000192",
+      "composed": true
+    },
+    {
+      "path": "/track/redline-ridge",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "f2f7a223e1a0c861426cb9342230da05b5b200f1109b81a81cf2a9f9606b690d",
+      "trackId": "51000000-0000-4000-8000-0000000001c3",
+      "composed": true
+    },
+    {
+      "path": "/editor/redline-ridge",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "f2f7a223e1a0c861426cb9342230da05b5b200f1109b81a81cf2a9f9606b690d",
+      "trackId": "51000000-0000-4000-8000-0000000001c3",
+      "composed": true
+    },
+    {
+      "path": "/track/the-big-salvage",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "65cd64c197aa4188d9b34c73fa736967d14d2370275aa5c2250a93d6a66b9596",
+      "trackId": "51000000-0000-4000-8000-0000000001f7",
+      "composed": true
+    },
+    {
+      "path": "/editor/the-big-salvage",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "65cd64c197aa4188d9b34c73fa736967d14d2370275aa5c2250a93d6a66b9596",
+      "trackId": "51000000-0000-4000-8000-0000000001f7",
+      "composed": true
+    },
+    {
+      "path": "/track/unknown-fixture",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "9e91cbe345a7b8ed138a36b6a78e9416fdc86d7e64bd024f40a00f15b99ded20",
+      "fallback": true
+    },
+    {
+      "path": "/editor/",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "9e91cbe345a7b8ed138a36b6a78e9416fdc86d7e64bd024f40a00f15b99ded20",
+      "fallback": true
+    },
+    {
+      "path": "/track/%3Cscript%3E",
+      "status": 200,
+      "type": "text/html",
+      "sha256": "9e91cbe345a7b8ed138a36b6a78e9416fdc86d7e64bd024f40a00f15b99ded20",
+      "fallback": true
+    }
+  ],
+  "worker": {
+    "path": "/sw.js",
+    "status": 200,
+    "type": "text/javascript",
+    "sha256": "c0e92607486b6eec0b11674b3f156001eaab7db0499361f67547ffbcf75cbfb5"
+  },
+  "publicBoardsDisabled": true,
+  "previousRuntimeRetained": {
+    "release": "sl-b5f8aa986aa675",
+    "path": "/releases/sl-b5f8aa986aa675/main.js",
+    "sha256": "74133f83e92e18b0546489791d393968d4042430a5c1c6c6b120b5454db6c462"
+  },
+  "scope": "Public HTTP metadata, exact asset bytes and native composition. Browser install or cold restart is not claimed."
+}
