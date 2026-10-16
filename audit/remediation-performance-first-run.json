@@ -1,0 +1,279 @@
+{
+  "release": "sl-771ba0a51f8259",
+  "utc": "2026-10-16T14:37:58.231Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Twenty-minute rendering and simulation soak",
+      "status": "passed",
+      "detail": {
+        "durationMs": 1200019.099999994,
+        "hiddenMs": 0,
+        "frames": 61463,
+        "sceneCycles": 40,
+        "viewport": {
+          "width": 1233,
+          "height": 720
+        },
+        "p95FrameMs": 34.300000000046566,
+        "p99FrameMs": 66.59999999997672,
+        "p95WorkMs": 27.700000017881393,
+        "p99WorkMs": 53.10000002384186,
+        "budgets": {
+          "calls": 166,
+          "triangles": 16096
+        },
+        "heaps": [
+          {
+            "ms": 0,
+            "heap": 30532048,
+            "geometries": 9,
+            "textures": 7
+          },
+          {
+            "ms": 30007.199999976157,
+            "heap": 35688087,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 60008.69999997616,
+            "heap": 38376095,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 90008.49999997616,
+            "heap": 37470347,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 120009.09999997616,
+            "heap": 25064018,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 150008.69999997615,
+            "heap": 32000654,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 180008.99999997616,
+            "heap": 31988344,
+            "geometries": 5,
+            "textures": 3
+          },
+          {
+            "ms": 210013.09999997617,
+            "heap": 28092134,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 240009.79999997615,
+            "heap": 28738227,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 270009.99999997613,
+            "heap": 38769099,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 300010.39999997616,
+            "heap": 33778673,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 330010.69999997615,
+            "heap": 31783586,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 360029.2999999762,
+            "heap": 32790970,
+            "geometries": 7,
+            "textures": 5
+          },
+          {
+            "ms": 390011.7999999762,
+            "heap": 26722228,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 420012.2999999762,
+            "heap": 40323058,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 450012.2999999762,
+            "heap": 42129684,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 480012.69999997615,
+            "heap": 53038630,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 510015.09999997617,
+            "heap": 50878804,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 540013.2999999762,
+            "heap": 61253250,
+            "geometries": 5,
+            "textures": 3
+          },
+          {
+            "ms": 570013.9999999761,
+            "heap": 42559040,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 600013.9999999761,
+            "heap": 49862812,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 630014.4999999761,
+            "heap": 51938120,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 660014.7999999762,
+            "heap": 42571296,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 690000.0999999761,
+            "heap": 44379458,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 720015.4999999761,
+            "heap": 53550122,
+            "geometries": 7,
+            "textures": 5
+          },
+          {
+            "ms": 750017.7999999762,
+            "heap": 30760180,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 780016.3999999762,
+            "heap": 54226570,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 810018.2999999762,
+            "heap": 54173560,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 840001.6999999762,
+            "heap": 54521020,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 870035.1999999762,
+            "heap": 43415542,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 900001.0999999761,
+            "heap": 48655162,
+            "geometries": 5,
+            "textures": 3
+          },
+          {
+            "ms": 930003.2999999762,
+            "heap": 47842668,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 960001.7999999762,
+            "heap": 52228514,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 990002.1999999762,
+            "heap": 34359461,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 1020002.4999999761,
+            "heap": 39062572,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 1050003.099999976,
+            "heap": 39904938,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 1080003.1999999762,
+            "heap": 50162027,
+            "geometries": 7,
+            "textures": 5
+          },
+          {
+            "ms": 1110004.1999999762,
+            "heap": 50933151,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 1140003.9999999763,
+            "heap": 54550116,
+            "geometries": 3,
+            "textures": 1
+          },
+          {
+            "ms": 1170004.299999976,
+            "heap": 57016922,
+            "geometries": 3,
+            "textures": 1
+          }
+        ],
+        "scope": "Available-browser WebGL and real six-car fixed-step simulation with legal AI input; no stored rewards, no hardware/human requirement",
+        "withinFrameBudget": false
+      },
+      "utc": "2026-10-16T14:37:47.730Z"
+    }
+  ]
+}

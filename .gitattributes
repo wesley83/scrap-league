@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.png -text
+*.ico -text
+*.ttf -text
+*.woff2 -text
+*.jpg -text
+app/vendor/* -text
+app/fonts/* -text
+references/* -text
+audit/** -text
+dist/** -text

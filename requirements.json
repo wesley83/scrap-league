@@ -1,0 +1,269 @@
+{
+  "version": 2,
+  "scopeChange": "User removed real-hardware and human-playtesting release requirements on 2026-10-16. Other adopted requirements remain required.",
+  "stages": {
+    "local": "Required before package creation or any staging writes",
+    "staged": "Required before conditional root promotion; includes disposable provider verification",
+    "live": "Required after promotion before claiming deployment verified"
+  },
+  "required": [
+    {
+      "id": "J01",
+      "outcome": "Fresh player loads, learns the controls, starts and finishes Yard Loop without an account",
+      "method": "Browser journey with retained evidence",
+      "stage": "local"
+    },
+    {
+      "id": "J02",
+      "outcome": "Player pauses, opens settings, returns, resumes and immediately steers without a focus/input surprise",
+      "method": "Keyboard-only and injected gamepad/touch browser checks",
+      "stage": "local"
+    },
+    {
+      "id": "J03",
+      "outcome": "Player completes a three-race cup, reloads between rounds, and keeps exactly one set of rewards",
+      "method": "Storage transaction assertions and UI journey",
+      "stage": "local"
+    },
+    {
+      "id": "J04",
+      "outcome": "Player completes all twelve events with ordinary inputs/resources and sees the held final scene",
+      "method": "Continuous persisted seeded campaigns; no forced finish fixture as a substitute",
+      "stage": "local"
+    },
+    {
+      "id": "J05",
+      "outcome": "Player compares and equips a part, tests it and can explain its tradeoff",
+      "method": "Bench measurements and matching garage descriptions",
+      "stage": "local"
+    },
+    {
+      "id": "J06",
+      "outcome": "Player finishes a Time Trial, sees correct lap arithmetic, races a compatible ghost and improves a best",
+      "method": "Independent timing fixtures and UI journey",
+      "stage": "local"
+    },
+    {
+      "id": "J07",
+      "outcome": "Player starts before UTC midnight, finishes after it, uploads later and remains on the original challenge",
+      "method": "Injected calendar/network boundaries and recorded challenge identity",
+      "stage": "local"
+    },
+    {
+      "id": "J08",
+      "outcome": "New creator builds a closed circuit, corrects a gap, places gates and drives a valid lap",
+      "method": "Pointer, keyboard/list and emulated touch workflows",
+      "stage": "local"
+    },
+    {
+      "id": "J09",
+      "outcome": "Creator tests against five AI, returns to exact editor context, undoes, reloads and recovers work",
+      "method": "UI plus stored-revision assertions",
+      "stage": "local"
+    },
+    {
+      "id": "J10",
+      "outcome": "Creator exports, imports and gets identical gameplay meaning without executing hostile content",
+      "method": "Canonical round trip and adversarial inert-import fixtures",
+      "stage": "local"
+    },
+    {
+      "id": "J11",
+      "outcome": "Two owner editors conflict; stale editor preserves work and never overwrites the newer track",
+      "method": "Disposable real provider document with conditional writes",
+      "stage": "staged"
+    },
+    {
+      "id": "J12",
+      "outcome": "Published track succeeds but catalog update conflicts; exact link works and listing retry is safe",
+      "method": "Provider fault fixture and readback",
+      "stage": "staged"
+    },
+    {
+      "id": "J13",
+      "outcome": "Player downloads complete content, stops the server, cold-relaunches and races/edits offline",
+      "method": "Actual browser/worker restart with the server unavailable",
+      "stage": "local"
+    },
+    {
+      "id": "J14",
+      "outcome": "Existing release discovers a new version naturally and updates between runs without losing state",
+      "method": "Two-version browser lab",
+      "stage": "local"
+    },
+    {
+      "id": "J15",
+      "outcome": "Score submission times out after server acceptance; original ID reconciles once across two tabs",
+      "method": "Durable outbox and disposable provider evidence",
+      "stage": "staged"
+    },
+    {
+      "id": "J16",
+      "outcome": "Graphics context is lost, phone rotates or input disconnects; invisible simulation stops and explicit resume works",
+      "method": "Browser context, viewport and input fault injection",
+      "stage": "local"
+    },
+    {
+      "id": "J17",
+      "outcome": "Result/track invitation contains useful text and link; canceled share preserves state",
+      "method": "Complete payload checks and success/cancel/failure browser fixtures",
+      "stage": "local"
+    },
+    {
+      "id": "J18",
+      "outcome": "Reduced-motion, muted and low-effects players can finish and read every transition/result",
+      "method": "All scene families, audio signal analysis and browser readability checks",
+      "stage": "local"
+    },
+    {
+      "id": "P01",
+      "outcome": "Draft storage",
+      "method": "Transaction abort, quota denial, tab conflict, incompatible schema, crash before/after commit; last valid draft survives",
+      "stage": "local"
+    },
+    {
+      "id": "P02",
+      "outcome": "Result transaction",
+      "method": "Abort between result and rewards; retry same run ID; best/ghost remain a consistent pair",
+      "stage": "local"
+    },
+    {
+      "id": "P03",
+      "outcome": "Outbox",
+      "method": "Two tabs, expired lease, late response, closed DB connection, duplicate acceptance, permanent rejection, full queue",
+      "stage": "local"
+    },
+    {
+      "id": "P04",
+      "outcome": "Owner authoring",
+      "method": "Correct pinned host, wrong credential, stale ETag, create-only conflict, ambiguous response and semantic readback",
+      "stage": "staged"
+    },
+    {
+      "id": "P05",
+      "outcome": "Public records",
+      "method": "Missing/extra fields, wrong types, unsupported content key, invalid splits, client expiry, duplicates and prohibited mutations all rejected through the actual application endpoint",
+      "stage": "staged"
+    },
+    {
+      "id": "P06",
+      "outcome": "Retention",
+      "method": "Before/at/after five-day expiry, multiple expired rows interleaved with active controls, offline filtering, repeat cleanup and separate physical inspection",
+      "stage": "staged"
+    },
+    {
+      "id": "P07",
+      "outcome": "Native composition",
+      "method": "Valid/missing/unknown slug, hostile path input, intended source fragment and fallback after composition failure",
+      "stage": "staged"
+    },
+    {
+      "id": "P08",
+      "outcome": "Policy activation",
+      "method": "Supported provider procedure and readiness evidence; source ETag/OPTIONS/warmup are not substituted for enforcement readiness",
+      "stage": "staged"
+    },
+    {
+      "id": "P09",
+      "outcome": "Data-preserving release",
+      "method": "Populated Workshop, catalog, boards and old-client assets survive; no duplicate live schema declarations in immutable bundles",
+      "stage": "local"
+    },
+    {
+      "id": "M01",
+      "outcome": "Shared schemas, parser/serializer/compiler, independent geometric fixtures, one car and a loop; Clean source regeneration; round-trip integrity; swept collisions, skidpad/slalom/braking checks; input/pause/recovery state contracts",
+      "method": "Evidence for each stated milestone exit criterion",
+      "stage": "local"
+    },
+    {
+      "id": "M02",
+      "outcome": "Six-car race, modular road editor, surface/prop/gate tools, real test drive, history and drafts; A new track can be built, validated, driven, recovered and exported/imported through the UI; one complete keyboard/touch-emulated journey",
+      "method": "Evidence for each stated milestone exit criterion",
+      "stage": "local"
+    },
+    {
+      "id": "M03",
+      "outcome": "All 81 builds, twelve circuits, four cups, eight rivals, unlocks and results; Official tracks authored in Workshop; all references resolve; all tracks finish under seeded AI; seeded handling/pacing measurements complete",
+      "method": "Evidence for each stated milestone exit criterion",
+      "stage": "local"
+    },
+    {
+      "id": "M04",
+      "outcome": "Saves, ghosts, daily definitions, offline pack, install/fullscreen, audio and sharing; Transaction/failure tests; genuine offline relaunch; natural update journey; phone layouts and keyboard focus",
+      "method": "Evidence for each stated milestone exit criterion",
+      "stage": "local"
+    },
+    {
+      "id": "M05",
+      "outcome": "Native composition, owner publication, discovery index, casual boards; Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation and positive/negative record checks",
+      "method": "Evidence for each stated milestone exit criterion",
+      "stage": "staged"
+    },
+    {
+      "id": "M06",
+      "outcome": "Complete asset pack, required CI, audit evidence, release/rollback tools and browser verification; All required rows pass or have explicitly accepted scoped exceptions; exact package verified and previous-client update succeeds",
+      "method": "Evidence for each stated milestone exit criterion",
+      "stage": "live"
+    },
+    {
+      "id": "C01",
+      "outcome": "Social artwork and complete initial OG/Twitter metadata",
+      "method": "Decode exports and assert initial OG/Twitter HTML metadata; public HTTP readback is required by C06 after promotion",
+      "stage": "local"
+    },
+    {
+      "id": "C02",
+      "outcome": "Favicon, raster, touch and maskable icon set",
+      "method": "Pixel decode and tiny/light/dark/mask inspections",
+      "stage": "local"
+    },
+    {
+      "id": "C03",
+      "outcome": "Complete asset sources, licenses, fonts and export inventory",
+      "method": "Independent asset contract and source hashes",
+      "stage": "local"
+    },
+    {
+      "id": "C04",
+      "outcome": "Required hosted CI refuses failed acceptance",
+      "method": "Required workflow and repository-rule readback plus refusal fixture",
+      "stage": "staged"
+    },
+    {
+      "id": "C05",
+      "outcome": "Exact-source package and acceptance gate before every publication path",
+      "method": "Source/output identity and destructive refusal fixtures in temporary copies",
+      "stage": "local"
+    },
+    {
+      "id": "C06",
+      "outcome": "All required public assets and routes resolve after promotion",
+      "method": "Public status/type/hash/semantic readback",
+      "stage": "live"
+    },
+    {
+      "id": "C07",
+      "outcome": "Credentials and private baselines absent from public package",
+      "method": "Source/package scan; hidden-input deployment",
+      "stage": "local"
+    },
+    {
+      "id": "C08",
+      "outcome": "Rollback preserves state and old-client dependencies",
+      "method": "Local two-release restoration drill and conditional promotion checks",
+      "stage": "local"
+    },
+    {
+      "id": "C09",
+      "outcome": "Reproducible browser evidence identifies exact tested environment",
+      "method": "UA, viewport, release, input method and retained screenshots",
+      "stage": "local"
+    },
+    {
+      "id": "C10",
+      "outcome": "Fresh complete automated suite and accurate acceptance ledger",
+      "method": "Full test receipt bound to candidate; no failed required rows",
+      "stage": "local"
+    }
+  ]
+}

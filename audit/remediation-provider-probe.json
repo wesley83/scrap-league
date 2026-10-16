@@ -1,0 +1,327 @@
+{
+  "utc": "2026-10-16T14:22:29.770Z",
+  "fixtureId": "ccbc9561-b91f-415f-ac0b-5a247e4850c8",
+  "scope": "Disposable DAV track and read-only native composition; no public mutation policy activation claimed",
+  "checks": {
+    "composition": [
+      {
+        "slug": "safe-circuit",
+        "status": 200,
+        "shell": true,
+        "track": true
+      },
+      {
+        "slug": "unknown",
+        "status": 200,
+        "shell": true,
+        "track": false
+      },
+      {
+        "slug": "%3Cscript%3E",
+        "status": 200,
+        "shell": true,
+        "track": false
+      }
+    ],
+    "nativeCompositionPassed": true,
+    "staticFallback": [
+      {
+        "slug": "unknown",
+        "status": 200,
+        "shell": true,
+        "hasTrack": false
+      },
+      {
+        "slug": "%3Cscript%3E",
+        "status": 200,
+        "shell": true,
+        "hasTrack": false
+      },
+      {
+        "slug": "another-circuit",
+        "status": 200,
+        "shell": true,
+        "hasTrack": false
+      }
+    ],
+    "staticFallbackPassed": true
+  },
+  "log": [
+    {
+      "utc": "2026-10-16T14:22:30.359Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/",
+      "method": "MKCOL",
+      "status": 405,
+      "bytes": 478,
+      "etag": null,
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:30.598Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/",
+      "method": "MKCOL",
+      "status": 201,
+      "bytes": 0,
+      "etag": "\"0000000000000000000000000000000000000000000000000000000000000000\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:30.699Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/",
+      "method": "MKCOL",
+      "status": 201,
+      "bytes": 0,
+      "etag": "\"0000000000000000000000000000000000000000000000000000000000000000\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:30.916Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/definition.html",
+      "method": "PUT",
+      "status": 201,
+      "bytes": 13540,
+      "etag": "\"9028bedce844c89dabf12e8b501e0aef3e6561b997823a08af45644bb4cdfb64\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:31.101Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/shell.html",
+      "method": "PUT",
+      "status": 201,
+      "bytes": 198,
+      "etag": "\"40b937f8ac67d0bc6950ad291dce9a46f1cbe191c3470b002a5970d9ead7fbb5\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:31.385Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/:slug",
+      "method": "PUT",
+      "status": 201,
+      "bytes": 1182,
+      "etag": "\"757cff661e94c4a992c08f9172cab12bffd91e7a96a6b4683f068067dc109ad9\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:31.904Z",
+      "host": "public",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/safe-circuit",
+      "method": "GET",
+      "status": 200,
+      "bytes": 15216,
+      "etag": "W/\"8ea3dee16f7b17f27475460f820add466a4ad12ca1ec98c14bc183d9f99fae84\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:32.269Z",
+      "host": "public",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/unknown",
+      "method": "GET",
+      "status": 200,
+      "bytes": 1816,
+      "etag": "W/\"c047ac04d30476fe0c627cd111485b4c02f6f94377b2bf18209207acd35f6754\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:32.465Z",
+      "host": "public",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/%3Cscript%3E",
+      "method": "GET",
+      "status": 200,
+      "bytes": 1816,
+      "etag": "W/\"c047ac04d30476fe0c627cd111485b4c02f6f94377b2bf18209207acd35f6754\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:32.654Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/chooser",
+      "method": "PUT",
+      "status": 201,
+      "bytes": 228,
+      "etag": "\"d1b6aaf22b7c7bdd997219078daa585c9784cd1ebd055a11db67b2ccdd48f7b7\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:32.727Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/:slug",
+      "method": "GET",
+      "status": 200,
+      "bytes": 1182,
+      "etag": "\"757cff661e94c4a992c08f9172cab12bffd91e7a96a6b4683f068067dc109ad9\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:32.866Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/:slug",
+      "method": "PUT",
+      "status": 200,
+      "bytes": 233,
+      "etag": "\"1f12e7294d3ed540829a6771edce2961ef17a075aaf24d9c3d8dd49a18c61803\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:33.090Z",
+      "host": "public",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/unknown",
+      "method": "GET",
+      "status": 200,
+      "bytes": 956,
+      "etag": "W/\"15e3ef2619cfa9ac3ae1cf524010d32c4895a85d07cbe9d027a85d92627af633\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:33.442Z",
+      "host": "public",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/%3Cscript%3E",
+      "method": "GET",
+      "status": 200,
+      "bytes": 956,
+      "etag": "W/\"15e3ef2619cfa9ac3ae1cf524010d32c4895a85d07cbe9d027a85d92627af633\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:33.692Z",
+      "host": "public",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/another-circuit",
+      "method": "GET",
+      "status": 200,
+      "bytes": 956,
+      "etag": "W/\"15e3ef2619cfa9ac3ae1cf524010d32c4895a85d07cbe9d027a85d92627af633\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:33.771Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/chooser",
+      "method": "GET",
+      "status": 200,
+      "bytes": 228,
+      "etag": "\"d1b6aaf22b7c7bdd997219078daa585c9784cd1ebd055a11db67b2ccdd48f7b7\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:33.902Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/chooser",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": "\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:33.973Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/:slug",
+      "method": "GET",
+      "status": 200,
+      "bytes": 233,
+      "etag": "\"1f12e7294d3ed540829a6771edce2961ef17a075aaf24d9c3d8dd49a18c61803\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:34.099Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/:slug",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": "\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:34.170Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/shell.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 198,
+      "etag": "\"40b937f8ac67d0bc6950ad291dce9a46f1cbe191c3470b002a5970d9ead7fbb5\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:34.288Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/shell.html",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": "\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:34.371Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13540,
+      "etag": "\"9028bedce844c89dabf12e8b501e0aef3e6561b997823a08af45644bb4cdfb64\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:34.505Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/definition.html",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": "\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:34.575Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": null,
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:22:34.646Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": null,
+      "correlation": null
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/chooser",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/:slug",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/shell.html",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/definition.html",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/editor/",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/ccbc9561-b91f-415f-ac0b-5a247e4850c8/",
+      "status": 204
+    }
+  ]
+}

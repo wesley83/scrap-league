@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "origin": "https://hire-poker-8313.onpagelove.com/",
+  "images": [
+    {"path":"social/og-landscape-v1.png","width":1726,"height":911,"offline":false},
+    {"path":"social/og-square-v1.png","width":1254,"height":1254,"offline":false},
+    {"path":"icons/icon-16.png","width":16,"height":16,"offline":true},
+    {"path":"icons/icon-32.png","width":32,"height":32,"offline":true},
+    {"path":"icons/icon-48.png","width":48,"height":48,"offline":true},
+    {"path":"icons/icon-180.png","width":180,"height":180,"offline":true},
+    {"path":"icons/icon-192.png","width":192,"height":192,"offline":true},
+    {"path":"icons/icon-512.png","width":512,"height":512,"offline":true},
+    {"path":"icons/icon-maskable-512.png","width":512,"height":512,"offline":true}
+  ],
+  "required": ["icon.svg","icons/favicon.ico","fonts/BebasNeue-Regular.ttf","fonts/BebasNeue-OFL.txt","fonts/Barlow-Regular.ttf","fonts/Barlow-SemiBold.ttf","fonts/Barlow-OFL.txt","bootstrap.js","style.css"]
+}

@@ -1,0 +1,626 @@
+{
+  "version": 2,
+  "utc": "2026-10-16T15:24:07.140Z",
+  "release": "sl-92595a0b385359",
+  "sourceHash": "486c7fe9e6d5ce386d48ed1a4944eef8bdb417c8fdc5688457ca4f5f1d05f23d",
+  "outputHash": "241474c261a3fab1f92d35e8b66d2c2b71a667429c2165c3e10860366562f265",
+  "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
+  "status": "not-accepted",
+  "requirements": [
+    {
+      "id": "J01",
+      "stage": "local",
+      "status": "partial",
+      "note": "Prior ordinary-drive browser evidence exists, but the full fresh-player finish journey has not been repeated on this candidate.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        }
+      ]
+    },
+    {
+      "id": "J02",
+      "stage": "local",
+      "status": "partial",
+      "note": "Keyboard/settings/context and injected gamepad/touch checks passed on earlier remediation candidates; final candidate rerun pending.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-input-large-text.json",
+          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
+        },
+        {
+          "path": "audit/remediation-browser-lab-recovery.json",
+          "sha256": "5366cfb0a3a45c68f73c93b27b0b6f9f1f706538043de12fae31bff134f67a9a"
+        }
+      ]
+    },
+    {
+      "id": "J03",
+      "stage": "local",
+      "status": "partial",
+      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "5aa5948e438216d798e77da0663982046ce84c7e5cb933dd8333bce0867511c7"
+        }
+      ]
+    },
+    {
+      "id": "J04",
+      "stage": "local",
+      "status": "partial",
+      "note": "Three continuous twelve-event campaigns pass with legal controls and no forced finish; held scene fixtures were rendered on an earlier candidate. Final scene browser rerun pending.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "5aa5948e438216d798e77da0663982046ce84c7e5cb933dd8333bce0867511c7"
+        },
+        {
+          "path": "audit/remediation-browser-lab-scenes.json",
+          "sha256": "1853b58b83fa43fd5636ced26bc930896c101c2347d986144a891fa7b499d91e"
+        }
+      ]
+    },
+    {
+      "id": "J05",
+      "stage": "local",
+      "status": "partial",
+      "note": "All 81 builds and three surfaces measured. Complete compare/equip/test UI journey and matching visible descriptions remain to verify.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-handling.json",
+          "sha256": "21cb6fdc1acadbbad2e2298a8fef8585665b94244aed2964ece7c5a914ce0d10"
+        }
+      ]
+    },
+    {
+      "id": "J06",
+      "stage": "local",
+      "status": "partial",
+      "note": "Independent timing arithmetic and best/ghost transactions pass; complete compatible-ghost improvement UI journey remains to verify.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "J07",
+      "stage": "local",
+      "status": "partial",
+      "note": "Captured challenge/date propagation and strict daily identity are implemented. An actual start-before/finish-after-midnight and delayed-upload boundary fixture remains missing.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "J08",
+      "stage": "local",
+      "status": "partial",
+      "note": "Earlier UI-built loop completed a normal lap. Current editor commands, topology and official-copy editing pass; full current pointer/keyboard/emulated-touch creator journey remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        }
+      ]
+    },
+    {
+      "id": "J09",
+      "stage": "local",
+      "status": "partial",
+      "note": "View/selection restoration, history, save-failure navigation and stored-revision tests pass. Complete current five-AI test/return/undo/reload UI sequence remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "J10",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "J11",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        }
+      ]
+    },
+    {
+      "id": "J12",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "J13",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Available browser control cannot restart the browser process. Offline new-document load and isolated worker-runtime restart passed but are narrower than the adopted cold-relaunch outcome.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        }
+      ]
+    },
+    {
+      "id": "J14",
+      "stage": "local",
+      "status": "partial",
+      "note": "Natural multi-version safe browser update passed on earlier candidates; final worker inventory/retirement changes need current browser evidence.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-browser-lab-update.json",
+          "sha256": "aa4addfa45657fe772452812ed821bf9a9f7a036b7233a2f35ba654c477fe3ba"
+        }
+      ]
+    },
+    {
+      "id": "J15",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Durable two-client timeout-after-acceptance reconciliation passes in fixtures. Actual public endpoint remains disabled pending provider validation/readiness.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "J16",
+      "stage": "local",
+      "status": "partial",
+      "note": "Browser graphics-context, pause/resume/focus and input interruption checks passed on earlier candidates; final candidate rerun pending.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-input-large-text.json",
+          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
+        },
+        {
+          "path": "audit/remediation-browser-lab-recovery.json",
+          "sha256": "5366cfb0a3a45c68f73c93b27b0b6f9f1f706538043de12fae31bff134f67a9a"
+        }
+      ]
+    },
+    {
+      "id": "J17",
+      "stage": "local",
+      "status": "partial",
+      "note": "Complete payload/cancel/failure fixtures and independently decoded scorecard pass. Real browser native-share permission/cancel surfaces have not all been exercised.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-scorecard-verification.json",
+          "sha256": "2b87dc719e4b61777dd3ac0bb283c10337e5a4cee17accfc081563398d5302d5"
+        }
+      ]
+    },
+    {
+      "id": "J18",
+      "stage": "local",
+      "status": "partial",
+      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remediation-browser-lab-scenes.json",
+          "sha256": "1853b58b83fa43fd5636ced26bc930896c101c2347d986144a891fa7b499d91e"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "stage": "local",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "stage": "local",
+      "status": "passed",
+      "note": "Result and best transaction aborts preserve rewards/best/ghost atomically; same-ID retries retain one consistent record.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "stage": "local",
+      "status": "partial",
+      "note": "Exclusive/expired leases, late responses, closed storage, ambiguous acceptance and terminal-history trimming pass. Full pending-capacity/permanent-rejection boundary matrix remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Actual public application validation endpoint has not been enabled or verified. Client checks are not a server validation boundary.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Client exact-expiry filtering passed. Provider cleanup policy and separate physical storage inspection remain unverified.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Native primitive probes and five local production-wrapper routes passed. Earlier method memory-budget 500 retained; final static route provider readback pending.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "No documented supported policy activation/readiness procedure was established. Source ETag, OPTIONS and warmup are not enforcement evidence.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Scoped conditional release/rollback fixtures preserve user documents and retained release dependencies; native resources do not duplicate executable policy schemas.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "stage": "local",
+      "status": "partial",
+      "note": "Shared model/compiler, independent geometry/collision/handling and recovery contracts pass. Final input browser rerun pending.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "stage": "local",
+      "status": "partial",
+      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "stage": "local",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "5aa5948e438216d798e77da0663982046ce84c7e5cb933dd8333bce0867511c7"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "Owner/native client implementation and primitive probes exist. Server validation/retention/readiness remain unresolved.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        },
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "stage": "live",
+      "status": "blocked",
+      "note": "Not all required rows pass; no current production promotion or final public readback.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "C01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Both posters decode and exact initial OG/Twitter metadata validates. Public HTTP readback remains required by C06 after promotion.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "stage": "local",
+      "status": "passed",
+      "note": "ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/screenshots/remediation-icons.jpg",
+          "sha256": "8ae2d0569c2d27bcaeeea7270eea9abf199dfd38a61bd4c3c00be6408abaf576"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Independent asset contract verifies source briefs, image dimensions, licensed fonts, vendor notices and required exports.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Required check rules configured and read back including administrator enforcement. Hosted workflow execution/refusal on this branch remains pending.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-required-checks.json",
+          "sha256": "27b7934a8ef0a3e360aa8fca365d71aec8a055410ca52b3f827dfcae6608761f"
+        },
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "stage": "local",
+      "status": "passed",
+      "note": "Package/deployment share exact source-input identity and stage gates. Missing asset, stale source, missing evidence and failed provider acceptance are refused in isolated copies.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "stage": "live",
+      "status": "not-run",
+      "note": "No current candidate production promotion; final public status/type/hash/route readback not run.",
+      "artifacts": []
+    },
+    {
+      "id": "C07",
+      "stage": "local",
+      "status": "passed",
+      "note": "Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "stage": "local",
+      "status": "passed",
+      "note": "Conditional A-to-B-to-A root restoration reconciles ambiguity; stale/tampered plans fail before writing; unrelated records and immutable dependencies preserved.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Retained browser receipts identify exact release, UA, viewport, method and screenshots; earlier candidates are explicitly labeled rather than relabeled as current.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/remediation-input-large-text.json",
+          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
+        },
+        {
+          "path": "audit/screenshots/remediation-yard.jpg",
+          "sha256": "cfab60732e8614832e806671a45315810787f8840a92131dbcb0064f4f4334b2"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "stage": "local",
+      "status": "partial",
+      "note": "Complete automated suite passes, but required end-to-end/provider rows do not all pass; this ledger deliberately keeps release refused.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-final-tests.txt",
+          "sha256": "0cd55b75440beac259de91ece5993a349bfa14d96e238bf3bb6529bccadbf4db"
+        }
+      ]
+    }
+  ]
+}

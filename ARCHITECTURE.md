@@ -162,14 +162,14 @@ Challenge identity is schedule revision plus UTC date, with resolved track/build
 
 ## Performance and content budgets
 
-These are acceptance targets, not measurements. Baseline is a mid-range Android device with 6 GB RAM and a supported browser plus a typical integrated-GPU laptop; record the actual hardware when testing.
+These are acceptance targets, not measurements. Measure in the available browser environment and record its browser/OS and viewport. No physical-phone or hardware acquisition is required.
 
 | Area | Initial budget or target | Measurement |
 | --- | --- | --- |
 | First playable download | ≤5 MiB compressed critical path; ≤15 MiB complete offline pack | Build inventory and cold network profile |
 | Startup | Ready within 5 s on 10 Mbps / 80 ms RTT after connection; subsequent menu within 1 s | Cold and warm traces, including parser/compile/warmup |
 | Racing | Target 60 FPS; p95 frame ≤20 ms, p99 ≤33 ms on baseline at default quality | Full race including first collision/pad and six cars |
-| Input response | Input reflected by next simulation step; visual response target ≤50 ms | Instrumented event-to-frame and real-device observation |
+| Input response | Input reflected by next simulation step; visual response target ≤50 ms | Instrumented event-to-frame in the available browser |
 | GPU | ≤200 draw calls, ≤200k visible triangles, DPR cap 1.5 default on mobile | GPU/frame inspection, all scenes/effects |
 | Memory | Working set target ≤200 MiB where measurable; no monotonic growth after 20 race/editor cycles | Browser/platform tools with exact limitations recorded |
 | Editor | Common placement/undo feedback ≤50 ms; full max-track validation ≤250 ms off main path when necessary | Typical and worst bounded fixtures |

@@ -1,0 +1,28 @@
+{
+  "release": "sl-98c26ddd02b33e",
+  "utc": "2026-10-16T15:01:12.006Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Apply verified update between runs",
+      "status": "passed",
+      "detail": {
+        "before": "./releases/sl-9b61124be2a09d/",
+        "after": "./releases/sl-98c26ddd02b33e/",
+        "explicitSafeActivation": true
+      },
+      "utc": "2026-10-16T14:57:40.285Z"
+    },
+    {
+      "name": "Native route client and local include fallback",
+      "status": "failed",
+      "error": "Observation timed out",
+      "utc": "2026-10-16T14:58:57.040Z"
+    }
+  ]
+}

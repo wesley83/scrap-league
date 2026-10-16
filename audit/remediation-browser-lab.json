@@ -1,0 +1,26 @@
+{
+  "release": "sl-f1dfa500e23edf",
+  "utc": "2026-10-16T15:09:21.245Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Injected gamepad, large text and touch interruption",
+      "status": "passed",
+      "detail": {
+        "emulatedGamepad": true,
+        "rangeAdjustment": true,
+        "startPauseResume": true,
+        "disconnect": true,
+        "touchCancellation": true,
+        "textScale": "200% computed body font, settings dialog",
+        "scope": "Injected browser input; no physical controller or device claim"
+      },
+      "utc": "2026-10-16T15:05:43.446Z"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "release": "sl-f1dfa500e23edf",
+  "utc": "2026-10-16T15:04:34.291Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Native route client and local include fallback",
+      "status": "passed",
+      "detail": {
+        "rows": [
+          {
+            "path": "/track/yard-loop",
+            "stage": "view-start",
+            "dialog": "Yard Loop",
+            "sourceTrack": "51000000-0000-4000-8000-000000000001"
+          },
+          {
+            "path": "/editor/yard-loop",
+            "stage": "view-workshop",
+            "dialog": "",
+            "sourceTrack": "51000000-0000-4000-8000-000000000001"
+          },
+          {
+            "path": "/track/unknown-fixture",
+            "stage": "view-start",
+            "dialog": "Choose a circuit",
+            "sourceTrack": null
+          },
+          {
+            "path": "/editor/",
+            "stage": "view-start",
+            "dialog": "Choose a circuit",
+            "sourceTrack": null
+          },
+          {
+            "path": "/track/%3Cscript%3E",
+            "stage": "view-start",
+            "dialog": "Choose a circuit",
+            "sourceTrack": null
+          }
+        ],
+        "scope": "Local native-include emulation with production wrapper and client modules; actual provider primitive evidence is recorded separately."
+      },
+      "utc": "2026-10-16T15:01:36.833Z"
+    },
+    {
+      "name": "Scorecard and icon visual sheet",
+      "status": "passed",
+      "detail": {
+        "file": "audit/screenshots/remediation-scorecard.png",
+        "url": "https://hire-poker-8313.onpagelove.com/#daily=2026-10-16",
+        "dimensions": [
+          1200,
+          630
+        ],
+        "scope": "Synthetic result using production generator; visual/decoder review separate"
+      },
+      "utc": "2026-10-16T15:02:52.979Z"
+    }
+  ]
+}

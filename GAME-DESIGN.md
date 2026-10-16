@@ -166,7 +166,7 @@ Settings include music/effects levels, reduced motion, effects quality, camera m
 
 Pause clears all held input. Returning from settings restores the pause dialog; Resume restores the driving input context. Name-entry fields never trigger driving shortcuts. Blur, hidden-page transitions, gamepad disconnect, lost pointer capture during steering, rotation that materially changes the viewport, and graphics-context loss pause the race. Resume is explicit, with a short ready indicator and no added race time.
 
-The action game is visually driven; this design does not claim nonvisual racing equivalence. Screen-reader review is required for all surrounding workflows and editor controls. Phone, assistive-technology, listening and human balance evidence remain separate release checks.
+The action game is visually driven; this design does not claim nonvisual racing equivalence. Keyboard, accessibility-tree, enlarged-text and emulated-touch checks cover surrounding workflows and editor controls. Physical-device, human playtesting, perceptual listening and physical assistive-technology sessions are not required release checks, per the user’s October 16, 2026 scope change.
 
 ## Saves, offline play and sharing
 

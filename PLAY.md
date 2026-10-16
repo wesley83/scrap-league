@@ -8,7 +8,7 @@ Play the hosted game at **https://hire-poker-8313.onpagelove.com/**. Progress an
 
 Run `START-GAME.cmd`, or run `node tools/serve.mjs` from this directory, then open **http://127.0.0.1:4390**. Node.js is required for the local server; the prebuilt game needs no package installation. The server serves only `dist/` on this computer. Keep that terminal running for browsers that have not installed the offline pack.
 
-After the footer says **Offline pack installed**, that browser can reopen the game and Workshop without the server. Browser storage is specific to the browser/profile and origin. Export important tracks as HTML before clearing browser data.
+After the footer says **Offline pack verified**, the complete game and Workshop are cached for offline use. Browser storage is specific to the browser/profile and origin. Export important tracks as HTML or save a full backup from Settings before clearing browser data. Actual browser-process cold relaunch remains an unverified acceptance row.
 
 For source development, install the pinned dependencies with `bun install --frozen-lockfile`, then run `node tools/build.mjs` and `node --test tests/*.test.mjs`. `dist/` is derived. The build reads authoritative `content/*.html` documents and cannot silently regenerate them from an old runtime bundle.
 
@@ -48,8 +48,8 @@ Canvas tools select, pan, place pads/barriers/islands and zoom. The object list 
 
 ## Evidence and limits
 
-See [implementation status](IMPLEMENTATION-STATUS.md), [test output](audit/final-tests.txt), [final regression checks](audit/final-regressions.txt), [six-car simulation evidence](audit/simulation-races.json), [browser review](audit/browser-game-review.json), and the [implementation audit](audit/2026-10-16-implementation.md).
+See [implementation status](IMPLEMENTATION-STATUS.md), [current automated tests](audit/remediation-final-tests.txt), [persisted campaign evidence](audit/remediation-persisted-campaigns.json), [acceptance ledger](audit/current-acceptance.json), and the [remediation audit](audit/2026-10-16-remediation.md). Older evidence remains preserved with its original release and limitations.
 
-The local game and editor work without a Pagelove credential. Online boards, native composition routes, discovery/catalog writes and owner publishing have not been connected to a selected host. `app/pagelove.js` contains a conditional authoring adapter with conflict/ambiguous-response/readback fixtures; those fixtures do not certify a real provider. WebDAV remains trusted owner authoring and intentionally bypasses platform validation/triggers.
+The local game and editor work without a Pagelove credential. Owner publication and discovery are implemented for the selected host, with conditional real-provider probes; current native route deployment remains gated. Casual boards remain disabled until actual public validation, retention and supported policy activation pass. WebDAV is trusted owner authoring and intentionally bypasses platform validation/triggers.
 
-Physical-phone, real-gamepad, Firefox/Safari, audio listening, accessibility assistive-technology and human balance reviews remain outstanding. This package is playable and reviewable; it is not a claim that the full production release gate in ACCEPTANCE.md has passed.
+Real-hardware sessions, human playtesting and perceptual listening are outside required scope by user instruction. Available-browser and automated checks remain required. This candidate does not yet pass every production release row in ACCEPTANCE.md.
