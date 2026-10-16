@@ -4,6 +4,8 @@ Scrap League is an arcade racing game about assembling a scrappy little car, lea
 
 **Status:** Playable local implementation 0.1.0 with the bundled Track Workshop. Open [Play and run instructions](PLAY.md) to start the game, and [implementation status](IMPLEMENTATION-STATUS.md) for tested behavior and the remaining full-release requirements. The approved design below remains the intended product contract.
 
+**[Play Scrap League on Pagelove](https://hire-poker-8313.onpagelove.com/)** · [Public source repository](https://github.com/wesley83/scrap-league)
+
 ## Play the game
 
 Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390. The game includes twelve circuits, four cups, 81 builds, six-car races, Daily Spec, Time Trial, local progress/ghosts and a working track editor. The current prebuilt game is included in `dist/`. The selected Pagelove site and publishing procedure are in [deployment instructions](DEPLOYMENT.md). Shared online boards and owner Workshop publishing are not connected in this release.

@@ -4,6 +4,8 @@ Scrap League is now a playable local browser game with a bundled Track Workshop.
 
 ## Start
 
+Play the hosted game at **https://hire-poker-8313.onpagelove.com/**. Progress and drafts stay in your browser; the owner deployment key is never required to play or edit local tracks.
+
 Run `START-GAME.cmd`, or run `node tools/serve.mjs` from this directory, then open **http://127.0.0.1:4390**. Node.js is required for the local server; the prebuilt game needs no package installation. The server serves only `dist/` on this computer. Keep that terminal running for browsers that have not installed the offline pack.
 
 After the footer says **Offline pack installed**, that browser can reopen the game and Workshop without the server. Browser storage is specific to the browser/profile and origin. Export important tracks as HTML before clearing browser data.
