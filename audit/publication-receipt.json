@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-16T11:39:03Z",
+  "repository": "https://github.com/wesley83/scrap-league",
+  "visibility": "PUBLIC",
+  "branch": "codex/initial-release",
+  "codeCommit": "740bcbcba5515c3a97a38fc0802e45b5a3ff7a83",
+  "initialCommit": "a952263b5cb0ce714cb8a9d0470df76e92154f0a",
+  "site": "https://hire-poker-8313.onpagelove.com/",
+  "release": "sl-b5f8aa986aa675",
+  "deploymentReceipt": "deployment.json",
+  "verifiedPublicPaths": 51,
+  "offlineInventoryFiles": 18,
+  "browser": {
+    "environment": "Windows / Codex in-app Chromium",
+    "startup": "Public game loaded with its 3D scene and normal controls.",
+    "workshop": "Opened 651 m, 12-piece editable starter copy; validation reported Race-ready; saved draft survived the hosted release update.",
+    "driving": "Started the real Workshop test-drive flow and accelerated to 78 km/h using normal keyboard input. Paused and returned to editor successfully.",
+    "offline": "First hosted release installed its complete offline pack. The corrected release installed and activated through Settings / Check offline pack / Apply update. DOM base verified the final release.",
+    "desktopLayout": {"hintBottom":604,"providerFooterTop":619.3333740234375,"stageBottom":618},
+    "phoneWidthLayout": {"viewportWidth":320,"viewportHeight":740,"bodyWidth":320,"hintBottom":694,"providerFooterTop":709.3333740234375,"stageBottom":708},
+    "consoleWarningsOrErrors": [],
+    "handoff": "Viewport override reset; public game left on its start screen and marked as a deliverable.",
+    "screenshots": "Native browser screenshots reviewed; no standalone image files included."
+  },
+  "verification": {
+    "deploymentRegressionTests": "3 passed; semantic serialization, unchanged executable/asset bytes, exact provider-footer allowance and rejection of unexpected content.",
+    "runtimeComparison": "Only style.css differs between the initial and final versioned runtime directories. Root entry/worker/inventory paths necessarily change with the release.",
+    "simulationEvidence": "Existing 36-race evidence retained; no physics or content changes in publication.",
+    "credentials": "Key supplied only via hidden stdin, held only in memory, sent only to the pinned authoring origin. Publisher exited after verification. No key in public source, compiled assets, audit or Git.",
+    "limitations": "Physical-device, human balance and full production gates remain as documented. Shared leaderboards and owner Workshop publishing UI are not enabled by static hosting."
+  }
+}

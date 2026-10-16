@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-16T11:40:09.2574840Z",
+  "purpose": "Final publication change batch, excluding this self-referential manifest",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1156980413c7b2317b30fc07210568c2fc25f7d25e63b6acf68a428a6219a7b0"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "b209528597a2758b9041273b5bd3e537e9bf9d4bce7020e1848c3bff51d289a5"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "sha256": "d7992da0010ad92aa23d79a08f720f0b28cd7d199063891f8a12e69adb2e6f2a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8c153c99940fbc72025ee058466d622d9b8d57974d9a889ebbb3059151d7e014"
+    },
+    {
+      "path": "PLAY.md",
+      "sha256": "6f936f171efdb4f45187feeab16668a7885c2841e433244574ba80ead6177e50"
+    },
+    {
+      "path": "IMPLEMENTATION-STATUS.md",
+      "sha256": "8cb748ee4476385006aa92a86c292844313c3a37eacc5c6604ae197e1e4f3440"
+    },
+    {
+      "path": "app/style.css",
+      "sha256": "6369c3c03494e15a6ac884d675934889c09994104884d4cb86dc258347a12122"
+    },
+    {
+      "path": "tools/deploy-pagelove.mjs",
+      "sha256": "77718baec1aeee8d79b30e13fe91b90f25ba699267b8e4abd043567e2ecc45f7"
+    },
+    {
+      "path": "tests/deployment.test.mjs",
+      "sha256": "ca02bcc668238e6b64443c5732072f70f8e1f100d6f08820c2189127344b1e2e"
+    },
+    {
+      "path": "audit/build.json",
+      "sha256": "1dbdaeac3b257cbe94e82fe21e10081502476b8a9f5f9d2dbb0786a2ee294da3"
+    },
+    {
+      "path": "audit/2026-10-16-publication.md",
+      "sha256": "425c57f66a8dfff4898f06e812fd409c8189e6fec6f43dbde31d1723970428d0"
+    },
+    {
+      "path": "audit/deployment.json",
+      "sha256": "eaef983560b9cdd9091b239b73d69c69edc434a2e1216442250e79525457d1ae"
+    },
+    {
+      "path": "audit/deployment-initial.json",
+      "sha256": "7a92ea682ee130859b1168c6bf890f8c67086a2e746ea7d8c47f11bfb50b7831"
+    },
+    {
+      "path": "audit/publication-receipt.json",
+      "sha256": "131d40a08764381b72ac66d74d2e52b9320e26357a9499b8fb2ca07940f64187"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "b8589d8251c666afa43113b5c71330425db02f8011b68180540eb9da8b8cf9c3"
+    },
+    {
+      "path": "dist/sw.js",
+      "sha256": "cc83e4ba7c4a27e42112f77aae3e38b46597c214ed568a2319f2bf727b062c37"
+    },
+    {
+      "path": "dist/release.json",
+      "sha256": "71f878b166872bd6091f43f3ab8e622a18278260b7ae3603c6574f6e6ef295d8"
+    }
+  ]
+}
