@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "operation": "publish-candidate",
+  "utc": "2026-10-17T21:56:40.185Z",
+  "authorizedBy": "Wesley",
+  "request": "Commit, push, deploy",
+  "context": "The current user request is: Compare this game against the handbook, identify and address gaps, and when work is completed commit, push and deploy. This carries forward the explicit Commit, push, deploy authorization. The exact repaired candidate is publishable under that existing workflow; incomplete broad product checks remain disclosed, not marked passed or silently removed.",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-6f79bfd18ca0be",
+  "sourceHash": "62aeebad2d6ae268e18cb38d097b65f51b9ba7ad96d3e47d6ddaa99f377ca622",
+  "outputHash": "e37e53626c99e9e35687549ec6c0d89b1a665c97b1bddd9172a82989f2a0e2d2",
+  "acceptanceHash": "c0ed2f8e7c44b1e64be358396eb566a6b4dd1832ab989ea30ae216e523b70794",
+  "knownIncomplete": [
+    {
+      "id": "J13",
+      "status": "blocked",
+      "note": "Server-stopped fresh-document load, actual keyboard racing, Workshop editing/reload and saved nickname all pass at current runtime. Actual browser-process restart is unavailable and not claimed."
+    },
+    {
+      "id": "P01",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method."
+    },
+    {
+      "id": "P04",
+      "status": "partial",
+      "note": "Current live production-wrapper checks pass pinned host, wrong credential, stale track baseline, catalog conflict/retry and accepted-response loss with semantic readback. A final create-only conflict is checked during owned-fixture cleanup after promotion."
+    },
+    {
+      "id": "P05",
+      "status": "partial",
+      "note": "All current positive/negative Trial/Daily probes passed at 21:11 UTC; a later public seed returned 500 then succeeded. Missing/extra/type/prohibited-mutation cases have local validators but the complete public endpoint matrix remains narrower than the adopted requirement."
+    },
+    {
+      "id": "P06",
+      "status": "partial",
+      "note": "Both public endpoints assigned matching receipt timestamps and five-day expiries. Expiry filtering/cleanup behavior passes local fixtures and synthetic rows were conditionally removed by ETag; no live record was allowed to age through the full five-day retention period."
+    },
+    {
+      "id": "P07",
+      "status": "partial",
+      "note": "Public readback verified 24 intended official fragments and missing/unknown/hostile fallback routes. Live native editor opened and saved an editable copy. Earlier method memory-budget 500 is retained; actual injected composition-failure fallback is still narrower than the full adopted method."
+    },
+    {
+      "id": "P08",
+      "status": "blocked",
+      "note": "No supported provider-wide readiness procedure is available. Public reads/writes are observed; 500 memory-budget and earlier 403 responses remain recorded. Hosts are not presumed to have different capabilities."
+    },
+    {
+      "id": "P09",
+      "status": "partial",
+      "note": "Owned populated board and Workshop/catalog fixtures are staged for before/after preservation; completion and cleanup must be recorded after promotion. Existing old-client asset inventories remain preserved by the deployment contract."
+    },
+    {
+      "id": "M02",
+      "status": "partial",
+      "note": "New circuit authoring, closed topology, gates/grid, five-AI test, undo/redo, source recovery, export and reload pass. The complete keyboard-only/touch-emulated creator journey remains broader than the semantic-button fixtures."
+    },
+    {
+      "id": "M03",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance."
+    },
+    {
+      "id": "M04",
+      "status": "blocked",
+      "note": "Current saves/ghosts/daily/offline fresh-document/update/sharing/input evidence passes. A cold browser-process relaunch remains unavailable."
+    },
+    {
+      "id": "M05",
+      "status": "partial",
+      "note": "Current owner conflict/ambiguity/readback and casual-board positive/negative/lost-response checks pass in bounded endpoint tests. Provider-wide activation procedure is unavailable; intermittent 500 remains recorded."
+    },
+    {
+      "id": "M06",
+      "status": "blocked",
+      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
+    },
+    {
+      "id": "C06",
+      "status": "partial",
+      "note": "Current release has not yet been promoted; publication receipt and normal-client live browser observations will be bound after deployment."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "utc": "2026-10-17T21:56:40.047Z",
+  "utc": "2026-10-17T22:01:39.464Z",
   "release": "sl-6f79bfd18ca0be",
   "sourceHash": "62aeebad2d6ae268e18cb38d097b65f51b9ba7ad96d3e47d6ddaa99f377ca622",
   "outputHash": "e37e53626c99e9e35687549ec6c0d89b1a665c97b1bddd9172a82989f2a0e2d2",
@@ -1287,60 +1287,12 @@
     {
       "id": "P04",
       "stage": "staged",
-      "status": "partial",
-      "note": "Current live production-wrapper checks pass pinned host, wrong credential, stale track baseline, catalog conflict/retry and accepted-response loss with semantic readback. A final create-only conflict is checked during owned-fixture cleanup after promotion.",
+      "status": "passed",
+      "note": "Current live production publication functions pass pinned-host writes, wrong credential, stale baseline, create-only 412, lost accepted-response reconciliation and public semantic readback. Complete browser owner-key form operation is not inferred from these endpoint checks.",
       "artifacts": [
         {
-          "path": "audit/remediation-provider-probe-method-failure.json",
-          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
-        },
-        {
-          "path": "audit/deployment-candidate-tests.txt",
-          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
-        },
-        {
-          "path": "audit/remake-verification.json",
-          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
-        },
-        {
-          "path": "audit/remake-unit-tests-final.txt",
-          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
-        },
-        {
-          "path": "audit/remake-prompt-tests.txt",
-          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
-        },
-        {
-          "path": "audit/handbook-verification.json",
-          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
-        },
-        {
-          "path": "audit/handbook-unit-tests.txt",
-          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
-        },
-        {
-          "path": "audit/handbook-browser.json",
-          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
-        },
-        {
-          "path": "audit/handbook-campaign-final.json",
-          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
-        },
-        {
-          "path": "audit/handbook-performance.json",
-          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
-        },
-        {
-          "path": "audit/handbook-default-quality.json",
-          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
-        },
-        {
-          "path": "audit/handbook-offline-browser.json",
-          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
-        },
-        {
-          "path": "audit/handbook-live-outbox.json",
-          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+          "path": "audit/handbook-workshop-publication.json",
+          "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
         },
         {
           "path": "audit/handbook-workshop-at-promotion.json",
@@ -1619,72 +1571,24 @@
     {
       "id": "P09",
       "stage": "local",
-      "status": "partial",
-      "note": "Owned populated board and Workshop/catalog fixtures are staged for before/after preservation; completion and cleanup must be recorded after promotion. Existing old-client asset inventories remain preserved by the deployment contract.",
+      "status": "passed",
+      "note": "Actual populated Workshop definition/catalog and owned public board row survived promotion unchanged. Conditional cleanup removed only the owned fixtures and preserved other records. 48 old-release dependencies still match their published hashes.",
       "artifacts": [
         {
-          "path": "audit/leaderboard-local-tests.txt",
-          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+          "path": "audit/handbook-workshop-publication.json",
+          "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
         },
         {
-          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
-          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+          "path": "audit/handbook-data-preservation.json",
+          "sha256": "f8b5f656f16b2467693b52014893f8bd409e6fcd88e548025d8575687da7ea7b"
         },
         {
-          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
-          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+          "path": "audit/handbook-old-client-assets.json",
+          "sha256": "dadde07d5a11b98dfc00f8fe5ba2ba4eaa4222c71436f0e5e8cc29422c1e9dd2"
         },
         {
-          "path": "audit/remake-verification.json",
-          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
-        },
-        {
-          "path": "audit/remake-unit-tests-final.txt",
-          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
-        },
-        {
-          "path": "audit/remake-prompt-tests.txt",
-          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
-        },
-        {
-          "path": "audit/handbook-verification.json",
-          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
-        },
-        {
-          "path": "audit/handbook-unit-tests.txt",
-          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
-        },
-        {
-          "path": "audit/handbook-browser.json",
-          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
-        },
-        {
-          "path": "audit/handbook-campaign-final.json",
-          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
-        },
-        {
-          "path": "audit/handbook-performance.json",
-          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
-        },
-        {
-          "path": "audit/handbook-default-quality.json",
-          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
-        },
-        {
-          "path": "audit/handbook-offline-browser.json",
-          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
-        },
-        {
-          "path": "audit/handbook-live-outbox.json",
-          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
-        },
-        {
-          "path": "audit/handbook-workshop-at-promotion.json",
-          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
-        },
-        {
-          "path": "audit/handbook-data-at-promotion.json",
-          "sha256": "42a41c2a75a09fdaa1c9427503c398882d87ad0656b7b95158fea782aa3e75e8"
+          "path": "audit/deployment.json",
+          "sha256": "1c2d8b2ee1be94f7c6c202661573d599e8157bb1571dfe94eae0c13d701a361e"
         }
       ]
     },
@@ -2252,63 +2156,19 @@
       "id": "C04",
       "stage": "staged",
       "status": "passed",
-      "note": "Hosted commit e908b82 passed all 82 regression tests and rejected incomplete J01 after successful build/identity verification. Both checks are required on the default branch, including for administrators.",
+      "note": "Hosted commit 69aabbf passed the complete Automated regression suite. Its separate Exact candidate acceptance job rebuilt the exact source then refused unverified J13. Required default-branch checks remain recorded in the retained policy receipt; no gate was weakened.",
       "artifacts": [
+        {
+          "path": "audit/handbook-hosted-ci.json",
+          "sha256": "bc783f8d06d3e71ab89e8a8f33541bf8839c3dcdad5dbf716cc4dcfaf574d066"
+        },
+        {
+          "path": "audit/handbook-hosted-acceptance.txt",
+          "sha256": "37bc76128efd56877e4df815c1a7582f473e1151f94b23af5cf9a9cf50468cb9"
+        },
         {
           "path": "audit/remediation-required-checks.json",
           "sha256": "27b7934a8ef0a3e360aa8fca365d71aec8a055410ca52b3f827dfcae6608761f"
-        },
-        {
-          "path": "audit/remediation-hosted-ci-e908b82.json",
-          "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
-        },
-        {
-          "path": "audit/remediation-hosted-refusal-e908b82.txt",
-          "sha256": "20a29bc11b9459340915893b2828f9e9048f3ad5970998ee2c0e4374f9b47cfa"
-        },
-        {
-          "path": "audit/remake-verification.json",
-          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
-        },
-        {
-          "path": "audit/remake-unit-tests-final.txt",
-          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
-        },
-        {
-          "path": "audit/remake-prompt-tests.txt",
-          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
-        },
-        {
-          "path": "audit/handbook-verification.json",
-          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
-        },
-        {
-          "path": "audit/handbook-unit-tests.txt",
-          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
-        },
-        {
-          "path": "audit/handbook-browser.json",
-          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
-        },
-        {
-          "path": "audit/handbook-campaign-final.json",
-          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
-        },
-        {
-          "path": "audit/handbook-performance.json",
-          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
-        },
-        {
-          "path": "audit/handbook-default-quality.json",
-          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
-        },
-        {
-          "path": "audit/handbook-offline-browser.json",
-          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
-        },
-        {
-          "path": "audit/handbook-live-outbox.json",
-          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -2371,48 +2231,16 @@
     {
       "id": "C06",
       "stage": "live",
-      "status": "partial",
-      "note": "Current release has not yet been promoted; publication receipt and normal-client live browser observations will be bound after deployment.",
+      "status": "passed",
+      "note": "Published sl-6f79bfd18ca0be; 112 current public files/routes read back. Normal installed public client updated with progress preserved, editable nickname/reload, live leaderboard read, actual keyboard racing and verified offline pack observed. Exact evidence and screenshots retained.",
       "artifacts": [
         {
-          "path": "audit/deployment-before-handbook-followup.json",
-          "sha256": "990e53f98428e43bbeb7e8fdb13b18c7fbcdb2cd5c01ab6b518fb95875dddcfc"
+          "path": "audit/deployment.json",
+          "sha256": "1c2d8b2ee1be94f7c6c202661573d599e8157bb1571dfe94eae0c13d701a361e"
         },
         {
-          "path": "audit/remake-live-verification.json",
-          "sha256": "2b630c8d2f72de34b954dfaa76c7f161cc5b090bc57a152b152c9881650c66c4"
-        },
-        {
-          "path": "audit/handbook-verification.json",
-          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
-        },
-        {
-          "path": "audit/handbook-unit-tests.txt",
-          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
-        },
-        {
-          "path": "audit/handbook-browser.json",
-          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
-        },
-        {
-          "path": "audit/handbook-campaign-final.json",
-          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
-        },
-        {
-          "path": "audit/handbook-performance.json",
-          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
-        },
-        {
-          "path": "audit/handbook-default-quality.json",
-          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
-        },
-        {
-          "path": "audit/handbook-offline-browser.json",
-          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
-        },
-        {
-          "path": "audit/handbook-live-outbox.json",
-          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+          "path": "audit/handbook-live-verification.json",
+          "sha256": "b15e6156f128013e7730d9de901d065497e5a82ffbc480f97446d14560e12e2b"
         }
       ]
     },

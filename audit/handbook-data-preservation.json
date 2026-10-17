@@ -24,7 +24,7 @@
     "etag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
     "rows": []
   },
-  "state": "awaiting-publication",
+  "state": "passed",
   "scope": "Owned synthetic row and unchanged hashes of pre-existing rows; no private row payload recorded.",
   "postStatus": 500,
   "attempts": [
@@ -47,5 +47,21 @@
         "hash": "1058e361a82b42a755e11a3bb4d7986a1eeb8c7632959c288876a5a2d79f5f38"
       }
     ]
+  },
+  "after": {
+    "utc": "2026-10-17T21:58:57.255Z",
+    "etag": "\"42bbc7176edf89a4daea7075fcb55f747c650d2e3a15883c543c9f49143c8b8e\"",
+    "rows": [
+      {
+        "id": "1e5636b1-fa29-4734-b0fc-a99dd644a94c",
+        "hash": "1058e361a82b42a755e11a3bb4d7986a1eeb8c7632959c288876a5a2d79f5f38"
+      }
+    ],
+    "preserved": true
+  },
+  "cleanup": {
+    "utc": "2026-10-17T21:58:57.822Z",
+    "ownedRowAbsent": true,
+    "otherRowsPreserved": true
   }
 }

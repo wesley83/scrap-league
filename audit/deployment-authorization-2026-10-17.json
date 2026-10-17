@@ -1,15 +1,15 @@
 {
   "version": 1,
   "operation": "publish-candidate",
-  "utc": "2026-10-17T21:56:40.185Z",
+  "utc": "2026-10-17T22:01:39.464Z",
   "authorizedBy": "Wesley",
   "request": "Commit, push, deploy",
-  "context": "The current user request is: Compare this game against the handbook, identify and address gaps, and when work is completed commit, push and deploy. This carries forward the explicit Commit, push, deploy authorization. The exact repaired candidate is publishable under that existing workflow; incomplete broad product checks remain disclosed, not marked passed or silently removed.",
+  "context": "The current user request is: Compare this game against the handbook, identify and address gaps, and when work is completed commit, push and deploy. This carries forward the explicit Commit, push, deploy authorization. The exact repaired candidate is publishable under that existing workflow; incomplete broad product checks remain disclosed, not marked passed or silently removed. Post-publication evidence reconciliation updates C06/P09/P04 from actual readback and conditional cleanup. Exact promotion ledger and authorization are preserved in the handbook-at-promotion snapshots; this is maintenance under the same request, not new consent.",
   "origin": "https://hire-poker-8313.onpagelove.com",
   "release": "sl-6f79bfd18ca0be",
   "sourceHash": "62aeebad2d6ae268e18cb38d097b65f51b9ba7ad96d3e47d6ddaa99f377ca622",
   "outputHash": "e37e53626c99e9e35687549ec6c0d89b1a665c97b1bddd9172a82989f2a0e2d2",
-  "acceptanceHash": "c0ed2f8e7c44b1e64be358396eb566a6b4dd1832ab989ea30ae216e523b70794",
+  "acceptanceHash": "9dc65be4bd75685b8676c0665e14d5c9da9bab748198fec88116fd743b0826c6",
   "knownIncomplete": [
     {
       "id": "J13",
@@ -20,11 +20,6 @@
       "id": "P01",
       "status": "partial",
       "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method."
-    },
-    {
-      "id": "P04",
-      "status": "partial",
-      "note": "Current live production-wrapper checks pass pinned host, wrong credential, stale track baseline, catalog conflict/retry and accepted-response loss with semantic readback. A final create-only conflict is checked during owned-fixture cleanup after promotion."
     },
     {
       "id": "P05",
@@ -45,11 +40,6 @@
       "id": "P08",
       "status": "blocked",
       "note": "No supported provider-wide readiness procedure is available. Public reads/writes are observed; 500 memory-budget and earlier 403 responses remain recorded. Hosts are not presumed to have different capabilities."
-    },
-    {
-      "id": "P09",
-      "status": "partial",
-      "note": "Owned populated board and Workshop/catalog fixtures are staged for before/after preservation; completion and cleanup must be recorded after promotion. Existing old-client asset inventories remain preserved by the deployment contract."
     },
     {
       "id": "M02",
@@ -75,11 +65,6 @@
       "id": "M06",
       "status": "blocked",
       "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
-    },
-    {
-      "id": "C06",
-      "status": "partial",
-      "note": "Current release has not yet been promoted; publication receipt and normal-client live browser observations will be bound after deployment."
     }
   ]
 }

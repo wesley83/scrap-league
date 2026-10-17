@@ -78,3 +78,25 @@ After batching, sl-6f79bfd18ca0be completed a default-resolution, full-effects s
 Final current-runtime browser recheck: all 14 checks passed, including the previously failing garage fixture, the eight-piece creator journey and failed-save recovery, real enlarged text, touch ownership, manual throttle layouts, all twelve track views/context repair, and foreground update controls. The complete suite was rerun after the renderer/tooling changes: 107 passed, zero failed, 56,244.0 ms. The first 107-test run remains separately retained.
 
 The normal installed local copy then updated from sl-b2a6a7eab4f634 to sl-6f79bfd18ca0be using the visible home update notice and explicit Apply. Progress (5/12 parts, 1/12 events) and Browser Driver remained. After stopping its server and independently confirming connection failure, a fresh document reached 66 km/h using actual keyboard input. Workshop reopened its prior draft, saved the new name Offline final circuit, and reopened that name after another offline reload. Actual browser-process restart remains untested.
+
+### Publication and remaining evidence limits
+
+Implementation commit `69aabbf` was pushed to `wesley83/scrap-league`, branch `codex/release-remediation`. Release `sl-6f79bfd18ca0be` was conditionally published; all 112 current public files/routes passed readback. The normal public client updated from `sl-60bf1fb46ea8c0`, retained 4/12 parts and 0/12 events, saved/reloaded a natively typed nickname, read its same-origin board, and drove at 77 km/h in the 390×844 layout. The prior nickname was restored and the unfinished test race explicitly left. Both screenshots and observed scope are in `handbook-live-verification.json`.
+
+The populated owned board row, Workshop definition and catalog listing survived publication unchanged. Cleanup used fresh ETags and removed only the owned fixtures. All 48 old-release dependencies still match their published hashes. The separate create-only owner conflict returned 412. Temporary browser tabs and local servers were closed, and credential-holding helper processes exited.
+
+The final ledger records 32 passed and 11 incomplete adopted outcomes. These remaining rows are not silently removed or treated as passed:
+
+| Rows | Remaining limit |
+| --- | --- |
+| J13 / M04 | A fresh offline document and worker-runtime restart are verified; a whole browser-process cold restart is unavailable. |
+| P01 | Transaction abort, quota, conflicts and reopen recovery pass; the complete process-crash boundary matrix remains narrower than adopted. |
+| P05 | Positive writes, duplicates, bad arithmetic, unsupported build and client-expiry checks pass on actual public endpoints; the exhaustive missing/extra/type/prohibited-mutation endpoint matrix is not claimed. Intermittent 500 is retained. |
+| P06 | Five-day timestamps and local before/at/after filtering fixtures pass; actual elapsed five-day server aging was not observed. |
+| P07 | Official native fragments and missing/unknown/hostile routes pass readback; the complete live injected-composition-failure matrix is not established. |
+| P08 / M05 | No supported provider-wide policy activation/readiness procedure is available. Endpoint observations do not establish that guarantee. |
+| M02 | The semantic editor controls, creation/test/save/recovery/export path pass; a complete keyboard-only or touch-emulated creator sequence remains broader than the recorded fixture. |
+| M03 | Current Workshop editing and all twelve tracks work; the historical originals were CLI-authored and their provenance cannot be rewritten. |
+| M06 | Aggregates the preceding incomplete broader acceptance. Publication is verified under the user's explicit request, while full product acceptance remains incomplete. |
+
+Hosted run `39073042474` for `69aabbf` passed the Automated regression suite. Its separate Exact candidate acceptance job successfully rebuilt the candidate, then refused J13 as required. The strict gate was not weakened. The hosted result and exact refusal log are retained in `handbook-hosted-ci.json` and `handbook-hosted-acceptance.txt`; this is distinct from the successful explicitly authorized publication operation.
