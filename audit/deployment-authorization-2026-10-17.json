@@ -1,20 +1,20 @@
 {
   "version": 1,
   "operation": "publish-candidate",
-  "utc": "2026-10-17T15:31:08.076Z",
+  "utc": "2026-10-17T20:29:44.363Z",
   "authorizedBy": "Wesley",
-  "request": "There is no meaningful reason not to have a leaderboard",
-  "context": "Publish the exact Scrap League candidate with the shared casual Trial and Daily boards enabled. Preserve all incomplete acceptance outcomes and the recorded Trial 403; this authorizes a bounded candidate publication, not a claim of provider-wide readiness.",
+  "request": "Commit, push, deploy",
+  "context": "Standing user authorization to commit, push and deploy this game, followed by the explicit request to remake it using the handbook. Publish the exact reviewed arcade candidate while preserving saved/user documents and previous clients. This is not new consent to waive product requirements: all incomplete outcomes and provider failures remain disclosed in the ledger.",
   "origin": "https://hire-poker-8313.onpagelove.com",
-  "release": "sl-2212ffe6721a07",
-  "sourceHash": "1914a8abe431b2a682ddeeed5e8f9d629ad6e01ee29f7a95f53f89d461a208ea",
-  "outputHash": "42808f8578072558617cd3e7ec69cb21a2f512220e27a57fe346700d8e2e2f05",
-  "acceptanceHash": "1f017bf598d153f3068dc1c98feaf750f0a3c07c0aa762db9dbb08a5722d44a7",
+  "release": "sl-60bf1fb46ea8c0",
+  "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
+  "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
+  "acceptanceHash": "a5839dd62f585a32b60a68798507eb6822256b890e8b310d3414517b356634db",
   "knownIncomplete": [
     {
-      "id": "J01",
+      "id": "J02",
       "status": "partial",
-      "note": "Prior ordinary-drive browser evidence exists, but the full fresh-player finish journey has not been repeated on this candidate."
+      "note": "Current pause/retry, touch contact cancellation, Settings and actual keyboard driving pass. Historical gamepad checks remain retained; the complete new-renderer gamepad/menu journey was not repeated."
     },
     {
       "id": "J03",
@@ -22,19 +22,29 @@
       "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified."
     },
     {
+      "id": "J04",
+      "status": "partial",
+      "note": "All three continuous persisted twelve-event legal-input campaigns pass again. The new renderer draws all twelve tracks; the complete held final-scene UI journey has not been repeated."
+    },
+    {
+      "id": "J05",
+      "status": "partial",
+      "note": "All 81 independent build/handling measurements pass. Garage content and tradeoff descriptions are retained; complete current camera/garage UI journey not repeated."
+    },
+    {
       "id": "J06",
       "status": "partial",
-      "note": "Independent timing arithmetic and best/ghost transactions pass; complete compatible-ghost improvement UI journey remains to verify."
+      "note": "Actual browser Time Trial completes three laps and saves/loads a compatible ghost, retaining a faster prior best. Independent split arithmetic passes. A full improved-best second finish was not added to this fixture."
     },
     {
       "id": "J08",
       "status": "partial",
-      "note": "Earlier UI-built loop completed a normal lap. Current editor commands, topology and official-copy editing pass; full current pointer/keyboard/emulated-touch creator journey remains incomplete."
+      "note": "Current Workshop editable DOM, geometry, surface edits, undo/redo, export/import and test entry pass. Complete new-loop creation across every input method remains narrower than the adopted contract."
     },
     {
       "id": "J09",
       "status": "partial",
-      "note": "View/selection restoration, history, save-failure navigation and stored-revision tests pass. Complete current five-AI test/return/undo/reload UI sequence remains incomplete."
+      "note": "Current browser edits, saves, exports, tests, returns and reopens the same draft. Five-AI creator context matrix remains incomplete."
     },
     {
       "id": "J12",
@@ -44,12 +54,12 @@
     {
       "id": "J13",
       "status": "blocked",
-      "note": "Available browser control cannot restart the browser process. Offline new-document load and isolated worker-runtime restart passed but are narrower than the adopted cold-relaunch outcome."
+      "note": "Server-stopped fresh document loaded, drove with real keyboard input and saved/reopened an edited draft. Actual browser-process restart is unavailable in the tool and is not claimed."
     },
     {
       "id": "J15",
       "status": "partial",
-      "note": "Durable two-client timeout-after-acceptance reconciliation passes in local fixtures. Anonymous public writes and readback were observed on both boards, but the full two-client public timeout scenario was not run; latest Trial probe returned 403 after an earlier success."
+      "note": "Leased two-client timeout-after-acceptance regression passes. Public valid writes/readback pass in both modes; complete two-client public timeout scenario not run."
     },
     {
       "id": "J18",
@@ -69,7 +79,7 @@
     {
       "id": "P05",
       "status": "partial",
-      "note": "The live Trial and Daily documents reject invalid splits, client expiry, and unsupported builds. Daily accepts multiple distinct scores; Trial accepted/read back one score in an earlier probe but a later fresh write returned 403. Local results remain authoritative and retained."
+      "note": "Valid Trial/Daily writes and readback succeeded, no duplicate appended, and client expiry/unsupported builds returned 422. Duplicate/split-arithmetic probes sometimes returned a provider module memory-budget error instead of the expected 422; the probe is retained as failed, not relabeled passed. Remaining prohibited-mutation matrix incomplete."
     },
     {
       "id": "P06",
@@ -84,7 +94,7 @@
     {
       "id": "P08",
       "status": "blocked",
-      "note": "No Pagelove-supported provider-wide activation/readiness procedure is available. The exact game resources and policies are present and public reads and writes were observed, but a later Trial POST returned 403 after an earlier success. Evidence is scoped to these endpoints and does not establish global readiness."
+      "note": "No supported provider-wide readiness procedure is available. Public reads/writes are observed; 500 memory-budget and earlier 403 responses remain recorded. Hosts are not presumed to have different capabilities."
     },
     {
       "id": "P09",
@@ -109,7 +119,7 @@
     {
       "id": "M05",
       "status": "partial",
-      "note": "Owner publication/discovery remains intact and the candidate enables the shared casual boards. Both native documents match their pinned policies; Daily accepts multiple scores and all negative probes reject. Trial had a successful write/readback followed by a 403 on a later fresh write; provider-wide readiness is not claimed."
+      "note": "Owner publishing and casual boards remain enabled. The browser native-fetch receiver bug is fixed. Localhost board browsing is blocked by provider CORS; same-origin UI needs post-publication readback. Server negative probes contain memory-budget errors."
     },
     {
       "id": "M06",
@@ -117,9 +127,14 @@
       "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
     },
     {
+      "id": "C06",
+      "status": "partial",
+      "note": "Current remake public assets/routes have not yet been promoted. Previous live readback remains historical; deployment receipt will identify the newly verified publication."
+    },
+    {
       "id": "C10",
       "status": "partial",
-      "note": "The prior hosted run covered an older source candidate. The current exact candidate passes 94/94 local tests; exact-candidate hosted CI and some other product journeys remain incomplete. No physical-device, human-playtest, or listening requirement remains in scope."
+      "note": "101/101 full tests pass; five focused tests cover the final prompt-only change. Other adopted product/provider journeys remain incomplete and no full acceptance is claimed."
     }
   ]
 }

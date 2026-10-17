@@ -219,10 +219,7 @@ export class Boards {
       if (!Number.isSafeInteger(page) || page < 1 || page > BOARD_MAX_PAGES + 1)
         throw Error("Board page exceeds the safe-read limit.");
       url.searchParams.set("paginate:runs:page", String(page));
-      url.searchParams.set(
-        "paginate:runs:length",
-        String(BOARD_PAGE_SIZE),
-      );
+      url.searchParams.set("paginate:runs:length", String(BOARD_PAGE_SIZE));
     }
     const init = {
       ...fetchOptions,
@@ -233,7 +230,9 @@ export class Boards {
     };
     const retryable = !fetchOptions.method || fetchOptions.method === "GET";
     for (let attempt = 0; ; attempt++) {
-      const response = await this.fetcher(url.href, init);
+      // Browser fetch requires the Window receiver; injected transports retain
+      // the same call contract instead of receiving the Boards instance.
+      const response = await this.fetcher.call(globalThis, url.href, init);
       if (
         !retryable ||
         ![429, 502, 503, 504].includes(response.status) ||
@@ -395,6 +394,21 @@ export class Boards {
   }
   async refresh(run) {
     validateRun(run);
+    return this.browse(run);
+  }
+  async browse(run) {
+    if (
+      !["trial", "daily"].includes(run?.mode) ||
+      !/^[a-f0-9]{64}$/.test(run.trackRevision) ||
+      !/^[a-f0-9]{64}$/.test(run.buildRevision) ||
+      (run.rulesRevision !== undefined && run.rulesRevision !== RULES) ||
+      run.laps !== 3 ||
+      !/^steering-(on|off):(auto|manual)$/.test(run.assist) ||
+      (run.mode === "trial"
+        ? run.challenge !== ""
+        : !/^daily-v\d+:\d{4}-\d{2}-\d{2}$/.test(run.challenge))
+    )
+      throw Error("Invalid leaderboard comparison.");
     const key = boardKey(run);
     try {
       const { rows, serverTime } = await this.readRows(run.mode),

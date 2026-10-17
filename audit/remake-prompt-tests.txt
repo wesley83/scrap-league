@@ -1,0 +1,13 @@
+✔ touch contacts retain ownership across duplicate presses, cancellation and pause (0.813ms)
+✔ steering uses the contact rectangle, a dead zone and clamped travel (0.2361ms)
+✔ lessons follow accepted driving, not elapsed time or an attempted boost (0.4422ms)
+✔ Canvas 2D buffers remain bounded without changing CSS input geometry (1.0348ms)
+✔ Workshop commits semantic source atomically and exposes an immutable projection (268.8624ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 531.3696

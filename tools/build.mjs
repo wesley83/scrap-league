@@ -32,15 +32,6 @@ async function collect(relative = "") {
 }
 await collect();
 files.set("content.json", Buffer.from(JSON.stringify(bundle)));
-for (const f of ["three.module.js", "three.core.js"])
-  files.set(
-    "vendor/" + f,
-    await readFile(path.join(root, "node_modules/three/build", f)),
-  );
-files.set(
-  "vendor/THREE-LICENSE.txt",
-  await readFile(path.join(root, "node_modules/three/LICENSE")),
-);
 const sourceIndex = await readFile(path.join(root, "app/index.html"), "utf8");
 const release =
   "sl-" +
@@ -61,8 +52,8 @@ const manifest = {
   scope: "../../",
   display: "fullscreen",
   display_override: ["fullscreen", "standalone"],
-  background_color: "#253126",
-  theme_color: "#202721",
+  background_color: "#18343b",
+  theme_color: "#142b31",
   icons: [
     { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
     {

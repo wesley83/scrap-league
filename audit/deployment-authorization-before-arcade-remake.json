@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "operation": "publish-candidate",
+  "utc": "2026-10-17T15:31:08.076Z",
+  "authorizedBy": "Wesley",
+  "request": "There is no meaningful reason not to have a leaderboard",
+  "context": "Publish the exact Scrap League candidate with the shared casual Trial and Daily boards enabled. Preserve all incomplete acceptance outcomes and the recorded Trial 403; this authorizes a bounded candidate publication, not a claim of provider-wide readiness.",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-2212ffe6721a07",
+  "sourceHash": "1914a8abe431b2a682ddeeed5e8f9d629ad6e01ee29f7a95f53f89d461a208ea",
+  "outputHash": "42808f8578072558617cd3e7ec69cb21a2f512220e27a57fe346700d8e2e2f05",
+  "acceptanceHash": "1f017bf598d153f3068dc1c98feaf750f0a3c07c0aa762db9dbb08a5722d44a7",
+  "knownIncomplete": [
+    {
+      "id": "J01",
+      "status": "partial",
+      "note": "Prior ordinary-drive browser evidence exists, but the full fresh-player finish journey has not been repeated on this candidate."
+    },
+    {
+      "id": "J03",
+      "status": "partial",
+      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified."
+    },
+    {
+      "id": "J06",
+      "status": "partial",
+      "note": "Independent timing arithmetic and best/ghost transactions pass; complete compatible-ghost improvement UI journey remains to verify."
+    },
+    {
+      "id": "J08",
+      "status": "partial",
+      "note": "Earlier UI-built loop completed a normal lap. Current editor commands, topology and official-copy editing pass; full current pointer/keyboard/emulated-touch creator journey remains incomplete."
+    },
+    {
+      "id": "J09",
+      "status": "partial",
+      "note": "View/selection restoration, history, save-failure navigation and stored-revision tests pass. Complete current five-AI test/return/undo/reload UI sequence remains incomplete."
+    },
+    {
+      "id": "J12",
+      "status": "partial",
+      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified."
+    },
+    {
+      "id": "J13",
+      "status": "blocked",
+      "note": "Available browser control cannot restart the browser process. Offline new-document load and isolated worker-runtime restart passed but are narrower than the adopted cold-relaunch outcome."
+    },
+    {
+      "id": "J15",
+      "status": "partial",
+      "note": "Durable two-client timeout-after-acceptance reconciliation passes in local fixtures. Anonymous public writes and readback were observed on both boards, but the full two-client public timeout scenario was not run; latest Trial probe returned 403 after an earlier success."
+    },
+    {
+      "id": "J18",
+      "status": "partial",
+      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified."
+    },
+    {
+      "id": "P01",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method."
+    },
+    {
+      "id": "P04",
+      "status": "partial",
+      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete."
+    },
+    {
+      "id": "P05",
+      "status": "partial",
+      "note": "The live Trial and Daily documents reject invalid splits, client expiry, and unsupported builds. Daily accepts multiple distinct scores; Trial accepted/read back one score in an earlier probe but a later fresh write returned 403. Local results remain authoritative and retained."
+    },
+    {
+      "id": "P06",
+      "status": "partial",
+      "note": "Both public endpoints assigned matching receipt timestamps and five-day expiries. Expiry filtering/cleanup behavior passes local fixtures and synthetic rows were conditionally removed by ETag; no live record was allowed to age through the full five-day retention period."
+    },
+    {
+      "id": "P07",
+      "status": "partial",
+      "note": "Public readback verified 24 intended official fragments and missing/unknown/hostile fallback routes. Live native editor opened and saved an editable copy. Earlier method memory-budget 500 is retained; actual injected composition-failure fallback is still narrower than the full adopted method."
+    },
+    {
+      "id": "P08",
+      "status": "blocked",
+      "note": "No Pagelove-supported provider-wide activation/readiness procedure is available. The exact game resources and policies are present and public reads and writes were observed, but a later Trial POST returned 403 after an earlier success. Evidence is scoped to these endpoints and does not establish global readiness."
+    },
+    {
+      "id": "P09",
+      "status": "partial",
+      "note": "Board resource creation/migration was conditional and preserved the zero-row baseline; local migration fixtures prove existing rows are retained. No pre-populated live board existed to verify preservation of real scores during release promotion."
+    },
+    {
+      "id": "M02",
+      "status": "partial",
+      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete."
+    },
+    {
+      "id": "M03",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance."
+    },
+    {
+      "id": "M04",
+      "status": "blocked",
+      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete."
+    },
+    {
+      "id": "M05",
+      "status": "partial",
+      "note": "Owner publication/discovery remains intact and the candidate enables the shared casual boards. Both native documents match their pinned policies; Daily accepts multiple scores and all negative probes reject. Trial had a successful write/readback followed by a 403 on a later fresh write; provider-wide readiness is not claimed."
+    },
+    {
+      "id": "M06",
+      "status": "blocked",
+      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
+    },
+    {
+      "id": "C10",
+      "status": "partial",
+      "note": "The prior hosted run covered an older source candidate. The current exact candidate passes 94/94 local tests; exact-candidate hosted CI and some other product journeys remain incomplete. No physical-device, human-playtest, or listening requirement remains in scope."
+    }
+  ]
+}

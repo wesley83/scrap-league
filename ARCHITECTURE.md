@@ -60,13 +60,13 @@ Compute a canonical gameplay representation containing geometry, surfaces, gates
 
 `buildRevision` hashes the four part IDs and their complete effective physical definitions. Comparison key is mode + track gameplay revision + rules revision + build revision + laps + assistance profile + challenge identity when applicable. Visual quality, audio, camera mode and cosmetic paint do not affect the key. A result carries the actual key captured for that run.
 
-The compiler produces road meshes, collision primitives, a spatial index, route arc-length samples, AI lookahead data, minimap paths and compact surface intervals. These are generated outputs with source revisions. The editor manipulates a typed working model with a lossless canonical HTML serializer; it is a view of the same contract rather than a second hand-maintained track format.
+The compiler produces road polygons, collision primitives, a spatial index, route arc-length samples, AI lookahead data, minimap paths and compact surface intervals. These are generated outputs with source revisions. The Workshop owns an inert semantic HTML subtree through `TrackDocument`. Each command validates and atomically replaces that source, then derives a frozen typed projection for its views and compiler. Exports reparse that DOM. Draft persistence and undo snapshots retain lossless representations of the same contract; they are never independent editable authorities. Incomplete loops may be saved, while race entry requires the shared compiler to accept the geometry.
 
 Ghosts are a deliberate specialized binary representation. Record vehicle pose, wheel/steer visualization and time at 20 Hz, with interpolation, maximum eight-minute duration and a 512 KiB per-ghost budget. Ghosts are non-colliding visual comparisons and never drive gameplay. They bind to the full comparison key, store with the associated best in one transaction and can be disabled. This avoids a promise of bit-identical replay across browsers and future engines. Input/event traces for diagnostics are separate bounded opt-in exports.
 
 ## Runtime modules and state
 
-Use portable ES modules with a bundled, pinned Three.js renderer and Bun for local build, validation, preview and CI tooling. Select and verify exact library/toolchain versions during implementation; ship a lockfile and local runtime assets. No runtime CDN dependency is required. A small HTML/CSS application shell is sufficient; specialized simulation does not require a page framework.
+Use portable ES modules with a Canvas 2D renderer and Bun/Node for local build, validation, preview and CI tooling. Ship the pinned lockfile and local runtime assets. No runtime CDN or WebGL dependency is required. A small HTML/CSS application shell surrounds the specialized simulation. Rendering consumes compiled geometry and race state without mutating either. Pixel allocation is capped at 2.4 million pixels and a 4096-pixel dimension; safer graphics caps pixel ratio at one. Context loss pauses the race; repair replaces the canvas while preserving the race and requires explicit resume.
 
 | Module | Responsibility | Important boundary |
 | --- | --- | --- |
@@ -199,6 +199,6 @@ Use a manifest with requested fullscreen display and fallbacks, regular and mask
 
 ## Significant decisions and exceptions
 
-Planar physics permits clear readable collision, stable mobile controls and an editor whose topology can be fully validated. Elevated 3D rendering supplies the diorama presentation. Dense route arrays, meshes, audio buffers, ghost recordings and browser storage records are justified specialized representations; the durable published content remains inspectable HTML with traceable revisions.
+Planar physics permits readable collision, mobile controls and an editor whose topology can be validated. The overhead renderer shows numbered cars, kerbs, direction marks and the next checkpoint. Dense route arrays, canvas paths, audio buffers, ghost recordings and browser storage records are justified specialized representations; durable published content remains inspectable HTML with traceable revisions.
 
 A track owns its dependent geometry to keep structural validation coherent. Immutable official snapshots protect ongoing events. Mutable Workshop publication uses owner trust and conditional writes. Shared casual times use the distinct application boundary. No external server is introduced merely to exercise a feature, and no real-time transport or anti-cheat service is implied by Pagelove document persistence.

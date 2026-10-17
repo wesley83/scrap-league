@@ -6,7 +6,7 @@ Build a car from mismatched salvage, race it around compact industrial circuits,
 
 The intended audience is casual arcade-racing players and people who enjoy construction tools. A race takes approximately 90–180 seconds; a three-race cup takes 6–10 minutes including preparation. Editing can be a five-minute experiment or a longer creative session. First-time players should drive within 30 seconds of a completed initial load. These are design targets, subject to observation.
 
-The game uses an elevated orthographic camera, readable low-poly cars and a planar racing model. Its world is a handmade club circuit: weathered concrete, stacked tires, painted metal, floodlights and improvised grandstands. Mechanical personality comes from proportions, wear, sound and handling. The story is about a local crew restoring a forgotten circuit for the Scrap League final.
+The arcade remake uses an overhead Canvas 2D camera, numbered cars and a planar racing model. Distinct road edges, chevrons, start markings and the next checkpoint make the route legible. The player has a yellow car and a YOU marker. Portrait view follows the car with road visible ahead; short landscape frames the forward direction along the wide axis. Reduced motion and north-up avoid camera rotation. The world is a handmade club circuit of stacked tires, painted metal and improvised stands.
 
 ## Core loops
 
@@ -28,6 +28,7 @@ All numbers in this design are initial implementation values or measurable targe
 
 | Mode | Entry and goal | Completion and persistence | Comparisons |
 | --- | --- | --- | --- |
+| Quick Race | LET’S RACE starts Yard Loop immediately with the current car, five Relaxed rivals and two laps | Finish, save a local result and Race again; never changes League progress | No public board or unlock rewards |
 | League | Begin or continue one of four three-race cups; select a build before each race | Every race result commits once. A cup checkpoint stores completed rounds and points. Finish all three rounds to receive its result | Cup standing against five fixed rivals at a chosen difficulty; campaign progress accepts every difficulty |
 | Time Trial | Select an official circuit and any unlocked build; run a standing-start three-lap attempt | Finish, retry or leave. Only a completed, valid attempt becomes a best. Best ghost and result save together | Local best per exact track/rules/build/assist key; casual online board filters the same key |
 | Daily Spec | One UTC-dated official circuit, three laps, fixed car and rules; unlimited attempts | Start captures challenge date, definition and loadout. Crossing midnight does not change the attempt | One comparable board per daily identity and assistance class; offer submission when the player improves their best. Aliases are not unique identities |
@@ -35,12 +36,12 @@ All numbers in this design are initial implementation values or measurable targe
 
 Workshop exposes every part for testing even before League unlocks it. This encourages creation without undermining the League collection. Time Trial and League use the player's unlocked collection; Daily Spec supplies its prescribed build.
 
-The start screen has Continue league when applicable, Race, Daily Spec, Garage and Track Workshop. Race opens League and Time Trial choices. Daily Spec remains a prominent choice, with its date and current personal best. Settings, How to play and installation/update status are secondary navigation.
+The start screen leads with LET’S RACE. League, Daily Spec and Track Workshop are the next choices; Time Trial, Leaderboards, Garage and Driving school remain directly available. Settings and installation/update status are secondary navigation.
 
 ## First ten minutes
 
-1. Start presents the assembled starter car, a short invitation and a large Race button. No account or alias is required to drive.
-2. A 45–60 second solo driving lesson uses Yard Loop. It teaches accelerate, brake, steering and resetting through three contextual prompts that disappear once demonstrated. Skip is available immediately.
+1. Start presents a circuit overview, a short invitation and a large LET’S RACE button. No account or alias is required to drive.
+2. Optional Driving school is one solo Yard Loop lap. Its four prompts follow observed acceleration, steering, braking and accepted boost, with touch/remapped-key wording. Finishing alone does not claim every skill was demonstrated. Reset remains available through Pause or its keyboard binding.
 3. The first real race starts with the Mule chassis, Courier engine, Road tires and Roll Cage. Club is the default difficulty; the entry screen also offers Relaxed and Expert.
 4. The result shows finishing place, fastest valid lap, one specific observation and the next unlock. Examples: “Your cleanest lap was lap 2” and “Try braking before the tire-wall bend.” Advice uses recorded events, never an invented diagnosis.
 5. After the first completed League event, Longrunner unlocks. The garage comparison explains its acceleration/top-speed tradeoff and offers Test drive on the same circuit.

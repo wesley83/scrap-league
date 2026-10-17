@@ -21,10 +21,10 @@ Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390
 
 ## Product decisions
 
-- Elevated orthographic 3D presentation over a planar, fixed-step racing simulation.
+- Overhead Canvas 2D presentation over a planar, fixed-step racing simulation, with a road-ahead camera and reserved touch-control space.
 - Twelve authored circuits in four cups; one player and five computer drivers.
 - Four interchangeable assembly slots with three choices each: 81 possible builds.
-- Campaign, Time Trial, Daily Spec and Workshop modes. The editor and every editing tool are available immediately.
+- One-action two-lap Quick Race, optional action-based Driving School, League, Time Trial, Daily Spec and Workshop. The editor and every editing tool are available immediately.
 - Track geometry uses connected modular pieces, three driveable surfaces and bounded obstacle recipes.
 - Local progress and drafts; owner-authorized track publishing; casual shared times through a separate validated application path.
 - Immutable official race definitions; edited tracks start a distinct revision and never alter an active race.

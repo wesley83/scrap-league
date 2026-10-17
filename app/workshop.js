@@ -36,7 +36,17 @@ import {
   nearest,
   atDistance,
 } from "./track.js";
+import { TrackDocument } from "./track-document.js";
 export class Workshop {
+  get track() {
+    return this.sourceDocument
+      ? this.sourceDocument.read()
+      : this.headlessTrack;
+  }
+  set track(value) {
+    if (this.sourceDocument) this.sourceDocument.replace(value);
+    else this.headlessTrack = value;
+  }
   constructor(
     root,
     { store, templates, onTest, notify, dialog, download, build },
@@ -68,6 +78,16 @@ export class Workshop {
     this.ctx = this.canvas.getContext("2d");
     this.selection = new Set();
     this.setupAdvanced();
+    const sourceRoot = document.createElement("div");
+    sourceRoot.hidden = true;
+    sourceRoot.dataset.authoringSource = "track";
+    this.root.append(sourceRoot);
+    this.sourceDocument = new TrackDocument(sourceRoot);
+    const help = document.createElement("div");
+    help.className = "workshop-help";
+    help.textContent =
+      "Start with a complete circuit. Select a road or object to edit it. Files opens templates and HTML import/export. Test drive returns to this draft; changes save automatically.";
+    this.root.querySelector(".workshop-bar").after(help);
     q("track-name").onchange = () =>
       this.command((t) => {
         t.name = q("track-name").value.trim() || "Untitled circuit";
@@ -262,9 +282,10 @@ export class Workshop {
         const dx =
             Math.round((e.clientX - this.drag.x) / this.scale / grid) * grid,
           dz = Math.round((e.clientY - this.drag.y) / this.scale / grid) * grid;
-        this.track = clone(this.drag.snapshot);
+        const nextTrack = clone(this.drag.snapshot);
         try {
-          transformSelection(this.track, this.selection, { dx, dz });
+          transformSelection(nextTrack, this.selection, { dx, dz });
+          this.track = nextTrack;
           this.compiled = compile(this.track);
           this.drag.moved = dx !== 0 || dz !== 0;
         } catch {}
@@ -800,7 +821,9 @@ export class Workshop {
     try {
       const next = clone(this.track);
       fn(next);
-      this.history.push(clone(this.track));
+      const previous = clone(this.track);
+      this.track = next;
+      this.history.push(previous);
       while (
         this.history.length > 100 ||
         JSON.stringify(this.history).length > 10 * 1024 * 1024
@@ -809,7 +832,6 @@ export class Workshop {
         this.historyTrimmed = true;
       }
       this.future = [];
-      this.track = next;
       if (game) this.tested = "";
       this.refresh();
       this.save();
@@ -1238,7 +1260,9 @@ export class Workshop {
   export() {
     this.download(
       this.track.slug + (this.compiled.valid ? "" : ".draft") + ".html",
-      serializeTrack(this.track),
+      this.sourceDocument
+        ? this.sourceDocument.html()
+        : serializeTrack(this.track),
       "text/html",
     );
   }

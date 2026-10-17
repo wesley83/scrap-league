@@ -47,6 +47,46 @@ function record(run, at) {
       '"></li>',
   );
 }
+test("board transport keeps the browser global receiver", async () => {
+  let calls = 0;
+  const board = new Boards(null, {
+    config,
+    Parser: DOMParser,
+    fetcher: async function () {
+      assert.equal(this, globalThis);
+      calls++;
+      return new Response("");
+    },
+  });
+  assert.deepEqual((await board.refresh(run)).rows, []);
+  assert.equal(calls, 1);
+});
+test("leaderboards can be browsed before a run without inventing a score", async () => {
+  const at = Date.now();
+  let writes = 0;
+  const board = new Boards(null, {
+    config,
+    Parser: DOMParser,
+    fetcher: async (_url, options) => {
+      if (options.method === "POST") writes++;
+      return new Response(record(run, at), {
+        headers: { Date: new Date(at).toUTCString() },
+      });
+    },
+  });
+  const { id, alias, elapsedMs, splits, trackId, ...comparison } = run;
+  const result = await board.browse(comparison);
+  assert.equal(result.rows.length, 1);
+  assert.equal(writes, 0);
+  await assert.rejects(
+    board.browse({ ...comparison, mode: "workshop" }),
+    /Invalid leaderboard/,
+  );
+  await assert.rejects(
+    board.browse({ ...comparison, trackRevision: "bad" }),
+    /Invalid leaderboard/,
+  );
+});
 test("strict run boundary rejects missing identifiers, unsupported content and mismatched captured daily", () => {
   assert.equal(recognized(run, keys), true);
   for (const patch of [
@@ -243,16 +283,10 @@ test("empty Pagelove paginator sentinel reads as an empty board", async () => {
     Parser: DOMParser,
     fetcher: async (url) => {
       const target = new URL(url);
-      assert.equal(
-        target.searchParams.get("paginate:runs:page"),
-        "1",
-      );
-      assert.equal(
-        target.searchParams.get("paginate:runs:length"),
-        "100",
-      );
+      assert.equal(target.searchParams.get("paginate:runs:page"), "1");
+      assert.equal(target.searchParams.get("paginate:runs:length"), "100");
       calls++;
-      return new Response("<ul id=\"runs\"></ul>", {
+      return new Response('<ul id="runs"></ul>', {
         headers: {
           Link: '</boards/trial.html?paginate:runs:page=0>; rel="last"; title="runs"',
         },
@@ -276,7 +310,7 @@ test("bounded reads retry temporary provider errors, while writes remain single-
       reads++;
       return reads < 3
         ? new Response("temporarily unavailable", { status: 503 })
-        : new Response("<ul id=\"runs\"></ul>", {
+        : new Response('<ul id="runs"></ul>', {
             headers: {
               Link: '</boards/trial.html?paginate:runs:page=0>; rel="last"; title="runs"',
             },

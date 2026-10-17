@@ -3,7 +3,13 @@ import { Boards, submission, contentKeys, recognized } from "./boards.js";
 import { readPublishedTrack, discoverTracks } from "./publication.js";
 import { resultInvitation, shareInvitation, scorecard } from "./sharing.js";
 import { workerRequest } from "./offline.js";
-import { World } from "./renderer.js";
+import { World } from "./arcade-renderer.js";
+import {
+  ContactActions,
+  bindTouchControls,
+  practiceStep,
+  practicePrompt,
+} from "./driving-controls.js";
 import {
   defaultSettings,
   normalizeSettings,
@@ -77,8 +83,9 @@ let content,
   installPrompt,
   waitingWorker;
 const keys = new Set(),
-  held = new Set();
+  held = new ContactActions();
 let steering = 0;
+let resetTouch;
 let repairingGraphics = false;
 let graphicsSnapshot;
 const sound = new Sound();
@@ -241,7 +248,7 @@ function dialog(title, body, actions = [{ label: "Close" }]) {
     b.textContent = item.label;
     if (i === 0) b.className = "primary";
     b.onclick = async () => {
-      modal.close();
+      if (!item.keep) modal.close();
       try {
         await item.action?.();
       } catch (e) {
@@ -271,6 +278,7 @@ function clearInput() {
   keys.clear();
   held.clear();
   steering = 0;
+  resetTouch?.();
 }
 function show(next) {
   if (updateLock)
@@ -279,6 +287,7 @@ function show(next) {
   clearInput();
   if (["race", "result", "scene"].includes(view) && next !== view) sound.stop();
   view = next;
+  document.body.dataset.view = next;
   lastRender = 0;
   q("stage").className = "view-" + next;
   document
@@ -552,7 +561,14 @@ async function beginRace(track, mode, options = {}) {
         (raceSettings.assist ? "steering-on" : "steering-off") +
         ":" +
         (raceSettings.autoAccelerate ? "auto" : "manual"),
-      laps = mode === "lesson" ? 1 : mode === "workshop" ? track.laps : 3,
+      laps =
+        mode === "lesson"
+          ? 1
+          : mode === "exhibition"
+            ? 2
+            : mode === "workshop"
+              ? track.laps
+              : 3,
       key = comparisonKey({
         mode,
         trackRevision,
@@ -600,7 +616,10 @@ async function beginRace(track, mode, options = {}) {
       key,
       build,
       laps,
-      difficulty: cup?.difficulty || q("difficulty").value,
+      difficulty:
+        mode === "exhibition"
+          ? "relaxed"
+          : cup?.difficulty || q("difficulty").value,
       cars,
       ghost: [],
       bestGhost: best?.ghost || null,
@@ -616,6 +635,16 @@ async function beginRace(track, mode, options = {}) {
       rivals: clone(options.rivals || content.rivals),
       options: clone(options),
       degraded: 0,
+      practice:
+        mode === "lesson"
+          ? {
+              heading: cars[0].heading,
+              accelerate: false,
+              steer: false,
+              brake: false,
+              boost: false,
+            }
+          : null,
     };
     if (cup) {
       cup.pending = captureAttempt(race, parts);
@@ -642,10 +671,12 @@ async function beginRace(track, mode, options = {}) {
         daily: "DAILY SPEC",
         workshop: "WORKSHOP TEST",
         lesson: "DRIVING LESSON",
-        exhibition: "EXHIBITION",
+        exhibition: "QUICK RACE · 2 LAPS",
         league: race.difficulty.toUpperCase(),
       }[mode];
     document.body.classList.toggle("touch", settings.touch);
+    document.body.dataset.auto = String(raceSettings.autoAccelerate);
+    q("practice-progress").hidden = mode !== "lesson";
     sound.enabled = settings.sound;
     sound.musicEnabled = settings.music;
     await sound.activate();
@@ -668,6 +699,16 @@ function pause(reason = "Take a breath. The race clock is stopped.") {
       ? { label: "Resume", action: resume }
       : { label: "Repair graphics", action: () => repairGraphics() },
     { label: "Settings", action: settingsDialog },
+    {
+      label: "Reset car to checkpoint",
+      action: () => {
+        resetCar(
+          race.cars.find((c) => c.id === "player"),
+          race.track,
+        );
+        resume();
+      },
+    },
     { label: "Restart race", action: () => restart() },
     {
       label: race.mode === "workshop" ? "Return to editor" : "Leave race",
@@ -807,15 +848,31 @@ function updateHUD() {
         : p.stuckTime > 4
           ? "Stuck? Press R or Reset car."
           : race.mode === "lesson"
-            ? race.time < 12
-              ? "W to accelerate · A / D to steer"
-              : race.time < 25
-                ? "Brake with S before the bend."
-                : race.time < 40
-                  ? "Shift boosts on the straight. R resets at your last gate."
-                  : "Complete the lap. The next gate is highlighted on the map."
+            ? practicePrompt(race.practice, {
+                ...settings,
+                autoAccelerate: race.settingsSnapshot.autoAccelerate,
+              })
             : "";
   q("race-message").textContent = message;
+  if (race.practice)
+    q("practice-progress").textContent = [
+      "accelerate",
+      "steer",
+      "brake",
+      "boost",
+    ]
+      .map((k) => (race.practice[k] ? "✓ " : "○ ") + k)
+      .join("   ");
+  const here = nearest(race.track, p.x, p.z),
+    ahead = atDistance(race.track, here.s + 28),
+    turn = wrap(ahead.heading - here.heading);
+  q("corner-hint").textContent = p.boosting
+    ? "BOOSTING"
+    : p.surface !== "asphalt"
+      ? p.surface.toUpperCase() + " · easy on the throttle"
+      : Math.abs(turn) > 0.18
+        ? (turn > 0 ? "↱ Right bend" : "↰ Left bend") + " · brake early"
+        : "Straight · find your line";
   const canvas = q("minimap"),
     ctx = canvas.getContext("2d"),
     samples = race.track.samples,
@@ -869,7 +926,9 @@ async function finish() {
   q("result-title").textContent = result.dnf
     ? "TRY THAT AGAIN."
     : race.mode === "lesson"
-      ? "READY TO RACE."
+      ? Object.values(race.practice).filter((v) => v === true).length === 4
+        ? "READY TO RACE."
+        : "LAP COMPLETE."
       : place === 1 && race.cars.length > 1
         ? "FIRST HOME."
         : race.previousBest && result.elapsedMs < race.previousBest.elapsedMs
@@ -940,7 +999,11 @@ function renderResultActions() {
     );
   else if (race.mode === "lesson")
     button("Enter the league", () => enterLeague(), true);
-  button("Race again", restart, race.mode === "trial" || race.mode === "daily");
+  button(
+    "Race again",
+    restart,
+    ["trial", "daily", "exhibition"].includes(race.mode),
+  );
   if (!race.saved) button("Retry save", persistResult);
   button("Share result", shareResult);
   if (
@@ -1242,7 +1305,7 @@ function settingsDialog() {
     assist: "Gentle steering assistance (next race)",
     northUp: "Fixed north-up camera",
     lowEffects: "Reduced visual effects",
-    safeGraphics: "Safer graphics (lower detail)",
+    safeGraphics: "Lower canvas resolution",
     reducedMotion: "Reduced motion",
     ghost: "Show compatible personal-best ghost",
     touch: "Show touch controls",
@@ -1308,7 +1371,7 @@ function settingsDialog() {
   repair.onclick = () => repairGraphics();
   graphicsStatus.className = "muted";
   graphicsStatus.textContent =
-    "Blank racing view? Repair graphics rebuilds it with lower detail and keeps your progress. Release " +
+    "Canvas 2D racing. Repair graphics recreates the view and keeps your progress. Release " +
     new URL(".", import.meta.url).pathname.split("/").filter(Boolean).at(-1) +
     ".";
   body.prepend(repair, graphicsStatus);
@@ -1372,7 +1435,13 @@ function settingsDialog() {
 function applyPreferences() {
   const hint = bindingHint(settings);
   document.querySelector(".keyboard-hint").textContent = hint;
-  q("world").setAttribute("aria-label", "3D racing view. " + hint);
+  q("world").setAttribute("aria-label", "Overhead racing view. " + hint);
+  document.querySelector(".start-controls").textContent = settings.touch
+    ? "Use the steering wheel and brake before bends. " +
+      (settings.autoAccelerate
+        ? "Auto throttle is on."
+        : "Hold GAS to accelerate.")
+    : hint;
   document.body.classList.toggle("touch", settings.touch);
   document.body.classList.toggle("large-hud", settings.largeHud);
   document.body.classList.toggle("left-handed", settings.leftHanded);
@@ -1544,6 +1613,11 @@ q("home").onclick = async () => {
 document
   .querySelectorAll("[data-home]")
   .forEach((b) => (b.onclick = () => show("start")));
+q("quick-race").onclick = () =>
+  beginRace(clone(content.tracks[0].track), "exhibition", {
+    build: progress.build,
+  });
+q("leaderboard-button").onclick = openLeaderboards;
 q("race-button").onclick = () => events("league");
 q("trial-button").onclick = () => events("trial");
 q("continue-cup").onclick = () => enterLeague();
@@ -1720,49 +1794,14 @@ const orientationPause = () => {
 };
 screen.orientation?.addEventListener("change", orientationPause);
 window.addEventListener("orientationchange", orientationPause);
-document.querySelectorAll("[data-hold]").forEach((b) => {
-  b.onpointerdown = (e) => {
-    e.preventDefault();
-    b.setPointerCapture(e.pointerId);
-    held.add(b.dataset.hold);
-  };
-  for (const type of ["pointerup", "pointercancel", "lostpointercapture"])
-    b.addEventListener(type, () => {
-      const interrupted = type !== "pointerup" && held.has(b.dataset.hold);
-      held.delete(b.dataset.hold);
-      if (interrupted && view === "race")
-        pause("A touch control was interrupted. Resume when ready.");
-    });
+resetTouch = bindTouchControls(q("touch-controls"), {
+  held,
+  steer: (value) => (steering = value),
+  active: () =>
+    view === "race" &&
+    ["countdown", "racing"].includes(race?.state) &&
+    !q("modal").open,
 });
-q("steering-pad").onpointerdown = (e) => {
-  e.preventDefault();
-  e.currentTarget.setPointerCapture(e.pointerId);
-  q("steering-pad").dataset.pointer = e.pointerId;
-  steerTouch(e);
-};
-function steerTouch(e) {
-  if (String(e.pointerId) !== q("steering-pad").dataset.pointer) return;
-  const r = q("steering-pad").getBoundingClientRect();
-  steering = clamp((e.clientX - r.left - r.width / 2) / (r.width * 0.4), -1, 1);
-  q("steering-pad").setAttribute("aria-valuenow", steering.toFixed(2));
-}
-q("steering-pad").onpointermove = steerTouch;
-for (const type of ["pointerup", "pointercancel", "lostpointercapture"])
-  q("steering-pad").addEventListener(type, () => {
-    const interrupted =
-      type !== "pointerup" && q("steering-pad").dataset.pointer !== undefined;
-    steering = 0;
-    delete q("steering-pad").dataset.pointer;
-    if (interrupted && view === "race")
-      pause("Steering was interrupted. Resume when ready.");
-  });
-q("steering-pad").onkeydown = (e) => {
-  if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-    e.preventDefault();
-    steering = e.key === "ArrowLeft" ? -1 : 1;
-  }
-};
-q("steering-pad").onkeyup = () => (steering = 0);
 window.addEventListener("unhandledrejection", (e) => {
   notify(
     "Action could not finish: " + (e.reason?.message || "Unknown error"),
@@ -1983,6 +2022,11 @@ function frame(now) {
         let steps = 0;
         while (accumulator >= DT && steps < 8 && race.state === "racing") {
           stepRace(race, controls);
+          practiceStep(
+            race.practice,
+            race.cars.find((c) => c.id === "player"),
+            controls,
+          );
           accumulator -= DT;
           steps++;
         }
@@ -2101,6 +2145,108 @@ async function showSharedTimes() {
   } catch (error) {
     dialog("Shared times could not load", error.message);
   }
+}
+async function openLeaderboards() {
+  const body = document.createElement("div");
+  body.innerHTML = `<p>Three laps. The same circuit, car and assists. Set your time in Time Trial or try today's fixed Daily Spec.</p><div class="board-controls"><label>Board<select id="board-mode"><option value="trial">Time Trial</option><option value="daily">Daily Spec</option></select></label><label>Circuit<select id="board-track">${content.tracks.map((t, i) => `<option value="${i}">${esc(t.track.name)}</option>`).join("")}</select></label></div><p id="board-spec" class="muted"></p><p id="board-state" role="status">Loading times…</p><ol class="board-list"></ol><p class="muted">Community times are client-reported. Entries remain on the board for five days. Your local bests stay on your device.</p>`;
+  const mode = body.querySelector("#board-mode"),
+    track = body.querySelector("#board-track"),
+    state = body.querySelector("#board-state"),
+    list = body.querySelector("ol");
+  let revision = 0,
+    selection = null;
+  const refresh = async () => {
+    const token = ++revision;
+    selection = null;
+    list.replaceChildren();
+    state.textContent = "Loading times…";
+    const date = new Date().toISOString().slice(0, 10),
+      d = content.daily.find((d) => d.date === date);
+    track.disabled = mode.value === "daily";
+    if (mode.value === "daily" && !d) {
+      state.textContent =
+        "No Daily Spec is included for today. Time Trial is available.";
+      return;
+    }
+    const index =
+      mode.value === "daily"
+        ? content.tracks.findIndex((t) => t.track.id === d.track)
+        : Number(track.value);
+    track.value = String(index);
+    const build =
+        mode.value === "daily"
+          ? Object.fromEntries(SLOTS.map((s) => [s, d[s]]))
+          : clone(progress.build),
+      spec = assemble(build, content.parts);
+    const options =
+      mode.value === "daily"
+        ? { build, challenge: d.id, challengeDate: d.date }
+        : { build };
+    const capturedMode = mode.value;
+    body.querySelector("#board-spec").textContent =
+      SLOTS.map((s) => spec[s].name).join(" / ") +
+      " · " +
+      (settings.autoAccelerate ? "Auto throttle" : "Manual throttle") +
+      " · Steering assist " +
+      (settings.assist ? "on" : "off") +
+      (capturedMode === "daily" ? " · " + date + " UTC" : "");
+    try {
+      const buildRevision = await hash(
+        SLOTS.map((s) => {
+          const { name, description, unlock, ...physical } = spec[s];
+          return physical;
+        }),
+      );
+      if (token !== revision || !body.isConnected) return;
+      const query = {
+        mode: capturedMode,
+        trackRevision: content.tracks[index].revision,
+        buildRevision,
+        laps: 3,
+        assist:
+          (settings.assist ? "steering-on" : "steering-off") +
+          ":" +
+          (settings.autoAccelerate ? "auto" : "manual"),
+        challenge: options.challenge || "",
+      };
+      selection = { index, mode: capturedMode, options };
+      const board = await boards.browse(query);
+      if (token !== revision || !body.isConnected) return;
+      state.textContent = board.stale
+        ? "Saved times · could not refresh. " + board.error
+        : board.rows.length
+          ? "Latest confirmed times"
+          : "No times for this combination yet. Set the first one.";
+      for (const [i, row] of board.rows.entries()) {
+        const li = document.createElement("li"),
+          name = document.createElement("span"),
+          value = document.createElement("strong");
+        name.textContent = i + 1 + ". " + row.alias;
+        value.textContent = time(row.elapsedMs);
+        li.append(name, value);
+        list.append(li);
+      }
+    } catch (e) {
+      if (token === revision && body.isConnected)
+        state.textContent =
+          "Times unavailable: " +
+          e.message +
+          " You can still race and keep your result locally.";
+    }
+  };
+  mode.onchange = track.onchange = refresh;
+  dialog("LEADERBOARDS", body, [
+    {
+      label: "Set a time",
+      action: () => {
+        if (selection)
+          startTrack(selection.index, selection.mode, selection.options);
+      },
+    },
+    { label: "Refresh", keep: true, action: refresh },
+    { label: "Close" },
+  ]);
+  await refresh();
 }
 async function openNativeRoute() {
   const mode = location.pathname.split("/")[1];

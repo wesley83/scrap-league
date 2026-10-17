@@ -1,10 +1,10 @@
 {
-  "release": "sl-2212ffe6721a07",
+  "release": "sl-60bf1fb46ea8c0",
   "tracks": 12,
   "parts": 12,
   "cups": 4,
   "rivals": 8,
   "daily": 121,
-  "inventoryCount": 48,
+  "inventoryCount": 49,
   "verified": "Source parsed and compiled from content documents; no prior derived bundle used."
 }

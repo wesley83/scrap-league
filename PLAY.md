@@ -14,6 +14,8 @@ For source development, install the pinned dependencies with `bun install --froz
 
 ## Drive
 
+Choose **LET’S RACE** for an immediate two-lap race against five rivals. **Driving school** is an optional one-lap practice: accelerate, steer, brake and boost to complete its checklist. **Leaderboards** opens public Time Trial and Daily times from the yard. Quick Race and practice never award League progression.
+
 | Action | Keyboard | Gamepad |
 | --- | --- | --- |
 | Accelerate / brake, then reverse | W / S or up / down | Right / left trigger |
@@ -34,7 +36,7 @@ The car uses actual part mass, engine force/power/governor, tire surface grip an
 - League, Time Trial, UTC Daily Spec, a driving lesson and Workshop tests. The bundled daily edition covers September 16, 2026 through January 14, 2027 inclusive. Past dates remain their own edition; outside its range, Time Trial and Workshop remain available.
 - Local bests with compatible noncolliding ghosts, split times, results, download/share fallbacks, transactional progression and persistent drafts.
 - Shared casual Trial/Daily times with separate public boards, a durable retry queue, server-validated record shape and five-day retention. Public times are client-reported and can be forged; local records remain independent.
-- Procedural 3D cars/yard scenery, three surfaces, boost pads, barriers/scrap islands, synthesized engine/music, mute and reduced-motion/effects settings.
+- Overhead numbered cars, road-ahead camera, three surfaces, boost pads, barriers/scrap islands, synthesized engine/music, mute and reduced-motion/effects settings. The racing view uses Canvas 2D without WebGL.
 - Hash-verified complete offline packs, immutable release folders and explicit safe-start-screen updates. Cached prior assets and user data are retained.
 
 ## Build a track
