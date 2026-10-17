@@ -11,6 +11,7 @@ export const SOURCE_DIRS = [
   "tests",
   "references",
   "artwork",
+  "policy-candidates",
   ".github",
 ];
 export const SOURCE_FILES = [

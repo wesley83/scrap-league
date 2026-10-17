@@ -14,10 +14,10 @@ Use status values Passed, Failed, Not run, Blocked and Accepted exception, alway
 | 2 · Integrated race and Workshop | Six-car race, modular road editor, surface/prop/gate tools, real test drive, history and drafts | A new track can be built, validated, driven, recovered and exported/imported through the UI; one complete keyboard/touch-emulated journey |
 | 3 · Garage and full content | All 81 builds, twelve circuits, four cups, eight rivals, unlocks and results | Official tracks authored in Workshop; all references resolve; all tracks finish under seeded AI; seeded handling/pacing measurements complete |
 | 4 · Resilient player experience | Saves, ghosts, daily definitions, offline pack, install/fullscreen, audio and sharing | Transaction/failure tests; genuine offline relaunch; natural update journey; phone layouts and keyboard focus |
-| 5 · Pagelove integration | Native composition, owner publication, discovery index, casual boards | Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation and positive/negative record checks |
+| 5 · Pagelove integration | Native composition, owner publication, discovery index, casual boards | Correct-host readback, ETag conflict and ambiguous-write recovery; exact-host positive/negative record checks. Boards remain explicitly casual; missing provider-wide readiness remains visible and is never called globally verified. |
 | 6 · Release candidate | Complete asset pack, required CI, audit evidence, release/rollback tools and browser verification | All required rows pass or have explicitly accepted scoped exceptions; exact package verified and previous-client update succeeds |
 
-Milestone 2 is the first playable slice. It includes the editor from the beginning. Milestones are dependency gates rather than unsupported calendar estimates. The shared board's provider activation dependency must be resolved before enabling that feature in a public release.
+Milestone 2 is the first playable slice. It includes the editor from the beginning. Milestones are dependency gates rather than unsupported calendar estimates. Casual boards may be enabled after host-specific server-rule and retention checks; a provider-wide policy-readiness guarantee is tracked separately and remains a disclosed limitation.
 
 ## Required player journeys
 
@@ -67,7 +67,7 @@ Tests must derive expectations from the contract rather than repeat the producti
 | P05 | Public records | Missing/extra fields, wrong types, unsupported content key, invalid splits, client expiry, duplicates and prohibited mutations all rejected through the actual application endpoint |
 | P06 | Retention | Before/at/after five-day expiry, multiple expired rows interleaved with active controls, offline filtering, repeat cleanup and separate physical inspection |
 | P07 | Native composition | Valid/missing/unknown slug, hostile path input, intended source fragment and fallback after composition failure |
-| P08 | Policy activation | Supported provider procedure and readiness evidence; source ETag/OPTIONS/warmup are not substituted for enforcement readiness |
+| P08 | Policy activation | Record whether a supported provider procedure/readiness contract exists; source ETag/OPTIONS/warmup never count as global enforcement readiness |
 | P09 | Data-preserving release | Populated Workshop, catalog, boards and old-client assets survive; no duplicate live schema declarations in immutable bundles |
 
 Use synthetic aliases and disposable resources. Keep sanitized request/status/body evidence, correlation identifiers when present, UTC timestamps and positive/negative controls. Delete only fixtures owned by the experiment and verify cleanup. Repeated intermittent failures remain in the record even if retry succeeds.

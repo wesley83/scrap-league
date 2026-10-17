@@ -2,6 +2,22 @@ import { HOST_CONFIG, validateRun } from "./pagelove.js";
 import { esc, stable, hash } from "./model.js";
 import { RULES, SLOTS, assemble, allBuilds, comparisonKey } from "./builds.js";
 export const RETENTION_MS = 5 * 86400000;
+export const BOARD_PAGE_SIZE = 100;
+export const BOARD_MAX_PAGES = 10;
+const RUN_FIELDS = Object.freeze([
+  "id",
+  "alias",
+  "mode",
+  "trackId",
+  "trackRevision",
+  "rulesRevision",
+  "buildRevision",
+  "assist",
+  "laps",
+  "challenge",
+  "elapsedMs",
+  "splits",
+]);
 export function boardKey(run) {
   return comparisonKey({
     mode: run.mode,
@@ -90,7 +106,7 @@ export function runHTML(run) {
   validateRun(run);
   return (
     '<li itemscope itemtype="urn:ScrapLeague:Run">' +
-    Object.entries(run)
+    RUN_FIELDS.map((key) => [key, run[key]])
       .map(
         ([key, value]) =>
           '<meta itemprop="' +
@@ -128,7 +144,8 @@ export function parseRuns(html, Parser = DOMParser) {
     if (
       !Number.isSafeInteger(received) ||
       received < 0 ||
-      expires !== received + RETENTION_MS ||
+      !Number.isSafeInteger(expires) ||
+      Math.abs(expires - received - RETENTION_MS) > 5000 ||
       seen.has(run.id)
     )
       throw Error("Invalid server record identity or retention.");
@@ -186,42 +203,125 @@ export class Boards {
     this.owner = crypto.randomUUID();
   }
   get enabled() {
-    return !!this.config?.readinessRevision;
+    return !!this.config?.policyRevision;
   }
   async request(mode, options = {}) {
     if (!this.enabled)
       throw Error(
-        "Shared boards await verified provider policy activation. Your local results are kept.",
+        "Shared boards are not configured on this game host. Your local results are kept.",
       );
-    const path = this.config.paths?.[mode];
+    const path = this.config.paths?.[mode],
+      { page = 1, ...fetchOptions } = options;
     if (!["/boards/trial.html", "/boards/daily.html"].includes(path))
       throw Error("Unsupported board endpoint.");
-    return this.fetcher(HOST_CONFIG.publicOrigin + path, {
-      ...options,
+    const url = new URL(HOST_CONFIG.publicOrigin + path);
+    if (fetchOptions.method !== "POST") {
+      if (!Number.isSafeInteger(page) || page < 1 || page > BOARD_MAX_PAGES + 1)
+        throw Error("Board page exceeds the safe-read limit.");
+      url.searchParams.set("paginate:runs:page", String(page));
+      url.searchParams.set(
+        "paginate:runs:length",
+        String(BOARD_PAGE_SIZE),
+      );
+    }
+    const init = {
+      ...fetchOptions,
       credentials: "omit",
       redirect: "error",
       cache: "no-store",
       signal: AbortSignal.timeout(12000),
-    });
+    };
+    const retryable = !fetchOptions.method || fetchOptions.method === "GET";
+    for (let attempt = 0; ; attempt++) {
+      const response = await this.fetcher(url.href, init);
+      if (
+        !retryable ||
+        ![429, 502, 503, 504].includes(response.status) ||
+        attempt >= 2
+      )
+        return response;
+      await response.body?.cancel();
+      await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
+    }
   }
   async lookup(run) {
-    const response = await this.request(run.mode, {
-      headers: {
-        Range:
-          'selector=#runs > li:has(meta[itemprop="id"][content="' +
-          run.id +
-          '"])',
-      },
-    });
-    if (response.status === 404) return null;
-    if (!response.ok) throw Error("Could not reconcile submitted run.");
-    const rows = parseRuns(await boundedText(response), this.Parser),
+    const { rows } = await this.readRows(run.mode),
       found = rows.find((r) => r.id === run.id);
     if (!found) return null;
     const { receivedAt, expiresAt, ...stored } = found;
     if (stable(stored) !== stable(run))
       throw Error("Server identity conflicts with the queued result.");
     return found;
+  }
+  async readRows(mode) {
+    const rows = [],
+      seen = new Set();
+    let page = 1,
+      serverTime = null;
+    while (page <= BOARD_MAX_PAGES) {
+      const response = await this.request(mode, {
+        page,
+        headers: { Range: "selector=#runs" },
+      });
+      if (!response.ok)
+        throw Error("Board read failed (" + response.status + ").");
+      const responseTime = Date.parse(response.headers.get("Date") || "");
+      if (Number.isFinite(responseTime)) serverTime = responseTime;
+      const batch = parseRuns(await boundedText(response), this.Parser);
+      if (batch.length > BOARD_PAGE_SIZE)
+        throw Error("Board page exceeds its configured row limit.");
+      for (const row of batch) {
+        if (seen.has(row.id))
+          throw Error("Board pages changed during reading; retry the refresh.");
+        seen.add(row.id);
+        rows.push(row);
+      }
+      const link = response.headers.get("Link") || "",
+        last = [...link.matchAll(/<([^>]+)>\s*;\s*rel="?last"?/gi)].at(-1);
+      if (last) {
+        const target = new URL(
+          last[1],
+          response.url || HOST_CONFIG.publicOrigin,
+        );
+        const pageKey = "paginate:runs:page",
+          lengthKey = "paginate:runs:length",
+          linkedPages = target.searchParams.getAll(pageKey),
+          linkedLengths = target.searchParams.getAll(lengthKey);
+        if (
+          target.origin !== HOST_CONFIG.publicOrigin ||
+          target.pathname !== this.config.paths[mode] ||
+          linkedPages.length !== 1 ||
+          linkedLengths.length > 1 ||
+          (linkedLengths.length === 1 &&
+            linkedLengths[0] !== String(BOARD_PAGE_SIZE)) ||
+          [...target.searchParams.keys()].some(
+            (key) => key !== pageKey && key !== lengthKey,
+          )
+        )
+          throw Error("Board pagination link is outside the pinned endpoint.");
+        const lastPage = Number(linkedPages[0]);
+        if (page === 1 && batch.length === 0 && lastPage === 0) break;
+        if (!Number.isSafeInteger(lastPage) || lastPage < page)
+          throw Error("Board pagination link is invalid.");
+        if (lastPage > BOARD_MAX_PAGES)
+          throw Error("Board exceeds the 1,000-row safe-read limit.");
+        if (page >= lastPage) break;
+      } else if (batch.length < BOARD_PAGE_SIZE) break;
+      if (page === BOARD_MAX_PAGES) {
+        const probe = await this.request(mode, {
+          page: page + 1,
+          headers: { Range: "selector=#runs" },
+        });
+        if (
+          !probe.ok ||
+          parseRuns(await boundedText(probe), this.Parser).length
+        )
+          throw Error("Board exceeds the 1,000-row safe-read limit.");
+        break;
+      }
+      page++;
+    }
+    return { rows, serverTime };
   }
   async pump() {
     if (!this.enabled || this.running || !this.store) return;
@@ -297,14 +397,8 @@ export class Boards {
     validateRun(run);
     const key = boardKey(run);
     try {
-      const response = await this.request(run.mode, {
-        headers: { Range: "selector=#runs" },
-      });
-      if (!response.ok)
-        throw Error("Board refresh failed (" + response.status + ").");
-      const rows = parseRuns(await boundedText(response), this.Parser),
-        serverDate = Date.parse(response.headers.get("Date") || ""),
-        now = Number.isFinite(serverDate) ? serverDate : this.clock();
+      const { rows, serverTime } = await this.readRows(run.mode),
+        now = serverTime ?? this.clock();
       const cached = {
         version: 1,
         rows,

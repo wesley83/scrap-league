@@ -1256,7 +1256,7 @@ function settingsDialog() {
           `<label class="check"><input type="checkbox" data-setting="${k}" ${settings[k] ? "checked" : ""}>${v}</label>`,
       )
       .join("") +
-    '<p class="muted">Assistance choices are captured when the race starts and separate personal-best comparisons. The current keyboard bindings are listed below. Gamepad uses the left stick, triggers, A to slide, B to boost and Start to pause.</p><div class="command-row"><button id="install-app">Install game</button><button id="update-app">Check offline pack</button></div><p class="muted">Owner publishing is available in Workshop. Shared leaderboards require verified provider policy activation.</p>';
+    '<p class="muted">Assistance choices are captured when the race starts and separate personal-best comparisons. The current keyboard bindings are listed below. Gamepad uses the left stick, triggers, A to slide, B to boost and Start to pause.</p><div class="command-row"><button id="install-app">Install game</button><button id="update-app">Check offline pack</button></div><p class="muted">Owner publishing and shared casual Trial/Daily boards are available on this Pagelove host. Times are community-submitted and may be forged; they are not competitive verification.</p>';
   body.querySelectorAll("[data-setting]").forEach(
     (c) =>
       (c.onchange = async () => {
@@ -1432,7 +1432,7 @@ function appendDataControls(body) {
         label: "Retry connection",
         action: async () => {
           if (!boards.enabled)
-            throw Error("Provider activation is still pending.");
+            throw Error("Shared boards are not configured on this host yet.");
           await boards.pump();
           notify("Submission queue checked.");
         },
@@ -2045,8 +2045,8 @@ async function showSharedTimes() {
   if (!result) return;
   if (!boards?.enabled) {
     dialog(
-      "Shared times are not available yet",
-      "Public score policies still need verified activation on Pagelove. Your results, personal bests and ghosts remain available locally.",
+      "Shared times are not configured",
+      "This game copy has no configured public board. Your results, personal bests and ghosts remain available locally.",
     );
     return;
   }
@@ -2057,7 +2057,7 @@ async function showSharedTimes() {
       body = document.createElement("div");
     const policy = document.createElement("p");
     policy.textContent =
-      "Casual, client-reported times. Rankings expire five days after server receipt; stored rows are cleaned on later online access.";
+      "Casual, client-reported times; client-side times can be forged. Rankings expire five days after server receipt; stored rows are cleaned on later online access.";
     body.append(policy);
     const status = document.createElement("p");
     status.textContent = board.stale

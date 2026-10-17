@@ -13,6 +13,7 @@ import { loadContent } from "./content.mjs";
 import { verifyAssets } from "./assets.mjs";
 import { sourceIdentity } from "./release-gate.mjs";
 import { nativeResources } from "./native-resources.mjs";
+import "./build-board-documents.mjs";
 const root = fileURLToPath(new URL("../", import.meta.url)),
   out = path.join(root, "dist");
 const digest = (b) => createHash("sha256").update(b).digest("hex");

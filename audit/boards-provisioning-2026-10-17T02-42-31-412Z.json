@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-17T02:42:31.412Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "policyRevision": "scrap-league-casual-v1",
+  "outcomes": [
+    {
+      "path": "/boards/trial.html",
+      "state": "migrated-shape-safe-pagination-preserving-rows",
+      "rowsPreserved": 0
+    },
+    {
+      "path": "/boards/daily.html",
+      "state": "migrated-shape-safe-pagination-preserving-rows",
+      "rowsPreserved": 0
+    }
+  ],
+  "scope": "Two isolated public collections; create-only DAV writes; existing records are never replaced"
+}

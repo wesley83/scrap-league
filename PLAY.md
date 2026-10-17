@@ -33,6 +33,7 @@ The car uses actual part mass, engine force/power/governor, tire surface grip an
 - Four assembly slots and 81 build combinations. Workshop tests can use every part immediately; League and Time Trial require unlocked parts. Twelve named local presets.
 - League, Time Trial, UTC Daily Spec, a driving lesson and Workshop tests. The bundled daily edition covers September 16, 2026 through January 14, 2027 inclusive. Past dates remain their own edition; outside its range, Time Trial and Workshop remain available.
 - Local bests with compatible noncolliding ghosts, split times, results, download/share fallbacks, transactional progression and persistent drafts.
+- Shared casual Trial/Daily times with separate public boards, a durable retry queue, server-validated record shape and five-day retention. Public times are client-reported and can be forged; local records remain independent.
 - Procedural 3D cars/yard scenery, three surfaces, boost pads, barriers/scrap islands, synthesized engine/music, mute and reduced-motion/effects settings.
 - Hash-verified complete offline packs, immutable release folders and explicit safe-start-screen updates. Cached prior assets and user data are retained.
 
@@ -50,7 +51,7 @@ Canvas tools select, pan, place pads/barriers/islands and zoom. The object list 
 
 See [implementation status](IMPLEMENTATION-STATUS.md), [current automated tests](audit/remediation-final-tests.txt), [persisted campaign evidence](audit/remediation-persisted-campaigns.json), [acceptance ledger](audit/current-acceptance.json), and the [remediation audit](audit/2026-10-16-remediation.md). Older evidence remains preserved with its original release and limitations.
 
-The local game and editor work without a Pagelove credential. Owner publication and discovery are implemented for the selected host, with conditional real-provider probes. The [deployment receipt](audit/deployment.json) records the last completed public asset/native-route readback. Casual boards remain disabled until actual public validation, retention and supported policy activation pass. WebDAV is trusted owner authoring and intentionally bypasses platform validation/triggers.
+The local game and editor work without a Pagelove credential. Owner publication and discovery are implemented for the selected host, with conditional real-provider probes. Shared casual boards use native per-game server rules and a separate conditional provisioning operation; they do not make results authoritative or prevent modified clients from submitting fabricated times. The [deployment receipt](audit/deployment.json) records the last completed public asset/native-route readback. WebDAV is trusted owner authoring and intentionally bypasses platform validation/triggers.
 
 Real-hardware sessions, human playtesting and perceptual listening are outside required scope by user instruction. Available-browser and automated checks remain required. This candidate does not yet pass every production release row in ACCEPTANCE.md.
 

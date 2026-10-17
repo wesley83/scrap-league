@@ -6,11 +6,17 @@ import {
   hash,
   UUID,
 } from "./model.js";
-// Owner authoring is pinned. Public mutation stays disabled until native policy readiness is established.
+// Owner authoring and the anonymous casual-board documents are pinned to this game host.
 export const HOST_CONFIG = Object.freeze({
   authoringOrigin: "https://dav-hire-poker-8313.onpagelove.com",
   publicOrigin: "https://hire-poker-8313.onpagelove.com",
-  publicBoards: null,
+  publicBoards: Object.freeze({
+    policyRevision: "scrap-league-casual-v1",
+    paths: Object.freeze({
+      trial: "/boards/trial.html",
+      daily: "/boards/daily.html",
+    }),
+  }),
 });
 export async function publishTrack({
   url,

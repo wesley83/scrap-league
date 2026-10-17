@@ -568,7 +568,7 @@ async function deploy(publicationAuthorization = null) {
     credentialStored: false,
     baselineBackup: "Local ignored .local/deployment-baselines only",
     applicationServices:
-      "Owner publication and discovery; public boards require separate verified policy activation",
+      "Owner publication/discovery plus separately provisioned casual Trial/Daily boards",
   };
   await fs.writeFile(
     path.join(root, "audit/deployment.json"),

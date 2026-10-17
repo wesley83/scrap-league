@@ -8,7 +8,7 @@ Scrap League is an arcade racing game about assembling a scrappy little car, lea
 
 ## Play the game
 
-Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390. The game includes twelve circuits, four cups, 81 builds, six-car races, Daily Spec, Time Trial, local progress/ghosts and a working track editor. The current prebuilt game is included in `dist/`. The selected Pagelove site and publishing procedure are in [deployment instructions](DEPLOYMENT.md). This remediation candidate adds owner Workshop publishing and native route sources. Shared boards remain disabled pending verified provider policy activation. [The deployment receipt](audit/deployment.json) identifies the last completed publication; publication does not imply that every product acceptance row has passed.
+Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390. The game includes twelve circuits, four cups, 81 builds, six-car races, Daily Spec, Time Trial, local progress/ghosts, shared casual Trial/Daily times and a working track editor. The current prebuilt game is included in `dist/`. The selected Pagelove site and publishing procedure are in [deployment instructions](DEPLOYMENT.md). Shared boards use separate per-game native documents, server-validated record shapes and server-assigned five-day expiry; modified clients can still submit fabricated times. [The deployment receipt](audit/deployment.json) identifies the last completed publication; publication does not imply that every product acceptance row has passed.
 
 ## Read the design
 

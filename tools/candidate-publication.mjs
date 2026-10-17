@@ -2,6 +2,13 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { sha } from "./release-gate.mjs";
+import { BOARD_ORIGIN, BOARD_PATHS } from "./board-policy.mjs";
+
+const validBoardConfig = (config) =>
+  config?.policyRevision === "scrap-league-casual-v1" &&
+  config.paths?.trial === BOARD_PATHS.trial &&
+  config.paths?.daily === BOARD_PATHS.daily &&
+  Object.keys(config.paths).length === 2;
 
 export function validatePublicationAuthorization(
   auth,
@@ -15,7 +22,10 @@ export function validatePublicationAuthorization(
     auth.operation !== "publish-candidate" ||
     auth.origin !== "https://hire-poker-8313.onpagelove.com" ||
     auth.authorizedBy !== "Wesley" ||
-    auth.request !== "Commit, push, deploy" ||
+    ![
+      "Commit, push, deploy",
+      "There is no meaningful reason not to have a leaderboard",
+    ].includes(auth.request) ||
     !auth.context ||
     !Number.isFinite(Date.parse(auth.utc))
   )
@@ -29,9 +39,13 @@ export function validatePublicationAuthorization(
     throw Error(
       "Publication authorization does not match this exact candidate and ledger",
     );
-  if (host?.publicOrigin !== auth.origin || host?.publicBoards !== null)
+  if (
+    auth.origin !== BOARD_ORIGIN ||
+    host?.publicOrigin !== BOARD_ORIGIN ||
+    !validBoardConfig(host?.publicBoards)
+  )
     throw Error(
-      "Candidate publication requires the pinned host and disabled public boards",
+      "Candidate publication requires the pinned host and exact casual-board policy paths",
     );
   const incomplete = receipt.requirements.filter((r) => r.status !== "passed");
   if (

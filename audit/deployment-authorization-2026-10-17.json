@@ -1,15 +1,15 @@
 {
   "version": 1,
   "operation": "publish-candidate",
-  "origin": "https://hire-poker-8313.onpagelove.com",
+  "utc": "2026-10-17T15:31:08.076Z",
   "authorizedBy": "Wesley",
-  "request": "Commit, push, deploy",
-  "context": "Explicit new user request after the PWA verification report disclosed the reproduced manual-check timing bug and absent foreground-resume update check. This is an idempotent redeployment of the unchanged existing release with audit-only additions; neither issue is fixed. Earlier product acceptance limitations remain and public boards are disabled.",
-  "utc": "2026-10-17T01:00:06.620Z",
-  "release": "sl-644d25b8e44419",
-  "sourceHash": "9a4608d1da80fa167ff3539381e2d58812f0a45d3e4eeb295d15bfeb1952aa10",
-  "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
-  "acceptanceHash": "49802f8b347ffeeb2444f0b4f60c2fb469da50eb26e055e8650633b3e9817d0f",
+  "request": "There is no meaningful reason not to have a leaderboard",
+  "context": "Publish the exact Scrap League candidate with the shared casual Trial and Daily boards enabled. Preserve all incomplete acceptance outcomes and the recorded Trial 403; this authorizes a bounded candidate publication, not a claim of provider-wide readiness.",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-2212ffe6721a07",
+  "sourceHash": "1914a8abe431b2a682ddeeed5e8f9d629ad6e01ee29f7a95f53f89d461a208ea",
+  "outputHash": "42808f8578072558617cd3e7ec69cb21a2f512220e27a57fe346700d8e2e2f05",
+  "acceptanceHash": "1f017bf598d153f3068dc1c98feaf750f0a3c07c0aa762db9dbb08a5722d44a7",
   "knownIncomplete": [
     {
       "id": "J01",
@@ -48,8 +48,8 @@
     },
     {
       "id": "J15",
-      "status": "blocked",
-      "note": "Durable two-client timeout-after-acceptance reconciliation passes in fixtures. Actual public endpoint remains disabled pending provider validation/readiness."
+      "status": "partial",
+      "note": "Durable two-client timeout-after-acceptance reconciliation passes in local fixtures. Anonymous public writes and readback were observed on both boards, but the full two-client public timeout scenario was not run; latest Trial probe returned 403 after an earlier success."
     },
     {
       "id": "J18",
@@ -68,13 +68,13 @@
     },
     {
       "id": "P05",
-      "status": "blocked",
-      "note": "Actual public application validation endpoint has not been enabled or verified. Client checks are not a server validation boundary."
+      "status": "partial",
+      "note": "The live Trial and Daily documents reject invalid splits, client expiry, and unsupported builds. Daily accepts multiple distinct scores; Trial accepted/read back one score in an earlier probe but a later fresh write returned 403. Local results remain authoritative and retained."
     },
     {
       "id": "P06",
-      "status": "blocked",
-      "note": "Client exact-expiry filtering passed. Provider cleanup policy and separate physical storage inspection remain unverified."
+      "status": "partial",
+      "note": "Both public endpoints assigned matching receipt timestamps and five-day expiries. Expiry filtering/cleanup behavior passes local fixtures and synthetic rows were conditionally removed by ETag; no live record was allowed to age through the full five-day retention period."
     },
     {
       "id": "P07",
@@ -84,7 +84,12 @@
     {
       "id": "P08",
       "status": "blocked",
-      "note": "The user confirmed no supported provider policy activation/readiness procedure is available. Source ETag, OPTIONS and warmup cannot establish enforcement readiness; public boards remain disabled."
+      "note": "No Pagelove-supported provider-wide activation/readiness procedure is available. The exact game resources and policies are present and public reads and writes were observed, but a later Trial POST returned 403 after an earlier success. Evidence is scoped to these endpoints and does not establish global readiness."
+    },
+    {
+      "id": "P09",
+      "status": "partial",
+      "note": "Board resource creation/migration was conditional and preserved the zero-row baseline; local migration fixtures prove existing rows are retained. No pre-populated live board existed to verify preservation of real scores during release promotion."
     },
     {
       "id": "M02",
@@ -103,8 +108,8 @@
     },
     {
       "id": "M05",
-      "status": "blocked",
-      "note": "Owner/native client implementation and primitive probes exist. Server validation/retention/readiness remain unresolved."
+      "status": "partial",
+      "note": "Owner publication/discovery remains intact and the candidate enables the shared casual boards. Both native documents match their pinned policies; Daily accepts multiple scores and all negative probes reject. Trial had a successful write/readback followed by a 403 on a later fresh write; provider-wide readiness is not claimed."
     },
     {
       "id": "M06",
@@ -114,7 +119,7 @@
     {
       "id": "C10",
       "status": "partial",
-      "note": "All 87 tests passed locally and in the hosted Automated regression suite on deployed source e68dc53. The separate Exact candidate acceptance job still refuses J01. Candidate publication remains separately authorized; incomplete product outcomes and the unconfirmed physical-device trigger remain documented."
+      "note": "The prior hosted run covered an older source candidate. The current exact candidate passes 94/94 local tests; exact-candidate hosted CI and some other product journeys remain incomplete. No physical-device, human-playtest, or listening requirement remains in scope."
     }
   ]
 }

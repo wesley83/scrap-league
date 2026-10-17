@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "utc": "2026-10-17T01:00:06.616Z",
-  "release": "sl-644d25b8e44419",
-  "sourceHash": "9a4608d1da80fa167ff3539381e2d58812f0a45d3e4eeb295d15bfeb1952aa10",
-  "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
+  "utc": "2026-10-17T15:28:54.488Z",
+  "release": "sl-2212ffe6721a07",
+  "sourceHash": "1914a8abe431b2a682ddeeed5e8f9d629ad6e01ee29f7a95f53f89d461a208ea",
+  "outputHash": "42808f8578072558617cd3e7ec69cb21a2f512220e27a57fe346700d8e2e2f05",
   "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
   "status": "not-accepted",
   "evidenceReuse": {
@@ -56,7 +56,7 @@
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
-          "sha256": "c9eec29a86a0bb8279748826913a273cf95c68af605191128f7d7f546580dd7a"
+          "sha256": "860bbaa38cb50361e5ebb728284556563c09da88e2c6e142a8888ff04e44d910"
         }
       ]
     },
@@ -72,7 +72,7 @@
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
-          "sha256": "c9eec29a86a0bb8279748826913a273cf95c68af605191128f7d7f546580dd7a"
+          "sha256": "860bbaa38cb50361e5ebb728284556563c09da88e2c6e142a8888ff04e44d910"
         },
         {
           "path": "audit/remediation-browser-final.json",
@@ -96,7 +96,7 @@
         },
         {
           "path": "audit/remediation-handling.json",
-          "sha256": "ed3cd21c2c3a6b3ec641002776a382373d642768b0ed0e1be3f6b5cbff10e6a9"
+          "sha256": "4c56e9723110122daa568a83bc2077af2507be789d74a7aff2eeb0d2a1817b5d"
         }
       ]
     },
@@ -243,12 +243,20 @@
     {
       "id": "J15",
       "stage": "staged",
-      "status": "blocked",
-      "note": "Durable two-client timeout-after-acceptance reconciliation passes in fixtures. Actual public endpoint remains disabled pending provider validation/readiness.",
+      "status": "partial",
+      "note": "Durable two-client timeout-after-acceptance reconciliation passes in local fixtures. Anonymous public writes and readback were observed on both boards, but the full two-client public timeout scenario was not run; latest Trial probe returned 403 after an earlier success.",
       "artifacts": [
         {
-          "path": "audit/deployment-candidate-tests.txt",
-          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
         }
       ]
     },
@@ -367,24 +375,40 @@
     {
       "id": "P05",
       "stage": "staged",
-      "status": "blocked",
-      "note": "Actual public application validation endpoint has not been enabled or verified. Client checks are not a server validation boundary.",
+      "status": "partial",
+      "note": "The live Trial and Daily documents reject invalid splits, client expiry, and unsupported builds. Daily accepts multiple distinct scores; Trial accepted/read back one score in an earlier probe but a later fresh write returned 403. Local results remain authoritative and retained.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
           "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
         }
       ]
     },
     {
       "id": "P06",
       "stage": "staged",
-      "status": "blocked",
-      "note": "Client exact-expiry filtering passed. Provider cleanup policy and separate physical storage inspection remain unverified.",
+      "status": "partial",
+      "note": "Both public endpoints assigned matching receipt timestamps and five-day expiries. Expiry filtering/cleanup behavior passes local fixtures and synthetic rows were conditionally removed by ETag; no live record was allowed to age through the full five-day retention period.",
       "artifacts": [
         {
-          "path": "audit/deployment-candidate-tests.txt",
-          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
         }
       ]
     },
@@ -420,23 +444,43 @@
       "id": "P08",
       "stage": "staged",
       "status": "blocked",
-      "note": "The user confirmed no supported provider policy activation/readiness procedure is available. Source ETag, OPTIONS and warmup cannot establish enforcement readiness; public boards remain disabled.",
+      "note": "No Pagelove-supported provider-wide activation/readiness procedure is available. The exact game resources and policies are present and public reads and writes were observed, but a later Trial POST returned 403 after an earlier success. Evidence is scoped to these endpoints and does not establish global readiness.",
       "artifacts": [
         {
-          "path": "audit/remediation-provider-probe.json",
-          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
         }
       ]
     },
     {
       "id": "P09",
       "stage": "local",
-      "status": "passed",
-      "note": "Scoped conditional release/rollback fixtures preserve user documents and retained release dependencies; native resources do not duplicate executable policy schemas.",
+      "status": "partial",
+      "note": "Board resource creation/migration was conditional and preserved the zero-row baseline; local migration fixtures prove existing rows are retained. No pre-populated live board existed to verify preservation of real scores during release promotion.",
       "artifacts": [
         {
-          "path": "audit/deployment-candidate-tests.txt",
-          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
         }
       ]
     },
@@ -488,7 +532,7 @@
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
-          "sha256": "c9eec29a86a0bb8279748826913a273cf95c68af605191128f7d7f546580dd7a"
+          "sha256": "860bbaa38cb50361e5ebb728284556563c09da88e2c6e142a8888ff04e44d910"
         },
         {
           "path": "audit/remediation-browser-ui-first-run.json",
@@ -511,16 +555,28 @@
     {
       "id": "M05",
       "stage": "staged",
-      "status": "blocked",
-      "note": "Owner/native client implementation and primitive probes exist. Server validation/retention/readiness remain unresolved.",
+      "status": "partial",
+      "note": "Owner publication/discovery remains intact and the candidate enables the shared casual boards. Both native documents match their pinned policies; Daily accepts multiple scores and all negative probes reject. Trial had a successful write/readback followed by a 403 on a later fresh write; provider-wide readiness is not claimed.",
       "artifacts": [
         {
-          "path": "audit/remediation-provider-probe.json",
-          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
         },
         {
-          "path": "audit/deployment-candidate-tests.txt",
-          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
         }
       ]
     },
@@ -708,40 +764,25 @@
       "id": "C10",
       "stage": "local",
       "status": "partial",
-      "note": "All 87 tests passed locally and in the hosted Automated regression suite on deployed source e68dc53. The separate Exact candidate acceptance job still refuses J01. Candidate publication remains separately authorized; incomplete product outcomes and the unconfirmed physical-device trigger remain documented.",
+      "note": "The prior hosted run covered an older source candidate. The current exact candidate passes 94/94 local tests; exact-candidate hosted CI and some other product journeys remain incomplete. No physical-device, human-playtest, or listening requirement remains in scope.",
       "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
         {
           "path": "audit/deployment-candidate-tests.txt",
           "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
-        },
-        {
-          "path": "audit/remediation-hosted-ci-e908b82.json",
-          "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
-        },
-        {
-          "path": "audit/deployment-hosted-ci.json",
-          "sha256": "e0b4a27dc52b68eea0a8908e81fc632568f5ee48cf6ace7918d0a808bb694637"
-        },
-        {
-          "path": "audit/deployment-hosted-tests.txt",
-          "sha256": "75e454fdd4ba363f2faaed6075a7041c12d0512ba93172bdebcc2cbf368e15ad"
-        },
-        {
-          "path": "audit/deployment-hosted-default-refusal.txt",
-          "sha256": "e95b55af84d0f38c146d0f69c5a65df625a7db54fec536d97bef3e5ef4d4188b"
-        },
-        {
-          "path": "audit/mobile-graphics-tests-final.txt",
-          "sha256": "841f42bc826576604a313b0dce78b3c2819bceacf54814b278033c0279ef32ae"
-        },
-        {
-          "path": "audit/mobile-hosted-ci.json",
-          "sha256": "62007c86629970ba5b5ba256414777833b516bc6a562f1153f6fcd9cea8ec76f"
         }
       ]
     }
   ],
   "publication": {
+    "release": "sl-2212ffe6721a07",
+    "authorization": "audit/deployment-authorization-2026-10-17.json",
+    "note": "Exact candidate publication is separately authorized; incomplete product acceptance remains visible. Live deployment evidence is recorded in audit/deployment.json."
+  },
+  "previousPublication": {
     "release": "sl-eca6f97d1308a3",
     "sourceCommit": "6a7ff1ce6890e3e4a656eecc17952e27130b197e",
     "authorization": "audit/deployment-authorization-2026-10-16.json",

@@ -144,11 +144,19 @@ No decorative northeast arrows or colored accent side rails. Use labeled neutral
 | Event entry | Circuit map, three laps, surface mix, chosen build, Start race | Difficulty, rival lineup, medals, handling tip |
 | Race | Place, lap, timer, next checkpoint, boost charge | Minimap, best-lap delta in solo modes, pause |
 | Pause | Resume; the run is visibly frozen | Settings, Reset car, Restart race, Back to start screen with consequence copy |
-| Result | Finishing place or valid time, medal, next action | Lap splits, build, ghost toggle, share, confirmed/pending board state |
+| Result | Finishing place or valid time, medal, next action | Lap splits, build, ghost toggle, share, confirmed/pending community-board state |
 | Garage | Assembled car and four parts | Bench comparisons, presets, Test drive |
 | Workshop | Track canvas, active tool, selected-piece inspector, Test drive | Validation list, draft state, undo/redo, import/export/publish |
 
 On desktop the HUD uses a compact upper strip, with no permanent leaderboard covering the road. Touch controls occupy reserved bottom corners and the camera frames the next corner above them. Portrait uses a taller road view and two compact HUD rows. Landscape phones shrink ornamental framing before controls. Menus may scroll; primary dialog actions remain reachable at 320 CSS px and large text.
+
+## Shared casual times
+
+Completed official Trial and Daily runs can be submitted from the result screen to separate public Pagelove documents. Each standing compares only runs with the same captured track, track revision, physics revision, car build, assist settings, lap count and challenge identity. A Daily run retains the edition captured at race start across UTC midnight. Cup, Workshop and unfinished or degraded runs are not submitted.
+
+Players may choose a public alias. The server validates the record shape and assigns receipt/expiry metadata; duplicate IDs are rejected. Rows remain rankable for five days after receipt, are removed by later online board reads, and stay cached locally for offline viewing. The retry outbox reuses the same run identity after ambiguous responses. Local personal bests and ghosts remain independent of public submission.
+
+These are community-reported times, not verified competition. A modified client can submit a fabricated time or alias. Public endpoints accept only the two run-record collections and expire rows; they do not grant access to game progress, Workshop documents or other site resources.
 
 ## Audio and motion
 

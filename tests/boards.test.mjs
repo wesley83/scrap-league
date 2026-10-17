@@ -34,7 +34,7 @@ const content = await loadContent(),
     splits: [30000, 30000, 30000],
   },
   config = {
-    readinessRevision: "isolated-fixture-only",
+    policyRevision: "isolated-fixture-only",
     paths: { trial: "/boards/trial.html", daily: "/boards/daily.html" },
   };
 function record(run, at) {
@@ -185,6 +185,125 @@ test("failed refresh retains cached standings and removes expired rows offline",
   assert.equal(saved.rows.length, 0);
   store.close();
 });
+
+test("public board reads paginate safely and rank records across page boundaries", async () => {
+  const store = await openStore({ factory: new IDBFactory() }),
+    now = 1700000000000,
+    all = Array.from({ length: 101 }, (_, index) => ({
+      ...run,
+      id: crypto.randomUUID(),
+      alias: "Driver " + index,
+      elapsedMs: 90000 + index,
+      splits: [30000, 30000, 30000 + index],
+    }));
+  let calls = 0;
+  const board = new Boards(store, {
+    config,
+    Parser: DOMParser,
+    clock: () => now,
+    fetcher: async (url, options) => {
+      const target = new URL(url),
+        page = Number(target.searchParams.get("paginate:runs:page"));
+      assert.equal(target.origin, "https://hire-poker-8313.onpagelove.com");
+      assert.equal(target.pathname, "/boards/trial.html");
+      assert.equal(target.searchParams.get("paginate:runs:length"), "100");
+      assert.equal(options.headers.Range, "selector=#runs");
+      calls++;
+      return new Response(
+        all
+          .slice((page - 1) * 100, page * 100)
+          .map((row) => record(row, now))
+          .join(""),
+        {
+          status: 206,
+          headers: {
+            Date: new Date(now).toUTCString(),
+            ...(page === 1
+              ? {
+                  Link: '<https://hire-poker-8313.onpagelove.com/boards/trial.html?paginate:runs:page=2>; rel="last"',
+                }
+              : {}),
+          },
+        },
+      );
+    },
+  });
+  const result = await board.refresh(run);
+  assert.equal(result.rows.length, 25);
+  assert.equal(result.rows[0].elapsedMs, 90000);
+  assert.equal(calls, 2);
+  store.close();
+});
+
+test("empty Pagelove paginator sentinel reads as an empty board", async () => {
+  const store = await openStore({ factory: new IDBFactory() });
+  let calls = 0;
+  const board = new Boards(store, {
+    config,
+    Parser: DOMParser,
+    fetcher: async (url) => {
+      const target = new URL(url);
+      assert.equal(
+        target.searchParams.get("paginate:runs:page"),
+        "1",
+      );
+      assert.equal(
+        target.searchParams.get("paginate:runs:length"),
+        "100",
+      );
+      calls++;
+      return new Response("<ul id=\"runs\"></ul>", {
+        headers: {
+          Link: '</boards/trial.html?paginate:runs:page=0>; rel="last"; title="runs"',
+        },
+      });
+    },
+  });
+  const { rows, stale } = await board.refresh(run);
+  assert.equal(rows.length, 0);
+  assert.equal(stale, false);
+  assert.equal(calls, 1);
+  store.close();
+});
+
+test("bounded reads retry temporary provider errors, while writes remain single-shot", async () => {
+  const store = await openStore({ factory: new IDBFactory() });
+  let reads = 0;
+  const board = new Boards(store, {
+    config,
+    Parser: DOMParser,
+    fetcher: async () => {
+      reads++;
+      return reads < 3
+        ? new Response("temporarily unavailable", { status: 503 })
+        : new Response("<ul id=\"runs\"></ul>", {
+            headers: {
+              Link: '</boards/trial.html?paginate:runs:page=0>; rel="last"; title="runs"',
+            },
+          });
+    },
+  });
+  assert.equal((await board.readRows("trial")).rows.length, 0);
+  assert.equal(reads, 3);
+  let writes = 0;
+  const writer = new Boards(store, {
+    config,
+    Parser: DOMParser,
+    fetcher: async () => {
+      writes++;
+      return new Response("temporarily unavailable", { status: 503 });
+    },
+  });
+  const response = await writer.request("trial", {
+    method: "POST",
+    headers: { Range: "selector=#runs" },
+    body: "<li></li>",
+  });
+  assert.equal(response.status, 503);
+  assert.equal(writes, 1);
+  store.close();
+});
+
 test("unconfigured board makes no network request and terminal history does not fill pending capacity", async () => {
   const store = await openStore({ factory: new IDBFactory() }),
     board = new Boards(store, {
@@ -195,7 +314,7 @@ test("unconfigured board makes no network request and terminal history does not 
       },
     });
   await board.pump();
-  await assert.rejects(board.refresh(run), /activation/);
+  await assert.rejects(board.refresh(run), /configured/);
   for (let i = 0; i < 105; i++)
     await store.set("outbox:terminal-" + i, {
       run: { ...run, id: "terminal-" + i },

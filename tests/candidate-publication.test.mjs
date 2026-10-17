@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { validatePublicationAuthorization } from "../tools/candidate-publication.mjs";
 import { sha } from "../tools/release-gate.mjs";
+import { HOST_CONFIG } from "../app/pagelove.js";
 
 test("candidate publication binds limitations, ledger, source, output and destination without changing acceptance", () => {
   const candidate = {
@@ -28,14 +29,14 @@ test("candidate publication binds limitations, ledger, source, output and destin
   const bytes = Buffer.from(JSON.stringify(receipt));
   const host = {
     publicOrigin: "https://hire-poker-8313.onpagelove.com",
-    publicBoards: null,
+    publicBoards: HOST_CONFIG.publicBoards,
   };
   const auth = {
     version: 1,
     operation: "publish-candidate",
     origin: host.publicOrigin,
     authorizedBy: "Wesley",
-    request: "Commit, push, deploy",
+    request: "There is no meaningful reason not to have a leaderboard",
     context: "Explicit request after incomplete verification was disclosed",
     utc: "2026-10-16T16:30:00Z",
     release: candidate.release,
@@ -85,14 +86,21 @@ test("candidate publication binds limitations, ledger, source, output and destin
         host,
       ),
     );
-  assert.throws(
-    () =>
-      validatePublicationAuthorization(auth, candidate, receipt, bytes, {
-        ...host,
-        publicBoards: { readinessRevision: "unverified" },
-      }),
-    /disabled public boards/,
-  );
+  for (const publicBoards of [
+    null,
+    {
+      ...HOST_CONFIG.publicBoards,
+      paths: { trial: "/other.html", daily: "/boards/daily.html" },
+    },
+  ])
+    assert.throws(
+      () =>
+        validatePublicationAuthorization(auth, candidate, receipt, bytes, {
+          ...host,
+          publicBoards,
+        }),
+      /casual-board policy paths/,
+    );
   const failed = structuredClone(receipt);
   failed.requirements[0].status = "failed";
   const failedBytes = Buffer.from(JSON.stringify(failed));
