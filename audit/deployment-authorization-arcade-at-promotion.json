@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "operation": "publish-candidate",
+  "utc": "2026-10-17T20:29:44.363Z",
+  "authorizedBy": "Wesley",
+  "request": "Commit, push, deploy",
+  "context": "Standing user authorization to commit, push and deploy this game, followed by the explicit request to remake it using the handbook. Publish the exact reviewed arcade candidate while preserving saved/user documents and previous clients. This is not new consent to waive product requirements: all incomplete outcomes and provider failures remain disclosed in the ledger.",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-60bf1fb46ea8c0",
+  "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
+  "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
+  "acceptanceHash": "a5839dd62f585a32b60a68798507eb6822256b890e8b310d3414517b356634db",
+  "knownIncomplete": [
+    {
+      "id": "J02",
+      "status": "partial",
+      "note": "Current pause/retry, touch contact cancellation, Settings and actual keyboard driving pass. Historical gamepad checks remain retained; the complete new-renderer gamepad/menu journey was not repeated."
+    },
+    {
+      "id": "J03",
+      "status": "partial",
+      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified."
+    },
+    {
+      "id": "J04",
+      "status": "partial",
+      "note": "All three continuous persisted twelve-event legal-input campaigns pass again. The new renderer draws all twelve tracks; the complete held final-scene UI journey has not been repeated."
+    },
+    {
+      "id": "J05",
+      "status": "partial",
+      "note": "All 81 independent build/handling measurements pass. Garage content and tradeoff descriptions are retained; complete current camera/garage UI journey not repeated."
+    },
+    {
+      "id": "J06",
+      "status": "partial",
+      "note": "Actual browser Time Trial completes three laps and saves/loads a compatible ghost, retaining a faster prior best. Independent split arithmetic passes. A full improved-best second finish was not added to this fixture."
+    },
+    {
+      "id": "J08",
+      "status": "partial",
+      "note": "Current Workshop editable DOM, geometry, surface edits, undo/redo, export/import and test entry pass. Complete new-loop creation across every input method remains narrower than the adopted contract."
+    },
+    {
+      "id": "J09",
+      "status": "partial",
+      "note": "Current browser edits, saves, exports, tests, returns and reopens the same draft. Five-AI creator context matrix remains incomplete."
+    },
+    {
+      "id": "J12",
+      "status": "partial",
+      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified."
+    },
+    {
+      "id": "J13",
+      "status": "blocked",
+      "note": "Server-stopped fresh document loaded, drove with real keyboard input and saved/reopened an edited draft. Actual browser-process restart is unavailable in the tool and is not claimed."
+    },
+    {
+      "id": "J15",
+      "status": "partial",
+      "note": "Leased two-client timeout-after-acceptance regression passes. Public valid writes/readback pass in both modes; complete two-client public timeout scenario not run."
+    },
+    {
+      "id": "J18",
+      "status": "partial",
+      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified."
+    },
+    {
+      "id": "P01",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method."
+    },
+    {
+      "id": "P04",
+      "status": "partial",
+      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete."
+    },
+    {
+      "id": "P05",
+      "status": "partial",
+      "note": "Valid Trial/Daily writes and readback succeeded, no duplicate appended, and client expiry/unsupported builds returned 422. Duplicate/split-arithmetic probes sometimes returned a provider module memory-budget error instead of the expected 422; the probe is retained as failed, not relabeled passed. Remaining prohibited-mutation matrix incomplete."
+    },
+    {
+      "id": "P06",
+      "status": "partial",
+      "note": "Both public endpoints assigned matching receipt timestamps and five-day expiries. Expiry filtering/cleanup behavior passes local fixtures and synthetic rows were conditionally removed by ETag; no live record was allowed to age through the full five-day retention period."
+    },
+    {
+      "id": "P07",
+      "status": "partial",
+      "note": "Public readback verified 24 intended official fragments and missing/unknown/hostile fallback routes. Live native editor opened and saved an editable copy. Earlier method memory-budget 500 is retained; actual injected composition-failure fallback is still narrower than the full adopted method."
+    },
+    {
+      "id": "P08",
+      "status": "blocked",
+      "note": "No supported provider-wide readiness procedure is available. Public reads/writes are observed; 500 memory-budget and earlier 403 responses remain recorded. Hosts are not presumed to have different capabilities."
+    },
+    {
+      "id": "P09",
+      "status": "partial",
+      "note": "Board resource creation/migration was conditional and preserved the zero-row baseline; local migration fixtures prove existing rows are retained. No pre-populated live board existed to verify preservation of real scores during release promotion."
+    },
+    {
+      "id": "M02",
+      "status": "partial",
+      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete."
+    },
+    {
+      "id": "M03",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance."
+    },
+    {
+      "id": "M04",
+      "status": "blocked",
+      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete."
+    },
+    {
+      "id": "M05",
+      "status": "partial",
+      "note": "Owner publishing and casual boards remain enabled. The browser native-fetch receiver bug is fixed. Localhost board browsing is blocked by provider CORS; same-origin UI needs post-publication readback. Server negative probes contain memory-budget errors."
+    },
+    {
+      "id": "M06",
+      "status": "blocked",
+      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
+    },
+    {
+      "id": "C06",
+      "status": "partial",
+      "note": "Current remake public assets/routes have not yet been promoted. Previous live readback remains historical; deployment receipt will identify the newly verified publication."
+    },
+    {
+      "id": "C10",
+      "status": "partial",
+      "note": "101/101 full tests pass; five focused tests cover the final prompt-only change. Other adopted product/provider journeys remain incomplete and no full acceptance is claimed."
+    }
+  ]
+}

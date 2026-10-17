@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "utc": "2026-10-17T20:29:44.320Z",
+  "utc": "2026-10-17T20:36:13.243Z",
   "release": "sl-60bf1fb46ea8c0",
   "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
   "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
@@ -1135,36 +1135,16 @@
     {
       "id": "C06",
       "stage": "live",
-      "status": "partial",
-      "note": "Current remake public assets/routes have not yet been promoted. Previous live readback remains historical; deployment receipt will identify the newly verified publication.",
+      "status": "passed",
+      "note": "Arcade remake sl-60bf1fb46ea8c0 published with 110 public file/route readbacks. Live cached 3D client updated normally; public board reads, portrait/landscape manual GAS input, pause/resume, Workshop entry and verified offline pack observed. Screenshots retained. Full product acceptance and the public-write fault matrix remain incomplete.",
       "artifacts": [
         {
           "path": "audit/deployment.json",
-          "sha256": "3ae5946c4dac7f8d185723b7ceea4a0adc38565a4531045a1c8402dfca203571"
+          "sha256": "990e53f98428e43bbeb7e8fdb13b18c7fbcdb2cd5c01ab6b518fb95875dddcfc"
         },
         {
-          "path": "audit/deployment-live-readback.json",
-          "sha256": "c4dcc4e47f1cc28108d1d966762317a6c2e67851ed324a9c6d60ccf97b95ddac"
-        },
-        {
-          "path": "audit/deployment-browser-verification.json",
-          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
-        },
-        {
-          "path": "audit/mobile-live-readback-method.mjs",
-          "sha256": "c86ae5ebf73d9866a04fc37e97b4c79cda5aa5cffd182067bc8466b14ca11861"
-        },
-        {
-          "path": "audit/remake-verification.json",
-          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
-        },
-        {
-          "path": "audit/remake-unit-tests-final.txt",
-          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
-        },
-        {
-          "path": "audit/remake-prompt-tests.txt",
-          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+          "path": "audit/remake-live-verification.json",
+          "sha256": "2b630c8d2f72de34b954dfaa76c7f161cc5b090bc57a152b152c9881650c66c4"
         }
       ]
     },

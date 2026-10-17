@@ -1,15 +1,15 @@
 {
   "version": 1,
   "operation": "publish-candidate",
-  "utc": "2026-10-17T20:29:44.363Z",
+  "utc": "2026-10-17T20:36:13.243Z",
   "authorizedBy": "Wesley",
   "request": "Commit, push, deploy",
-  "context": "Standing user authorization to commit, push and deploy this game, followed by the explicit request to remake it using the handbook. Publish the exact reviewed arcade candidate while preserving saved/user documents and previous clients. This is not new consent to waive product requirements: all incomplete outcomes and provider failures remain disclosed in the ledger.",
+  "context": "Standing user authorization to commit, push and deploy this game, followed by the explicit request to remake it using the handbook. Publish the exact reviewed arcade candidate while preserving saved/user documents and previous clients. This is not new consent to waive product requirements: all incomplete outcomes and provider failures remain disclosed in the ledger. Post-publication reconciliation: C06 now records observed live checks. The exact authorization/ledger used for promotion is preserved in the -arcade-at-promotion snapshots; this is evidence maintenance under the same standing request, not new user consent.",
   "origin": "https://hire-poker-8313.onpagelove.com",
   "release": "sl-60bf1fb46ea8c0",
   "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
   "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
-  "acceptanceHash": "a5839dd62f585a32b60a68798507eb6822256b890e8b310d3414517b356634db",
+  "acceptanceHash": "6b983195e35a01d27819fc4169d7d8de25943679353132576dfe428a71e86a10",
   "knownIncomplete": [
     {
       "id": "J02",
@@ -125,11 +125,6 @@
       "id": "M06",
       "status": "blocked",
       "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
-    },
-    {
-      "id": "C06",
-      "status": "partial",
-      "note": "Current remake public assets/routes have not yet been promoted. Previous live readback remains historical; deployment receipt will identify the newly verified publication."
     },
     {
       "id": "C10",
