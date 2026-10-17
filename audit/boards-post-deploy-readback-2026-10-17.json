@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-17T15:34:41.898Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-2212ffe6721a07",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 9372,
+      "sha256": "8db412c28a7caa506acd3b023c04dfe9cb5c78c6df8ce593bcbcfac8dc16c902"
+    },
+    {
+      "path": "/release.json",
+      "status": 200,
+      "bytes": 19827,
+      "sha256": "166b6843862084cd8d1e205c71567c6148140a5adbffd2b0a26844adb3a6c7d0",
+      "release": "sl-2212ffe6721a07"
+    },
+    {
+      "path": "/releases/sl-2212ffe6721a07/pagelove.js",
+      "status": 200,
+      "bytes": 4568,
+      "sha256": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
+      "boardConfigured": true
+    },
+    {
+      "path": "/boards/trial.html",
+      "status": 200,
+      "bytes": 17082,
+      "sha256": "c030d9311b7d33c12cc9ba8ff26890a4426ba3242f09ad916f678f0ae74a891d",
+      "policy": true
+    },
+    {
+      "path": "/boards/daily.html",
+      "status": 200,
+      "bytes": 32822,
+      "sha256": "ebabf021bb75cc88c126d20bbbce40a202f7b4d8627017e8b36d4cc967382056",
+      "policy": true
+    }
+  ],
+  "scope": "Read-only post-promotion checks; no board score rows were submitted."
+}
