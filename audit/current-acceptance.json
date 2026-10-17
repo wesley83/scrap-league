@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "utc": "2026-10-17T22:54:56.069Z",
-  "release": "sl-7480f2b6675883",
-  "sourceHash": "60bb05ce7e980288e53d36ef64818582a80e237ab0f8d1c1f2069dc669d51c99",
-  "outputHash": "f29325a24010c31a34a69a405284700522bd1eeb5ccebd3e56197d812c3d4b86",
+  "utc": "2026-10-17T23:01:52.334Z",
+  "release": "sl-8c38d2602f174d",
+  "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
+  "outputHash": "ee95a4e2771ff97d5fbc3c0086e0310c742c705239709385d582978ebfccf422",
   "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
   "status": "not-accepted",
   "evidenceReuse": {
     "path": "audit/second-verification.json",
-    "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a",
+    "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f",
     "note": "Risk-based reuse of byte-identical gameplay/render/storage modules; current changed behavior directly checked. Historical scopes and failures remain intact."
   },
   "requirements": [
@@ -72,11 +72,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -84,11 +84,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -152,11 +152,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -164,11 +164,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -232,11 +232,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -244,11 +244,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -320,11 +320,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -332,11 +332,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -400,11 +400,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -412,11 +412,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -476,11 +476,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -488,11 +488,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -552,11 +552,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -564,11 +564,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -636,11 +636,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -648,11 +648,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -712,11 +712,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -724,11 +724,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -788,11 +788,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -800,11 +800,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -864,11 +864,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -876,11 +876,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -944,11 +944,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -956,11 +956,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1024,11 +1024,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1036,11 +1036,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1120,11 +1120,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1132,11 +1132,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1204,11 +1204,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1216,11 +1216,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1284,11 +1284,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1296,11 +1296,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1368,11 +1368,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1380,11 +1380,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1448,11 +1448,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1460,11 +1460,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1528,11 +1528,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1540,11 +1540,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1604,11 +1604,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1616,11 +1616,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1684,11 +1684,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1696,11 +1696,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1720,11 +1720,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1732,11 +1732,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -1804,11 +1804,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1816,11 +1816,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -1900,11 +1900,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -1912,11 +1912,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -2004,11 +2004,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2016,11 +2016,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -2104,11 +2104,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2116,11 +2116,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2148,11 +2148,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2160,11 +2160,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2232,11 +2232,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2244,11 +2244,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2312,11 +2312,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2324,11 +2324,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2396,11 +2396,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2408,11 +2408,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2472,11 +2472,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2484,11 +2484,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2568,11 +2568,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2580,11 +2580,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -2664,11 +2664,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2676,11 +2676,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2740,11 +2740,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2752,11 +2752,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2824,11 +2824,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2836,11 +2836,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2900,11 +2900,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2912,11 +2912,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -2940,11 +2940,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -2952,11 +2952,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -3016,11 +3016,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -3028,11 +3028,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -3052,11 +3052,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -3064,11 +3064,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -3128,11 +3128,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -3140,11 +3140,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -3204,11 +3204,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -3216,11 +3216,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -3304,11 +3304,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -3316,11 +3316,11 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     },
@@ -3384,11 +3384,11 @@
         },
         {
           "path": "audit/second-verification.json",
-          "sha256": "cd0992c051cb5b9c00e5b60452c8a8625532cac42aedf42f19d3f73e6bff975a"
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
         },
         {
           "path": "audit/second-unit-tests.txt",
-          "sha256": "8436f5281ae1a30212117f9dc0445c1b5c4f7f5d8d50364672901f278b7dfb32"
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
         },
         {
           "path": "audit/second-browser.json",
@@ -3396,17 +3396,17 @@
         },
         {
           "path": "audit/second-keyboard-offline.json",
-          "sha256": "6aecd62f36cd77b049c4b7749b506730bdf0b33602d54963fcef7008810cc19b"
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "68dbedbe65dae118d7e862d9fde9a7644725545c4cb4ce85adffc9aceaedff6a"
+          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
         }
       ]
     }
   ],
   "publication": {
-    "release": "sl-7480f2b6675883",
+    "release": "sl-8c38d2602f174d",
     "authorization": "audit/deployment-authorization-2026-10-17.json",
     "note": "User requests commit, push and deploy after this comparison. Exact candidate publication remains separate from incomplete broad product acceptance."
   },

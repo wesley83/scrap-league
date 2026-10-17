@@ -6,10 +6,21 @@ export function nativeResources(index, release, bundle) {
   const doc = new DOMParser().parseFromString(index, "text/html");
   doc.querySelector('script[src="bootstrap.js"]')?.remove();
   const prefix = "/releases/" + release + "/";
+  const styles = [...doc.querySelectorAll('head link[rel="stylesheet"]')]
+    .map((link) => {
+      const href = link.getAttribute("href");
+      if (!/^[a-z0-9-]+\.css$/.test(href))
+        throw Error(
+          "Native shell requires a local release stylesheet: " + href,
+        );
+      const copy = link.cloneNode(true);
+      copy.setAttribute("href", prefix + href);
+      return copy.outerHTML;
+    })
+    .join("");
   const shell =
-    '<!doctype html><html><head><title>Scrap League shared shell</title></head><body><div id="game-shell"><link rel="stylesheet" href="' +
-    prefix +
-    'style.css">' +
+    '<!doctype html><html><head><title>Scrap League shared shell</title></head><body><div id="game-shell">' +
+    styles +
     doc.body.innerHTML +
     '<script src="' +
     prefix +

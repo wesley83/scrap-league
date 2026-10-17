@@ -1,15 +1,15 @@
 {
   "version": 1,
   "operation": "publish-candidate",
-  "utc": "2026-10-17T22:54:56.224Z",
+  "utc": "2026-10-17T23:01:52.494Z",
   "authorizedBy": "Wesley",
   "request": "Commit, push, deploy",
   "context": "The current request explicitly asks to compare against the handbook, address gaps and commit, push and deploy. This exact-candidate publication follows the existing authorized workflow; every remaining broad acceptance limitation stays enumerated and is not silently waived.",
   "origin": "https://hire-poker-8313.onpagelove.com",
-  "release": "sl-7480f2b6675883",
-  "sourceHash": "60bb05ce7e980288e53d36ef64818582a80e237ab0f8d1c1f2069dc669d51c99",
-  "outputHash": "f29325a24010c31a34a69a405284700522bd1eeb5ccebd3e56197d812c3d4b86",
-  "acceptanceHash": "6fae8af934075ec3e96af49bccf396a5b379ce7eeb10965ef04c322e255a16f5",
+  "release": "sl-8c38d2602f174d",
+  "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
+  "outputHash": "ee95a4e2771ff97d5fbc3c0086e0310c742c705239709385d582978ebfccf422",
+  "acceptanceHash": "8d75a6b6ba61da74d786ef426a2773c055cfbf53b7841922bba6a32afb9bfd4d",
   "knownIncomplete": [
     {
       "id": "J13",

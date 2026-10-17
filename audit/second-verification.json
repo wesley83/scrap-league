@@ -1,8 +1,8 @@
 {
-  "utc": "2026-10-17T22:54:56.068Z",
-  "release": "sl-7480f2b6675883",
-  "sourceHash": "60bb05ce7e980288e53d36ef64818582a80e237ab0f8d1c1f2069dc669d51c99",
-  "outputHash": "f29325a24010c31a34a69a405284700522bd1eeb5ccebd3e56197d812c3d4b86",
+  "utc": "2026-10-17T23:01:52.332Z",
+  "release": "sl-8c38d2602f174d",
+  "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
+  "outputHash": "ee95a4e2771ff97d5fbc3c0086e0310c742c705239709385d582978ebfccf422",
   "handbook": {
     "edition": "2.8.0",
     "path": "C:/Users/Wesley/Documents/Codex/Pagelove/games/prism-breaker/GAME-DEVELOPMENT-BEST-PRACTICES.md",
@@ -15,6 +15,38 @@
   },
   "browser": {
     "artifact": "audit/second-browser.json",
+    "observedRelease": "sl-7480f2b6675883",
+    "byteIdenticalReusedModules": [
+      "ai-profile.js",
+      "arcade-renderer.js",
+      "arcade.css",
+      "audio.js",
+      "boards.js",
+      "bootstrap.js",
+      "builds.js",
+      "collision.js",
+      "continuation.js",
+      "driver-profile.js",
+      "driving-controls.js",
+      "editor-commands.js",
+      "graphics-policy.js",
+      "main.js",
+      "model.js",
+      "offline.js",
+      "pagelove.js",
+      "preferences.js",
+      "publication.js",
+      "renderer.js",
+      "scenes.js",
+      "sharing.js",
+      "simulation.js",
+      "storage.js",
+      "style.css",
+      "submission-ui.js",
+      "track-document.js",
+      "track.js",
+      "workshop.js"
+    ],
     "checks": [
       {
         "name": "Workshop entry readiness and recovery",
@@ -85,7 +117,8 @@
         "status": "passed"
       }
     ],
-    "normal": "audit/second-keyboard-offline.json"
+    "normal": "audit/second-keyboard-offline.json",
+    "nativePresentation": "audit/second-native-presentation.json"
   },
   "reuse": {
     "previousRelease": "sl-6f79bfd18ca0be",

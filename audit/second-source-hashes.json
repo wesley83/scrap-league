@@ -1,8 +1,8 @@
 {
-  "release": "sl-7480f2b6675883",
-  "outputHash": "f29325a24010c31a34a69a405284700522bd1eeb5ccebd3e56197d812c3d4b86",
+  "release": "sl-8c38d2602f174d",
+  "outputHash": "ee95a4e2771ff97d5fbc3c0086e0310c742c705239709385d582978ebfccf422",
   "source": {
-    "hash": "60bb05ce7e980288e53d36ef64818582a80e237ab0f8d1c1f2069dc669d51c99",
+    "hash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
     "files": {
       ".gitattributes": "0e6f8afa2d9fab1c42c4ebac64337195e479a3a5967c2e105acab235b432da9c",
       ".github/workflows/release-checks.yml": "1415cce92d6c24517edc09edd815cdd00453cbd3c6cf285a01388b0833fcb14b",
@@ -135,7 +135,7 @@
       "tests/graphics.test.mjs": "de8aabee9649d35a589a14f6cffcfc7e3bcc90a0e505ecfb9e0a5cf0cb433f50",
       "tests/handbook-followup.test.mjs": "e797e10edaa710e8260dd36f77d5d1697c5bb3ae280245096d2bc79cae08f392",
       "tests/handling.test.mjs": "9982ac64363fc0258a5bd01e1e5435b3291df82abd72d3db6d98349b60700082",
-      "tests/native-routes.test.mjs": "bf86e4a3004ca9020d6e406133e7955eb42965a914374aac04d046d72ab14a6a",
+      "tests/native-routes.test.mjs": "4a9cf138937fe2941d5d9909105cf49107ea20cd410dc97cddd38aec3881e6b2",
       "tests/offline-worker.test.mjs": "9e485d5948c869b35162dc99b8c6c2c915b7e658a9e709bded0d6795ea8848c6",
       "tests/persisted-campaign.test.mjs": "4bd137544001fb235e05b4165d8e58d09f0e28148309c237748d0eedd0d03871",
       "tests/publication.test.mjs": "08f38eb7ba839dd6b9046bcfbcfe039c4c42c2112f62f5f700aee9d148fef7c1",
@@ -163,7 +163,7 @@
       "tools/handbook-server.mjs": "6b979010aa52472453e7bec0e6f9ed1bcee33b7c871d3afef987c1b3f8792ab9",
       "tools/handbook-soak.js": "7e73d1e2573f1585945918ae04baab004f929fed06166ac96e0c86539c545aaf",
       "tools/mobile-review.js": "a40596afa2c177a5e6db53d7937b8cb782a6faa6b7e441eec07c379eadbacd99",
-      "tools/native-resources.mjs": "25cc23a762796c9a7c32f85c071f054b211e833c5a0e18903c03f22717f361b7",
+      "tools/native-resources.mjs": "02d142daf78ddb504313a6580e55566ea40b0629c24112a464c3e0bec6300bee",
       "tools/package-game.mjs": "7e89b9dae36b1bda27e45a997f658c2f5506d7bdf1b3187b0da9cb5593d8f70f",
       "tools/performance-lab.js": "0638ee6e1604bbdc7f308f6614242871bc8473b7af3b7731530ce9ef0f7dd121",
       "tools/probe-handbook-gaps.mjs": "8ff65a79567d7702489493d87159bcc565e01fafcbb020adefe512385e32bb00",
@@ -181,5 +181,5 @@
       "tools/worker-runtime.js": "e96feb31f94701654d3293b63c7b25e4d4a45bed2bfbd2da0e7bf08454c0debd"
     }
   },
-  "utc": "2026-10-17T22:54:56.226Z"
+  "utc": "2026-10-17T23:01:52.495Z"
 }

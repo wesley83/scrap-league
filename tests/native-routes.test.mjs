@@ -14,6 +14,16 @@ test("native routes use explicit source fragments and an inert unknown-slug choo
   assert.equal(files.length, 29);
   assert.equal(new Set(files.map((f) => f.url)).size, 29);
   const shell = new DOMParser().parseFromString(files[0].text, "text/html");
+  const rootDocument = new DOMParser().parseFromString(index, "text/html");
+  assert.deepEqual(
+    [...shell.querySelectorAll('#game-shell link[rel="stylesheet"]')].map(
+      (link) => link.getAttribute("href"),
+    ),
+    [...rootDocument.querySelectorAll('head link[rel="stylesheet"]')].map(
+      (link) => "/releases/sl-aaaaaaaaaaaaaa/" + link.getAttribute("href"),
+    ),
+    "Native composition must preserve every stylesheet and its cascade order",
+  );
   assert.equal(
     shell.querySelector("#game-shell script").getAttribute("src"),
     "/releases/sl-aaaaaaaaaaaaaa/bootstrap.js",
