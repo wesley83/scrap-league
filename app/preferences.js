@@ -1,3 +1,4 @@
+import { driverAlias } from "./driver-profile.js";
 export const DEFAULT_BINDINGS = Object.freeze({
   throttle: "KeyW",
   brake: "KeyS",
@@ -20,6 +21,7 @@ export function defaultSettings({
   reducedMotion = false,
 } = {}) {
   return {
+    driverAlias: "Driver",
     sound: false,
     music: true,
     effectsVolume: 0.7,
@@ -42,6 +44,9 @@ export function defaultSettings({
 export function normalizeSettings(saved = {}, defaults = defaultSettings()) {
   saved = saved && typeof saved === "object" ? saved : {};
   const next = structuredClone(defaults);
+  try {
+    next.driverAlias = driverAlias(saved.driverAlias);
+  } catch {}
   for (const [key, value] of Object.entries(next)) {
     if (typeof value === "boolean" && typeof saved[key] === "boolean")
       next[key] = saved[key];

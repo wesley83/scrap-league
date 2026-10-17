@@ -1,0 +1,143 @@
+{
+  "utc": "2026-10-17T21:56:40.037Z",
+  "release": "sl-6f79bfd18ca0be",
+  "sourceHash": "62aeebad2d6ae268e18cb38d097b65f51b9ba7ad96d3e47d6ddaa99f377ca622",
+  "outputHash": "e37e53626c99e9e35687549ec6c0d89b1a665c97b1bddd9172a82989f2a0e2d2",
+  "handbook": {
+    "edition": "2.8.0",
+    "source": "C:/Users/Wesley/Documents/Codex/Pagelove/games/prism-breaker/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+    "coverage": "audit/2026-10-17-handbook-followup.md"
+  },
+  "tests": {
+    "passed": 107,
+    "failed": 0,
+    "durationMs": 56244.0309,
+    "artifact": "audit/handbook-unit-tests.txt"
+  },
+  "browser": {
+    "artifact": "audit/handbook-browser.json",
+    "latestChecks": [
+      {
+        "name": "Default-resolution full race",
+        "status": "passed"
+      },
+      {
+        "name": "Twelve events, reload and ending",
+        "status": "passed"
+      },
+      {
+        "name": "Save report",
+        "status": "passed"
+      },
+      {
+        "name": "Garage compare and test",
+        "status": "passed"
+      },
+      {
+        "name": "Sharing and fallback",
+        "status": "passed"
+      },
+      {
+        "name": "Gamepad menu, race and interruption",
+        "status": "passed"
+      },
+      {
+        "name": "New circuit, source and failed save",
+        "status": "passed"
+      },
+      {
+        "name": "Solo improvement and submission form",
+        "status": "passed"
+      },
+      {
+        "name": "Name form 200 percent reflow",
+        "status": "passed"
+      },
+      {
+        "name": "Quick race journey",
+        "status": "passed"
+      },
+      {
+        "name": "Input ownership and camera",
+        "status": "passed"
+      },
+      {
+        "name": "Manual throttle layout",
+        "status": "passed"
+      },
+      {
+        "name": "Workshop round trip",
+        "status": "passed"
+      },
+      {
+        "name": "Practice and ghost",
+        "status": "passed"
+      },
+      {
+        "name": "All tracks and recovery",
+        "status": "passed"
+      },
+      {
+        "name": "Render budget",
+        "status": "passed"
+      },
+      {
+        "name": "Foreground update discovery",
+        "status": "passed"
+      },
+      {
+        "name": "Remaining browser checks",
+        "status": "passed"
+      }
+    ],
+    "resolution": "The earlier aggregate run and its failures remain in handbook-browser-before-campaign.json and preceding snapshots. Final current checks rerun on the optimized renderer. Earlier actual reflow failure was corrected and rerun.",
+    "campaign": "audit/handbook-campaign-final.json",
+    "offline": "audit/handbook-offline-browser.json"
+  },
+  "performance": {
+    "artifact": "audit/handbook-performance.json",
+    "durationMs": 1200030.8999999762,
+    "frames": 71846,
+    "p95FrameMs": 17.099999999976717,
+    "p99FrameMs": 17.400000000023283,
+    "hiddenMs": 0,
+    "sceneCycles": 40,
+    "maxTrails": 360,
+    "heap": "Chromium usedJSHeapSize estimates only; not total working set or GPU memory. Exact raw samples retained.",
+    "scope": "Real application requestAnimationFrame, fixed-step simulation, HUD and Canvas2D rendering; legal injected controller; scheduling intervals, not physical input latency or GPU timing",
+    "correction": "The long run inherited a repaired renderer with 1x resolution despite resetting the setting. It is lower-resolution endurance evidence at the preceding runtime, not current default-resolution endurance evidence. Only arcade-renderer.js changed afterward: static curb paths are cached and trail strokes batched. Simulation, input and storage modules are byte-identical. The worker implementation is unchanged; its generated inventory binds the new renderer. The current runtime passes a separate complete default-resolution six-car race and all-track/campaign checks; no new twenty-minute run is claimed.",
+    "changedRuntime": [
+      "arcade-renderer.js"
+    ],
+    "defaultQuality": {
+      "artifact": "audit/handbook-default-quality.json",
+      "durationMs": 50075.60000002384,
+      "p95FrameMs": 16.80000000000291,
+      "p99FrameMs": 16.900000000000546,
+      "canvas": [
+        1920,
+        753
+      ],
+      "cssCanvas": [
+        1280,
+        672
+      ]
+    }
+  },
+  "provider": {
+    "publicValidation": "audit/boards-public-check-2026-10-17T21-11-24-222Z.json",
+    "lostResponse": "audit/handbook-live-outbox.json",
+    "workshop": "audit/handbook-workshop-publication.json",
+    "preservation": "audit/handbook-data-preservation.json",
+    "limitation": "A later public preservation seed returned 500 before a bounded retry succeeded. Historical intermittent provider failures remain; endpoint successes are not global readiness."
+  },
+  "notClaimed": [
+    "physical-device behavior",
+    "human enjoyment",
+    "full WCAG conformance",
+    "browser-process cold restart",
+    "provider-wide activation guarantee",
+    "all original official circuits authored through Workshop"
+  ],
+  "publication": "Exact candidate verification and conditional deployment under the user request; unresolved broad acceptance is retained, not waived."
+}

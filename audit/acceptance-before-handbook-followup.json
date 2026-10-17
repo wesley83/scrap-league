@@ -1,0 +1,1289 @@
+{
+  "version": 2,
+  "utc": "2026-10-17T20:36:13.243Z",
+  "release": "sl-60bf1fb46ea8c0",
+  "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
+  "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
+  "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
+  "status": "not-accepted",
+  "evidenceReuse": {
+    "path": "audit/remake-verification.json",
+    "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e",
+    "note": "Reuse explicit: only final runtime difference is the manual-touch practice prompt GAS text, covered by focused assertions. No simulation, geometry, controls, renderer, editor, network or worker behavior differs."
+  },
+  "requirements": [
+    {
+      "id": "J01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Account-free Quick Race and separate action-based practice finish through legal synthetic-controller input; actual keyboard driving separately verified. This is browser automation, not a human playtest.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J02",
+      "stage": "local",
+      "status": "partial",
+      "note": "Current pause/retry, touch contact cancellation, Settings and actual keyboard driving pass. Historical gamepad checks remain retained; the complete new-renderer gamepad/menu journey was not repeated.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J03",
+      "stage": "local",
+      "status": "partial",
+      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "5e066fd1d49cebea4920a51d6b4b07d01c487c2dbda8ecec5be2d4f0a6c43b83"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J04",
+      "stage": "local",
+      "status": "partial",
+      "note": "All three continuous persisted twelve-event legal-input campaigns pass again. The new renderer draws all twelve tracks; the complete held final-scene UI journey has not been repeated.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "5e066fd1d49cebea4920a51d6b4b07d01c487c2dbda8ecec5be2d4f0a6c43b83"
+        },
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J05",
+      "stage": "local",
+      "status": "partial",
+      "note": "All 81 independent build/handling measurements pass. Garage content and tradeoff descriptions are retained; complete current camera/garage UI journey not repeated.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+        },
+        {
+          "path": "audit/remediation-handling.json",
+          "sha256": "86fd5847c89fb7fe681bb58a5da2eb81eba683ba0dff88a08c6105bd8cdc2a23"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J06",
+      "stage": "local",
+      "status": "partial",
+      "note": "Actual browser Time Trial completes three laps and saves/loads a compatible ghost, retaining a faster prior best. Independent split arithmetic passes. A full improved-best second finish was not added to this fixture.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J07",
+      "stage": "local",
+      "status": "passed",
+      "note": "Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J08",
+      "stage": "local",
+      "status": "partial",
+      "note": "Current Workshop editable DOM, geometry, surface edits, undo/redo, export/import and test entry pass. Complete new-loop creation across every input method remains narrower than the adopted contract.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J09",
+      "stage": "local",
+      "status": "partial",
+      "note": "Current browser edits, saves, exports, tests, returns and reopens the same draft. Five-AI creator context matrix remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J10",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J11",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J12",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J13",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Server-stopped fresh document loaded, drove with real keyboard input and saved/reopened an edited draft. Actual browser-process restart is unavailable in the tool and is not claimed.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J14",
+      "stage": "local",
+      "status": "passed",
+      "note": "Normal installed local copy discovered, verified and applied sl-100882d0435165 from sl-de66ac8ab06a61 through game controls with saved progress retained. Final difference is a GAS prompt; worker unchanged. First manual check may finish before installation; second check exposes Apply update. No closed-app notification claim.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-update-eca6.json",
+          "sha256": "b27b2a0fbde191d3667bc2095212f458a2059daf7692ef2a2a45c4f6dd4f295f"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
+          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        },
+        {
+          "path": "audit/deployment-browser-verification.json",
+          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
+        },
+        {
+          "path": "audit/pwa-update-verification/six-scenarios.json",
+          "sha256": "976e6443e917c985183033c4619b27f3dcc9ea1fc2aaeabe7f5bf7dbb56bf16e"
+        },
+        {
+          "path": "audit/pwa-update-verification/browser-results.json",
+          "sha256": "f434ccaa4dbf6c2fe5c006c0202bab1df30c7668f1ca4a355ef8e127e7192aa4"
+        },
+        {
+          "path": "audit/pwa-update-verification/REPORT.md",
+          "sha256": "e7c1c0729ce4f45ddff8f695408635867d38be934199f4938f863e5f1689034a"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J15",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Leased two-client timeout-after-acceptance regression passes. Public valid writes/readback pass in both modes; complete two-client public timeout scenario not run.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J16",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canvas failure injection and replacement preserve the paused race and clock. Six viewport layouts and independent pointer cancellation pass; actual offline keyboard input works. No physical-device claim.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J17",
+      "stage": "local",
+      "status": "passed",
+      "note": "Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+        },
+        {
+          "path": "audit/remediation-scorecard-verification.json",
+          "sha256": "2b87dc719e4b61777dd3ac0bb283c10337e5a4cee17accfc081563398d5302d5"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "J18",
+      "stage": "local",
+      "status": "partial",
+      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remediation-browser-lab-scenes.json",
+          "sha256": "1853b58b83fa43fd5636ced26bc930896c101c2347d986144a891fa7b499d91e"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "stage": "local",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "stage": "local",
+      "status": "passed",
+      "note": "Result and best transaction aborts preserve rewards/best/ghost atomically; same-ID retries retain one consistent record.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Valid Trial/Daily writes and readback succeeded, no duplicate appended, and client expiry/unsupported builds returned 422. Duplicate/split-arithmetic probes sometimes returned a provider module memory-budget error instead of the expected 422; the probe is retained as failed, not relabeled passed. Remaining prohibited-mutation matrix incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Both public endpoints assigned matching receipt timestamps and five-day expiries. Expiry filtering/cleanup behavior passes local fixtures and synthetic rows were conditionally removed by ETag; no live record was allowed to age through the full five-day retention period.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Public readback verified 24 intended official fragments and missing/unknown/hostile fallback routes. Live native editor opened and saved an editable copy. Earlier method memory-budget 500 is retained; actual injected composition-failure fallback is still narrower than the full adopted method.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
+          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
+          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "No supported provider-wide readiness procedure is available. Public reads/writes are observed; 500 memory-budget and earlier 403 responses remain recorded. Hosts are not presumed to have different capabilities.",
+      "artifacts": [
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "stage": "local",
+      "status": "partial",
+      "note": "Board resource creation/migration was conditional and preserved the zero-row baseline; local migration fixtures prove existing rows are retained. No pre-populated live board existed to verify preservation of real scores during release promotion.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Shared model/source/compiler, collision/handling, transactional editor source, controls and recovery pass current tests; renderer remains a derived view.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "stage": "local",
+      "status": "partial",
+      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "stage": "local",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "5e066fd1d49cebea4920a51d6b4b07d01c487c2dbda8ecec5be2d4f0a6c43b83"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Owner publishing and casual boards remain enabled. The browser native-fetch receiver bug is fixed. Localhost board browsing is blocked by provider CORS; same-origin UI needs post-publication readback. Server negative probes contain memory-budget errors.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "stage": "live",
+      "status": "blocked",
+      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment.json",
+          "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
+          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "stage": "local",
+      "status": "passed",
+      "note": "ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/screenshots/remediation-icons.jpg",
+          "sha256": "8ae2d0569c2d27bcaeeea7270eea9abf199dfd38a61bd4c3c00be6408abaf576"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Hosted commit e908b82 passed all 82 regression tests and rejected incomplete J01 after successful build/identity verification. Both checks are required on the default branch, including for administrators.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-required-checks.json",
+          "sha256": "27b7934a8ef0a3e360aa8fca365d71aec8a055410ca52b3f827dfcae6608761f"
+        },
+        {
+          "path": "audit/remediation-hosted-ci-e908b82.json",
+          "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
+        },
+        {
+          "path": "audit/remediation-hosted-refusal-e908b82.txt",
+          "sha256": "20a29bc11b9459340915893b2828f9e9048f3ad5970998ee2c0e4374f9b47cfa"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "stage": "local",
+      "status": "passed",
+      "note": "Package/deployment share exact source-input identity and stage gates. Missing asset, stale source, missing evidence and failed provider acceptance are refused in isolated copies.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "stage": "live",
+      "status": "passed",
+      "note": "Arcade remake sl-60bf1fb46ea8c0 published with 110 public file/route readbacks. Live cached 3D client updated normally; public board reads, portrait/landscape manual GAS input, pause/resume, Workshop entry and verified offline pack observed. Screenshots retained. Full product acceptance and the public-write fault matrix remain incomplete.",
+      "artifacts": [
+        {
+          "path": "audit/deployment.json",
+          "sha256": "990e53f98428e43bbeb7e8fdb13b18c7fbcdb2cd5c01ab6b518fb95875dddcfc"
+        },
+        {
+          "path": "audit/remake-live-verification.json",
+          "sha256": "2b630c8d2f72de34b954dfaa76c7f161cc5b090bc57a152b152c9881650c66c4"
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "stage": "local",
+      "status": "passed",
+      "note": "Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "stage": "local",
+      "status": "passed",
+      "note": "Conditional A-to-B-to-A root restoration reconciles ambiguity; stale/tampered plans fail before writing; unrelated records and immutable dependencies preserved.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Browser receipt retains its actual release, UA and viewport measurements; screenshot shows final prompt-only candidate. Reuse difference is explicitly hashed. Offline observations and limitations are separately recorded.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/remediation-input-large-text.json",
+          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
+        },
+        {
+          "path": "audit/screenshots/remediation-yard.jpg",
+          "sha256": "cfab60732e8614832e806671a45315810787f8840a92131dbcb0064f4f4334b2"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/deployment-browser-verification.json",
+          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
+        },
+        {
+          "path": "audit/screenshots/mobile-graphics-live-portrait.png",
+          "sha256": "347e54f65062eaa83aa5310ed2882549de574b974b1b34c36da01898e1b43279"
+        },
+        {
+          "path": "audit/screenshots/mobile-graphics-live-landscape.png",
+          "sha256": "fa2c904f66e50036edfe276f432d46fdf7deee90f4e0a39ed86628c88b2c32d1"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "stage": "local",
+      "status": "partial",
+      "note": "101/101 full tests pass; five focused tests cover the final prompt-only change. Other adopted product/provider journeys remain incomplete and no full acceptance is claimed.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        }
+      ]
+    }
+  ],
+  "publication": {
+    "release": "sl-2212ffe6721a07",
+    "authorization": "audit/deployment-authorization-2026-10-17.json",
+    "note": "Exact candidate publication is separately authorized; incomplete product acceptance remains visible. Live deployment evidence is recorded in audit/deployment.json."
+  },
+  "previousPublication": {
+    "release": "sl-eca6f97d1308a3",
+    "sourceCommit": "6a7ff1ce6890e3e4a656eecc17952e27130b197e",
+    "authorization": "audit/deployment-authorization-2026-10-16.json",
+    "prePublicationLedger": "audit/deployment-acceptance-before-publication.json",
+    "receipt": "audit/deployment.json",
+    "note": "Completed under explicit user authorization. Current ledger includes subsequent live evidence, so the prior ledger-bound authorization cannot be reused unchanged."
+  }
+}

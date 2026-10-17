@@ -1,5 +1,7 @@
 import { CUP_SCENES, FINAL_SCENE } from "./scenes.js";
-import { Boards, submission, contentKeys, recognized } from "./boards.js";
+import { Boards, contentKeys } from "./boards.js";
+import { nameField, rememberDriver } from "./driver-profile.js";
+import { showSubmission } from "./submission-ui.js";
 import { readPublishedTrack, discoverTracks } from "./publication.js";
 import { resultInvitation, shareInvitation, scorecard } from "./sharing.js";
 import { workerRequest } from "./offline.js";
@@ -790,7 +792,12 @@ function input() {
       (down("left") || keys.has("ArrowLeft") || held.has("left") ? 1 : 0) +
       steering,
     throttle =
-      down("throttle") || keys.has("ArrowUp") || held.has("throttle") ? 1 : 0,
+      down("throttle") ||
+      keys.has("ArrowUp") ||
+      held.has("throttle") ||
+      held.has("boost")
+        ? 1
+        : 0,
     brake = down("brake") || keys.has("ArrowDown") || held.has("brake") ? 1 : 0,
     handbrake = down("handbrake") || held.has("handbrake"),
     boost =
@@ -1011,7 +1018,7 @@ function renderResultActions() {
     !race.result.dnf &&
     !race.result.performanceDegraded
   )
-    button("Shared times", showSharedTimes);
+    button("Add to leaderboard", showSharedTimes);
   button("Download scorecard", async () => {
     try {
       const invitation = invitationForRace();
@@ -1365,6 +1372,7 @@ function settingsDialog() {
     )
     .join("")}</div>`;
   body.append(controls);
+  body.prepend(driverProfile());
   const repair = document.createElement("button"),
     graphicsStatus = document.createElement("p");
   repair.textContent = "Repair graphics";
@@ -1440,7 +1448,7 @@ function applyPreferences() {
     ? "Use the steering wheel and brake before bends. " +
       (settings.autoAccelerate
         ? "Auto throttle is on."
-        : "Hold GAS to accelerate.")
+        : "Hold GAS to accelerate. BOOST also holds the throttle, so you can steer with your other thumb.")
     : hint;
   document.body.classList.toggle("touch", settings.touch);
   document.body.classList.toggle("large-hud", settings.largeHud);
@@ -1502,6 +1510,7 @@ function appendDataControls(body) {
         action: async () => {
           if (!boards.enabled)
             throw Error("Shared boards are not configured on this host yet.");
+          await store.retryRuns();
           await boards.pump();
           notify("Submission queue checked.");
         },
@@ -1726,7 +1735,11 @@ q("fullscreen").onclick = async () => {
   }
 };
 window.addEventListener("keydown", (e) => {
-  if (["INPUT", "SELECT", "TEXTAREA"].includes(e.target.tagName)) return;
+  if (
+    ["INPUT", "SELECT", "TEXTAREA"].includes(e.target.tagName) ||
+    e.target.isContentEditable
+  )
+    return;
   if (view === "race") {
     if (e.code === settings.bindings.pause || e.code === "Escape") {
       e.preventDefault();
@@ -1821,7 +1834,29 @@ window.addEventListener("beforeunload", (e) => {
     e.returnValue = "";
   }
 });
-async function checkOffline(manual = false) {
+let offlineCheckPromise = null,
+  offlineFollowUp = false;
+async function checkOffline(manual = false, discover = false) {
+  if (offlineCheckPromise) {
+    if (manual) {
+      await offlineCheckPromise;
+      return checkOffline(true, discover);
+    }
+    offlineFollowUp = true;
+    return offlineCheckPromise;
+  }
+  offlineCheckPromise = performOfflineCheck(manual, discover);
+  try {
+    await offlineCheckPromise;
+  } finally {
+    offlineCheckPromise = null;
+    if (offlineFollowUp) {
+      offlineFollowUp = false;
+      void checkOffline();
+    }
+  }
+}
+async function performOfflineCheck(manual = false, discover = false) {
   if (!("serviceWorker" in navigator)) {
     q("offline-state").textContent = "Offline installation unavailable";
     return;
@@ -1841,7 +1876,7 @@ async function checkOffline(manual = false) {
             "New pack failed · previous release retained";
       });
     };
-    if (manual) await registration.update();
+    if (manual || discover) await registration.update();
     let timer;
     try {
       await Promise.race([
@@ -1868,6 +1903,7 @@ async function checkOffline(manual = false) {
         : "Earlier offline release retained";
     if (registration.waiting) {
       waitingWorker = registration.waiting;
+      q("update-ready").hidden = false;
       q("offline-state").textContent = "Update verified · apply from the yard";
       if (view === "start" && manual)
         dialog(
@@ -1884,7 +1920,10 @@ async function checkOffline(manual = false) {
             { label: "Later" },
           ],
         );
-    } else if (manual) notify("Offline files checked and verified.");
+    } else {
+      q("update-ready").hidden = true;
+      if (manual) notify("Offline files checked and verified.");
+    }
   } catch (e) {
     q("offline-state").textContent =
       "Offline pack unverified · check or repair from Settings";
@@ -1909,9 +1948,22 @@ navigator.serviceWorker?.addEventListener("controllerchange", () => {
   // Only a still-live, explicitly confirmed activation request may reload this tab.
   if (updateLock && view === "start") location.reload();
 });
-window.addEventListener("online", () =>
-  boards?.pump().catch((e) => notify(e.message, true)),
-);
+let lastForegroundCheck = 0;
+function refreshForeground() {
+  if (document.hidden || !content) return;
+  if (view === "start") updateHome(); // Recompute the UTC day after suspension.
+  boards?.pump().catch((e) => notify(e.message, true));
+  if (Date.now() - lastForegroundCheck < 60000) return;
+  lastForegroundCheck = Date.now();
+  void checkOffline(false, true);
+}
+window.addEventListener("online", refreshForeground);
+window.addEventListener("pageshow", refreshForeground);
+document.addEventListener("visibilitychange", refreshForeground);
+q("update-ready").onclick = () => checkOffline(true);
+setInterval(() => {
+  if (!document.hidden) boards?.pump().catch(() => {});
+}, 30000);
 let gamepadMenuButtons = [],
   gamepadNavAt = 0;
 function gamepadMenus(now) {
@@ -2084,71 +2136,51 @@ function frame(now) {
   }
   requestAnimationFrame(frame);
 }
+function driverProfile() {
+  const field = nameField(document, settings.driverAlias),
+    save = document.createElement("button");
+  save.type = "submit";
+  save.textContent = "Save driver name";
+  field.form.append(save);
+  field.form.onsubmit = async (event) => {
+    event.preventDefault();
+    if (save.disabled) return;
+    save.disabled = true;
+    try {
+      const alias = await rememberDriver(settings, store, field.read());
+      field.input.value = alias;
+      field.status.textContent =
+        "Driver name saved on this device. Finish Time Trial or Daily Spec, then choose Add to leaderboard.";
+    } catch (error) {
+      field.status.textContent = error.message;
+    } finally {
+      save.disabled = false;
+    }
+  };
+  return field.form;
+}
 async function showSharedTimes() {
   const result = race?.result && clone(race.result);
   if (!result) return;
-  if (!boards?.enabled) {
-    dialog(
-      "Shared times are not configured",
-      "This game copy has no configured public board. Your results, personal bests and ghosts remain available locally.",
-    );
-    return;
-  }
   try {
-    const run = submission(result, "Driver");
-    recognized(run, await recognizedContent);
-    const board = await boards.refresh(run),
-      body = document.createElement("div");
-    const policy = document.createElement("p");
-    policy.textContent =
-      "Casual, client-reported times; client-side times can be forged. Rankings expire five days after server receipt; stored rows are cleaned on later online access.";
-    body.append(policy);
-    const status = document.createElement("p");
-    status.textContent = board.stale
-      ? "Saved board · refresh failed. " + board.error
-      : "Latest confirmed times";
-    body.append(status);
-    const list = document.createElement("ol");
-    for (const row of board.rows) {
-      const li = document.createElement("li");
-      li.textContent = row.alias + " · " + time(row.elapsedMs);
-      list.append(li);
-    }
-    body.append(list);
-    const label = document.createElement("label");
-    label.textContent = "Public driver alias";
-    const alias = document.createElement("input");
-    alias.maxLength = 24;
-    alias.value = "Driver";
-    label.append(alias);
-    body.append(label);
-    if (view !== "result" || race?.result?.id !== result.id) return;
-    dialog("Shared times", body, [
-      {
-        label: "Submit this time",
-        action: async () => {
-          if (!store)
-            throw Error("Storage is required to queue a time safely.");
-          const run = submission(result, alias.value);
-          recognized(run, await recognizedContent);
-          await store.enqueueRun(run);
-          const states = await boards.pump();
-          notify(
-            states?.some((s) => s.id === run.id && s.state === "confirmed")
-              ? "Time confirmed by server."
-              : "Time queued. Check submission status in Settings.",
-          );
-        },
-      },
-      { label: "Close" },
-    ]);
+    await showSubmission({
+      document,
+      result,
+      settings,
+      store,
+      boards,
+      identities: recognizedContent,
+      dialog,
+      current: () => view === "result" && race?.result?.id === result.id,
+    });
   } catch (error) {
-    dialog("Shared times could not load", error.message);
+    notify(error.message, true);
   }
 }
 async function openLeaderboards() {
   const body = document.createElement("div");
   body.innerHTML = `<p>Three laps. The same circuit, car and assists. Set your time in Time Trial or try today's fixed Daily Spec.</p><div class="board-controls"><label>Board<select id="board-mode"><option value="trial">Time Trial</option><option value="daily">Daily Spec</option></select></label><label>Circuit<select id="board-track">${content.tracks.map((t, i) => `<option value="${i}">${esc(t.track.name)}</option>`).join("")}</select></label></div><p id="board-spec" class="muted"></p><p id="board-state" role="status">Loading times…</p><ol class="board-list"></ol><p class="muted">Community times are client-reported. Entries remain on the board for five days. Your local bests stay on your device.</p>`;
+  body.prepend(driverProfile());
   const mode = body.querySelector("#board-mode"),
     track = body.querySelector("#board-track"),
     state = body.querySelector("#board-state"),
@@ -2158,8 +2190,12 @@ async function openLeaderboards() {
   const refresh = async () => {
     const token = ++revision;
     selection = null;
-    list.replaceChildren();
-    state.textContent = "Loading times…";
+    const previousSelection = list.dataset.selection;
+    const selectedKey = mode.value + ":" + track.value;
+    if (previousSelection !== selectedKey) list.replaceChildren();
+    state.textContent = list.children.length
+      ? "Refreshing displayed times…"
+      : "Loading times…";
     const date = new Date().toISOString().slice(0, 10),
       d = content.daily.find((d) => d.date === date);
     track.disabled = mode.value === "daily";
@@ -2217,9 +2253,11 @@ async function openLeaderboards() {
         : board.rows.length
           ? "Latest confirmed times"
           : "No times for this combination yet. Set the first one.";
+      list.replaceChildren();
+      list.dataset.selection = mode.value + ":" + track.value;
       for (const [i, row] of board.rows.entries()) {
         const li = document.createElement("li"),
-          name = document.createElement("span"),
+          name = document.createElement("bdi"),
           value = document.createElement("strong");
         name.textContent = i + 1 + ". " + row.alias;
         value.textContent = time(row.elapsedMs);
@@ -2229,7 +2267,9 @@ async function openLeaderboards() {
     } catch (e) {
       if (token === revision && body.isConnected)
         state.textContent =
-          "Times unavailable: " +
+          (list.children.length
+            ? "Displayed times may be stale. Refresh failed: "
+            : "Times unavailable: ") +
           e.message +
           " You can still race and keep your result locally.";
     }

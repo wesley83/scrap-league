@@ -25,7 +25,15 @@ Choose **LET’S RACE** for an immediate two-lap race against five rivals. **Dri
 | Reset at the last checkpoint | R or Reset button | On-screen Reset |
 | Pause | Escape or Pause | Start |
 
-Touch controls can be enabled in Settings: a steering pad or left/right buttons, Brake, Slide and Boost. Enable Auto accelerate for touch. Auto accelerate and steering assistance are captured at the next race start and separate personal-best comparisons. A reset costs two seconds while opponents and the clock continue. Gold markers show checkpoints; the map highlights the next required gate. Crossing an out-of-order or backward gate does not advance the lap.
+Touch controls can be enabled in Settings: a steering pad or left/right buttons, Gas, Brake, Slide and Boost. Auto accelerate is optional. With manual throttle, the touch Boost button includes Gas so steering and boosting need only two contacts. Releasing it releases its throttle contribution; an independently held Gas button remains held. Auto accelerate and steering assistance are captured at the next race start and separate personal-best comparisons. A reset costs two seconds while opponents and the clock continue. Gold markers show checkpoints; the map highlights the next required gate. Crossing an out-of-order or backward gate does not advance the lap.
+
+## Leaderboards and updates
+
+Set your **Public driver name** from Leaderboards or Settings. It stays on this device and is used for future submissions. Finish three laps in **Time Trial** or **Daily Spec**, then select **Add to leaderboard**. Quick Race, League, practice and Workshop tests do not submit public times. Matching boards compare circuit, car, assists and rules; Daily also pins its UTC date.
+
+You can enter your name and queue a result even when the board cannot load. The game shows **queued** only after the submission is saved locally, and **confirmed** after server readback. Queued runs retain their original name and identity. Use **Refresh / retry**, or Settings → Submission status → Retry connection. A server-requested delay is respected. Rejected times remain local and are not retried automatically. Names allow 1–24 Unicode characters and render as text; entries expire five days after server receipt. No account or notification permission is required.
+
+The PWA checks for new releases on startup, reconnect and return to the app, with repeated foreground checks limited to once a minute. **Update ready · review update** appears on the home screen when a verified pack is waiting. Apply it from the yard; every open game window must also be at a safe boundary. Settings → Check offline pack remains available. These are in-game update notices, not operating-system push notifications while the app is closed.
 
 The car uses actual part mass, engine force/power/governor, tire surface grip and utility behavior. There is no repair currency. A podium is useful, but any completed League round advances the collection. Replays preserve the current cup; Restart cup is explicit. An interrupted League attempt restarts its uncompleted round, not an exact mid-race position.
 

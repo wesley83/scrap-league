@@ -125,6 +125,19 @@ export class World {
     this.road = road(track.samples);
     this.shoulder = road(track.samples, 2.4);
     this.outline = road(track.samples, 0.7);
+    // Track markings are immutable until the next compiled track is loaded.
+    this.curbs = [new Path2D(), new Path2D()];
+    for (let i = 0; i < track.samples.length; i += 3) {
+      const a = track.samples[i],
+        b = track.samples[(i + 3) % track.samples.length],
+        path = this.curbs[(i / 3) % 2];
+      for (const side of [-1, 1]) {
+        const aa = offset(a, (a.width / 2) * side),
+          bb = offset(b, (b.width / 2) * side);
+        path.moveTo(aa.x, aa.z);
+        path.lineTo(bb.x, bb.z);
+      }
+    }
     this.patches = track.source.patches.map((p) => {
       const piece = track.route.find((r) => r.id === p.pieceId),
         samples = [];
@@ -270,14 +283,14 @@ export class World {
         race.state === "racing"
       )
         this.addTrails(race);
+      ctx.strokeStyle = "#14252b70";
+      ctx.lineWidth = 0.18;
+      ctx.beginPath();
       for (const t of this.trails) {
-        ctx.strokeStyle = "#14252b70";
-        ctx.lineWidth = 0.18;
-        ctx.beginPath();
         ctx.moveTo(t.ax, t.az);
         ctx.lineTo(t.bx, t.bz);
-        ctx.stroke();
       }
+      ctx.stroke();
       this.drawGate(ctx, race.track.gates[p.nextGate], true);
       const ghost = this.ghostAt(race.time);
       if (ghost && settings.ghost)
@@ -380,19 +393,10 @@ export class World {
       ctx.fillStyle = p.surface === "mud" ? "#756354" : "#a59672";
       ctx.fill(p.path);
     }
-    for (let i = 0; i < t.samples.length; i += 3) {
-      const a = t.samples[i],
-        b = t.samples[(i + 3) % t.samples.length];
-      ctx.strokeStyle = i % 6 === 0 ? "#e4dcca" : "#dc765c";
-      ctx.lineWidth = 0.65;
-      for (const side of [-1, 1]) {
-        const aa = offset(a, (a.width / 2) * side),
-          bb = offset(b, (b.width / 2) * side);
-        ctx.beginPath();
-        ctx.moveTo(aa.x, aa.z);
-        ctx.lineTo(bb.x, bb.z);
-        ctx.stroke();
-      }
+    ctx.lineWidth = 0.65;
+    for (const [i, path] of this.curbs.entries()) {
+      ctx.strokeStyle = i === 0 ? "#e4dcca" : "#dc765c";
+      ctx.stroke(path);
     }
     for (let s = 15; s < t.length; s += 24) {
       const p = atDistance(t, s);

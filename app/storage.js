@@ -635,6 +635,14 @@ export class Store {
         existing = s.get("outbox:" + run.id);
       existing.onsuccess = () => {
         if (existing.result) {
+          if (stable(existing.result.run) !== stable(run)) {
+            fail(
+              Error(
+                "This run is already queued under its original driver name. Its submission cannot be changed.",
+              ),
+            );
+            return;
+          }
           done(existing.result);
           return;
         }
@@ -672,7 +680,7 @@ export class Store {
       };
     });
   }
-  claimRun(owner, now = Date.now()) {
+  claimRun(owner, now = Date.now(), excluded = new Set()) {
     return this.atomic((tx, done) => {
       const cursor = tx.objectStore("outbox").openCursor();
       cursor.onsuccess = () => {
@@ -684,6 +692,7 @@ export class Store {
         const v = c.value;
         if (
           ["pending", "retry", "sending"].includes(v.state) &&
+          !excluded.has(v.run.id) &&
           (v.nextAttemptAt || 0) <= now &&
           (!v.lease || v.lease.expiresAt <= now)
         ) {
@@ -696,7 +705,38 @@ export class Store {
       };
     });
   }
-  settleRun(id, leaseId, state, message = "", now = Date.now()) {
+  retryRuns(id = null, now = Date.now()) {
+    return this.atomic((tx, done) => {
+      let count = 0;
+      const cursor = tx.objectStore("outbox").openCursor();
+      cursor.onsuccess = () => {
+        const c = cursor.result;
+        if (!c) {
+          done(count);
+          return;
+        }
+        const value = c.value;
+        if (
+          (!id || value.run.id === id) &&
+          value.state === "retry" &&
+          (!value.lease || value.lease.expiresAt <= now)
+        ) {
+          value.nextAttemptAt = Math.max(now, value.serverRetryAt || 0);
+          c.update(value);
+          count++;
+        }
+        c.continue();
+      };
+    });
+  }
+  settleRun(
+    id,
+    leaseId,
+    state,
+    message = "",
+    now = Date.now(),
+    serverRetryAt = 0,
+  ) {
     if (!["confirmed", "retry", "rejected"].includes(state))
       return Promise.reject(Error("Invalid submission state."));
     return this.update("outbox:" + id, (old) => {
@@ -709,9 +749,15 @@ export class Store {
         state,
         message,
         lease: null,
+        serverRetryAt,
         nextAttemptAt:
           state === "retry"
-            ? now + Math.min(300000, 1000 * 2 ** Math.min(old.attempts, 8))
+            ? Math.max(
+                serverRetryAt,
+                now +
+                  Math.min(300000, 1000 * 2 ** Math.min(old.attempts, 8)) *
+                    (1 + Math.random() * 0.2),
+              )
             : 0,
       };
     });

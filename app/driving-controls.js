@@ -95,8 +95,14 @@ export function bindTouchControls(root, { held, steer, active }) {
         button.dataset.pressed = "false";
       }
     });
+    button.addEventListener("blur", () => {
+      held.release("key:" + button.dataset.hold);
+      if (button === pad && padId === null) axis(0);
+      if (![...contacts.values()].includes(button))
+        button.dataset.pressed = "false";
+    });
   }
-  return () => {
+  const reset = () => {
     const entries = [...contacts];
     contacts.clear();
     held.clear();
@@ -110,6 +116,12 @@ export function bindTouchControls(root, { held, steer, active }) {
       .querySelectorAll("[data-pressed]")
       .forEach((b) => (b.dataset.pressed = "false"));
   };
+  // A new coordinate mapping requires a new contact, including browser-chrome
+  // resizing that does not emit orientationchange.
+  new ResizeObserver(reset).observe(root);
+  window.addEventListener("resize", reset);
+  window.visualViewport?.addEventListener("resize", reset);
+  return reset;
 }
 export function practiceStep(practice, car, input) {
   if (!practice) return;
@@ -146,7 +158,7 @@ export function practicePrompt(practice, settings) {
       : `Hold ${key("brake")} before a bend. Slow down before you turn.`;
   if (!practice.boost)
     return settings.touch
-      ? "On a straight, hold BOOST. Checkpoints refill your charge."
+      ? "On a straight, hold BOOST; it also accelerates. Checkpoints refill your charge."
       : `On a straight, hold ${key("boost")} to boost. Checkpoints refill your charge.`;
   return "All four skills tried. Follow every checkpoint and finish your lap.";
 }

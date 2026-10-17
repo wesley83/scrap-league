@@ -54,7 +54,11 @@ export function uiChecks({ frame, prefix, wait, until, check }) {
       );
       doc.querySelector("#garage-test").click();
       await until(() => doc.querySelector("#stage").className === "view-race");
-      await until(() => doc.querySelector("#countdown").textContent === "");
+      await until(
+        () =>
+          doc.querySelector("#countdown").textContent === "" &&
+          doc.querySelector("#hud-time").textContent !== "00:00.000",
+      );
       win.dispatchEvent(
         new win.KeyboardEvent("keydown", {
           code: "ArrowUp",
@@ -273,7 +277,11 @@ export function uiChecks({ frame, prefix, wait, until, check }) {
         await until(
           () => doc.querySelector("#stage").className === "view-race",
         );
-        await until(() => doc.querySelector("#countdown").textContent === "");
+        await until(
+          () =>
+            doc.querySelector("#countdown").textContent === "" &&
+            doc.querySelector("#hud-time").textContent !== "00:00.000",
+        );
         pad.buttons[7] = { pressed: true, value: 1 };
         await wait(700);
         pad.buttons[7] = { pressed: false, value: 0 };

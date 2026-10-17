@@ -168,12 +168,12 @@ These are acceptance targets, not measurements. Measure in the available browser
 | --- | --- | --- |
 | First playable download | ≤5 MiB compressed critical path; ≤15 MiB complete offline pack | Build inventory and cold network profile |
 | Startup | Ready within 5 s on 10 Mbps / 80 ms RTT after connection; subsequent menu within 1 s | Cold and warm traces, including parser/compile/warmup |
-| Racing | Target 60 FPS; p95 frame ≤20 ms, p99 ≤33 ms on baseline at default quality | Full race including first collision/pad and six cars |
+| Racing | Target 60 FPS; p95 frame ≤20 ms, p99 ≤33 ms on baseline at default quality | Full race including first collision/pad and six cars; static curb paths cached per track and equal-style trails batched |
 | Input response | Input reflected by next simulation step; visual response target ≤50 ms | Instrumented event-to-frame in the available browser |
-| GPU | ≤200 draw calls, ≤200k visible triangles, DPR cap 1.5 default on mobile | GPU/frame inspection, all scenes/effects |
+| Canvas allocation | At most 2.4 million backing pixels, dimensions at most 4096, DPR at most 2 (1 for safer graphics) | Actual Canvas 2D backing sizes, all scenes/effects; legacy WebGL draw/triangle targets are inapplicable to the replacement renderer |
 | Memory | Working set target ≤200 MiB where measurable; no monotonic growth after 20 race/editor cycles | Browser/platform tools with exact limitations recorded |
 | Editor | Common placement/undo feedback ≤50 ms; full max-track validation ≤250 ms off main path when necessary | Typical and worst bounded fixtures |
-| Assets/effects | Particle pools capped at 256; simultaneous audio voices ≤24 | Stress race and long-session counters |
+| Assets/effects | Canvas skid trails capped at 360; simultaneous audio voices ≤24 | Stress race and long-session counters; original particle-pool target belongs to the retired WebGL renderer |
 
 Prepare representative car parts, surface shaders, effects and audio paths before Go. Reuse bounded pools and dispose obsolete meshes/materials/targets. Graphics-context loss pauses simulation and input, rebuilds resources, warms them and requires explicit resume. The startup fallback is independent of the main module import and offers a functioning Retry/Reload path.
 

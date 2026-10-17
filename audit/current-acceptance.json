@@ -1,22 +1,22 @@
 {
   "version": 2,
-  "utc": "2026-10-17T20:36:13.243Z",
-  "release": "sl-60bf1fb46ea8c0",
-  "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
-  "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
+  "utc": "2026-10-17T21:56:40.047Z",
+  "release": "sl-6f79bfd18ca0be",
+  "sourceHash": "62aeebad2d6ae268e18cb38d097b65f51b9ba7ad96d3e47d6ddaa99f377ca622",
+  "outputHash": "e37e53626c99e9e35687549ec6c0d89b1a665c97b1bddd9172a82989f2a0e2d2",
   "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
   "status": "not-accepted",
   "evidenceReuse": {
-    "path": "audit/remake-verification.json",
-    "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e",
-    "note": "Reuse explicit: only final runtime difference is the manual-touch practice prompt GAS text, covered by focused assertions. No simulation, geometry, controls, renderer, editor, network or worker behavior differs."
+    "path": "audit/handbook-verification.json",
+    "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade",
+    "note": "Current runtime verified directly for gameplay/browser/performance/offline. Unchanged historical asset/provider/refusal evidence remains scoped to its recorded revision."
   },
   "requirements": [
     {
       "id": "J01",
       "stage": "local",
       "status": "passed",
-      "note": "Account-free Quick Race and separate action-based practice finish through legal synthetic-controller input; actual keyboard driving separately verified. This is browser automation, not a human playtest.",
+      "note": "Account-free Quick Race and action-based practice pass in the current browser fixture. Actual normal-browser offline keyboard racing separately passed.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -37,14 +37,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J02",
       "stage": "local",
-      "status": "partial",
-      "note": "Current pause/retry, touch contact cancellation, Settings and actual keyboard driving pass. Historical gamepad checks remain retained; the complete new-renderer gamepad/menu journey was not repeated.",
+      "status": "passed",
+      "note": "Current injected gamepad confirms Settings, changes range, returns, drives, pauses/resumes and cancels on disconnect. Independent pointer ownership/resize and keyboard focus-release checks pass; normal browser keyboard racing also passed.",
       "artifacts": [
         {
           "path": "audit/remediation-browser-final.json",
@@ -65,14 +97,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J03",
       "stage": "local",
-      "status": "partial",
-      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified.",
+      "status": "passed",
+      "note": "Current exact-runtime twelve-event UI campaign reloads after the first round, checks round increment and unique event awards, and finishes all four cups. Atomic idempotence regressions independently pass.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -80,7 +144,7 @@
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
-          "sha256": "5e066fd1d49cebea4920a51d6b4b07d01c487c2dbda8ecec5be2d4f0a6c43b83"
+          "sha256": "fe879c7f957fc410a3be3ee6ec2695fad04d197fe41991b111502bdcd69e9d3e"
         },
         {
           "path": "audit/remake-verification.json",
@@ -93,14 +157,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J04",
       "stage": "local",
-      "status": "partial",
-      "note": "All three continuous persisted twelve-event legal-input campaigns pass again. The new renderer draws all twelve tracks; the complete held final-scene UI journey has not been repeated.",
+      "status": "passed",
+      "note": "Current exact-runtime twelve-event campaign finishes every three-lap event through legal car-controller inputs, observes all four scenes and holds the readable ending for 5.5 seconds. Accelerated simulation ticks are not a human pacing measurement.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -108,7 +204,7 @@
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
-          "sha256": "5e066fd1d49cebea4920a51d6b4b07d01c487c2dbda8ecec5be2d4f0a6c43b83"
+          "sha256": "fe879c7f957fc410a3be3ee6ec2695fad04d197fe41991b111502bdcd69e9d3e"
         },
         {
           "path": "audit/remediation-browser-final.json",
@@ -129,14 +225,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J05",
       "stage": "local",
-      "status": "partial",
-      "note": "All 81 independent build/handling measurements pass. Garage content and tradeoff descriptions are retained; complete current camera/garage UI journey not repeated.",
+      "status": "passed",
+      "note": "Current garage fixture compares matching tire descriptions/grip, equips rally tires, drives and returns with selection preserved. All 81 independent handling measurements pass.",
       "artifacts": [
         {
           "path": "audit/remediation-garage-share-final.json",
@@ -144,7 +272,7 @@
         },
         {
           "path": "audit/remediation-handling.json",
-          "sha256": "86fd5847c89fb7fe681bb58a5da2eb81eba683ba0dff88a08c6105bd8cdc2a23"
+          "sha256": "38f021c585a5609d707e4df895a6ba51a9e5fcfe92d2c68c0f5cae79bb78d867"
         },
         {
           "path": "audit/remake-verification.json",
@@ -157,14 +285,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J06",
       "stage": "local",
-      "status": "partial",
-      "note": "Actual browser Time Trial completes three laps and saves/loads a compatible ghost, retaining a faster prior best. Independent split arithmetic passes. A full improved-best second finish was not added to this fixture.",
+      "status": "passed",
+      "note": "Current browser completes a slower then improved three-lap solo run, saves/loads a compatible ghost and confirms the better best. Independent split arithmetic regressions pass.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -181,6 +341,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -205,14 +397,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J08",
       "stage": "local",
-      "status": "partial",
-      "note": "Current Workshop editable DOM, geometry, surface edits, undo/redo, export/import and test entry pass. Complete new-loop creation across every input method remains narrower than the adopted contract.",
+      "status": "passed",
+      "note": "Current browser authors eight road pieces through editor controls, closes the successor gap, sets gates/grid, validates and drives three laps. This is the semantic form route, not a claim about every possible input sequence.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -237,14 +461,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J09",
       "stage": "local",
-      "status": "partial",
-      "note": "Current browser edits, saves, exports, tests, returns and reopens the same draft. Five-AI creator context matrix remains incomplete.",
+      "status": "passed",
+      "note": "Current new-circuit fixture tests against five AI, returns to the same source/context, undoes/redoes and checks canonical source. Separate current editor journey saves/reloads the same edited draft; quota failure preserves source through refused navigation and export/retry.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -261,6 +517,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -285,6 +573,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -309,14 +629,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J12",
       "stage": "staged",
-      "status": "partial",
-      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified.",
+      "status": "passed",
+      "note": "Production publication wrapper on a disposable live circuit encounters an actual 412 from an injected stale catalog ETag; the exact public track remains semantically readable and listing retry succeeds. This is endpoint/function evidence, not a full owner-key form browser journey.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -333,6 +685,42 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/handbook-workshop-at-promotion.json",
+          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
         }
       ]
     },
@@ -340,7 +728,7 @@
       "id": "J13",
       "stage": "local",
       "status": "blocked",
-      "note": "Server-stopped fresh document loaded, drove with real keyboard input and saved/reopened an edited draft. Actual browser-process restart is unavailable in the tool and is not claimed.",
+      "note": "Server-stopped fresh-document load, actual keyboard racing, Workshop editing/reload and saved nickname all pass at current runtime. Actual browser-process restart is unavailable and not claimed.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -361,6 +749,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -368,7 +788,7 @@
       "id": "J14",
       "stage": "local",
       "status": "passed",
-      "note": "Normal installed local copy discovered, verified and applied sl-100882d0435165 from sl-de66ac8ab06a61 through game controls with saved progress retained. Final difference is a GAS prompt; worker unchanged. First manual check may finish before installation; second check exposes Apply update. No closed-app notification claim.",
+      "note": "Normal installed browser copy updates from sl-de66ac8ab06a61 to the current runtime through explicit game controls, retaining progress. Current foreground/reconnect discovery and visible review control pass injected-worker tests; activation is never automatic.",
       "artifacts": [
         {
           "path": "audit/remediation-browser-update-eca6.json",
@@ -405,14 +825,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J15",
       "stage": "staged",
-      "status": "partial",
-      "note": "Leased two-client timeout-after-acceptance regression passes. Public valid writes/readback pass in both modes; complete two-client public timeout scenario not run.",
+      "status": "passed",
+      "note": "Two independent production Store/Boards connections reconcile an intentionally dropped response after actual public acceptance: one claim, original identity, one public copy and confirmed outbox. IndexedDB is emulated in this endpoint fixture; browser storage and leases are covered separately. Owned row conditionally removed.",
       "artifacts": [
         {
           "path": "audit/leaderboard-local-tests.txt",
@@ -437,6 +889,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -465,6 +949,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -497,14 +1013,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "J18",
       "stage": "local",
-      "status": "partial",
-      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified.",
+      "status": "passed",
+      "note": "Exact current twelve-event campaign runs muted, reduced motion and low effects, checks all scene captions and held ending. Existing bounded audio signal/voice tests pass; no perceptual listening claim.",
       "artifacts": [
         {
           "path": "audit/remediation-browser-lab-first-pass.json",
@@ -525,6 +1073,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -553,6 +1133,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -577,6 +1189,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -605,6 +1249,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -612,7 +1288,7 @@
       "id": "P04",
       "stage": "staged",
       "status": "partial",
-      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete.",
+      "note": "Current live production-wrapper checks pass pinned host, wrong credential, stale track baseline, catalog conflict/retry and accepted-response loss with semantic readback. A final create-only conflict is checked during owned-fixture cleanup after promotion.",
       "artifacts": [
         {
           "path": "audit/remediation-provider-probe-method-failure.json",
@@ -633,6 +1309,42 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/handbook-workshop-at-promotion.json",
+          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
         }
       ]
     },
@@ -640,7 +1352,7 @@
       "id": "P05",
       "stage": "staged",
       "status": "partial",
-      "note": "Valid Trial/Daily writes and readback succeeded, no duplicate appended, and client expiry/unsupported builds returned 422. Duplicate/split-arithmetic probes sometimes returned a provider module memory-budget error instead of the expected 422; the probe is retained as failed, not relabeled passed. Remaining prohibited-mutation matrix incomplete.",
+      "note": "All current positive/negative Trial/Daily probes passed at 21:11 UTC; a later public seed returned 500 then succeeded. Missing/extra/type/prohibited-mutation cases have local validators but the complete public endpoint matrix remains narrower than the adopted requirement.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -665,6 +1377,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -697,6 +1441,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -737,6 +1513,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -773,6 +1581,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -780,7 +1620,7 @@
       "id": "P09",
       "stage": "local",
       "status": "partial",
-      "note": "Board resource creation/migration was conditional and preserved the zero-row baseline; local migration fixtures prove existing rows are retained. No pre-populated live board existed to verify preservation of real scores during release promotion.",
+      "note": "Owned populated board and Workshop/catalog fixtures are staged for before/after preservation; completion and cleanup must be recorded after promotion. Existing old-client asset inventories remain preserved by the deployment contract.",
       "artifacts": [
         {
           "path": "audit/leaderboard-local-tests.txt",
@@ -805,6 +1645,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/handbook-workshop-at-promotion.json",
+          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
+        },
+        {
+          "path": "audit/handbook-data-at-promotion.json",
+          "sha256": "42a41c2a75a09fdaa1c9427503c398882d87ad0656b7b95158fea782aa3e75e8"
         }
       ]
     },
@@ -837,6 +1717,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -844,7 +1756,7 @@
       "id": "M02",
       "stage": "local",
       "status": "partial",
-      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete.",
+      "note": "New circuit authoring, closed topology, gates/grid, five-AI test, undo/redo, source recovery, export and reload pass. The complete keyboard-only/touch-emulated creator journey remains broader than the semantic-button fixtures.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -865,6 +1777,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -880,7 +1824,7 @@
         },
         {
           "path": "audit/remediation-persisted-campaigns.json",
-          "sha256": "5e066fd1d49cebea4920a51d6b4b07d01c487c2dbda8ecec5be2d4f0a6c43b83"
+          "sha256": "fe879c7f957fc410a3be3ee6ec2695fad04d197fe41991b111502bdcd69e9d3e"
         },
         {
           "path": "audit/remediation-browser-ui-first-run.json",
@@ -897,6 +1841,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -904,7 +1880,7 @@
       "id": "M04",
       "stage": "local",
       "status": "blocked",
-      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete.",
+      "note": "Current saves/ghosts/daily/offline fresh-document/update/sharing/input evidence passes. A cold browser-process relaunch remains unavailable.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -921,6 +1897,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -928,7 +1936,7 @@
       "id": "M05",
       "stage": "staged",
       "status": "partial",
-      "note": "Owner publishing and casual boards remain enabled. The browser native-fetch receiver bug is fixed. Localhost board browsing is blocked by provider CORS; same-origin UI needs post-publication readback. Server negative probes contain memory-budget errors.",
+      "note": "Current owner conflict/ambiguity/readback and casual-board positive/negative/lost-response checks pass in bounded endpoint tests. Provider-wide activation procedure is unavailable; intermittent 500 remains recorded.",
       "artifacts": [
         {
           "path": "audit/leaderboard-local-tests.txt",
@@ -961,6 +1969,42 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/handbook-workshop-at-promotion.json",
+          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
         }
       ]
     },
@@ -993,6 +2037,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1017,6 +2093,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1049,6 +2157,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1073,6 +2213,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1105,6 +2277,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1129,22 +2333,86 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "C06",
       "stage": "live",
-      "status": "passed",
-      "note": "Arcade remake sl-60bf1fb46ea8c0 published with 110 public file/route readbacks. Live cached 3D client updated normally; public board reads, portrait/landscape manual GAS input, pause/resume, Workshop entry and verified offline pack observed. Screenshots retained. Full product acceptance and the public-write fault matrix remain incomplete.",
+      "status": "partial",
+      "note": "Current release has not yet been promoted; publication receipt and normal-client live browser observations will be bound after deployment.",
       "artifacts": [
         {
-          "path": "audit/deployment.json",
+          "path": "audit/deployment-before-handbook-followup.json",
           "sha256": "990e53f98428e43bbeb7e8fdb13b18c7fbcdb2cd5c01ab6b518fb95875dddcfc"
         },
         {
           "path": "audit/remake-live-verification.json",
           "sha256": "2b630c8d2f72de34b954dfaa76c7f161cc5b090bc57a152b152c9881650c66c4"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1169,6 +2437,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1193,6 +2493,38 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
@@ -1200,7 +2532,7 @@
       "id": "C09",
       "stage": "local",
       "status": "passed",
-      "note": "Browser receipt retains its actual release, UA and viewport measurements; screenshot shows final prompt-only candidate. Reuse difference is explicitly hashed. Offline observations and limitations are separately recorded.",
+      "note": "Current browser/campaign/performance receipts retain exact runtime, UA and method; normal update/offline evidence has explicit limitations. Raw failed attempts and isolated successful follow-ups are preserved.",
       "artifacts": [
         {
           "path": "audit/remediation-native-and-assets.json",
@@ -1241,14 +2573,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     },
     {
       "id": "C10",
       "stage": "local",
-      "status": "partial",
-      "note": "101/101 full tests pass; five focused tests cover the final prompt-only change. Other adopted product/provider journeys remain incomplete and no full acceptance is claimed.",
+      "status": "passed",
+      "note": "Fresh full automated suite passes 107/107 and the exact-candidate ledger accurately retains incomplete adopted outcomes. Current legal campaign, UI, default-quality full race and twenty-minute lower-resolution endurance pass. This passes the test/ledger requirement, not full product acceptance.",
       "artifacts": [
         {
           "path": "audit/leaderboard-local-tests.txt",
@@ -1269,14 +2633,46 @@
         {
           "path": "audit/remake-prompt-tests.txt",
           "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
         }
       ]
     }
   ],
   "publication": {
-    "release": "sl-2212ffe6721a07",
+    "release": "sl-6f79bfd18ca0be",
     "authorization": "audit/deployment-authorization-2026-10-17.json",
-    "note": "Exact candidate publication is separately authorized; incomplete product acceptance remains visible. Live deployment evidence is recorded in audit/deployment.json."
+    "note": "Current user explicitly requests commit, push and deployment after the handbook remediation. Publication is distinct from the retained incomplete broad acceptance."
   },
   "previousPublication": {
     "release": "sl-eca6f97d1308a3",

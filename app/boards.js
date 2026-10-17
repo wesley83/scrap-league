@@ -18,6 +18,14 @@ const RUN_FIELDS = Object.freeze([
   "elapsedMs",
   "splits",
 ]);
+export function retryAfterAt(response, now = Date.now()) {
+  const value = response?.headers.get("Retry-After");
+  if (!value) return 0;
+  const at = /^\d+$/.test(value)
+    ? now + Number(value) * 1000
+    : Date.parse(value);
+  return Number.isFinite(at) && at > now ? at : 0;
+}
 export function boardKey(run) {
   return comparisonKey({
     mode: run.mode,
@@ -236,11 +244,16 @@ export class Boards {
       if (
         !retryable ||
         ![429, 502, 503, 504].includes(response.status) ||
+        retryAfterAt(response, this.clock()) > this.clock() + 1000 ||
         attempt >= 2
       )
         return response;
+      const delay = Math.max(
+        retryAfterAt(response, this.clock()) - this.clock(),
+        250 * (attempt + 1) + Math.random() * 100,
+      );
       await response.body?.cancel();
-      await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
+      await new Promise((resolve) => setTimeout(resolve, delay));
     }
   }
   async lookup(run) {
@@ -262,8 +275,12 @@ export class Boards {
         page,
         headers: { Range: "selector=#runs" },
       });
-      if (!response.ok)
-        throw Error("Board read failed (" + response.status + ").");
+      if (!response.ok) {
+        const error = Error("Board read failed (" + response.status + ").");
+        error.retryAt = retryAfterAt(response, this.clock());
+        await response.body?.cancel();
+        throw error;
+      }
       const responseTime = Date.parse(response.headers.get("Date") || "");
       if (Number.isFinite(responseTime)) serverTime = responseTime;
       const batch = parseRuns(await boundedText(response), this.Parser);
@@ -325,13 +342,20 @@ export class Boards {
   async pump() {
     if (!this.enabled || this.running || !this.store) return;
     this.running = true;
-    const outcomes = [];
+    const outcomes = [],
+      attempted = new Set();
     try {
       for (let n = 0; n < 100; n++) {
-        const entry = await this.store.claimRun(this.owner, this.clock());
+        const entry = await this.store.claimRun(
+          this.owner,
+          this.clock(),
+          attempted,
+        );
         if (!entry) break;
+        attempted.add(entry.run.id);
         let state = "retry",
-          message = "";
+          message = "",
+          serverRetryAt = 0;
         try {
           const run = entry.run;
           try {
@@ -352,6 +376,8 @@ export class Boards {
                 },
                 body: runHTML(run),
               });
+              serverRetryAt = retryAfterAt(response, this.clock());
+              await response.body?.cancel();
             } catch {}
             // Reconcile even a rejection: a retry may have collided with earlier acceptance.
             accepted = await this.lookup(run);
@@ -373,6 +399,7 @@ export class Boards {
           }
         } catch (error) {
           message = error.message;
+          serverRetryAt = Math.max(serverRetryAt, error.retryAt || 0);
         }
         try {
           await this.store.settleRun(
@@ -381,6 +408,7 @@ export class Boards {
             state,
             message,
             this.clock(),
+            serverRetryAt,
           );
           outcomes.push({ id: entry.run.id, state });
         } catch {
@@ -419,11 +447,18 @@ export class Boards {
         refreshedAt: this.clock(),
         serverOffset: now - this.clock(),
       };
-      await this.store?.set("board:" + key, cached);
+      // A cache quota failure must not hide a successful public read.
+      let cacheError = null;
+      try {
+        await this.store?.set("board:" + key, cached);
+      } catch (error) {
+        cacheError = error.message;
+      }
       return {
         rows: ranked(rows, key, now),
         stale: false,
         refreshedAt: cached.refreshedAt,
+        cacheError,
       };
     } catch (error) {
       const cached = await this.store?.get("board:" + key);

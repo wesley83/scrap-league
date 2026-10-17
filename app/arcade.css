@@ -557,6 +557,17 @@ dialog {
   padding: 26px;
   max-height: 85dvh;
   overflow-y: auto;
+  overflow-wrap: anywhere;
+}
+dialog button,
+dialog input,
+dialog select,
+dialog label {
+  min-width: 0;
+  max-width: 100%;
+}
+dialog button {
+  white-space: normal;
 }
 dialog::backdrop {
   background: #0d222bdd;
@@ -582,7 +593,7 @@ dialog::backdrop {
 }
 .board-controls {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
   margin: 16px 0;
 }
@@ -600,6 +611,35 @@ dialog::backdrop {
 .board-list strong {
   color: #ffd34e;
   font-variant-numeric: tabular-nums;
+}
+.board-list bdi {
+  overflow-wrap: anywhere;
+}
+.driver-profile {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 22px;
+}
+.driver-profile input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 6px;
+}
+.driver-profile p {
+  margin: 0;
+}
+.driver-profile button {
+  justify-self: start;
+}
+.driver-profile [aria-invalid="true"] {
+  outline: 2px solid #ffd34e;
+  outline-offset: 2px;
+}
+@media (max-width: 480px) {
+  .board-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 .workshop-bar,
 .workbench,
