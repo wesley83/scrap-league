@@ -1,0 +1,226 @@
+{
+  "utc": "2026-10-17T22:23:18.232Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "owned": [
+    "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-trial.html",
+    "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-daily.html",
+    "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-valid",
+    "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-track",
+    "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-shell"
+  ],
+  "created": [
+    "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-trial.html",
+    "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-daily.html",
+    "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-valid",
+    "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-track",
+    "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-shell"
+  ],
+  "mirrors": [
+    {
+      "mode": "trial",
+      "path": "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-trial.html",
+      "type": "urn:ScrapLeague:ProbeRun:a2188d15-22f1-471b-bc8f-cd736055e533:trial",
+      "sourceETag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+      "emptyPolicySha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142",
+      "normalizedMirrorSha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142"
+    },
+    {
+      "mode": "daily",
+      "path": "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-daily.html",
+      "type": "urn:ScrapLeague:ProbeRun:a2188d15-22f1-471b-bc8f-cd736055e533:daily",
+      "sourceETag": "\"8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607\"",
+      "emptyPolicySha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607",
+      "normalizedMirrorSha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607"
+    }
+  ],
+  "routes": [
+    {
+      "kind": "valid",
+      "path": "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-valid",
+      "status": 404,
+      "gameShell": false,
+      "track": false,
+      "recovery": false,
+      "release": "sl-3988dcdd07ab85"
+    },
+    {
+      "kind": "missing-track",
+      "path": "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-track",
+      "status": 404,
+      "gameShell": false,
+      "track": false,
+      "recovery": false,
+      "release": "sl-3988dcdd07ab85"
+    },
+    {
+      "kind": "missing-shell",
+      "path": "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-shell",
+      "status": 404,
+      "gameShell": false,
+      "track": false,
+      "recovery": false,
+      "release": "sl-3988dcdd07ab85"
+    }
+  ],
+  "checks": [
+    {
+      "name": "trial: positive public write/readback",
+      "state": "failed",
+      "detail": "Positive control returned 503: <!DOCTYPE html>\n<html>\n  <head>\n    <title>503 Service Unavailable - Budget Exceeded</title>\n  </head>\n  <body itemscope itemtype=\"https://schema.org/FailedActionStatus\">\n    <h1 itemprop=\"name\">Budget Exceeded</h1>\n    <p itemprop=\"description\">The request exceeded the allocated memory budget.</p>\n\n    <div itemscope itemtype=\"https://pagelove.org/BudgetLimit\">\n      <span itemprop=\"resourceType\">memory</span>\n      <dl>\n        <dt>Allocated:</dt>\n        <dd><span itemprop=\"allocated\">33233558</span> bytes</dd>\n        <dt>Consumed:</dt>\n        <dd><span itemprop=\"consumed\">33233558</span> bytes</dd>\n      </dl>\n    </div>\n  </body>\n</html>",
+      "durationMs": 1640
+    },
+    {
+      "name": "complete trial boundary fixture",
+      "state": "passed",
+      "executed": true,
+      "durationMs": 2566
+    },
+    {
+      "name": "daily: positive public write/readback",
+      "state": "passed",
+      "status": 206,
+      "oneCopy": true,
+      "durationMs": 1432
+    },
+    {
+      "name": "daily: reject missing field",
+      "state": "passed",
+      "status": 422,
+      "notStored": true,
+      "durationMs": 1387
+    },
+    {
+      "name": "daily: reject extra field",
+      "state": "failed",
+      "detail": "Expected 422, received 500: <div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>",
+      "durationMs": 830
+    },
+    {
+      "name": "daily: reject wrong numeric type",
+      "state": "passed",
+      "status": 422,
+      "notStored": true,
+      "durationMs": 797
+    },
+    {
+      "name": "daily: reject invalid splits",
+      "state": "passed",
+      "status": 422,
+      "notStored": true,
+      "durationMs": 862
+    },
+    {
+      "name": "daily: reject wrong content revision",
+      "state": "passed",
+      "status": 422,
+      "notStored": true,
+      "durationMs": 809
+    },
+    {
+      "name": "daily: reject client receipt",
+      "state": "failed",
+      "detail": "Expected 422, received 500: <div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>",
+      "durationMs": 835
+    },
+    {
+      "name": "daily: reject client expiry",
+      "state": "passed",
+      "status": 422,
+      "notStored": true,
+      "durationMs": 798
+    },
+    {
+      "name": "daily: reject injected markup",
+      "state": "passed",
+      "status": 422,
+      "notStored": true,
+      "durationMs": 775
+    },
+    {
+      "name": "daily: duplicate identity",
+      "state": "failed",
+      "detail": "Duplicate was not safely rejected: 500",
+      "durationMs": 770
+    },
+    {
+      "name": "daily: anonymous PUT denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 377
+    },
+    {
+      "name": "daily: anonymous PATCH denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 350
+    },
+    {
+      "name": "daily: active deletion denied",
+      "state": "failed",
+      "detail": "Future cutoff did not preserve active records: 416",
+      "durationMs": 410
+    },
+    {
+      "name": "daily: unscoped anonymous DELETE denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 377
+    },
+    {
+      "name": "complete daily boundary fixture",
+      "state": "passed",
+      "executed": true,
+      "durationMs": 11362
+    },
+    {
+      "name": "native composition: valid",
+      "state": "failed",
+      "detail": "Valid native composition failed: 404",
+      "durationMs": 187
+    },
+    {
+      "name": "native composition: missing-track",
+      "state": "failed",
+      "detail": "Missing-track shell fallback failed: 404",
+      "durationMs": 174
+    },
+    {
+      "name": "native composition: missing-shell",
+      "state": "failed",
+      "detail": "Missing-shell page has no independent recovery link: 404",
+      "durationMs": 188
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-shell",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-missing-track",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/editor/qa-a2188d15-22f1-471b-bc8f-cd736055e533-valid",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-daily.html",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/boards/audit-a2188d15-22f1-471b-bc8f-cd736055e533-trial.html",
+      "status": 204,
+      "absent": true
+    }
+  ],
+  "scope": "Actual public application endpoints on this host, using nonce-owned empty policy mirrors with unique run namespaces. Only resource paths/type namespaces differ from retained production policy; no live policy or player record is changed.",
+  "passed": false
+}

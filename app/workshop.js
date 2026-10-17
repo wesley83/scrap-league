@@ -37,6 +37,37 @@ import {
   atDistance,
 } from "./track.js";
 import { TrackDocument } from "./track-document.js";
+export async function readWorkshopDrafts(store, Parser = DOMParser) {
+  const records = [],
+    errors = [];
+  try {
+    const keys = (await store?.keys("draft:")) || [];
+    const reads = await Promise.allSettled(keys.map((key) => store.get(key)));
+    for (const read of reads) {
+      try {
+        if (read.status === "rejected") throw read.reason;
+        const record = read.value;
+        if (record?.deletedAt) continue;
+        if (
+          !record ||
+          !Number.isSafeInteger(record.revision) ||
+          record.revision < 1 ||
+          !Number.isFinite(Date.parse(record.updatedAt))
+        )
+          throw Error("Invalid saved draft metadata.");
+        // Exercise the same semantic source boundary used when opening a draft.
+        parseTrack(serializeTrack(record.track), Parser);
+        records.push(record);
+      } catch (error) {
+        errors.push(error);
+      }
+    }
+  } catch (error) {
+    errors.push(error);
+  }
+  records.sort((a, b) => a.updatedAt.localeCompare(b.updatedAt));
+  return { records, errors };
+}
 export class Workshop {
   get track() {
     return this.sourceDocument
@@ -1269,13 +1300,34 @@ export class Workshop {
   async files() {
     // Recovery actions must stay reachable even when the normal save failed.
     await this.flush().catch(() => {});
-    const keys = this.store ? await this.store.keys("draft:") : [],
-      records = await Promise.all(keys.map((k) => this.store.get(k))),
-      drafts = records.filter((d) => !d.deletedAt),
+    const records = [],
+      readErrors = [];
+    if (this.store) {
+      try {
+        const keys = await this.store.keys("draft:"),
+          reads = await Promise.allSettled(keys.map((k) => this.store.get(k)));
+        for (const read of reads) {
+          if (read.status === "fulfilled" && read.value)
+            records.push(read.value);
+          else if (read.status === "rejected") readErrors.push(read.reason);
+        }
+      } catch (error) {
+        readErrors.push(error);
+      }
+    }
+    const drafts = records.filter((d) => !d.deletedAt),
       trash = records.filter((d) => d.deletedAt && d.expiresAt > Date.now());
     const body = document.createElement("div");
     body.innerHTML = `<p>Track definitions contain editable geometry. They contain no game code or account data.</p><div class="file-actions"><button data-file="starter">New starter loop</button><button data-file="blank">New blank track</button><button data-file="technical">New technical loop</button><button data-file="duplicate">Duplicate current</button><button data-file="export">Export HTML</button><button data-file="import">Import HTML</button><button data-file="recover">Recover previous save</button></div><h3>Saved drafts</h3><div class="file-actions">${drafts.map((d, i) => `<button data-draft="${i}">${esc(d.track.name)}<small>Revision ${d.revision}</small></button>`).join("") || "<p>No saved drafts yet.</p>"}</div><h3>Official circuit copies</h3><div class="file-actions">${this.templates.map((t, i) => `<button data-template="${i}">${esc(t.name)}</button>`).join("")}</div><p class="muted">Use Publish with owner key in the Tools panel for the configured Pagelove host. HTML export remains available offline.</p>`;
     const close = () => document.querySelector("#modal").close();
+    if (readErrors.length) {
+      const message = document.createElement("p");
+      message.setAttribute("role", "alert");
+      message.textContent =
+        "Some saved drafts could not be read. Your current working track is kept; Export HTML remains available. " +
+        (readErrors[0]?.message || "Device storage could not be read.");
+      body.prepend(message);
+    }
     if (this.saveError) {
       const message = document.createElement("p");
       message.setAttribute("role", "alert");

@@ -966,9 +966,178 @@ actions["Default-resolution full race"] = async () => {
   const { defaultQualityRace } = await import("/__audit__/soak.js");
   return defaultQualityRace({ api, frame, prefix, output });
 };
+actions["Closed-store Files recovery"] = async () => {
+  await home();
+  await api.openWorkshop();
+  const w = api.workshop;
+  await w.flush();
+  const before = await api.store.get("draft:" + w.track.id),
+    originalDownload = w.download;
+  let exported;
+  api.store.close();
+  try {
+    const name = doc().getElementById("track-name");
+    name.value = "Closed-store recovery circuit";
+    name.dispatchEvent(new (win().Event)("change"));
+    await w.flush().catch(() => {});
+    click("work-file");
+    await waitFor(() =>
+      doc().querySelector("#modal-content [data-file=export]"),
+    );
+    check(
+      doc()
+        .querySelector("#modal-content")
+        .textContent.includes("Some saved drafts could not be read"),
+      "Closed store did not show recovery warning",
+    );
+    w.download = (filename, html) => {
+      exported = { filename, html };
+    };
+    doc().querySelector('[data-file="export"]').click();
+    const { parseTrack } = await import(prefix + "model.js");
+    check(
+      parseTrack(exported.html).name === "Closed-store recovery circuit",
+      "Working source could not be exported after closed connection",
+    );
+    const { openStore } = await import(prefix + "storage.js"),
+      replacement = await openStore();
+    const retained = await replacement.get("draft:" + before.track.id);
+    check(
+      retained.track.name === before.track.name,
+      "Failed save replaced the last durable track",
+    );
+    // Test teardown reconnects a real store and commits the already-exported
+    // fixture before reloading; it does not claim a new product reconnect UI.
+    w.store = replacement;
+    await w.persist();
+    replacement.close();
+    const loaded = new Promise((resolve) =>
+      frame.addEventListener("load", resolve, { once: true }),
+    );
+    frame.src = "/?after-closed-store=1";
+    await loaded;
+    await connect();
+    return {
+      warningVisible: true,
+      exportName: parseTrack(exported.html).name,
+      lastCommitPreserved: true,
+      storeClosedForReal: true,
+      scope:
+        "Actual browser IndexedDB close and normal Files/export controls; store reconnection is fixture teardown.",
+    };
+  } finally {
+    w.download = originalDownload;
+  }
+};
+actions["Workshop entry readiness and recovery"] = async () => {
+  const loaded = new Promise((resolve) =>
+    frame.addEventListener("load", resolve, { once: true }),
+  );
+  frame.src = "/?entry-readiness=1";
+  await loaded;
+  await connect();
+  await home();
+  const s = api.store,
+    originalKeys = s.keys;
+  let releaseRead;
+  s.keys = async (...args) => {
+    await new Promise((resolve) => {
+      releaseRead = resolve;
+    });
+    return originalKeys.apply(s, args);
+  };
+  try {
+    const pending = api.openWorkshop();
+    await waitFor(() => releaseRead);
+    check(
+      api.openWorkshop() === pending,
+      "Repeated entry was not deduplicated",
+    );
+    check(
+      doc().querySelector("#screen-workshop").hidden && !api.workshop.track,
+      "Editor exposed controls before source readiness",
+    );
+    api.show("events");
+    releaseRead();
+    await pending;
+    check(
+      api.view === "events" && !api.workshop.track,
+      "Late entry stole navigation",
+    );
+  } finally {
+    s.keys = originalKeys;
+  }
+  click("home");
+  await api.openWorkshop();
+  check(
+    api.view === "workshop" && api.workshop.track,
+    "Late Home overtook newer Workshop intent",
+  );
+  await api.workshop.flush();
+  api.workshop.track = null;
+  api.show("start");
+  const badKey = "draft:qa-unreadable-entry";
+  const bad = { track: null, revision: 1, updatedAt: new Date().toISOString() };
+  await s.atomic((tx, done) => {
+    tx.objectStore("drafts").put(bad, badKey);
+    done();
+  });
+  try {
+    await api.openWorkshop();
+    check(
+      api.view === "workshop" && api.workshop.track?.pieces.length > 0,
+      "Recovery did not open a separate valid source",
+    );
+    check(
+      doc()
+        .querySelector("#modal-title")
+        .textContent.includes("Saved drafts need recovery"),
+      "Recovery did not explain the saved-source problem",
+    );
+    const retained = await s.atomic((tx, done) => {
+      tx.objectStore("drafts").get(badKey).onsuccess = (event) =>
+        done(event.target.result);
+    }, "readonly");
+    check(
+      JSON.stringify(retained) === JSON.stringify(bad),
+      "Corrupt record was overwritten",
+    );
+    dismiss();
+    await api.workshop.flush();
+    click("work-garage");
+    check(api.view === "garage", "Recovered editor's next action failed");
+    click("garage-back");
+    return {
+      hiddenUntilReady: true,
+      duplicateEntryCoalesced: true,
+      lateNavigationCancelled: true,
+      lastNavigationIntentWins: true,
+      invalidSavedSourcePreserved: true,
+      explicitRecovery: true,
+      nextGarageAction: true,
+    };
+  } finally {
+    await s.atomic((tx, done) => {
+      tx.objectStore("drafts").delete(badKey);
+      done();
+    });
+  }
+};
 for (const [name, fn] of Object.entries(actions)) {
   const button = document.createElement("button");
   button.textContent = name;
-  button.onclick = () => record(name, fn);
+  button.onclick = async () => {
+    const controls = document.querySelectorAll("#actions button");
+    controls.forEach((control) => {
+      control.disabled = true;
+    });
+    try {
+      await record(name, fn);
+    } finally {
+      controls.forEach((control) => {
+        control.disabled = false;
+      });
+    }
+  };
   document.querySelector("#actions").append(button);
 }

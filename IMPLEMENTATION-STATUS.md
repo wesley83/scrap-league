@@ -1,5 +1,15 @@
 # Scrap League implementation and release status
 
+## Handbook second pass — October 17, 2026
+
+The second comparison fixes three confirmed recovery defects: Files could lose its export route after a database read failure; initial Workshop entry exposed controls before its source was ready; and installed clients could not recover failed native circuit links. Draft listing now isolates failures, editor entry validates before revealing controls and cancels stale navigation, and failed deep links recover an integrity-checked installed shell with an explicit cached-copy notice. Corrupt records and earlier installed releases remain preserved.
+
+The normal-browser keyboard creator journey built and validated an eight-piece circuit, tested driving with five AI, returned, undid/redid, downloaded HTML, imported it through the file chooser, reloaded the saved copy and edited/reloaded it with the server stopped. Key activation/focus was controlled through the browser connector; this does not claim every transition used sequential Tab navigation or that real keys completed a whole lap. Separate legal-controller fixtures establish full-lap completion. Current browser regressions also close the actual IndexedDB connection and exercise delayed entry and a corrupt saved record.
+
+Actual public policy mirrors verified physical cleanup of interleaved expired records, active controls, a near-expiry boundary and repeat access. Owner-seeded timestamps exercise expiry without claiming five days elapsed. Composition probes verify the provider's whole-response 404 when an include is missing; installed-worker recovery is verified separately. First-ever visitors without a verified pack retain that server error. Intermittent provider 500/503 failures and failed fixture attempts remain in the audit.
+
+See `audit/2026-10-17-handbook-second-pass.md` and the current acceptance ledger for exact evidence. Process-level cold restart remains blocked by native-browser tool approval timeout; provider-wide policy readiness has no supported verification API. Historical CLI authorship of the original circuits remains disclosed. These limits are not marked passed or silently removed.
+
 ## Handbook follow-up — October 17, 2026
 
 This pass addresses concrete gaps against handbook 2.8.0. Driver names are editable from Leaderboards and Settings and persist on the device. Result submission opens independently of board availability, preserves invalid input, shows durable queue/confirmed/rejected state and retains the original submitted name. Explicit retry respects server delays and tab leases; a slow expired lease cannot be reclaimed repeatedly by one pump. Optional cache-write failure no longer hides a successful board read. Refresh preserves displayed matching times until replacement.

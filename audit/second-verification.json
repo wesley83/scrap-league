@@ -1,0 +1,115 @@
+{
+  "utc": "2026-10-17T22:50:10.470Z",
+  "release": "sl-37615e5369f322",
+  "sourceHash": "b8063a6ce73408163681515695fba2e6ef4071e743c4fda40fc093f9bb112b54",
+  "outputHash": "9e43c87abcb42efb6bdd0969b5ab16f9b5a256d68ea698dc2ce7576dffd19334",
+  "handbook": {
+    "edition": "2.8.0",
+    "path": "C:/Users/Wesley/Documents/Codex/Pagelove/games/prism-breaker/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+    "audit": "audit/2026-10-17-handbook-second-pass.md"
+  },
+  "tests": {
+    "passed": 111,
+    "failed": 0,
+    "artifact": "audit/second-unit-tests.txt"
+  },
+  "browser": {
+    "artifact": "audit/second-browser.json",
+    "checks": [
+      {
+        "name": "Workshop entry readiness and recovery",
+        "status": "passed"
+      },
+      {
+        "name": "Closed-store Files recovery",
+        "status": "passed"
+      },
+      {
+        "name": "Garage compare and test",
+        "status": "passed"
+      },
+      {
+        "name": "Sharing and fallback",
+        "status": "passed"
+      },
+      {
+        "name": "Gamepad menu, race and interruption",
+        "status": "passed"
+      },
+      {
+        "name": "New circuit, source and failed save",
+        "status": "passed"
+      },
+      {
+        "name": "Solo improvement and submission form",
+        "status": "passed"
+      },
+      {
+        "name": "Name form 200 percent reflow",
+        "status": "passed"
+      },
+      {
+        "name": "Quick race journey",
+        "status": "passed"
+      },
+      {
+        "name": "Input ownership and camera",
+        "status": "passed"
+      },
+      {
+        "name": "Manual throttle layout",
+        "status": "passed"
+      },
+      {
+        "name": "Workshop round trip",
+        "status": "passed"
+      },
+      {
+        "name": "Practice and ghost",
+        "status": "passed"
+      },
+      {
+        "name": "All tracks and recovery",
+        "status": "passed"
+      },
+      {
+        "name": "Render budget",
+        "status": "passed"
+      },
+      {
+        "name": "Foreground update discovery",
+        "status": "passed"
+      },
+      {
+        "name": "Remaining browser checks",
+        "status": "passed"
+      }
+    ],
+    "normal": "audit/second-keyboard-offline.json"
+  },
+  "reuse": {
+    "previousRelease": "sl-6f79bfd18ca0be",
+    "changedRuntimeFiles": [
+      "main.js",
+      "workshop.js"
+    ],
+    "worker": "Native-navigation recovery added and covered by current worker tests; cache/update contracts unchanged.",
+    "unchanged": "Renderer, simulation, driving controls, storage, board/publication functions, track compiler/model, assets and official content remain byte-identical. Prior full campaign, default-quality race, signal/audio and endurance evidence remains scoped to its original runtime; new menu/storage/native-route behavior is directly rechecked.",
+    "priorVerification": {
+      "path": "audit/handbook-verification.json",
+      "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+    }
+  },
+  "provider": {
+    "matrix": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
+    "retention": "audit/provider-gap-probe-2026-10-17T22-35-54-307Z.json",
+    "focusedDuplicate": "audit/provider-gap-probe-2026-10-17T22-44-20-406Z.json",
+    "conclusion": "Retention and documented native include failure controls passed. Explicit negative matrix coverage increased; the focused Daily duplicate retained one copy but returned 500, so broad public acceptance remains incomplete. Every owned fixture was conditionally removed."
+  },
+  "limits": [
+    "Native browser process capture approval timed out; no process-level cold restart/crash claim.",
+    "No supported provider-wide readiness procedure.",
+    "Original tracks remain historically CLI-authored.",
+    "Complete all-field public negative matrix and process-crash matrix remain narrower than adoption."
+  ]
+}

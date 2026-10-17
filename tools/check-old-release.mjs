@@ -1,10 +1,16 @@
 // Read-only verification of the immutable dependencies used by pre-update clients.
 import fs from "node:fs/promises";
 import { createHash } from "node:crypto";
-const baselineURL = new URL(
-  "../audit/deployment-before-handbook-followup.json",
-  import.meta.url,
-);
+const baselinePath =
+    process.argv[2] || "audit/deployment-before-handbook-followup.json",
+  receiptPath = process.argv[3] || "audit/handbook-old-client-assets.json";
+if (
+  ![baselinePath, receiptPath].every((value) =>
+    /^audit\/[a-z-]+\.json$/.test(value),
+  )
+)
+  throw Error("Use named audit JSON files");
+const baselineURL = new URL("../" + baselinePath, import.meta.url);
 const baselineBytes = await fs.readFile(baselineURL);
 const baseline = JSON.parse(baselineBytes);
 if (
@@ -47,7 +53,7 @@ const receipt = {
   passed: checks.every((row) => row.passed),
 };
 await fs.writeFile(
-  new URL("../audit/handbook-old-client-assets.json", import.meta.url),
+  new URL("../" + receiptPath, import.meta.url),
   JSON.stringify(receipt, null, 2) + "\n",
 );
 console.log(

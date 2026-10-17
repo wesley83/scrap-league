@@ -259,6 +259,51 @@ self.addEventListener("message", (event) => {
     })(),
   );
 });
+async function nativeNavigation(request) {
+  let response;
+  try {
+    response = await fetch(request, { signal: AbortSignal.timeout(8000) });
+    if (![404, 410, 500, 502, 503, 504].includes(response.status))
+      return response;
+  } catch {
+    // An installed, verified shell can recover an unavailable composed page.
+  }
+  const root = INVENTORY[0],
+    cache = await caches.open(CACHE),
+    stored = await cache.match(absolute(root));
+  if (!(await valid(stored, root))) {
+    if (response) return response;
+    throw Error("No intact installed game shell is available for this route.");
+  }
+  const oldBase = '<base href="./releases/' + CACHE + '/">',
+    releaseBase = new URL("./releases/" + CACHE + "/", self.location).pathname;
+  let html = await stored.text();
+  if (!html.includes(oldBase)) {
+    if (response) return response;
+    throw Error("The installed game shell has an unsupported asset base.");
+  }
+  const reason = response ? "http-" + response.status : "offline";
+  html = html
+    .replace(oldBase, '<base href="' + releaseBase + '">')
+    .replace(
+      /<\/head>/i,
+      '<meta name="scrap-league-route-fallback" content="' +
+        reason +
+        '"></head>',
+    );
+  const headers = new Headers(stored.headers);
+  for (const name of [
+    "content-length",
+    "content-encoding",
+    "etag",
+    "last-modified",
+  ])
+    headers.delete(name);
+  headers.set("Content-Type", "text/html; charset=utf-8");
+  headers.set("Cache-Control", "no-store");
+  headers.set("X-Scrap-League-Route-Fallback", reason);
+  return new Response(html, { status: 200, headers });
+}
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   if (
@@ -270,6 +315,13 @@ self.addEventListener("fetch", (event) => {
   const base = new URL("./", self.location).pathname,
     relative = url.pathname.slice(base.length);
   if (!url.pathname.startsWith(base)) return;
+  if (
+    event.request.mode === "navigate" &&
+    /^(editor|track)(?:\/[^/]*)?\/?$/.test(relative)
+  ) {
+    event.respondWith(nativeNavigation(event.request));
+    return;
+  }
   const entry =
     url.pathname === base || relative === "index.html"
       ? INVENTORY[0]

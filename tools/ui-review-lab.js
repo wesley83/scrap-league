@@ -7,7 +7,11 @@ export function uiChecks({ frame, prefix, wait, until, check }) {
       doc.querySelector("#home").click();
       await until(() => doc.querySelector("#stage").className === "view-start");
       doc.querySelector("#workshop-button").click();
-      await until(() => doc.querySelector("#work-garage"));
+      await until(
+        () =>
+          doc.querySelector("#stage").className === "view-workshop" &&
+          doc.querySelector("#track-name").value,
+      );
       doc.querySelector("#work-garage").click();
       await until(
         () => doc.querySelector("#stage").className === "view-garage",
@@ -358,7 +362,11 @@ export function uiChecks({ frame, prefix, wait, until, check }) {
         return stable(gameplay(duplicateTrack(t, () => String(n++))));
       };
       doc.querySelector("#workshop-button").click();
-      await until(() => doc.querySelector("#track-name"));
+      await until(
+        () =>
+          doc.querySelector("#stage").className === "view-workshop" &&
+          doc.querySelector("#track-name").value,
+      );
       const rows = [];
       for (let i = 0; i < 12; i++) {
         doc.querySelector("#work-file").click();

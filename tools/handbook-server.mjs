@@ -4,6 +4,9 @@ import fs from "node:fs/promises";
 import path from "node:path";
 const root = path.resolve(import.meta.dirname, ".."),
   dist = path.join(root, "dist");
+const receiptName = process.env.SCRAP_REVIEW_RECEIPT || "handbook-browser.json";
+if (!/^[a-z-]+\.json$/.test(receiptName))
+  throw Error("Invalid local review receipt name");
 const types = {
   ".html": "text/html",
   ".js": "text/javascript",
@@ -86,7 +89,7 @@ http
         );
         if (record.release !== release.release) throw Error("Stale receipt");
         await fs.writeFile(
-          path.join(root, "audit/handbook-browser.json"),
+          path.join(root, "audit", receiptName),
           JSON.stringify(record, null, 2) + "\n",
         );
         res.end("Saved");

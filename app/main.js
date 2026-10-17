@@ -25,7 +25,7 @@ import {
   recoverProgressContent,
 } from "./continuation.js";
 import { Sound } from "./audio.js";
-import { Workshop } from "./workshop.js";
+import { Workshop, readWorkshopDrafts } from "./workshop.js";
 import {
   uid,
   clone,
@@ -1281,20 +1281,38 @@ async function closeGarage() {
     notify(e.message, true);
   }
 }
-async function openWorkshop() {
-  await workshop.flush();
-  show("workshop");
-  if (!workshop.track) {
-    const keys = (await store?.keys("draft:")) || [],
-      drafts = (await Promise.all(keys.map((k) => store.get(k))))
-        .filter((d) => !d.deletedAt)
-        .sort((a, b) => a.updatedAt.localeCompare(b.updatedAt)),
-      saved = drafts.at(-1) || null;
-    await workshop.open(
-      saved?.track || duplicateTrack(content.tracks[0].track),
-      saved,
-    );
-  } else workshop.draw();
+let openingWorkshop;
+function openWorkshop() {
+  if (openingWorkshop) return openingWorkshop;
+  const entryToken = ++prepareToken;
+  openingWorkshop = (async () => {
+    await workshop.flush();
+    let recovery = false;
+    if (!workshop.track) {
+      const { records, errors } = await readWorkshopDrafts(store);
+      if (prepareToken !== entryToken) return;
+      // On an incomplete listing, avoid silently selecting an older saved draft.
+      // A new identity preserves every existing record for backup/recovery.
+      recovery = errors.length > 0;
+      const saved = recovery ? null : records.at(-1) || null;
+      await workshop.open(
+        saved?.track || duplicateTrack(content.tracks[0].track),
+        saved,
+      );
+    }
+    if (prepareToken !== entryToken) return;
+    show("workshop");
+    workshop.draw();
+    if (recovery)
+      dialog(
+        "Saved drafts need recovery",
+        "Some saved drafts could not be read. They have been kept unchanged. This is a separate working copy. Files still offers readable drafts and Export HTML; Settings offers Download backup.",
+        [{ label: "Continue with separate copy" }],
+      );
+  })().finally(() => {
+    openingWorkshop = null;
+  });
+  return openingWorkshop;
 }
 function settingsDialog() {
   if (view === "race" && race?.state !== "paused") {
@@ -1608,9 +1626,10 @@ q("home").onclick = async () => {
     pause();
     return;
   }
+  const homeToken = ++prepareToken;
   try {
     await workshop?.flush();
-    show("start");
+    if (prepareToken === homeToken) show("start");
   } catch (error) {
     notify(
       error.message +
@@ -2290,6 +2309,9 @@ async function openLeaderboards() {
 }
 async function openNativeRoute() {
   const mode = location.pathname.split("/")[1];
+  const installedFallback = !!document.querySelector(
+    'meta[name="scrap-league-route-fallback"]',
+  );
   let slug = "",
     track;
   try {
@@ -2320,26 +2342,38 @@ async function openNativeRoute() {
     if (mode === "editor") {
       await openWorkshop();
       await workshop.open(duplicateTrack(track));
-      notify("Opened an editable copy of " + track.name + ".");
+      notify(
+        installedFallback
+          ? "Online circuit page unavailable. Opened an editable copy of " +
+              track.name +
+              " from the installed pack."
+          : "Opened an editable copy of " + track.name + ".",
+      );
     } else {
       const index = content.tracks.findIndex((t) => t.track.id === track.id);
-      dialog(track.name, "Race this circuit or open an editable copy.", [
-        {
-          label: "Race circuit",
-          action: () =>
-            index >= 0
-              ? startTrack(index, "trial")
-              : beginRace(track, "workshop", { published: true }),
-        },
-        {
-          label: "Edit a copy",
-          action: async () => {
-            await openWorkshop();
-            await workshop.open(duplicateTrack(track));
+      dialog(
+        track.name,
+        (installedFallback
+          ? "Online circuit page unavailable. This circuit is from the installed pack. "
+          : "") + "Race this circuit or open an editable copy.",
+        [
+          {
+            label: "Race circuit",
+            action: () =>
+              index >= 0
+                ? startTrack(index, "trial")
+                : beginRace(track, "workshop", { published: true }),
           },
-        },
-        { label: "Back to yard" },
-      ]);
+          {
+            label: "Edit a copy",
+            action: async () => {
+              await openWorkshop();
+              await workshop.open(duplicateTrack(track));
+            },
+          },
+          { label: "Back to yard" },
+        ],
+      );
     }
   } catch (error) {
     const body = document.createElement("div"),

@@ -9,19 +9,23 @@ const source = await readFile(
     "utf8",
   ),
   sha = (x) => createHash("sha256").update(x).digest("hex");
-function lab(release = "sl-aaaaaaaaaaaaaa", shared = new Map()) {
+function lab(
+  release = "sl-aaaaaaaaaaaaaa",
+  shared = new Map(),
+  index = "index " + release,
+) {
   const handlers = {},
     network = new Map(),
     fault = { quota: false, offline: false, corrupt: false },
     clients = [];
   const entries = [
-    { url: "./", hash: sha("index " + release) },
+    { url: "./", hash: sha(index) },
     { url: "./releases/" + release + "/main.js", hash: sha("main " + release) },
   ];
   entries.forEach((e, i) =>
     network.set(
       new URL(e.url, "https://game.test/sw.js").href,
-      (i ? "main " : "index ") + release,
+      i ? "main " + release : index,
     ),
   );
   const caches = {
@@ -73,6 +77,11 @@ function lab(release = "sl-aaaaaaaaaaaaaa", shared = new Map()) {
       crypto: webcrypto,
       fetch: async (key) => {
         if (fault.offline) throw Error("Offline");
+        const url = typeof key === "string" ? key : key.url;
+        if (fault.routeStatus && /\/(editor|track)\//.test(url))
+          return new Response("Route unavailable", {
+            status: fault.routeStatus,
+          });
         return new Response(
           fault.corrupt
             ? "corrupt"
@@ -88,6 +97,8 @@ function lab(release = "sl-aaaaaaaaaaaaaa", shared = new Map()) {
       URL,
       Response,
       Request,
+      Headers,
+      AbortSignal,
       Uint8Array,
       Date,
       setTimeout,
@@ -125,6 +136,7 @@ function lab(release = "sl-aaaaaaaaaaaaaa", shared = new Map()) {
     caches,
     clients,
     fault,
+    network,
     state,
     install: () => event("install", {}),
     message,
@@ -146,6 +158,78 @@ test("worker checks actual cached bytes, repairs corruption, and survives runtim
     request: new Request("https://game.test/"),
   });
   assert.equal(await response.text(), "index " + l.release);
+});
+
+test("installed native-route fallback preserves URL meaning and verified cache bytes", async () => {
+  const release = "sl-aaaaaaaaaaaaaa",
+    index = `<html><head><base href="./releases/${release}/"></head><body><main>Installed yard</main></body></html>`;
+  for (const failure of ["offline", 404, 503]) {
+    const l = lab(release, new Map(), index);
+    await l.install();
+    if (failure === "offline") l.fault.offline = true;
+    else l.fault.routeStatus = failure;
+    for (const path of [
+      "/editor/yard-loop",
+      "/track/yard-loop",
+      "/editor/%3Cscript%3E",
+    ]) {
+      const response = await l.event("fetch", {
+        request: {
+          url: "https://game.test" + path,
+          method: "GET",
+          mode: "navigate",
+        },
+      });
+      assert.equal(response.status, 200);
+      const html = await response.text();
+      assert.ok(html.includes(`<base href="/releases/${release}/">`));
+      assert.ok(html.includes('name="scrap-league-route-fallback"'));
+      assert.ok(!html.includes("%3Cscript%3E"));
+      assert.equal(response.headers.get("cache-control"), "no-store");
+    }
+    assert.equal(
+      await (
+        await (await l.caches.open(release)).match("https://game.test/")
+      ).text(),
+      index,
+    );
+    assert.equal((await l.message("STATUS")).ok, true);
+    for (const [url, mode] of [
+      ["https://game.test/boards/trial.html", "navigate"],
+      ["https://game.test/editor/yard-loop", "cors"],
+      ["https://game.test/editor/yard-loop?owner=1", "navigate"],
+    ])
+      assert.equal(
+        await l.event("fetch", { request: { url, method: "GET", mode } }),
+        undefined,
+      );
+  }
+});
+
+test("native-route fallback preserves success/authorization responses and refuses corrupt shells", async () => {
+  const release = "sl-aaaaaaaaaaaaaa",
+    index = `<html><head><base href="./releases/${release}/"></head><body>Installed yard</body></html>`,
+    l = lab(release, new Map(), index),
+    url = "https://game.test/editor/yard-loop",
+    request = { url, method: "GET", mode: "navigate" };
+  await l.install();
+  l.network.set(url, "Composed live circuit");
+  assert.equal(
+    await (await l.event("fetch", { request })).text(),
+    "Composed live circuit",
+  );
+  l.fault.routeStatus = 403;
+  const denied = await l.event("fetch", { request });
+  assert.equal(denied.status, 403);
+  assert.equal(denied.headers.get("X-Scrap-League-Route-Fallback"), null);
+  await (
+    await l.caches.open(release)
+  ).put("https://game.test/", new Response("corrupt"));
+  l.fault.offline = true;
+  await assert.rejects(
+    l.event("fetch", { request }),
+    /No intact installed game shell/,
+  );
 });
 test("failed B installation preserves complete A; missing, corrupt and quota-failed B never report readiness", async () => {
   const a = lab();

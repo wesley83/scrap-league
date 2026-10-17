@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-17T22:47:45.689Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "before": [
+    {
+      "path": "/boards/trial.html",
+      "sha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142",
+      "bytes": 16220
+    },
+    {
+      "path": "/boards/daily.html",
+      "sha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607",
+      "bytes": 31960
+    },
+    {
+      "path": "/workshop-tracks/catalog.html",
+      "sha256": "2d2da18aa093dc8ae5fc9132c2111366104655b6ec0eaa8d833cdcce44b7429c",
+      "bytes": 170
+    }
+  ],
+  "scope": "Read-only owner DAV hashes of both populated board documents, the Workshop catalog and every definition referenced at baseline. Owner reads bypass access cleanup. Any concurrent change is reported rather than overwritten."
+}

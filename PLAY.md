@@ -57,6 +57,10 @@ Canvas tools select, pan, place pads/barriers/islands and zoom. The object list 
 
 **Export HTML** writes a full inert track document, including its owned geometry. **Import HTML** validates and previews before opening a new copy. Incomplete drafts can be exported; unsupported executable content and unknown schema fields are rejected. Exporting a track does not publish it online.
 
+If saved drafts cannot be read, Workshop explains the problem and opens a separate copy with a new identity. Existing records stay unchanged. Files still opens if listing or an individual read fails, so you can export your current working track. A failed save remains unsaved until retry succeeds; exporting does not claim to save it on this device.
+
+After a complete offline pack has been installed, circuit and editor links can recover from a network error, missing native page or selected server errors. The game identifies its installed circuit copy and keeps the requested link. Unknown links open a chooser. A first visit without an installed pack still needs the server to respond successfully.
+
 ## Evidence and limits
 
 See [implementation status](IMPLEMENTATION-STATUS.md), [current automated tests](audit/remediation-final-tests.txt), [persisted campaign evidence](audit/remediation-persisted-campaigns.json), [acceptance ledger](audit/current-acceptance.json), and the [remediation audit](audit/2026-10-16-remediation.md). Older evidence remains preserved with its original release and limitations.
