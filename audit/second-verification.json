@@ -1,8 +1,8 @@
 {
-  "utc": "2026-10-17T22:50:10.470Z",
-  "release": "sl-37615e5369f322",
-  "sourceHash": "b8063a6ce73408163681515695fba2e6ef4071e743c4fda40fc093f9bb112b54",
-  "outputHash": "9e43c87abcb42efb6bdd0969b5ab16f9b5a256d68ea698dc2ce7576dffd19334",
+  "utc": "2026-10-17T22:54:56.068Z",
+  "release": "sl-7480f2b6675883",
+  "sourceHash": "60bb05ce7e980288e53d36ef64818582a80e237ab0f8d1c1f2069dc669d51c99",
+  "outputHash": "f29325a24010c31a34a69a405284700522bd1eeb5ccebd3e56197d812c3d4b86",
   "handbook": {
     "edition": "2.8.0",
     "path": "C:/Users/Wesley/Documents/Codex/Pagelove/games/prism-breaker/GAME-DEVELOPMENT-BEST-PRACTICES.md",

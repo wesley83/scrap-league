@@ -52,6 +52,7 @@ export async function readWorkshopDrafts(store, Parser = DOMParser) {
           !record ||
           !Number.isSafeInteger(record.revision) ||
           record.revision < 1 ||
+          typeof record.updatedAt !== "string" ||
           !Number.isFinite(Date.parse(record.updatedAt))
         )
           throw Error("Invalid saved draft metadata.");

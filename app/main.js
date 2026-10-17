@@ -1281,11 +1281,13 @@ async function closeGarage() {
     notify(e.message, true);
   }
 }
-let openingWorkshop;
+let openingWorkshop, openingWorkshopToken;
 function openWorkshop() {
-  if (openingWorkshop) return openingWorkshop;
+  if (openingWorkshop && openingWorkshopToken === prepareToken)
+    return openingWorkshop;
   const entryToken = ++prepareToken;
-  openingWorkshop = (async () => {
+  openingWorkshopToken = entryToken;
+  const pending = (async () => {
     await workshop.flush();
     let recovery = false;
     if (!workshop.track) {
@@ -1310,9 +1312,10 @@ function openWorkshop() {
         [{ label: "Continue with separate copy" }],
       );
   })().finally(() => {
-    openingWorkshop = null;
+    if (openingWorkshop === pending) openingWorkshop = null;
   });
-  return openingWorkshop;
+  openingWorkshop = pending;
+  return pending;
 }
 function settingsDialog() {
   if (view === "race" && race?.state !== "paused") {

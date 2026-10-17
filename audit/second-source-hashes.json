@@ -1,8 +1,8 @@
 {
-  "release": "sl-37615e5369f322",
-  "outputHash": "9e43c87abcb42efb6bdd0969b5ab16f9b5a256d68ea698dc2ce7576dffd19334",
+  "release": "sl-7480f2b6675883",
+  "outputHash": "f29325a24010c31a34a69a405284700522bd1eeb5ccebd3e56197d812c3d4b86",
   "source": {
-    "hash": "b8063a6ce73408163681515695fba2e6ef4071e743c4fda40fc093f9bb112b54",
+    "hash": "60bb05ce7e980288e53d36ef64818582a80e237ab0f8d1c1f2069dc669d51c99",
     "files": {
       ".gitattributes": "0e6f8afa2d9fab1c42c4ebac64337195e479a3a5967c2e105acab235b432da9c",
       ".github/workflows/release-checks.yml": "1415cce92d6c24517edc09edd815cdd00453cbd3c6cf285a01388b0833fcb14b",
@@ -47,7 +47,7 @@
       "app/icons/icon-512.png": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0",
       "app/icons/icon-maskable-512.png": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f",
       "app/index.html": "43685f9aac91cff74458542f406b45f2e5d30c7985286f73151f332236782d58",
-      "app/main.js": "839bb375fcd9bab4bc516a29fc5d883a5c8b5bd4ab4c42a8d490dfd3c79956a5",
+      "app/main.js": "a6355f321ecb9c7d88e986f35d978fdc38e0c8ef4f78f9bd1053e789d77a0684",
       "app/model.js": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
       "app/offline.js": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
       "app/pagelove.js": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
@@ -66,7 +66,7 @@
       "app/track.js": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
       "app/vendor/QR-LICENSE.txt": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827",
       "app/vendor/qr.js": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
-      "app/workshop.js": "ad66ff4dd0bf5e856e40174c699fb2eef55a339a79d8b98d2de67246b45b913e",
+      "app/workshop.js": "1f2db59e60e11d04e693b1c2491395bc4be90134b407c17a47000a4a4496c063",
       "artwork/arcade-landscape.svg": "f0808bf491003ff4c765dc899e04b21deb71f8d583f916b8ae37ed0d0cdae961",
       "artwork/arcade-square.svg": "59bcd3b90460a9071587b0ca76d9e035c7609db198b0734e8452a1a77f23fee6",
       "artwork/font-sources.json": "d31f2ae2b42db6f0f164e22e519f84cc2150db7f88abd2670453065cf34cea13",
@@ -130,7 +130,7 @@
       "tests/collision.test.mjs": "906a938f3c9a0b9cf9676987b2ceb87f25c9253bb1d94e600016a527ef836004",
       "tests/deployment.test.mjs": "426cee2939e788f7b928a88b7fc5850b8a83470bf14f76eee69012f0eeedf1e5",
       "tests/editor-commands.test.mjs": "d588786a31b6660139323d9226f463a91d1ad1e75cc1dcc262145c9715ea7166",
-      "tests/editor-recovery-read.test.mjs": "55d43c3acda63fe31fcea2e6a9047c1ae8ab32b46db1b202143cf22a8204dc2f",
+      "tests/editor-recovery-read.test.mjs": "9187f920b3b733d420465499ab79495f3d1b00549d391d6c07c58a7144ea2792",
       "tests/engine.test.mjs": "1b33644c3f7941a7b971074dc319dd7fea07b67ed118f6954c74051d378544e4",
       "tests/graphics.test.mjs": "de8aabee9649d35a589a14f6cffcfc7e3bcc90a0e505ecfb9e0a5cf0cb433f50",
       "tests/handbook-followup.test.mjs": "e797e10edaa710e8260dd36f77d5d1697c5bb3ae280245096d2bc79cae08f392",
@@ -159,7 +159,7 @@
       "tools/content.mjs": "07985f59375706faa62db7f680e03327d7e8655db8673248dea652a7a444fbde",
       "tools/deploy-pagelove.mjs": "d48443fb61810ca055c1d78c3156db5cfbc6884ee0e22474d4f0f581b20a429c",
       "tools/export-icons.mjs": "37e506dcc28a832821af1daf95deae13bd9a6a3cded60443ba00622add0df910",
-      "tools/handbook-lab.js": "e41c18ea2c2c238e7a6b1b57abb60e4f27c186bcddf754645f1fbadf2bc0c95d",
+      "tools/handbook-lab.js": "2cd8660febf1207226b9084de5174aa68b916db7d1e2a03ea5f20ac1830e503b",
       "tools/handbook-server.mjs": "6b979010aa52472453e7bec0e6f9ed1bcee33b7c871d3afef987c1b3f8792ab9",
       "tools/handbook-soak.js": "7e73d1e2573f1585945918ae04baab004f929fed06166ac96e0c86539c545aaf",
       "tools/mobile-review.js": "a40596afa2c177a5e6db53d7937b8cb782a6faa6b7e441eec07c379eadbacd99",
@@ -181,5 +181,5 @@
       "tools/worker-runtime.js": "e96feb31f94701654d3293b63c7b25e4d4a45bed2bfbd2da0e7bf08454c0debd"
     }
   },
-  "utc": "2026-10-17T22:50:10.691Z"
+  "utc": "2026-10-17T22:54:56.226Z"
 }

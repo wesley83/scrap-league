@@ -1,17 +1,18 @@
 {
-  "release": "sl-37615e5369f322",
-  "at": "2026-10-17T22:45:07.387Z",
+  "release": "sl-7480f2b6675883",
+  "at": "2026-10-17T22:53:57.319Z",
   "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
   "results": [
     {
       "name": "Workshop entry readiness and recovery",
       "status": "passed",
-      "durationMs": 319,
+      "durationMs": 434,
       "details": {
         "hiddenUntilReady": true,
         "duplicateEntryCoalesced": true,
         "lateNavigationCancelled": true,
         "lastNavigationIntentWins": true,
+        "cancelledEntryDoesNotAbsorbNewIntent": true,
         "invalidSavedSourcePreserved": true,
         "explicitRecovery": true,
         "nextGarageAction": true
@@ -20,7 +21,7 @@
     {
       "name": "Closed-store Files recovery",
       "status": "passed",
-      "durationMs": 332,
+      "durationMs": 329,
       "details": {
         "warningVisible": true,
         "exportName": "Closed-store recovery circuit",
@@ -32,7 +33,7 @@
     {
       "name": "Garage compare and test",
       "status": "passed",
-      "durationMs": 4908,
+      "durationMs": 4957,
       "details": {
         "rows": [
           {
@@ -58,7 +59,7 @@
           }
         ],
         "selected": "rally",
-        "speedKmh": 17,
+        "speedKmh": 18,
         "compared": true,
         "equipped": true,
         "driven": true,
@@ -69,7 +70,7 @@
     {
       "name": "Sharing and fallback",
       "status": "passed",
-      "durationMs": 19,
+      "durationMs": 20,
       "details": {
         "success": "shared",
         "cancelled": "cancelled",
@@ -85,7 +86,7 @@
     {
       "name": "Gamepad menu, race and interruption",
       "status": "passed",
-      "durationMs": 7205,
+      "durationMs": 7197,
       "details": {
         "menuConfirm": true,
         "range": true,
@@ -99,19 +100,19 @@
     {
       "name": "New circuit, source and failed save",
       "status": "passed",
-      "durationMs": 2081,
+      "durationMs": 3041,
       "details": {
-        "id": "e2454157-f9b9-4742-b641-5cebbeb12027",
+        "id": "8a7a3ed9-606f-4c31-a50a-45c612112733",
         "pieces": 8,
         "semanticSource": true,
         "saveFailureNavigation": true,
         "exportRecovery": true,
         "fiveAI": true,
         "completed": {
-          "elapsedMs": 87445,
+          "elapsedMs": 87821,
           "laps": 3,
-          "place": 4,
-          "contacts": 1345
+          "place": 3,
+          "contacts": 1493
         },
         "undoRedo": true,
         "scope": "Native form/button route; canvas dragging is a separate fixture"
@@ -120,22 +121,22 @@
     {
       "name": "Solo improvement and submission form",
       "status": "passed",
-      "durationMs": 2081,
+      "durationMs": 2556,
       "details": {
         "first": {
-          "elapsedMs": 108879,
+          "elapsedMs": 108897,
           "laps": 3,
           "place": 1,
           "contacts": 0
         },
         "second": {
-          "elapsedMs": 102548,
+          "elapsedMs": 102567,
           "laps": 3,
           "place": 1,
           "contacts": 0
         },
         "ghost": true,
-        "id": "9423703a-f330-4aad-9cc7-380b3eb9716b",
+        "id": "32141baf-aba0-4791-a367-979b65fccfc7",
         "offlineQueue": true,
         "invalidFormPreserved": true,
         "escapedName": true
@@ -144,7 +145,7 @@
     {
       "name": "Name form 200 percent reflow",
       "status": "passed",
-      "durationMs": 442,
+      "durationMs": 318,
       "details": {
         "width": 320,
         "height": 568,
@@ -157,13 +158,13 @@
     {
       "name": "Quick race journey",
       "status": "passed",
-      "durationMs": 3479,
+      "durationMs": 2531,
       "details": {
         "finish": {
-          "elapsedMs": 68872,
+          "elapsedMs": 68843,
           "laps": 2,
           "place": 1,
-          "contacts": 137
+          "contacts": 157
         },
         "pauseAndRetry": true,
         "simulationController": true
@@ -172,7 +173,7 @@
     {
       "name": "Input ownership and camera",
       "status": "passed",
-      "durationMs": 719,
+      "durationMs": 703,
       "details": {
         "sizes": [
           {
@@ -464,7 +465,7 @@
     {
       "name": "Manual throttle layout",
       "status": "passed",
-      "durationMs": 474,
+      "durationMs": 473,
       "details": {
         "sizes": [
           {
@@ -513,9 +514,9 @@
     {
       "name": "Workshop round trip",
       "status": "passed",
-      "durationMs": 258,
+      "durationMs": 237,
       "details": {
-        "id": "e2454157-f9b9-4742-b641-5cebbeb12027",
+        "id": "8a7a3ed9-606f-4c31-a50a-45c612112733",
         "valid": true,
         "undoRedo": true,
         "durable": true,
@@ -526,10 +527,10 @@
     {
       "name": "Practice and ghost",
       "status": "passed",
-      "durationMs": 1851,
+      "durationMs": 1513,
       "details": {
         "practice": {
-          "elapsedMs": 36252,
+          "elapsedMs": 36239,
           "laps": 1,
           "place": 1,
           "contacts": 0
@@ -542,7 +543,7 @@
           "boost": true
         },
         "trial": {
-          "elapsedMs": 102558,
+          "elapsedMs": 102551,
           "laps": 3,
           "place": 1,
           "contacts": 0
@@ -553,7 +554,7 @@
     {
       "name": "All tracks and recovery",
       "status": "passed",
-      "durationMs": 225,
+      "durationMs": 208,
       "details": {
         "tracks": [
           {
@@ -623,19 +624,19 @@
     {
       "name": "Render budget",
       "status": "passed",
-      "durationMs": 3126,
+      "durationMs": 3119,
       "details": {
         "frames": 180,
         "medianMs": 0.40000003576278687,
         "p95Ms": 0.6000000238418579,
-        "maxMs": 0.7000000476837158,
+        "maxMs": 1,
         "scope": "Canvas render cost, not physical phone FPS"
       }
     },
     {
       "name": "Foreground update discovery",
       "status": "passed",
-      "durationMs": 241,
+      "durationMs": 235,
       "details": {
         "reconnectChecks": 1,
         "repeatedEventCoalesced": true,
@@ -648,7 +649,7 @@
     {
       "name": "Remaining browser checks",
       "status": "passed",
-      "durationMs": 27136,
+      "durationMs": 27120,
       "details": {
         "checks": 14
       }

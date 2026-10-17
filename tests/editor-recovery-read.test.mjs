@@ -72,6 +72,7 @@ test("draft entry validates sources, preserves corrupt records and reports incom
       revision: 3,
       updatedAt: "2026-10-17T01:00:00Z",
     },
+    "draft:bad-date": { track, revision: 1, updatedAt: 2020 },
     "draft:trash": { deletedAt: "2026-10-16T00:00:00Z" },
   };
   const before = stable(rows);
@@ -84,7 +85,7 @@ test("draft entry validates sources, preserves corrupt records and reports incom
   };
   const read = await readWorkshopDrafts(store, DOMParser);
   assert.deepEqual(read.records, [rows["draft:good"]]);
-  assert.equal(read.errors.length, 2);
+  assert.equal(read.errors.length, 3);
   assert.equal(stable(rows), before);
   const closed = await readWorkshopDrafts(
     {

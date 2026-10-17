@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-17T22:50:10.468Z",
-  "release": "sl-37615e5369f322",
+  "utc": "2026-10-17T22:54:56.066Z",
+  "release": "sl-7480f2b6675883",
   "method": "Normal installed local browser, semantic locators with native Enter/select keys/typing, real file download and file-chooser import; no review exports on this origin.",
   "journeyRelease": "sl-dacba7fbb6b074",
   "creator": {
@@ -21,11 +21,11 @@
   },
   "limits": "Connector locators focus controls before keyboard activation; not every transition used sequential Tab. Real-key test did not finish a lap. Separate same-model legal-controller browser fixtures finish three laps. Final source changes entry/recovery only; model/compiler/editor commands/input/simulation are unchanged.",
   "finalUpdate": {
-    "from": "sl-dacba7fbb6b074",
-    "to": "sl-37615e5369f322",
+    "from": "sl-37615e5369f322",
+    "to": "sl-7480f2b6675883",
     "explicitReviewAndApply": true,
     "progress": "5/12 parts, 1/12 events",
-    "draftBefore": "Offline keyboard recovered",
+    "draftBefore": "Offline keyboard recovered final",
     "draftRetained": true
   },
   "routeRecovery": {
@@ -36,7 +36,7 @@
     "hostile": "/editor/%3Cscript%3E",
     "safeChooser": true,
     "savedWorkshopAction": true,
-    "finalDraft": "Offline keyboard recovered final",
+    "finalDraft": "Offline final checked",
     "offlineEditFreshDocumentReload": true,
     "coldBrowserProcessRestart": false
   },
@@ -52,6 +52,10 @@
     {
       "path": "audit/screenshots/second-keyboard-final.jpg",
       "sha256": "012ca09b429c59779ebb322811868916b5f5f08cb1a1ddb4a4a9d462196ca8aa"
+    },
+    {
+      "path": "audit/screenshots/second-keyboard-corrected.jpg",
+      "sha256": "c527293444c1ca9fc688d06fed0146afadf1023150f27211fd1686330388f35a"
     }
   ]
 }

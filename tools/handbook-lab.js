@@ -1067,6 +1067,30 @@ actions["Workshop entry readiness and recovery"] = async () => {
   } finally {
     s.keys = originalKeys;
   }
+  const reads = [];
+  s.keys = async (...args) => {
+    await new Promise((resolve) => reads.push(resolve));
+    return originalKeys.apply(s, args);
+  };
+  try {
+    const oldEntry = api.openWorkshop();
+    await waitFor(() => reads.length === 1);
+    api.show("events");
+    const newEntry = api.openWorkshop();
+    check(newEntry !== oldEntry, "Cancelled entry absorbed newer intent");
+    await waitFor(() => reads.length === 2);
+    reads[0]();
+    await oldEntry;
+    check(api.view === "events", "Old pending entry stole navigation");
+    reads[1]();
+    await newEntry;
+    check(
+      api.view === "workshop" && api.workshop.track,
+      "New entry did not open",
+    );
+  } finally {
+    s.keys = originalKeys;
+  }
   click("home");
   await api.openWorkshop();
   check(
@@ -1112,6 +1136,7 @@ actions["Workshop entry readiness and recovery"] = async () => {
       duplicateEntryCoalesced: true,
       lateNavigationCancelled: true,
       lastNavigationIntentWins: true,
+      cancelledEntryDoesNotAbsorbNewIntent: true,
       invalidSavedSourcePreserved: true,
       explicitRecovery: true,
       nextGarageAction: true,
