@@ -1,0 +1,86 @@
+{
+  "utc": "2026-10-17T23:06:27.788Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-8c38d2602f174d",
+  "sourceCommit": "df8e30b",
+  "method": "Normal installed public client in in-app Chromium; native keyboard controls, semantic locators and screenshots. No review exports on public origin.",
+  "update": {
+    "from": "sl-7480f2b6675883",
+    "to": "sl-8c38d2602f174d",
+    "earlierChain": [
+      "sl-6f79bfd18ca0be",
+      "sl-7480f2b6675883"
+    ],
+    "explicitReviewAndApply": true,
+    "progressBeforeAndAfter": "4/12 parts, 0/12 events",
+    "driverNameBeforeAndAfter": "Driver",
+    "savedDraftBeforeAndAfter": "Yard Loop — copy",
+    "offlinePackVerified": true
+  },
+  "native": {
+    "path": "/editor/yard-loop",
+    "styles": [
+      "/releases/sl-8c38d2602f174d/style.css",
+      "/releases/sl-8c38d2602f174d/arcade.css"
+    ],
+    "currentThemeObserved": true,
+    "readyToDrive": true,
+    "nextTestAction": true
+  },
+  "driving": {
+    "origin": "native Workshop editor",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fiveAIRivals": true,
+    "canvasVisible": true,
+    "manualGasBrakeSlideBoostVisible": true,
+    "nativeKeyboardHeldMs": 1500,
+    "observedSpeedKmh": 73,
+    "observedClock": "00:09.767",
+    "testReturnPreservedSource": true,
+    "draftStatus": "Draft saved · 07:05 PM",
+    "completedLap": false
+  },
+  "priorLeaderboardRead": {
+    "release": "sl-7480f2b6675883",
+    "status": "No times for this combination yet. Set the first one.",
+    "driverName": "Driver",
+    "scope": "Same byte-identical board/UI modules. Final driver retention also read from Settings; no public score submitted."
+  },
+  "recentBrowserLogInspection": {
+    "levels": [
+      "error",
+      "warn"
+    ],
+    "limit": 10,
+    "entries": []
+  },
+  "screenshots": [
+    {
+      "path": "audit/screenshots/second-live-editor-final.jpg",
+      "sha256": "9a0914545f557398ecb7e566731534650bce077426b6e11aed48817583e1096e"
+    },
+    {
+      "path": "audit/screenshots/second-live-native-race.jpg",
+      "sha256": "6fd96e60ca6ae810aee31810a7046d600bd4e58f7570702213e1ed56821c6321"
+    },
+    {
+      "path": "audit/screenshots/second-live-editor-returned.jpg",
+      "sha256": "fa5fe51b15b22f14482d677e3ecf5eb9f44cbb4947335c244d8e2d40717861e6"
+    }
+  ],
+  "preservation": {
+    "data": "audit/second-data-preservation.json",
+    "originalAssets": "audit/second-old-client-after.json",
+    "intermediateAssets": "audit/second-intermediate-after.json",
+    "previousAssets": "audit/second-pre-native-after.json"
+  },
+  "limits": [
+    "Phone viewport emulation; no physical-device claim.",
+    "Actual process cold relaunch remains unverified.",
+    "Provider errors/readiness and original content provenance remain open acceptance rows."
+  ],
+  "passed": true
+}

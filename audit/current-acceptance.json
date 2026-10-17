@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "utc": "2026-10-17T23:01:52.334Z",
+  "utc": "2026-10-17T23:06:28.039Z",
   "release": "sl-8c38d2602f174d",
   "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
   "outputHash": "ee95a4e2771ff97d5fbc3c0086e0310c742c705239709385d582978ebfccf422",
@@ -88,7 +88,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -168,7 +168,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -248,7 +248,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -336,7 +336,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -416,7 +416,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -492,7 +492,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -568,7 +568,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -652,7 +652,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -728,7 +728,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -804,7 +804,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -880,7 +880,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -960,7 +960,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1040,7 +1040,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1136,7 +1136,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1220,7 +1220,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1300,7 +1300,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1384,7 +1384,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1464,7 +1464,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1544,7 +1544,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1620,7 +1620,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1700,7 +1700,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1736,7 +1736,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -1820,7 +1820,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -1916,7 +1916,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -2020,7 +2020,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -2120,51 +2120,43 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
     {
       "id": "P09",
       "stage": "local",
-      "status": "partial",
-      "note": "Read-only baseline hashes cover both boards and Workshop catalog; previous release dependency inventory retained. Current post-promotion preservation readback remains pending.",
+      "status": "passed",
+      "note": "Both existing boards and Workshop catalog retain identical owner hashes across this pass's promotions; baseline catalog has no referenced definitions. 50 original, 50 first-intermediate and 50 pre-native-fix immutable dependencies remain intact. Earlier populated owned fixture evidence stays scoped to its prior promotion.",
       "artifacts": [
         {
-          "path": "audit/handbook-workshop-publication.json",
-          "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
+          "path": "audit/second-data-preservation.json",
+          "sha256": "febba83bf411b92605ffb26af5c4eae6eedb7797e542c7aa7d678b86d47bb856"
+        },
+        {
+          "path": "audit/second-old-client-after.json",
+          "sha256": "356fdf3b9f7551a0eb6806b16a1e2519ff930ef8793c283b6139ca756762c3c1"
+        },
+        {
+          "path": "audit/second-intermediate-after.json",
+          "sha256": "1375ed2e542de1cbf7e0cd40a9ce96f4b741ee24eb30ecbfe81f5b03d91bb99b"
+        },
+        {
+          "path": "audit/second-pre-native-after.json",
+          "sha256": "67e1059fe9f1742c97541ce4cec9cef536b498bc391379e2a66a4bf7cea1310e"
         },
         {
           "path": "audit/handbook-data-preservation.json",
           "sha256": "f8b5f656f16b2467693b52014893f8bd409e6fcd88e548025d8575687da7ea7b"
         },
         {
-          "path": "audit/handbook-old-client-assets.json",
-          "sha256": "dadde07d5a11b98dfc00f8fe5ba2ba4eaa4222c71436f0e5e8cc29422c1e9dd2"
+          "path": "audit/handbook-workshop-publication.json",
+          "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
         },
         {
-          "path": "audit/deployment-before-second-pass.json",
-          "sha256": "1c2d8b2ee1be94f7c6c202661573d599e8157bb1571dfe94eae0c13d701a361e"
-        },
-        {
-          "path": "audit/second-verification.json",
-          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
-        },
-        {
-          "path": "audit/second-unit-tests.txt",
-          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
-        },
-        {
-          "path": "audit/second-browser.json",
-          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
-        },
-        {
-          "path": "audit/second-keyboard-offline.json",
-          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
-        },
-        {
-          "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "path": "audit/deployment.json",
+          "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
         }
       ]
     },
@@ -2248,7 +2240,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2328,7 +2320,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2412,7 +2404,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2488,7 +2480,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2584,7 +2576,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         },
         {
           "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
@@ -2604,7 +2596,7 @@
       "id": "M06",
       "stage": "live",
       "status": "blocked",
-      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete.",
+      "note": "Exact corrected candidate is committed, pushed, deployed and live-verified. All independently repairable confirmed defects in this pass are corrected; retained process-recovery/provider/provenance requirements still prevent full product acceptance. Strict gate is unchanged.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -2680,7 +2672,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2756,7 +2748,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2840,7 +2832,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2916,7 +2908,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -2956,7 +2948,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -3032,43 +3024,23 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
     {
       "id": "C06",
       "stage": "live",
-      "status": "partial",
-      "note": "Exact repaired candidate prepared and browser verified; current publication and live readback must be recorded after promotion.",
+      "status": "passed",
+      "note": "Published sl-8c38d2602f174d from df8e30b; all 112 public assets/routes read back. Normal older installed public client explicitly updated, kept progress/driver/draft, verified offline pack, drove with real keys and opened the native editor. Exact screenshots and bounded observations retained.",
       "artifacts": [
         {
-          "path": "audit/deployment-before-second-pass.json",
-          "sha256": "1c2d8b2ee1be94f7c6c202661573d599e8157bb1571dfe94eae0c13d701a361e"
+          "path": "audit/deployment.json",
+          "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
         },
         {
-          "path": "audit/handbook-live-verification.json",
-          "sha256": "b15e6156f128013e7730d9de901d065497e5a82ffbc480f97446d14560e12e2b"
-        },
-        {
-          "path": "audit/second-verification.json",
-          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
-        },
-        {
-          "path": "audit/second-unit-tests.txt",
-          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
-        },
-        {
-          "path": "audit/second-browser.json",
-          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
-        },
-        {
-          "path": "audit/second-keyboard-offline.json",
-          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
-        },
-        {
-          "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "path": "audit/second-live-verification.json",
+          "sha256": "6d111ad0137835be7cbb0654afdff7560c78137fff84a6c342ad0b20e9431d17"
         }
       ]
     },
@@ -3144,7 +3116,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -3220,7 +3192,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -3320,7 +3292,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     },
@@ -3400,7 +3372,7 @@
         },
         {
           "path": "audit/2026-10-17-handbook-second-pass.md",
-          "sha256": "20770a8fe4888989267ba8d0f8e0429adb1498df4596ec332c04b50fc494ac34"
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
         }
       ]
     }
