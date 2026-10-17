@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "operation": "publish-candidate",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "authorizedBy": "Wesley",
+  "request": "Commit, push, deploy",
+  "context": "Explicit new user request after the PWA verification report disclosed the reproduced manual-check timing bug and absent foreground-resume update check. This is an idempotent redeployment of the unchanged existing release with audit-only additions; neither issue is fixed. Earlier product acceptance limitations remain and public boards are disabled.",
+  "utc": "2026-10-17T01:00:06.620Z",
+  "release": "sl-644d25b8e44419",
+  "sourceHash": "9a4608d1da80fa167ff3539381e2d58812f0a45d3e4eeb295d15bfeb1952aa10",
+  "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
+  "acceptanceHash": "49802f8b347ffeeb2444f0b4f60c2fb469da50eb26e055e8650633b3e9817d0f",
+  "knownIncomplete": [
+    {
+      "id": "J01",
+      "status": "partial",
+      "note": "Prior ordinary-drive browser evidence exists, but the full fresh-player finish journey has not been repeated on this candidate."
+    },
+    {
+      "id": "J03",
+      "status": "partial",
+      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified."
+    },
+    {
+      "id": "J06",
+      "status": "partial",
+      "note": "Independent timing arithmetic and best/ghost transactions pass; complete compatible-ghost improvement UI journey remains to verify."
+    },
+    {
+      "id": "J08",
+      "status": "partial",
+      "note": "Earlier UI-built loop completed a normal lap. Current editor commands, topology and official-copy editing pass; full current pointer/keyboard/emulated-touch creator journey remains incomplete."
+    },
+    {
+      "id": "J09",
+      "status": "partial",
+      "note": "View/selection restoration, history, save-failure navigation and stored-revision tests pass. Complete current five-AI test/return/undo/reload UI sequence remains incomplete."
+    },
+    {
+      "id": "J12",
+      "status": "partial",
+      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified."
+    },
+    {
+      "id": "J13",
+      "status": "blocked",
+      "note": "Available browser control cannot restart the browser process. Offline new-document load and isolated worker-runtime restart passed but are narrower than the adopted cold-relaunch outcome."
+    },
+    {
+      "id": "J15",
+      "status": "blocked",
+      "note": "Durable two-client timeout-after-acceptance reconciliation passes in fixtures. Actual public endpoint remains disabled pending provider validation/readiness."
+    },
+    {
+      "id": "J18",
+      "status": "partial",
+      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified."
+    },
+    {
+      "id": "P01",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method."
+    },
+    {
+      "id": "P04",
+      "status": "partial",
+      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete."
+    },
+    {
+      "id": "P05",
+      "status": "blocked",
+      "note": "Actual public application validation endpoint has not been enabled or verified. Client checks are not a server validation boundary."
+    },
+    {
+      "id": "P06",
+      "status": "blocked",
+      "note": "Client exact-expiry filtering passed. Provider cleanup policy and separate physical storage inspection remain unverified."
+    },
+    {
+      "id": "P07",
+      "status": "partial",
+      "note": "Public readback verified 24 intended official fragments and missing/unknown/hostile fallback routes. Live native editor opened and saved an editable copy. Earlier method memory-budget 500 is retained; actual injected composition-failure fallback is still narrower than the full adopted method."
+    },
+    {
+      "id": "P08",
+      "status": "blocked",
+      "note": "The user confirmed no supported provider policy activation/readiness procedure is available. Source ETag, OPTIONS and warmup cannot establish enforcement readiness; public boards remain disabled."
+    },
+    {
+      "id": "M02",
+      "status": "partial",
+      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete."
+    },
+    {
+      "id": "M03",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance."
+    },
+    {
+      "id": "M04",
+      "status": "blocked",
+      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete."
+    },
+    {
+      "id": "M05",
+      "status": "blocked",
+      "note": "Owner/native client implementation and primitive probes exist. Server validation/retention/readiness remain unresolved."
+    },
+    {
+      "id": "M06",
+      "status": "blocked",
+      "note": "The user-authorized candidate was published and live assets/routes were verified, but not all product outcomes pass. Full release acceptance remains incomplete."
+    },
+    {
+      "id": "C10",
+      "status": "partial",
+      "note": "All 87 tests passed locally and in the hosted Automated regression suite on deployed source e68dc53. The separate Exact candidate acceptance job still refuses J01. Candidate publication remains separately authorized; incomplete product outcomes and the unconfirmed physical-device trigger remain documented."
+    }
+  ]
+}

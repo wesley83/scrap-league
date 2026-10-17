@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "utc": "2026-10-16T17:26:39.450Z",
+  "utc": "2026-10-17T01:00:06.616Z",
   "release": "sl-644d25b8e44419",
   "sourceHash": "9a4608d1da80fa167ff3539381e2d58812f0a45d3e4eeb295d15bfeb1952aa10",
   "outputHash": "3bd1e712e7da884fe5d6b590d309a688b0603498d9d98f2eb3a3d547e8efa6e4",
@@ -212,7 +212,7 @@
       "id": "J14",
       "stage": "local",
       "status": "passed",
-      "note": "Prior two-version fixtures remain retained. Public browser discovered the new worker through Check offline pack, applied it through the normal all-window safe-update flow, and reopened the root on sl-644d25b8e44419 with 4/12 parts and 0/12 events retained. Cold process restart is not claimed.",
+      "note": "Prior two-version fixtures remain retained. Public browser discovered the new worker through Check offline pack, applied it through the normal all-window safe-update flow, and reopened the root on sl-644d25b8e44419 with 4/12 parts and 0/12 events retained. Cold process restart is not claimed. Additional current-release browser verification confirms automatic discovery on a fresh load, race/Workshop vetoes, safe activation with seven saved records unchanged, corrupt-download rejection and offline new-document reload. A manual-check timing gap was reproduced: the initial check can report the old pack verified while the new pack installs, then require a second check for Apply update. No explicit foreground-resume check or closed-app notification is implemented. These usability limitations remain unresolved; core J14 discovery/activation/state retention passed.",
       "artifacts": [
         {
           "path": "audit/remediation-browser-update-eca6.json",
@@ -225,6 +225,18 @@
         {
           "path": "audit/deployment-browser-verification.json",
           "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
+        },
+        {
+          "path": "audit/pwa-update-verification/six-scenarios.json",
+          "sha256": "976e6443e917c985183033c4619b27f3dcc9ea1fc2aaeabe7f5bf7dbb56bf16e"
+        },
+        {
+          "path": "audit/pwa-update-verification/browser-results.json",
+          "sha256": "f434ccaa4dbf6c2fe5c006c0202bab1df30c7668f1ca4a355ef8e127e7192aa4"
+        },
+        {
+          "path": "audit/pwa-update-verification/REPORT.md",
+          "sha256": "e7c1c0729ce4f45ddff8f695408635867d38be934199f4938f863e5f1689034a"
         }
       ]
     },
