@@ -1,5 +1,9 @@
 # Scrap League implementation and release status
 
+## Phone layout repair — October 18, 2026
+
+The [responsive-layout report](audit/2026-10-18-phone-layout/report.md) and current acceptance ledger identify this candidate's verified scope. The phone home menu explicitly resets the inherited two-column grid, wraps actions within bounded columns and sizes its heading to the available width. Its scrollable stage uses the space remaining after the actual header/footer, including enlarged text and safe-area spacing. R01 adds required home-action geometry, text-size, phone-journey and viewport/safe-region evidence; previous Workshop/Settings checks did not establish home-menu responsiveness. The 2.11 layout guidance supplement and the retained 2.10 baseline are distinguished in the inventory. Native/physical checks remain excluded.
+
 ## Remaining-requirement follow-up
 
 The [current follow-up report](audit/2026-10-18-remaining-requirements/report.md) and `audit/current-acceptance.json` identify the actual candidate and verdict. The pinned handbook remains 2.10.0; map handbook-2.10-r2 declares 47 requirements and 102 named scenarios. Aggregate passing labels cannot substitute for a missing required scenario. Native desktop/process checks are explicitly excluded by the user; connector browser interaction, fresh-document offline recovery and real IndexedDB context termination remain required. The [scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) corrects the inventory's unsupported global-readiness demand without claiming provider-wide enforcement.

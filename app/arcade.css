@@ -77,6 +77,9 @@ small {
 .wordmark i {
   border-color: #8fa8a8;
   color: #bed1ce;
+  width: 2.4em;
+  height: 2.4em;
+  flex-shrink: 0;
 }
 #context {
   color: #b3c9c7;
@@ -100,6 +103,38 @@ small {
 }
 #stage.view-start:after {
   display: none;
+}
+/* Menus get the space left by the actual header/footer, including wrapped text. */
+body[data-view="start"] {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  padding-bottom: max(var(--host-footer-space, 0px), env(safe-area-inset-bottom, 0px));
+}
+body[data-view="start"] #header {
+  flex: 0 0 auto;
+  height: auto;
+  min-height: 64px;
+  padding: max(8px, env(safe-area-inset-top, 0px))
+    max(24px, env(safe-area-inset-right, 0px)) 8px
+    max(24px, env(safe-area-inset-left, 0px));
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+body[data-view="start"] #header nav {
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 0;
+}
+body[data-view="start"] #stage {
+  flex: 1 1 0;
+  height: auto;
+  min-height: 0;
+}
+body[data-view="start"] #footer {
+  flex: 0 0 auto;
 }
 #stage.view-start #world {
   left: 44%;
@@ -159,7 +194,7 @@ small {
   font-weight: 700;
 }
 .home-actions {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   margin-top: 12px;
 }
@@ -178,7 +213,7 @@ small {
 }
 .home-copy .secondary-actions {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 6px;
   margin-top: 12px;
 }
@@ -186,6 +221,13 @@ small {
   font-size: 12px;
   min-height: 44px;
   padding: 6px;
+}
+.home-copy > *,
+.home-actions button,
+.home-copy .secondary-actions button {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .start-controls {
   color: #bacdc8;
@@ -235,6 +277,11 @@ small {
 .track-card {
   background: #234249;
   border-color: #668184;
+  display: block;
+}
+.track-card h3,
+.track-card p {
+  overflow-wrap: anywhere;
 }
 .track-card .map {
   background: #33555b;
@@ -247,6 +294,9 @@ small {
 .cup-label span {
   color: #d9dfca;
   font-size: 11px;
+}
+.track-card .card-top {
+  flex-wrap: wrap;
 }
 .garage-panel {
   background: #19343b;
@@ -708,6 +758,12 @@ dialog::backdrop {
   }
 }
 @media (max-width: 720px) {
+  body[data-view="start"] #header {
+    min-height: 56px;
+    padding: max(4px, env(safe-area-inset-top, 0px))
+      max(14px, env(safe-area-inset-right, 0px)) 4px
+      max(14px, env(safe-area-inset-left, 0px));
+  }
   #header {
     height: 56px;
     padding: 0 14px;
@@ -736,18 +792,33 @@ dialog::backdrop {
     left: 0;
     top: 0;
     width: 100%;
-    height: 220px;
+    height: clamp(144px, 40vw, 220px);
   }
   .home-copy {
     top: auto;
     left: auto;
     width: 100%;
-    margin-top: 220px;
-    padding: 26px 22px;
+    margin-top: clamp(144px, 40vw, 220px);
+    padding: 22px max(20px, env(safe-area-inset-right)) 22px
+      max(20px, env(safe-area-inset-left));
+    display: flex;
+    flex-direction: column;
   }
   .home-copy h1 {
-    font-size: 64px;
+    font-size: clamp(40px, 11.5vw, 56px);
     margin: 12px 0;
+  }
+  .home-actions {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: stretch;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .home-actions #workshop-button {
+    grid-column: 1 / -1;
+  }
+  .home-copy .secondary-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .hero-label {
     top: 14px;
@@ -964,7 +1035,7 @@ dialog::backdrop {
 }
 @media (max-width: 380px) {
   .home-copy h1 {
-    font-size: 56px;
+    font-size: 40px;
   }
   .track-grid {
     grid-template-columns: 1fr;

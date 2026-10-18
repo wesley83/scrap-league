@@ -1,0 +1,27 @@
+{
+  "name": "Portrait preview",
+  "status": "passed",
+  "detail": {
+    "preview": true,
+    "viewport": [
+      432,
+      900
+    ]
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "viewport": [
+      432,
+      900
+    ],
+    "release": "http://127.0.0.1:4440/releases/sl-5c1afcc9442899/"
+  },
+  "receiptUTC": "2026-10-18T04:30:36.302Z",
+  "release": "sl-4261a19d07730c",
+  "sourceHash": "3d797db1838326279889e0fe6c7ff55b791d1c7f28ff9818db1aaf51fd56a7fb",
+  "verifiers": {
+    "serverSha256": "b0dcd67f3ff250bd383059eb4f14ca326eadba1ee239d4ae01d357181afe5953",
+    "labSha256": "c614b4cee7f4987ab9c7c677185b7806b724fc9f1362d1b71782bb76a71c3cb8"
+  },
+  "scope": "Actual Chromium iframe CSS viewport; local inspection hook and provider-footer fixture declared; no native/physical-device claim"
+}

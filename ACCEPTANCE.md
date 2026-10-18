@@ -1,10 +1,14 @@
 # Scrap League acceptance and implementation plan
 
+## Responsive-layout supplement — October 18, 2026
+
+R01 adds four required local scenarios for the reported phone defect: home/action geometry at 320–1440 CSS pixels including the breakpoint boundary, enlarged text, complete portrait/landscape menu/play journeys, and changing viewport heights/injected safe regions. The inventory now contains 48 requirements and 106 named scenarios. Its `layoutGuidanceSupplement` pins edition 2.11.0 Sections 10/11 and records the bounded impact review; the original 47/102 contract and 2.10 governing snapshot remain historical baseline obligations. No native/physical requirement is reinstated and no existing required outcome is waived. Current evidence and limitations are in the responsive-layout audit.
+
 ## Delivery boundary
 
 ### Handbook 2.10 audit adoption
 
-The October 17, 2026 audit adopts handbook **2.10.0**, SHA-256 `b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4`, retained at [the pinned snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md). `requirements.json` is the authoritative inventory; its `governingGuide` records map revision **handbook-2.10-r2**, with 47 requirements and 102 individually required scenarios. The [follow-up scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) retains the user's explicit native-desktop exclusion and corrects P08 to capability recording/established-policy preservation while retaining actual endpoint validation. Real hardware and human playtesting remain excluded. The earlier numbered best-practice table below describes historical design-time mapping, not the current guide's section numbers. Old reference snapshots remain historical. Future guide changes require an explicit impact review.
+The October 17, 2026 audit adopts handbook **2.10.0**, SHA-256 `b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4`, retained at [the pinned snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md). `requirements.json` is the authoritative inventory; its `governingGuide` records map revision **handbook-2.10-r2**, with the original baseline of 47 requirements and 102 individually required scenarios; the responsive-layout supplement above extends the current inventory to 48/106. The [follow-up scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) retains the user's explicit native-desktop exclusion and corrects P08 to capability recording/established-policy preservation while retaining actual endpoint validation. Real hardware and human playtesting remain excluded. The earlier numbered best-practice table below describes historical design-time mapping, not the current guide's section numbers. Old reference snapshots remain historical. Future guide changes require an explicit impact review.
 
 | Current guide section | Applicable contract and inventory IDs |
 | --- | --- |
