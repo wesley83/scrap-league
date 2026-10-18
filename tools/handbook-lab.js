@@ -16,10 +16,12 @@ const waitFor = async (fn, ms = 20000) => {
 async function connect() {
   await waitFor(() => frame.contentDocument?.querySelector("base"));
   prefix = frame.contentDocument.querySelector("base").href;
-  const mod = await frame.contentWindow.eval(
-    `import(${JSON.stringify(prefix + "main.js")})`,
-  );
+  // A parent-realm dynamic import can retain the previous document's module.
+  // The loopback-only server publishes this handle from the actual app realm.
+  await waitFor(() => frame.contentWindow.__scrapAudit?.document === frame.contentDocument);
+  const mod = frame.contentWindow.__scrapAudit;
   await mod.ready;
+  await waitFor(() => frame.contentDocument.querySelector("#loading")?.hidden && !frame.contentDocument.querySelector("#stage")?.inert);
   api = mod.review;
   release = prefix.split("/").filter(Boolean).at(-1);
 }
@@ -61,11 +63,20 @@ async function runToFinish(slow = false) {
   const { stepRace, aiInput } = await import(prefix + "simulation.js");
   const { practiceStep } = await import(prefix + "driving-controls.js");
   api.race.state = "racing";
+  doc().querySelector("#world").focus();
   const r = api.race;
   const start = r.time;
+  let interruptions = 0;
   // The controller drives the same simulation object through normal physics.
   // Accelerated ticks are not a browser latency or human enjoyment measurement.
-  while (r.state === "racing" && r.time - start < 480) {
+  while (["racing", "paused", "resuming"].includes(r.state) && r.time - start < 480) {
+    if (r.state === "paused") {
+      check(++interruptions <= 4, "Controller repeatedly interrupted: " + doc().querySelector("#modal-content").textContent);
+      const resume = button("Resume");
+      check(resume, "Interrupted controller has no ordinary Resume action");
+      resume.click();
+      await waitFor(() => r.state !== "resuming");
+    }
     for (let i = 0; i < 240 && r.state === "racing"; i++) {
       const p = r.cars.find((c) => c.id === "player"),
         controls = aiInput(p, r.track, "club", 1, r.cars);
@@ -77,7 +88,9 @@ async function runToFinish(slow = false) {
     }
     await delay(0);
   }
-  check(!r.dnf, "Controller did not finish");
+  const player = r.cars.find((c) => c.id === "player");
+  check(r.state === "finished" && r.dnf === false && player.finishTime !== null && player.lapTimes.length === r.laps,
+    "Controller did not finish all laps: " + JSON.stringify({state:r.state,dnf:r.dnf,laps:player.lapTimes.length,expected:r.laps,interruptions}));
   await api.finish();
   await waitFor(
     () =>
@@ -983,6 +996,12 @@ actions["Closed-store Files recovery"] = async () => {
     click("work-file");
     await waitFor(() =>
       doc().querySelector("#modal-content [data-file=export]"),
+    );
+    // A closed Files dialog can retain its Export node while a new read is pending.
+    // Qualify the open recovery dialog, not the previous content's existence.
+    await waitFor(() =>
+      doc().querySelector("#modal").open &&
+      doc().querySelector("#modal-content").textContent.includes("Some saved drafts could not be read"),
     );
     check(
       doc()

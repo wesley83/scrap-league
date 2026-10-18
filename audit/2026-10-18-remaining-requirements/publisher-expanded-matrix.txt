@@ -1,0 +1,12 @@
+✔ actual publisher commands retain promotion phases, recover failures and conditionally restore two releases (174659.054ms)
+✔ supported publisher refuses corrupt backups and concurrent state after recovery preparation (15573.3542ms)
+✔ conditional A→B→A root restoration reconciles ambiguity and preserves user documents and dependencies (3.7766ms)
+✔ rollback refuses stale state and altered baseline before the first write (0.7487ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 190874.406

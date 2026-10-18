@@ -4,7 +4,7 @@ import { validatePublicationAuthorization } from "../tools/candidate-publication
 import { sha } from "../tools/release-gate.mjs";
 import { HOST_CONFIG } from "../app/pagelove.js";
 
-test("candidate publication binds limitations, ledger, source, output and destination without changing acceptance", () => {
+test("publication receipts bind identity and destination but cannot authorize unresolved acceptance", () => {
   const candidate = {
     release: "sl-aaaaaaaaaaaaaa",
     source: { hash: "source" },
@@ -49,19 +49,23 @@ test("candidate publication binds limitations, ledger, source, output and destin
       note,
     })),
   };
-  assert.deepEqual(
-    [
-      ...validatePublicationAuthorization(
+  assert.throws(
+    () => validatePublicationAuthorization(
         auth,
         candidate,
         receipt,
         bytes,
         host,
       ),
-    ],
-    ["J01", "P08"],
+    /Unresolved required acceptance/,
   );
   assert.equal(receipt.requirements[0].status, "partial");
+  const resolved = { requirements: receipt.requirements.map((row) => ({ ...row, status: "passed" })) };
+  const resolvedBytes = Buffer.from(JSON.stringify(resolved));
+  assert.deepEqual([...validatePublicationAuthorization(
+    { ...auth, acceptanceHash: sha(resolvedBytes), knownIncomplete: [] }, candidate,
+    resolved, resolvedBytes, host,
+  )], []);
   for (const changed of [
     { ...auth, sourceHash: "stale" },
     { ...auth, outputHash: "stale" },

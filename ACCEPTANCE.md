@@ -2,6 +2,40 @@
 
 ## Delivery boundary
 
+### Handbook 2.10 audit adoption
+
+The October 17, 2026 audit adopts handbook **2.10.0**, SHA-256 `b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4`, retained at [the pinned snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md). `requirements.json` is the authoritative inventory; its `governingGuide` records map revision **handbook-2.10-r2**, with 47 requirements and 102 individually required scenarios. The [follow-up scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) retains the user's explicit native-desktop exclusion and corrects P08 to capability recording/established-policy preservation while retaining actual endpoint validation. Real hardware and human playtesting remain excluded. The earlier numbered best-practice table below describes historical design-time mapping, not the current guide's section numbers. Old reference snapshots remain historical. Future guide changes require an explicit impact review.
+
+| Current guide section | Applicable contract and inventory IDs |
+| --- | --- |
+| 1 Scope/evidence | Existing physical/human exclusions; pinned guide, exact inventory and separate reviews; C09–C11 |
+| 2 Player/delivery contract | Quick Race, League, Trial, Daily, practice and Workshop; J01–J10, M01–M04 |
+| 3 Architecture/authority | Authored HTML, one editor DOM source, shared compiler, derived renderer and composed shell; M01, P04/P07/P09, C12 |
+| 4 Editor/recovery | Validate/import/export, history, asynchronous save/navigation and first-entry reads; J08–J12, P01, M02 |
+| 5 State/checkpoints | Captured cup/run state, atomic restore/results and input/clock ownership; J02–J04/J16, P01/P02, M04 |
+| 6 Simulation/input/AI | Fixed step, legal AI controls, swept contacts, camera and cancellation; M01/M03, J02/J16 |
+| 7 Feedback/progression | Practice, visible cues, garage tradeoffs and bounded progression; J01/J04/J05/J18 |
+| 8 Scoring/effects/economy | Split arithmetic, cup rewards, boost/surface/reset interactions; J03–J07, P02, M01/M03 |
+| 9 Shared results/calendar | Casual trust, original Daily identity, durable queue, leases and retention; J07/J15, P03/P05/P06/P08 |
+| 10 Layout/controls | Available Chromium dimensions, keyboard/gamepad/touch contracts and complete journeys; J02/J08/J16, C09 |
+| 11 Accessibility | Native UI, focus, measured contrast/reflow, enlarged text and motion; J02/J17/J18, C09. No full WCAG conformance claim. |
+| 12 Scenes/audio | Four held scene families, mute/reduced motion and bounded signal checks; J18, M04 |
+| 13 Performance | Actual renderer/buffer/quality, cold/long-run receipts and unchanged-dependency reuse; J16, M01/M04, C09 |
+| 14 Assets/sharing | Independent branded asset contract, decoded images/icons, licenses and sharing fallbacks; C01–C03/C06, J17 |
+| 15 Offline/updates | Complete verified pack, safe updates, old clients and offline journeys; J13/J14, M04, P09 |
+| 16 Security/data | Inert bounded imports, trusted owner DAV, public shape/retention and private package exclusions; J10, P04–P06, C07 |
+| 17 Release/maintenance | Strict gate on every publisher, pinned reviews, preservation, phase journal and operator recovery; C04/C05/C08/C10/C11/C13/C14, P09/M06 |
+| 18 Genre | Arcade racing and asynchronous community competition apply. Platforming, puzzles, cards, dialogue branching, rhythm and real-time multiplayer modules are not adopted because those mechanics are absent. |
+| 19 Pagelove adapter | HTML definitions, native composition, owner conditionals and separate public-rule probes; P04–P09/J11/J12/J15 |
+| 20 Included model example | Illustrative reference, not game acceptance; actual model/storage scenarios use M01/P01/P02 |
+| 21 Evidence templates | Qualified fixtures, selected interleavings, review/reuse and retrospective closure; C09–C14/J08/J09 |
+| 22 Glossary | Terminology reference; no separate runtime feature |
+| 23 Handbook maintenance | Guidance provenance for C11; handbook publication is not a game runtime obligation |
+
+The available matrix is Windows/in-app Chromium with emulated layouts and injected device adapters, plus actual connector keyboard/pointer actions when explicitly recorded. It does not certify Edge on a physical phone or an unavailable engine. English UI is the adopted language; Unicode player aliases are supported. Synthetic inputs do not prove browser gesture arbitration or human enjoyment. Optional recorder/pathfinding/real-money/identity-account systems absent from this game are not new requirements.
+
+New controls C11–C14 are required where applicable, with results in the same inventory/ledger as the existing IDs. The audit reopens unsupported broad pass claims instead of removing their promised subcases. An operation receipt cannot waive any required outcome. Review completion means all rows were evaluated, including unresolved rows; it does not mean the product is accepted. Required unresolved rows still block the corresponding release. A new required-outcome defect reopens its row and invalidates the affected decision before entry promotion.
+
 The design package defines a complete first release, including the Track Workshop. Implementation is complete only when the player journeys below have evidence on the exact release revision. The visual study demonstrates layout and selected interface responses; it does not prove physics, track validity, persistence, publishing or browser behavior.
 
 Use status values Passed, Failed, Not run, Blocked and Accepted exception, always with revision, environment and evidence. All runtime acceptance rows begin **Not run**. A design review or test count does not convert those rows to Passed.

@@ -1,3 +1,6 @@
+:root {
+  --scrap-core-ready: 1;
+}
 @font-face {
   font-family: LeagueDisplay;
   src: url("fonts/BebasNeue-Regular.ttf") format("truetype");

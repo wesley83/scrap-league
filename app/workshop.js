@@ -888,6 +888,10 @@ export class Workshop {
     this.save();
   }
   refresh() {
+    const active = this.root.ownerDocument.activeElement;
+    const ownedFocus = active && this.root.contains(active)
+      ? { id: active.id, field: active.dataset?.field, patch: active.dataset?.patch }
+      : null;
     this.compiled = compile(this.track);
     const q = this.q;
     q("track-name").value = this.track.name;
@@ -955,6 +959,15 @@ export class Workshop {
       );
     this.inspect();
     this.draw();
+    if (ownedFocus && (!active.isConnected || active.disabled)) {
+      let replacement = ownedFocus.id ? this.q(ownedFocus.id) : null;
+      if (!replacement && ownedFocus.field)
+        replacement = [...this.root.querySelectorAll("[data-field]")].find(element => element.dataset.field === ownedFocus.field);
+      if (!replacement && ownedFocus.patch)
+        replacement = [...this.root.querySelectorAll("[data-patch]")].find(element => element.dataset.patch === ownedFocus.patch);
+      if (!replacement || replacement.disabled) replacement = this.q("object-list");
+      replacement?.focus?.({ preventScroll: true });
+    }
   }
   inspect() {
     const patch = this.track.patches.find((p) => p.id === this.selected);

@@ -1,0 +1,2476 @@
+{
+  "utc": "2026-10-18T00:57:50.724Z",
+  "status": "passed",
+  "scope": "Current official geometry recreated from New blank track through shipped Workshop form commands and exported in the real browser. Stable catalog/UUID/inactive-parameter binding and bounded numeric canonicalization independently verified against every source field. Authoritative source bytes already equal the bound UI exports, so no content overwrite is needed.",
+  "historicalProvenance": "Original creation used CLI; this record establishes present-tense Workshop recreation, not a different history.",
+  "preserved": "Exact gameplay/source identity, existing boards/ghosts/cup/daily references and policies",
+  "tracks": [
+    {
+      "slug": "container-switchback",
+      "source": "content/tracks/container-switchback/definition.html",
+      "receipt": "workshop-exports/container-switchback-1792284914884.json",
+      "exportedSha256": "09b6b0b6c5f82ba07a25021dbd9104b65a4d9016049db9c89668126f2a43dd3e",
+      "boundSha256": "ff32a0f4a09518d756e32cdd9ed8027aa0e04f3f8a46954e346025f80d480567",
+      "authoritativeSha256": "ff32a0f4a09518d756e32cdd9ed8027aa0e04f3f8a46954e346025f80d480567",
+      "traceSha256": "6ce4f50b1753c498696becab0d68aee6f1ede41630a56ac2b81ff04c78a51c69",
+      "actions": 96,
+      "identityBindings": 47,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "crusher-circuit",
+      "source": "content/tracks/crusher-circuit/definition.html",
+      "receipt": "workshop-exports/crusher-circuit-1792284917119.json",
+      "exportedSha256": "ca372c92008ba357f2d56005fcac517dae9c44562b0375f5112935225dbacf3c",
+      "boundSha256": "67aeee5843efb91631393e7deac2e3c8838d05ccf5b1222987739daa22d8bdf0",
+      "authoritativeSha256": "67aeee5843efb91631393e7deac2e3c8838d05ccf5b1222987739daa22d8bdf0",
+      "traceSha256": "3950f4d666d70c07a53b7e20eb2f2c72b01ea7479ab472ef957d7bbf7b934387",
+      "actions": 123,
+      "identityBindings": 54,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 20,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 20,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 21,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 21,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 22,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "dockside-dash",
+      "source": "content/tracks/dockside-dash/definition.html",
+      "receipt": "workshop-exports/dockside-dash-1792284914323.json",
+      "exportedSha256": "df4a73a0d9bfa0de9c62ede56085f21dfd914f94ce31794e3b437e97bf48a63f",
+      "boundSha256": "43136a576bd76de093bdea2ece080db55539661697b3ee5f912ff1acbc0eb08e",
+      "authoritativeSha256": "43136a576bd76de093bdea2ece080db55539661697b3ee5f912ff1acbc0eb08e",
+      "traceSha256": "8bab835d6795341e2183ddae61ceabd8f95cc2e5f6dfba970fbdfc210c28aa7e",
+      "actions": 89,
+      "identityBindings": 44,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "furnace-bend",
+      "source": "content/tracks/furnace-bend/definition.html",
+      "receipt": "workshop-exports/furnace-bend-1792284916068.json",
+      "exportedSha256": "04621ec6eb92c496c00a4d9f6d79285326f85109a9bfacd3cb790296a096b5f3",
+      "boundSha256": "e2b7da7c4ce93496a2ce20e662a257faec665011af9319756f0b7447668951ee",
+      "authoritativeSha256": "e2b7da7c4ce93496a2ce20e662a257faec665011af9319756f0b7447668951ee",
+      "traceSha256": "70017212e59a9d50c2c9fe81c56afbbe0828b8005d87d5867cbbee09878914fa",
+      "actions": 96,
+      "identityBindings": 45,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "gravel-shift",
+      "source": "content/tracks/gravel-shift/definition.html",
+      "receipt": "workshop-exports/gravel-shift-1792284913735.json",
+      "exportedSha256": "086e27e8b2ae03f430548e84a68c090a0ba82f31b839e3d2a27d290017a44468",
+      "boundSha256": "5536b1b1c71c8a4a2ea29c3d5ef46ad084e61f2d0d5b57cb65973fb634985409",
+      "authoritativeSha256": "5536b1b1c71c8a4a2ea29c3d5ef46ad084e61f2d0d5b57cb65973fb634985409",
+      "traceSha256": "e9ff062e11444950ff7eebc2cadbaf4fa1fe73cae381404ee87a56a92b2738b0",
+      "actions": 74,
+      "identityBindings": 39,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "mudworks",
+      "source": "content/tracks/mudworks/definition.html",
+      "receipt": "workshop-exports/mudworks-1792284916509.json",
+      "exportedSha256": "b26015be410d060af809469998a1e9ebe813c75d6d2f23d7efe0582bc5a77879",
+      "boundSha256": "34ee702cd0ef15cf58e9bb855717a2fd21e2e7844505bf55d554f43e660c37c7",
+      "authoritativeSha256": "34ee702cd0ef15cf58e9bb855717a2fd21e2e7844505bf55d554f43e660c37c7",
+      "traceSha256": "b62a4cae57d2b309db529cbc05db22547767008be3286234f067a595d8b90c74",
+      "actions": 96,
+      "identityBindings": 45,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "night-sort",
+      "source": "content/tracks/night-sort/definition.html",
+      "receipt": "workshop-exports/night-sort-1792284917550.json",
+      "exportedSha256": "41b0011d3126b7ffd75d6fb9c6eb67796a51d456e57526bfb0690657652a8f05",
+      "boundSha256": "50f2a4d875a16e69145c87f24768ae8edb73b0163af52b80cf45b01cd7aca9a1",
+      "authoritativeSha256": "50f2a4d875a16e69145c87f24768ae8edb73b0163af52b80cf45b01cd7aca9a1",
+      "traceSha256": "dd2c7c91ec0475c4505a211e8b6fe8d86f4ade8a0345f41d50df14f8cd22e21b",
+      "actions": 94,
+      "identityBindings": 49,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "redline-ridge",
+      "source": "content/tracks/redline-ridge/definition.html",
+      "receipt": "workshop-exports/redline-ridge-1792284918074.json",
+      "exportedSha256": "a0dfd6462207a3c9cd7b5687cc58a3c4524413eb3a600fd29e4da2910f06e3fc",
+      "boundSha256": "f62a3b3e724a83510d873ec167f973329178dc9806fc5ca115205e4d30f97979",
+      "authoritativeSha256": "f62a3b3e724a83510d873ec167f973329178dc9806fc5ca115205e4d30f97979",
+      "traceSha256": "481f83f29f171a62f3bb45333d1a43aa23d97d40165c33f77e24bec4dca2c845",
+      "actions": 101,
+      "identityBindings": 52,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "salt-flat-sprint",
+      "source": "content/tracks/salt-flat-sprint/definition.html",
+      "receipt": "workshop-exports/salt-flat-sprint-1792284915585.json",
+      "exportedSha256": "136cca08c7706cdc8630dff505ecf4e9357118e9db2b2749c7c6ee485e8291ae",
+      "boundSha256": "3030862554af857d4142c3ba6285e5576bbb2565e9b305273e80dbed6bfaa58e",
+      "authoritativeSha256": "3030862554af857d4142c3ba6285e5576bbb2565e9b305273e80dbed6bfaa58e",
+      "traceSha256": "673f58cabaa8a49435b7860a004bf659db03bdeeb97f4127e8d63c2dc847a4a7",
+      "actions": 117,
+      "identityBindings": 54,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "spawns",
+          "index": 8,
+          "key": "z",
+          "reason": "Canonicalize floating representation within 1e-8",
+          "difference": -2.842170943040401e-14
+        }
+      ]
+    },
+    {
+      "slug": "the-big-salvage",
+      "source": "content/tracks/the-big-salvage/definition.html",
+      "receipt": "workshop-exports/the-big-salvage-1792284918638.json",
+      "exportedSha256": "1483f240314a50f3d59d60343d611a7afa85fcc4e60ef927ecbed471e01e1a7f",
+      "boundSha256": "8a60cf827f7842daf64f350a8df3bdadc321f79ae94aa01761eb068152c222ab",
+      "authoritativeSha256": "8a60cf827f7842daf64f350a8df3bdadc321f79ae94aa01761eb068152c222ab",
+      "traceSha256": "cae09037c61ad7a1722abb45aec7fbf1cedd765c61c6ad094be61f556d0a8de4",
+      "actions": 133,
+      "identityBindings": 58,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 19,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 20,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 20,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 21,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 21,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 22,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 22,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 23,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "tin-can-alley",
+      "source": "content/tracks/tin-can-alley/definition.html",
+      "receipt": "workshop-exports/tin-can-alley-1792284913313.json",
+      "exportedSha256": "ef16173e168aa287c205c59d87f5f84bba2a1e1f9a80b84a68fa2a2e59286383",
+      "boundSha256": "c1d96529fdf7accc7a831a8fa73191da977ef3384e8e1cd3187ab346c2f4b9cf",
+      "authoritativeSha256": "c1d96529fdf7accc7a831a8fa73191da977ef3384e8e1cd3187ab346c2f4b9cf",
+      "traceSha256": "edd3c9dde1e9a75ace8cc84435457d08fc3eecc6445169c08450fe3f8f550e42",
+      "actions": 75,
+      "identityBindings": 42,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 12,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 13,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 14,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 15,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 16,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 17,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 18,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    },
+    {
+      "slug": "yard-loop",
+      "source": "content/tracks/yard-loop/definition.html",
+      "receipt": "workshop-exports/yard-loop-1792284912732.json",
+      "exportedSha256": "a6d306e4760dcffa9ff8182dd4e88d479edbdd4913969107f0ae55d85345621a",
+      "boundSha256": "156f4eef17033e1b8f3d628b71ab34c7d4ae39b4e82cd1ae782b69c342892578",
+      "authoritativeSha256": "156f4eef17033e1b8f3d628b71ab34c7d4ae39b4e82cd1ae782b69c342892578",
+      "traceSha256": "775738e7f6b973f9bb6efcfa53564fa9cbcfb11d4068e81a2117de2b5e49734a",
+      "actions": 52,
+      "identityBindings": 33,
+      "physicalFieldsAndReferencesMatch": true,
+      "sourceBytesIdentical": true,
+      "serializationBindings": [
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 0,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 1,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 2,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 3,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 4,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 5,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 6,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 7,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 8,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 9,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "radius",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 10,
+          "key": "turn",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        },
+        {
+          "collection": "pieces",
+          "index": 11,
+          "key": "length",
+          "reason": "Preserve unused serialized parameter; no active geometry changed"
+        }
+      ]
+    }
+  ]
+}

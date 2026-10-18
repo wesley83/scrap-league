@@ -50,13 +50,23 @@ test("release gate refuses missing asset, stale source, omitted evidence and fai
     const requirements = JSON.parse(
       await fs.readFile(path.join(fixture, "requirements.json"), "utf8"),
     );
+    const inventoryHash = sha(await fs.readFile(path.join(fixture, "requirements.json")));
+    await fs.mkdir(path.dirname(path.join(fixture, requirements.governingGuide.snapshot)), { recursive: true });
+    await fs.copyFile(path.join(root, requirements.governingGuide.snapshot), path.join(fixture, requirements.governingGuide.snapshot));
+    const review = { status: "completed", inventoryHash, sourceHash: candidate.source.hash, outputHash: candidate.outputHash,
+      artifact: { path: "audit/fixture.txt", sha256: sha("synthetic refusal fixture") } };
     const receipt = {
+      inventoryHash,
+      coverageReview: structuredClone(review),
+      evidenceReview: structuredClone(review),
       release: candidate.release,
       sourceHash: candidate.source.hash,
       outputHash: candidate.outputHash,
       requirements: requirements.required.map((r) => ({
         id: r.id,
         status: "passed",
+        scenarios: r.scenarios?.map(scenario => ({ id: scenario.id, status: "passed",
+          artifacts: [{ path: "audit/fixture.txt", sha256: sha("synthetic refusal fixture") }] })),
         artifacts: [
           {
             path: "audit/fixture.txt",
@@ -72,6 +82,30 @@ test("release gate refuses missing asset, stale source, omitted evidence and fai
       );
     await save();
     await verifyRelease(fixture, "live");
+    const scenario = receipt.requirements.find(row => row.id === "J02").scenarios[0];
+    scenario.status = "not-run";
+    await save();
+    await assert.rejects(verifyRelease(fixture, "local"), /Required scenario.*J02/);
+    scenario.status = "passed";
+    const scenarioArtifact = scenario.artifacts[0];
+    scenario.artifacts = [{ ...scenarioArtifact, sha256: "changed" }];
+    await save();
+    await assert.rejects(verifyRelease(fixture, "local"), /scenario evidence changed.*J02/);
+    scenario.artifacts = [scenarioArtifact];
+    await save();
+    for (const name of ["coverageReview", "evidenceReview"]) {
+      const retained = receipt[name];
+      receipt[name] = { ...retained, sourceHash: "stale" };
+      await save();
+      await assert.rejects(verifyRelease(fixture), /pre-promotion review/);
+      receipt[name] = retained;
+    }
+    const retainedInventoryHash = receipt.inventoryHash;
+    receipt.inventoryHash = "unreviewed inventory";
+    await save();
+    await assert.rejects(verifyRelease(fixture), /inventory changed/);
+    receipt.inventoryHash = retainedInventoryHash;
+    await save();
     receipt.requirements.find((r) => r.id === "P08").status = "failed";
     await save();
     await verifyRelease(fixture, "local");
@@ -100,12 +134,14 @@ test("release gate refuses missing asset, stale source, omitted evidence and fai
       ],
     };
     await fs.writeFile(path.join(fixture, authorization), JSON.stringify(auth));
-    await verifyRelease(fixture, "staged", authorization);
+    await assert.rejects(verifyRelease(fixture, "staged", authorization), /Required acceptance.*P08/);
     await assert.rejects(verifyRelease(fixture, "staged"), /P08/);
     await fs.appendFile(path.join(fixture, "audit/fixture.txt"), "tampered");
+    receipt.requirements.find((r) => r.id === "P08").status = "passed";
+    await save();
     await assert.rejects(
-      verifyRelease(fixture, "staged", authorization),
-      /evidence changed/,
+      verifyRelease(fixture, "staged"),
+      /pre-promotion review|evidence changed/,
     );
     await fs.writeFile(
       path.join(fixture, "audit/fixture.txt"),

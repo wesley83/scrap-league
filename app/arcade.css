@@ -1,6 +1,7 @@
 /* Arcade edition: scene space and controls have distinct rectangles. */
 :root {
   color-scheme: dark;
+  --scrap-arcade-ready: 1;
 }
 body {
   --yellow: #ffd34e;
@@ -1081,4 +1082,43 @@ dialog::backdrop {
   *::after {
     transition: none !important;
   }
+}
+
+/* Intrinsic input/button widths must yield to the workbench at enlarged text. */
+.workshop-bar {
+  height: auto;
+  flex-wrap: wrap;
+}
+.workshop-bar > div {
+  min-width: 0;
+  max-width: 100%;
+}
+.workshop-bar > div:first-child {
+  flex: 1 1 240px;
+}
+.workshop-bar input {
+  display: block;
+  width: min(400px, 100%);
+  min-width: 0;
+}
+.workshop-bar .command-row {
+  min-width: 0;
+  flex: 1 1 320px;
+}
+.workshop-bar button,
+.editor-sheets button {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.editor-sheets,
+.workshop-status {
+  flex-wrap: wrap;
+}
+.editor-sheets button {
+  flex: 1 1 80px;
+}
+.workshop-status > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }

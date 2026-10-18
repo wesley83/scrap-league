@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { randomUUID } from "node:crypto";
+import { randomUUID, createHash } from "node:crypto";
 import { DOMParser } from "linkedom";
 import { Boards, runHTML } from "../app/boards.js";
 import { stable } from "../app/model.js";
@@ -20,11 +20,18 @@ const attempted = new Map(
 );
 const failures = [];
 const checks = [];
+const publicMutationGapMs = 1500;
+let lastPublicMutation = 0;
 
 function url(base, pathname) {
   return new URL(pathname, base).href;
 }
 async function request(base, pathname, options = {}) {
+  if (base === BOARD_ORIGIN && options.method && options.method !== "GET") {
+    const wait = lastPublicMutation + publicMutationGapMs - Date.now();
+    if (wait > 0) await new Promise(resolve => setTimeout(resolve, wait));
+    lastPublicMutation = Date.now();
+  }
   return fetch(url(base, pathname), {
     ...options,
     redirect: "error",
@@ -68,6 +75,16 @@ async function readOwner(mode) {
   return request(HOST_CONFIG.authoringOrigin, BOARD_PATHS[mode], {
     headers: { Authorization: "Bearer " + ownerKey },
   });
+}
+async function policySnapshot(mode) {
+  const response = await readOwner(mode);
+  if (!response.ok) throw Error("Policy baseline unavailable: " + mode);
+  const doc = new DOMParser().parseFromString(await response.text(), "text/html");
+  const rules = [...doc.querySelectorAll('[hidden][itemscope]')];
+  if (rules.length < 5) throw Error("Established policy definitions missing: " + mode);
+  const source = rules.map(rule => rule.outerHTML).join("\n");
+  return { etag: response.headers.get("ETag"), rules: rules.length,
+    sha256: createHash("sha256").update(source).digest("hex") };
 }
 async function cleanupMode(mode) {
   const ids = attempted.get(mode), response = await readOwner(mode);
@@ -221,6 +238,12 @@ async function checkMode(mode, identities) {
   }
 
   const invalid = [
+    { name: "missing-field-rejected", body: positiveBody.replace(/<meta itemprop="alias" content="[^"]*">/, "") },
+    { name: "extra-field-rejected", body: positiveBody.replace("</li>", '<meta itemprop="unknown" content="extra"></li>') },
+    { name: "wrong-type-rejected", body: positiveBody.replace('itemprop="elapsedMs" content="480000"', 'itemprop="elapsedMs" content="not-a-number"') },
+    { name: "unsupported-track-rejected", body: positiveBody.replace('itemprop="trackId" content="'+positive.trackId+'"', 'itemprop="trackId" content="00000000-0000-4000-8000-000000000000"') },
+    { name: "unsupported-rules-rejected", body: positiveBody.replace('itemprop="rulesRevision" content="'+positive.rulesRevision+'"', 'itemprop="rulesRevision" content="unsupported"') },
+    { name: "invalid-split-shape-rejected", body: positiveBody.replace('itemprop="splits" content="[160000,160000,160000]"', 'itemprop="splits" content="[240000,240000]"') },
     {
       name: "split-arithmetic-rejected",
       body: positiveBody.replace(
@@ -269,6 +292,26 @@ async function checkMode(mode, identities) {
       checks.at(-1).detail = error.message;
     }
   }
+  // Address only this fixture's active row. Never submit a document-wide
+  // mutation or an expiry selector that can select another player's time.
+  const selector = '#runs > li:has(meta[itemprop="id"][content="' + positive.id + '"])';
+  for (const method of ["PUT", "PATCH", "DELETE"]) {
+    try {
+      const response = await request(BOARD_ORIGIN, BOARD_PATHS[mode], {
+        method, headers: { "Content-Type": "text/html", Range: "selector=" + selector },
+        ...(method === "DELETE" ? {} : { body: positiveBody }),
+      });
+      recordCheck("prohibited-" + method.toLowerCase(), mode, positive.id,
+        [401,403,405,422].includes(response.status) ? "passed" : "failed", response.status);
+      const after = await endpoints.readRows(mode);
+      const matches = after.rows.filter(row => row.id === positive.id);
+      recordCheck("active-row-preserved-after-" + method.toLowerCase(), mode, positive.id,
+        matches.length === 1 && matches[0].alias === positive.alias ? "passed" : "failed", matches.length);
+    } catch (error) {
+      recordCheck("prohibited-" + method.toLowerCase(), mode, positive.id, "failed", 0);
+      checks.at(-1).detail = error.message;
+    }
+  }
 }
 async function run(key) {
   ownerKey = key;
@@ -279,7 +322,9 @@ async function run(key) {
     headers: { Authorization: "Bearer " + ownerKey, Depth: "0" },
   });
   if (auth.status !== 207) throw Error("Pagelove owner authentication failed.");
-  const identities = await loadOfficialBoardIdentities(), cleanup = {};
+  const identities = await loadOfficialBoardIdentities(), cleanup = {}, policyPreservation = {};
+  for (const mode of Object.keys(BOARD_PATHS))
+    policyPreservation[mode] = { before: await policySnapshot(mode) };
   try {
     for (const mode of Object.keys(BOARD_PATHS)) await checkMode(mode, identities);
   } finally {
@@ -291,6 +336,13 @@ async function run(key) {
         failures.push("Synthetic cleanup failed for " + mode + ".");
       }
     }
+    for (const mode of Object.keys(BOARD_PATHS)) {
+      try {
+        policyPreservation[mode].after = await policySnapshot(mode);
+        policyPreservation[mode].unchanged = policyPreservation[mode].before.sha256 === policyPreservation[mode].after.sha256;
+        if (!policyPreservation[mode].unchanged) failures.push("Established policy changed for " + mode);
+      } catch (error) { failures.push("Policy preservation readback failed: " + mode); }
+    }
     ownerKey = "";
   }
   const receipt = {
@@ -299,6 +351,9 @@ async function run(key) {
     policyRevision: "scrap-league-casual-v1",
     tests: checks,
     cleanup,
+    policyPreservation,
+    publicMutationGapMs,
+    pacingScope: "Predeclared low-rate comparison after retained burst failures; no warmup/activation/global-readiness inference and no server-error-as-validation-pass substitution",
     providerWideReadiness: "not available; endpoint observations are not a global guarantee",
     passed: failures.length === 0,
     failures,

@@ -152,13 +152,30 @@ export async function verifyRelease(
   if (!stages.includes(stage))
     throw Error("Unknown release verification stage");
   const candidate = await verifyCandidateArtifacts(root);
-  const requirements = JSON.parse(
-    await readFile(path.join(root, "requirements.json"), "utf8"),
-  );
+  const inventoryBytes = await readFile(path.join(root, "requirements.json"));
+  const requirements = JSON.parse(inventoryBytes);
   const receiptBytes = await readFile(
     path.join(root, "audit/current-acceptance.json"),
   );
   const receipt = JSON.parse(receiptBytes);
+  if (requirements.version >= 3) {
+    const guide = requirements.governingGuide;
+    if (!guide?.edition || !guide.requirementMapRevision ||
+        !guide.snapshot?.startsWith("audit/") || guide.snapshot.includes("..") ||
+        sha(await readFile(path.join(root, guide.snapshot))) !== guide.sha256)
+      throw Error("Governing guidance snapshot is missing or changed");
+    const inventoryHash = sha(inventoryBytes);
+    if (receipt.inventoryHash !== inventoryHash)
+      throw Error("Acceptance inventory changed since review");
+    for (const name of ["coverageReview", "evidenceReview"]) {
+      const review = receipt[name];
+      if (review?.status !== "completed" || review.inventoryHash !== inventoryHash ||
+          review.sourceHash !== candidate.source.hash || review.outputHash !== candidate.outputHash ||
+          !review.artifact?.path.startsWith("audit/") || review.artifact.path.includes("..") ||
+          sha(await readFile(path.join(root, review.artifact.path))) !== review.artifact.sha256)
+        throw Error("Missing, stale or changed pre-promotion review: " + name);
+    }
+  }
   if (
     new Set(requirements.required.map((r) => r.id)).size !==
       requirements.required.length ||
@@ -173,20 +190,8 @@ export async function verifyRelease(
     receipt.release !== candidate.release
   )
     throw Error("Acceptance receipt does not match this exact candidate");
-  // Explicit candidate publication is separate from passing product acceptance.
-  // Default package/release/CI callers never supply this authorization.
-  let knownIncomplete = new Set();
-  if (publicationAuthorization) {
-    const { readPublicationAuthorization } =
-      await import("./candidate-publication.mjs");
-    knownIncomplete = await readPublicationAuthorization(
-      root,
-      publicationAuthorization,
-      candidate,
-      receipt,
-      receiptBytes,
-    );
-  }
+  // Historical publication receipts may record operation authority, but cannot
+  // waive a required outcome. All entry points consume the same strict gate.
   for (const requirement of requirements.required) {
     if (
       !requirement.outcome ||
@@ -196,10 +201,25 @@ export async function verifyRelease(
       throw Error("Incomplete acceptance contract: " + requirement.id);
     if (stages.indexOf(requirement.stage) > stages.indexOf(stage)) continue;
     const evidence = receipt.requirements?.find((r) => r.id === requirement.id);
-    if (evidence?.status !== "passed" && !knownIncomplete.has(requirement.id))
+    if (evidence?.status !== "passed")
       throw Error(
         "Required acceptance is missing or not passed: " + requirement.id,
       );
+    if (requirements.version >= 4) {
+      if (!requirement.scenarios?.length ||
+          new Set(requirement.scenarios.map(row => row.id)).size !== requirement.scenarios.length)
+        throw Error("Missing or duplicate required scenarios: " + requirement.id);
+      for (const scenario of requirement.scenarios) {
+        const observation = evidence.scenarios?.find(row => row.id === scenario.id);
+        if (!scenario.id || !scenario.outcome || observation?.status !== "passed" || !observation.artifacts?.length)
+          throw Error("Required scenario is missing or not passed: " + requirement.id + "/" + scenario.id);
+        for (const artifact of observation.artifacts) {
+          if (!artifact.path.startsWith("audit/") || artifact.path.includes("..") ||
+              sha(await readFile(path.join(root, artifact.path))) !== artifact.sha256)
+            throw Error("Required scenario evidence changed: " + requirement.id + "/" + scenario.id);
+        }
+      }
+    }
     if (evidence.status === "passed" && !evidence.artifacts?.length)
       throw Error("Required acceptance is missing evidence: " + requirement.id);
     for (const artifact of evidence.artifacts || []) {
@@ -210,6 +230,12 @@ export async function verifyRelease(
       )
         throw Error("Acceptance evidence changed: " + requirement.id);
     }
+  }
+  // An optional operation receipt is considered only after the shared gate.
+  // It cannot change the status or applicability of any required outcome.
+  if (publicationAuthorization) {
+    const { readPublicationAuthorization } = await import("./candidate-publication.mjs");
+    await readPublicationAuthorization(root, publicationAuthorization, candidate, receipt, receiptBytes);
   }
   return candidate;
 }

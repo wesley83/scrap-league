@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-18T00:12:20.093Z",
+  "checks": [
+    "Exact guide, source/output and all 47 inventory IDs match; unresolved acceptance preserved",
+    "All retained ledger artifacts and separate candidate-bound review hashes verified",
+    "Shared gate and four supported command refusal receipts verified; no publication claimed",
+    "115 tests and 19 named final-origin browser observations pass with strict oracles",
+    "Local inspection hooks absent from shipped game main",
+    "Changed documentation and audit-report local file links resolve",
+    "Prior live release readback remains distinct from unpublished repaired candidate"
+  ],
+  "status": "passed",
+  "checkedEvidenceFiles": 74,
+  "localLinks": 30,
+  "candidate": {
+    "release": "sl-b63afc9cbb2339",
+    "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+    "outputHash": "8bcdf0696e1bfcfd57e5f824df7a11095e2059fc799ac147f796f3cb81372e0c"
+  }
+}

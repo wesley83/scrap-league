@@ -1,0 +1,41 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Closed-store Files recovery",
+      "status": "passed",
+      "durationMs": 321,
+      "details": {
+        "warningVisible": true,
+        "exportName": "Closed-store recovery circuit",
+        "lastCommitPreserved": true,
+        "storeClosedForReal": true,
+        "scope": "Actual browser IndexedDB close and normal Files/export controls; store reconnection is fixture teardown."
+      },
+      "qualification": {
+        "utc": "2026-10-18T00:10:27.652Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4420/?qualified-entry=1792282176179",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          708,
+          532
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "workshop",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T00:10:27.978Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "2ec05f2667f2cddf460888df6ef2b2fc59978a371cfe74e2c9ddc2a28d8f5bf0",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

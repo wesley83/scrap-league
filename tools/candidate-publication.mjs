@@ -56,6 +56,14 @@ export function validatePublicationAuthorization(
     throw Error(
       "Failed acceptance cannot use this candidate-publication authorization",
     );
+  // An operation receipt cannot grant an exception to a required outcome.
+  // Apply an actual scope decision to the authoritative contract first; every
+  // publication path still requires all outcomes in that contract to pass.
+  if (incomplete.length)
+    throw Error(
+      "Unresolved required acceptance cannot be waived by a deployment instruction or agent-authored receipt: " +
+        incomplete.map((r) => r.id).join(", "),
+    );
   if (
     !Array.isArray(auth.knownIncomplete) ||
     auth.knownIncomplete.length !== incomplete.length ||

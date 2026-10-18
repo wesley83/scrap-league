@@ -1,0 +1,65 @@
+{
+  "release": "sl-475e681fb90505",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Default-resolution full race",
+      "status": "passed",
+      "durationMs": 50342,
+      "details": {
+        "utc": "2026-10-17T23:48:31.303Z",
+        "release": "sl-475e681fb90505",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "devicePixelRatio": 1.5,
+        "safeGraphics": false,
+        "lowEffects": false,
+        "canvas": [
+          1920,
+          753
+        ],
+        "cssCanvas": [
+          1280,
+          672
+        ],
+        "durationMs": 50243.09999996424,
+        "frames": 3003,
+        "hiddenMs": 0,
+        "p95FrameMs": 16.80000000000291,
+        "p99FrameMs": 16.89999999999418,
+        "longestFrameMs": 116.69999999999709,
+        "cars": 6,
+        "result": {
+          "dnf": false,
+          "laps": 2,
+          "elapsedMs": 47149,
+          "saved": true
+        },
+        "scope": "One complete six-car race through the real app loop at default renderer resolution and full effects; legal injected controller.",
+        "passed": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:40.978Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          708,
+          532
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:48:31.323Z",
+  "sourceHash": "d5463fe122c30415d82618cf1e5b7d7fc8c23d4bc6f9b402d13e3bab7624b8fa",
+  "serverSha256": "4adb53cbe44385e8967d1cc5ea6560eecd125a33d5d4b3a897344b494f0dbf00",
+  "labSha256": "2cd8660febf1207226b9084de5174aa68b916db7d1e2a03ea5f20ac1830e503b"
+}

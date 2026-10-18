@@ -1,5 +1,23 @@
 # Scrap League implementation and release status
 
+## Remaining-requirement follow-up
+
+The [current follow-up report](audit/2026-10-18-remaining-requirements/report.md) and `audit/current-acceptance.json` identify the actual candidate and verdict. The pinned handbook remains 2.10.0; map handbook-2.10-r2 declares 47 requirements and 102 named scenarios. Aggregate passing labels cannot substitute for a missing required scenario. Native desktop/process checks are explicitly excluded by the user; connector browser interaction, fresh-document offline recovery and real IndexedDB context termination remain required. The [scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) corrects the inventory's unsupported global-readiness demand without claiming provider-wide enforcement.
+
+The publisher records flushed phase journals, independently verifies backups, rechecks exact acceptance before every mutable entry promotion, checks public resource types/composed dependencies and supports inspected conditional forward recovery. Supported-command fixtures exercise ambiguous writes, post-write verification failures, changed acceptance, backup corruption, concurrent recovery and two-release rollback. These controlled-host observations are separate from actual production publication.
+
+Current official geometry has been recreated and exported through Workshop controls. Independent stable-identity binding verifies all twelve exports match authoritative source bytes and retain existing board/ghost references. Original CLI provenance remains historical fact. Broader browser work also found and repaired enlarged-text Workshop overflow and inspector focus loss. Rejected leaderboard times now offer explicit per-time retry with their original identity; permanent rejection still does not trigger automatic resubmission. Earlier provider burst errors are retained alongside the complete paced endpoint comparison, which does not promise provider-wide readiness or burst throughput.
+
+Local checks, hosted CI, commit, push and deployment remain separate states in the report and journals. The older sections below retain their historical observation dates and limits; they are not a substitute for the current ledger.
+
+## Handbook 2.10 audit — October 17, 2026
+
+The current local audit uses pinned handbook 2.10.0 and requirement-map revision handbook-2.10-r1. It found a missing-stylesheet startup failure and an alternate publisher path that interpreted an agent-written incomplete list as a waiver. Startup now requires the shared core/arcade style contracts before opening the game and offers independent reload recovery on failure. Both publisher operations require the same passed adopted outcomes; generic deploy instructions no longer bypass unresolved rows. The gate also checks the pinned guide, exact inventory and separate candidate-bound review records.
+
+The corrected campaign fixture also exposed a write/read inconsistency: storage accepted a malformed unfinished result that its reader later rejected. Result and progression validation now precede every result transaction, and the finish transition requires a terminal race. Verification binds to the actual current document, requires all laps before completion, waits for current dialog readiness and retains immutable run receipts.
+
+The [audit report](audit/2026-10-17-guide-2-10-audit/report.md) records actual current checks, failed setups, retained regressions, evidence reuse and remaining gaps. Earlier broad labels are not carried forward beyond their observed scope. In particular, form-route editor evidence does not certify every promised pointer/touch path, fresh documents do not prove browser-process restart, and policy probes do not establish an unsupported provider-wide readiness guarantee. Publisher phase journaling and supported-command recovery need separate evidence. Current changes are local; the prior deployment receipt remains historical. This audit does not claim full product acceptance or a new publication.
+
 ## Handbook second pass — October 17, 2026
 
 The second comparison fixes three confirmed recovery defects: Files could lose its export route after a database read failure; initial Workshop entry exposed controls before its source was ready; and installed clients could not recover failed native circuit links. Draft listing now isolates failures, editor entry validates before revealing controls and cancels stale navigation, and failed deep links recover an integrity-checked installed shell with an explicit cached-copy notice. Corrupt records and earlier installed releases remain preserved.

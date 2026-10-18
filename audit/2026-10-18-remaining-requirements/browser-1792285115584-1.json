@@ -1,0 +1,64 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Real IndexedDB termination before and after commit",
+      "status": "passed",
+      "durationMs": 7200,
+      "details": {
+        "database": "scrap-audit-termination-8a02c27d-289c-4f41-9553-2643a6dd85d1",
+        "observations": [
+          {
+            "phase": "before",
+            "events": [
+              {
+                "event": "baseline-committed",
+                "revision": 1
+              },
+              {
+                "event": "request-succeeded-transaction-incomplete"
+              }
+            ],
+            "terminatedAfterQualifiedSignal": true
+          },
+          {
+            "phase": "after",
+            "events": [
+              {
+                "event": "transaction-committed",
+                "revision": 2
+              }
+            ],
+            "terminatedAfterQualifiedSignal": true
+          }
+        ],
+        "lastCommittedSourceSurvived": true,
+        "scope": "Actual browser IndexedDB and Store.saveDraft, terminated Worker execution contexts with qualified transaction events. This is not an OS/browser-process crash or storage-device power-loss guarantee."
+      },
+      "qualification": {
+        "utc": "2026-10-18T00:58:28.373Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4430/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T00:58:35.584Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "7db5852b496264744a3bfcf8c24f813e66819aa149cb78129451cbe13a714b93",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

@@ -1,0 +1,56 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Practice and ghost",
+      "status": "passed",
+      "durationMs": 1687,
+      "details": {
+        "practice": {
+          "elapsedMs": 36239,
+          "laps": 1,
+          "place": 1,
+          "contacts": 0
+        },
+        "learned": {
+          "heading": 0,
+          "accelerate": true,
+          "steer": true,
+          "brake": true,
+          "boost": true
+        },
+        "trial": {
+          "elapsedMs": 102555,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "ghostFrames": 2052
+      },
+      "qualification": {
+        "utc": "2026-10-18T00:06:02.315Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4420/?reload-cup=1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1650,
+          747
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "workshop",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T00:06:04.010Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "2ec05f2667f2cddf460888df6ef2b2fc59978a371cfe74e2c9ddc2a28d8f5bf0",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

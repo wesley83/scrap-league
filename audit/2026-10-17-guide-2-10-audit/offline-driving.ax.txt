@@ -1,0 +1,35 @@
+Browser tab: 12, Title: "Scrap League — Make it. Race it.", URL: "http://127.0.0.1:4418/".
+0 AXWebArea Scrap League — Make it. Race it., URL: 127.0.0.1:4418/
+	1 container header
+		2 button Description: Scrap League home, ID: home
+			3 text SCRAP
+			4 text LEAGUE
+			5 text 04
+		7 container Game tools
+			8 button Description: Toggle sound, ID: sound-toggle
+			9 button Settings, ID: settings-button
+	11 container stage
+		12 image ID: world, Description: Overhead racing view. W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause
+		13 container screen-race
+			14 container
+				15 text POSITION
+				16 container hud-place
+					35 text 3 /6
+				18 text LAP
+				19 container hud-lap
+					36 text 1 /2
+				21 text RACE TIME
+				37 text 00:04.592
+				23 button Reset, ID: race-reset
+				24 button Pause, ID: pause-button
+			25 text YARD LOOP / QUICK RACE · 2 LAPS
+			26 container Description: Road ahead, ID: corner-hint
+				38 text Straight · find your line
+			29 container
+				39 text 89
+				31 text KM/H
+				32 progress indicator Description: Boost charge, Value: 60, ID: boost-bar
+				33 image Description: Circuit map and next checkpoint, ID: minimap
+			34 text W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause
+
+The focused UI element is 12 image ID: world, Description: Overhead racing view. W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause

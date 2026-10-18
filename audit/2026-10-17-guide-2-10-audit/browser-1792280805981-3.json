@@ -1,0 +1,77 @@
+{
+  "release": "sl-475e681fb90505",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Root and composed dependency parity",
+      "status": "passed",
+      "durationMs": 1933,
+      "details": {
+        "root": {
+          "font": "LeagueText, Arial, Helvetica, sans-serif",
+          "fontSize": "13px",
+          "color": "rgb(247, 240, 223)",
+          "background": "rgba(0, 0, 0, 0)",
+          "minHeight": "48px",
+          "height": 48,
+          "core": "1",
+          "arcade": "1",
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "composed": {
+          "font": "LeagueText, Arial, Helvetica, sans-serif",
+          "fontSize": "13px",
+          "color": "rgb(247, 240, 223)",
+          "background": "rgba(0, 0, 0, 0)",
+          "minHeight": "48px",
+          "height": 48,
+          "core": "1",
+          "arcade": "1",
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "results": [
+          {
+            "path": "/?style-fault=1",
+            "faultStatus": 503,
+            "reloadRecovered": true
+          },
+          {
+            "path": "/editor/yard-loop",
+            "faultStatus": 503,
+            "reloadRecovered": true
+          }
+        ],
+        "scope": "Actual browser, local include emulation; public host composition read separately"
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:46:44.045Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          708,
+          532
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:46:45.981Z",
+  "sourceHash": "d5463fe122c30415d82618cf1e5b7d7fc8c23d4bc6f9b402d13e3bab7624b8fa",
+  "serverSha256": "4adb53cbe44385e8967d1cc5ea6560eecd125a33d5d4b3a897344b494f0dbf00",
+  "labSha256": "2cd8660febf1207226b9084de5174aa68b916db7d1e2a03ea5f20ac1830e503b"
+}

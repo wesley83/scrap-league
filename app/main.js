@@ -914,7 +914,7 @@ function updateHUD() {
   }
 }
 async function finish() {
-  if (savingResult) return;
+  if (savingResult || !race || race.state !== "finished" || typeof race.dnf !== "boolean") return;
   savingResult = true;
   sound.stop();
   q("countdown").textContent = "";
@@ -1508,7 +1508,7 @@ function appendDataControls(body) {
       JSON.stringify(await store.exportBackup()),
     ),
   );
-  add("Submission status", async () => {
+  add("Submission status", async function submissionStatus() {
     const entries = await Promise.all(
         (await store.keys("outbox:")).map((k) => store.get(k)),
       ),
@@ -1524,6 +1524,23 @@ function appendDataControls(body) {
         entry.state +
         (entry.message ? " · " + entry.message : "");
       body.append(p);
+      if (entry.state === "rejected") {
+        const retry = document.createElement("button");
+        retry.textContent = "Retry this time";
+        retry.setAttribute("aria-label", "Retry time from " + entry.run.alias);
+        retry.onclick = async () => {
+          retry.disabled = true;
+          try {
+            await boards.retryRejected(entry.run.id);
+            await submissionStatus();
+          } catch (error) {
+            notify(error.message, true);
+          } finally {
+            retry.disabled = false;
+          }
+        };
+        body.append(retry);
+      }
     }
     dialog("Submission status", body, [
       {
@@ -1536,7 +1553,7 @@ function appendDataControls(body) {
           notify("Submission queue checked.");
         },
       },
-      { label: "Close" },
+      { label: "Back to settings", action: settingsDialog },
     ]);
   });
   const input = document.createElement("input");

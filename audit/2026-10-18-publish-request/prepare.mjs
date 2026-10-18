@@ -1,0 +1,23 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {spawnSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+import {verifyCandidateArtifacts} from '../../tools/release-gate.mjs';
+
+const root=path.resolve(import.meta.dirname,'../..'),dir=import.meta.dirname;
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+const prior=JSON.parse(await fs.readFile(path.join(root,'audit/2026-10-17-guide-2-10-audit/hashes.json'),'utf8'));
+for(const entry of prior.files)assert.equal(sha(await fs.readFile(path.join(root,entry.path))),entry.sha256,entry.path);
+const candidate=await verifyCandidateArtifacts(root);
+const requirements=JSON.parse(await fs.readFile(path.join(root,'requirements.json'),'utf8'));
+assert.equal(sha(await fs.readFile('C:/Users/Wesley/Documents/Codex/Pagelove/games/prism-breaker/GAME-DEVELOPMENT-BEST-PRACTICES.md')),requirements.governingGuide.sha256);
+const execution=spawnSync(process.execPath,['tools/deploy-pagelove.mjs'],{cwd:root,encoding:'utf8',input:'{"op":"deploy"}\n',timeout:20000});
+assert.equal(execution.error,undefined,execution.error?.message);
+const line=execution.stdout.split(/\r?\n/).find(line=>line.startsWith('{'));
+assert.ok(line,'No publisher result');
+const result=JSON.parse(line);
+assert.match(result.error,/Required acceptance is missing or not passed: J02/);
+await fs.writeFile(path.join(dir,'deployment-attempt.json'),JSON.stringify({utc:new Date().toISOString(),command:'node tools/deploy-pagelove.mjs',operation:'deploy',processExitCode:execution.status,result,deployStatus:'refused-before-authentication-or-staging',remoteWrites:0,credentialsSupplied:false},null,2)+'\n');
+await fs.writeFile(path.join(dir,'precommit-verification.json'),JSON.stringify({utc:new Date().toISOString(),retainedHashesChecked:prior.files.length,guideEdition:requirements.governingGuide.edition,guideDigest:requirements.governingGuide.sha256,candidate:{release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash},priorTests:{passed:115,failed:0},priorFinalOriginBrowserObservations:19,sourceChangesSinceValidation:false,publisherResult:result,productAcceptance:'not-accepted'},null,2)+'\n');
+console.log(JSON.stringify({retainedHashesChecked:prior.files.length,release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,deployment:result}));

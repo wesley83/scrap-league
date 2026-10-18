@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { DOMParser } from "linkedom";
 import { restoreRoot } from "./rollback.mjs";
+import { openDeploymentJournal, readDeploymentJournal, safeError } from "./deployment-journal.mjs";
 
 const root = path.resolve(fileURLToPath(new URL("../", import.meta.url)));
 const origin = "https://hire-poker-8313.onpagelove.com";
@@ -27,6 +28,38 @@ let key = "",
   backupDirectory = "",
   authenticated = false;
 let rollbackPlan = null;
+let journal = null, publicationPin = null, knownWrite = false, uncertainWrite = false;
+const publicationFingerprint = async () => sha(Buffer.concat(await Promise.all(
+  ["requirements.json", "audit/current-acceptance.json", "dist/release.json"].map(
+    name => fs.readFile(path.join(root, name)),
+  ),
+)));
+async function recheckPublication(stage, authorization) {
+  const candidate = await verifyRelease(root, stage, authorization);
+  if (publicationPin && await publicationFingerprint() !== publicationPin)
+    throw Error("Publication decision changed during promotion");
+  return candidate;
+}
+async function executeOperation(action) {
+  try {
+    const result = await action();
+    if (journal) {
+      result.journal = journal.relative;
+      await journal.record("operation-complete");
+    }
+    return result;
+  } catch (error) {
+    if (journal) {
+      await journal.record(uncertainWrite ? "outcome-unknown" : knownWrite ? "recovery-required" : "operation-failed",
+        { error: safeError(error), knownWrite, uncertainWrite });
+      error.message = safeError(error) + "; journal " + journal.relative;
+    }
+    throw error;
+  } finally {
+    await journal?.close(); journal = null; publicationPin = null;
+    knownWrite = uncertainWrite = false;
+  }
+}
 async function prepareRollback(id) {
   if (
     !authenticated ||
@@ -90,6 +123,15 @@ async function rollback() {
   if (!rollbackPlan) throw Error("Prepare a verified rollback first.");
   const plan = rollbackPlan;
   rollbackPlan = null;
+  journal = await openDeploymentJournal(root, "rollback", { origin, dav,
+    baseline: plan.id, candidate: plan.release,
+    scope: "Three root entries only; native routes and application data retained" });
+  await journal.record("preflight-passed");
+  for (const entry of plan.entries) {
+    if (sha(await fs.readFile(path.join(root, ".local/deployment-baselines", plan.id, backupRelativePath(entry.path)))) !== entry.hash)
+      throw Error("Rollback backup changed: " + entry.path);
+    await journal.record("backup-verified", { path: entry.path, sha256: entry.hash });
+  }
   const files = await restoreRoot(plan.entries, {
     read,
     write: (name, bytes, etag) =>
@@ -102,6 +144,13 @@ async function rollback() {
         body: bytes,
       }),
     equivalent,
+    record: async (state, detail) => {
+      if (state === "write-intent") uncertainWrite = true;
+      if (["entry-promoted-unverified", "authoring-readback-verified"].includes(state)) {
+        knownWrite = true; uncertainWrite = false;
+      }
+      await journal.record(state, detail);
+    },
   });
   for (const file of files) {
     const live = await read(
@@ -114,10 +163,13 @@ async function rollback() {
       !publicEquivalent(file.path, target.bytes, live.bytes)
     )
       throw Error("Public rollback mismatch: " + file.path);
+    await journal.record("entry-live-verified", { path: file.path,
+      status: live.status, sha256: sha(live.bytes) });
   }
   const receipt = {
     utc: new Date().toISOString(),
     origin,
+    journal: journal.relative,
     release: plan.release,
     files,
     scope: "Conditional root rollback; no asset or application-data deletion",
@@ -126,7 +178,67 @@ async function rollback() {
     path.join(root, "audit/rollback.json"),
     JSON.stringify(receipt, null, 2),
   );
+  await journal.record("live-verified", { release: plan.release });
   return receipt;
+}
+
+let recoveryPlan = null;
+async function prepareRecovery(relative) {
+  if (!authenticated) throw Error("Authenticate before preparing recovery");
+  const rows = await readDeploymentJournal(root, relative), identity = rows[0]?.identity;
+  if (rows[0]?.operation !== "deploy" || identity?.origin !== origin || identity?.dav !== dav)
+    throw Error("Recovery requires a deployment journal for this host");
+  const candidate = await verifyRelease(root, "staged");
+  if (identity.candidate?.sourceHash !== candidate.source.hash ||
+      identity.candidate?.outputHash !== candidate.outputHash ||
+      identity.decisionHash !== await publicationFingerprint())
+    throw Error("Recovery candidate or acceptance changed; review a new operation");
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z$/.test(identity.baseline))
+    throw Error("Invalid recovery baseline");
+  const directory = path.join(root, ".local/deployment-baselines", identity.baseline);
+  const saved = JSON.parse(await fs.readFile(path.join(directory, "baseline.json"), "utf8"));
+  if (saved.origin !== origin || saved.dav !== dav) throw Error("Recovery backup host changed");
+  for (const entry of saved.entries) {
+    if (entry.status === 200 && sha(await fs.readFile(path.join(directory, backupRelativePath(entry.path)))) !== entry.sha256)
+      throw Error("Recovery backup changed: " + entry.path);
+  }
+  for (const row of rows.filter(row => row.state === "backup-verified" && row.baseline?.relative)) {
+    if (sha(await fs.readFile(path.join(directory, backupRelativePath(row.path)))) !== row.baseline.sha256)
+      throw Error("Recovery backup changed: " + row.path);
+  }
+  const intents = new Map(rows.filter(row => row.state === "write-intent").map(row => [row.path, row]));
+  const entries = [];
+  for (const [name, intent] of intents) {
+    const current = await read(name);
+    const known = rows.filter(row => row.path === name && row.state === "authoring-readback-verified").at(-1);
+    const matchesTarget = current.status === 200 && [intent.targetSha256, known?.artifactSha256].includes(sha(current.bytes));
+    const matchesBefore = current.status === intent.baselineStatus && sha(current.bytes) === intent.baselineSha256;
+    if (!matchesTarget && !matchesBefore) throw Error("Unexpected remote state prevents recovery: " + name);
+    entries.push({ path: name, status: current.status, etag: current.etag, sha256: sha(current.bytes),
+      disposition: matchesTarget ? "candidate-present" : "previous-present" });
+  }
+  recoveryPlan = { journal: relative, entries };
+  return { prepared: true, recovery: relative, entries,
+    scope: "Conditional forward completion; retained original journal/backups; no deletes or blind write replay" };
+}
+async function recover() {
+  if (!recoveryPlan) throw Error("Prepare a verified recovery first");
+  const plan = recoveryPlan; recoveryPlan = null;
+  const recheck = async () => {
+    for (const entry of plan.entries) {
+      const current = await read(entry.path);
+      if (current.status !== entry.status || current.etag !== entry.etag || sha(current.bytes) !== entry.sha256)
+        throw Error("Remote state changed after recovery preparation: " + entry.path);
+    }
+  };
+  await recheck();
+  // A failed operation's original baseline describes pre-write state. Keep it
+  // immutable and capture a separate verified baseline for forward recovery.
+  await authenticate(key);
+  await recheck();
+  const result = await deploy();
+  await journal.record("recovered-operation", { fromJournal: plan.journal });
+  return { ...result, recoveredFrom: plan.journal };
 }
 
 function knownProviderFooter(element) {
@@ -221,6 +333,35 @@ export const publicEquivalent = (name, a, b) =>
     ? htmlIdentity(a, true) === htmlIdentity(b, true)
     : a.equals(b);
 
+function assertPublicType(name, response) {
+  const actual = response.type?.split(";")[0].trim().toLowerCase();
+  const expected = htmlResource(name) ? "text/html" : types[path.extname(name)]?.split(";")[0];
+  const aliases = { ".js": ["text/javascript", "application/javascript"],
+    ".ico": ["image/x-icon", "image/vnd.microsoft.icon"] };
+  if (response.status !== 200 || (expected && !(aliases[path.extname(name)] || [expected]).includes(actual)))
+    throw Error("Public resource status/type mismatch: " + name);
+}
+
+async function assertComposedEntry(file, live) {
+  assertPublicType(file.name, live);
+  const actual = new DOMParser().parseFromString(live.bytes.toString(), "text/html");
+  const source = new DOMParser().parseFromString(file.bytes.toString(), "text/html");
+  const includes = [...source.querySelectorAll("p\\:include")];
+  for (const include of includes) {
+    const resource = include.getAttribute("resource"), selector = include.getAttribute("selector");
+    if (!resource?.startsWith("/") || resource.includes("..")) throw Error("Unpinned composed dependency");
+    const local = resource.startsWith("/content/") ? root : path.join(root, "dist");
+    const dependency = new DOMParser().parseFromString(await fs.readFile(path.join(local,resource), "utf8"), "text/html");
+    const expected = dependency.querySelector(selector), observed = actual.querySelector(selector);
+    const wrap = node => Buffer.from("<html><head></head><body>" + node.outerHTML + "</body></html>");
+    if (!expected || !observed || !publicEquivalent("/composed.html", wrap(expected), wrap(observed)))
+      throw Error("Public composed dependency mismatch: " + file.name + " " + selector);
+  }
+  if (actual.querySelector("p\\:include")) throw Error("Unresolved public include: " + file.name);
+  if (actual.querySelector("#routed-track")?.getAttribute("data-track-id") !== source.querySelector("#routed-track")?.getAttribute("data-track-id"))
+    throw Error("Public route identity mismatch: " + file.name);
+}
+
 async function request(base, name, options = {}) {
   if (
     ![origin, dav].includes(base) ||
@@ -281,19 +422,28 @@ async function remember(name) {
   const r = await read(name);
   if (r.status === 200 && !r.etag)
     throw Error("Missing conditional-write ETag: " + name);
-  if (r.status === 200) await saveBaseline(backupDirectory, name, r);
+  if (r.status === 200) {
+    const relative = await saveBaseline(backupDirectory, name, r);
+    if (sha(await fs.readFile(path.join(backupDirectory, relative))) !== sha(r.bytes))
+      throw Error("Backup verification failed: " + name);
+    await journal?.record("backup-verified", { path: name, baseline: {
+      status: r.status, etag: r.etag, sha256: sha(r.bytes), relative,
+    } });
+  }
   baseline.set(name, r);
   return r;
 }
-async function put(name, bytes, immutable = false) {
+async function put(name, bytes, immutable = false, entry = false, authorization = null) {
   const before = baseline.get(name) || (await remember(name));
-  if (before.status === 200 && equivalent(name, bytes, before.bytes))
+  if (before.status === 200 && equivalent(name, bytes, before.bytes)) {
+    if (entry) await recheckPublication("staged", authorization);
     return {
       path: name,
       status: "unchanged",
       bytes: before.bytes.length,
       sha256: sha(before.bytes),
     };
+  }
   if (immutable && before.status === 200)
     throw Error("Immutable file conflict: " + name);
   const current = await read(name);
@@ -303,8 +453,13 @@ async function put(name, bytes, immutable = false) {
     current.status === 404
       ? { "If-None-Match": "*" }
       : { "If-Match": current.etag };
+  if (entry) await recheckPublication("staged", authorization);
   let response,
     ambiguous = false;
+  await journal?.record("write-intent", { path: name, entry,
+    targetSha256: sha(bytes), condition, baselineSha256: sha(current.bytes),
+    baselineStatus: current.status });
+  uncertainWrite = true;
   try {
     response = await request(dav, name, {
       method: "PUT",
@@ -316,8 +471,14 @@ async function put(name, bytes, immutable = false) {
       },
       body: bytes,
     });
+    if ([200, 201, 204].includes(response.status)) {
+      knownWrite = true; uncertainWrite = false;
+      await journal?.record(entry ? "entry-promoted-unverified" : "dependency-written-unverified",
+        { path: name, responseStatus: response.status, targetSha256: sha(bytes) });
+    }
   } catch {
     ambiguous = true;
+    await journal?.record("outcome-unknown", { path: name, entry, reason: "Write response unavailable; reconcile without replay" });
   }
   const after = await read(name);
   if (after.status !== 200 || !equivalent(name, bytes, after.bytes))
@@ -330,6 +491,9 @@ async function put(name, bytes, immutable = false) {
     );
   if (response && ![200, 201, 204].includes(response.status))
     throw Error("Write refused: " + name + " " + response.status);
+  knownWrite = true; uncertainWrite = false;
+  await journal?.record("authoring-readback-verified", { path: name, entry,
+    sha256: sha(after.bytes), etag: after.etag, reconciled: ambiguous });
   return {
     path: name,
     status: ambiguous ? "reconciled" : response.status,
@@ -400,6 +564,26 @@ async function authenticate(secret) {
 async function deploy(publicationAuthorization = null) {
   const verified = await verifyRelease(root, "local", publicationAuthorization);
   if (!authenticated) throw Error("Authenticate and read the baseline first");
+  publicationPin = await publicationFingerprint();
+  journal = await openDeploymentJournal(root, "deploy", { origin, dav,
+    candidate: { release: verified.release, sourceHash: verified.source.hash, outputHash: verified.outputHash },
+    previous: baseline.get("/release.json")?.status === 200
+      ? sha(baseline.get("/release.json").bytes) : null,
+    baseline: path.basename(backupDirectory), decisionHash: publicationPin });
+  await journal.record("preflight-passed");
+  const backupMeta = JSON.parse(await fs.readFile(path.join(backupDirectory, "baseline.json"), "utf8"));
+  if (backupMeta.origin !== origin || backupMeta.dav !== dav)
+    throw Error("Backup metadata host changed");
+  for (const name of ["/index.html", "/sw.js", "/release.json"]) {
+    const saved = baseline.get(name);
+    const meta = backupMeta.entries.find(entry => entry.path === name);
+    if (!meta || meta.status !== saved.status || meta.etag !== saved.etag || meta.sha256 !== sha(saved.bytes))
+      throw Error("Backup metadata changed: " + name);
+    if (saved?.status === 200 && sha(await fs.readFile(path.join(backupDirectory, backupRelativePath(name)))) !== sha(saved.bytes))
+      throw Error("Backup verification failed: " + name);
+    await journal.record("backup-verified", { path: name, baseline: {
+      status: saved.status, etag: saved.etag, sha256: sha(saved.bytes) } });
+  }
   const release = JSON.parse(
     await fs.readFile(path.join(root, "dist/release.json"), "utf8"),
   );
@@ -454,6 +638,7 @@ async function deploy(publicationAuthorization = null) {
   const publicFiles = [];
   for (const file of files) {
     const live = await read(file.name, true);
+    assertPublicType(file.name, live);
     if (
       live.status !== 200 ||
       !publicEquivalent(file.name, file.bytes, live.bytes)
@@ -467,15 +652,16 @@ async function deploy(publicationAuthorization = null) {
       type: live.type,
     });
   }
-  await verifyRelease(root, "staged", publicationAuthorization);
+  await journal.record("dependencies-staged", { files: publicFiles.length });
+  await recheckPublication("staged", publicationAuthorization);
   // Native routes are entry points too. Require staged acceptance or the exact
   // candidate authorization; included shells are already publicly verified.
   for (const file of nativeEntries) {
-    written.push(await put(file.name, file.bytes));
+    written.push(await put(file.name, file.bytes, false, true, publicationAuthorization));
     const live = await read(file.name, true);
     // Exact route source is read through DAV; public composition is covered by P07.
-    if (live.status !== 200)
-      throw Error("Native entry unavailable: " + file.name);
+    await assertComposedEntry(file, live);
+    await journal.record("entry-live-verified", { path: file.name, status: live.status, sha256: sha(live.bytes) });
     publicFiles.push({
       path: file.name,
       status: live.status,
@@ -485,13 +671,15 @@ async function deploy(publicationAuthorization = null) {
     });
   }
   const index = await fs.readFile(path.join(root, "dist/index.html"));
-  written.push(await put("/index.html", index));
+  written.push(await put("/index.html", index, false, true, publicationAuthorization));
   const publicIndex = await read("/", true);
+  assertPublicType("/index.html", publicIndex);
   if (
     publicIndex.status !== 200 ||
     !publicEquivalent("/index.html", index, publicIndex.bytes)
   )
     throw Error("Public entry semantic mismatch");
+  await journal.record("entry-live-verified", { path: "/index.html", status: publicIndex.status, sha256: sha(publicIndex.bytes) });
   // Pagelove may serialize authored HTML. Verify its semantics, then pin the exact
   // served bytes in the offline inventory; script/style bytes remain strict.
   const published = structuredClone(release);
@@ -515,16 +703,18 @@ async function deploy(publicationAuthorization = null) {
     ),
   );
   written.push(
-    await put("/release.json", Buffer.from(JSON.stringify(published, null, 2))),
+    await put("/release.json", Buffer.from(JSON.stringify(published, null, 2)), false, true, publicationAuthorization),
   );
-  written.push(await put("/sw.js", worker));
+  written.push(await put("/sw.js", worker, false, true, publicationAuthorization));
   for (const [name, bytes] of [
     ["/sw.js", worker],
     ["/release.json", Buffer.from(JSON.stringify(published, null, 2))],
   ]) {
     const live = await read(name, true);
+    assertPublicType(name, live);
     if (live.status !== 200 || !bytes.equals(live.bytes))
       throw Error("Public entry readback failed: " + name);
+    await journal.record("entry-live-verified", { path: name, status: live.status, sha256: sha(live.bytes) });
     publicFiles.push({
       path: name,
       status: live.status,
@@ -543,6 +733,7 @@ async function deploy(publicationAuthorization = null) {
   const receipt = {
     utc: new Date().toISOString(),
     origin,
+    journal: journal.relative,
     authoringHost: dav,
     release: release.release,
     sourceHash: verified.source.hash,
@@ -556,7 +747,7 @@ async function deploy(publicationAuthorization = null) {
         }
       : null,
     productAcceptance: publicationAuthorization
-      ? "Incomplete outcomes retained; explicitly authorized candidate publication"
+      ? "Required pre-promotion acceptance passed; historical operation receipt retained"
       : "Required pre-promotion acceptance passed",
     publication:
       "Immutable assets and authored content staged and publicly verified before conditional root entry promotion",
@@ -574,6 +765,7 @@ async function deploy(publicationAuthorization = null) {
     path.join(root, "audit/deployment.json"),
     JSON.stringify(receipt, null, 2),
   );
+  await journal.record("live-verified", { release: release.release, publicFiles: publicFiles.length });
   return {
     deployed: true,
     origin,
@@ -593,7 +785,7 @@ if (
   let buffer = "",
     busy = false;
   console.log(
-    "Ready for hidden JSON input: auth, deploy, publish-candidate, prepare-rollback, rollback, quit.",
+    "Ready for hidden JSON input: auth, deploy, publish-candidate, prepare-rollback, rollback, inspect-journal, prepare-recovery, recover, quit.",
   );
   process.stdin.on("data", async (chunk) => {
     if (chunk.includes("\u0003")) process.exit(0);
@@ -618,13 +810,19 @@ if (
         c.op === "auth"
           ? await authenticate(c.key)
           : c.op === "deploy"
-            ? await deploy()
+            ? await executeOperation(() => deploy())
             : c.op === "publish-candidate"
-              ? await deploy(c.authorization || "missing")
+              ? await executeOperation(() => deploy(c.authorization || "missing"))
               : c.op === "prepare-rollback"
                 ? await prepareRollback(c.baseline)
                 : c.op === "rollback"
-                  ? await rollback()
+                  ? await executeOperation(() => rollback())
+                  : c.op === "inspect-journal"
+                    ? { journal: c.journal, records: await readDeploymentJournal(root, c.journal) }
+                    : c.op === "prepare-recovery"
+                      ? await prepareRecovery(c.journal)
+                      : c.op === "recover"
+                        ? await executeOperation(() => recover())
                   : (() => {
                       throw Error("Unsupported operation");
                     })();

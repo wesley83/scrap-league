@@ -1,0 +1,175 @@
+Browser tab: 12, Title: "Scrap League — Make it. Race it.", URL: "http://127.0.0.1:4418/".
+0 AXWebArea Scrap League — Make it. Race it., URL: 127.0.0.1:4418/
+	1 container header
+		2 button Description: Scrap League home, ID: home
+			3 text SCRAP
+			4 text LEAGUE
+			5 text 04
+		53 text MAKE YOUR OWN LINE.
+		7 container Game tools
+			8 button Description: Toggle sound, ID: sound-toggle
+			9 button Settings, ID: settings-button
+			10 button Description: Toggle fullscreen, ID: fullscreen
+	11 container stage
+		12 image ID: world, Description: Overhead racing view. W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause
+		54 container screen-workshop
+			55 container
+				56 text TRACK WORKSHOP
+				57 text field (settable) Description: Track name, Value: Guide audit offline circuit, ID: track-name
+			58 button (disabled) Undo, Help: Undo the previous edit, ID: work-undo
+			59 button (disabled) Redo, ID: work-redo
+			60 button Files, ID: work-file
+			61 button Test drive, ID: work-test
+			62 text Start with a complete circuit. Select a road or object to edit it. Files opens templates and HTML import/export. Test drive returns to this draft; changes save automatically.
+			63 container
+				64 text Road piece
+				65 pop up button (collapsed, settable) Road piece, Value: Straight, ID: piece-kind, Secondary Actions: Expand
+					66 menu
+						67 (selected) Straight
+						68 Quarter bend
+						69 Hairpin
+						70 Width transition
+						71 Start straight
+				72 text Length
+				73 pop up button (collapsed, settable) Length, Value: 60, ID: piece-length, Secondary Actions: Expand
+					74 menu
+						75 (selected) 60
+						76 40
+						77 20
+				78 text Bend radius
+				79 pop up button (collapsed, settable) Bend radius, Value: 40, ID: piece-radius, Secondary Actions: Expand
+					80 menu
+						81 (selected) 40
+						82 20
+				83 text Turn
+				84 pop up button (collapsed, settable) Turn, Value: Right, ID: piece-turn, Secondary Actions: Expand
+					85 menu
+						86 (selected) Right
+						87 Left
+				88 button Append road, ID: place-road
+				89 button Connect last to first, ID: close-loop
+				90 button Suggest gates & grid, ID: setup-race
+				91 text Canvas tool
+				92 pop up button (collapsed, settable) Canvas tool, Value: Select, ID: editor-tool, Secondary Actions: Expand
+					93 menu
+						94 (selected) Select
+						95 Pan
+						96 Place boost pad
+						97 Place tire barrier
+						98 Place scrap island
+						99 Move selection
+				100 button Place object on selected road, ID: add-prop
+				101 button Add checkpoint on selected road, ID: add-gate
+				102 button Fit track, ID: fit-track
+				103 checkbox (settable, integer) Description: Five AI rivals, Value: 0, ID: test-ai
+				104 text Test laps
+				105 stepper (settable, integer) Test laps, Value: 3, ID: track-laps
+				106 text Scene
+				107 pop up button (collapsed, settable) Scene, Value: The yard, ID: track-scene, Secondary Actions: Expand
+					108 menu
+						109 (selected) The yard
+						110 Dockside
+						111 Foundry
+						112 Night shift
+				113 button Choose test car, ID: work-garage
+				114 heading Selection, Value: 3
+					115 text Selection
+				116 button Select all objects, ID: select-all
+				117 button Rotate −90°, ID: rotate-left
+				118 button Rotate +90°, ID: rotate-right
+				119 text Move X (m)
+				120 stepper (settable, integer) Move X (m), Value: 0, ID: move-x
+				121 text Move Z (m)
+				122 stepper (settable, integer) Move Z (m), Value: 0, ID: move-z
+				123 button Move selection, ID: move-group
+				124 button Add partial surface, ID: partial-patch
+				125 button Custom recipes, ID: recipes
+				126 button Preview HTML, ID: source-preview
+				127 button Publish with owner key, ID: publish-track
+				128 button Browse published circuits, ID: discover-tracks
+			129 container
+				130 image Description: Track editing canvas. Select pieces with the object list; use numeric fields for keyboard editing., ID: track-canvas
+				131 text METERS / TOP VIEW 
+				132 text 100%
+				133 button Description: Zoom in, ID: zoom-in
+				134 button Description: Zoom out, ID: zoom-out
+			135 container
+				136 text Objects
+				137 list Description: Track objects, ID: object-list
+					138 (selected) Road 1 · start
+					139 Road 2 · straight
+					140 Road 3 · straight
+					141 Road 4 · quarter
+					142 Road 5 · straight
+					143 Road 6 · quarter
+					144 Road 7 · straight
+					145 Road 8 · straight
+					146 Road 9 · straight
+					147 Road 10 · quarter
+					148 Road 11 · straight
+					149 Road 12 · quarter
+					150 Respawn 0
+					151 Respawn 1
+					152 Respawn 2
+					153 Respawn 3
+					154 Respawn 4
+					155 Respawn 5
+					156 Respawn 6
+					157 Grid 1
+					158 Grid 2
+					159 Grid 3
+					160 Grid 4
+					161 Grid 5
+					162 Grid 6
+					163 Finish
+					164 Gate 1
+					165 Gate 2
+					166 Gate 3
+					167 Gate 4
+					168 Gate 5
+					169 Gate 6
+				170 container object-fields
+					171 heading Road inspector, Value: 3
+						172 text Road inspector
+					173 container
+						174 text X (m)
+						175 stepper (settable, integer) X (m), Value: 40
+					176 container
+						177 text Z (m)
+						178 stepper (settable, integer) Z (m), Value: 0
+					179 container
+						180 text Heading (°)
+						181 stepper (settable, integer) Heading (°), Value: 0
+					182 container
+						183 text Length (m)
+						184 stepper (settable, integer) Length (m), Value: 60
+					185 container
+						186 text Entry width
+						187 stepper (settable, integer) Entry width, Value: 12
+					188 container
+						189 text Exit width
+						190 stepper (settable, integer) Exit width, Value: 12
+					191 button Apply fields, ID: apply-object
+					192 button Snap following pieces, ID: reflow-road
+					193 container
+						194 text Surface
+						195 pop up button (collapsed, settable) Surface, Value: Asphalt, ID: road-surface, Secondary Actions: Expand
+							196 menu
+								197 (selected) Asphalt
+								198 Gravel
+								199 Mud
+					200 button Paint entire piece, ID: apply-surface
+					201 button Delete selected, ID: delete-object
+				202 container validation
+					203 heading Ready to drive, Value: 3
+						204 text Ready to drive
+					205 text One closed route. Six grid positions. Gates checked.
+			210 text Draft saved · 07:46 PM
+			207 text 651 m · 12 pieces · Race-ready
+			208 text No test lap yet
+	49 container footer
+		50 text Progress saved on this device
+		209 text Offline pack verified
+		52 link Description: Pagelove, opens a new tab, Value: pagelove.com/
+
+The focused UI element is 0 AXWebArea Scrap League — Make it. Race it., URL: 127.0.0.1:4418/

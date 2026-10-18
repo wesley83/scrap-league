@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { writeFile } from "node:fs/promises";
+import { retainEvidence as writeFile } from "./evidence.mjs";
 import { loadContent } from "../tools/content.mjs";
 import { compile } from "../app/track.js";
 import { assemble, allBuilds, STARTER, standings } from "../app/builds.js";

@@ -203,6 +203,8 @@ function validateResult(value) {
     !Array.isArray(value.splits) ||
     value.splits.length > 9 ||
     value.splits.some((n) => !Number.isFinite(n) || n <= 0) ||
+    (!value.dnf &&
+      (!value.splits.length || value.splits.reduce((sum, n) => sum + n, 0) !== value.elapsedMs)) ||
     !Array.isArray(value.classification) ||
     value.classification.length > 6 ||
     value.classification.some(
@@ -434,6 +436,11 @@ export class Store {
     });
   }
   commitResult(result, ghost, cupId, round, { fault } = {}) {
+    try {
+      validateResult(result);
+    } catch (error) {
+      return Promise.reject(error);
+    }
     if (ghost && !validGhost(ghost))
       return Promise.reject(Error("Ghost exceeded its storage limit."));
     return this.atomic((tx, done, fail) =>
@@ -441,11 +448,13 @@ export class Store {
         read(tx, "progress", (old) => {
           try {
             const progress = old || freshProgress();
+            validateRecord("progress", progress);
             if (existing) {
               done(progress);
               return;
             }
             const next = applyResult(progress, result, cupId, round);
+            validateRecord("progress", next);
             put(tx, "progress", next);
             put(tx, "result:" + result.id, result);
             if (!result.dnf && result.mode !== "lesson")
@@ -726,6 +735,31 @@ export class Store {
           count++;
         }
         c.continue();
+      };
+    });
+  }
+  retryRejectedRun(id, now = Date.now()) {
+    return this.atomic((tx, done, fail) => {
+      const records = tx.objectStore("outbox"), key = "outbox:" + id;
+      const request = records.get(key);
+      request.onsuccess = () => {
+        const old = request.result;
+        if (!old || old.state !== "rejected") {
+          fail(Error("Only a rejected time can be retried explicitly."));
+          return;
+        }
+        const all = records.getAll();
+        all.onsuccess = () => {
+          if (all.result.filter(value => ["pending", "retry", "sending"].includes(value.state)).length >= 100) {
+            fail(Error("The pending score queue is full. Your rejected time is kept."));
+            return;
+          }
+          const next = { ...old, state: "retry", lease: null,
+            message: "Retry requested by player.",
+            nextAttemptAt: Math.max(now, old.serverRetryAt || 0) };
+          records.put(next, key);
+          done(next);
+        };
       };
     });
   }

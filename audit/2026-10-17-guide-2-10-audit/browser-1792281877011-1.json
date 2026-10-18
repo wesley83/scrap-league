@@ -1,0 +1,129 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Twelve events, reload and ending",
+      "status": "passed",
+      "durationMs": 42225,
+      "details": {
+        "rows": [
+          {
+            "event": 1,
+            "elapsedMs": 101713,
+            "laps": 3,
+            "place": 1,
+            "contacts": 109
+          },
+          {
+            "event": 2,
+            "elapsedMs": 140943,
+            "laps": 3,
+            "place": 1,
+            "contacts": 275
+          },
+          {
+            "event": 3,
+            "elapsedMs": 120270,
+            "laps": 3,
+            "place": 1,
+            "contacts": 592
+          },
+          {
+            "event": 4,
+            "elapsedMs": 134089,
+            "laps": 3,
+            "place": 1,
+            "contacts": 160
+          },
+          {
+            "event": 5,
+            "elapsedMs": 164551,
+            "laps": 3,
+            "place": 1,
+            "contacts": 446
+          },
+          {
+            "event": 6,
+            "elapsedMs": 160389,
+            "laps": 3,
+            "place": 2,
+            "contacts": 524
+          },
+          {
+            "event": 7,
+            "elapsedMs": 155783,
+            "laps": 3,
+            "place": 1,
+            "contacts": 543
+          },
+          {
+            "event": 8,
+            "elapsedMs": 137652,
+            "laps": 3,
+            "place": 1,
+            "contacts": 94
+          },
+          {
+            "event": 9,
+            "elapsedMs": 183116,
+            "laps": 3,
+            "place": 1,
+            "contacts": 81
+          },
+          {
+            "event": 10,
+            "elapsedMs": 162307,
+            "laps": 3,
+            "place": 1,
+            "contacts": 210
+          },
+          {
+            "event": 11,
+            "elapsedMs": 157608,
+            "laps": 3,
+            "place": 2,
+            "contacts": 1294
+          },
+          {
+            "event": 12,
+            "elapsedMs": 198983,
+            "laps": 3,
+            "place": 1,
+            "contacts": 367
+          }
+        ],
+        "reloadAfterFirstRound": true,
+        "allFourScenes": true,
+        "heldEnding": true,
+        "reducedMotion": true,
+        "lowEffects": true,
+        "muted": true,
+        "scope": "Legal synthetic controller through actual UI/persistence; no human enjoyment claim"
+      },
+      "qualification": {
+        "utc": "2026-10-18T00:03:54.780Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4420/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T00:04:37.011Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "2ec05f2667f2cddf460888df6ef2b2fc59978a371cfe74e2c9ddc2a28d8f5bf0",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

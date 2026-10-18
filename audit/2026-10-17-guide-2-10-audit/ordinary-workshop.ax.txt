@@ -1,0 +1,5 @@
+Browser tab: 11, Title: "Scrap League — Make it. Race it.", URL: "http://127.0.0.1:4418/".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 270
++			273 text Draft saved · 07:45 PM
+The focused UI element is 58 button Undo, Help: Undo the previous edit, ID: work-undo

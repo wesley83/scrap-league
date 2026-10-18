@@ -1,0 +1,170 @@
+Browser tab: 14, Title: "Guide 2.10 game audit", URL: "http://127.0.0.1:4420/__audit__/".
+0 AXWebArea Guide 2.10 game audit, URL: 127.0.0.1:4420/__audit__/
+	1 heading Guide 2.10 game audit, Value: 1
+		2 text Guide 2.10 game audit
+	3 text Isolated local fixtures. Instrumented app exports inspection only; synthetic controller results have explicit limits. Receipts are append-only.
+	11 container actions
+		12 button Garage compare and test
+		13 button Sharing and fallback
+		14 button Twelve events, reload and ending
+		15 button Gamepad menu, race and interruption
+		16 button New circuit, source and failed save
+		17 button Solo improvement and submission form
+		18 button Name form 200 percent reflow
+		19 button Foreground update discovery
+		20 button Quick race journey
+		21 button Input ownership and camera
+		22 button Manual throttle layout
+		23 button Leaderboard browse
+		24 button Workshop round trip
+		25 button Practice and ghost
+		26 button All tracks and recovery
+		27 button Render budget
+		28 button Save report
+		29 button Remaining browser checks
+		30 button Twenty-minute live-loop soak
+		31 button Default-resolution full race
+		32 button Closed-store Files recovery
+		33 button Workshop entry readiness and recovery
+		34 button Inspect campaign persistence
+		35 button Root and composed dependency parity
+		36 button Qualified first-entry failure and export
+		37 button Required CSS missing is recoverable
+	92 text [
+  {
+    "name": "Twelve events, reload and ending",
+    "status": "passed"
+  },
+  {
+    "name": "Garage compare and test",
+    "status": "passed"
+  },
+  {
+    "name": "Sharing and fallback",
+    "status": "passed"
+  },
+  {
+    "name": "Gamepad menu, race and interruption",
+    "status": "passed"
+  },
+  {
+    "name": "New circuit, source and failed save",
+    "status": "passed"
+  },
+  {
+    "name": "Solo improvement and submission form",
+    "status": "passed"
+  },
+  {
+    "name": "Name form 200 percent reflow",
+    "status": "passed"
+  },
+  {
+    "name": "Quick race journey",
+    "status": "passed"
+  },
+  {
+    "name": "Input ownership and camera",
+    "status": "passed"
+  },
+  {
+    "name": "Manual throttle layout",
+    "status": "passed"
+  },
+  {
+    "name": "Workshop round trip",
+    "status": "passed"
+  },
+  {
+    "name": "Practice and ghost",
+    "status": "passed"
+  },
+  {
+    "name": "All tracks and recovery",
+    "status": "passed"
+  },
+  {
+    "name": "Render budget",
+    "status": "passed"
+  },
+  {
+    "name": "Foreground update discovery",
+    "status": "passed"
+  },
+  {
+    "name": "Remaining browser checks",
+    "status": "passed"
+  },
+  {
+    "name": "Root and composed dependency parity",
+    "status": "passed"
+  },
+  {
+    "name": "Workshop entry readiness and recovery",
+    "status": "passed"
+  },
+  {
+    "name": "Qualified first-entry failure and export",
+    "status": "passed"
+  },
+  {
+    "name": "Closed-store Files recovery",
+    "status": "passed"
+  }
+]
+	5 container Description: Game under audit, ID: game
+		39 AXWebArea Scrap League — Make it. Race it., URL: 127.0.0.1:4420/?after-closed-store=1
+			40 container header
+				41 button Description: Scrap League home, ID: home
+					42 text SCRAP
+					43 text LEAGUE
+					44 text 04
+				45 text THE YARD IS YOURS.
+				46 container Game tools
+					47 button Description: Toggle sound, ID: sound-toggle
+					48 button Settings, ID: settings-button
+					49 button Description: Toggle fullscreen, ID: fullscreen
+			50 container stage
+				51 image ID: world, Description: Overhead racing view. W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause
+				52 container screen-start
+					53 container
+						54 text SCRAP LEAGUE / ARCADE RACING CLUB
+						55 heading SMALL CARS. BIG RIVALRIES., Value: 1
+							56 text SMALL CARS.
+							57 text BIG RIVALRIES.
+						58 text Find your line. Brake into the bend.
+						59 text Leave the rest in the dust.
+						60 button LET’S RACE 2 LAPS · 5 RIVALS · JUMP IN, ID: quick-race
+							61 text LET’S RACE
+							62 text 2 LAPS · 5 RIVALS · JUMP IN
+						63 button Continue the league SCRAP LEAGUE FINAL, ID: race-button
+							64 text Continue the league
+							65 text SCRAP LEAGUE FINAL
+						66 button Daily Spec 10-18 · UTC, ID: daily-button
+							67 text Daily Spec
+							68 text 10-18 · UTC
+						69 button Track Workshop MAKE YOUR OWN CIRCUIT, ID: workshop-button
+							70 text Track Workshop
+							71 text MAKE YOUR OWN CIRCUIT
+						72 button Time Trial, ID: trial-button
+						73 button Leaderboards, ID: leaderboard-button
+						74 button Garage, ID: garage-button
+						75 button Driving school, ID: lesson-button
+						76 text W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause
+					77 container
+						78 text YOUR FIRST CIRCUIT
+						79 heading THE YARD, Value: 2
+							80 text THE YARD
+						81 text SCRAP, RUBBER & SECOND CHANCES.
+					82 container
+						83 text YOUR MACHINE
+						84 text Mule / Courier / Road / Roll Cage
+						85 text YOUR PROGRESS
+						86 text 12 of 12 parts · 12/12 events
+						87 text THE WORKSHOP IS OPEN 12 circuits. Infinite possibilities.
+			88 container footer
+				89 text Progress saved on this device
+				93 text Offline pack unverified · check or repair from Settings
+				91 link Description: Pagelove, opens a new tab, Value: pagelove.com/
+
+The focused UI element is 39 AXWebArea Scrap League — Make it. Race it., URL: 127.0.0.1:4420/?after-closed-store=1

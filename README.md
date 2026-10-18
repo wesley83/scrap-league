@@ -32,6 +32,8 @@ Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390
 
 ## Design authority
 
+The current [requirement follow-up](audit/2026-10-18-remaining-requirements/report.md) builds on the [handbook 2.10 audit](audit/2026-10-17-guide-2-10-audit/report.md), uses the [pinned 2.10.0 snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md) and [current acceptance mapping](ACCEPTANCE.md#handbook-210-audit-adoption), and records the user's native-desktop exclusion and corrected policy-capability mapping. Older snapshots below preserve design provenance. `requirements.json` is the authoritative outcome/scenario inventory; `audit/current-acceptance.json` records the exact candidate's current verdict.
+
 This package applies snapshots of the [Pagelove document-first standard](references/DOCUMENT-FIRST-DEVELOPMENT.md) and the [game development handbook](references/GAME-DEVELOPMENT-BEST-PRACTICES.md). It adapts the [previous editor architecture](references/PRISM-BREAKER-ARCHITECTURE.md), including the support-confirmed distinction between trusted WebDAV authoring and validated application writes. [Reference provenance](references/README.md) identifies their canonical sources and precedence.
 
 Within this package, GAME-DESIGN owns player-facing rules, CONTENT-CATALOG owns initial content and tuning tables, TRACK-WORKSHOP owns editing and track geometry, ARCHITECTURE owns persistence and runtime contracts, and ACCEPTANCE owns evidence requirements. Resolve a conflict by correcting the dependent document and recording the change; do not silently introduce a second rule.

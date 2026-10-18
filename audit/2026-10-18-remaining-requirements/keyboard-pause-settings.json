@@ -1,0 +1,80 @@
+{
+  "utc": "2026-10-18T01:00:56.755Z",
+  "method": "Connector keyboard only, sequential Tab/Return and held driving keys; no click or programmatic focus in this journey",
+  "steps": [
+    {
+      "key": "Tab",
+      "focus": {
+        "id": "home",
+        "text": "SCRAPLEAGUE04"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "id": "sound-toggle",
+        "text": "Sound off"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "id": "settings-button",
+        "text": "Settings"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "id": "fullscreen",
+        "text": "Full screen"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "id": "world",
+        "text": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "id": "quick-race",
+        "text": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN"
+      }
+    },
+    {
+      "key": "w",
+      "durationMs": 1200,
+      "observedSpeed": "33",
+      "note": "Initial HUD selector failed; subsequent DOM inspection established hud-speed. No pause attempted before correction."
+    },
+    {
+      "key": "Tab",
+      "focus": "Settings"
+    },
+    {
+      "step": "settings-open",
+      "focus": "Back to pause",
+      "pausedClock": "00:15.658"
+    },
+    {
+      "step": "fresh-input-after-resume",
+      "focus": "world",
+      "keys": [
+        {
+          "key": "a",
+          "durationMs": 800
+        },
+        {
+          "key": "w",
+          "durationMs": 1000
+        }
+      ],
+      "observedSpeed": "18",
+      "clock": "01:48.375"
+    }
+  ],
+  "scope": "Observed focus restoration and accepted driving after settings; separate telemetry/fixture checks establish analog steering values"
+}

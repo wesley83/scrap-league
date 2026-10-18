@@ -109,7 +109,7 @@ http
       if (target.endsWith(path.sep + "main.js"))
         bytes = Buffer.from(
           bytes.toString() +
-            `\nconst productionInput=input;export const review = {setController(c){input=c||productionInput},get boards(){return boards},get race(){return race},get world(){return world},get workshop(){return workshop},get settings(){return settings},get progress(){return progress},get store(){return store},get content(){return content},get view(){return view},showSharedTimes,openLeaderboards,settingsDialog,input,beginRace,startTrack,finish,show,pause,resume,repairGraphics,openWorkshop,applyPreferences,clearInput};\n`,
+            `\nconst productionInput=input;export const review = {setController(c){input=c||productionInput},get boards(){return boards},get race(){return race},get world(){return world},get workshop(){return workshop},get settings(){return settings},get progress(){return progress},get store(){return store},get content(){return content},get view(){return view},showSharedTimes,openLeaderboards,settingsDialog,input,beginRace,startTrack,finish,show,pause,resume,repairGraphics,openWorkshop,applyPreferences,clearInput};window.__scrapAudit={ready,review,document};\n`,
         );
       res.writeHead(200, {
         "Content-Type":

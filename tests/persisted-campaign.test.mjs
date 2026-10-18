@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { writeFile } from "node:fs/promises";
+import { retainEvidence as writeFile } from "./evidence.mjs";
 import { IDBFactory } from "fake-indexeddb";
 import { openStore, freshProgress } from "../app/storage.js";
 import { loadContent } from "../tools/content.mjs";

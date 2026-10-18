@@ -420,6 +420,16 @@ export class Boards {
     }
     return outcomes;
   }
+  async retryRejected(id) {
+    if (!this.enabled || !this.store)
+      throw Error("Shared boards are unavailable. Your local result is kept.");
+    const entry = await this.store.get("outbox:" + id);
+    if (!entry || entry.state !== "rejected")
+      throw Error("Only a rejected time can be retried explicitly.");
+    validateRun(entry.run);
+    await this.store.retryRejectedRun(id, this.clock());
+    return this.pump();
+  }
   async refresh(run) {
     validateRun(run);
     return this.browse(run);

@@ -1,0 +1,242 @@
+export async function journeys({api,frame,doc,win,home,click,button,check,waitFor,delay,connect}) {
+ const trace=[];
+ const change=(selector,value)=>{
+  const el=doc().querySelector(selector);check(el,'Missing form control '+selector);
+  el.value=String(value);el.dispatchEvent(new (win().Event)('change',{bubbles:true}));
+  trace.push({action:'form-change',selector,value});
+ };
+ const activate=id=>{const el=doc().getElementById(id);check(el&&!el.disabled,'Missing/disabled action '+id);el.click();trace.push({action:'button',id});};
+ const selectRoad=index=>change('#object-list',api().workshop.track.pieces[index].id);
+ const blank=async name=>{
+  await home();await api().openWorkshop();await api().workshop.flush();
+  activate('work-file');await waitFor(()=>doc().querySelector('dialog').open&&doc().querySelector('[data-file="blank"]'));
+  doc().querySelector('[data-file="blank"]').click();await waitFor(()=>api().workshop.track.pieces.length===0);
+  trace.push({action:'new-blank'});change('#track-name',name);
+ };
+ const numericFields=(values)=>{for(const [key,value] of Object.entries(values)){
+  const el=doc().querySelector('[data-field="'+key+'"]');check(el,'Missing inspector '+key);el.value=String(value);
+  trace.push({action:'inspector-field',key,value});
+ }activate('apply-object');};
+ return {
+  'Rejected score explicit UI retry and navigation':async()=>{
+   await home();const a=api(),b=a.boards,prefix=doc().querySelector('base').href,{contentKeys,runHTML,RETENTION_MS}=await import(prefix+'boards.js'),keys=await contentKeys(a.content);
+   const run={id:crypto.randomUUID(),alias:'UI recovery fixture',mode:'trial',trackId:a.content.tracks[0].track.id,trackRevision:a.content.tracks[0].revision,rulesRevision:(await import(prefix+'builds.js')).RULES,buildRevision:[...keys.builds][0],assist:'steering-off:manual',laps:3,challenge:'',elapsedMs:90000,splits:[30000,30000,30000]};
+   const fetcher=b.fetcher;let posts=0,stored='',bodies=[];
+   b.fetcher=async(url,options={})=>{if(options.method==='POST'){posts++;bodies.push(options.body);if(posts===1)return new(win().Response)('Controlled 403',{status:403});const now=Date.now();stored=runHTML(run).replace('</li>',`<meta itemprop="receivedAt" content="${now}"><meta itemprop="expiresAt" content="${now+RETENTION_MS}"></li>`);throw Error('Controlled accepted response loss');}return new(win().Response)('<ul id="runs">'+stored+'</ul>');};
+   try{
+    await a.store.enqueueRun(run);await b.pump();check((await a.store.get('outbox:'+run.id)).state==='rejected','403 not retained rejected');await b.pump();check(posts===1,'Rejected run automatically retried');
+    click('quick-race');await waitFor(()=>a.race?.state==='racing');click('pause-button');const clock=a.race.time;button('Settings').click();button('Submission status').click();await waitFor(()=>doc().querySelector('#modal-title').textContent==='Submission status');
+    const retry=[...doc().querySelectorAll('button')].find(e=>e.getAttribute('aria-label')==='Retry time from '+run.alias);check(retry,'Explicit rejected retry control missing');retry.click();await waitFor(()=>doc().querySelector('#modal-content').textContent.includes(run.alias+' · 01:30.000 · confirmed'));
+    const entry=await a.store.get('outbox:'+run.id);check(entry.state==='confirmed'&&JSON.stringify(entry.run)===JSON.stringify(run)&&posts===2&&bodies.every(body=>body===runHTML(run)),'Retry changed captured identity or duplicated posting');
+    button('Back to settings').click();await waitFor(()=>doc().querySelector('#modal-title').textContent==='SETTINGS');button('Back to pause').click();button('Resume').click();await waitFor(()=>a.race.state==='racing');check(doc().activeElement.id==='world','Submission navigation lost racing focus');a.pause();
+    return{posts,originalId:run.id,finalState:entry.state,runUnchanged:true,lostResponseReconciled:true,navigation:['Pause','Settings','Submission status','Retry this time','Back to settings','Back to pause','Resume'],clockAtPause:clock,scope:'Actual DOM controls and IndexedDB with explicitly synthetic valid run and injected 403/acceptance-loss transport; live provider boundary separately qualified'};
+   }finally{b.fetcher=fetcher;}
+  },
+  'Complete pointer and touch creator round trips':async()=>{
+   const rows=[],prefix=doc().querySelector('base').href;
+   const {stepRace,aiInput}=await import(prefix+'simulation.js');
+   for(const pointerType of ['mouse','touch']){
+    trace.length=0;await blank('Verified '+pointerType+' creator');const w=api().workshop;
+    for(let n=0;n<8;n++){change('#piece-kind',n===0?'start':n%2?'quarter':'straight');activate('place-road');}
+    activate('close-loop');activate('setup-race');check(w.compiled.valid,'Blank creator loop invalid');
+    selectRoad(0);const initial=w.track.pieces[0].x;numericFields({x:initial+20});check(!w.compiled.valid,'Deliberate road gap not detected');numericFields({x:initial});check(w.compiled.valid,'Gap correction failed');
+    change('#road-surface','gravel');activate('apply-surface');selectRoad(1);activate('add-gate');
+    activate('fit-track');change('#editor-tool','pad');const canvas=w.canvas,rect=canvas.getBoundingClientRect(),point={x:(30-w.center.x)*w.scale+w.cw/2+w.pan.x,y:(0-w.center.z)*w.scale+w.ch/2+w.pan.y},capture=canvas.setPointerCapture;
+    const events=[];canvas.setPointerCapture=id=>events.push({capture:id});
+    const send=(type,x,y)=>{canvas.dispatchEvent(new(win().PointerEvent)(type,{pointerId:801,pointerType,button:0,buttons:type==='pointerup'?0:1,clientX:rect.left+x,clientY:rect.top+y,bubbles:true,cancelable:true}));events.push({type,x,y,pointerType});};
+    try{send('pointerdown',point.x,point.y);send('pointerup',point.x,point.y);check(w.track.props.length===1,'Canvas prop placement failed');
+     change('#editor-tool','move');const original=JSON.stringify(w.track);send('pointerdown',point.x,point.y);send('pointermove',point.x+40,point.y);send('pointercancel',point.x+40,point.y);check(JSON.stringify(w.track)===original,'Cancelled drag mutated source');
+    }finally{canvas.setPointerCapture=capture;}
+    const expected=JSON.stringify(w.track);change('#track-name','Changed name');activate('work-undo');check(JSON.stringify(w.track)===expected,'Undo did not restore source');activate('work-redo');check(w.track.name==='Changed name','Redo failed');change('#track-name','Verified '+pointerType+' creator');
+    change('#track-laps',1);activate('work-test');await waitFor(()=>api().race?.state==='racing');const race=api().race;doc().querySelector('#world').focus();
+    while(race.state==='racing'&&race.time<480){for(let n=0;n<240&&race.state==='racing';n++)stepRace(race,aiInput(race.cars.find(c=>c.id==='player'),race.track,'club',1,race.cars));await delay(0);}
+    const player=race.cars.find(c=>c.id==='player');check(race.state==='finished'&&!race.dnf&&player.lapTimes.length===1&&Number.isFinite(player.finishTime),'Creator test did not complete valid lap');await api().finish();button('Return to editor').click();await waitFor(()=>api().view==='workshop');
+    await w.flush();let exported;const download=w.download;w.download=(filename,html,type)=>{exported={filename,html,type};};
+    try{activate('work-file');await waitFor(()=>doc().querySelector('[data-file="export"]'));doc().querySelector('[data-file="export"]').click();}finally{w.download=download;}
+    check(exported?.html?.includes('urn:ScrapLeague:Track'),'Missing semantic export');const originalId=w.track.id,geometry=JSON.stringify(w.track.pieces.map(({id,...p})=>p));
+    const input=doc().querySelector('#import-track'),transfer=new(win().DataTransfer)();transfer.items.add(new(win().File)([exported.html],exported.filename,{type:'text/html'}));input.files=transfer.files;input.dispatchEvent(new(win().Event)('change',{bubbles:true}));
+    await waitFor(()=>button('Import as a new copy'));button('Import as a new copy').click();await waitFor(()=>w.track.id!==originalId);check(JSON.stringify(w.track.pieces.map(({id,...p})=>p))===geometry&&w.compiled.valid,'Imported copy changed geometry');await w.flush();
+    const importedId=w.track.id;const stored=await w.store.get('draft:'+importedId);check(stored,'Imported copy not saved');
+    rows.push({pointerType,events,trace:[...trace],originalId,importedId,exported,completedLapTimes:player.lapTimes,compiledValid:w.compiled.valid,scope:'Browser form/button activation and injected canvas PointerEvents; capture stub declared. Full lap uses legal accelerated controller. File delivery injected through real File/DataTransfer/input change; ordinary parser and confirmation controls, real IndexedDB. Connector keyboard and actual disk export separate.'});
+   }
+   return{rows};
+  },
+  'Critical input and enlarged text layout matrix':async()=>{
+   const a=api(),settings=structuredClone(a.settings),rows=[];
+   const enlarge=root=>{
+    const elements=[root,...root.querySelectorAll('*')],original=elements.map(el=>el.style.fontSize),sizes=elements.map(el=>parseFloat(win().getComputedStyle(el).fontSize));
+    elements.forEach((el,i)=>el.style.fontSize=sizes[i]*2+'px');
+    return {elements,sizes,restore:()=>elements.forEach((el,i)=>el.style.fontSize=original[i])};
+   };
+   try{
+    await home();await a.openWorkshop();await a.workshop.flush();
+    for(const [width,height]of [[320,568],[390,844],[844,390],[768,1024],[1024,768],[1440,900]]){
+     frame.style.width=width+'px';frame.style.height=height+'px';await delay(80);
+     check(win().innerWidth===width&&win().innerHeight===height,'Viewport change did not apply');
+     const root=doc().querySelector('#screen-workshop'),zoom=enlarge(root);await delay(80);
+     try{
+      const field=doc().querySelector('#track-name');field.focus();field.scrollIntoView({block:'center'});await delay(30);
+      const overflow=root.scrollWidth-root.clientWidth;
+      check(overflow<=1,'Workshop 200% text horizontal overflow '+overflow+'px at '+width+'x'+height);
+      check(doc().activeElement===field,'Workshop name focus lost');
+      const fr=field.getBoundingClientRect();check(fr.left>=0&&fr.right<=width+1&&fr.top>=0&&fr.bottom<=height+1,'Enlarged Workshop name cannot be brought into view');
+      rows.push({viewport:[win().innerWidth,win().innerHeight],surface:'Workshop',computedFontScale:2,measuredFieldFont:win().getComputedStyle(field).fontSize,overflow,focusedFieldVisible:true});
+      for(const [panel,selector,label]of [['tools','#piece-kind','Tools'],['inspector','#object-list','Inspector']]){
+       if(width<=700)[...doc().querySelectorAll('.editor-sheets button')].find(button=>button.textContent===label).click();
+       const pane=root.querySelector(panel==='tools'?'.palette':'.inspector'),control=root.querySelector(selector);
+       control.focus();control.scrollIntoView({block:'center'});await delay(30);
+       const overflow=pane.scrollWidth-pane.clientWidth,r=control.getBoundingClientRect();
+       check(overflow<=1,'Enlarged '+panel+' panel overflows '+overflow+'px at '+width+'x'+height);
+       check(r.left>=0&&r.right<=width+1&&r.top>=0&&r.bottom<=height+1,'Enlarged '+panel+' control cannot be brought into view');
+       rows.push({viewport:[win().innerWidth,win().innerHeight],surface:'Workshop '+panel,computedFontScale:2,overflow,focusedFieldVisible:true});
+      }
+      if(width<=700)[...doc().querySelectorAll('.editor-sheets button')].find(button=>button.textContent==='Track').click();
+     }finally{zoom.restore();}
+     click('settings-button');await waitFor(()=>doc().querySelector('#modal-title').textContent==='SETTINGS');
+     const modal=doc().querySelector('dialog'),enlarged=enlarge(modal);await delay(80);
+     try{
+      const field=modal.querySelector('input:not([type=checkbox]):not([type=range]):not([type=file])');
+      check(field,'Driver-name field missing');field.focus();field.scrollIntoView({block:'center'});await delay(30);
+      const overflow=modal.scrollWidth-modal.clientWidth,r=field.getBoundingClientRect(),m=modal.getBoundingClientRect();
+      check(overflow<=1,'Settings 200% text horizontal overflow '+overflow+'px at '+width+'x'+height);
+      check(r.left>=m.left&&r.right<=m.right+1&&r.top>=m.top&&r.bottom<=m.bottom+1,'Enlarged Settings field cannot be brought into view');
+      rows.push({viewport:[win().innerWidth,win().innerHeight],surface:'Settings',computedFontScale:2,measuredFieldFont:win().getComputedStyle(field).fontSize,overflow,focusedFieldVisible:true});
+     }finally{enlarged.restore();modal.close();}
+    }
+    return {rows,scope:'Actual iframe CSS viewport and every computed descendant font explicitly doubled, with focused-field visibility/scroll checks. This is text-size emulation, not OS zoom, physical phone or a full WCAG certification.'};
+   }finally{Object.assign(a.settings,settings);a.applyPreferences();frame.style.width='1280px';frame.style.height='720px';}
+  },
+  'Complete injected gamepad pause settings resume':async()=>{
+   await home();const a=api(),nav=win().navigator,prior=Object.getOwnPropertyDescriptor(nav,'getGamepads');
+   const pad={axes:[0,0],buttons:Array.from({length:17},()=>({pressed:false,value:0}))};
+   const press=async n=>{pad.buttons[n]={pressed:true,value:1};await delay(120);pad.buttons[n]={pressed:false,value:0};await delay(250);};
+   const settings=structuredClone(a.settings);
+   Object.defineProperty(nav,'getGamepads',{configurable:true,value:()=>[pad]});
+   try{
+    a.settings.autoAccelerate=false;a.settings.assist=false;a.settings.sensitivity=1;a.applyPreferences();
+    click('quick-race');await waitFor(()=>a.race?.state==='racing');
+    pad.axes[0]=0.7;pad.buttons[7]={pressed:true,value:0.8};await delay(180);
+    const before=a.input();check(before.steer>0.5&&before.throttle>0.5,'Gamepad driving not accepted');
+    pad.axes[0]=0;pad.buttons[7]={pressed:false,value:0};await press(9);check(a.race.state==='paused','Start did not pause');
+    const clock=a.race.time;await press(13);check(doc().activeElement.textContent==='Settings','D-pad did not reach Settings');
+    await press(0);check(doc().querySelector('#modal-title').textContent==='SETTINGS','A did not open nested settings');
+    await press(1);check(doc().querySelector('#modal-title').textContent==='PAUSED','B did not return to pause');
+    check(a.race.time===clock,'Race clock moved in nested settings');await press(0);await waitFor(()=>a.race.state==='racing');
+    check(doc().activeElement.id==='world','Resume did not restore gameplay focus');
+    pad.axes[0]=-0.7;pad.buttons[7]={pressed:true,value:0.8};await delay(180);
+    const after=a.input();check(after.steer<-.5&&after.throttle>.5,'Fresh gamepad control lost after settings');
+    pad.axes[0]=0;pad.buttons[7]={pressed:false,value:0};a.pause();
+    return {before,after,clockStopped:true,menuSequence:['Start','D-pad down','A Settings','B Back to pause','A Resume'],scope:'Injected navigator gamepad through actual game loop and menu handlers; no physical controller/native desktop claim'};
+   }finally{if(prior)Object.defineProperty(nav,'getGamepads',prior);else delete nav.getGamepads;Object.assign(a.settings,settings);a.applyPreferences();}
+  },
+  'Complete injected touch pause settings resume':async()=>{
+   const a=api(),settings=structuredClone(a.settings),rows=[];
+   try{
+    for(const [width,height]of [[390,844],[844,390]])for(const layout of ['pad','buttons'])for(const leftHanded of [false,true]){
+     await home();frame.style.width=width+'px';frame.style.height=height+'px';
+     Object.assign(a.settings,{touch:true,touchLayout:layout,leftHanded,autoAccelerate:false,assist:false,sensitivity:1});a.applyPreferences();
+     click('quick-race');await waitFor(()=>a.race?.state==='racing');
+     const pad=doc().querySelector(layout==='pad'?'#steering-pad':'[data-hold="right"]'),gas=doc().querySelector('[data-hold="throttle"]');
+     const restored=[],captures=[];
+     for(const el of [pad,gas]){const method=el.setPointerCapture;el.setPointerCapture=id=>captures.push(id);restored.push(()=>el.setPointerCapture=method);}
+     const event=(el,type,id,ratio=.85)=>{const r=el.getBoundingClientRect();el.dispatchEvent(new (win().PointerEvent)(type,{pointerId:id,pointerType:'touch',isPrimary:id===501,button:0,buttons:type==='pointerup'?0:1,clientX:r.left+r.width*ratio,clientY:r.top+r.height/2,bubbles:true,cancelable:true}));};
+     try{
+      event(pad,'pointerdown',501);event(gas,'pointerdown',502);const before=a.input();
+      check(before.steer>.2&&before.throttle===1,'Two-contact touch driving not accepted');await delay(150);
+      click('pause-button');check(a.race.state==='paused','Touch pause failed');const clock=a.race.time;
+      const neutral=a.input();check(neutral.steer===0&&neutral.throttle===0,'Pause retained touch ownership');
+      button('Settings').click();await waitFor(()=>doc().querySelector('#modal-title').textContent==='SETTINGS');
+      button('Back to pause').click();check(a.race.time===clock,'Nested touch settings advanced race');button('Resume').click();await waitFor(()=>a.race.state==='racing');
+      const resumed=a.input();check(resumed.steer===0&&resumed.throttle===0,'Resume replayed old touch contacts');
+      event(pad,'pointerdown',503);event(gas,'pointerdown',504);const after=a.input();check(after.steer>.2&&after.throttle===1,'Fresh touch after settings was lost');
+      event(pad,'pointerup',503);event(gas,'pointerup',504);check(a.input().steer===0&&a.input().throttle===0,'Release left touch held');
+      rows.push({viewport:[win().innerWidth,win().innerHeight],layout,leftHanded,before,neutral,resumed,after,captures,clockStopped:true});
+     }finally{for(const restore of restored)restore();a.clearInput();a.pause();}
+    }
+    return {rows,scope:'Complete injected touch contact + ordinary native button activation journeys, portrait/landscape, both layouts/sides. Pointer capture is explicitly stubbed for synthetic contacts; actual trusted pointer/canvas checks are separate, and physical touch is excluded.'};
+   }finally{Object.assign(a.settings,settings);a.applyPreferences();frame.style.width='1280px';frame.style.height='720px';}
+  },
+  'Real IndexedDB termination before and after commit':async()=>{
+   const prefix=frame.contentDocument.querySelector('base').href;
+   const {openStore}=await import(prefix+'storage.js');
+   const database='scrap-audit-termination-'+crypto.randomUUID();
+   const track=structuredClone(api().content.tracks[0].track);track.name='Last committed draft';
+   const observations=[];
+   const terminateAt=phase=>new Promise((resolve,reject)=>{
+    const worker=new Worker('/__audit__/storage-worker.js',{type:'module'});
+    const events=[];let complete=false;
+    const timer=setTimeout(()=>{worker.terminate();reject(Error('Termination fixture did not establish '+phase+' boundary'));},10000);
+    worker.onerror=e=>{clearTimeout(timer);worker.terminate();reject(Error(e.message));};
+    worker.onmessage=({data})=>{
+     events.push(data);
+     if(data.event==='fixture-error'||data.event.startsWith('unexpected')){
+      clearTimeout(timer);worker.terminate();reject(Error('Unqualified termination boundary: '+JSON.stringify(events)));return;
+     }
+     if(data.event===(phase==='before'?'request-succeeded-transaction-incomplete':'transaction-committed')){
+      complete=true;worker.terminate();clearTimeout(timer);resolve({phase,events,terminatedAfterQualifiedSignal:complete});
+     }
+    };
+    worker.postMessage({prefix,database,track,phase});
+   });
+   observations.push(await terminateAt('before'));
+   let store=await openStore({name:database}),record=await store.get('draft:'+track.id);
+   check(record.track.name==='Last committed draft'&&record.revision===1,'Uncommitted transaction survived termination or previous draft was lost');store.close();
+   observations.push(await terminateAt('after'));
+   store=await openStore({name:database});record=await store.get('draft:'+track.id);
+   check(record.track.name==='Committed before termination'&&record.revision===2,'Committed transaction lost after termination');store.close();
+   return {database,observations,lastCommittedSourceSurvived:true,
+    scope:'Actual browser IndexedDB and Store.saveDraft, terminated Worker execution contexts with qualified transaction events. This is not an OS/browser-process crash or storage-device power-loss guarantee.'};
+  },
+  'Recreate twelve official circuits in Workshop':async()=>{
+   const originals=api().content.tracks.map(item=>structuredClone(item.track));
+   const exports=[];
+   for(const original of originals){
+    trace.length=0;await blank(original.name);
+    change('#track-scene',original.scenePreset);change('#track-laps',original.laps);
+    for(let i=0;i<original.pieces.length;i++){
+     const p=original.pieces[i];change('#piece-kind',p.kind);
+     if(['straight','start','taper'].includes(p.kind))change('#piece-length',p.length);
+     if(['quarter','hairpin'].includes(p.kind)){change('#piece-radius',p.radius);change('#piece-turn',p.turn);}
+     activate('place-road');
+     if(i===0)numericFields({x:p.x,z:p.z,heading:p.heading*180/Math.PI});
+    }
+    activate('close-loop');activate('setup-race');
+    for(const patch of original.patches){
+     const index=original.pieces.findIndex(p=>p.id===patch.pieceId);selectRoad(index);
+     activate('partial-patch');
+     for(const key of ['surface','start','end','lateralMin','lateralMax']){
+      const el=doc().querySelector('[data-patch="'+key+'"]');check(el,'Missing patch field '+key);el.value=String(patch[key]);
+      trace.push({action:'patch-field',key,value:patch[key]});
+     }
+     activate('patch-apply');
+    }
+    for(const prop of original.props){
+     const prefix=frame.contentDocument.querySelector('base').href;
+     const {compile,nearest}=await import(prefix+'track.js');
+     const road=nearest(compile(original),prop.x,prop.z);
+     const index=original.pieces.findIndex(p=>p.id===road?.pieceId);
+     check(index>=0,'Object blueprint has no nearest road');selectRoad(index);change('#editor-tool',prop.kind);activate('add-prop');
+     numericFields({x:prop.x,z:prop.z,heading:prop.heading*180/Math.PI,length:prop.length,width:prop.width});
+    }
+    const w=api().workshop;await w.flush();check(w.compiled.valid,original.slug+' recreated geometry invalid: '+JSON.stringify(w.compiled.problems));
+    check(w.track.pieces.length===original.pieces.length,'Road count changed');
+    check(w.track.gates.length===original.gates.length&&w.track.spawns.length===original.spawns.length,'Race setup count changed');
+    for(let i=0;i<original.pieces.length;i++)for(const key of ['kind','x','z','heading','width','exitWidth',...(['quarter','hairpin'].includes(original.pieces[i].kind)?['radius','turn']:['length'])]){
+     const a=w.track.pieces[i][key],b=original.pieces[i][key];check(typeof a==='number'?Math.abs(a-b)<1e-8:a===b,original.slug+' UI shape differs at '+i+'/'+key);
+    }
+    let exported=null;const originalDownload=w.download;
+    try{w.download=(filename,html,type)=>{exported={filename,html,type};};activate('work-file');await waitFor(()=>doc().querySelector('dialog').open&&doc().querySelector('[data-file="export"]'));doc().querySelector('[data-file="export"]').click();}
+    finally{w.download=originalDownload;}
+    check(exported?.html?.includes('urn:ScrapLeague:Track'),'Ordinary export control did not produce semantic HTML');
+    const record={utc:new Date().toISOString(),slug:original.slug,entry:frame.contentWindow.location.href,release:frame.contentDocument.querySelector('base').href.split('/').filter(Boolean).at(-1),
+     method:'Browser-executed native form/button commands from New blank track; geometry never assigned directly. Synthetic form activation; not physical keyboard/touch proof.',
+     originalCreation:'Historical CLI; this is a new Workshop recreation and export, not a claim about original history.',
+     pendingBinding:'Stable resource IDs/catalog metadata and inactive piece parameters require independently reviewed binding before reuse as official sources.',
+     trace:[...trace],exported};
+    const response=await fetch('/__audit__/exports',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(record)});check(response.ok,'Export receipt not retained');
+    exports.push({slug:original.slug,pieces:w.track.pieces.length,patches:w.track.patches.length,props:w.track.props.length,gates:w.track.gates.length,actions:trace.length});
+   }
+   return {exports,scope:'Twelve present-tense UI recreations/exports; stable binding and independent semantic comparison recorded separately. This does not repair historical CLI provenance.'};
+  },
+ };
+}

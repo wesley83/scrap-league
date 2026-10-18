@@ -1,0 +1,812 @@
+{
+  "utc": "2026-10-18T00:12:19.784Z",
+  "candidate": "sl-b63afc9cbb2339",
+  "latest": [
+    {
+      "name": "Twelve events, reload and ending",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/",
+      "scope": "Legal synthetic controller through actual UI/persistence; no human enjoyment claim"
+    },
+    {
+      "name": "Garage compare and test",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1",
+      "scope": "Workshop test garage; all parts are legitimately available. Bench handling measurements are a separate receipt."
+    },
+    {
+      "name": "Sharing and fallback",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1",
+      "scope": "Production share function executed by a browser fixture with injected navigator APIs; no OS share sheet or external message sent."
+    },
+    {
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "New circuit, source and failed save",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1",
+      "scope": "Native form/button route; canvas dragging is a separate fixture"
+    },
+    {
+      "name": "Solo improvement and submission form",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Name form 200 percent reflow",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Quick race journey",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Input ownership and camera",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Manual throttle layout",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Workshop round trip",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Practice and ghost",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "All tracks and recovery",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Render budget",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1",
+      "scope": "Canvas render cost, not physical phone FPS"
+    },
+    {
+      "name": "Foreground update discovery",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1",
+      "scope": "Injected worker adapter through production lifecycle and visible controls; natural real-worker update checked separately"
+    },
+    {
+      "name": "Remaining browser checks",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967654-17.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1"
+    },
+    {
+      "name": "Root and composed dependency parity",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282063108-18.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?reload-cup=1",
+      "scope": "Actual browser, local include emulation; public host composition read separately"
+    },
+    {
+      "name": "Workshop entry readiness and recovery",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282108873-19.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?parity-return=1792282062577"
+    },
+    {
+      "name": "Qualified first-entry failure and export",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282176529-20.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?entry-readiness=1"
+    },
+    {
+      "name": "Closed-store Files recovery",
+      "status": "passed",
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282227978-21.json",
+      "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+      "entry": "http://127.0.0.1:4420/?qualified-entry=1792282176179",
+      "scope": "Actual browser IndexedDB close and normal Files/export controls; store reconnection is fixture teardown."
+    }
+  ],
+  "allAttempts": [
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280194981-1.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Required CSS missing is recoverable",
+      "status": "failed",
+      "error": "Fault fixture did not omit arcade.css"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280226673-2.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Required CSS missing is recoverable",
+      "status": "failed",
+      "error": "Missing required CSS allowed ordinary game entry without recovery"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280242982-3.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Garage compare and test",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280243009-4.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Sharing and fallback",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280250181-5.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280252307-6.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "New circuit, source and failed save",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280254293-7.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Solo improvement and submission form",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280254744-8.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Name form 200 percent reflow",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280256767-9.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Quick race journey",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280257472-10.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Input ownership and camera",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280257934-11.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Manual throttle layout",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280258145-12.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Workshop round trip",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280259438-13.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Practice and ghost",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280259628-14.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "All tracks and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262742-15.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Render budget",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262994-16.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Foreground update discovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Required CSS missing is recoverable",
+      "status": "failed",
+      "error": "Missing required CSS allowed ordinary game entry without recovery"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Garage compare and test",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Sharing and fallback",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "New circuit, source and failed save",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Solo improvement and submission form",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Name form 200 percent reflow",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Quick race journey",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Input ownership and camera",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Manual throttle layout",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Workshop round trip",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Practice and ghost",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "All tracks and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Render budget",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280262999-17.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Foreground update discovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280263003-18.json",
+      "release": "sl-8c38d2602f174d",
+      "name": "Remaining browser checks",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280686327-1.json",
+      "release": "sl-475e681fb90505",
+      "name": "Root and composed dependency parity",
+      "status": "failed",
+      "error": "Fixture load event timed out: /?style-fault=1"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280744538-2.json",
+      "release": "sl-475e681fb90505",
+      "name": "Root and composed dependency parity",
+      "status": "failed",
+      "error": "Timed out"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280805981-3.json",
+      "release": "sl-475e681fb90505",
+      "name": "Root and composed dependency parity",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280829017-4.json",
+      "release": "sl-475e681fb90505",
+      "name": "Garage compare and test",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280829039-5.json",
+      "release": "sl-475e681fb90505",
+      "name": "Sharing and fallback",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280836215-6.json",
+      "release": "sl-475e681fb90505",
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280838455-7.json",
+      "release": "sl-475e681fb90505",
+      "name": "New circuit, source and failed save",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280840599-8.json",
+      "release": "sl-475e681fb90505",
+      "name": "Solo improvement and submission form",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280841132-9.json",
+      "release": "sl-475e681fb90505",
+      "name": "Name form 200 percent reflow",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280843462-10.json",
+      "release": "sl-475e681fb90505",
+      "name": "Quick race journey",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280844152-11.json",
+      "release": "sl-475e681fb90505",
+      "name": "Input ownership and camera",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280844625-12.json",
+      "release": "sl-475e681fb90505",
+      "name": "Manual throttle layout",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280844875-13.json",
+      "release": "sl-475e681fb90505",
+      "name": "Workshop round trip",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280846267-14.json",
+      "release": "sl-475e681fb90505",
+      "name": "Practice and ghost",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280846508-15.json",
+      "release": "sl-475e681fb90505",
+      "name": "All tracks and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849634-16.json",
+      "release": "sl-475e681fb90505",
+      "name": "Render budget",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849873-17.json",
+      "release": "sl-475e681fb90505",
+      "name": "Foreground update discovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Root and composed dependency parity",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Garage compare and test",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Sharing and fallback",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "New circuit, source and failed save",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Solo improvement and submission form",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Name form 200 percent reflow",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Quick race journey",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Input ownership and camera",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Manual throttle layout",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Workshop round trip",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Practice and ghost",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "All tracks and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Render budget",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849881-18.json",
+      "release": "sl-475e681fb90505",
+      "name": "Foreground update discovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280849891-19.json",
+      "release": "sl-475e681fb90505",
+      "name": "Remaining browser checks",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280911323-21.json",
+      "release": "sl-475e681fb90505",
+      "name": "Default-resolution full race",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792280952021-22.json",
+      "release": "sl-475e681fb90505",
+      "name": "Workshop entry readiness and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281004781-23.json",
+      "release": "sl-475e681fb90505",
+      "name": "Qualified first-entry failure and export",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281047338-24.json",
+      "release": "sl-475e681fb90505",
+      "name": "Closed-store Files recovery",
+      "status": "failed",
+      "error": "Closed store did not show recovery warning"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281311364-1.json",
+      "release": "sl-475e681fb90505",
+      "name": "Closed-store Files recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281375266-2.json",
+      "release": "sl-475e681fb90505",
+      "name": "Twelve events, reload and ending",
+      "status": "failed",
+      "error": "Cannot read properties of null (reading 'id')"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281576447-1.json",
+      "release": "sl-475e681fb90505",
+      "name": "Inspect campaign persistence",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281754946-2.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Twelve events, reload and ending",
+      "status": "failed",
+      "error": "Timed out"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281877011-1.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Twelve events, reload and ending",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281944674-2.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Garage compare and test",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281944705-3.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Sharing and fallback",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281951911-4.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281954785-5.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "New circuit, source and failed save",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281957572-6.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Solo improvement and submission form",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281958087-7.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Name form 200 percent reflow",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281960792-8.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Quick race journey",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281961565-9.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Input ownership and camera",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281962054-10.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Manual throttle layout",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281962308-11.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Workshop round trip",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281964010-12.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Practice and ghost",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281964269-13.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "All tracks and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967397-14.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Render budget",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967632-15.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Foreground update discovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Twelve events, reload and ending",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Garage compare and test",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Sharing and fallback",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "New circuit, source and failed save",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Solo improvement and submission form",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Name form 200 percent reflow",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Quick race journey",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Input ownership and camera",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Manual throttle layout",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Workshop round trip",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Practice and ghost",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "All tracks and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Render budget",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967642-16.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Foreground update discovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792281967654-17.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Remaining browser checks",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282063108-18.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Root and composed dependency parity",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282108873-19.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Workshop entry readiness and recovery",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282176529-20.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Qualified first-entry failure and export",
+      "status": "passed"
+    },
+    {
+      "file": "audit/2026-10-17-guide-2-10-audit/browser-1792282227978-21.json",
+      "release": "sl-b63afc9cbb2339",
+      "name": "Closed-store Files recovery",
+      "status": "passed"
+    }
+  ]
+}
