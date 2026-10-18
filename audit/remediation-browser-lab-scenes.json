@@ -1,0 +1,123 @@
+{
+  "release": "sl-1feba7265a8b3f",
+  "utc": "2026-10-16T14:10:42.603Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Scene and renderer budgets",
+      "status": "passed",
+      "detail": {
+        "rows": [
+          {
+            "track": "yard-loop",
+            "coldRenderMs": 159.5,
+            "calls": 166,
+            "triangles": 11740
+          },
+          {
+            "track": "tin-can-alley",
+            "coldRenderMs": 149.90000000596046,
+            "calls": 166,
+            "triangles": 12404
+          },
+          {
+            "track": "gravel-shift",
+            "coldRenderMs": 133.30000001192093,
+            "calls": 167,
+            "triangles": 12852
+          },
+          {
+            "track": "dockside-dash",
+            "coldRenderMs": 98.5,
+            "calls": 170,
+            "triangles": 13384
+          },
+          {
+            "track": "container-switchback",
+            "coldRenderMs": 117.30000001192093,
+            "calls": 168,
+            "triangles": 12740
+          },
+          {
+            "track": "salt-flat-sprint",
+            "coldRenderMs": 101.7000000178814,
+            "calls": 170,
+            "triangles": 16208
+          },
+          {
+            "track": "furnace-bend",
+            "coldRenderMs": 110.90000000596046,
+            "calls": 167,
+            "triangles": 11956
+          },
+          {
+            "track": "mudworks",
+            "coldRenderMs": 126,
+            "calls": 168,
+            "triangles": 14656
+          },
+          {
+            "track": "crusher-circuit",
+            "coldRenderMs": 139.30000001192093,
+            "calls": 168,
+            "triangles": 13728
+          },
+          {
+            "track": "night-sort",
+            "coldRenderMs": 106.2999999821186,
+            "calls": 167,
+            "triangles": 15024
+          },
+          {
+            "track": "redline-ridge",
+            "coldRenderMs": 94.5,
+            "calls": 169,
+            "triangles": 15708
+          },
+          {
+            "track": "the-big-salvage",
+            "coldRenderMs": 81.89999997615814,
+            "calls": 170,
+            "triangles": 16020
+          }
+        ],
+        "scenes": [
+          {
+            "title": "THE GATES ARE OPEN.",
+            "held": true,
+            "calls": 52
+          },
+          {
+            "title": "TAKE IT TO THE DOCKS.",
+            "held": true,
+            "calls": 54
+          },
+          {
+            "title": "KEEP THE FURNACE LIT.",
+            "held": true,
+            "calls": 53
+          },
+          {
+            "title": "ONE LAST NIGHT SHIFT.",
+            "held": true,
+            "calls": 53
+          },
+          {
+            "title": "THE YARD IS YOURS.",
+            "held": true,
+            "calls": 52
+          }
+        ],
+        "allBuilds": 81,
+        "gpuWithinBudget": true,
+        "scope": "Real WebGL rendering with source modules; scene fixture does not grant campaign completion"
+      },
+      "utc": "2026-10-16T14:07:06.356Z"
+    }
+  ]
+}

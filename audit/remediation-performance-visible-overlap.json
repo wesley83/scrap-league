@@ -1,0 +1,309 @@
+{
+  "release": "sl-f1dfa500e23edf",
+  "utc": "2026-10-16T15:31:12.312Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Injected gamepad, large text and touch interruption",
+      "status": "passed",
+      "detail": {
+        "emulatedGamepad": true,
+        "rangeAdjustment": true,
+        "startPauseResume": true,
+        "disconnect": true,
+        "touchCancellation": true,
+        "textScale": "200% computed body font, settings dialog",
+        "scope": "Injected browser input; no physical controller or device claim"
+      },
+      "utc": "2026-10-16T15:05:43.446Z"
+    },
+    {
+      "name": "Save browser evidence",
+      "status": "passed",
+      "detail": "Saved browser receipt",
+      "utc": "2026-10-16T15:09:21.265Z"
+    },
+    {
+      "name": "Twenty-minute rendering and simulation soak",
+      "status": "failed",
+      "detail": {
+        "durationMs": 1200018.199999988,
+        "hiddenMs": 0,
+        "frames": 68952,
+        "sceneCycles": 40,
+        "viewport": {
+          "width": 1233,
+          "height": 720
+        },
+        "visibleCanvas": {
+          "left": 16,
+          "top": 0.2083333432674408,
+          "right": 1248.666748046875,
+          "bottom": 720.2083333432674,
+          "windowWidth": 1280,
+          "windowHeight": 720
+        },
+        "p95FrameMs": 17.4000000001397,
+        "p99FrameMs": 34.800000000046566,
+        "p95WorkMs": 7.0999999940395355,
+        "p99WorkMs": 13,
+        "p95SimulationMs": 1.9000000059604645,
+        "p95RenderMs": 5,
+        "budgets": {
+          "calls": 54,
+          "triangles": 16096
+        },
+        "heaps": [
+          {
+            "ms": 0,
+            "heap": 46779828,
+            "geometries": 15,
+            "textures": 7
+          },
+          {
+            "ms": 30001.70000000595,
+            "heap": 45167454,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 60002.10000000597,
+            "heap": 46182046,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 90002.40000000596,
+            "heap": 45034693,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 120002.80000000598,
+            "heap": 50295380,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 150003.40000000596,
+            "heap": 44841074,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 180003.60000000597,
+            "heap": 58361140,
+            "geometries": 11,
+            "textures": 3
+          },
+          {
+            "ms": 210003.90000000596,
+            "heap": 56522414,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 240004.20000000595,
+            "heap": 64132648,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 270004.70000000595,
+            "heap": 47828675,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 300005.1000000059,
+            "heap": 50819223,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 330005.300000006,
+            "heap": 48222218,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 360005.700000006,
+            "heap": 53159818,
+            "geometries": 13,
+            "textures": 5
+          },
+          {
+            "ms": 390006.00000000594,
+            "heap": 52383237,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 420006.40000000596,
+            "heap": 48089141,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 450006.800000006,
+            "heap": 47159753,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 480007.200000006,
+            "heap": 63264273,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 510007.50000000594,
+            "heap": 59109599,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 540007.800000006,
+            "heap": 72271172,
+            "geometries": 11,
+            "textures": 3
+          },
+          {
+            "ms": 570008.1000000059,
+            "heap": 60556081,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 600008.6000000059,
+            "heap": 67709427,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 630027.5000000059,
+            "heap": 53261423,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 660009.300000006,
+            "heap": 72719183,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 690009.700000006,
+            "heap": 47008953,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 720010.200000006,
+            "heap": 45118963,
+            "geometries": 13,
+            "textures": 5
+          },
+          {
+            "ms": 750010.400000006,
+            "heap": 51373077,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 780010.800000006,
+            "heap": 49352395,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 810011.200000006,
+            "heap": 47041230,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 840011.6000000059,
+            "heap": 51593886,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 870012.500000006,
+            "heap": 46281653,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 900012.200000006,
+            "heap": 56255047,
+            "geometries": 11,
+            "textures": 3
+          },
+          {
+            "ms": 930012.6000000059,
+            "heap": 58246093,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 960012.900000006,
+            "heap": 66188667,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 990013.3000000059,
+            "heap": 55710025,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1020013.6000000059,
+            "heap": 65480463,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1050014.000000006,
+            "heap": 59356014,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1080014.400000006,
+            "heap": 59902134,
+            "geometries": 14,
+            "textures": 6
+          },
+          {
+            "ms": 1110014.8000000059,
+            "heap": 49204025,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1140015.100000006,
+            "heap": 50728839,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1170015.500000006,
+            "heap": 65620341,
+            "geometries": 9,
+            "textures": 1
+          }
+        ],
+        "scope": "Available-browser WebGL and real six-car fixed-step simulation with legal AI input; no stored rewards, no hardware/human requirement",
+        "withinFrameBudget": false
+      },
+      "utc": "2026-10-16T15:29:33.155Z"
+    }
+  ]
+}

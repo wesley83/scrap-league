@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-17T22:40:22.951Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "owned": [],
+  "created": [],
+  "mirrors": [],
+  "routes": [],
+  "checks": [
+    {
+      "name": "complete trial boundary fixture",
+      "state": "failed",
+      "detail": "fetch failed",
+      "durationMs": 83
+    },
+    {
+      "name": "complete daily boundary fixture",
+      "state": "failed",
+      "detail": "fetch failed",
+      "durationMs": 3
+    }
+  ],
+  "attempts": [],
+  "cleanup": [],
+  "scope": "Actual public application endpoints on this host, using nonce-owned empty policy mirrors with unique run namespaces. Only resource paths/type namespaces differ from retained production policy; no live policy or player record is changed.",
+  "passed": false
+}

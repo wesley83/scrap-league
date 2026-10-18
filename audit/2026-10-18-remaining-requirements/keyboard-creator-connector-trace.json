@@ -1,0 +1,340 @@
+{
+  "utc": "2026-10-18T02:14:25.733Z",
+  "keys": [
+    {
+      "step": "gap-qualified-focus-retained",
+      "gap": "491 m · 8 pieces · 4 problems"
+    },
+    {
+      "step": "gap-corrected-focus-retained"
+    },
+    {
+      "step": "trusted-driving-samples",
+      "samples": [
+        {
+          "type": "keydown",
+          "code": "KeyW",
+          "trusted": true,
+          "at": 54467.60000002384,
+          "view": "race",
+          "state": "racing",
+          "focus": "world",
+          "input": {
+            "steer": 0,
+            "throttle": 1,
+            "brake": 0,
+            "handbrake": false,
+            "boost": false
+          },
+          "player": {
+            "x": 105.08851972558845,
+            "z": 48.1499387574174,
+            "heading": 1.5728252222462074,
+            "vx": -0.017282232625571253,
+            "vz": 8.823483980432982
+          }
+        },
+        {
+          "type": "keyup",
+          "code": "KeyW",
+          "trusted": true,
+          "at": 55587.40000003576,
+          "view": "race",
+          "state": "racing",
+          "focus": "world",
+          "input": {
+            "steer": 0,
+            "throttle": 0,
+            "brake": 0,
+            "handbrake": false,
+            "boost": false
+          },
+          "player": {
+            "x": 105.0620146163545,
+            "z": 61.135424563220965,
+            "heading": 1.5728498075046882,
+            "vx": -0.029348257732481692,
+            "vz": 14.292807651120512
+          }
+        },
+        {
+          "type": "keydown",
+          "code": "KeyA",
+          "trusted": true,
+          "at": 55636.10000002384,
+          "view": "race",
+          "state": "racing",
+          "focus": "world",
+          "input": {
+            "steer": -1,
+            "throttle": 0,
+            "brake": 0,
+            "handbrake": false,
+            "boost": false
+          },
+          "player": {
+            "x": 105.06054833631636,
+            "z": 61.84966425544707,
+            "heading": 1.5726543610541286,
+            "vx": -0.029281443196659183,
+            "vz": 14.27907145672309
+          }
+        },
+        {
+          "type": "keyup",
+          "code": "KeyA",
+          "trusted": true,
+          "at": 56354.60000002384,
+          "view": "race",
+          "state": "racing",
+          "focus": "world",
+          "input": {
+            "steer": 0,
+            "throttle": 0,
+            "brake": 0,
+            "handbrake": false,
+            "boost": false
+          },
+          "player": {
+            "x": 104.95176267477044,
+            "z": 71.976072069554,
+            "heading": 1.415336384374479,
+            "vx": -0.08536346292552736,
+            "vz": 13.425608120740328
+          }
+        }
+      ]
+    },
+    {
+      "step": "ordinary-document-reload-to-recover-saved-keyboard-track"
+    }
+  ],
+  "download": "C:\\Users\\Wesley\\Downloads\\track-cc5a68ae.html",
+  "downloadHTML": "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Keyboard Circuit restored</title></head><body>\n<article itemscope itemtype=\"urn:ScrapLeague:Track\">\n<p itemprop=\"id\">cc5a68ae-00e7-44c7-a45f-149d26c308d1</p>\n<p itemprop=\"slug\">track-cc5a68ae</p>\n<p itemprop=\"schemaVersion\">1</p>\n<h1 itemprop=\"name\">Keyboard Circuit restored</h1>\n<p itemprop=\"description\">Brake before the bend. Accelerate as the road opens.</p>\n<p itemprop=\"pieceCatalogRevision\">pieces-v1</p>\n<p itemprop=\"laps\">1</p>\n<p itemprop=\"scenePreset\">yard</p>\n<p itemprop=\"musicPreset\">yard</p>\n<section><h2>pieces</h2><ol data-collection=\"pieces\"><li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">fb0400ed-aa7d-495e-9d68-732921668975</span><span itemprop=\"kind\">start</span><span itemprop=\"x\">0</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">15ad7c83-7ca1-418d-b312-3633cea4f80e</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">15ad7c83-7ca1-418d-b312-3633cea4f80e</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">60</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">97df0a6a-89d3-4aee-9837-3efcba42b1e6</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">97df0a6a-89d3-4aee-9837-3efcba42b1e6</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">100</span><span itemprop=\"z\">39.99999999999999</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">2b196ca0-4465-4422-b127-8976b028cdba</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">2b196ca0-4465-4422-b127-8976b028cdba</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">100</span><span itemprop=\"z\">100</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">58749a20-620e-4c22-8ae2-9fafd9a39345</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">58749a20-620e-4c22-8ae2-9fafd9a39345</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">60.00000000000001</span><span itemprop=\"z\">140</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">5067a2a4-8491-4af0-a120-343a756e7844</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">5067a2a4-8491-4af0-a120-343a756e7844</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">7.105427357601002e-15</span><span itemprop=\"z\">140</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">2de54acd-c736-4982-a16d-193d725261fc</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">2de54acd-c736-4982-a16d-193d725261fc</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">-40</span><span itemprop=\"z\">100</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">6ef48e8b-6f03-4437-8319-d4d31d66eb38</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">6ef48e8b-6f03-4437-8319-d4d31d66eb38</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">-40.000000000000014</span><span itemprop=\"z\">40</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">fb0400ed-aa7d-495e-9d68-732921668975</span></li></ol></section>\n<section><h2>patches</h2><ol data-collection=\"patches\"><li itemscope itemtype=\"urn:ScrapLeague:SurfacePatch\"><span itemprop=\"id\">7f29d96a-081a-4cd5-a2b3-6732fa85bfcd</span><span itemprop=\"pieceId\">fb0400ed-aa7d-495e-9d68-732921668975</span><span itemprop=\"surface\">gravel</span><span itemprop=\"start\">0</span><span itemprop=\"end\">60</span><span itemprop=\"lateralMin\">-6</span><span itemprop=\"lateralMax\">6</span></li></ol></section>\n<section><h2>gates</h2><ol data-collection=\"gates\"><li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">618d7e35-1085-4052-865e-720c5054d576</span><span itemprop=\"kind\">finish</span><span itemprop=\"pieceId\">fb0400ed-aa7d-495e-9d68-732921668975</span><span itemprop=\"distance\">45</span><span itemprop=\"order\">0</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">d9076f5d-8c5a-44cc-8d46-dbebbdb8a5af</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">15ad7c83-7ca1-418d-b312-3633cea4f80e</span><span itemprop=\"distance\">31.41592653589793</span><span itemprop=\"order\">1</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">affd95cd-60fe-42f1-9ff4-626cca4eb2d2</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">97df0a6a-89d3-4aee-9837-3efcba42b1e6</span><span itemprop=\"distance\">20.43362938564087</span><span itemprop=\"order\">2</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">7a6dcec0-08e3-451a-85cb-fcbc0cd87146</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">2b196ca0-4465-4422-b127-8976b028cdba</span><span itemprop=\"distance\">58.69911184307751</span><span itemprop=\"order\">3</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">3d4b7c66-c5eb-4c08-8e29-61da6f550b76</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">5067a2a4-8491-4af0-a120-343a756e7844</span><span itemprop=\"distance\">34.13274122871838</span><span itemprop=\"order\">4</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">38a3feb3-b79d-4b8a-aeca-eaceaca93cda</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">6ef48e8b-6f03-4437-8319-d4d31d66eb38</span><span itemprop=\"distance\">9.566370614359158</span><span itemprop=\"order\">5</span></li></ol></section>\n<section><h2>spawns</h2><ol data-collection=\"spawns\"><li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">0dc23301-f3e9-4a88-98e5-cae2d31f99c0</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">50</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">618d7e35-1085-4052-865e-720c5054d576</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">2bfe4877-0c79-48fc-8b56-bc31eeab73a8</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">100</span><span itemprop=\"z\">65.43362938564087</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">affd95cd-60fe-42f1-9ff4-626cca4eb2d2</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">eaa65fcd-3509-44e5-9e91-8b1fc7a11c1e</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">59.13274122871838</span><span itemprop=\"z\">140</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">7a6dcec0-08e3-451a-85cb-fcbc0cd87146</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">618de783-f419-44dd-8bba-d29caa5d1da3</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">-33.17981057323816</span><span itemprop=\"z\">122.33494366979187</span><span itemprop=\"heading\">4.119911184307753</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">3d4b7c66-c5eb-4c08-8e29-61da6f550b76</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">d8b01856-f62a-4189-ba1a-ed138531855b</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">-37.365993582261105</span><span itemprop=\"z\">25.757653499077392</span><span itemprop=\"heading\">5.076548245743668</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">38a3feb3-b79d-4b8a-aeca-eaceaca93cda</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">40511066-474c-4841-8d62-3b515611aa22</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">36</span><span itemprop=\"z\">-2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">1</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">b153c5e7-1ee6-4f2a-8fd2-00095413f942</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">36</span><span itemprop=\"z\">2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">2</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">744f5143-c1ce-4d84-a024-4835ba77747f</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">28</span><span itemprop=\"z\">-2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">3</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">9c9d4812-5d90-434f-b8d8-71394711c7f6</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">28</span><span itemprop=\"z\">2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">4</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">6296ef58-a030-4f94-9dbb-60671d174580</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">20</span><span itemprop=\"z\">-2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">5</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">03a4dac9-07e1-4d12-9688-e7657f6e2cc6</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">20</span><span itemprop=\"z\">2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">6</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">c90ee50a-bee0-4939-acaf-8fd7afd6b8f2</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">91.58992192778605</span><span itemprop=\"z\">15.46274602575949</span><span itemprop=\"heading\">0.9103981633974483</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">d9076f5d-8c5a-44cc-8d46-dbebbdb8a5af</span></li></ol></section>\n<section><h2>props</h2><ol data-collection=\"props\"><li itemscope itemtype=\"urn:ScrapLeague:Prop\"><span itemprop=\"id\">e2c8b724-3965-44c6-a05f-a8ec5e850d78</span><span itemprop=\"kind\">pad</span><span itemprop=\"x\">30</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"length\">8</span><span itemprop=\"width\">6</span><span itemprop=\"duration\">1</span><span itemprop=\"damping\">0.2</span></li></ol></section>\n<section><h2>recipes</h2><ol data-collection=\"recipes\"></ol></section>\n</article></body></html>\n",
+  "importChooser": {
+    "status": "unavailable",
+    "error": "No filechooser event within 15 seconds; injected File/Input route is verified separately"
+  },
+  "record": {
+    "keys": [
+      {
+        "type": "keydown",
+        "code": "Escape",
+        "trusted": true,
+        "at": 20304.100000023842,
+        "view": "race",
+        "state": "paused",
+        "focus": "",
+        "input": {
+          "steer": 0,
+          "throttle": 0,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "player": {
+          "x": 36,
+          "z": -2.5,
+          "heading": 0,
+          "vx": 0,
+          "vz": 0
+        }
+      },
+      {
+        "type": "keyup",
+        "code": "Escape",
+        "trusted": true,
+        "at": 20387.399999976158,
+        "view": "race",
+        "state": "paused",
+        "focus": "",
+        "input": {
+          "steer": 0,
+          "throttle": 0,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "player": {
+          "x": 36,
+          "z": -2.5,
+          "heading": 0,
+          "vx": 0,
+          "vz": 0
+        }
+      },
+      {
+        "type": "keydown",
+        "code": "KeyW",
+        "trusted": true,
+        "at": 199914.19999998808,
+        "view": "race",
+        "state": "racing",
+        "focus": "world",
+        "input": {
+          "steer": 0,
+          "throttle": 1,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "player": {
+          "x": -10.10158597764828,
+          "z": 143.87474183050156,
+          "heading": -2.983651878970739,
+          "vx": -0.09152493727486202,
+          "vz": -0.01457802276329357
+        }
+      },
+      {
+        "type": "keyup",
+        "code": "KeyW",
+        "trusted": true,
+        "at": 200313.19999998808,
+        "view": "race",
+        "state": "racing",
+        "focus": "world",
+        "input": {
+          "steer": 0,
+          "throttle": 0,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "player": {
+          "x": -10.532943874612709,
+          "z": 143.76855411647273,
+          "heading": -2.969584396142477,
+          "vx": -1.9497204591817878,
+          "vz": -0.455608235654183
+        }
+      },
+      {
+        "type": "keydown",
+        "code": "KeyA",
+        "trusted": true,
+        "at": 200362.60000002384,
+        "view": "race",
+        "state": "racing",
+        "focus": "world",
+        "input": {
+          "steer": -1,
+          "throttle": 0,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "player": {
+          "x": -10.629883377431746,
+          "z": 143.74499679756545,
+          "heading": -2.9663052230432023,
+          "vx": -1.9387815768118086,
+          "vz": -0.453983924641897
+        }
+      },
+      {
+        "type": "keyup",
+        "code": "KeyA",
+        "trusted": true,
+        "at": 200646.30000001192,
+        "view": "race",
+        "state": "racing",
+        "focus": "world",
+        "input": {
+          "steer": 0,
+          "throttle": 0,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "player": {
+          "x": -11.158884969067623,
+          "z": 143.58281558531235,
+          "heading": -2.9828005225845917,
+          "vx": -1.8144863236289914,
+          "vz": -0.5977293830494713
+        }
+      }
+    ],
+    "driven": {
+      "trackId": "cc5a68ae-00e7-44c7-a45f-149d26c308d1",
+      "state": "finished",
+      "dnf": false,
+      "laps": 1,
+      "playerLap": 1,
+      "completedLapTimes": [
+        187.6471716861089
+      ],
+      "finishTime": 187.6471716861089,
+      "result": {
+        "id": "e020a860-5dbb-4c3a-a550-2307b1c53997",
+        "mode": "workshop",
+        "key": "workshop|82788342ba0b516646e88617bd027eee96d41efaf24f39742e2a7bcd0e8f9c5e|scrap-physics-v1.1.0|c41feae0c5251b5c55c3b52662d783ebe7f2fce46607014d806c10c4d91d0956|1|steering-off:manual|",
+        "trackId": "cc5a68ae-00e7-44c7-a45f-149d26c308d1",
+        "trackName": "Keyboard Circuit verified",
+        "build": {
+          "chassis": "mule",
+          "engine": "courier",
+          "tires": "road",
+          "utility": "roll-cage"
+        },
+        "challenge": "",
+        "challengeDate": "",
+        "trackRevision": "82788342ba0b516646e88617bd027eee96d41efaf24f39742e2a7bcd0e8f9c5e",
+        "rulesRevision": "scrap-physics-v1.1.0",
+        "buildRevision": "c41feae0c5251b5c55c3b52662d783ebe7f2fce46607014d806c10c4d91d0956",
+        "assistance": "steering-off:manual",
+        "performanceDegraded": false,
+        "seed": 1,
+        "laps": 1,
+        "difficulty": "club",
+        "elapsedMs": 187647,
+        "splits": [
+          187647
+        ],
+        "dnf": false,
+        "classification": [
+          {
+            "id": "otto",
+            "name": "Otto",
+            "time": 29765
+          },
+          {
+            "id": "kit",
+            "name": "Kit",
+            "time": 30285
+          },
+          {
+            "id": "riv",
+            "name": "Riv",
+            "time": 31952
+          },
+          {
+            "id": "bea",
+            "name": "Bea Bolts",
+            "time": 32713
+          },
+          {
+            "id": "mags",
+            "name": "Mags",
+            "time": 33222
+          },
+          {
+            "id": "player",
+            "name": "You",
+            "time": 187647
+          }
+        ],
+        "contacts": 844,
+        "resets": 0,
+        "createdAt": "2026-10-18T01:29:34.829Z"
+      },
+      "before": {
+        "x": -11.720590357414022,
+        "z": 143.4167466114332,
+        "heading": -2.9939063193950592
+      },
+      "scope": "Actual test race, legal physics controls, no forced finish or award; accelerated seeded controller is separate from connector keyboard samples"
+    }
+  }
+}

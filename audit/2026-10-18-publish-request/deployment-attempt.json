@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-18T00:40:06.060Z",
+  "command": "node tools/deploy-pagelove.mjs",
+  "operation": "deploy",
+  "processExitCode": 0,
+  "result": {
+    "error": "Required acceptance is missing or not passed: J02"
+  },
+  "deployStatus": "refused-before-authentication-or-staging",
+  "remoteWrites": 0,
+  "credentialsSupplied": false
+}

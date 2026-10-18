@@ -1,0 +1,3345 @@
+diff --git a/ARCHITECTURE.md b/ARCHITECTURE.md
+index 00c3cf9..b756806 100644
+--- a/ARCHITECTURE.md
++++ b/ARCHITECTURE.md
+@@ -168,12 +168,12 @@ These are acceptance targets, not measurements. Measure in the available browser
+ | --- | --- | --- |
+ | First playable download | ≤5 MiB compressed critical path; ≤15 MiB complete offline pack | Build inventory and cold network profile |
+ | Startup | Ready within 5 s on 10 Mbps / 80 ms RTT after connection; subsequent menu within 1 s | Cold and warm traces, including parser/compile/warmup |
+-| Racing | Target 60 FPS; p95 frame ≤20 ms, p99 ≤33 ms on baseline at default quality | Full race including first collision/pad and six cars |
++| Racing | Target 60 FPS; p95 frame ≤20 ms, p99 ≤33 ms on baseline at default quality | Full race including first collision/pad and six cars; static curb paths cached per track and equal-style trails batched |
+ | Input response | Input reflected by next simulation step; visual response target ≤50 ms | Instrumented event-to-frame in the available browser |
+-| GPU | ≤200 draw calls, ≤200k visible triangles, DPR cap 1.5 default on mobile | GPU/frame inspection, all scenes/effects |
++| Canvas allocation | At most 2.4 million backing pixels, dimensions at most 4096, DPR at most 2 (1 for safer graphics) | Actual Canvas 2D backing sizes, all scenes/effects; legacy WebGL draw/triangle targets are inapplicable to the replacement renderer |
+ | Memory | Working set target ≤200 MiB where measurable; no monotonic growth after 20 race/editor cycles | Browser/platform tools with exact limitations recorded |
+ | Editor | Common placement/undo feedback ≤50 ms; full max-track validation ≤250 ms off main path when necessary | Typical and worst bounded fixtures |
+-| Assets/effects | Particle pools capped at 256; simultaneous audio voices ≤24 | Stress race and long-session counters |
++| Assets/effects | Canvas skid trails capped at 360; simultaneous audio voices ≤24 | Stress race and long-session counters; original particle-pool target belongs to the retired WebGL renderer |
+ 
+ Prepare representative car parts, surface shaders, effects and audio paths before Go. Reuse bounded pools and dispose obsolete meshes/materials/targets. Graphics-context loss pauses simulation and input, rebuilds resources, warms them and requires explicit resume. The startup fallback is independent of the main module import and offers a functioning Retry/Reload path.
+ 
+diff --git a/DEPLOYMENT.md b/DEPLOYMENT.md
+index 2836ccf..8715712 100644
+--- a/DEPLOYMENT.md
++++ b/DEPLOYMENT.md
+@@ -17,3 +17,5 @@ Both packaging and deployment call `tools/release-gate.mjs`. Local acceptance mu
+ On October 16 Wesley explicitly requested "Commit, push, deploy". On October 17 the user further directed that Scrap League have the shared leaderboard, pointing out that Pagelove hosts share the same capabilities. The separate `publish-candidate` operation records the scoped publication authorization without marking incomplete product outcomes passed. Its dated `audit/deployment-authorization-YYYY-MM-DD.json` must bind the exact source, output, release and acceptance-ledger hashes, destination and every incomplete row. It refuses known failed outcomes and stale evidence, and requires the exact game-host board configuration. Provision both native board documents and verify public read/write behavior before promoting the client. Normal `deploy`, packaging and CI acceptance remain strict. To use the authorized candidate operation after authentication, send `{"op":"publish-candidate","authorization":"audit/deployment-authorization-2026-10-17.json"}`. All conditional writes, backups and public readback checks still run. Publication success is distinct from full product acceptance; no general force flag exists.
+ 
+ For a root-entry rollback, authenticate using the same hidden input, then send `{"op":"prepare-rollback","baseline":"<existing timestamp directory>"}`. Preparation verifies private backup hashes, the destination host, current ETags and all old public dependencies. Review the returned root hashes, then send `{"op":"rollback"}`. The tool rechecks all three root entries before any write, uses ETag conditions, reconciles ambiguous responses and verifies public readback. It does not delete or roll back Workshop/catalog/board documents, native routes or immutable release folders. The operation is sequential; on a partial failure preserve the receipt and inspect current state. The local rollback fixture is not a claim that production rollback has been performed.
++
++The handbook follow-up adds bounded preservation probes. `tools/check-release-data.mjs` seeds one owned public score and `tools/check-workshop-publication.mjs` exercises one owned circuit, catalog conflict and lost-response recovery. Both accept hidden JSON `seed` and `verify-clean` operations with an owner key. Run `seed` before publication and `verify-clean` afterward; inspect the receipts and never overwrite an unfinished fixture receipt. Cleanup uses fresh conditional writes and touches only the recorded owned identifiers. Existing score/catalog records are represented by hashes in the audit, not copied payloads. `tools/check-live-outbox.mjs` separately drops one actual accepted public response and verifies two production queue clients reconcile a single score before conditional cleanup. These helpers are repository verification tools, excluded from the shipped game.
+diff --git a/IMPLEMENTATION-STATUS.md b/IMPLEMENTATION-STATUS.md
+index 10ce98d..8cc7670 100644
+--- a/IMPLEMENTATION-STATUS.md
++++ b/IMPLEMENTATION-STATUS.md
+@@ -1,5 +1,19 @@
+ # Scrap League implementation and release status
+ 
++## Handbook follow-up — October 17, 2026
++
++This pass addresses concrete gaps against handbook 2.8.0. Driver names are editable from Leaderboards and Settings and persist on the device. Result submission opens independently of board availability, preserves invalid input, shows durable queue/confirmed/rejected state and retains the original submitted name. Explicit retry respects server delays and tab leases; a slow expired lease cannot be reclaimed repeatedly by one pump. Optional cache-write failure no longer hides a successful board read. Refresh preserves displayed matching times until replacement.
++
++The 320px, 200%-computed-font check found and corrected horizontal overflow in the leaderboard dialog. Touch Boost includes throttle, so steering and boosting fit two contacts in manual mode. Resize and keyboard focus changes cancel affected held input. The PWA explicitly checks for updates on foreground/reconnect, limits repeated checks, offers a visible update-ready button, and retains explicit safe-boundary activation. In-game update notices do not imply operating-system notifications while closed.
++
++`audit/2026-10-17-handbook-followup.md` maps the guide to implementation and evidence. `audit/handbook-unit-tests.txt` records 107 passing tests. Current browser fixtures cover the complete twelve-event campaign with a between-round reload and held muted/reduced-motion ending, a newly authored closed circuit, quota failure followed by navigation/export/retry, five-AI test/return, improved solo best/ghost, name entry/queuing, controller interruption and responsive reflow. Exact receipts and failed fixture attempts are retained individually. The live public-board probe at 21:11 UTC passed all Trial/Daily checks and conditionally removed its four accepted synthetic rows; earlier intermittent provider failures remain historical evidence, not a resolved root-cause claim.
++
++The current acceptance ledger remains authoritative for scope. Actual browser-process restart and a provider-wide policy readiness API are unavailable; original circuit authorship cannot be changed retroactively. The follow-up does not silently waive these or other incomplete broad release rows. Publication and exact live readback are recorded separately in `audit/deployment.json`.
++
++Performance checks found and corrected excess Canvas strokes: static curb geometry now compiles once per track and skid marks draw in one batch. Default resolution and simulation are unchanged. The optimized release completed a six-car race at p95/p99 16.8/16.9 ms with a 1920×753 buffer and full effects. The earlier twenty-minute lower-resolution run covered 71,846 frames and 40 loads at 17.1/17.4 ms; only the renderer changed afterward. Those scopes are distinct, and both failed default-resolution attempts remain retained. Available JS heap samples in the long run ranged from 14.5 to 29.2 MB; they do not measure total working set or GPU memory.
++
++Current live endpoint fixtures confirm catalog-conflict/direct-link recovery, safe listing retry, lost owner-response readback, and two independent queue clients reconciling one accepted public score after its response is dropped. Populated Workshop/catalog and board fixtures are kept across deployment and conditionally cleaned afterward; old-client dependency readback is recorded separately. A public seed still returned an intermittent 500 before succeeding, so provider reliability is not presented as solved by client changes.
++
+ ## Arcade remake — October 17, 2026
+ 
+ The current source replaces the WebGL racing view with an overhead Canvas 2D game. The home screen starts a two-lap six-car Quick Race in one action. Touch controls have independent pointer ownership and reserved space outside the play area, including manual GAS, brake, slide and boost. Road-ahead prompts, a visible YOU marker and action-based Driving school improve first-use guidance. League, all twelve circuits, 81 builds, ghosts, Daily, existing saves, public times and the bundled Workshop remain available.
+diff --git a/PLAY.md b/PLAY.md
+index dc8623f..686c0d0 100644
+--- a/PLAY.md
++++ b/PLAY.md
+@@ -25,7 +25,15 @@ Choose **LET’S RACE** for an immediate two-lap race against five rivals. **Dri
+ | Reset at the last checkpoint | R or Reset button | On-screen Reset |
+ | Pause | Escape or Pause | Start |
+ 
+-Touch controls can be enabled in Settings: a steering pad or left/right buttons, Brake, Slide and Boost. Enable Auto accelerate for touch. Auto accelerate and steering assistance are captured at the next race start and separate personal-best comparisons. A reset costs two seconds while opponents and the clock continue. Gold markers show checkpoints; the map highlights the next required gate. Crossing an out-of-order or backward gate does not advance the lap.
++Touch controls can be enabled in Settings: a steering pad or left/right buttons, Gas, Brake, Slide and Boost. Auto accelerate is optional. With manual throttle, the touch Boost button includes Gas so steering and boosting need only two contacts. Releasing it releases its throttle contribution; an independently held Gas button remains held. Auto accelerate and steering assistance are captured at the next race start and separate personal-best comparisons. A reset costs two seconds while opponents and the clock continue. Gold markers show checkpoints; the map highlights the next required gate. Crossing an out-of-order or backward gate does not advance the lap.
++
++## Leaderboards and updates
++
++Set your **Public driver name** from Leaderboards or Settings. It stays on this device and is used for future submissions. Finish three laps in **Time Trial** or **Daily Spec**, then select **Add to leaderboard**. Quick Race, League, practice and Workshop tests do not submit public times. Matching boards compare circuit, car, assists and rules; Daily also pins its UTC date.
++
++You can enter your name and queue a result even when the board cannot load. The game shows **queued** only after the submission is saved locally, and **confirmed** after server readback. Queued runs retain their original name and identity. Use **Refresh / retry**, or Settings → Submission status → Retry connection. A server-requested delay is respected. Rejected times remain local and are not retried automatically. Names allow 1–24 Unicode characters and render as text; entries expire five days after server receipt. No account or notification permission is required.
++
++The PWA checks for new releases on startup, reconnect and return to the app, with repeated foreground checks limited to once a minute. **Update ready · review update** appears on the home screen when a verified pack is waiting. Apply it from the yard; every open game window must also be at a safe boundary. Settings → Check offline pack remains available. These are in-game update notices, not operating-system push notifications while the app is closed.
+ 
+ The car uses actual part mass, engine force/power/governor, tire surface grip and utility behavior. There is no repair currency. A podium is useful, but any completed League round advances the collection. Replays preserve the current cup; Restart cup is explicit. An interrupted League attempt restarts its uncompleted round, not an exact mid-race position.
+ 
+diff --git a/app/arcade-renderer.js b/app/arcade-renderer.js
+index 66b75a7..c6031dd 100644
+--- a/app/arcade-renderer.js
++++ b/app/arcade-renderer.js
+@@ -125,6 +125,19 @@ export class World {
+     this.road = road(track.samples);
+     this.shoulder = road(track.samples, 2.4);
+     this.outline = road(track.samples, 0.7);
++    // Track markings are immutable until the next compiled track is loaded.
++    this.curbs = [new Path2D(), new Path2D()];
++    for (let i = 0; i < track.samples.length; i += 3) {
++      const a = track.samples[i],
++        b = track.samples[(i + 3) % track.samples.length],
++        path = this.curbs[(i / 3) % 2];
++      for (const side of [-1, 1]) {
++        const aa = offset(a, (a.width / 2) * side),
++          bb = offset(b, (b.width / 2) * side);
++        path.moveTo(aa.x, aa.z);
++        path.lineTo(bb.x, bb.z);
++      }
++    }
+     this.patches = track.source.patches.map((p) => {
+       const piece = track.route.find((r) => r.id === p.pieceId),
+         samples = [];
+@@ -270,14 +283,14 @@ export class World {
+         race.state === "racing"
+       )
+         this.addTrails(race);
++      ctx.strokeStyle = "#14252b70";
++      ctx.lineWidth = 0.18;
++      ctx.beginPath();
+       for (const t of this.trails) {
+-        ctx.strokeStyle = "#14252b70";
+-        ctx.lineWidth = 0.18;
+-        ctx.beginPath();
+         ctx.moveTo(t.ax, t.az);
+         ctx.lineTo(t.bx, t.bz);
+-        ctx.stroke();
+       }
++      ctx.stroke();
+       this.drawGate(ctx, race.track.gates[p.nextGate], true);
+       const ghost = this.ghostAt(race.time);
+       if (ghost && settings.ghost)
+@@ -380,19 +393,10 @@ export class World {
+       ctx.fillStyle = p.surface === "mud" ? "#756354" : "#a59672";
+       ctx.fill(p.path);
+     }
+-    for (let i = 0; i < t.samples.length; i += 3) {
+-      const a = t.samples[i],
+-        b = t.samples[(i + 3) % t.samples.length];
+-      ctx.strokeStyle = i % 6 === 0 ? "#e4dcca" : "#dc765c";
+-      ctx.lineWidth = 0.65;
+-      for (const side of [-1, 1]) {
+-        const aa = offset(a, (a.width / 2) * side),
+-          bb = offset(b, (b.width / 2) * side);
+-        ctx.beginPath();
+-        ctx.moveTo(aa.x, aa.z);
+-        ctx.lineTo(bb.x, bb.z);
+-        ctx.stroke();
+-      }
++    ctx.lineWidth = 0.65;
++    for (const [i, path] of this.curbs.entries()) {
++      ctx.strokeStyle = i === 0 ? "#e4dcca" : "#dc765c";
++      ctx.stroke(path);
+     }
+     for (let s = 15; s < t.length; s += 24) {
+       const p = atDistance(t, s);
+diff --git a/app/arcade.css b/app/arcade.css
+index 9820b89..5d36883 100644
+--- a/app/arcade.css
++++ b/app/arcade.css
+@@ -557,6 +557,17 @@ dialog {
+   padding: 26px;
+   max-height: 85dvh;
+   overflow-y: auto;
++  overflow-wrap: anywhere;
++}
++dialog button,
++dialog input,
++dialog select,
++dialog label {
++  min-width: 0;
++  max-width: 100%;
++}
++dialog button {
++  white-space: normal;
+ }
+ dialog::backdrop {
+   background: #0d222bdd;
+@@ -582,7 +593,7 @@ dialog::backdrop {
+ }
+ .board-controls {
+   display: grid;
+-  grid-template-columns: 1fr 1fr;
++  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+   gap: 12px;
+   margin: 16px 0;
+ }
+@@ -601,6 +612,35 @@ dialog::backdrop {
+   color: #ffd34e;
+   font-variant-numeric: tabular-nums;
+ }
++.board-list bdi {
++  overflow-wrap: anywhere;
++}
++.driver-profile {
++  display: grid;
++  gap: 10px;
++  margin: 14px 0 22px;
++}
++.driver-profile input {
++  display: block;
++  width: 100%;
++  font-size: 16px;
++  margin-top: 6px;
++}
++.driver-profile p {
++  margin: 0;
++}
++.driver-profile button {
++  justify-self: start;
++}
++.driver-profile [aria-invalid="true"] {
++  outline: 2px solid #ffd34e;
++  outline-offset: 2px;
++}
++@media (max-width: 480px) {
++  .board-controls {
++    grid-template-columns: minmax(0, 1fr);
++  }
++}
+ .workshop-bar,
+ .workbench,
+ .workshop-status {
+diff --git a/app/boards.js b/app/boards.js
+index 902b560..06d0ab8 100644
+--- a/app/boards.js
++++ b/app/boards.js
+@@ -18,6 +18,14 @@ const RUN_FIELDS = Object.freeze([
+   "elapsedMs",
+   "splits",
+ ]);
++export function retryAfterAt(response, now = Date.now()) {
++  const value = response?.headers.get("Retry-After");
++  if (!value) return 0;
++  const at = /^\d+$/.test(value)
++    ? now + Number(value) * 1000
++    : Date.parse(value);
++  return Number.isFinite(at) && at > now ? at : 0;
++}
+ export function boardKey(run) {
+   return comparisonKey({
+     mode: run.mode,
+@@ -236,11 +244,16 @@ export class Boards {
+       if (
+         !retryable ||
+         ![429, 502, 503, 504].includes(response.status) ||
++        retryAfterAt(response, this.clock()) > this.clock() + 1000 ||
+         attempt >= 2
+       )
+         return response;
++      const delay = Math.max(
++        retryAfterAt(response, this.clock()) - this.clock(),
++        250 * (attempt + 1) + Math.random() * 100,
++      );
+       await response.body?.cancel();
+-      await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
++      await new Promise((resolve) => setTimeout(resolve, delay));
+     }
+   }
+   async lookup(run) {
+@@ -262,8 +275,12 @@ export class Boards {
+         page,
+         headers: { Range: "selector=#runs" },
+       });
+-      if (!response.ok)
+-        throw Error("Board read failed (" + response.status + ").");
++      if (!response.ok) {
++        const error = Error("Board read failed (" + response.status + ").");
++        error.retryAt = retryAfterAt(response, this.clock());
++        await response.body?.cancel();
++        throw error;
++      }
+       const responseTime = Date.parse(response.headers.get("Date") || "");
+       if (Number.isFinite(responseTime)) serverTime = responseTime;
+       const batch = parseRuns(await boundedText(response), this.Parser);
+@@ -325,13 +342,20 @@ export class Boards {
+   async pump() {
+     if (!this.enabled || this.running || !this.store) return;
+     this.running = true;
+-    const outcomes = [];
++    const outcomes = [],
++      attempted = new Set();
+     try {
+       for (let n = 0; n < 100; n++) {
+-        const entry = await this.store.claimRun(this.owner, this.clock());
++        const entry = await this.store.claimRun(
++          this.owner,
++          this.clock(),
++          attempted,
++        );
+         if (!entry) break;
++        attempted.add(entry.run.id);
+         let state = "retry",
+-          message = "";
++          message = "",
++          serverRetryAt = 0;
+         try {
+           const run = entry.run;
+           try {
+@@ -352,6 +376,8 @@ export class Boards {
+                 },
+                 body: runHTML(run),
+               });
++              serverRetryAt = retryAfterAt(response, this.clock());
++              await response.body?.cancel();
+             } catch {}
+             // Reconcile even a rejection: a retry may have collided with earlier acceptance.
+             accepted = await this.lookup(run);
+@@ -373,6 +399,7 @@ export class Boards {
+           }
+         } catch (error) {
+           message = error.message;
++          serverRetryAt = Math.max(serverRetryAt, error.retryAt || 0);
+         }
+         try {
+           await this.store.settleRun(
+@@ -381,6 +408,7 @@ export class Boards {
+             state,
+             message,
+             this.clock(),
++            serverRetryAt,
+           );
+           outcomes.push({ id: entry.run.id, state });
+         } catch {
+@@ -419,11 +447,18 @@ export class Boards {
+         refreshedAt: this.clock(),
+         serverOffset: now - this.clock(),
+       };
+-      await this.store?.set("board:" + key, cached);
++      // A cache quota failure must not hide a successful public read.
++      let cacheError = null;
++      try {
++        await this.store?.set("board:" + key, cached);
++      } catch (error) {
++        cacheError = error.message;
++      }
+       return {
+         rows: ranked(rows, key, now),
+         stale: false,
+         refreshedAt: cached.refreshedAt,
++        cacheError,
+       };
+     } catch (error) {
+       const cached = await this.store?.get("board:" + key);
+diff --git a/app/driver-profile.js b/app/driver-profile.js
+new file mode 100644
+index 0000000..fc0bf1c
+--- /dev/null
++++ b/app/driver-profile.js
+@@ -0,0 +1,56 @@
++// A remembered public nickname is a local preference, never an account identity.
++export function driverAlias(value) {
++  const name = typeof value === "string" ? value.normalize("NFC").trim() : "";
++  if (!name || [...name].length > 24 || /[\u0000-\u001f\u007f]/.test(name))
++    throw Error(
++      "Enter a driver name with 1–24 characters and no control characters.",
++    );
++  return name;
++}
++
++export function nameField(document, value = "Driver") {
++  const form = document.createElement("form");
++  form.className = "driver-profile";
++  form.noValidate = true;
++  const label = document.createElement("label"),
++    input = document.createElement("input"),
++    status = document.createElement("p");
++  label.textContent = "Public driver name";
++  input.name = "nickname";
++  input.autocomplete = "nickname";
++  input.dir = "auto";
++  input.value = value;
++  input.maxLength = 48; // Validation counts Unicode code points, not UTF-16 units.
++  input.required = true;
++  input.spellcheck = false;
++  status.id = "driver-name-status";
++  status.setAttribute("role", "status");
++  input.setAttribute("aria-describedby", status.id);
++  status.textContent =
++    "1–24 characters. Saved on this device; public only when you submit a time.";
++  label.append(input);
++  form.append(label, status);
++  const read = () => {
++    try {
++      const alias = driverAlias(input.value);
++      input.removeAttribute("aria-invalid");
++      return alias;
++    } catch (error) {
++      input.setAttribute("aria-invalid", "true");
++      status.textContent = error.message;
++      input.focus();
++      throw error;
++    }
++  };
++  form.onsubmit = (event) => event.preventDefault();
++  return { form, input, status, read };
++}
++
++export async function rememberDriver(settings, store, alias) {
++  const normalized = driverAlias(alias);
++  if (!store)
++    throw Error("Device storage is unavailable. Your name has not been saved.");
++  await store.set("settings", { ...settings, driverAlias: normalized });
++  settings.driverAlias = normalized;
++  return normalized;
++}
+diff --git a/app/driving-controls.js b/app/driving-controls.js
+index e710fd1..51d1fcc 100644
+--- a/app/driving-controls.js
++++ b/app/driving-controls.js
+@@ -95,8 +95,14 @@ export function bindTouchControls(root, { held, steer, active }) {
+         button.dataset.pressed = "false";
+       }
+     });
++    button.addEventListener("blur", () => {
++      held.release("key:" + button.dataset.hold);
++      if (button === pad && padId === null) axis(0);
++      if (![...contacts.values()].includes(button))
++        button.dataset.pressed = "false";
++    });
+   }
+-  return () => {
++  const reset = () => {
+     const entries = [...contacts];
+     contacts.clear();
+     held.clear();
+@@ -110,6 +116,12 @@ export function bindTouchControls(root, { held, steer, active }) {
+       .querySelectorAll("[data-pressed]")
+       .forEach((b) => (b.dataset.pressed = "false"));
+   };
++  // A new coordinate mapping requires a new contact, including browser-chrome
++  // resizing that does not emit orientationchange.
++  new ResizeObserver(reset).observe(root);
++  window.addEventListener("resize", reset);
++  window.visualViewport?.addEventListener("resize", reset);
++  return reset;
+ }
+ export function practiceStep(practice, car, input) {
+   if (!practice) return;
+@@ -146,7 +158,7 @@ export function practicePrompt(practice, settings) {
+       : `Hold ${key("brake")} before a bend. Slow down before you turn.`;
+   if (!practice.boost)
+     return settings.touch
+-      ? "On a straight, hold BOOST. Checkpoints refill your charge."
++      ? "On a straight, hold BOOST; it also accelerates. Checkpoints refill your charge."
+       : `On a straight, hold ${key("boost")} to boost. Checkpoints refill your charge.`;
+   return "All four skills tried. Follow every checkpoint and finish your lap.";
+ }
+diff --git a/app/index.html b/app/index.html
+index fde3336..0fb3249 100644
+--- a/app/index.html
++++ b/app/index.html
+@@ -2,7 +2,7 @@
+ <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#142b31"><meta name="description" content="Build your car. Find your line. Race twelve scrapyard circuits, then make your own in the bundled Track Workshop."><title>Scrap League — Make it. Race it.</title><link rel="canonical" href="https://hire-poker-8313.onpagelove.com/"><meta property="og:title" content="Scrap League — Make it. Race it."><meta property="og:description" content="Build your car, race twelve scrapyard circuits, and make your own in the Track Workshop."><meta property="og:type" content="website"><meta property="og:url" content="https://hire-poker-8313.onpagelove.com/"><meta property="og:image" content="__PUBLIC_RELEASE__social/og-landscape-v1.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1726"><meta property="og:image:height" content="911"><meta property="og:image:alt" content="Scrap League overhead arcade racing: numbered cars, a scrapyard circuit, and a bundled track workshop."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Scrap League"><meta name="twitter:description" content="Build your car. Find your line. Make your own circuits."><meta name="twitter:image" content="__PUBLIC_RELEASE__social/og-landscape-v1.png"><meta name="twitter:image:alt" content="Scrap League: Small cars. Big rivalries."><link rel="icon" href="icons/favicon.ico" sizes="16x16 32x32 48x48"><link rel="apple-touch-icon" href="icons/icon-180.png" sizes="180x180"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="arcade.css"></head>
+ <body><header id="header"><button class="wordmark" id="home" aria-label="Scrap League home">SCRAP<span>LEAGUE</span><i>04</i></button><span id="context">THE YARD IS YOURS.</span><nav aria-label="Game tools"><button id="sound-toggle" aria-label="Toggle sound">Sound off</button><button id="settings-button">Settings</button><button id="fullscreen" aria-label="Toggle fullscreen">Full screen</button></nav></header>
+ <main id="stage" class="view-start"><canvas id="world" tabindex="0" aria-label="Overhead racing view. W accelerates, S brakes, A and D steer, Shift boosts, Space handbrakes, R resets and Escape pauses."></canvas><div id="webgl-error" hidden><h2>Graphics could not start</h2><p>Reload to recreate the racing canvas. Your saved drafts and progress are retained.</p></div>
+-<section id="screen-start" class="screen"><div class="home-copy"><p class="eyebrow">SCRAP LEAGUE / ARCADE RACING CLUB</p><h1>SMALL CARS.<br><em>BIG RIVALRIES.</em></h1><p class="intro">Find your line. Brake into the bend.<br>Leave the rest in the dust.</p><button id="quick-race" class="primary"><span>LET’S RACE</span><small>2 LAPS · 5 RIVALS · JUMP IN</small></button><div class="home-actions"><button id="race-button">Race the league <small id="next-event">YARD SHIFT</small></button><button id="daily-button">Daily Spec <small id="daily-date"></small></button><button id="workshop-button">Track Workshop <small>MAKE YOUR OWN CIRCUIT</small></button></div><div class="secondary-actions"><button id="trial-button" class="quiet">Time Trial</button><button id="leaderboard-button" class="quiet">Leaderboards</button><button id="garage-button" class="quiet">Garage</button><button id="lesson-button" class="quiet">Driving school</button></div><p class="start-controls">Steer with A / D or ← / →. W to accelerate.<br>On a phone, use the wheel and auto throttle.</p></div><div class="hero-label"><span class="eyebrow">YOUR FIRST CIRCUIT</span><h2>THE YARD</h2><span>SCRAP, RUBBER &amp; SECOND CHANCES.</span></div><div class="home-bottom"><div><span>YOUR MACHINE</span><strong id="home-build"></strong></div><div><span>YOUR PROGRESS</span><strong id="home-progress"></strong></div><div><span>THE WORKSHOP IS OPEN</span><strong>12 circuits. Infinite possibilities.</strong></div></div></section>
++<section id="screen-start" class="screen"><div class="home-copy"><p class="eyebrow">SCRAP LEAGUE / ARCADE RACING CLUB</p><h1>SMALL CARS.<br><em>BIG RIVALRIES.</em></h1><p class="intro">Find your line. Brake into the bend.<br>Leave the rest in the dust.</p><button id="quick-race" class="primary"><span>LET’S RACE</span><small>2 LAPS · 5 RIVALS · JUMP IN</small></button><button id="update-ready" class="quiet" hidden>Update ready · review update</button><div class="home-actions"><button id="race-button">Race the league <small id="next-event">YARD SHIFT</small></button><button id="daily-button">Daily Spec <small id="daily-date"></small></button><button id="workshop-button">Track Workshop <small>MAKE YOUR OWN CIRCUIT</small></button></div><div class="secondary-actions"><button id="trial-button" class="quiet">Time Trial</button><button id="leaderboard-button" class="quiet">Leaderboards</button><button id="garage-button" class="quiet">Garage</button><button id="lesson-button" class="quiet">Driving school</button></div><p class="start-controls">Steer with A / D or ← / →. W to accelerate.<br>On a phone, use the wheel and auto throttle.</p></div><div class="hero-label"><span class="eyebrow">YOUR FIRST CIRCUIT</span><h2>THE YARD</h2><span>SCRAP, RUBBER &amp; SECOND CHANCES.</span></div><div class="home-bottom"><div><span>YOUR MACHINE</span><strong id="home-build"></strong></div><div><span>YOUR PROGRESS</span><strong id="home-progress"></strong></div><div><span>THE WORKSHOP IS OPEN</span><strong>12 circuits. Infinite possibilities.</strong></div></div></section>
+ <section id="screen-events" class="screen page" hidden><div class="page-heading"><div><p class="eyebrow">FIND YOUR NEXT RACE</p><h1 id="events-title">THE LEAGUE</h1></div><button data-home>Back to yard</button></div><div class="event-controls"><label>Difficulty<select id="difficulty"><option value="relaxed">Relaxed</option><option value="club" selected>Club</option><option value="expert">Expert</option></select></label><p id="events-description">Three races. Five rivals. Every finish moves you forward.</p><button id="restart-cup">Restart cup</button><button id="continue-cup" class="primary">Continue cup</button></div><div id="event-list"></div></section>
+ <section id="screen-garage" class="screen" hidden><div class="garage-caption"><p class="eyebrow">YOUR MACHINE / <span id="garage-context">LEAGUE BUILD</span></p><h1 id="garage-name">MULE</h1><p id="garage-build"></p><div class="garage-stats" id="garage-stats"></div></div><aside class="garage-panel"><div class="page-heading"><h2>THE GARAGE</h2><button id="garage-back">Done</button></div><p class="muted">Choose a part. Feel the compromise.</p><div id="part-slots"></div><div class="command-row"><button id="save-build">Save preset</button><button id="load-build">Load preset</button><button id="restore-build">Starter build</button></div><button id="garage-test" class="primary wide">Test this build</button><p id="garage-status" role="status"></p></aside></section>
+ <section id="screen-race" class="screen" hidden><div class="race-hud"><div class="hud-main"><div><span>POSITION</span><strong id="hud-place">4<small>/6</small></strong></div><div><span>LAP</span><strong id="hud-lap">1<small>/3</small></strong></div><div><span>RACE TIME</span><strong id="hud-time" class="time">00:00.000</strong></div></div><div class="race-buttons"><button id="race-reset">Reset</button><button id="pause-button">Pause</button></div></div><div id="race-title"></div><div id="corner-hint" aria-label="Road ahead"></div><div id="practice-progress" hidden></div><div id="countdown" aria-live="polite"></div><div id="race-message" role="status"></div><div class="race-bottom"><div class="speed"><strong id="hud-speed">0</strong><span>KM/H</span><div class="charge-caption"><span>BOOST</span><span id="charge-value">60</span></div><progress id="boost-bar" max="100" value="60" aria-label="Boost charge"></progress></div><canvas id="minimap" width="240" height="180" aria-label="Circuit map and next checkpoint"></canvas></div><div id="touch-controls"><div class="steering"><button data-hold="left" aria-label="Steer left">◀</button><div id="steering-pad" role="slider" tabindex="0" aria-label="Steering pad" aria-valuemin="-1" aria-valuemax="1" aria-valuenow="0"><span class="steer-knob">↔</span><small>STEER</small></div><button data-hold="right" aria-label="Steer right">▶</button></div><div class="pedals"><button data-hold="throttle" class="throttle-button">GAS</button><button data-hold="brake">BRAKE</button><button data-hold="handbrake">SLIDE</button><button data-hold="boost" class="boost-button">BOOST</button></div></div><div class="keyboard-hint">W / S DRIVE <b>·</b> A / D STEER <b>·</b> SHIFT BOOST <b>·</b> SPACE SLIDE <b>·</b> R RESET <b>·</b> ESC PAUSE</div></section>
+diff --git a/app/main.js b/app/main.js
+index db86479..3dcc323 100644
+--- a/app/main.js
++++ b/app/main.js
+@@ -1,5 +1,7 @@
+ import { CUP_SCENES, FINAL_SCENE } from "./scenes.js";
+-import { Boards, submission, contentKeys, recognized } from "./boards.js";
++import { Boards, contentKeys } from "./boards.js";
++import { nameField, rememberDriver } from "./driver-profile.js";
++import { showSubmission } from "./submission-ui.js";
+ import { readPublishedTrack, discoverTracks } from "./publication.js";
+ import { resultInvitation, shareInvitation, scorecard } from "./sharing.js";
+ import { workerRequest } from "./offline.js";
+@@ -790,7 +792,12 @@ function input() {
+       (down("left") || keys.has("ArrowLeft") || held.has("left") ? 1 : 0) +
+       steering,
+     throttle =
+-      down("throttle") || keys.has("ArrowUp") || held.has("throttle") ? 1 : 0,
++      down("throttle") ||
++      keys.has("ArrowUp") ||
++      held.has("throttle") ||
++      held.has("boost")
++        ? 1
++        : 0,
+     brake = down("brake") || keys.has("ArrowDown") || held.has("brake") ? 1 : 0,
+     handbrake = down("handbrake") || held.has("handbrake"),
+     boost =
+@@ -1011,7 +1018,7 @@ function renderResultActions() {
+     !race.result.dnf &&
+     !race.result.performanceDegraded
+   )
+-    button("Shared times", showSharedTimes);
++    button("Add to leaderboard", showSharedTimes);
+   button("Download scorecard", async () => {
+     try {
+       const invitation = invitationForRace();
+@@ -1365,6 +1372,7 @@ function settingsDialog() {
+     )
+     .join("")}</div>`;
+   body.append(controls);
++  body.prepend(driverProfile());
+   const repair = document.createElement("button"),
+     graphicsStatus = document.createElement("p");
+   repair.textContent = "Repair graphics";
+@@ -1440,7 +1448,7 @@ function applyPreferences() {
+     ? "Use the steering wheel and brake before bends. " +
+       (settings.autoAccelerate
+         ? "Auto throttle is on."
+-        : "Hold GAS to accelerate.")
++        : "Hold GAS to accelerate. BOOST also holds the throttle, so you can steer with your other thumb.")
+     : hint;
+   document.body.classList.toggle("touch", settings.touch);
+   document.body.classList.toggle("large-hud", settings.largeHud);
+@@ -1502,6 +1510,7 @@ function appendDataControls(body) {
+         action: async () => {
+           if (!boards.enabled)
+             throw Error("Shared boards are not configured on this host yet.");
++          await store.retryRuns();
+           await boards.pump();
+           notify("Submission queue checked.");
+         },
+@@ -1726,7 +1735,11 @@ q("fullscreen").onclick = async () => {
+   }
+ };
+ window.addEventListener("keydown", (e) => {
+-  if (["INPUT", "SELECT", "TEXTAREA"].includes(e.target.tagName)) return;
++  if (
++    ["INPUT", "SELECT", "TEXTAREA"].includes(e.target.tagName) ||
++    e.target.isContentEditable
++  )
++    return;
+   if (view === "race") {
+     if (e.code === settings.bindings.pause || e.code === "Escape") {
+       e.preventDefault();
+@@ -1821,7 +1834,29 @@ window.addEventListener("beforeunload", (e) => {
+     e.returnValue = "";
+   }
+ });
+-async function checkOffline(manual = false) {
++let offlineCheckPromise = null,
++  offlineFollowUp = false;
++async function checkOffline(manual = false, discover = false) {
++  if (offlineCheckPromise) {
++    if (manual) {
++      await offlineCheckPromise;
++      return checkOffline(true, discover);
++    }
++    offlineFollowUp = true;
++    return offlineCheckPromise;
++  }
++  offlineCheckPromise = performOfflineCheck(manual, discover);
++  try {
++    await offlineCheckPromise;
++  } finally {
++    offlineCheckPromise = null;
++    if (offlineFollowUp) {
++      offlineFollowUp = false;
++      void checkOffline();
++    }
++  }
++}
++async function performOfflineCheck(manual = false, discover = false) {
+   if (!("serviceWorker" in navigator)) {
+     q("offline-state").textContent = "Offline installation unavailable";
+     return;
+@@ -1841,7 +1876,7 @@ async function checkOffline(manual = false) {
+             "New pack failed · previous release retained";
+       });
+     };
+-    if (manual) await registration.update();
++    if (manual || discover) await registration.update();
+     let timer;
+     try {
+       await Promise.race([
+@@ -1868,6 +1903,7 @@ async function checkOffline(manual = false) {
+         : "Earlier offline release retained";
+     if (registration.waiting) {
+       waitingWorker = registration.waiting;
++      q("update-ready").hidden = false;
+       q("offline-state").textContent = "Update verified · apply from the yard";
+       if (view === "start" && manual)
+         dialog(
+@@ -1884,7 +1920,10 @@ async function checkOffline(manual = false) {
+             { label: "Later" },
+           ],
+         );
+-    } else if (manual) notify("Offline files checked and verified.");
++    } else {
++      q("update-ready").hidden = true;
++      if (manual) notify("Offline files checked and verified.");
++    }
+   } catch (e) {
+     q("offline-state").textContent =
+       "Offline pack unverified · check or repair from Settings";
+@@ -1909,9 +1948,22 @@ navigator.serviceWorker?.addEventListener("controllerchange", () => {
+   // Only a still-live, explicitly confirmed activation request may reload this tab.
+   if (updateLock && view === "start") location.reload();
+ });
+-window.addEventListener("online", () =>
+-  boards?.pump().catch((e) => notify(e.message, true)),
+-);
++let lastForegroundCheck = 0;
++function refreshForeground() {
++  if (document.hidden || !content) return;
++  if (view === "start") updateHome(); // Recompute the UTC day after suspension.
++  boards?.pump().catch((e) => notify(e.message, true));
++  if (Date.now() - lastForegroundCheck < 60000) return;
++  lastForegroundCheck = Date.now();
++  void checkOffline(false, true);
++}
++window.addEventListener("online", refreshForeground);
++window.addEventListener("pageshow", refreshForeground);
++document.addEventListener("visibilitychange", refreshForeground);
++q("update-ready").onclick = () => checkOffline(true);
++setInterval(() => {
++  if (!document.hidden) boards?.pump().catch(() => {});
++}, 30000);
+ let gamepadMenuButtons = [],
+   gamepadNavAt = 0;
+ function gamepadMenus(now) {
+@@ -2084,71 +2136,51 @@ function frame(now) {
+   }
+   requestAnimationFrame(frame);
+ }
++function driverProfile() {
++  const field = nameField(document, settings.driverAlias),
++    save = document.createElement("button");
++  save.type = "submit";
++  save.textContent = "Save driver name";
++  field.form.append(save);
++  field.form.onsubmit = async (event) => {
++    event.preventDefault();
++    if (save.disabled) return;
++    save.disabled = true;
++    try {
++      const alias = await rememberDriver(settings, store, field.read());
++      field.input.value = alias;
++      field.status.textContent =
++        "Driver name saved on this device. Finish Time Trial or Daily Spec, then choose Add to leaderboard.";
++    } catch (error) {
++      field.status.textContent = error.message;
++    } finally {
++      save.disabled = false;
++    }
++  };
++  return field.form;
++}
+ async function showSharedTimes() {
+   const result = race?.result && clone(race.result);
+   if (!result) return;
+-  if (!boards?.enabled) {
+-    dialog(
+-      "Shared times are not configured",
+-      "This game copy has no configured public board. Your results, personal bests and ghosts remain available locally.",
+-    );
+-    return;
+-  }
+   try {
+-    const run = submission(result, "Driver");
+-    recognized(run, await recognizedContent);
+-    const board = await boards.refresh(run),
+-      body = document.createElement("div");
+-    const policy = document.createElement("p");
+-    policy.textContent =
+-      "Casual, client-reported times; client-side times can be forged. Rankings expire five days after server receipt; stored rows are cleaned on later online access.";
+-    body.append(policy);
+-    const status = document.createElement("p");
+-    status.textContent = board.stale
+-      ? "Saved board · refresh failed. " + board.error
+-      : "Latest confirmed times";
+-    body.append(status);
+-    const list = document.createElement("ol");
+-    for (const row of board.rows) {
+-      const li = document.createElement("li");
+-      li.textContent = row.alias + " · " + time(row.elapsedMs);
+-      list.append(li);
+-    }
+-    body.append(list);
+-    const label = document.createElement("label");
+-    label.textContent = "Public driver alias";
+-    const alias = document.createElement("input");
+-    alias.maxLength = 24;
+-    alias.value = "Driver";
+-    label.append(alias);
+-    body.append(label);
+-    if (view !== "result" || race?.result?.id !== result.id) return;
+-    dialog("Shared times", body, [
+-      {
+-        label: "Submit this time",
+-        action: async () => {
+-          if (!store)
+-            throw Error("Storage is required to queue a time safely.");
+-          const run = submission(result, alias.value);
+-          recognized(run, await recognizedContent);
+-          await store.enqueueRun(run);
+-          const states = await boards.pump();
+-          notify(
+-            states?.some((s) => s.id === run.id && s.state === "confirmed")
+-              ? "Time confirmed by server."
+-              : "Time queued. Check submission status in Settings.",
+-          );
+-        },
+-      },
+-      { label: "Close" },
+-    ]);
++    await showSubmission({
++      document,
++      result,
++      settings,
++      store,
++      boards,
++      identities: recognizedContent,
++      dialog,
++      current: () => view === "result" && race?.result?.id === result.id,
++    });
+   } catch (error) {
+-    dialog("Shared times could not load", error.message);
++    notify(error.message, true);
+   }
+ }
+ async function openLeaderboards() {
+   const body = document.createElement("div");
+   body.innerHTML = `<p>Three laps. The same circuit, car and assists. Set your time in Time Trial or try today's fixed Daily Spec.</p><div class="board-controls"><label>Board<select id="board-mode"><option value="trial">Time Trial</option><option value="daily">Daily Spec</option></select></label><label>Circuit<select id="board-track">${content.tracks.map((t, i) => `<option value="${i}">${esc(t.track.name)}</option>`).join("")}</select></label></div><p id="board-spec" class="muted"></p><p id="board-state" role="status">Loading times…</p><ol class="board-list"></ol><p class="muted">Community times are client-reported. Entries remain on the board for five days. Your local bests stay on your device.</p>`;
++  body.prepend(driverProfile());
+   const mode = body.querySelector("#board-mode"),
+     track = body.querySelector("#board-track"),
+     state = body.querySelector("#board-state"),
+@@ -2158,8 +2190,12 @@ async function openLeaderboards() {
+   const refresh = async () => {
+     const token = ++revision;
+     selection = null;
+-    list.replaceChildren();
+-    state.textContent = "Loading times…";
++    const previousSelection = list.dataset.selection;
++    const selectedKey = mode.value + ":" + track.value;
++    if (previousSelection !== selectedKey) list.replaceChildren();
++    state.textContent = list.children.length
++      ? "Refreshing displayed times…"
++      : "Loading times…";
+     const date = new Date().toISOString().slice(0, 10),
+       d = content.daily.find((d) => d.date === date);
+     track.disabled = mode.value === "daily";
+@@ -2217,9 +2253,11 @@ async function openLeaderboards() {
+         : board.rows.length
+           ? "Latest confirmed times"
+           : "No times for this combination yet. Set the first one.";
++      list.replaceChildren();
++      list.dataset.selection = mode.value + ":" + track.value;
+       for (const [i, row] of board.rows.entries()) {
+         const li = document.createElement("li"),
+-          name = document.createElement("span"),
++          name = document.createElement("bdi"),
+           value = document.createElement("strong");
+         name.textContent = i + 1 + ". " + row.alias;
+         value.textContent = time(row.elapsedMs);
+@@ -2229,7 +2267,9 @@ async function openLeaderboards() {
+     } catch (e) {
+       if (token === revision && body.isConnected)
+         state.textContent =
+-          "Times unavailable: " +
++          (list.children.length
++            ? "Displayed times may be stale. Refresh failed: "
++            : "Times unavailable: ") +
+           e.message +
+           " You can still race and keep your result locally.";
+     }
+diff --git a/app/preferences.js b/app/preferences.js
+index 7f390ed..98a9f8a 100644
+--- a/app/preferences.js
++++ b/app/preferences.js
+@@ -1,3 +1,4 @@
++import { driverAlias } from "./driver-profile.js";
+ export const DEFAULT_BINDINGS = Object.freeze({
+   throttle: "KeyW",
+   brake: "KeyS",
+@@ -20,6 +21,7 @@ export function defaultSettings({
+   reducedMotion = false,
+ } = {}) {
+   return {
++    driverAlias: "Driver",
+     sound: false,
+     music: true,
+     effectsVolume: 0.7,
+@@ -42,6 +44,9 @@ export function defaultSettings({
+ export function normalizeSettings(saved = {}, defaults = defaultSettings()) {
+   saved = saved && typeof saved === "object" ? saved : {};
+   const next = structuredClone(defaults);
++  try {
++    next.driverAlias = driverAlias(saved.driverAlias);
++  } catch {}
+   for (const [key, value] of Object.entries(next)) {
+     if (typeof value === "boolean" && typeof saved[key] === "boolean")
+       next[key] = saved[key];
+diff --git a/app/storage.js b/app/storage.js
+index e54c62c..2fcb463 100644
+--- a/app/storage.js
++++ b/app/storage.js
+@@ -635,6 +635,14 @@ export class Store {
+         existing = s.get("outbox:" + run.id);
+       existing.onsuccess = () => {
+         if (existing.result) {
++          if (stable(existing.result.run) !== stable(run)) {
++            fail(
++              Error(
++                "This run is already queued under its original driver name. Its submission cannot be changed.",
++              ),
++            );
++            return;
++          }
+           done(existing.result);
+           return;
+         }
+@@ -672,7 +680,7 @@ export class Store {
+       };
+     });
+   }
+-  claimRun(owner, now = Date.now()) {
++  claimRun(owner, now = Date.now(), excluded = new Set()) {
+     return this.atomic((tx, done) => {
+       const cursor = tx.objectStore("outbox").openCursor();
+       cursor.onsuccess = () => {
+@@ -684,6 +692,7 @@ export class Store {
+         const v = c.value;
+         if (
+           ["pending", "retry", "sending"].includes(v.state) &&
++          !excluded.has(v.run.id) &&
+           (v.nextAttemptAt || 0) <= now &&
+           (!v.lease || v.lease.expiresAt <= now)
+         ) {
+@@ -696,7 +705,38 @@ export class Store {
+       };
+     });
+   }
+-  settleRun(id, leaseId, state, message = "", now = Date.now()) {
++  retryRuns(id = null, now = Date.now()) {
++    return this.atomic((tx, done) => {
++      let count = 0;
++      const cursor = tx.objectStore("outbox").openCursor();
++      cursor.onsuccess = () => {
++        const c = cursor.result;
++        if (!c) {
++          done(count);
++          return;
++        }
++        const value = c.value;
++        if (
++          (!id || value.run.id === id) &&
++          value.state === "retry" &&
++          (!value.lease || value.lease.expiresAt <= now)
++        ) {
++          value.nextAttemptAt = Math.max(now, value.serverRetryAt || 0);
++          c.update(value);
++          count++;
++        }
++        c.continue();
++      };
++    });
++  }
++  settleRun(
++    id,
++    leaseId,
++    state,
++    message = "",
++    now = Date.now(),
++    serverRetryAt = 0,
++  ) {
+     if (!["confirmed", "retry", "rejected"].includes(state))
+       return Promise.reject(Error("Invalid submission state."));
+     return this.update("outbox:" + id, (old) => {
+@@ -709,9 +749,15 @@ export class Store {
+         state,
+         message,
+         lease: null,
++        serverRetryAt,
+         nextAttemptAt:
+           state === "retry"
+-            ? now + Math.min(300000, 1000 * 2 ** Math.min(old.attempts, 8))
++            ? Math.max(
++                serverRetryAt,
++                now +
++                  Math.min(300000, 1000 * 2 ** Math.min(old.attempts, 8)) *
++                    (1 + Math.random() * 0.2),
++              )
+             : 0,
+       };
+     });
+diff --git a/app/submission-ui.js b/app/submission-ui.js
+new file mode 100644
+index 0000000..a690207
+--- /dev/null
++++ b/app/submission-ui.js
+@@ -0,0 +1,163 @@
++import { submission, recognized } from "./boards.js";
++import { nameField, rememberDriver } from "./driver-profile.js";
++import { time } from "./builds.js";
++
++export function submissionStatus(entry) {
++  if (!entry) return "Finish saved locally. Add your name to share this time.";
++  if (entry.state === "confirmed")
++    return "Time confirmed on the public leaderboard.";
++  if (entry.state === "rejected")
++    return (
++      entry.message ||
++      "The server rejected this time. Your local result is kept."
++    );
++  return (
++    "Time queued on this device under “" +
++    entry.run.alias +
++    "”. " +
++    (entry.serverRetryAt > Date.now()
++      ? "The server asked us to wait before retrying."
++      : "It will retry when a connection is available. You can close this window.")
++  );
++}
++
++// Board reads are optional. The durable submission path never depends on them.
++export async function showSubmission({
++  document,
++  result,
++  settings,
++  store,
++  boards,
++  identities,
++  dialog,
++  current,
++}) {
++  const initial = submission(result, settings.driverAlias);
++  recognized(initial, await identities);
++  if (!current()) return;
++  const body = document.createElement("div"),
++    field = nameField(document, settings.driverAlias),
++    intro = document.createElement("p"),
++    status = document.createElement("p"),
++    boardStatus = document.createElement("p"),
++    list = document.createElement("ol"),
++    submit = document.createElement("button");
++  intro.textContent =
++    time(result.elapsedMs) +
++    " · " +
++    result.trackName +
++    ". Your name and time become public when submitted. Casual client-reported times expire five days after receipt.";
++  status.setAttribute("role", "status");
++  status.dataset.submissionStatus = "";
++  list.className = "board-list";
++  submit.type = "submit";
++  submit.className = "primary";
++  submit.textContent = "Submit this time";
++  submit.disabled = true;
++  field.form.append(submit);
++  body.append(intro, field.form, status, boardStatus, list);
++  let entry = null,
++    busy = false,
++    refreshToken = 0;
++  const update = () => {
++    status.textContent = submissionStatus(entry);
++    field.input.readOnly = !!entry;
++    if (entry) field.input.value = entry.run.alias;
++    submit.disabled = !!entry || busy || !store;
++    submit.textContent = entry
++      ? entry.state === "confirmed"
++        ? "Submitted"
++        : entry.state === "rejected"
++          ? "Not accepted"
++          : "Already queued"
++      : "Submit this time";
++  };
++  const refresh = async () => {
++    const token = ++refreshToken;
++    boardStatus.textContent = list.children.length
++      ? "Refreshing saved display…"
++      : "Loading matching times…";
++    try {
++      const board = await boards.refresh(initial);
++      if (!body.isConnected || token !== refreshToken) return;
++      list.replaceChildren();
++      for (const row of board.rows) {
++        const li = document.createElement("li"),
++          name = document.createElement("bdi"),
++          value = document.createElement("strong");
++        name.textContent = row.alias;
++        value.textContent = time(row.elapsedMs);
++        li.append(name, value);
++        list.append(li);
++      }
++      boardStatus.textContent = board.stale
++        ? "Saved times · refresh failed. " + board.error
++        : board.rows.length
++          ? "Latest matching times"
++          : "No matching times yet. Set the first one.";
++    } catch (error) {
++      if (body.isConnected && token === refreshToken)
++        boardStatus.textContent =
++          "Times unavailable. You can still queue your result. " +
++          error.message;
++    }
++  };
++  const reconcile = async () => {
++    if (busy) return;
++    busy = true;
++    try {
++      await store?.retryRuns(result.id);
++      await boards.pump();
++      const saved = await store?.get("outbox:" + result.id);
++      if (body.isConnected) {
++        entry = saved || entry;
++        update();
++        await refresh();
++      }
++    } catch (error) {
++      if (body.isConnected)
++        status.textContent = error.message + " Your queued time is retained.";
++    } finally {
++      busy = false;
++      if (body.isConnected) update();
++    }
++  };
++  field.form.onsubmit = async (event) => {
++    event.preventDefault();
++    if (busy || entry) return;
++    busy = true;
++    submit.disabled = true;
++    try {
++      const alias = field.read(),
++        run = submission(result, alias);
++      await rememberDriver(settings, store, alias);
++      entry = await store.enqueueRun(run);
++      if (body.isConnected) update();
++    } catch (error) {
++      if (body.isConnected)
++        status.textContent =
++          error.message + " Your entry is kept; correct it or retry.";
++    } finally {
++      busy = false;
++      submit.disabled = !!entry || !store;
++    }
++    if (entry) void reconcile();
++  };
++  dialog("ADD YOUR TIME", body, [
++    { label: "Refresh / retry", keep: true, action: reconcile },
++    { label: "Close" },
++  ]);
++  field.input.focus();
++  try {
++    entry = await store?.get("outbox:" + result.id);
++    if (!body.isConnected) return;
++    update();
++    if (!store)
++      status.textContent =
++        "Device storage is unavailable. Download your result to keep it.";
++  } catch (error) {
++    status.textContent = "Could not read saved submissions: " + error.message;
++    return;
++  }
++  void refresh();
++}
+diff --git a/tests/handbook-followup.test.mjs b/tests/handbook-followup.test.mjs
+new file mode 100644
+index 0000000..4c512e5
+--- /dev/null
++++ b/tests/handbook-followup.test.mjs
+@@ -0,0 +1,211 @@
++import test from "node:test";
++import assert from "node:assert/strict";
++import { IDBFactory } from "fake-indexeddb";
++import { DOMParser } from "linkedom";
++import { openStore } from "../app/storage.js";
++import { Boards, contentKeys, retryAfterAt } from "../app/boards.js";
++import { normalizeSettings } from "../app/preferences.js";
++import { driverAlias, rememberDriver } from "../app/driver-profile.js";
++import { showSubmission } from "../app/submission-ui.js";
++import { loadContent } from "../tools/content.mjs";
++import { RULES } from "../app/builds.js";
++const content = await loadContent(),
++  keys = await contentKeys(content);
++const result = () => ({
++  id: crypto.randomUUID(),
++  mode: "trial",
++  trackId: content.tracks[0].track.id,
++  trackName: "Yard Loop",
++  trackRevision: content.tracks[0].revision,
++  rulesRevision: RULES,
++  buildRevision: [...keys.builds][0],
++  assistance: "steering-off:manual",
++  laps: 3,
++  elapsedMs: 90000,
++  splits: [30000, 30000, 30000],
++});
++const config = {
++  policyRevision: "fixture",
++  paths: { trial: "/boards/trial.html", daily: "/boards/daily.html" },
++};
++test("a failed optional board cache does not turn a successful read into an unavailable board", async () => {
++  const board = new Boards(
++    {
++      set: async () => {
++        throw Error("quota");
++      },
++      get: async () => null,
++    },
++    {
++      config,
++      Parser: DOMParser,
++      fetcher: async () => new Response(""),
++    },
++  );
++  const { submission } = await import("../app/boards.js");
++  const value = await board.refresh(submission(result(), "Driver"));
++  assert.equal(value.stale, false);
++  assert.deepEqual(value.rows, []);
++  assert.equal(value.cacheError, "quota");
++});
++
++test("nickname normalization preserves Unicode and invalid/storage failures preserve the saved preference", async () => {
++  assert.equal(driverAlias("  Jose\u0301  "), "José");
++  assert.equal(driverAlias("🏎".repeat(24)), "🏎".repeat(24));
++  assert.throws(() => driverAlias("🏎".repeat(25)), /1–24/);
++  assert.throws(() => driverAlias("a\nb"), /control/);
++  assert.equal(
++    normalizeSettings({ driverAlias: "\u0000", sound: true }).driverAlias,
++    "Driver",
++  );
++  const settings = normalizeSettings({ driverAlias: "First" });
++  await assert.rejects(
++    rememberDriver(
++      settings,
++      { set: () => Promise.reject(Error("quota")) },
++      "Second",
++    ),
++    /quota/,
++  );
++  assert.equal(settings.driverAlias, "First");
++});
++
++test("unavailable board never blocks name entry, invalid input stays open, queue survives reopen", async () => {
++  const factory = new IDBFactory(),
++    store = await openStore({ factory }),
++    settings = normalizeSettings();
++  const document = new DOMParser().parseFromString(
++    "<!doctype html><html><body></body></html>",
++    "text/html",
++  );
++  let pumpCalls = 0;
++  const boards = {
++    refresh: async () => {
++      throw Error("offline");
++    },
++    pump: async () => {
++      pumpCalls++;
++    },
++  };
++  const r = result();
++  const open = () =>
++    showSubmission({
++      document,
++      result: r,
++      settings,
++      store,
++      boards,
++      identities: keys,
++      current: () => true,
++      dialog: (_title, body) => document.body.replaceChildren(body),
++    });
++  await open();
++  await new Promise((r) => setTimeout(r, 0));
++  const form = document.querySelector("form"),
++    input = form.querySelector("input");
++  assert.match(document.body.textContent, /Times unavailable/);
++  input.value = "  ";
++  await form.onsubmit({ preventDefault() {} });
++  assert.equal(input.value, "  ");
++  assert.equal(input.getAttribute("aria-invalid"), "true");
++  assert.equal((await store.keys("outbox:")).length, 0);
++  input.value = "Wesley 🏎";
++  await form.onsubmit({ preventDefault() {} });
++  assert.equal((await store.get("outbox:" + r.id)).run.alias, "Wesley 🏎");
++  assert.equal((await store.get("settings")).driverAlias, "Wesley 🏎");
++  assert.equal(pumpCalls, 1);
++  await open();
++  assert.equal(document.querySelector("input").readOnly, true);
++  assert.equal(document.querySelector("input").value, "Wesley 🏎");
++  assert.match(document.body.textContent, /Time queued/);
++  store.close();
++  const reopened = await openStore({ factory });
++  assert.equal((await reopened.get("outbox:" + r.id)).run.alias, "Wesley 🏎");
++  reopened.close();
++});
++
++test("queued identity cannot change payload; manual retry respects server delay and another tab's lease", async () => {
++  const store = await openStore({ factory: new IDBFactory() });
++  const run = { id: crypto.randomUUID(), alias: "Original" };
++  await store.enqueueRun(run);
++  await assert.rejects(
++    store.enqueueRun({ ...run, alias: "Changed" }),
++    /original driver name/,
++  );
++  const claim = await store.claimRun("one", 100);
++  await store.retryRuns(null, 200);
++  assert.equal(await store.claimRun("two", 201), null);
++  await store.settleRun(run.id, claim.lease.id, "retry", "offline", 300, 10000);
++  await store.retryRuns(run.id, 400);
++  assert.equal(await store.claimRun("two", 401), null);
++  const next = await store.claimRun("two", 10001);
++  assert.ok(next);
++  await store.settleRun(run.id, next.lease.id, "retry", "offline", 10002);
++  await store.retryRuns(run.id, 10003);
++  assert.ok(await store.claimRun("three", 10004));
++  store.close();
++});
++
++test("a request outliving its lease is attempted once per pump and stays recoverable", async () => {
++  const store = await openStore({ factory: new IDBFactory() });
++  const r = result(),
++    { submission } = await import("../app/boards.js"),
++    run = submission(r, "Driver");
++  await store.enqueueRun(run);
++  let clock = 100,
++    calls = 0;
++  const board = new Boards(store, {
++    config,
++    Parser: DOMParser,
++    clock: () => clock,
++    fetcher: async () => {
++      calls++;
++      clock += 31000;
++      throw Error("slow connection");
++    },
++  });
++  await board.pump();
++  assert.equal(calls, 1);
++  assert.equal((await store.get("outbox:" + run.id)).state, "sending");
++  assert.ok(await store.claimRun("other", clock));
++  store.close();
++});
++
++test("server Retry-After dates and seconds defer a queue read without a retry storm", async () => {
++  assert.equal(
++    retryAfterAt(new Response("", { headers: { "Retry-After": "60" } }), 1000),
++    61000,
++  );
++  const when = Date.parse("2026-10-17T21:00:00Z");
++  assert.equal(
++    retryAfterAt(
++      new Response("", {
++        headers: { "Retry-After": new Date(when).toUTCString() },
++      }),
++      when - 1000,
++    ),
++    when,
++  );
++  const store = await openStore({ factory: new IDBFactory() }),
++    { submission } = await import("../app/boards.js");
++  const run = submission(result(), "Driver");
++  await store.enqueueRun(run);
++  let calls = 0;
++  const board = new Boards(store, {
++    config,
++    Parser: DOMParser,
++    clock: () => 1000,
++    fetcher: async () => {
++      calls++;
++      return new Response("Slow down", {
++        status: 429,
++        headers: { "Retry-After": "60" },
++      });
++    },
++  });
++  await board.pump();
++  await store.retryRuns(run.id, 2000);
++  assert.equal(calls, 1);
++  assert.equal((await store.get("outbox:" + run.id)).nextAttemptAt, 61000);
++  store.close();
++});
+diff --git a/tools/check-live-outbox.mjs b/tools/check-live-outbox.mjs
+new file mode 100644
+index 0000000..183494e
+--- /dev/null
++++ b/tools/check-live-outbox.mjs
+@@ -0,0 +1,155 @@
++// Two independent production store/queue clients; actual public endpoint;
++// only the acknowledgement after a real accepted POST is deliberately dropped.
++import fs from "node:fs/promises";
++import { randomUUID } from "node:crypto";
++import { DOMParser } from "linkedom";
++import { IDBFactory } from "fake-indexeddb";
++import { openStore } from "../app/storage.js";
++import { Boards } from "../app/boards.js";
++import { HOST_CONFIG } from "../app/pagelove.js";
++import { stable } from "../app/model.js";
++const file = new URL("../audit/handbook-live-outbox.json", import.meta.url);
++let key = "";
++async function run() {
++  const previous = JSON.parse(
++    await fs.readFile(
++      new URL("../audit/handbook-data-preservation.json", import.meta.url),
++      "utf8",
++    ),
++  );
++  const row = {
++    ...previous.synthetic,
++    id: randomUUID(),
++    alias: "Outbox check",
++  };
++  const report = {
++    utc: new Date().toISOString(),
++    id: row.id,
++    requests: [],
++    attempts: [],
++    method:
++      "Production Store and Boards with two independent IndexedDB connections in fake-indexeddb; actual public writes/readback; injected accepted-response loss. Not two physical browser tabs.",
++  };
++  await fs.writeFile(file, JSON.stringify(report, null, 2) + "\n");
++  const factory = new IDBFactory(),
++    a = await openStore({ factory }),
++    b = await openStore({ factory });
++  let acceptedResponsesDropped = 0;
++  const fetcher = async (url, options) => {
++    const response = await fetch(url, options);
++    report.requests.push({
++      method: options.method || "GET",
++      status: response.status,
++    });
++    if (options.method === "POST" && response.ok) {
++      acceptedResponsesDropped++;
++      await response.body?.cancel();
++      throw Error("Injected response loss after actual public acceptance");
++    }
++    return response;
++  };
++  const first = new Boards(a, { fetcher, Parser: DOMParser }),
++    second = new Boards(b, { fetcher, Parser: DOMParser });
++  try {
++    await a.enqueueRun(row);
++    for (let attempt = 0; attempt < 3; attempt++) {
++      await a.retryRuns(row.id);
++      await Promise.all([first.pump(), second.pump()]);
++      const entry = await b.get("outbox:" + row.id);
++      report.attempts.push({
++        state: entry.state,
++        identityPreserved: stable(entry.run) === stable(row),
++        claims: entry.attempts,
++      });
++      if (entry.state === "confirmed" || entry.state === "rejected") break;
++    }
++    const publicRows = (await first.readRows("trial")).rows.filter(
++      (value) => value.id === row.id,
++    );
++    report.checks = {
++      confirmed: (await a.get("outbox:" + row.id)).state === "confirmed",
++      onePublicCopy: publicRows.length === 1,
++      oneAcceptanceAcknowledgementDropped: acceptedResponsesDropped === 1,
++      everyAttemptKeptIdentity: report.attempts.every(
++        (value) => value.identityPreserved,
++      ),
++    };
++  } catch (error) {
++    report.error = error.message;
++  } finally {
++    a.close();
++    b.close();
++    const url = HOST_CONFIG.authoringOrigin + "/boards/trial.html";
++    const response = await fetch(url, {
++      headers: { Authorization: "Bearer " + key },
++      redirect: "error",
++      signal: AbortSignal.timeout(15000),
++    });
++    if (!response.ok || !response.headers.get("etag"))
++      throw Error("Cleanup baseline unavailable; owned ID retained in receipt");
++    const html = await response.text(),
++      marker = `itemprop="id" content="${row.id}"`,
++      index = html.indexOf(marker);
++    if (index >= 0) {
++      const start = html.lastIndexOf(
++          '<li itemscope itemtype="urn:ScrapLeague:Run">',
++          index,
++        ),
++        end = html.indexOf("</li>", index);
++      if (start < 0 || end < 0)
++        throw Error("Cannot isolate owned row for cleanup");
++      const cleaned = await fetch(url, {
++        method: "PUT",
++        redirect: "error",
++        signal: AbortSignal.timeout(15000),
++        headers: {
++          Authorization: "Bearer " + key,
++          "If-Match": response.headers.get("etag"),
++          "Content-Type": "text/html; charset=utf-8",
++        },
++        body: html.slice(0, start) + html.slice(end + 5),
++      });
++      if (!cleaned.ok)
++        throw Error("Conditional cleanup refused: " + cleaned.status);
++    }
++    const after = await fetch(url, {
++      headers: { Authorization: "Bearer " + key },
++      redirect: "error",
++      signal: AbortSignal.timeout(15000),
++    });
++    report.cleanup = {
++      conditional: true,
++      absent: after.ok && !(await after.text()).includes(marker),
++    };
++    report.passed =
++      !report.error &&
++      Object.values(report.checks || {}).every(Boolean) &&
++      !!report.checks &&
++      report.cleanup.absent;
++    await fs.writeFile(file, JSON.stringify(report, null, 2) + "\n");
++    key = "";
++  }
++  return report;
++}
++if (process.stdin.isTTY) process.stdin.setRawMode(true);
++process.stdin.setEncoding("utf8");
++let input = "";
++console.log("Ready for hidden JSON owner key.");
++process.stdin.on("data", async (chunk) => {
++  if (chunk.includes("\u0003")) process.exit(0);
++  input += chunk;
++  const end = input.search(/[\r\n]/);
++  if (end < 0) return;
++  process.stdin.pause();
++  try {
++    key = JSON.parse(input.slice(0, end)).key;
++    if (!key?.startsWith("pk_")) throw Error("Hidden key required");
++    console.log(JSON.stringify(await run()));
++  } catch (error) {
++    console.log(JSON.stringify({ error: error.message }));
++    process.exitCode = 1;
++  } finally {
++    key = "";
++    process.exit(process.exitCode || 0);
++  }
++});
+diff --git a/tools/check-old-release.mjs b/tools/check-old-release.mjs
+new file mode 100644
+index 0000000..4d8591f
+--- /dev/null
++++ b/tools/check-old-release.mjs
+@@ -0,0 +1,60 @@
++// Read-only verification of the immutable dependencies used by pre-update clients.
++import fs from "node:fs/promises";
++import { createHash } from "node:crypto";
++const baselineURL = new URL(
++  "../audit/deployment-before-handbook-followup.json",
++  import.meta.url,
++);
++const baselineBytes = await fs.readFile(baselineURL);
++const baseline = JSON.parse(baselineBytes);
++if (
++  baseline.origin !== "https://hire-poker-8313.onpagelove.com" ||
++  !/^sl-[a-f0-9]{14}$/.test(baseline.release)
++)
++  throw Error("Unexpected deployment baseline");
++const prefix = "/releases/" + baseline.release + "/";
++const files = baseline.publicFiles.filter((row) => row.path.startsWith(prefix));
++if (!files.length || files.some((row) => row.path.includes("..")))
++  throw Error("Missing or invalid old dependency inventory");
++const checks = [];
++for (let start = 0; start < files.length; start += 4) {
++  await Promise.all(
++    files.slice(start, start + 4).map(async (file) => {
++      const response = await fetch(baseline.origin + file.path, {
++        redirect: "error",
++        cache: "no-store",
++        signal: AbortSignal.timeout(15000),
++      });
++      const bytes = Buffer.from(await response.arrayBuffer());
++      const hash = createHash("sha256").update(bytes).digest("hex");
++      checks.push({
++        path: file.path,
++        status: response.status,
++        expected: file.sha256,
++        actual: hash,
++        passed: response.status === 200 && hash === file.sha256,
++      });
++    }),
++  );
++}
++checks.sort((a, b) => a.path.localeCompare(b.path));
++const receipt = {
++  utc: new Date().toISOString(),
++  origin: baseline.origin,
++  release: baseline.release,
++  baselineSha256: createHash("sha256").update(baselineBytes).digest("hex"),
++  checks,
++  passed: checks.every((row) => row.passed),
++};
++await fs.writeFile(
++  new URL("../audit/handbook-old-client-assets.json", import.meta.url),
++  JSON.stringify(receipt, null, 2) + "\n",
++);
++console.log(
++  JSON.stringify({
++    release: receipt.release,
++    files: checks.length,
++    passed: receipt.passed,
++  }),
++);
++if (!receipt.passed) process.exitCode = 1;
+diff --git a/tools/check-release-data.mjs b/tools/check-release-data.mjs
+new file mode 100644
+index 0000000..36497d5
+--- /dev/null
++++ b/tools/check-release-data.mjs
+@@ -0,0 +1,224 @@
++// A bounded, owned public row proves that publication preserves populated data.
++// Credentials stay in hidden terminal input and memory. No existing row is edited.
++import fs from "node:fs/promises";
++import path from "node:path";
++import { randomUUID, createHash } from "node:crypto";
++import { DOMParser } from "linkedom";
++import { Boards, runHTML } from "../app/boards.js";
++import { stable } from "../app/model.js";
++import { HOST_CONFIG } from "../app/pagelove.js";
++import {
++  BOARD_ORIGIN,
++  BOARD_PATHS,
++  loadOfficialBoardIdentities,
++} from "./board-policy.mjs";
++
++const root = path.resolve(import.meta.dirname, "..");
++const receiptPath = path.join(root, "audit/handbook-data-preservation.json");
++const boards = new Boards(null, { Parser: DOMParser });
++const hash = (value) => createHash("sha256").update(value).digest("hex");
++let key = "";
++async function owner(method = "GET", extra = {}) {
++  const response = await fetch(
++    new URL(BOARD_PATHS.trial, HOST_CONFIG.authoringOrigin),
++    {
++      method,
++      redirect: "error",
++      cache: "no-store",
++      signal: AbortSignal.timeout(15000),
++      ...extra,
++      headers: { Authorization: "Bearer " + key, ...extra.headers },
++    },
++  );
++  if (!response.ok) throw Error(`Owner ${method} returned ${response.status}`);
++  return response;
++}
++function records(html) {
++  const doc = new DOMParser().parseFromString(html, "text/html");
++  return [...doc.querySelectorAll("#runs > li")].map((row) => ({
++    id: row.querySelector("[itemprop=id]")?.getAttribute("content"),
++    hash: hash(row.outerHTML),
++  }));
++}
++async function save(receipt) {
++  await fs.writeFile(receiptPath, JSON.stringify(receipt, null, 2) + "\n");
++}
++async function seed() {
++  try {
++    await fs.access(receiptPath);
++    return resumeSeed();
++  } catch (error) {
++    if (error.code !== "ENOENT") throw error;
++  }
++  const identities = await loadOfficialBoardIdentities();
++  const trackId = Object.keys(identities.tracks)[0];
++  const run = {
++    id: randomUUID(),
++    alias: "Release check",
++    mode: "trial",
++    trackId,
++    trackRevision: identities.tracks[trackId],
++    rulesRevision: identities.rulesRevision,
++    buildRevision: identities.builds[0],
++    assist: "steering-off:manual",
++    laps: 3,
++    challenge: "",
++    elapsedMs: 480000,
++    splits: [160000, 160000, 160000],
++  };
++  const before = await owner();
++  const receipt = {
++    utc: new Date().toISOString(),
++    origin: BOARD_ORIGIN,
++    path: BOARD_PATHS.trial,
++    synthetic: run,
++    before: {
++      etag: before.headers.get("etag"),
++      rows: records(await before.text()),
++    },
++    state: "seed-attempted",
++    scope:
++      "Owned synthetic row and unchanged hashes of pre-existing rows; no private row payload recorded.",
++  };
++  // Persist the ID first so ambiguous acceptance can always be reconciled/cleaned.
++  await save(receipt);
++  return resumeSeed();
++}
++async function resumeSeed() {
++  const receipt = JSON.parse(await fs.readFile(receiptPath, "utf8"));
++  if (receipt.state === "awaiting-publication") return { state: receipt.state };
++  if (!["seed-attempted", "seed-not-confirmed"].includes(receipt.state))
++    throw Error("Receipt is already final");
++  const run = receipt.synthetic;
++  receipt.attempts ||= receipt.postStatus
++    ? [{ status: receipt.postStatus, note: "First response body not retained" }]
++    : [];
++  let stored = await boards.lookup(run);
++  if (!stored && receipt.attempts.length >= 3)
++    throw Error("Bounded seed attempts exhausted");
++  if (!stored) {
++    const posted = await fetch(new URL(BOARD_PATHS.trial, BOARD_ORIGIN), {
++      method: "POST",
++      redirect: "error",
++      credentials: "omit",
++      signal: AbortSignal.timeout(15000),
++      headers: { "Content-Type": "text/html", Range: "selector=#runs" },
++      body: runHTML(run),
++    });
++    receipt.attempts.push({
++      utc: new Date().toISOString(),
++      status: posted.status,
++      detail: posted.ok ? "" : (await posted.text()).slice(0, 1500),
++    });
++    if (posted.ok) await posted.body?.cancel();
++    stored = await boards.lookup(run);
++  }
++  if (!stored) {
++    receipt.state = "seed-not-confirmed";
++    await save(receipt);
++    throw Error("Synthetic seed not confirmed");
++  }
++  const { receivedAt, expiresAt, ...payload } = stored;
++  if (stable(payload) !== stable(run)) throw Error("Seed payload differs");
++  const populated = await owner();
++  receipt.populated = {
++    utc: new Date().toISOString(),
++    etag: populated.headers.get("etag"),
++    rows: records(await populated.text()),
++  };
++  receipt.state = "awaiting-publication";
++  await save(receipt);
++  return {
++    state: receipt.state,
++    rows: receipt.populated.rows.length,
++    syntheticId: run.id,
++  };
++}
++async function verifyAndClean() {
++  const receipt = JSON.parse(await fs.readFile(receiptPath, "utf8"));
++  const response = await owner(),
++    etag = response.headers.get("etag"),
++    html = await response.text();
++  if (!etag) throw Error("Missing conditional-write ETag");
++  const current = records(html),
++    expected = receipt.populated?.rows || [];
++  receipt.after = {
++    utc: new Date().toISOString(),
++    etag,
++    rows: current,
++    preserved:
++      expected.length > 0 &&
++      expected.every((row) =>
++        current.some((now) => now.id === row.id && now.hash === row.hash),
++      ),
++  };
++  // Cleanup only the owned ID and retain every other byte, conditional on the read.
++  const marker = `itemprop="id" content="${receipt.synthetic.id}"`;
++  const index = html.indexOf(marker);
++  if (index >= 0) {
++    const start = html.lastIndexOf(
++      '<li itemscope itemtype="urn:ScrapLeague:Run">',
++      index,
++    );
++    const end = html.indexOf("</li>", index);
++    if (start < 0 || end < 0) throw Error("Could not isolate owned row");
++    await owner("PUT", {
++      headers: { "If-Match": etag, "Content-Type": "text/html; charset=utf-8" },
++      body: html.slice(0, start) + html.slice(end + 5),
++    });
++  }
++  const cleaned = records(await (await owner()).text());
++  receipt.cleanup = {
++    utc: new Date().toISOString(),
++    ownedRowAbsent: !cleaned.some((row) => row.id === receipt.synthetic.id),
++    otherRowsPreserved: current
++      .filter((row) => row.id !== receipt.synthetic.id)
++      .every((row) =>
++        cleaned.some((now) => now.id === row.id && now.hash === row.hash),
++      ),
++  };
++  receipt.state =
++    receipt.after.preserved &&
++    receipt.cleanup.ownedRowAbsent &&
++    receipt.cleanup.otherRowsPreserved
++      ? "passed"
++      : "failed";
++  await save(receipt);
++  return {
++    state: receipt.state,
++    preservedRows: expected.length,
++    cleanup: receipt.cleanup,
++  };
++}
++if (process.stdin.isTTY) process.stdin.setRawMode(true);
++process.stdin.setEncoding("utf8");
++let input = "",
++  busy = false;
++console.log("Ready for hidden JSON: seed, verify-clean, quit.");
++process.stdin.on("data", async (chunk) => {
++  if (chunk.includes("\u0003")) process.exit(0);
++  input += chunk;
++  const end = input.search(/[\r\n]/);
++  if (end < 0) return;
++  const line = input.slice(0, end).trim();
++  input = input.slice(end + 1);
++  if (!line || busy) return;
++  busy = true;
++  try {
++    const command = JSON.parse(line);
++    if (command.op === "quit") process.exit(0);
++    key = command.key;
++    if (typeof key !== "string" || !key.startsWith("pk_"))
++      throw Error("Owner key required through hidden input");
++    if (!["seed", "verify-clean"].includes(command.op))
++      throw Error("Unsupported operation");
++    console.log(
++      JSON.stringify(await (command.op === "seed" ? seed() : verifyAndClean())),
++    );
++  } catch (error) {
++    console.log(JSON.stringify({ error: error.message }));
++  } finally {
++    key = "";
++    busy = false;
++  }
++});
+diff --git a/tools/check-workshop-publication.mjs b/tools/check-workshop-publication.mjs
+new file mode 100644
+index 0000000..7ccd611
+--- /dev/null
++++ b/tools/check-workshop-publication.mjs
+@@ -0,0 +1,265 @@
++// Production publication functions against one disposable owner-authored circuit.
++import fs from "node:fs/promises";
++import { createHash } from "node:crypto";
++import { DOMParser } from "linkedom";
++import { loadContent } from "./content.mjs";
++import { duplicateTrack, gameplay, stable } from "../app/model.js";
++import { HOST_CONFIG, publishTrack } from "../app/pagelove.js";
++import {
++  publishOwnerTrack,
++  listTrack,
++  readPublishedTrack,
++  parseCatalog,
++} from "../app/publication.js";
++
++const file = new URL(
++  "../audit/handbook-workshop-publication.json",
++  import.meta.url,
++);
++const digest = (value) => createHash("sha256").update(value).digest("hex");
++let key = "";
++const save = (report) =>
++  fs.writeFile(file, JSON.stringify(report, null, 2) + "\n");
++async function request(path, options = {}) {
++  if (!path.startsWith("/workshop-tracks/") || path.includes(".."))
++    throw Error("Unsupported path");
++  return fetch(HOST_CONFIG.authoringOrigin + path, {
++    redirect: "error",
++    cache: "no-store",
++    signal: AbortSignal.timeout(15000),
++    ...options,
++    headers: { Authorization: "Bearer " + key, ...options.headers },
++  });
++}
++async function snapshot(id) {
++  const definition = await request(`/workshop-tracks/${id}/definition.html`);
++  if (!definition.ok)
++    throw Error("Definition snapshot failed: " + definition.status);
++  const catalog = await request("/workshop-tracks/catalog.html");
++  const entries = catalog.ok
++    ? parseCatalog(await catalog.text(), DOMParser)
++    : [];
++  return {
++    utc: new Date().toISOString(),
++    definitionHash: digest(await definition.text()),
++    catalogRows: entries.map((entry) => ({
++      id: entry.id,
++      hash: digest(stable(entry)),
++    })),
++  };
++}
++async function seed() {
++  try {
++    await fs.access(file);
++    throw Error("Existing fixture receipt must be reconciled first");
++  } catch (error) {
++    if (error.code !== "ENOENT") throw error;
++  }
++  const track = duplicateTrack((await loadContent()).tracks[0].track);
++  track.name = "Release preservation check";
++  track.slug = "release-check-" + track.id.slice(0, 8);
++  const report = {
++    utc: new Date().toISOString(),
++    id: track.id,
++    state: "started",
++    checks: {},
++    scope:
++      "Real pinned owner/public endpoints; injected stale catalog ETag and lost accepted response; only owned circuit is changed.",
++  };
++  await save(report);
++  let conflictInjected = false;
++  const first = await publishOwnerTrack(track, key, null, {
++    Parser: DOMParser,
++    fetcher: async (url, options) => {
++      if (
++        url.endsWith("/catalog.html") &&
++        options.method === "PUT" &&
++        !conflictInjected
++      ) {
++        conflictInjected = true;
++        options = {
++          ...options,
++          headers: {
++            ...options.headers,
++            "If-Match": '"deliberately-stale-fixture"',
++          },
++        };
++        delete options.headers["If-None-Match"];
++      }
++      return fetch(url, options);
++    },
++  });
++  report.checks.catalogConflictPreservesExactLink =
++    !first.listed &&
++    /Catalog changed/.test(first.listingError) &&
++    stable(
++      gameplay(await readPublishedTrack(track.id, { Parser: DOMParser })),
++    ) === stable(gameplay(track));
++  await save(report);
++  await listTrack(track, first.revision, key, { Parser: DOMParser });
++  report.checks.listingRetry = true;
++  const base = {
++    url:
++      HOST_CONFIG.authoringOrigin +
++      `/workshop-tracks/${track.id}/definition.html`,
++    pinnedOrigin: HOST_CONFIG.authoringOrigin,
++    key,
++    Parser: DOMParser,
++  };
++  let conflict = false;
++  try {
++    await publishTrack({
++      ...base,
++      track,
++      etag: '"deliberately-stale-fixture"',
++      baseline: track,
++    });
++  } catch (error) {
++    conflict = /Conflict/.test(error.message);
++  }
++  report.checks.staleTrackRefused = conflict;
++  const changed = { ...track, name: "Release preservation check B" };
++  const accepted = await publishTrack({
++    ...base,
++    track: changed,
++    baseline: first.baseline,
++    etag: first.etag,
++    fetcher: async (url, options) => {
++      const response = await fetch(url, options);
++      if (options.method === "PUT" && response.ok) {
++        await response.body?.cancel();
++        throw Error("Injected lost response after actual acceptance");
++      }
++      return response;
++    },
++  });
++  report.checks.ambiguousWrite = accepted.state;
++  report.checks.ambiguousSemanticReadback =
++    stable(
++      gameplay(await readPublishedTrack(track.id, { Parser: DOMParser })),
++    ) === stable(gameplay(changed));
++  const wrong = await request(`/workshop-tracks/${track.id}/definition.html`, {
++    headers: { Authorization: "Bearer deliberately-invalid-fixture" },
++  });
++  report.checks.wrongCredentialRefused = [401, 403].includes(wrong.status);
++  await wrong.body?.cancel();
++  await listTrack(changed, accepted.revision, key, { Parser: DOMParser });
++  report.before = await snapshot(track.id);
++  report.state = "awaiting-publication";
++  await save(report);
++  return { state: report.state, checks: report.checks, id: track.id };
++}
++async function verifyAndClean() {
++  const report = JSON.parse(await fs.readFile(file, "utf8"));
++  report.after = await snapshot(report.id);
++  report.preserved =
++    report.before.definitionHash === report.after.definitionHash &&
++    report.before.catalogRows.every((row) =>
++      report.after.catalogRows.some(
++        (now) => now.id === row.id && now.hash === row.hash,
++      ),
++    );
++  await save(report);
++  const definitionPath = `/workshop-tracks/${report.id}/definition.html`;
++  const createBaseline = await request(definitionPath);
++  const createConflict = await request(definitionPath, {
++    method: "PUT",
++    headers: {
++      "If-None-Match": "*",
++      "Content-Type": "text/html; charset=utf-8",
++    },
++    body: await createBaseline.text(),
++  });
++  report.checks.createOnlyConflictRefused = createConflict.status === 412;
++  await createConflict.body?.cancel();
++  await save(report);
++  const catalog = await request("/workshop-tracks/catalog.html"),
++    etag = catalog.headers.get("etag"),
++    html = await catalog.text();
++  const marker = `<span itemprop="id">${report.id}</span>`,
++    index = html.indexOf(marker);
++  if (!catalog.ok || !etag || index < 0)
++    throw Error("Cannot isolate owned catalog entry");
++  const start = html.lastIndexOf(
++      '<li itemscope itemtype="urn:ScrapLeague:PublishedTrack">',
++      index,
++    ),
++    end = html.indexOf("</li>", index);
++  if (start < 0 || end < 0) throw Error("Owned catalog row bounds unavailable");
++  const write = await request("/workshop-tracks/catalog.html", {
++    method: "PUT",
++    headers: { "If-Match": etag, "Content-Type": "text/html; charset=utf-8" },
++    body: html.slice(0, start) + html.slice(end + 5),
++  });
++  if (!write.ok)
++    throw Error("Conditional catalog cleanup failed: " + write.status);
++  const path = `/workshop-tracks/${report.id}/definition.html`,
++    definition = await request(path);
++  const removed = await request(path, {
++    method: "DELETE",
++    headers: { "If-Match": definition.headers.get("etag") },
++  });
++  const absent = await request(path);
++  const remaining = parseCatalog(
++    await (await request("/workshop-tracks/catalog.html")).text(),
++    DOMParser,
++  );
++  report.cleanup = {
++    definitionAbsent: absent.status === 404,
++    deletionStatus: removed.status,
++    ownedListingAbsent: !remaining.some((row) => row.id === report.id),
++    otherListingsPreserved: report.after.catalogRows
++      .filter((row) => row.id !== report.id)
++      .every((row) =>
++        remaining.some(
++          (now) => now.id === row.id && digest(stable(now)) === row.hash,
++        ),
++      ),
++  };
++  report.state =
++    report.preserved &&
++    report.checks.createOnlyConflictRefused &&
++    report.cleanup.definitionAbsent &&
++    report.cleanup.ownedListingAbsent &&
++    report.cleanup.otherListingsPreserved
++      ? "passed"
++      : "failed";
++  await save(report);
++  return {
++    state: report.state,
++    preserved: report.preserved,
++    cleanup: report.cleanup,
++  };
++}
++if (process.stdin.isTTY) process.stdin.setRawMode(true);
++process.stdin.setEncoding("utf8");
++let input = "",
++  busy = false;
++console.log("Ready for hidden JSON: seed, verify-clean, quit.");
++process.stdin.on("data", async (chunk) => {
++  if (chunk.includes("\u0003")) process.exit(0);
++  input += chunk;
++  const end = input.search(/[\r\n]/);
++  if (end < 0) return;
++  const line = input.slice(0, end).trim();
++  input = input.slice(end + 1);
++  if (!line || busy) return;
++  busy = true;
++  try {
++    const command = JSON.parse(line);
++    if (command.op === "quit") process.exit(0);
++    key = command.key;
++    if (typeof key !== "string" || !key.startsWith("pk_"))
++      throw Error("Hidden owner key required");
++    if (!["seed", "verify-clean"].includes(command.op))
++      throw Error("Unsupported operation");
++    console.log(
++      JSON.stringify(await (command.op === "seed" ? seed() : verifyAndClean())),
++    );
++  } catch (error) {
++    console.log(JSON.stringify({ error: error.message }));
++  } finally {
++    key = "";
++    busy = false;
++  }
++});
+diff --git a/tools/handbook-lab.js b/tools/handbook-lab.js
+new file mode 100644
+index 0000000..7a8f15a
+--- /dev/null
++++ b/tools/handbook-lab.js
+@@ -0,0 +1,974 @@
++const frame = document.querySelector("iframe"),
++  output = document.querySelector("#results");
++const results = [],
++  delay = (ms) => new Promise((r) => setTimeout(r, ms));
++let api, release, prefix;
++const check = (condition, message) => {
++  if (!condition) throw Error(message);
++};
++const waitFor = async (fn, ms = 20000) => {
++  const end = performance.now() + ms;
++  while (!fn()) {
++    if (performance.now() > end) throw Error("Timed out");
++    await delay(50);
++  }
++};
++async function connect() {
++  await waitFor(() => frame.contentDocument?.querySelector("base"));
++  prefix = frame.contentDocument.querySelector("base").href;
++  const mod = await frame.contentWindow.eval(
++    `import(${JSON.stringify(prefix + "main.js")})`,
++  );
++  await mod.ready;
++  api = mod.review;
++  release = prefix.split("/").filter(Boolean).at(-1);
++}
++await connect();
++const doc = () => frame.contentDocument,
++  win = () => frame.contentWindow;
++async function record(name, fn) {
++  output.textContent = "Running " + name;
++  const start = performance.now();
++  try {
++    const details = await fn();
++    results.push({
++      name,
++      status: "passed",
++      durationMs: Math.round(performance.now() - start),
++      details,
++    });
++  } catch (e) {
++    results.push({ name, status: "failed", error: e.message, stack: e.stack });
++  }
++  output.textContent = JSON.stringify(results, null, 2);
++}
++const click = (id) => doc().getElementById(id).click();
++const button = (name) =>
++  [...doc().querySelectorAll("button")].find(
++    (b) => !b.closest("[hidden]") && b.textContent.trim() === name,
++  );
++function dismiss() {
++  if (doc().querySelector("dialog").open) doc().querySelector("dialog").close();
++}
++async function home() {
++  dismiss();
++  if (api.race?.state === "racing") api.pause();
++  dismiss();
++  api.show("start");
++  await delay(60);
++}
++async function runToFinish(slow = false) {
++  const { stepRace, aiInput } = await import(prefix + "simulation.js");
++  const { practiceStep } = await import(prefix + "driving-controls.js");
++  api.race.state = "racing";
++  const r = api.race;
++  const start = r.time;
++  // The controller drives the same simulation object through normal physics.
++  // Accelerated ticks are not a browser latency or human enjoyment measurement.
++  while (r.state === "racing" && r.time - start < 480) {
++    for (let i = 0; i < 240 && r.state === "racing"; i++) {
++      const p = r.cars.find((c) => c.id === "player"),
++        controls = aiInput(p, r.track, "club", 1, r.cars);
++      if (r.practice && r.tick % 240 < 60 && Math.abs(controls.steer) < 0.1)
++        controls.boost = true;
++      if (slow) controls.throttle *= 0.55;
++      stepRace(r, controls);
++      practiceStep(r.practice, p, controls);
++    }
++    await delay(0);
++  }
++  check(!r.dnf, "Controller did not finish");
++  await api.finish();
++  await waitFor(
++    () =>
++      r.saved ||
++      doc()
++        .querySelector("#result-save")
++        ?.textContent.startsWith("Result not saved"),
++  );
++  check(api.view === "result" && r.saved, "Result not persisted");
++  return {
++    elapsedMs: r.result.elapsedMs,
++    laps: r.result.splits.length,
++    place: r.result.classification.findIndex((c) => c.id === "player") + 1,
++    contacts: r.result.contacts,
++  };
++}
++async function extraChecks() {
++  const { uiChecks } = await import("/__audit__/ui.js");
++  const inherited = uiChecks({
++    frame,
++    prefix,
++    wait: delay,
++    until: waitFor,
++    check,
++  });
++  return {
++    "Garage compare and test": async () => {
++      await home();
++      frame.style.width = "1100px";
++      frame.style.height = "800px";
++      return inherited["Garage comparison, equip and ordinary-input test"]();
++    },
++    "Sharing and fallback":
++      inherited["Browser invitation success, cancellation and fallbacks"],
++    "Twelve events, reload and ending": async () => {
++      await home();
++      // This loopback-only review origin owns its disposable save. Begin a
++      // genuinely fresh campaign; completion still uses only legal car inputs.
++      const { freshProgress } = await import(prefix + "storage.js");
++      Object.assign(api.progress, freshProgress());
++      await api.store.set("progress", api.progress);
++      api.settings.reducedMotion = true;
++      api.settings.lowEffects = true;
++      api.settings.sound = false;
++      api.applyPreferences();
++      await api.store.set("settings", api.settings);
++      const rows = [];
++      click("race-button");
++      doc().querySelector("#difficulty").value = "relaxed";
++      click("continue-cup");
++      for (let i = 0; i < 12; i++) {
++        await waitFor(() => ["race", "scene"].includes(api.view));
++        if (api.view === "scene") {
++          check(
++            doc().querySelector("#scene-copy").textContent.length > 20,
++            "Missing scene caption",
++          );
++          click("scene-continue");
++        }
++        await waitFor(() => api.view === "race");
++        const expected = api.progress.cup.rounds.length;
++        const row = await runToFinish();
++        check(
++          api.progress.cup.rounds.length === expected + 1,
++          "Round advanced incorrectly",
++        );
++        check(
++          api.progress.completed.length === i + 1,
++          "Event progression mismatch",
++        );
++        rows.push({ event: i + 1, ...row });
++        if (i === 0) {
++          const cupId = api.progress.cup.id;
++          frame.src = "/?reload-cup=1";
++          await delay(150);
++          await connect();
++          check(
++            api.progress.cup.id === cupId &&
++              api.progress.cup.rounds.length === 1,
++            "Cup lost across ordinary reload",
++          );
++          click("race-button");
++          doc().querySelector("#difficulty").value = "relaxed";
++          click("continue-cup");
++        } else if ((i + 1) % 3 === 0) {
++          button("Cup standings").click();
++          if (i < 11) {
++            check(
++              doc()
++                .querySelector("#modal-content")
++                .textContent.includes("points"),
++              "Missing standings",
++            );
++            button("Next cup").click();
++          }
++        } else button("Next race").click();
++      }
++      check(
++        api.view === "scene" &&
++          doc()
++            .querySelector("#scene-kicker")
++            .textContent.includes("12 EVENTS"),
++        "Final scene missing",
++      );
++      const caption = doc().querySelector("#scene-copy").textContent;
++      await delay(5500);
++      check(
++        api.view === "scene" &&
++          doc().querySelector("#scene-copy").textContent === caption,
++        "Ending did not hold",
++      );
++      const before = JSON.stringify(api.progress.completed);
++      click("scene-continue");
++      await waitFor(() => api.view === "workshop");
++      check(
++        JSON.stringify(api.progress.completed) === before,
++        "Ending duplicated awards",
++      );
++      return {
++        rows,
++        reloadAfterFirstRound: true,
++        allFourScenes: true,
++        heldEnding: true,
++        reducedMotion: true,
++        lowEffects: true,
++        muted: true,
++        scope:
++          "Legal synthetic controller through actual UI/persistence; no human enjoyment claim",
++      };
++    },
++    "Gamepad menu, race and interruption": async () => {
++      await home();
++      api.settings.autoAccelerate = false;
++      api.settings.touch = true;
++      api.applyPreferences();
++      const nav = win().navigator,
++        original = Object.getOwnPropertyDescriptor(nav, "getGamepads"),
++        pad = {
++          axes: [0, 0],
++          buttons: Array.from({ length: 17 }, () => ({
++            pressed: false,
++            value: 0,
++          })),
++        };
++      Object.defineProperty(nav, "getGamepads", {
++        configurable: true,
++        value: () => [pad],
++      });
++      const press = async (n) => {
++        pad.buttons[n] = { pressed: true, value: 1 };
++        await delay(120);
++        pad.buttons[n] = { pressed: false, value: 0 };
++        await delay(250);
++      };
++      try {
++        doc().querySelector("#settings-button").focus();
++        await press(0);
++        check(
++          doc().querySelector("#modal-title").textContent === "SETTINGS",
++          "Gamepad confirm failed",
++        );
++        const range = doc().querySelector('[data-range="sensitivity"]');
++        range.value = "1";
++        range.focus();
++        await press(15);
++        check(+range.value > 1, "D-pad range failed");
++        await press(1);
++        check(!doc().querySelector("dialog").open, "Back failed");
++        click("quick-race");
++        await waitFor(() => api.view === "race");
++        await waitFor(() => api.race.state === "racing");
++        pad.buttons[7] = { pressed: true, value: 1 };
++        await delay(900);
++        pad.buttons[7] = { pressed: false, value: 0 };
++        check(
++          +doc().querySelector("#hud-speed").textContent > 0,
++          "Trigger failed",
++        );
++        await press(9);
++        check(api.race.state === "paused", "Start pause failed");
++        const t = api.race.time;
++        await delay(150);
++        check(api.race.time === t, "Paused clock moved");
++        await press(9);
++        await waitFor(() => api.race.state === "racing");
++        win().dispatchEvent(new (win().Event)("gamepaddisconnected"));
++        check(api.race.state === "paused", "Disconnect did not pause");
++        button("Resume").click();
++        await waitFor(() => api.race.state === "racing");
++        const boost = doc().querySelector('[data-hold="boost"]');
++        boost.focus();
++        boost.dispatchEvent(
++          new (win().KeyboardEvent)("keydown", { key: "Enter", bubbles: true }),
++        );
++        check(api.input().boost, "Held key did not engage");
++        doc().querySelector("#world").focus();
++        check(!api.input().boost, "Focus change left held action");
++        api.pause();
++        return {
++          menuConfirm: true,
++          range: true,
++          trigger: true,
++          startPauseResume: true,
++          disconnect: true,
++          heldFocusCancellation: true,
++          syntheticGamepad: true,
++        };
++      } finally {
++        if (original) Object.defineProperty(nav, "getGamepads", original);
++        else delete nav.getGamepads;
++      }
++    },
++    "New circuit, source and failed save": async () => {
++      await home();
++      await api.openWorkshop();
++      await api.workshop.flush();
++      click("work-file");
++      await waitFor(() => doc().querySelector('[data-file="blank"]'));
++      doc().querySelector('[data-file="blank"]').click();
++      await waitFor(() => api.workshop.track.pieces.length === 0);
++      const w = api.workshop;
++      const set = (id, value) => {
++        const el = doc().getElementById(id);
++        el.value = value;
++        el.dispatchEvent(new (win().Event)("change"));
++      };
++      set("track-name", "Handbook circuit & <safe>");
++      // Four 60 m straights and four 40 m quarter bends, authored only via controls.
++      for (let i = 0; i < 4; i++) {
++        set("piece-kind", i === 0 ? "start" : "straight");
++        set("piece-length", "60");
++        click("place-road");
++        set("piece-kind", "quarter");
++        set("piece-radius", "40");
++        set("piece-turn", "1");
++        click("place-road");
++      }
++      click("close-loop");
++      click("setup-race");
++      await w.flush();
++      check(
++        w.compiled.valid,
++        "New circuit not race ready: " + JSON.stringify(w.compiled.errors),
++      );
++      const originalName = w.track.name,
++        id = w.track.id,
++        saved = await api.store.get("draft:" + id);
++      const original = w.store.saveDraft;
++      w.store.saveDraft = async () => {
++        throw Error("Injected quota failure");
++      };
++      set("track-name", "Unsaved edit preserved");
++      await w.flush().catch(() => {});
++      click("home");
++      await delay(100);
++      check(
++        api.view === "workshop" && w.track.name === "Unsaved edit preserved",
++        "Navigation lost failed draft",
++      );
++      check(
++        (await api.store.get("draft:" + id)).track.name === originalName,
++        "Failed write changed durable source",
++      );
++      click("source-preview");
++      check(
++        doc()
++          .querySelector("#modal-content textarea")
++          .value.includes("Unsaved edit preserved"),
++        "Recovery source unavailable",
++      );
++      dismiss();
++      w.store.saveDraft = original;
++      click("work-file");
++      await waitFor(() => button("Retry save"));
++      button("Retry save").click();
++      await waitFor(() => !w.saveError && !doc().querySelector("dialog").open);
++      doc().querySelector("#test-ai").checked = true;
++      click("work-test");
++      await waitFor(() => api.view === "race");
++      check(api.race.cars.length === 6, "Five rivals missing");
++      const completed = await runToFinish();
++      button("Return to editor").click();
++      check(
++        api.view === "workshop" &&
++          w.track.id === id &&
++          w.track.name === "Unsaved edit preserved",
++        "Test return lost source",
++      );
++      click("work-undo");
++      click("work-redo");
++      await w.flush();
++      const { parseTrack } = await import(prefix + "model.js");
++      const parsed = parseTrack(w.sourceDocument.html());
++      check(
++        parsed.name === w.track.name && parsed.pieces.length === 8,
++        "Source round-trip changed data",
++      );
++      return {
++        id,
++        pieces: 8,
++        semanticSource: true,
++        saveFailureNavigation: true,
++        exportRecovery: true,
++        fiveAI: true,
++        completed,
++        undoRedo: true,
++        scope:
++          "Native form/button route; canvas dragging is a separate fixture",
++      };
++    },
++    "Solo improvement and submission form": async () => {
++      await home();
++      api.settings.autoAccelerate = false;
++      api.applyPreferences();
++      await api.startTrack(0, "trial");
++      const first = await runToFinish(true);
++      button("Race again").click();
++      await waitFor(() => api.race.state === "countdown");
++      check(api.race.bestGhost?.length > 0, "Prior ghost not offered");
++      const second = await runToFinish();
++      check(
++        second.elapsedMs < first.elapsedMs,
++        "Controlled improved lap not faster",
++      );
++      const id = api.race.id;
++      const transport = api.boards.fetcher;
++      api.boards.fetcher = async () => {
++        throw Error("Injected offline transport");
++      };
++      try {
++        button("Add to leaderboard").click();
++        await waitFor(() => doc().querySelector(".driver-profile input"));
++        const form = doc().querySelector(".driver-profile"),
++          field = form.querySelector("input");
++        field.value = "  ";
++        form.requestSubmit();
++        await delay(100);
++        check(
++          field.getAttribute("aria-invalid") === "true" &&
++            doc().querySelector("dialog").open,
++          "Invalid input lost form",
++        );
++        field.value = "Audit 🏎 <driver>";
++        form.requestSubmit();
++        await waitFor(() => field.readOnly);
++        await delay(150);
++        const entry = await api.store.get("outbox:" + id);
++        check(
++          entry.run.alias === "Audit 🏎 <driver>" && entry.state === "retry",
++          "Offline submission not durable",
++        );
++        check(
++          doc()
++            .querySelector("[data-submission-status]")
++            .textContent.includes("queued"),
++          "Queue status missing",
++        );
++        dismiss();
++        await api.showSharedTimes();
++        check(
++          doc().querySelector(".driver-profile input").value ===
++            "Audit 🏎 <driver>",
++          "Queued name not preserved",
++        );
++        return {
++          first,
++          second,
++          ghost: true,
++          id,
++          offlineQueue: true,
++          invalidFormPreserved: true,
++          escapedName: true,
++        };
++      } finally {
++        api.boards.fetcher = transport;
++      }
++    },
++    "Name form 200 percent reflow": async () => {
++      await home();
++      frame.style.width = "320px";
++      frame.style.height = "568px";
++      await api.openLeaderboards();
++      const modal = doc().querySelector("dialog"),
++        elements = [modal, ...modal.querySelectorAll("*")];
++      const originals = elements.map((e) => e.style.fontSize);
++      const sizes = elements.map((e) =>
++        parseFloat(win().getComputedStyle(e).fontSize),
++      );
++      elements.forEach((e, i) => (e.style.fontSize = sizes[i] * 2 + "px"));
++      await delay(100);
++      const overflow = modal.scrollWidth - modal.clientWidth;
++      const field = modal.querySelector("input");
++      field.focus();
++      field.scrollIntoView({ block: "center" });
++      const r = field.getBoundingClientRect(),
++        m = modal.getBoundingClientRect();
++      const visible =
++        r.left >= m.left &&
++        r.right <= m.right &&
++        r.top >= m.top &&
++        r.bottom <= m.bottom;
++      elements.forEach((e, i) => (e.style.fontSize = originals[i]));
++      check(overflow <= 1, "Enlarged text overflows by " + overflow + "px");
++      check(visible, "Focused name field clipped");
++      return {
++        width: 320,
++        height: 568,
++        fontScale: 2,
++        allComputedFontsDoubled: true,
++        overflow,
++        focusedNameVisible: visible,
++      };
++    },
++    "Foreground update discovery": async () => {
++      await home();
++      const nav = win().navigator,
++        descriptor = Object.getOwnPropertyDescriptor(nav, "serviceWorker");
++      let updates = 0,
++        activations = 0;
++      const worker = {
++        postMessage(message, ports) {
++          if (message.type === "ACTIVATE") activations++;
++          ports?.[0]?.postMessage({
++            token: message.token,
++            ok: true,
++            release: "sl-review-candidate",
++          });
++        },
++      };
++      const registration = {
++        active: worker,
++        waiting: worker,
++        update: async () => {
++          updates++;
++        },
++      };
++      const serviceWorker = {
++        register: async () => registration,
++        ready: Promise.resolve(registration),
++      };
++      Object.defineProperty(nav, "serviceWorker", {
++        configurable: true,
++        value: serviceWorker,
++      });
++      try {
++        win().dispatchEvent(new (win().Event)("online"));
++        await waitFor(() => !doc().querySelector("#update-ready").hidden);
++        check(
++          updates === 1,
++          "Reconnect did not explicitly check for an update",
++        );
++        win().dispatchEvent(new (win().Event)("online"));
++        await delay(50);
++        check(updates === 1, "Foreground discovery was not throttled");
++        click("update-ready");
++        await waitFor(
++          () =>
++            doc().querySelector("#modal-title").textContent ===
++            "New release ready",
++        );
++        check(activations === 0, "Discovery activated without consent");
++        button("Later").click();
++        return {
++          reconnectChecks: 1,
++          repeatedEventCoalesced: true,
++          visibleUpdateButton: true,
++          manualReview: true,
++          noAutomaticActivation: true,
++          scope:
++            "Injected worker adapter through production lifecycle and visible controls; natural real-worker update checked separately",
++        };
++      } finally {
++        if (descriptor) Object.defineProperty(nav, "serviceWorker", descriptor);
++        else delete nav.serviceWorker;
++        doc().querySelector("#update-ready").hidden = true;
++        dismiss();
++      }
++    },
++  };
++}
++const actions = {
++  ...(await extraChecks()),
++  "Quick race journey": async () => {
++    await home();
++    const before = JSON.stringify(api.progress.completed);
++    click("quick-race");
++    await waitFor(() => api.view === "race");
++    check(
++      api.race.laps === 2 && api.race.cars.length === 6,
++      "Quick race contract",
++    );
++    click("pause-button");
++    const t = api.race.time;
++    await delay(180);
++    check(api.race.time === t, "Pause clock moved");
++    button("Resume").click();
++    await waitFor(() => api.race.state !== "resuming");
++    const finish = await runToFinish();
++    check(
++      JSON.stringify(api.progress.completed) === before,
++      "Quick race changed campaign",
++    );
++    button("Race again").click();
++    await waitFor(() => api.race.state === "countdown");
++    check(api.race.time === 0, "Retry clock");
++    api.pause();
++    return { finish, pauseAndRetry: true, simulationController: true };
++  },
++  "Input ownership and camera": async () => {
++    await home();
++    api.settings.touch = true;
++    api.settings.autoAccelerate = true;
++    api.applyPreferences();
++    click("quick-race");
++    await waitFor(() => api.view === "race");
++    api.race.state = "racing";
++    const send = (el, type, id, x = 0) =>
++      el.dispatchEvent(
++        new (win().PointerEvent)(type, {
++          pointerId: id,
++          pointerType: "touch",
++          clientX: x,
++          buttons: type === "pointerdown" ? 1 : 0,
++          bubbles: true,
++        }),
++      );
++    // Synthetic contacts cannot acquire native capture. Stub only the native
++    // capture call; handlers, ownership, state and cancellation are real.
++    const boost = doc().querySelector('[data-hold="boost"]'),
++      brake = doc().querySelector('[data-hold="brake"]');
++    const originals = [boost, brake].map((el) => el.setPointerCapture);
++    for (const el of [boost, brake]) el.setPointerCapture = () => {};
++    send(boost, "pointerdown", 10);
++    send(brake, "pointerdown", 11);
++    check(api.input().boost && api.input().brake === 1, "Two contacts lost");
++    send(brake, "pointercancel", 11);
++    check(
++      api.input().boost && api.input().brake === 0,
++      "Cancel affected other thumb",
++    );
++    check(api.input().throttle === 1, "Touch BOOST did not include throttle");
++    win().dispatchEvent(new (win().Event)("resize"));
++    check(
++      !api.input().boost && api.input().brake === 0,
++      "Resize retained contacts",
++    );
++    send(boost, "pointerdown", 12);
++    api.pause();
++    check(!api.input().boost, "Pause left held boost");
++    [boost, brake].forEach((el, i) => (el.setPointerCapture = originals[i]));
++    dismiss();
++    const before = {
++      x: api.race.cars[0].x,
++      z: api.race.cars[0].z,
++      time: api.race.time,
++    };
++    const sizes = [];
++    for (const [w, h] of [
++      [320, 568],
++      [390, 844],
++      [412, 915],
++      [568, 320],
++      [844, 390],
++      [1280, 720],
++    ]) {
++      frame.style.width = w + "px";
++      frame.style.height = h + "px";
++      await delay(80);
++      api.world.render(api.race, "race", api.settings, 0);
++      const boxes = {};
++      for (const selector of [
++        "#world",
++        "#pause-button",
++        "#steering-pad",
++        '[data-hold="brake"]',
++        '[data-hold="handbrake"]',
++        '[data-hold="boost"]',
++      ]) {
++        const e = doc().querySelector(selector),
++          r = e.getBoundingClientRect();
++        boxes[selector] = { x: r.x, y: r.y, w: r.width, h: r.height };
++        check(r.width > 0 && r.height > 0, "Invisible " + selector);
++        check(
++          r.left >= -1 && r.right <= w + 1 && r.top >= -1 && r.bottom <= h + 1,
++          "Clipped " + selector + " at " + w + "x" + h,
++        );
++        if (selector !== "#world")
++          check(r.width >= 44 && r.height >= 44, "Small target " + selector);
++      }
++      const c = boxes["#world"],
++        p = boxes["#steering-pad"];
++      check(c.y + c.h <= p.y, "Touch controls cover play");
++      const canvas = doc().querySelector("#world"),
++        pixels = canvas
++          .getContext("2d")
++          .getImageData(0, 0, canvas.width, canvas.height).data;
++      const colors = new Set();
++      for (let i = 0; i < pixels.length; i += 1024)
++        colors.add(pixels[i] + "," + pixels[i + 1] + "," + pixels[i + 2]);
++      check(colors.size > 8, "Blank race surface");
++      sizes.push({
++        w,
++        h,
++        boxes,
++        colors: colors.size,
++        backing: [canvas.width, canvas.height],
++      });
++    }
++    check(
++      api.race.time === before.time && api.race.cars[0].x === before.x,
++      "Rendering changed simulation",
++    );
++    return { sizes, syntheticPointerFixture: true };
++  },
++  "Manual throttle layout": async () => {
++    await home();
++    api.settings.touch = true;
++    api.settings.autoAccelerate = false;
++    api.applyPreferences();
++    click("quick-race");
++    await waitFor(() => api.view === "race");
++    api.pause();
++    dismiss();
++    const sizes = [];
++    for (const [w, h] of [
++      [320, 568],
++      [390, 844],
++      [568, 320],
++      [844, 390],
++    ]) {
++      frame.style.width = w + "px";
++      frame.style.height = h + "px";
++      await delay(80);
++      const targets = [
++        ...doc().querySelectorAll("#touch-controls [data-hold]"),
++      ].filter((e) => e.getBoundingClientRect().width > 0);
++      check(
++        targets.some((e) => e.dataset.hold === "throttle"),
++        "Manual GAS missing",
++      );
++      const bounds = targets.map((e) => ({
++        action: e.dataset.hold,
++        box: e.getBoundingClientRect(),
++      }));
++      for (const { action, box: r } of bounds)
++        check(
++          r.width >= 44 &&
++            r.height >= 44 &&
++            r.left >= 0 &&
++            r.right <= w &&
++            r.top >= 0 &&
++            r.bottom <= h,
++          "Manual control clipped: " + action + " at " + w + "x" + h,
++        );
++      sizes.push({ w, h, actions: bounds.map((b) => b.action) });
++    }
++    return { sizes };
++  },
++  "Leaderboard browse": async () => {
++    await home();
++    click("leaderboard-button");
++    await waitFor(
++      () =>
++        doc().querySelector("#board-state")?.textContent !== "Loading times…",
++    );
++    const trial = doc().querySelector("#board-state").textContent;
++    check(
++      trial.includes("Times unavailable") || trial.includes("times"),
++      trial,
++    );
++    const mode = doc().querySelector("#board-mode");
++    mode.value = "daily";
++    mode.dispatchEvent(new (win().Event)("change"));
++    await waitFor(
++      () =>
++        doc().querySelector("#board-state").textContent !== "Loading times…",
++    );
++    const daily = doc().querySelector("#board-state").textContent;
++    check(
++      daily.includes("Times unavailable") || daily.includes("times"),
++      daily,
++    );
++    dismiss();
++    return {
++      trial,
++      daily,
++      scope:
++        "Local-origin unavailable/read states only; same-origin reads are verified after deployment",
++    };
++  },
++  "Workshop round trip": async () => {
++    await home();
++    frame.style.width = "1100px";
++    frame.style.height = "800px";
++    await api.openWorkshop();
++    const w = api.workshop;
++    await w.flush();
++    const original = w.track.name;
++    const input = doc().querySelector("#track-name");
++    input.value = "Remake verification circuit";
++    input.dispatchEvent(new (win().Event)("change"));
++    await w.flush();
++    click("work-undo");
++    check(w.track.name === original, "Undo failed");
++    click("work-redo");
++    check(w.track.name === "Remake verification circuit", "Redo failed");
++    await w.flush();
++    doc().querySelector("#road-surface").value = "gravel";
++    click("apply-surface");
++    check(
++      w.track.patches.some((p) => p.surface === "gravel"),
++      "Surface edit failed",
++    );
++    click("work-undo");
++    click("work-redo");
++    await w.flush();
++    check(
++      w.sourceDocument.root.querySelector('[itemprop="surface"]')
++        ?.textContent === "gravel",
++      "DOM source did not receive edit",
++    );
++    const saved = await api.store.get("draft:" + w.track.id);
++    check(saved.track.name === w.track.name, "Draft not durable");
++    const { serializeTrack, parseTrack } = await import(prefix + "model.js"),
++      { compile } = await import(prefix + "track.js");
++    const roundtrip = parseTrack(serializeTrack(w.track));
++    check(compile(roundtrip).valid, "Export/import invalid");
++    const id = w.track.id;
++    click("work-test");
++    await waitFor(() => api.view === "race");
++    click("pause-button");
++    button("Return to editor").click();
++    check(
++      api.view === "workshop" && w.track.id === id,
++      "Test drive lost draft",
++    );
++    await w.open(saved.track, saved);
++    check(w.track.name === saved.track.name, "Reload lost draft");
++    return {
++      id,
++      valid: true,
++      undoRedo: true,
++      durable: true,
++      exportImport: true,
++      testReturn: true,
++    };
++  },
++  "Practice and ghost": async () => {
++    await home();
++    api.settings.touch = false;
++    api.settings.autoAccelerate = false;
++    api.applyPreferences();
++    click("lesson-button");
++    await waitFor(() => api.view === "race");
++    const practice = await runToFinish();
++    const learned = { ...api.race.practice };
++    check(
++      learned.accelerate && learned.steer && learned.brake && learned.boost,
++      "Practice skills not observed",
++    );
++    await home();
++    await api.startTrack(0, "trial");
++    const previous = api.race.previousBest?.elapsedMs ?? Infinity;
++    const first = await runToFinish();
++    button("Race again").click();
++    await waitFor(() => api.race.state === "countdown");
++    check(api.race.bestGhost?.length > 0, "Compatible ghost missing");
++    check(
++      api.race.previousBest.elapsedMs === Math.min(previous, first.elapsedMs),
++      "Best time mismatch",
++    );
++    api.pause();
++    return {
++      practice,
++      learned,
++      trial: first,
++      ghostFrames: api.race.bestGhost.length / 4,
++    };
++  },
++  "All tracks and recovery": async () => {
++    await home();
++    frame.style.width = "1280px";
++    frame.style.height = "720px";
++    const { compile } = await import(prefix + "track.js");
++    const rows = [];
++    for (const item of api.content.tracks) {
++      const c = compile(item.track);
++      api.world.load(c);
++      api.world.setCars([]);
++      api.world.render(null, "start", api.settings, 0);
++      check(api.world.available(), "Renderer failed " + item.track.name);
++      rows.push({
++        name: item.track.name,
++        valid: c.valid,
++        samples: c.samples.length,
++      });
++    }
++    click("quick-race");
++    await waitFor(() => api.view === "race");
++    api.pause();
++    dismiss();
++    const id = api.race.id,
++      time = api.race.time;
++    api.world.fail("Injected canvas failure");
++    await api.repairGraphics(true);
++    check(
++      api.race.id === id && api.race.time === time && api.world.available(),
++      "Recovery changed race or stayed blank",
++    );
++    return { tracks: rows, recovery: true };
++  },
++  "Render budget": async () => {
++    await home();
++    frame.style.width = "1280px";
++    frame.style.height = "720px";
++    click("quick-race");
++    await waitFor(() => api.view === "race");
++    api.pause();
++    dismiss();
++    const times = [];
++    for (let i = 0; i < 180; i++) {
++      const start = performance.now();
++      api.world.render(api.race, "race", api.settings, 1 / 60);
++      times.push(performance.now() - start);
++      await new Promise((r) => requestAnimationFrame(r));
++    }
++    times.sort((a, b) => a - b);
++    const p95 = times[Math.floor(times.length * 0.95)];
++    check(p95 < 16.7, "Renderer exceeds 16.7ms p95");
++    return {
++      frames: times.length,
++      medianMs: times[90],
++      p95Ms: p95,
++      maxMs: times.at(-1),
++      scope: "Canvas render cost, not physical phone FPS",
++    };
++  },
++  "Save report": async () => {
++    const receipt = {
++      release,
++      at: new Date().toISOString(),
++      userAgent: navigator.userAgent,
++      results,
++    };
++    const response = await fetch("/__audit__/receipt", {
++      method: "POST",
++      body: JSON.stringify(receipt),
++    });
++    check(response.ok, "Receipt save failed");
++    return { saved: true };
++  },
++};
++actions["Remaining browser checks"] = async () => {
++  const start = results.length;
++  for (const name of [
++    "Garage compare and test",
++    "Sharing and fallback",
++    "Gamepad menu, race and interruption",
++    "New circuit, source and failed save",
++    "Solo improvement and submission form",
++    "Name form 200 percent reflow",
++    "Quick race journey",
++    "Input ownership and camera",
++    "Manual throttle layout",
++    "Workshop round trip",
++    "Practice and ghost",
++    "All tracks and recovery",
++    "Render budget",
++    "Foreground update discovery",
++  ])
++    await record(name, actions[name]);
++  await actions["Save report"]();
++  check(
++    results.slice(start).every((r) => r.status === "passed"),
++    "One or more browser checks failed; receipt retained",
++  );
++  return { checks: results.length - start };
++};
++actions["Twenty-minute live-loop soak"] = async () => {
++  await home();
++  const { soak } = await import("/__audit__/soak.js");
++  return soak({ api, frame, prefix, output });
++};
++actions["Default-resolution full race"] = async () => {
++  await home();
++  const { defaultQualityRace } = await import("/__audit__/soak.js");
++  return defaultQualityRace({ api, frame, prefix, output });
++};
++for (const [name, fn] of Object.entries(actions)) {
++  const button = document.createElement("button");
++  button.textContent = name;
++  button.onclick = () => record(name, fn);
++  document.querySelector("#actions").append(button);
++}
+diff --git a/tools/handbook-server.mjs b/tools/handbook-server.mjs
+new file mode 100644
+index 0000000..795e2c1
+--- /dev/null
++++ b/tools/handbook-server.mjs
+@@ -0,0 +1,124 @@
++// Loopback-only instrumentation. Never copied into the published release.
++import http from "node:http";
++import fs from "node:fs/promises";
++import path from "node:path";
++const root = path.resolve(import.meta.dirname, ".."),
++  dist = path.join(root, "dist");
++const types = {
++  ".html": "text/html",
++  ".js": "text/javascript",
++  ".css": "text/css",
++  ".json": "application/json",
++  ".png": "image/png",
++  ".svg": "image/svg+xml",
++  ".ttf": "font/ttf",
++  ".ico": "image/x-icon",
++  ".webmanifest": "application/manifest+json",
++};
++http
++  .createServer(async (req, res) => {
++    try {
++      const url = new URL(req.url, "http://127.0.0.1:4399");
++      if (url.pathname === "/__audit__/") {
++        res.setHeader("Content-Type", "text/html");
++        res.end(
++          `<!doctype html><html><meta charset="utf-8"><title>Handbook follow-up verification</title><style>body{font:16px system-ui;background:#e9e8db;color:#19343b;margin:20px}button{font:inherit;padding:12px;margin:5px}iframe{display:block;border:2px solid #456;width:100%;height:720px}pre{white-space:pre-wrap;max-height:260px;overflow:auto}</style><h1>Handbook follow-up verification</h1><p>Local test instrumentation. Synthetic race control is separate from real input checks.</p><div id="actions"></div><pre id="results">Ready</pre><iframe id="game" src="/" title="Remake game under test"></iframe><script type="module" src="/__audit__/lab.js"></script></html>`,
++        );
++        return;
++      }
++      if (url.pathname === "/__audit__/lab.js") {
++        res.setHeader("Content-Type", "text/javascript");
++        res.end(await fs.readFile(path.join(root, "tools/handbook-lab.js")));
++        return;
++      }
++      if (url.pathname === "/__audit__/ui.js") {
++        res.setHeader("Content-Type", "text/javascript");
++        res.end(await fs.readFile(path.join(root, "tools/ui-review-lab.js")));
++        return;
++      }
++      if (url.pathname === "/__audit__/soak.js") {
++        res.setHeader("Content-Type", "text/javascript");
++        res.end(await fs.readFile(path.join(root, "tools/handbook-soak.js")));
++        return;
++      }
++      if (
++        ["/__audit__/soak-receipt", "/__audit__/quality-receipt"].includes(
++          url.pathname,
++        ) &&
++        req.method === "POST"
++      ) {
++        const chunks = [];
++        let size = 0;
++        for await (const chunk of req) {
++          size += chunk.length;
++          if (size > 4000000) throw Error("Receipt too large");
++          chunks.push(chunk);
++        }
++        const record = JSON.parse(Buffer.concat(chunks));
++        const release = JSON.parse(
++          await fs.readFile(path.join(dist, "release.json")),
++        );
++        if (record.release !== release.release)
++          throw Error("Stale soak receipt");
++        await fs.writeFile(
++          path.join(
++            root,
++            url.pathname.includes("quality-")
++              ? "audit/handbook-default-quality.json"
++              : "audit/handbook-performance.json",
++          ),
++          JSON.stringify(record),
++        );
++        res.end("Saved");
++        return;
++      }
++      if (url.pathname === "/__audit__/receipt" && req.method === "POST") {
++        const chunks = [];
++        let n = 0;
++        for await (const chunk of req) {
++          n += chunk.length;
++          if (n > 2000000) throw Error("Receipt too large");
++          chunks.push(chunk);
++        }
++        const record = JSON.parse(Buffer.concat(chunks));
++        const release = JSON.parse(
++          await fs.readFile(path.join(dist, "release.json")),
++        );
++        if (record.release !== release.release) throw Error("Stale receipt");
++        await fs.writeFile(
++          path.join(root, "audit/handbook-browser.json"),
++          JSON.stringify(record, null, 2) + "\n",
++        );
++        res.end("Saved");
++        return;
++      }
++      if (url.pathname === "/sw.js") {
++        res.writeHead(404);
++        res.end("Workers tested on the separate uninstrumented origin.");
++        return;
++      }
++      const target = path.resolve(
++        dist,
++        "." + (url.pathname === "/" ? "/index.html" : url.pathname),
++      );
++      if (!target.startsWith(dist + path.sep)) throw Error("Outside fixture");
++      let bytes = await fs.readFile(target);
++      if (target.endsWith(path.sep + "main.js"))
++        bytes = Buffer.from(
++          bytes.toString() +
++            `\nconst productionInput=input;export const review = {setController(c){input=c||productionInput},get boards(){return boards},get race(){return race},get world(){return world},get workshop(){return workshop},get settings(){return settings},get progress(){return progress},get store(){return store},get content(){return content},get view(){return view},showSharedTimes,openLeaderboards,settingsDialog,input,beginRace,startTrack,finish,show,pause,resume,repairGraphics,openWorkshop,applyPreferences,clearInput};\n`,
++        );
++      res.writeHead(200, {
++        "Content-Type":
++          types[path.extname(target)] || "application/octet-stream",
++        "Cache-Control": "no-store",
++      });
++      res.end(bytes);
++    } catch (e) {
++      res.writeHead(500);
++      res.end(e.message);
++    }
++  })
++  .listen(4399, "127.0.0.1", () =>
++    console.log("Remake lab: http://127.0.0.1:4399/__audit__/"),
++  );
+diff --git a/tools/handbook-soak.js b/tools/handbook-soak.js
+new file mode 100644
+index 0000000..2d65e4d
+--- /dev/null
++++ b/tools/handbook-soak.js
+@@ -0,0 +1,212 @@
++// Available-browser scheduling measurement through the real app frame loop.
++export async function soak({ api, frame, prefix, output }) {
++  const { aiInput } = await import(prefix + "simulation.js");
++  const duration = 1200000,
++    intervals = [],
++    loads = [],
++    resources = [],
++    longTasks = [];
++  let last = 0,
++    frames = 0,
++    hiddenMs = 0,
++    maxTrails = 0,
++    segment = -1;
++  const originalTransport = api.boards.fetcher;
++  api.boards.fetcher = async () => {
++    throw Error("Soak isolates public transport");
++  };
++  frame.style.width = "1280px";
++  frame.style.height = "720px";
++  frame.scrollIntoView({ block: "start" });
++  Object.assign(api.settings, {
++    touch: false,
++    sound: false,
++    reducedMotion: false,
++    safeGraphics: false,
++  });
++  api.applyPreferences();
++  api.setController(() =>
++    aiInput(api.race.cars[0], api.race.track, "club", 1, api.race.cars),
++  );
++  let observer;
++  try {
++    observer = new PerformanceObserver((list) => {
++      for (const e of list.getEntries())
++        longTasks.push({ start: e.startTime, duration: e.duration });
++    });
++    observer.observe({ type: "longtask" });
++  } catch {}
++  const start = performance.now();
++  try {
++    await new Promise((resolve, reject) => {
++      const tick = async (now) => {
++        try {
++          const elapsed = now - start,
++            gap = last ? now - last : 0;
++          last = now;
++          if (document.hidden) hiddenMs += gap;
++          if (frames > 20 && gap > 0) intervals.push(gap);
++          if (elapsed >= duration) {
++            resolve();
++            return;
++          }
++          const next = Math.floor(elapsed / 30000);
++          if (next !== segment) {
++            segment = next;
++            const began = performance.now();
++            await api.startTrack(next % 12, "exhibition", { seed: 811 + next });
++            loads.push({ track: next % 12, ms: performance.now() - began });
++            resources.push({
++              ms: elapsed,
++              heap: performance.memory?.usedJSHeapSize ?? null,
++              canvas: [api.world.canvas.width, api.world.canvas.height],
++              cars: api.world.sourceCars.length,
++            });
++          }
++          if (api.race.state === "paused")
++            throw Error("Soak interrupted: race paused");
++          if (api.view !== "race") throw Error("Soak unexpectedly left racing");
++          maxTrails = Math.max(maxTrails, api.world.trails.length);
++          if (api.world.trails.length > 360)
++            throw Error("Trail pool exceeded bound");
++          if (++frames % 120 === 0)
++            output.textContent = `Twenty-minute live-loop soak: ${Math.floor(elapsed / 1000)} / 1200 s · ${loads.length} scenes · ${frames} frames`;
++          requestAnimationFrame(tick);
++        } catch (error) {
++          reject(error);
++        }
++      };
++      requestAnimationFrame(tick);
++    });
++    const sorted = [...intervals].sort((a, b) => a - b),
++      p = (n) => sorted[Math.ceil(n * sorted.length) - 1];
++    const result = {
++      release: prefix.split("/").filter(Boolean).at(-1),
++      utc: new Date().toISOString(),
++      userAgent: navigator.userAgent,
++      durationMs: performance.now() - start,
++      frames,
++      hiddenMs,
++      sceneCycles: loads.length,
++      p95FrameMs: p(0.95),
++      p99FrameMs: p(0.99),
++      longestFrameMs: sorted.at(-1),
++      framesOver50Ms: intervals.filter((n) => n > 50).length,
++      maxTrails,
++      loads,
++      resources,
++      longTasks,
++      intervals,
++      scope:
++        "Real application requestAnimationFrame, fixed-step simulation, HUD and Canvas2D rendering; legal injected controller; actual canvas allocations retained. The initial 2026-10-17 run inherited the repaired renderer at 1x resolution despite resetting the setting; default resolution is measured separately. Scheduling intervals, not physical input latency or GPU timing",
++      passed:
++        hiddenMs === 0 && p(0.95) <= 20 && p(0.99) <= 33 && loads.length >= 40,
++    };
++    const saved = await fetch("/__audit__/soak-receipt", {
++      method: "POST",
++      body: JSON.stringify(result),
++    });
++    if (!saved.ok) throw Error("Could not retain soak receipt");
++    if (!result.passed)
++      throw Error(
++        `Soak missed target: p95 ${p(0.95)}, p99 ${p(0.99)}, hidden ${hiddenMs}`,
++      );
++    const { intervals: raw, ...summary } = result;
++    return summary;
++  } finally {
++    observer?.disconnect();
++    api.setController(null);
++    api.boards.fetcher = originalTransport;
++    api.pause();
++  }
++}
++
++export async function defaultQualityRace({ api, frame, prefix, output }) {
++  const { aiInput } = await import(prefix + "simulation.js");
++  frame.style.width = "1280px";
++  frame.style.height = "720px";
++  frame.scrollIntoView({ block: "start" });
++  Object.assign(api.settings, {
++    touch: false,
++    sound: false,
++    lowEffects: false,
++    reducedMotion: false,
++  });
++  api.applyPreferences();
++  await api.repairGraphics(false);
++  api.setController(() =>
++    aiInput(api.race.cars[0], api.race.track, "club", 1, api.race.cars),
++  );
++  const gaps = [],
++    start = performance.now();
++  let last = 0,
++    frames = 0,
++    hiddenMs = 0;
++  try {
++    await api.startTrack(0, "exhibition", { seed: 1401 });
++    await new Promise((resolve, reject) => {
++      const tick = (now) => {
++        const gap = last ? now - last : 0;
++        last = now;
++        if (document.hidden) hiddenMs += gap;
++        if (frames++ > 20 && gap > 0) gaps.push(gap);
++        if (api.view === "result" && api.race.saved) return resolve();
++        if (api.race.state === "paused" || now - start > 300000)
++          return reject(
++            Error("Default-quality full race interrupted or timed out"),
++          );
++        if (frames % 120 === 0)
++          output.textContent = `Default-resolution full race: ${Math.floor((now - start) / 1000)} s · ${frames} frames`;
++        requestAnimationFrame(tick);
++      };
++      requestAnimationFrame(tick);
++    });
++    const ordered = [...gaps].sort((a, b) => a - b),
++      p = (n) => ordered[Math.ceil(ordered.length * n) - 1];
++    const receipt = {
++      utc: new Date().toISOString(),
++      release: prefix.split("/").filter(Boolean).at(-1),
++      userAgent: navigator.userAgent,
++      devicePixelRatio: devicePixelRatio,
++      safeGraphics: api.world.safeGraphics,
++      lowEffects: api.settings.lowEffects,
++      canvas: [api.world.canvas.width, api.world.canvas.height],
++      cssCanvas: [api.world.canvas.clientWidth, api.world.canvas.clientHeight],
++      durationMs: performance.now() - start,
++      frames,
++      hiddenMs,
++      p95FrameMs: p(0.95),
++      p99FrameMs: p(0.99),
++      longestFrameMs: ordered.at(-1),
++      cars: api.race.cars.length,
++      result: {
++        dnf: api.race.result.dnf,
++        laps: api.race.result.splits.length,
++        elapsedMs: api.race.result.elapsedMs,
++        saved: api.race.saved,
++      },
++      intervals: gaps,
++      scope:
++        "One complete six-car race through the real app loop at default renderer resolution and full effects; legal injected controller.",
++      passed:
++        !api.world.safeGraphics &&
++        !api.settings.lowEffects &&
++        !api.race.result.dnf &&
++        api.race.cars.length === 6 &&
++        hiddenMs === 0 &&
++        p(0.95) <= 20 &&
++        p(0.99) <= 33,
++    };
++    const saved = await fetch("/__audit__/quality-receipt", {
++      method: "POST",
++      body: JSON.stringify(receipt),
++    });
++    if (!saved.ok) throw Error("Could not retain default-quality receipt");
++    if (!receipt.passed)
++      throw Error("Default quality missed its declared frame target");
++    const { intervals, ...summary } = receipt;
++    return summary;
++  } finally {
++    api.setController(null);
++  }
++}
+diff --git a/tools/ui-review-lab.js b/tools/ui-review-lab.js
+index 62b4051..b0dc6a1 100644
+--- a/tools/ui-review-lab.js
++++ b/tools/ui-review-lab.js
+@@ -54,7 +54,11 @@ export function uiChecks({ frame, prefix, wait, until, check }) {
+       );
+       doc.querySelector("#garage-test").click();
+       await until(() => doc.querySelector("#stage").className === "view-race");
+-      await until(() => doc.querySelector("#countdown").textContent === "");
++      await until(
++        () =>
++          doc.querySelector("#countdown").textContent === "" &&
++          doc.querySelector("#hud-time").textContent !== "00:00.000",
++      );
+       win.dispatchEvent(
+         new win.KeyboardEvent("keydown", {
+           code: "ArrowUp",
+@@ -273,7 +277,11 @@ export function uiChecks({ frame, prefix, wait, until, check }) {
+         await until(
+           () => doc.querySelector("#stage").className === "view-race",
+         );
+-        await until(() => doc.querySelector("#countdown").textContent === "");
++        await until(
++          () =>
++            doc.querySelector("#countdown").textContent === "" &&
++            doc.querySelector("#hud-time").textContent !== "00:00.000",
++        );
+         pad.buttons[7] = { pressed: true, value: 1 };
+         await wait(700);
+         pad.buttons[7] = { pressed: false, value: 0 };

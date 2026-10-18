@@ -1,0 +1,5 @@
+{
+  "utc": "2026-10-16T15:49:49.707Z",
+  "patchSha256": "5c082cfb8da4145dd1f920a46b44e9e40d71ba5f7349e0f0a66c717fd76a84c5",
+  "scope": "Worker/input/board boundary fixes and retained final browser/CI/cleanup evidence; isolated soak pending"
+}

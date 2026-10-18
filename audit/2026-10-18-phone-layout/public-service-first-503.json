@@ -1,0 +1,8 @@
+{
+  "loggedUTC": "2026-10-18T04:52:25.688Z",
+  "status": "failed",
+  "route": "/boards/daily.html",
+  "http": 503,
+  "operation": "Independent post-deployment service availability read",
+  "scope": "The supported publisher completed all 112 resource checks; this separate dynamic-service read failed with the previously documented provider memory-budget behavior. Not counted as a pass. One complete paced 1.5-second comparison is predeclared, with no further retry loop."
+}

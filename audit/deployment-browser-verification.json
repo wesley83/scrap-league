@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-16T17:24:55.000Z",
+  "release": "sl-644d25b8e44419",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "environment": "Codex in-app Chromium on Windows; responsive viewport, not physical Pixel/Edge",
+  "viewports": [
+    {
+      "width": 412,
+      "height": 915
+    },
+    {
+      "width": 915,
+      "height": 412
+    }
+  ],
+  "initialPublicVersion": "sl-eca6f97d1308a3",
+  "directUpdateLink": "https://hire-poker-8313.onpagelove.com/?update=sl-644d25b8e44419",
+  "directLinkLoadedExactNewRelease": true,
+  "normalSafeUpdateApplied": true,
+  "rootBase": "./releases/sl-644d25b8e44419/",
+  "offlinePack": "Verified after normal Apply update and root navigation",
+  "progressRetained": "4 of 12 parts, 0/12 events",
+  "drive": {
+    "mode": "Daily Spec / Salt Flat Sprint",
+    "input": "native W held 1400ms",
+    "observedSpeedKmh": 27,
+    "observedTime": "00:09.750"
+  },
+  "repair": {
+    "before": "00:19.400",
+    "after": "00:19.400",
+    "resumedTime": "00:40.217",
+    "explicitResume": true
+  },
+  "screenshots": [
+    "audit/screenshots/mobile-graphics-live-portrait.png",
+    "audit/screenshots/mobile-graphics-live-landscape.png"
+  ],
+  "scope": "Published responsive visual/driving/repair/update check. No full lap, cold process restart or physical-device trigger reproduction claimed."
+}

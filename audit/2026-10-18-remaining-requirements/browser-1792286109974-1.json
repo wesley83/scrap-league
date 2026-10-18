@@ -1,0 +1,35 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Critical input and enlarged text layout matrix",
+      "status": "failed",
+      "error": "Workshop 200% text horizontal overflow 104px at 320x568",
+      "stack": "Error: Workshop 200% text horizontal overflow 104px at 320x568\n    at check (http://127.0.0.1:4430/__audit__/lab.js:7:25)\n    at Critical input and enlarged text layout matrix (http://127.0.0.1:4430/__audit__/journeys.js:37:7)\n    at async record (http://127.0.0.1:4430/__audit__/lab.js:36:21)\n    at async button.onclick (http://127.0.0.1:4430/__audit__/lab.js:1183:7)",
+      "qualification": {
+        "utc": "2026-10-18T01:15:09.541Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4430/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T01:15:09.974Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "1043dcd102f20125c14aeafe6dc4e88ff4e955d90a64492b69c322f55601a0f5",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

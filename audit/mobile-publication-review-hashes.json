@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-16T17:26:40.527Z",
+  "stagedFiles": 9,
+  "stagedMatchesWorktree": true,
+  "credentialScan": "passed",
+  "patch": {
+    "privatePath": ".local/mobile-publication.patch",
+    "sha256": "f76e6045473f59ad526307e18bda617e6750ed0bfedf4a46170df06dd98f5493"
+  },
+  "upstream": [
+    {
+      "path": "fonts/Barlow-OFL.txt",
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "note": "Original upstream whitespace preserved byte-for-byte; diff --check warnings confined to these copied assets."
+    },
+    {
+      "path": "fonts/BebasNeue-OFL.txt",
+      "sha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "note": "Original upstream whitespace preserved byte-for-byte; diff --check warnings confined to these copied assets."
+    },
+    {
+      "path": "vendor/three.core.js",
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "note": "Original upstream whitespace preserved byte-for-byte; diff --check warnings confined to these copied assets."
+    }
+  ],
+  "files": {
+    "audit/2026-10-16-remediation.md": "b4e52ad3f52051c61154fa6e4b1442ca59398e20334c2c89cfab355338b9180f",
+    "audit/current-acceptance.json": "2b75cf325505a1efa31245fd8cb7c0b670d9e37f737ee836f50f2b706a598e02",
+    "audit/deployment-browser-verification.json": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73",
+    "audit/deployment-live-readback.json": "c4dcc4e47f1cc28108d1d966762317a6c2e67851ed324a9c6d60ccf97b95ddac",
+    "audit/deployment.json": "74b43a23e59315c393fff9ce79a46ac82ffa78af73365726274183600e89c3b2",
+    "audit/mobile-hosted-ci.json": "62007c86629970ba5b5ba256414777833b516bc6a562f1153f6fcd9cea8ec76f",
+    "audit/mobile-live-readback-method.mjs": "c86ae5ebf73d9866a04fc37e97b4c79cda5aa5cffd182067bc8466b14ca11861",
+    "audit/screenshots/mobile-graphics-live-landscape.png": "fa2c904f66e50036edfe276f432d46fdf7deee90f4e0a39ed86628c88b2c32d1",
+    "audit/screenshots/mobile-graphics-live-portrait.png": "347e54f65062eaa83aa5310ed2882549de574b974b1b34c36da01898e1b43279"
+  }
+}

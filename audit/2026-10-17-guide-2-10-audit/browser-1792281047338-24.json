@@ -1,0 +1,35 @@
+{
+  "release": "sl-475e681fb90505",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Closed-store Files recovery",
+      "status": "failed",
+      "error": "Closed store did not show recovery warning",
+      "stack": "Error: Closed store did not show recovery warning\n    at check (http://127.0.0.1:4417/__audit__/lab.js:7:25)\n    at actions.Closed-store Files recovery (http://127.0.0.1:4417/__audit__/lab.js:991:5)\n    at async record (http://127.0.0.1:4417/__audit__/lab.js:35:21)\n    at async button.onclick (http://127.0.0.1:4417/__audit__/lab.js:1165:7)",
+      "qualification": {
+        "utc": "2026-10-17T23:50:47.240Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?qualified-entry=1792281004087",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "workshop",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:50:47.338Z",
+  "sourceHash": "fa67b0efe0257062711aa07c1ffbaa5951b1b06f7116ab374023dc5de8ddbc1b",
+  "serverSha256": "4adb53cbe44385e8967d1cc5ea6560eecd125a33d5d4b3a897344b494f0dbf00",
+  "labSha256": "2cd8660febf1207226b9084de5174aa68b916db7d1e2a03ea5f20ac1830e503b"
+}

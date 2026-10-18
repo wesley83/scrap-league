@@ -1,0 +1,231 @@
+{
+  "conclusion": "success",
+  "headSha": "09bc9273fb3019e1d0cef217f020520e05cb5887",
+  "jobs": [
+    {
+      "completedAt": "2026-10-18T04:48:06Z",
+      "conclusion": "success",
+      "databaseId": 117588828808,
+      "name": "Automated regression suite",
+      "startedAt": "2026-10-18T04:45:09Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-18T04:45:10Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-18T04:45:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:45:12Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-18T04:45:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:45:12Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 3,
+          "startedAt": "2026-10-18T04:45:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:45:13Z",
+          "conclusion": "success",
+          "name": "Run oven-sh/setup-bun@v2",
+          "number": 4,
+          "startedAt": "2026-10-18T04:45:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:45:14Z",
+          "conclusion": "success",
+          "name": "Run bun install --frozen-lockfile",
+          "number": 5,
+          "startedAt": "2026-10-18T04:45:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:45:14Z",
+          "conclusion": "success",
+          "name": "Run node tools/build.mjs",
+          "number": 6,
+          "startedAt": "2026-10-18T04:45:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:02Z",
+          "conclusion": "success",
+          "name": "Run node --test tests/*.test.mjs",
+          "number": 7,
+          "startedAt": "2026-10-18T04:45:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:04Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 8,
+          "startedAt": "2026-10-18T04:48:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:05Z",
+          "conclusion": "success",
+          "name": "Post Run oven-sh/setup-bun@v2",
+          "number": 14,
+          "startedAt": "2026-10-18T04:48:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:05Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 15,
+          "startedAt": "2026-10-18T04:48:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:05Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-10-18T04:48:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:05Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-18T04:48:05Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/wesley83/scrap-league/actions/runs/39098173299/job/117588828808"
+    },
+    {
+      "completedAt": "2026-10-18T04:48:27Z",
+      "conclusion": "success",
+      "databaseId": 117589334368,
+      "name": "Exact candidate acceptance",
+      "startedAt": "2026-10-18T04:48:09Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-18T04:48:11Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-18T04:48:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:13Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-18T04:48:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:16Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 3,
+          "startedAt": "2026-10-18T04:48:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:18Z",
+          "conclusion": "success",
+          "name": "Run oven-sh/setup-bun@v2",
+          "number": 4,
+          "startedAt": "2026-10-18T04:48:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:18Z",
+          "conclusion": "success",
+          "name": "Run bun install --frozen-lockfile",
+          "number": 5,
+          "startedAt": "2026-10-18T04:48:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:20Z",
+          "conclusion": "success",
+          "name": "Run node tools/build.mjs",
+          "number": 6,
+          "startedAt": "2026-10-18T04:48:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:21Z",
+          "conclusion": "success",
+          "name": "Run node tools/release-gate.mjs local",
+          "number": 7,
+          "startedAt": "2026-10-18T04:48:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:24Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 8,
+          "startedAt": "2026-10-18T04:48:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:24Z",
+          "conclusion": "success",
+          "name": "Post Run oven-sh/setup-bun@v2",
+          "number": 14,
+          "startedAt": "2026-10-18T04:48:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:24Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 15,
+          "startedAt": "2026-10-18T04:48:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:24Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-10-18T04:48:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-18T04:48:24Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-18T04:48:24Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/wesley83/scrap-league/actions/runs/39098173299/job/117589334368"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/wesley83/scrap-league/actions/runs/39098173299",
+  "utc": "2026-10-18T04:49:34.137Z",
+  "release": "sl-28ec5378c02128",
+  "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
+  "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
+  "requiredRule": {
+    "path": "audit/2026-10-18-phone-layout/github-required-checks.json",
+    "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
+  },
+  "scope": "Actual hosted exact-source acceptance; later audit-only closure does not change runtime/source/output"
+}

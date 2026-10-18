@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-18T00:15:13.029Z",
+  "status": "audit-complete/product-not-accepted",
+  "candidate": {
+    "release": "sl-b63afc9cbb2339",
+    "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+    "outputHash": "8bcdf0696e1bfcfd57e5f824df7a11095e2059fc799ac147f796f3cb81372e0c"
+  },
+  "guideEdition": "2.10.0",
+  "requirements": {
+    "passed": 31,
+    "partial": 10,
+    "blocked": 4,
+    "not-run": 1,
+    "failed": 1
+  },
+  "tests": {
+    "passed": 115,
+    "failed": 0
+  },
+  "finalOriginBrowserObservations": 19,
+  "commit": false,
+  "push": false,
+  "deploy": false,
+  "temporaryServers": "Known sessions 23807, 66745 and 34243 stopped after browser observations; original public tab preserved",
+  "diffCheck": "passed",
+  "trackedPatch": "changes.patch",
+  "newSourcePatch": "new-source-files.patch",
+  "newFileReview": "new-files-review.md",
+  "hashManifest": "hashes.json",
+  "credentialPatternMatches": 0
+}

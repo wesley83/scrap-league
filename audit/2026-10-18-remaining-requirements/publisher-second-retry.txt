@@ -1,0 +1,31 @@
+✖ actual publisher commands retain promotion phases, recover failures and conditionally restore two releases (25132.5862ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25373.4134
+
+✖ failing tests:
+
+test at tests\publisher-command.test.mjs:7:1
+✖ actual publisher commands retain promotion phases, recover failures and conditionally restore two releases (25132.5862ms)
+  AssertionError [ERR_ASSERTION]: {"error":"Concurrent remote change: /releases/sl-b63afc9cbb2339/ai-profile.js; journal audit/deployments/2026-10-18T00-46-38-992Z-2fb981ad-7e3a-49b2-a4c2-8d6066948135.jsonl"}
+  + actual - expected
+  
+  + undefined
+  - true
+  
+      at TestContext.<anonymous> (file:///C:/Users/Wesley/Documents/ChatGPT/Demos/scrap-league/tests/publisher-command.test.mjs:38:53)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

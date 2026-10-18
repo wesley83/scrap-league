@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-16T16:42:49.981Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-eca6f97d1308a3",
+  "browser": "Codex in-app browser",
+  "documentClientViewport": {
+    "width": 1265,
+    "height": 720
+  },
+  "input": "Native keyboard W held for 1200 ms; browser UI controls",
+  "update": {
+    "before": "sl-b5f8aa986aa675",
+    "oldClientDetected": "Update ready · check from Settings",
+    "action": "Closed the only public-origin game tab, then reopened the public root in the same browser process",
+    "after": "sl-eca6f97d1308a3",
+    "progressBefore": "4 of 12 parts · 0/12 events",
+    "progressAfter": "4 of 12 parts · 0/12 events",
+    "offlineStatus": "Offline pack verified"
+  },
+  "driving": {
+    "mode": "Driving lesson",
+    "speedKmh": 22,
+    "displayedElapsed": "00:10.325",
+    "pauseDialog": true,
+    "exitConfirmed": true,
+    "scope": "Startup/ordinary input/pause smoke test; not a completed lap"
+  },
+  "workshop": {
+    "path": "/editor/yard-loop",
+    "title": "Yard Loop editable copy",
+    "draftSaved": true,
+    "validation": "651 m · 12 pieces · Race-ready",
+    "offlineStatus": "Offline pack verified"
+  },
+  "console": {
+    "errors": [],
+    "warnings": []
+  },
+  "screenshots": [
+    "audit/screenshots/deployed-remediation-yard.jpg",
+    "audit/screenshots/deployed-remediation-workshop.jpg"
+  ],
+  "limits": "Existing browser process and existing public-origin storage. No OS installation, complete race journey or cold browser-process relaunch claimed."
+}

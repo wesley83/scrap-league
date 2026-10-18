@@ -1,0 +1,51 @@
+{
+  "observedUtc": "2026-10-17T21:24:57Z",
+  "origin": "http://127.0.0.1:4390",
+  "method": "Normal in-app Chromium browser controls, native input and fresh-document reload; no loopback review exports on this origin",
+  "releaseFrom": "sl-de66ac8ab06a61",
+  "releaseTo": "sl-b2a6a7eab4f634",
+  "update": {
+    "manualCheckInSettings": true,
+    "explicitApplyUpdate": true,
+    "progressBeforeAndAfter": "5/12 parts, 1/12 events",
+    "offlinePackVerifiedFooter": true
+  },
+  "driverName": {
+    "emptyNameRejectedInline": true,
+    "nativeTypedValue": "Browser Driver",
+    "savedLocally": true,
+    "retainedAfterReload": true,
+    "retainedAfterOfflineReload": true
+  },
+  "offline": {
+    "ownedServerStopped": true,
+    "independentConnectionFailureConfirmed": true,
+    "freshDocumentLoaded": true,
+    "keyboardThrottleHeldMs": 1200,
+    "observedSpeedKmh": 59,
+    "pauseAndExplicitLeaveWorked": true,
+    "workshopDraftSavedAndReopened": "Offline handbook circuit"
+  },
+  "limits": [
+    "Browser-process restart is not available and was not performed.",
+    "390x844 viewport emulation does not establish physical-phone behavior.",
+    "Production board access from localhost is restricted by provider CORS; same-origin behavior is checked after publication.",
+    "This receipt records observed tool actions; it is not an automatically captured full browser trace."
+  ],
+  "finalUpdate": {
+    "observedUtc": "2026-10-17T21:55:55.1521262Z",
+    "from": "sl-b2a6a7eab4f634",
+    "to": "sl-6f79bfd18ca0be",
+    "visibleHomeNoticeOpenedReview": true,
+    "explicitApply": true,
+    "progressRetained": "5/12 parts, 1/12 events",
+    "driverNameRetained": "Browser Driver",
+    "offlinePackVerified": true,
+    "serverStoppedAndConnectionFailureConfirmed": true,
+    "freshDocumentOfflineRacingSpeedKmh": 66,
+    "keyboardHeldMs": 1600,
+    "priorDraftReopened": "Offline handbook circuit",
+    "newEditSavedAndReloaded": "Offline final circuit",
+    "browserProcessRestart": false
+  }
+}

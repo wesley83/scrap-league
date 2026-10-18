@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-18T00:08:11.455Z",
+  "passed": true,
+  "scope": "Actual supported local commands, no authentication or remote mutations",
+  "cases": [
+    {
+      "op": "deploy",
+      "exitCode": 0,
+      "result": {
+        "error": "Required acceptance is missing or not passed: J02"
+      },
+      "observed": "Shared gate refusal before auth/staging; no key or remote write supplied"
+    },
+    {
+      "op": "publish-candidate",
+      "exitCode": 0,
+      "result": {
+        "error": "Required acceptance is missing or not passed: J02"
+      },
+      "observed": "Shared gate refusal before auth/staging; no key or remote write supplied"
+    },
+    {
+      "command": "tools/release-gate.mjs",
+      "exitCode": 1,
+      "observed": "Required unresolved J02 refused through supported command"
+    },
+    {
+      "command": "tools/package-game.mjs",
+      "exitCode": 1,
+      "observed": "Required unresolved J02 refused through supported command"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+✖ a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes (1.5206ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 280.4469
+
+✖ failing tests:
+
+test at tests\guide-release-controls.test.mjs:7:1
+✖ a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes (1.5206ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception: Commit, push, deploy: blocked
+      at TestContext.<anonymous> (file:///C:/Users/Wesley/Documents/ChatGPT/Demos/scrap-league/tests/guide-release-controls.test.mjs:14:11)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /unresolved|not passed|cannot waive/i,
+    operator: 'throws',
+    diff: 'simple'
+  }

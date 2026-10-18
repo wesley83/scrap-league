@@ -1,0 +1,186 @@
+{
+  "utc": "2026-10-17T22:35:54.307Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "owned": [
+    "/boards/audit-a49565ce-1576-4862-ad68-efa8f687f50e-trial.html"
+  ],
+  "created": [
+    "/boards/audit-a49565ce-1576-4862-ad68-efa8f687f50e-trial.html"
+  ],
+  "mirrors": [
+    {
+      "mode": "trial",
+      "path": "/boards/audit-a49565ce-1576-4862-ad68-efa8f687f50e-trial.html",
+      "type": "urn:ScrapLeague:ProbeRun:a49565ce-1576-4862-ad68-efa8f687f50e:trial",
+      "sourceETag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+      "emptyPolicySha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142",
+      "normalizedMirrorSha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142"
+    }
+  ],
+  "routes": [],
+  "checks": [
+    {
+      "name": "trial: positive public write/readback",
+      "state": "passed",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ],
+      "oneCopy": true,
+      "durationMs": 2050
+    },
+    {
+      "name": "retention: interleaved physical cleanup and eligibility boundary",
+      "state": "passed",
+      "status": 200,
+      "seededExpiry": true,
+      "expiredRemoved": true,
+      "activeKept": true,
+      "beforeBoundary": true,
+      "boundaryRemoved": true,
+      "controlsKept": true,
+      "repeatStable": true,
+      "scope": "Owner-seeded timestamps exercise the actual application cleanup; this is not five days of elapsed wall time. Exact inclusive eligibility is checked independently.",
+      "durationMs": 33417
+    },
+    {
+      "name": "complete trial boundary fixture",
+      "state": "passed",
+      "executed": true,
+      "durationMs": 36096
+    }
+  ],
+  "only": "retention",
+  "attempts": [
+    {
+      "name": "trial: positive public write/readback",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "retention public read",
+      "attempts": [
+        {
+          "status": 200,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "retention public read",
+      "attempts": [
+        {
+          "status": 200,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "retention public read",
+      "attempts": [
+        {
+          "status": 200,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "retention public read",
+      "attempts": [
+        {
+          "status": 200,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "retention public read",
+      "attempts": [
+        {
+          "status": 200,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "retention public read",
+      "attempts": [
+        {
+          "status": 200,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "retention public read",
+      "attempts": [
+        {
+          "status": 200,
+          "detail": ""
+        }
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/boards/audit-a49565ce-1576-4862-ad68-efa8f687f50e-trial.html",
+      "status": 204,
+      "absent": true
+    }
+  ],
+  "scope": "Actual public application endpoints on this host, using nonce-owned empty policy mirrors with unique run namespaces. Only resource paths/type namespaces differ from retained production policy; no live policy or player record is changed.",
+  "retentionObservation": {
+    "path": "/boards/audit-a49565ce-1576-4862-ad68-efa8f687f50e-trial.html",
+    "physicalBefore": [
+      "b8d8e3c2-dc45-473d-a3d4-3ef15709b004",
+      "aab79389-f0ba-4fb4-8e3a-2d55029c8894",
+      "c1d662ac-8dd4-4a19-af15-7c2f1f3a2e73",
+      "82d2aa48-9977-45a9-a16b-9313bfe0492f",
+      "f0d84ca0-4505-43d2-8cf7-336d4d6ed9a7",
+      "3f0a739d-9163-4762-ba01-6fba4d9a0195"
+    ],
+    "afterFirstRead": [
+      "b8d8e3c2-dc45-473d-a3d4-3ef15709b004",
+      "c1d662ac-8dd4-4a19-af15-7c2f1f3a2e73",
+      "f0d84ca0-4505-43d2-8cf7-336d4d6ed9a7",
+      "3f0a739d-9163-4762-ba01-6fba4d9a0195"
+    ],
+    "expiredRemoved": true,
+    "activeKept": true,
+    "beforeBoundary": true,
+    "fixtures": [
+      {
+        "id": "aab79389-f0ba-4fb4-8e3a-2d55029c8894",
+        "label": "expired-a",
+        "expiresAt": 1792276497168
+      },
+      {
+        "id": "c1d662ac-8dd4-4a19-af15-7c2f1f3a2e73",
+        "label": "active-a",
+        "expiresAt": 1792280157168
+      },
+      {
+        "id": "82d2aa48-9977-45a9-a16b-9313bfe0492f",
+        "label": "expired-b",
+        "expiresAt": 1792276552168
+      },
+      {
+        "id": "f0d84ca0-4505-43d2-8cf7-336d4d6ed9a7",
+        "label": "boundary",
+        "expiresAt": 1792276587168
+      },
+      {
+        "id": "3f0a739d-9163-4762-ba01-6fba4d9a0195",
+        "label": "active-b",
+        "expiresAt": 1792362957168
+      }
+    ]
+  },
+  "passed": true
+}

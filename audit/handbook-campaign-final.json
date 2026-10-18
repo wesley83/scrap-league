@@ -1,0 +1,143 @@
+{
+  "release": "sl-6f79bfd18ca0be",
+  "at": "2026-10-17T21:52:15.860Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "results": [
+    {
+      "name": "Default-resolution full race",
+      "status": "passed",
+      "durationMs": 50188,
+      "details": {
+        "utc": "2026-10-17T21:51:03.722Z",
+        "release": "sl-6f79bfd18ca0be",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "devicePixelRatio": 1.5,
+        "safeGraphics": false,
+        "lowEffects": false,
+        "canvas": [
+          1920,
+          753
+        ],
+        "cssCanvas": [
+          1280,
+          672
+        ],
+        "durationMs": 50075.60000002384,
+        "frames": 2999,
+        "hiddenMs": 0,
+        "p95FrameMs": 16.80000000000291,
+        "p99FrameMs": 16.900000000000546,
+        "longestFrameMs": 17,
+        "cars": 6,
+        "result": {
+          "dnf": false,
+          "laps": 2,
+          "elapsedMs": 47023,
+          "saved": true
+        },
+        "scope": "One complete six-car race through the real app loop at default renderer resolution and full effects; legal injected controller.",
+        "passed": true
+      }
+    },
+    {
+      "name": "Twelve events, reload and ending",
+      "status": "passed",
+      "durationMs": 44513,
+      "details": {
+        "rows": [
+          {
+            "event": 1,
+            "elapsedMs": 101792,
+            "laps": 3,
+            "place": 1,
+            "contacts": 160
+          },
+          {
+            "event": 2,
+            "elapsedMs": 141175,
+            "laps": 3,
+            "place": 1,
+            "contacts": 280
+          },
+          {
+            "event": 3,
+            "elapsedMs": 120444,
+            "laps": 3,
+            "place": 1,
+            "contacts": 461
+          },
+          {
+            "event": 4,
+            "elapsedMs": 134093,
+            "laps": 3,
+            "place": 1,
+            "contacts": 103
+          },
+          {
+            "event": 5,
+            "elapsedMs": 163701,
+            "laps": 3,
+            "place": 1,
+            "contacts": 224
+          },
+          {
+            "event": 6,
+            "elapsedMs": 160568,
+            "laps": 3,
+            "place": 2,
+            "contacts": 656
+          },
+          {
+            "event": 7,
+            "elapsedMs": 155748,
+            "laps": 3,
+            "place": 1,
+            "contacts": 565
+          },
+          {
+            "event": 8,
+            "elapsedMs": 137745,
+            "laps": 3,
+            "place": 1,
+            "contacts": 83
+          },
+          {
+            "event": 9,
+            "elapsedMs": 183368,
+            "laps": 3,
+            "place": 1,
+            "contacts": 469
+          },
+          {
+            "event": 10,
+            "elapsedMs": 162265,
+            "laps": 3,
+            "place": 1,
+            "contacts": 104
+          },
+          {
+            "event": 11,
+            "elapsedMs": 156206,
+            "laps": 3,
+            "place": 2,
+            "contacts": 381
+          },
+          {
+            "event": 12,
+            "elapsedMs": 200271,
+            "laps": 3,
+            "place": 1,
+            "contacts": 1018
+          }
+        ],
+        "reloadAfterFirstRound": true,
+        "allFourScenes": true,
+        "heldEnding": true,
+        "reducedMotion": true,
+        "lowEffects": true,
+        "muted": true,
+        "scope": "Legal synthetic controller through actual UI/persistence; no human enjoyment claim"
+      }
+    }
+  ]
+}

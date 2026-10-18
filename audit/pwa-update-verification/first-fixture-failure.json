@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-16T18:31:43.552Z",
+  "subjects": {
+    "A": "sl-eca6f97d1308a3",
+    "B": "sl-644d25b8e44419",
+    "hashes": {
+      "A": {
+        "index.html": "6b763669841296bb57545918c40709e977c04013fadcf6218c842800302e6935",
+        "sw.js": "176952a57e480c6b2b203201a6be7986705fcbb1e83d946a9daf934cc542caa1",
+        "release.json": "6511c1d23650399b985cc22d51c983f400917c2f1dc9c22b28b320199cb273ca"
+      },
+      "B": {
+        "index.html": "de8cabf1d6001aaad290f10fbc4d17257ee79e5d5f8182540e3404a5f0881cf2",
+        "sw.js": "72f033c612074233022618507fa33b3608136c5a5c6a70165469db796928edbf",
+        "release.json": "68a76d99134ca4584245bd2686ea4a62d4ca6b21eb6eb644c8e2f92f6b1eaecd"
+      }
+    },
+    "phase": "A",
+    "offline": false,
+    "corrupt": false,
+    "requests": []
+  },
+  "environment": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "scope": "Real service workers on isolated localhost; synthetic progression; ordinary game UI for draft edits and activation; no physical device or process restart claim",
+  "results": [
+    {
+      "name": "1. Install A and prepare saved data",
+      "status": "failed",
+      "error": "Timed out: draft saved",
+      "utc": "2026-10-16T18:31:43.552Z"
+    }
+  ]
+}

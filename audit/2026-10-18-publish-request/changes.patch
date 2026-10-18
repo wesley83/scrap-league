@@ -1,0 +1,2701 @@
+diff --git a/ACCEPTANCE.md b/ACCEPTANCE.md
+index 79e35c1..8af071a 100644
+--- a/ACCEPTANCE.md
++++ b/ACCEPTANCE.md
+@@ -2,6 +2,40 @@
+ 
+ ## Delivery boundary
+ 
++### Handbook 2.10 audit adoption
++
++The October 17, 2026 audit adopts handbook **2.10.0**, SHA-256 `b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4`, retained at [the pinned snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md). `requirements.json` is the authoritative inventory; its `governingGuide` records map revision **handbook-2.10-r2**, with 47 requirements and 102 individually required scenarios. The [follow-up scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) retains the user's explicit native-desktop exclusion and corrects P08 to capability recording/established-policy preservation while retaining actual endpoint validation. Real hardware and human playtesting remain excluded. The earlier numbered best-practice table below describes historical design-time mapping, not the current guide's section numbers. Old reference snapshots remain historical. Future guide changes require an explicit impact review.
++
++| Current guide section | Applicable contract and inventory IDs |
++| --- | --- |
++| 1 Scope/evidence | Existing physical/human exclusions; pinned guide, exact inventory and separate reviews; C09–C11 |
++| 2 Player/delivery contract | Quick Race, League, Trial, Daily, practice and Workshop; J01–J10, M01–M04 |
++| 3 Architecture/authority | Authored HTML, one editor DOM source, shared compiler, derived renderer and composed shell; M01, P04/P07/P09, C12 |
++| 4 Editor/recovery | Validate/import/export, history, asynchronous save/navigation and first-entry reads; J08–J12, P01, M02 |
++| 5 State/checkpoints | Captured cup/run state, atomic restore/results and input/clock ownership; J02–J04/J16, P01/P02, M04 |
++| 6 Simulation/input/AI | Fixed step, legal AI controls, swept contacts, camera and cancellation; M01/M03, J02/J16 |
++| 7 Feedback/progression | Practice, visible cues, garage tradeoffs and bounded progression; J01/J04/J05/J18 |
++| 8 Scoring/effects/economy | Split arithmetic, cup rewards, boost/surface/reset interactions; J03–J07, P02, M01/M03 |
++| 9 Shared results/calendar | Casual trust, original Daily identity, durable queue, leases and retention; J07/J15, P03/P05/P06/P08 |
++| 10 Layout/controls | Available Chromium dimensions, keyboard/gamepad/touch contracts and complete journeys; J02/J08/J16, C09 |
++| 11 Accessibility | Native UI, focus, measured contrast/reflow, enlarged text and motion; J02/J17/J18, C09. No full WCAG conformance claim. |
++| 12 Scenes/audio | Four held scene families, mute/reduced motion and bounded signal checks; J18, M04 |
++| 13 Performance | Actual renderer/buffer/quality, cold/long-run receipts and unchanged-dependency reuse; J16, M01/M04, C09 |
++| 14 Assets/sharing | Independent branded asset contract, decoded images/icons, licenses and sharing fallbacks; C01–C03/C06, J17 |
++| 15 Offline/updates | Complete verified pack, safe updates, old clients and offline journeys; J13/J14, M04, P09 |
++| 16 Security/data | Inert bounded imports, trusted owner DAV, public shape/retention and private package exclusions; J10, P04–P06, C07 |
++| 17 Release/maintenance | Strict gate on every publisher, pinned reviews, preservation, phase journal and operator recovery; C04/C05/C08/C10/C11/C13/C14, P09/M06 |
++| 18 Genre | Arcade racing and asynchronous community competition apply. Platforming, puzzles, cards, dialogue branching, rhythm and real-time multiplayer modules are not adopted because those mechanics are absent. |
++| 19 Pagelove adapter | HTML definitions, native composition, owner conditionals and separate public-rule probes; P04–P09/J11/J12/J15 |
++| 20 Included model example | Illustrative reference, not game acceptance; actual model/storage scenarios use M01/P01/P02 |
++| 21 Evidence templates | Qualified fixtures, selected interleavings, review/reuse and retrospective closure; C09–C14/J08/J09 |
++| 22 Glossary | Terminology reference; no separate runtime feature |
++| 23 Handbook maintenance | Guidance provenance for C11; handbook publication is not a game runtime obligation |
++
++The available matrix is Windows/in-app Chromium with emulated layouts and injected device adapters, plus actual connector keyboard/pointer actions when explicitly recorded. It does not certify Edge on a physical phone or an unavailable engine. English UI is the adopted language; Unicode player aliases are supported. Synthetic inputs do not prove browser gesture arbitration or human enjoyment. Optional recorder/pathfinding/real-money/identity-account systems absent from this game are not new requirements.
++
++New controls C11–C14 are required where applicable, with results in the same inventory/ledger as the existing IDs. The audit reopens unsupported broad pass claims instead of removing their promised subcases. An operation receipt cannot waive any required outcome. Review completion means all rows were evaluated, including unresolved rows; it does not mean the product is accepted. Required unresolved rows still block the corresponding release. A new required-outcome defect reopens its row and invalidates the affected decision before entry promotion.
++
+ The design package defines a complete first release, including the Track Workshop. Implementation is complete only when the player journeys below have evidence on the exact release revision. The visual study demonstrates layout and selected interface responses; it does not prove physics, track validity, persistence, publishing or browser behavior.
+ 
+ Use status values Passed, Failed, Not run, Blocked and Accepted exception, always with revision, environment and evidence. All runtime acceptance rows begin **Not run**. A design review or test count does not convert those rows to Passed.
+diff --git a/DEPLOYMENT.md b/DEPLOYMENT.md
+index 8715712..f1fd551 100644
+--- a/DEPLOYMENT.md
++++ b/DEPLOYMENT.md
+@@ -6,7 +6,11 @@ Build with the pinned dependencies and run the checks described in `PLAY.md`. `d
+ 
+ Run `node tools/deploy-pagelove.mjs` in a terminal. It accepts newline-terminated JSON through hidden standard input. Send `{"op":"auth","key":"<owner key>"}` to authenticate and read the destination baseline. After the authenticated result, send `{"op":"deploy"}`. Send `{"op":"quit"}` when finished. The key exists only in process memory and is sent only to the pinned HTTPS authoring endpoint. Never paste a real key into a shell command, source file, issue, or public repository.
+ 
+-The publisher validates local release hashes, uploads immutable release dependencies and authored HTML content, and verifies their public readback before promoting the root entry. Mutable files use ETag conditions; absent files use `If-None-Match`. A lost write response is reconciled by readback without blindly sending another write. Existing content is backed up under ignored `.local/deployment-baselines/` before replacement; no remote file deletion is performed. Keep that directory private.
++The publisher validates local release hashes, uploads immutable release dependencies and authored HTML content, and verifies their public status/type/identity before promoting entries. Native entry readback also verifies resolved shared shell and authored circuit contents. Exact acceptance is rechecked immediately before every mutable entry write and for unchanged entries; a changed inventory/decision aborts subsequent promotion. Mutable files use ETag conditions; absent files use `If-None-Match`. A lost write response is reconciled by readback without blindly sending another write. Existing content is backed up and readback-verified under ignored `.local/deployment-baselines/` before replacement; no remote file deletion is performed. Keep that directory private.
++
++Each deployment/rollback writes a flushed, chained, append-only phase journal under `audit/deployments/`. It records the pinned candidate/previous identity, target, baseline hashes/conditions, write intents, known entry promotion before readback, authoring/public verification and failures. `entry-promoted-unverified`, `recovery-required` and `outcome-unknown` must not be reported as unchanged or successfully deployed. A final receipt references its journal; phase records and private verified backups remain available after a later exception. Controlled command fixtures establish recovery mechanics; only a separately retained production operation establishes a public deployment.
++
++After an interrupted deployment, inspect the retained journal with `{"op":"inspect-journal","journal":"audit/deployments/<id>.jsonl"}`. Authenticate, then send `{"op":"prepare-recovery","journal":"audit/deployments/<id>.jsonl"}` to verify the original candidate/decision, backup hashes and current remote identities. Review its per-file dispositions, then send `{"op":"recover"}` for conditional forward completion through the ordinary gates. Recovery captures a separate fresh baseline, preserves the original journal/backups and refuses concurrent or unexplained remote state. It does not delete resources, blindly replay an unknown write or authorize a changed candidate. A changed candidate/decision needs its own review and new operation.
+ 
+ Pagelove may serialize HTML and append its observed Powered by Pagelove footer. The publisher permits only that exact footer structure during public comparison, preserves it on the served page, and checks the remaining document's semantic identity, including script/style text. It then pins the complete served root HTML hash in the deployed service-worker inventory. Other asset types must match byte-for-byte. The local `dist/` inventory remains unchanged; `audit/deployment.json` records the served hashes and whether this adjustment was necessary. A root-page deployment and its worker are sequential promotions, not a platform-wide atomic transaction. If publication stops after promotion, inspect the receipt/baselines and resume against a fresh baseline; do not delete old release folders needed by installed clients.
+ 
+@@ -14,7 +18,7 @@ The release includes owner Workshop publication/discovery, native track/editor r
+ 
+ Both packaging and deployment call `tools/release-gate.mjs`. Local acceptance must pass before staging, staged/provider acceptance must pass before any root/native entry promotion, and live acceptance remains required before declaring the deployment verified. `audit/current-acceptance.json` must identify the exact source/output and hash its retained evidence. A blocked or incomplete row is not a waiver. Generated social posters are mandatory public dependencies even though they are excluded from the offline pack.
+ 
+-On October 16 Wesley explicitly requested "Commit, push, deploy". On October 17 the user further directed that Scrap League have the shared leaderboard, pointing out that Pagelove hosts share the same capabilities. The separate `publish-candidate` operation records the scoped publication authorization without marking incomplete product outcomes passed. Its dated `audit/deployment-authorization-YYYY-MM-DD.json` must bind the exact source, output, release and acceptance-ledger hashes, destination and every incomplete row. It refuses known failed outcomes and stale evidence, and requires the exact game-host board configuration. Provision both native board documents and verify public read/write behavior before promoting the client. Normal `deploy`, packaging and CI acceptance remain strict. To use the authorized candidate operation after authentication, send `{"op":"publish-candidate","authorization":"audit/deployment-authorization-2026-10-17.json"}`. All conditional writes, backups and public readback checks still run. Publication success is distinct from full product acceptance; no general force flag exists.
++The historical `publish-candidate` operation is retained as a compatibility entry point, but it now enforces the same required acceptance outcomes as `deploy`. A generic deployment or leaderboard instruction and a dated agent-authored limitation receipt cannot waive an unresolved outcome. Any actual authorized scope decision must first update the authoritative contract, identify the omitted outcome and consequence, and receive fresh coverage/evidence review. Both operations refuse unresolved required rows before staging; no candidate-publication bypass remains. Historical authorization/publication receipts describe earlier behavior and are not reusable waiver authority.
+ 
+ For a root-entry rollback, authenticate using the same hidden input, then send `{"op":"prepare-rollback","baseline":"<existing timestamp directory>"}`. Preparation verifies private backup hashes, the destination host, current ETags and all old public dependencies. Review the returned root hashes, then send `{"op":"rollback"}`. The tool rechecks all three root entries before any write, uses ETag conditions, reconciles ambiguous responses and verifies public readback. It does not delete or roll back Workshop/catalog/board documents, native routes or immutable release folders. The operation is sequential; on a partial failure preserve the receipt and inspect current state. The local rollback fixture is not a claim that production rollback has been performed.
+ 
+diff --git a/IMPLEMENTATION-STATUS.md b/IMPLEMENTATION-STATUS.md
+index e0edc11..8a0366f 100644
+--- a/IMPLEMENTATION-STATUS.md
++++ b/IMPLEMENTATION-STATUS.md
+@@ -1,5 +1,23 @@
+ # Scrap League implementation and release status
+ 
++## Remaining-requirement follow-up
++
++The [current follow-up report](audit/2026-10-18-remaining-requirements/report.md) and `audit/current-acceptance.json` identify the actual candidate and verdict. The pinned handbook remains 2.10.0; map handbook-2.10-r2 declares 47 requirements and 102 named scenarios. Aggregate passing labels cannot substitute for a missing required scenario. Native desktop/process checks are explicitly excluded by the user; connector browser interaction, fresh-document offline recovery and real IndexedDB context termination remain required. The [scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) corrects the inventory's unsupported global-readiness demand without claiming provider-wide enforcement.
++
++The publisher records flushed phase journals, independently verifies backups, rechecks exact acceptance before every mutable entry promotion, checks public resource types/composed dependencies and supports inspected conditional forward recovery. Supported-command fixtures exercise ambiguous writes, post-write verification failures, changed acceptance, backup corruption, concurrent recovery and two-release rollback. These controlled-host observations are separate from actual production publication.
++
++Current official geometry has been recreated and exported through Workshop controls. Independent stable-identity binding verifies all twelve exports match authoritative source bytes and retain existing board/ghost references. Original CLI provenance remains historical fact. Broader browser work also found and repaired enlarged-text Workshop overflow and inspector focus loss. Rejected leaderboard times now offer explicit per-time retry with their original identity; permanent rejection still does not trigger automatic resubmission. Earlier provider burst errors are retained alongside the complete paced endpoint comparison, which does not promise provider-wide readiness or burst throughput.
++
++Local checks, hosted CI, commit, push and deployment remain separate states in the report and journals. The older sections below retain their historical observation dates and limits; they are not a substitute for the current ledger.
++
++## Handbook 2.10 audit — October 17, 2026
++
++The current local audit uses pinned handbook 2.10.0 and requirement-map revision handbook-2.10-r1. It found a missing-stylesheet startup failure and an alternate publisher path that interpreted an agent-written incomplete list as a waiver. Startup now requires the shared core/arcade style contracts before opening the game and offers independent reload recovery on failure. Both publisher operations require the same passed adopted outcomes; generic deploy instructions no longer bypass unresolved rows. The gate also checks the pinned guide, exact inventory and separate candidate-bound review records.
++
++The corrected campaign fixture also exposed a write/read inconsistency: storage accepted a malformed unfinished result that its reader later rejected. Result and progression validation now precede every result transaction, and the finish transition requires a terminal race. Verification binds to the actual current document, requires all laps before completion, waits for current dialog readiness and retains immutable run receipts.
++
++The [audit report](audit/2026-10-17-guide-2-10-audit/report.md) records actual current checks, failed setups, retained regressions, evidence reuse and remaining gaps. Earlier broad labels are not carried forward beyond their observed scope. In particular, form-route editor evidence does not certify every promised pointer/touch path, fresh documents do not prove browser-process restart, and policy probes do not establish an unsupported provider-wide readiness guarantee. Publisher phase journaling and supported-command recovery need separate evidence. Current changes are local; the prior deployment receipt remains historical. This audit does not claim full product acceptance or a new publication.
++
+ ## Handbook second pass — October 17, 2026
+ 
+ The second comparison fixes three confirmed recovery defects: Files could lose its export route after a database read failure; initial Workshop entry exposed controls before its source was ready; and installed clients could not recover failed native circuit links. Draft listing now isolates failures, editor entry validates before revealing controls and cancels stale navigation, and failed deep links recover an integrity-checked installed shell with an explicit cached-copy notice. Corrupt records and earlier installed releases remain preserved.
+diff --git a/PLAY.md b/PLAY.md
+index 162ac53..7c65538 100644
+--- a/PLAY.md
++++ b/PLAY.md
+@@ -8,7 +8,7 @@ Play the hosted game at **https://hire-poker-8313.onpagelove.com/**. Progress an
+ 
+ Run `START-GAME.cmd`, or run `node tools/serve.mjs` from this directory, then open **http://127.0.0.1:4390**. Node.js is required for the local server; the prebuilt game needs no package installation. The server serves only `dist/` on this computer. Keep that terminal running for browsers that have not installed the offline pack.
+ 
+-After the footer says **Offline pack verified**, the complete game and Workshop are cached for offline use. Browser storage is specific to the browser/profile and origin. Export important tracks as HTML or save a full backup from Settings before clearing browser data. Actual browser-process cold relaunch remains an unverified acceptance row.
++After the footer says **Offline pack verified**, the complete game and Workshop are cached for offline use. Browser storage is specific to the browser/profile and origin. Export important tracks as HTML or save a full backup from Settings before clearing browser data. [Implementation status](IMPLEMENTATION-STATUS.md) records the exact offline verification scope.
+ 
+ For source development, install the pinned dependencies with `bun install --frozen-lockfile`, then run `node tools/build.mjs` and `node --test tests/*.test.mjs`. `dist/` is derived. The build reads authoritative `content/*.html` documents and cannot silently regenerate them from an old runtime bundle.
+ 
+@@ -31,7 +31,7 @@ Touch controls can be enabled in Settings: a steering pad or left/right buttons,
+ 
+ Set your **Public driver name** from Leaderboards or Settings. It stays on this device and is used for future submissions. Finish three laps in **Time Trial** or **Daily Spec**, then select **Add to leaderboard**. Quick Race, League, practice and Workshop tests do not submit public times. Matching boards compare circuit, car, assists and rules; Daily also pins its UTC date.
+ 
+-You can enter your name and queue a result even when the board cannot load. The game shows **queued** only after the submission is saved locally, and **confirmed** after server readback. Queued runs retain their original name and identity. Use **Refresh / retry**, or Settings → Submission status → Retry connection. A server-requested delay is respected. Rejected times remain local and are not retried automatically. Names allow 1–24 Unicode characters and render as text; entries expire five days after server receipt. No account or notification permission is required.
++You can enter your name and queue a result even when the board cannot load. The game shows **queued** only after the submission is saved locally, and **confirmed** after server readback. Queued runs retain their original name and identity. Use **Refresh / retry**, or Settings → Submission status → Retry connection. A server-requested delay is respected. Rejected times remain local and are not retried automatically; **Retry this time** explicitly checks that original submission again. Names allow 1–24 Unicode characters and render as text; entries expire five days after server receipt. No account or notification permission is required.
+ 
+ The PWA checks for new releases on startup, reconnect and return to the app, with repeated foreground checks limited to once a minute. **Update ready · review update** appears on the home screen when a verified pack is waiting. Apply it from the yard; every open game window must also be at a safe boundary. Settings → Check offline pack remains available. These are in-game update notices, not operating-system push notifications while the app is closed.
+ 
+diff --git a/README.md b/README.md
+index e45dec6..704acae 100644
+--- a/README.md
++++ b/README.md
+@@ -32,6 +32,8 @@ Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390
+ 
+ ## Design authority
+ 
++The current [requirement follow-up](audit/2026-10-18-remaining-requirements/report.md) builds on the [handbook 2.10 audit](audit/2026-10-17-guide-2-10-audit/report.md), uses the [pinned 2.10.0 snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md) and [current acceptance mapping](ACCEPTANCE.md#handbook-210-audit-adoption), and records the user's native-desktop exclusion and corrected policy-capability mapping. Older snapshots below preserve design provenance. `requirements.json` is the authoritative outcome/scenario inventory; `audit/current-acceptance.json` records the exact candidate's current verdict.
++
+ This package applies snapshots of the [Pagelove document-first standard](references/DOCUMENT-FIRST-DEVELOPMENT.md) and the [game development handbook](references/GAME-DEVELOPMENT-BEST-PRACTICES.md). It adapts the [previous editor architecture](references/PRISM-BREAKER-ARCHITECTURE.md), including the support-confirmed distinction between trusted WebDAV authoring and validated application writes. [Reference provenance](references/README.md) identifies their canonical sources and precedence.
+ 
+ Within this package, GAME-DESIGN owns player-facing rules, CONTENT-CATALOG owns initial content and tuning tables, TRACK-WORKSHOP owns editing and track geometry, ARCHITECTURE owns persistence and runtime contracts, and ACCEPTANCE owns evidence requirements. Resolve a conflict by correcting the dependent document and recording the change; do not silently introduce a second rule.
+diff --git a/app/arcade.css b/app/arcade.css
+index 5d36883..c76ca93 100644
+--- a/app/arcade.css
++++ b/app/arcade.css
+@@ -1,6 +1,7 @@
+ /* Arcade edition: scene space and controls have distinct rectangles. */
+ :root {
+   color-scheme: dark;
++  --scrap-arcade-ready: 1;
+ }
+ body {
+   --yellow: #ffd34e;
+@@ -1082,3 +1083,42 @@ dialog::backdrop {
+     transition: none !important;
+   }
+ }
++
++/* Intrinsic input/button widths must yield to the workbench at enlarged text. */
++.workshop-bar {
++  height: auto;
++  flex-wrap: wrap;
++}
++.workshop-bar > div {
++  min-width: 0;
++  max-width: 100%;
++}
++.workshop-bar > div:first-child {
++  flex: 1 1 240px;
++}
++.workshop-bar input {
++  display: block;
++  width: min(400px, 100%);
++  min-width: 0;
++}
++.workshop-bar .command-row {
++  min-width: 0;
++  flex: 1 1 320px;
++}
++.workshop-bar button,
++.editor-sheets button {
++  min-width: 0;
++  white-space: normal;
++  overflow-wrap: anywhere;
++}
++.editor-sheets,
++.workshop-status {
++  flex-wrap: wrap;
++}
++.editor-sheets button {
++  flex: 1 1 80px;
++}
++.workshop-status > span {
++  min-width: 0;
++  overflow-wrap: anywhere;
++}
+diff --git a/app/boards.js b/app/boards.js
+index 06d0ab8..f6f94d6 100644
+--- a/app/boards.js
++++ b/app/boards.js
+@@ -420,6 +420,16 @@ export class Boards {
+     }
+     return outcomes;
+   }
++  async retryRejected(id) {
++    if (!this.enabled || !this.store)
++      throw Error("Shared boards are unavailable. Your local result is kept.");
++    const entry = await this.store.get("outbox:" + id);
++    if (!entry || entry.state !== "rejected")
++      throw Error("Only a rejected time can be retried explicitly.");
++    validateRun(entry.run);
++    await this.store.retryRejectedRun(id, this.clock());
++    return this.pump();
++  }
+   async refresh(run) {
+     validateRun(run);
+     return this.browse(run);
+diff --git a/app/bootstrap.js b/app/bootstrap.js
+index 08e7261..d401c73 100644
+--- a/app/bootstrap.js
++++ b/app/bootstrap.js
+@@ -3,10 +3,16 @@
+   const loading = document.getElementById("loading");
+   const message = document.getElementById("loading-message");
+   const retry = document.getElementById("startup-retry");
++  const stage = document.getElementById("stage");
++  const header = document.getElementById("header");
++  stage.inert = header.inert = true;
+   let finished = false;
+   const fail = (reason) => {
+     if (finished) return;
+     loading.hidden = false;
++    // Recovery must remain readable even when the base stylesheet is missing.
++    loading.style.cssText = "position:fixed;inset:0;z-index:9999;overflow:auto;padding:32px;background:#142b31;color:#f7f0df;font:18px/1.5 system-ui";
++    loading.setAttribute("role", "alert");
+     retry.hidden = false;
+     message.textContent =
+       "The yard could not open. " +
+@@ -19,12 +25,21 @@
+     20000,
+   );
+   retry.onclick = () => location.reload();
++  const styles = getComputedStyle(document.documentElement);
++  if (["--scrap-core-ready", "--scrap-arcade-ready"].some(
++    (name) => styles.getPropertyValue(name).trim() !== "1",
++  )) {
++    clearTimeout(timer);
++    fail("A required game stylesheet did not load. Check your connection and reload.");
++    return;
++  }
+   import("./main.js")
+     .then((module) => module.ready)
+     .then(() => {
+       finished = true;
+       clearTimeout(timer);
+       loading.hidden = true;
++      stage.inert = header.inert = false;
+     })
+     .catch((error) => {
+       clearTimeout(timer);
+diff --git a/app/main.js b/app/main.js
+index dd16290..4086fc9 100644
+--- a/app/main.js
++++ b/app/main.js
+@@ -914,7 +914,7 @@ function updateHUD() {
+   }
+ }
+ async function finish() {
+-  if (savingResult) return;
++  if (savingResult || !race || race.state !== "finished" || typeof race.dnf !== "boolean") return;
+   savingResult = true;
+   sound.stop();
+   q("countdown").textContent = "";
+@@ -1508,7 +1508,7 @@ function appendDataControls(body) {
+       JSON.stringify(await store.exportBackup()),
+     ),
+   );
+-  add("Submission status", async () => {
++  add("Submission status", async function submissionStatus() {
+     const entries = await Promise.all(
+         (await store.keys("outbox:")).map((k) => store.get(k)),
+       ),
+@@ -1524,6 +1524,23 @@ function appendDataControls(body) {
+         entry.state +
+         (entry.message ? " · " + entry.message : "");
+       body.append(p);
++      if (entry.state === "rejected") {
++        const retry = document.createElement("button");
++        retry.textContent = "Retry this time";
++        retry.setAttribute("aria-label", "Retry time from " + entry.run.alias);
++        retry.onclick = async () => {
++          retry.disabled = true;
++          try {
++            await boards.retryRejected(entry.run.id);
++            await submissionStatus();
++          } catch (error) {
++            notify(error.message, true);
++          } finally {
++            retry.disabled = false;
++          }
++        };
++        body.append(retry);
++      }
+     }
+     dialog("Submission status", body, [
+       {
+@@ -1536,7 +1553,7 @@ function appendDataControls(body) {
+           notify("Submission queue checked.");
+         },
+       },
+-      { label: "Close" },
++      { label: "Back to settings", action: settingsDialog },
+     ]);
+   });
+   const input = document.createElement("input");
+diff --git a/app/storage.js b/app/storage.js
+index 2fcb463..ea1d6d3 100644
+--- a/app/storage.js
++++ b/app/storage.js
+@@ -203,6 +203,8 @@ function validateResult(value) {
+     !Array.isArray(value.splits) ||
+     value.splits.length > 9 ||
+     value.splits.some((n) => !Number.isFinite(n) || n <= 0) ||
++    (!value.dnf &&
++      (!value.splits.length || value.splits.reduce((sum, n) => sum + n, 0) !== value.elapsedMs)) ||
+     !Array.isArray(value.classification) ||
+     value.classification.length > 6 ||
+     value.classification.some(
+@@ -434,6 +436,11 @@ export class Store {
+     });
+   }
+   commitResult(result, ghost, cupId, round, { fault } = {}) {
++    try {
++      validateResult(result);
++    } catch (error) {
++      return Promise.reject(error);
++    }
+     if (ghost && !validGhost(ghost))
+       return Promise.reject(Error("Ghost exceeded its storage limit."));
+     return this.atomic((tx, done, fail) =>
+@@ -441,11 +448,13 @@ export class Store {
+         read(tx, "progress", (old) => {
+           try {
+             const progress = old || freshProgress();
++            validateRecord("progress", progress);
+             if (existing) {
+               done(progress);
+               return;
+             }
+             const next = applyResult(progress, result, cupId, round);
++            validateRecord("progress", next);
+             put(tx, "progress", next);
+             put(tx, "result:" + result.id, result);
+             if (!result.dnf && result.mode !== "lesson")
+@@ -729,6 +738,31 @@ export class Store {
+       };
+     });
+   }
++  retryRejectedRun(id, now = Date.now()) {
++    return this.atomic((tx, done, fail) => {
++      const records = tx.objectStore("outbox"), key = "outbox:" + id;
++      const request = records.get(key);
++      request.onsuccess = () => {
++        const old = request.result;
++        if (!old || old.state !== "rejected") {
++          fail(Error("Only a rejected time can be retried explicitly."));
++          return;
++        }
++        const all = records.getAll();
++        all.onsuccess = () => {
++          if (all.result.filter(value => ["pending", "retry", "sending"].includes(value.state)).length >= 100) {
++            fail(Error("The pending score queue is full. Your rejected time is kept."));
++            return;
++          }
++          const next = { ...old, state: "retry", lease: null,
++            message: "Retry requested by player.",
++            nextAttemptAt: Math.max(now, old.serverRetryAt || 0) };
++          records.put(next, key);
++          done(next);
++        };
++      };
++    });
++  }
+   settleRun(
+     id,
+     leaseId,
+diff --git a/app/style.css b/app/style.css
+index 4818397..d9761b4 100644
+--- a/app/style.css
++++ b/app/style.css
+@@ -1,3 +1,6 @@
++:root {
++  --scrap-core-ready: 1;
++}
+ @font-face {
+   font-family: LeagueDisplay;
+   src: url("fonts/BebasNeue-Regular.ttf") format("truetype");
+diff --git a/app/workshop.js b/app/workshop.js
+index df300be..e903b35 100644
+--- a/app/workshop.js
++++ b/app/workshop.js
+@@ -888,6 +888,10 @@ export class Workshop {
+     this.save();
+   }
+   refresh() {
++    const active = this.root.ownerDocument.activeElement;
++    const ownedFocus = active && this.root.contains(active)
++      ? { id: active.id, field: active.dataset?.field, patch: active.dataset?.patch }
++      : null;
+     this.compiled = compile(this.track);
+     const q = this.q;
+     q("track-name").value = this.track.name;
+@@ -955,6 +959,15 @@ export class Workshop {
+       );
+     this.inspect();
+     this.draw();
++    if (ownedFocus && (!active.isConnected || active.disabled)) {
++      let replacement = ownedFocus.id ? this.q(ownedFocus.id) : null;
++      if (!replacement && ownedFocus.field)
++        replacement = [...this.root.querySelectorAll("[data-field]")].find(element => element.dataset.field === ownedFocus.field);
++      if (!replacement && ownedFocus.patch)
++        replacement = [...this.root.querySelectorAll("[data-patch]")].find(element => element.dataset.patch === ownedFocus.patch);
++      if (!replacement || replacement.disabled) replacement = this.q("object-list");
++      replacement?.focus?.({ preventScroll: true });
++    }
+   }
+   inspect() {
+     const patch = this.track.patches.find((p) => p.id === this.selected);
+diff --git a/references/README.md b/references/README.md
+index cbb3981..f7bced8 100644
+--- a/references/README.md
++++ b/references/README.md
+@@ -14,3 +14,7 @@ The October 15 support clarification takes precedence over old statements that D
+ SHA-256 values in the package manifest identify the exact snapshots. New platform behavior still requires fresh evidence on the intended host during implementation. The source documents are reference material; only the Scrap League specifications define this game's proposed content, rules and acceptance scope.
+ 
+ `GAME-DEVELOPMENT-BEST-PRACTICES-2026-10-16.md` is a separate snapshot of the user's revised canonical handbook, including the retrospective augmentations and removal of required hardware/human sessions. SHA-256: `a36ca9adcf2fbca0178cc92bf11f43f647aaf36a5b819a42e5112b094518a2fb`. The earlier unversioned snapshot remains unchanged as design-time evidence. This dated copy makes the handbook work reviewable in the public game repository without committing unrelated changes from the parent Pagelove repository.
++
++## Current audit authority — handbook 2.10.0
++
++The user's October 17 instruction adopts edition 2.10.0 for the current audit. Its exact [snapshot](../audit/2026-10-17-guide-2-10-audit/governing-guide.md) has SHA-256 `b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4`; `requirements.json` pins that identity and requirement-map revision handbook-2.10-r1. Earlier snapshots above remain historical design evidence and are stale for current audit decisions. [Acceptance](../ACCEPTANCE.md#handbook-210-audit-adoption) maps the current sections. Compare later canonical changes before adopting them; do not silently replace this snapshot or relabel old observations as new runs.
+diff --git a/requirements.json b/requirements.json
+index edfa783..3a9333d 100644
+--- a/requirements.json
++++ b/requirements.json
+@@ -1,6 +1,6 @@
+ {
+-  "version": 2,
+-  "scopeChange": "User removed real-hardware and human-playtesting release requirements on 2026-10-16. Other adopted requirements remain required.",
++  "version": 4,
++  "scopeChange": "User excluded real hardware and human playtesting on 2026-10-16, and explicitly answered Skip native desktop checks on 2026-10-18. Native Windows input/browser close-relaunch and OS-process crash checks are excluded. Browser-connector interaction, fresh-document offline recovery and real IndexedDB context-termination checks remain required. No other adopted outcome waived.",
+   "stages": {
+     "local": "Required before package creation or any staging writes",
+     "staged": "Required before conditional root promotion; includes disposable provider verification",
+@@ -11,259 +11,793 @@
+       "id": "J01",
+       "outcome": "Fresh player loads, learns the controls, starts and finishes Yard Loop without an account",
+       "method": "Browser journey with retained evidence",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Fresh player loads, learns the controls, starts and finishes Yard Loop without an account"
++        }
++      ]
+     },
+     {
+       "id": "J02",
+       "outcome": "Player pauses, opens settings, returns, resumes and immediately steers without a focus/input surprise",
+       "method": "Keyboard-only and injected gamepad/touch browser checks",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "keyboard-cycle",
++          "outcome": "keyboard cycle"
++        },
++        {
++          "id": "gamepad-cycle",
++          "outcome": "gamepad cycle"
++        },
++        {
++          "id": "touch-cycle",
++          "outcome": "touch cycle"
++        }
++      ]
+     },
+     {
+       "id": "J03",
+       "outcome": "Player completes a three-race cup, reloads between rounds, and keeps exactly one set of rewards",
+       "method": "Storage transaction assertions and UI journey",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Player completes a three-race cup, reloads between rounds, and keeps exactly one set of rewards"
++        }
++      ]
+     },
+     {
+       "id": "J04",
+       "outcome": "Player completes all twelve events with ordinary inputs/resources and sees the held final scene",
+       "method": "Continuous persisted seeded campaigns; no forced finish fixture as a substitute",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Player completes all twelve events with ordinary inputs/resources and sees the held final scene"
++        }
++      ]
+     },
+     {
+       "id": "J05",
+       "outcome": "Player compares and equips a part, tests it and can explain its tradeoff",
+       "method": "Bench measurements and matching garage descriptions",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Player compares and equips a part, tests it and can explain its tradeoff"
++        }
++      ]
+     },
+     {
+       "id": "J06",
+       "outcome": "Player finishes a Time Trial, sees correct lap arithmetic, races a compatible ghost and improves a best",
+       "method": "Independent timing fixtures and UI journey",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Player finishes a Time Trial, sees correct lap arithmetic, races a compatible ghost and improves a best"
++        }
++      ]
+     },
+     {
+       "id": "J07",
+       "outcome": "Player starts before UTC midnight, finishes after it, uploads later and remains on the original challenge",
+       "method": "Injected calendar/network boundaries and recorded challenge identity",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Player starts before UTC midnight, finishes after it, uploads later and remains on the original challenge"
++        }
++      ]
+     },
+     {
+       "id": "J08",
+       "outcome": "New creator builds a closed circuit, corrects a gap, places gates and drives a valid lap",
+       "method": "Pointer, keyboard/list and emulated touch workflows",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "keyboard-create-gap-gates-lap",
++          "outcome": "keyboard create gap gates lap"
++        },
++        {
++          "id": "pointer-create-gap-gates-lap",
++          "outcome": "pointer create gap gates lap"
++        },
++        {
++          "id": "touch-create-gap-gates-lap",
++          "outcome": "touch create gap gates lap"
++        }
++      ]
+     },
+     {
+       "id": "J09",
+       "outcome": "Creator tests against five AI, returns to exact editor context, undoes, reloads and recovers work",
+       "method": "UI plus stored-revision assertions",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Creator tests against five AI, returns to exact editor context, undoes, reloads and recovers work"
++        }
++      ]
+     },
+     {
+       "id": "J10",
+       "outcome": "Creator exports, imports and gets identical gameplay meaning without executing hostile content",
+       "method": "Canonical round trip and adversarial inert-import fixtures",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Creator exports, imports and gets identical gameplay meaning without executing hostile content"
++        }
++      ]
+     },
+     {
+       "id": "J11",
+       "outcome": "Two owner editors conflict; stale editor preserves work and never overwrites the newer track",
+       "method": "Disposable real provider document with conditional writes",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Two owner editors conflict; stale editor preserves work and never overwrites the newer track"
++        }
++      ]
+     },
+     {
+       "id": "J12",
+       "outcome": "Published track succeeds but catalog update conflicts; exact link works and listing retry is safe",
+       "method": "Provider fault fixture and readback",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Published track succeeds but catalog update conflicts; exact link works and listing retry is safe"
++        }
++      ]
+     },
+     {
+       "id": "J13",
+-      "outcome": "Player downloads complete content, stops the server, cold-relaunches and races/edits offline",
+-      "method": "Actual browser/worker restart with the server unavailable",
+-      "stage": "local"
++      "outcome": "Player downloads complete content, stops the server, opens a fresh browser document and races/edits offline",
++      "method": "Actual verified browser/worker offline pack and fresh-document recovery with server connection refused; native browser-process checks explicitly excluded by user",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "verified-pack",
++          "outcome": "verified pack"
++        },
++        {
++          "id": "fresh-document-server-stopped",
++          "outcome": "fresh document server stopped"
++        },
++        {
++          "id": "race-offline",
++          "outcome": "race offline"
++        },
++        {
++          "id": "edit-offline",
++          "outcome": "edit offline"
++        }
++      ]
+     },
+     {
+       "id": "J14",
+       "outcome": "Existing release discovers a new version naturally and updates between runs without losing state",
+       "method": "Two-version browser lab",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Existing release discovers a new version naturally and updates between runs without losing state"
++        }
++      ]
+     },
+     {
+       "id": "J15",
+       "outcome": "Score submission times out after server acceptance; original ID reconciles once across two tabs",
+       "method": "Durable outbox and disposable provider evidence",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Score submission times out after server acceptance; original ID reconciles once across two tabs"
++        }
++      ]
+     },
+     {
+       "id": "J16",
+       "outcome": "Graphics context is lost, phone rotates or input disconnects; invisible simulation stops and explicit resume works",
+       "method": "Browser context, viewport and input fault injection",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Graphics context is lost, phone rotates or input disconnects; invisible simulation stops and explicit resume works"
++        }
++      ]
+     },
+     {
+       "id": "J17",
+       "outcome": "Result/track invitation contains useful text and link; canceled share preserves state",
+       "method": "Complete payload checks and success/cancel/failure browser fixtures",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Result/track invitation contains useful text and link; canceled share preserves state"
++        }
++      ]
+     },
+     {
+       "id": "J18",
+       "outcome": "Reduced-motion, muted and low-effects players can finish and read every transition/result",
+       "method": "All scene families, audio signal analysis and browser readability checks",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Reduced-motion, muted and low-effects players can finish and read every transition/result"
++        }
++      ]
+     },
+     {
+       "id": "P01",
+       "outcome": "Draft storage",
+-      "method": "Transaction abort, quota denial, tab conflict, incompatible schema, crash before/after commit; last valid draft survives",
+-      "stage": "local"
++      "method": "Transaction abort, quota denial, tab conflict, incompatible schema and abrupt browser Worker-context termination before/after commit; last valid draft survives. OS-process crash checks explicitly excluded by user.",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "abort-quota",
++          "outcome": "abort quota"
++        },
++        {
++          "id": "tab-conflict",
++          "outcome": "tab conflict"
++        },
++        {
++          "id": "incompatible-schema",
++          "outcome": "incompatible schema"
++        },
++        {
++          "id": "termination-before-commit",
++          "outcome": "termination before commit"
++        },
++        {
++          "id": "termination-after-commit",
++          "outcome": "termination after commit"
++        }
++      ]
+     },
+     {
+       "id": "P02",
+       "outcome": "Result transaction",
+       "method": "Abort between result and rewards; retry same run ID; best/ghost remain a consistent pair",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Result transaction"
++        }
++      ]
+     },
+     {
+       "id": "P03",
+       "outcome": "Outbox",
+       "method": "Two tabs, expired lease, late response, closed DB connection, duplicate acceptance, permanent rejection, full queue",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Outbox"
++        }
++      ]
+     },
+     {
+       "id": "P04",
+       "outcome": "Owner authoring",
+       "method": "Correct pinned host, wrong credential, stale ETag, create-only conflict, ambiguous response and semantic readback",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Owner authoring"
++        }
++      ]
+     },
+     {
+       "id": "P05",
+       "outcome": "Public records",
+       "method": "Missing/extra fields, wrong types, unsupported content key, invalid splits, client expiry, duplicates and prohibited mutations all rejected through the actual application endpoint",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "trial-positive",
++          "outcome": "trial positive"
++        },
++        {
++          "id": "daily-positive",
++          "outcome": "daily positive"
++        },
++        {
++          "id": "missing-extra-fields",
++          "outcome": "missing extra fields"
++        },
++        {
++          "id": "wrong-types",
++          "outcome": "wrong types"
++        },
++        {
++          "id": "unsupported-content",
++          "outcome": "unsupported content"
++        },
++        {
++          "id": "invalid-splits",
++          "outcome": "invalid splits"
++        },
++        {
++          "id": "client-expiry",
++          "outcome": "client expiry"
++        },
++        {
++          "id": "duplicate-id",
++          "outcome": "duplicate id"
++        },
++        {
++          "id": "prohibited-mutations",
++          "outcome": "prohibited mutations"
++        }
++      ]
+     },
+     {
+       "id": "P06",
+       "outcome": "Retention",
+       "method": "Before/at/after five-day expiry, multiple expired rows interleaved with active controls, offline filtering, repeat cleanup and separate physical inspection",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Retention"
++        }
++      ]
+     },
+     {
+       "id": "P07",
+       "outcome": "Native composition",
+       "method": "Valid/missing/unknown slug, hostile path input, intended source fragment and fallback after composition failure",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Native composition"
++        }
++      ]
+     },
+     {
+       "id": "P08",
+-      "outcome": "Policy activation",
+-      "method": "Supported provider procedure and readiness evidence; source ETag/OPTIONS/warmup are not substituted for enforcement readiness",
+-      "stage": "staged"
++      "outcome": "Record supported policy activation capability and preserve established public policies when no safe activation contract exists",
++      "method": "Provider capability record, pinned existing policy readback and unchanged-policy comparison; endpoint probes remain separate and do not imply global readiness",
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "provider-capability-record",
++          "outcome": "provider capability record"
++        },
++        {
++          "id": "established-policy-preserved",
++          "outcome": "established policy preserved"
++        }
++      ]
+     },
+     {
+       "id": "P09",
+       "outcome": "Data-preserving release",
+       "method": "Populated Workshop, catalog, boards and old-client assets survive; no duplicate live schema declarations in immutable bundles",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Data-preserving release"
++        }
++      ]
+     },
+     {
+       "id": "M01",
+       "outcome": "Shared schemas, parser/serializer/compiler, independent geometric fixtures, one car and a loop; Clean source regeneration; round-trip integrity; swept collisions, skidpad/slalom/braking checks; input/pause/recovery state contracts",
+       "method": "Evidence for each stated milestone exit criterion",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Shared schemas, parser/serializer/compiler, independent geometric fixtures, one car and a loop; Clean source regeneration; round-trip integrity; swept collisions, skidpad/slalom/braking checks; input/pause/recovery state contracts"
++        }
++      ]
+     },
+     {
+       "id": "M02",
+       "outcome": "Six-car race, modular road editor, surface/prop/gate tools, real test drive, history and drafts; A new track can be built, validated, driven, recovered and exported/imported through the UI; one complete keyboard/touch-emulated journey",
+       "method": "Evidence for each stated milestone exit criterion",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "road-surface-prop-gate-tools",
++          "outcome": "road surface prop gate tools"
++        },
++        {
++          "id": "keyboard-editor-journey",
++          "outcome": "keyboard editor journey"
++        },
++        {
++          "id": "touch-editor-journey",
++          "outcome": "touch editor journey"
++        },
++        {
++          "id": "test-return-history",
++          "outcome": "test return history"
++        },
++        {
++          "id": "export-import-recover",
++          "outcome": "export import recover"
++        }
++      ]
+     },
+     {
+       "id": "M03",
+       "outcome": "All 81 builds, twelve circuits, four cups, eight rivals, unlocks and results; Official tracks authored in Workshop; all references resolve; all tracks finish under seeded AI; seeded handling/pacing measurements complete",
+       "method": "Evidence for each stated milestone exit criterion",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "all-81-builds",
++          "outcome": "all 81 builds"
++        },
++        {
++          "id": "twelve-workshop-exports",
++          "outcome": "twelve workshop exports"
++        },
++        {
++          "id": "references-resolve",
++          "outcome": "references resolve"
++        },
++        {
++          "id": "seeded-circuits",
++          "outcome": "seeded circuits"
++        },
++        {
++          "id": "seeded-pacing-campaign",
++          "outcome": "seeded pacing campaign"
++        }
++      ]
+     },
+     {
+       "id": "M04",
+       "outcome": "Saves, ghosts, daily definitions, offline pack, install/fullscreen, audio and sharing; Transaction/failure tests; genuine offline relaunch; natural update journey; phone layouts and keyboard focus",
+       "method": "Evidence for each stated milestone exit criterion",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "cold-offline-journey",
++          "outcome": "cold offline journey"
++        },
++        {
++          "id": "input-zoom-matrix",
++          "outcome": "input zoom matrix"
++        },
++        {
++          "id": "natural-update",
++          "outcome": "natural update"
++        },
++        {
++          "id": "storage-ghost-daily",
++          "outcome": "storage ghost daily"
++        },
++        {
++          "id": "audio-sharing-install",
++          "outcome": "audio sharing install"
++        }
++      ]
+     },
+     {
+       "id": "M05",
+-      "outcome": "Native composition, owner publication, discovery index, casual boards; Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation and positive/negative record checks",
++      "outcome": "Native composition, owner publication, discovery index, casual boards; Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation where available, otherwise established-policy preservation, plus positive/negative record checks",
+       "method": "Evidence for each stated milestone exit criterion",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "composition",
++          "outcome": "composition"
++        },
++        {
++          "id": "owner-conflict-recovery",
++          "outcome": "owner conflict recovery"
++        },
++        {
++          "id": "public-record-validation",
++          "outcome": "public record validation"
++        },
++        {
++          "id": "policy-preservation",
++          "outcome": "policy preservation"
++        },
++        {
++          "id": "retention-outbox",
++          "outcome": "retention outbox"
++        }
++      ]
+     },
+     {
+       "id": "M06",
+       "outcome": "Complete asset pack, required CI, audit evidence, release/rollback tools and browser verification; All required rows pass or have explicitly accepted scoped exceptions; exact package verified and previous-client update succeeds",
+       "method": "Evidence for each stated milestone exit criterion",
+-      "stage": "live"
++      "stage": "live",
++      "scenarios": [
++        {
++          "id": "prepromotion-outcomes",
++          "outcome": "prepromotion outcomes"
++        },
++        {
++          "id": "exact-package",
++          "outcome": "exact package"
++        },
++        {
++          "id": "previous-client-update",
++          "outcome": "previous client update"
++        },
++        {
++          "id": "live-outcomes",
++          "outcome": "live outcomes"
++        }
++      ]
+     },
+     {
+       "id": "C01",
+       "outcome": "Social artwork and complete initial OG/Twitter metadata",
+       "method": "Decode exports and assert initial OG/Twitter HTML metadata; public HTTP readback is required by C06 after promotion",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Social artwork and complete initial OG/Twitter metadata"
++        }
++      ]
+     },
+     {
+       "id": "C02",
+       "outcome": "Favicon, raster, touch and maskable icon set",
+       "method": "Pixel decode and tiny/light/dark/mask inspections",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Favicon, raster, touch and maskable icon set"
++        }
++      ]
+     },
+     {
+       "id": "C03",
+       "outcome": "Complete asset sources, licenses, fonts and export inventory",
+       "method": "Independent asset contract and source hashes",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Complete asset sources, licenses, fonts and export inventory"
++        }
++      ]
+     },
+     {
+       "id": "C04",
+       "outcome": "Required hosted CI refuses failed acceptance",
+       "method": "Required workflow and repository-rule readback plus refusal fixture",
+-      "stage": "staged"
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "hosted-regressions",
++          "outcome": "hosted regressions"
++        },
++        {
++          "id": "hosted-candidate-check",
++          "outcome": "hosted candidate check"
++        },
++        {
++          "id": "required-rule-readback",
++          "outcome": "required rule readback"
++        },
++        {
++          "id": "negative-refusal-fixture",
++          "outcome": "negative refusal fixture"
++        }
++      ]
+     },
+     {
+       "id": "C05",
+       "outcome": "Exact-source package and acceptance gate before every publication path",
+       "method": "Source/output identity and destructive refusal fixtures in temporary copies",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "source-output-inventory-binding",
++          "outcome": "source output inventory binding"
++        },
++        {
++          "id": "every-entry-recheck",
++          "outcome": "every entry recheck"
++        },
++        {
++          "id": "required-scenario-refusal",
++          "outcome": "required scenario refusal"
++        }
++      ]
+     },
+     {
+       "id": "C06",
+       "outcome": "All required public assets and routes resolve after promotion",
+       "method": "Public status/type/hash/semantic readback",
+-      "stage": "live"
++      "stage": "live",
++      "scenarios": [
++        {
++          "id": "root-status-type-identity",
++          "outcome": "root status type identity"
++        },
++        {
++          "id": "immutable-assets-status-type-hash",
++          "outcome": "immutable assets status type hash"
++        },
++        {
++          "id": "native-routes-composition",
++          "outcome": "native routes composition"
++        },
++        {
++          "id": "board-workshop-availability",
++          "outcome": "board workshop availability"
++        }
++      ]
+     },
+     {
+       "id": "C07",
+       "outcome": "Credentials and private baselines absent from public package",
+       "method": "Source/package scan; hidden-input deployment",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Credentials and private baselines absent from public package"
++        }
++      ]
+     },
+     {
+       "id": "C08",
+       "outcome": "Rollback preserves state and old-client dependencies",
+       "method": "Local two-release restoration drill and conditional promotion checks",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "two-release-restoration",
++          "outcome": "two release restoration"
++        },
++        {
++          "id": "conditional-stale-refusal",
++          "outcome": "conditional stale refusal"
++        },
++        {
++          "id": "ambiguous-rollback",
++          "outcome": "ambiguous rollback"
++        },
++        {
++          "id": "unrelated-state-preserved",
++          "outcome": "unrelated state preserved"
++        }
++      ]
+     },
+     {
+       "id": "C09",
+       "outcome": "Reproducible browser evidence identifies exact tested environment",
+       "method": "UA, viewport, release, input method and retained screenshots",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Reproducible browser evidence identifies exact tested environment"
++        }
++      ]
+     },
+     {
+       "id": "C10",
+       "outcome": "Fresh complete automated suite and accurate acceptance ledger",
+       "method": "Full test receipt bound to candidate; no failed required rows",
+-      "stage": "local"
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Fresh complete automated suite and accurate acceptance ledger"
++        }
++      ]
++    },
++    {
++      "id": "C11",
++      "outcome": "Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate",
++      "method": "Exact guide/inventory digests; retained coverage and evidence reviews; changed-inventory and stale-review refusal fixtures",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate"
++        }
++      ]
++    },
++    {
++      "id": "C12",
++      "outcome": "Required shared styles load consistently or produce recoverable startup failure through root and composed entry points",
++      "method": "Qualified HTTP503/zero-rule style faults, ordinary reload recovery and entry-point parity in the actual browser; installed entry compatibility remains explicit",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Required shared styles load consistently or produce recoverable startup failure through root and composed entry points"
++        }
++      ]
++    },
++    {
++      "id": "C13",
++      "outcome": "Every supported publisher refuses unresolved outcomes despite generic deployment instructions or agent-authored exception lists",
++      "method": "Gate refusal fixtures plus deploy and publish-candidate CLI refusal before authentication or writes",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "outcome",
++          "outcome": "Every supported publisher refuses unresolved outcomes despite generic deployment instructions or agent-authored exception lists"
++        }
++      ]
++    },
++    {
++      "id": "C14",
++      "outcome": "Publication phase journaling and operator recovery are exercised through the supported command after successful and ambiguous entry writes",
++      "method": "Controlled host adapter through the actual publisher/rollback command; journal preserves promoted-unverified/recovery-required/unknown phases",
++      "stage": "staged",
++      "scenarios": [
++        {
++          "id": "durable-phase-journal",
++          "outcome": "durable phase journal"
++        },
++        {
++          "id": "post-write-verification-failure",
++          "outcome": "post write verification failure"
++        },
++        {
++          "id": "ambiguous-applied",
++          "outcome": "ambiguous applied"
++        },
++        {
++          "id": "ambiguous-unapplied",
++          "outcome": "ambiguous unapplied"
++        },
++        {
++          "id": "unknown-readback",
++          "outcome": "unknown readback"
++        },
++        {
++          "id": "supported-forward-recovery",
++          "outcome": "supported forward recovery"
++        }
++      ]
+     }
+-  ]
++  ],
++  "governingGuide": {
++    "edition": "2.10.0",
++    "sha256": "b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4",
++    "snapshot": "audit/2026-10-17-guide-2-10-audit/governing-guide.md",
++    "canonicalSource": "Pagelove workspace: games/prism-breaker/GAME-DEVELOPMENT-BEST-PRACTICES.md",
++    "requirementMapRevision": "handbook-2.10-r2",
++    "requirementMap": "ACCEPTANCE.md#handbook-210-audit-adoption"
++  }
+ }
+diff --git a/tests/campaign.test.mjs b/tests/campaign.test.mjs
+index b897e94..aa2cf10 100644
+--- a/tests/campaign.test.mjs
++++ b/tests/campaign.test.mjs
+@@ -1,6 +1,6 @@
+ import test from "node:test";
+ import assert from "node:assert/strict";
+-import { writeFile } from "node:fs/promises";
++import { retainEvidence as writeFile } from "./evidence.mjs";
+ import { loadContent } from "../tools/content.mjs";
+ import { compile } from "../app/track.js";
+ import { assemble, allBuilds, STARTER, standings } from "../app/builds.js";
+diff --git a/tests/candidate-publication.test.mjs b/tests/candidate-publication.test.mjs
+index 839e1b6..5974a92 100644
+--- a/tests/candidate-publication.test.mjs
++++ b/tests/candidate-publication.test.mjs
+@@ -4,7 +4,7 @@ import { validatePublicationAuthorization } from "../tools/candidate-publication
+ import { sha } from "../tools/release-gate.mjs";
+ import { HOST_CONFIG } from "../app/pagelove.js";
+ 
+-test("candidate publication binds limitations, ledger, source, output and destination without changing acceptance", () => {
++test("publication receipts bind identity and destination but cannot authorize unresolved acceptance", () => {
+   const candidate = {
+     release: "sl-aaaaaaaaaaaaaa",
+     source: { hash: "source" },
+@@ -49,19 +49,23 @@ test("candidate publication binds limitations, ledger, source, output and destin
+       note,
+     })),
+   };
+-  assert.deepEqual(
+-    [
+-      ...validatePublicationAuthorization(
++  assert.throws(
++    () => validatePublicationAuthorization(
+         auth,
+         candidate,
+         receipt,
+         bytes,
+         host,
+       ),
+-    ],
+-    ["J01", "P08"],
++    /Unresolved required acceptance/,
+   );
+   assert.equal(receipt.requirements[0].status, "partial");
++  const resolved = { requirements: receipt.requirements.map((row) => ({ ...row, status: "passed" })) };
++  const resolvedBytes = Buffer.from(JSON.stringify(resolved));
++  assert.deepEqual([...validatePublicationAuthorization(
++    { ...auth, acceptanceHash: sha(resolvedBytes), knownIncomplete: [] }, candidate,
++    resolved, resolvedBytes, host,
++  )], []);
+   for (const changed of [
+     { ...auth, sourceHash: "stale" },
+     { ...auth, outputHash: "stale" },
+diff --git a/tests/evidence.mjs b/tests/evidence.mjs
+new file mode 100644
+index 0000000..57bbdc0
+--- /dev/null
++++ b/tests/evidence.mjs
+@@ -0,0 +1,20 @@
++import {mkdir,readFile,writeFile} from 'node:fs/promises';
++import {createHash} from 'node:crypto';
++import path from 'node:path';
++import {fileURLToPath} from 'node:url';
++
++// Keep the old named receipts historical. A new run cannot overwrite them or
++// make an old acceptance ledger silently refer to a different observation.
++export async function retainEvidence(legacyURL,content) {
++ const legacy=fileURLToPath(legacyURL),bytes=Buffer.from(content);
++ const digest=createHash('sha256').update(bytes).digest('hex');
++ const folder=path.join(path.dirname(legacy),'runs');
++ await mkdir(folder,{recursive:true});
++ const target=path.join(folder,path.basename(legacy,'.json')+'-'+digest+'.json');
++ try { await writeFile(target,bytes,{flag:'wx'}); }
++ catch(error) {
++  if(error.code!=='EEXIST')throw error;
++  if(!(await readFile(target)).equals(bytes))throw Error('Retained evidence identity collision');
++ }
++ return target;
++}
+diff --git a/tests/evidence.test.mjs b/tests/evidence.test.mjs
+new file mode 100644
+index 0000000..9485475
+--- /dev/null
++++ b/tests/evidence.test.mjs
+@@ -0,0 +1,25 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import os from 'node:os';
++import {pathToFileURL} from 'node:url';
++import {retainEvidence} from './evidence.mjs';
++
++test('test evidence retains different runs and never overwrites a historical receipt',async()=>{
++ const fixture=await fs.mkdtemp(path.join(os.tmpdir(),'scrap-evidence-'));
++ try {
++  const historical=path.join(fixture,'observation.json');
++  await fs.writeFile(historical,'historical observation');
++  const first=await retainEvidence(pathToFileURL(historical),'first run');
++  const second=await retainEvidence(pathToFileURL(historical),'second run');
++  assert.notEqual(first,second);
++  assert.equal(await retainEvidence(pathToFileURL(historical),'first run'),first);
++  assert.equal(await fs.readFile(first,'utf8'),'first run');
++  assert.equal(await fs.readFile(second,'utf8'),'second run');
++  assert.equal(await fs.readFile(historical,'utf8'),'historical observation');
++ }finally{
++  if(!path.resolve(fixture).startsWith(path.resolve(os.tmpdir())+path.sep+'scrap-evidence-'))throw Error('Unsafe fixture cleanup');
++  await fs.rm(fixture,{recursive:true,force:true});
++ }
++});
+diff --git a/tests/guide-release-controls.test.mjs b/tests/guide-release-controls.test.mjs
+new file mode 100644
+index 0000000..e9dc0b9
+--- /dev/null
++++ b/tests/guide-release-controls.test.mjs
+@@ -0,0 +1,17 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {validatePublicationAuthorization} from '../tools/candidate-publication.mjs';
++import {HOST_CONFIG} from '../app/pagelove.js';
++import {sha} from '../tools/release-gate.mjs';
++
++test('a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes',()=>{
++ const candidate={release:'sl-aaaaaaaaaaaaaa',source:{hash:'source'},outputHash:'output'};
++ for(const request of ['Commit, push, deploy','There is no meaningful reason not to have a leaderboard']){
++  for(const status of ['blocked','partial','not-run']){
++   const receipt={requirements:[{id:'J13',status,note:'Required outcome remains unverified',artifacts:[]}]};
++   const bytes=Buffer.from(JSON.stringify(receipt));
++   const auth={version:1,operation:'publish-candidate',origin:HOST_CONFIG.publicOrigin,authorizedBy:'Wesley',request,context:'Agent-authored list is not an outcome waiver',utc:'2026-10-17T00:00:00Z',release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,acceptanceHash:sha(bytes),knownIncomplete:receipt.requirements.map(({id,status,note})=>({id,status,note}))};
++   assert.throws(()=>validatePublicationAuthorization(auth,candidate,receipt,bytes,HOST_CONFIG),/unresolved|not passed|cannot waive/i,`${request}: ${status}`);
++  }
++ }
++});
+diff --git a/tests/handling.test.mjs b/tests/handling.test.mjs
+index fae792c..233772f 100644
+--- a/tests/handling.test.mjs
++++ b/tests/handling.test.mjs
+@@ -1,6 +1,6 @@
+ import test from "node:test";
+ import assert from "node:assert/strict";
+-import { writeFile } from "node:fs/promises";
++import { retainEvidence as writeFile } from "./evidence.mjs";
+ import { loadContent } from "../tools/content.mjs";
+ import { allBuilds, assemble } from "../app/builds.js";
+ import {
+diff --git a/tests/persisted-campaign.test.mjs b/tests/persisted-campaign.test.mjs
+index 0e44937..1ad26f3 100644
+--- a/tests/persisted-campaign.test.mjs
++++ b/tests/persisted-campaign.test.mjs
+@@ -1,6 +1,6 @@
+ import test from "node:test";
+ import assert from "node:assert/strict";
+-import { writeFile } from "node:fs/promises";
++import { retainEvidence as writeFile } from "./evidence.mjs";
+ import { IDBFactory } from "fake-indexeddb";
+ import { openStore, freshProgress } from "../app/storage.js";
+ import { loadContent } from "../tools/content.mjs";
+diff --git a/tests/publisher-command.test.mjs b/tests/publisher-command.test.mjs
+new file mode 100644
+index 0000000..aba32cd
+--- /dev/null
++++ b/tests/publisher-command.test.mjs
+@@ -0,0 +1,94 @@
++import test from "node:test";
++import assert from "node:assert/strict";
++import {publisherFixture} from "./publisher-fixture.mjs";
++import {readDeploymentJournal} from "../tools/deployment-journal.mjs";
++import {retainEvidence} from "./evidence.mjs";
++import fs from "node:fs/promises";
++import path from "node:path";
++
++test("actual publisher commands retain promotion phases, recover failures and conditionally restore two releases",{timeout:300000},async()=>{
++ const outcomes=[];
++ for(const scenario of ["success","post-write-public-failure","post-write-DAV-failure","ambiguous-applied","ambiguous-not-applied","ambiguous-unreadable","gate-change-after-native","wrong-dependency-type","composed-style-loss"]){
++  const f=await publisherFixture(scenario);
++  try{
++   const result=await f.command({op:"deploy"});
++   const journal=(await f.journals())[0];assert.ok(journal,"CLI must persist phase journal");
++   const rows=await readDeploymentJournal(f.fixture,"audit/deployments/"+journal);
++   const indexWrite=rows.findIndex(r=>r.state==='entry-promoted-unverified'&&r.path==='/index.html');
++   if(["success","ambiguous-applied"].includes(scenario)){
++    assert.equal(result.deployed,true);assert.ok(rows.some(r=>r.state==='live-verified'));
++   }else{
++    assert.ok(result.error);assert.ok(['recovery-required','outcome-unknown'].includes(rows.at(-1).state));
++    assert.ok(!rows.some(r=>r.state==='live-verified'));
++   }
++   if(scenario.startsWith('post-write')){
++    assert.ok(indexWrite>=0,'Successful PUT must be journaled before verification throws');
++    assert.equal(rows.at(-1).state,'recovery-required');
++   }
++   if(scenario==='ambiguous-not-applied'||scenario==='ambiguous-unreadable')assert.equal(rows.at(-1).state,'outcome-unknown');
++   const host=await f.host();
++   const indexAttempts=host.requests.filter(r=>r.method==='PUT'&&r.path==='/index.html');
++   if(scenario==='ambiguous-applied')assert.equal(indexAttempts.length,1,'No replay after accepted response lost');
++   if(scenario==='gate-change-after-native'){
++    assert.match(result.error,/Required acceptance.*FIXTURE/);
++    assert.equal(indexAttempts.length,0,'Next entry must recheck acceptance before promotion');
++   }
++   if(scenario==='wrong-dependency-type'){
++    assert.match(result.error,/Public resource status\/type mismatch/);assert.equal(indexAttempts.length,0);
++    assert.equal(rows.filter(row=>row.state==='entry-promoted-unverified').length,0);
++   }
++   if(scenario==='composed-style-loss')assert.match(result.error,/Public composed dependency mismatch/);
++   let recovery=null,rollback=null;
++   if(['post-write-public-failure','post-write-DAV-failure','ambiguous-not-applied','ambiguous-unreadable','composed-style-loss'].includes(scenario)){
++    const prepared=await f.command({op:'prepare-recovery',journal:'audit/deployments/'+journal});
++    assert.equal(prepared.prepared,true,JSON.stringify(prepared));
++    recovery=await f.command({op:'recover'});assert.equal(recovery.deployed,true,JSON.stringify(recovery));
++    const inspected=await f.command({op:'inspect-journal',journal:recovery.journal});
++    assert.ok(inspected.records.some(r=>r.state==='recovered-operation'));
++   }
++   if(scenario==='success'){
++    await f.editHost(state=>{state.scenario='rollback-ambiguous';state.faultUsed=false;});
++    const prepared=await f.command({op:'prepare-rollback',baseline:f.baseline});assert.equal(prepared.prepared,true);
++    rollback=await f.command({op:'rollback'});assert.equal(rollback.release,'sl-aaaaaaaaaaaaaa');
++    const restored=await f.host();
++    for(const name of ['/index.html','/release.json','/sw.js'])assert.equal(Buffer.from(restored.files[name].bytes,'base64').toString(),f.initial[name]);
++    const rollbackRows=await readDeploymentJournal(f.fixture,rollback.journal);
++    assert.equal(rollbackRows.filter(r=>r.state==='entry-promoted-unverified').length,2);
++    assert.ok(rollbackRows.some(r=>r.state==='outcome-unknown'&&r.path==='/release.json'));
++    assert.ok(rollbackRows.some(r=>r.state==='authoring-readback-verified'&&r.path==='/release.json'&&r.reconciled));
++    assert.ok(rollbackRows.some(r=>r.state==='live-verified'));
++   }
++   const after=await f.host();
++   for(const name of ['/boards/trial.html','/workshop-catalog.html','/workshop-tracks/player.html','/releases/sl-aaaaaaaaaaaaaa/main.js'])
++    assert.equal(Buffer.from(after.files[name].bytes,'base64').toString(),f.initial[name]);
++   outcomes.push({scenario,result,journalRecords:rows,recovery,rollback,
++    rootWriteAttempts:indexAttempts.length,unrelatedDataAndPreviousClientPreserved:true});
++  }finally{await f.clean();}
++ }
++ await retainEvidence(new URL('../audit/publisher-command.json',import.meta.url),JSON.stringify({scope:'Actual supported CLI, isolated synthetic candidate contract and intercepted pinned host; no production writes or game acceptance',outcomes},null,2)+'\n');
++});
++
++test("supported publisher refuses corrupt backups and concurrent state after recovery preparation",{timeout:120000},async()=>{
++ const observations=[];
++ for(const scenario of ['corrupt-backup','recovery-concurrency']){
++  const f=await publisherFixture(scenario==='corrupt-backup'?'success':'post-write-public-failure');
++  try{
++   if(scenario==='corrupt-backup'){
++    await fs.appendFile(path.join(f.fixture,'.local/deployment-baselines',f.baseline,'index.html'),'corrupted');
++    const result=await f.command({op:'deploy'});assert.match(result.error,/Backup verification failed/);
++    assert.equal((await f.host()).requests.filter(row=>row.method==='PUT').length,0);
++    observations.push({scenario,result,remoteWrites:0});
++   }else{
++    const failed=await f.command({op:'deploy'});assert.ok(failed.error);
++    const file=(await f.journals())[0],journal='audit/deployments/'+file;
++    const prepared=await f.command({op:'prepare-recovery',journal});assert.equal(prepared.prepared,true);
++    await f.editHost(state=>{state.files['/index.html']={bytes:Buffer.from('independent operator change').toString('base64'),etag:'"concurrent"'};});
++    const writes=(await f.host()).requests.filter(row=>row.method==='PUT').length;
++    const result=await f.command({op:'recover'});assert.match(result.error,/Remote state changed after recovery preparation/);
++    assert.equal((await f.host()).requests.filter(row=>row.method==='PUT').length,writes);
++    observations.push({scenario,result,newRemoteWrites:0});
++   }
++  }finally{await f.clean();}
++ }
++ await retainEvidence(new URL('../audit/publisher-refusal-boundaries.json',import.meta.url),JSON.stringify({scope:'Actual CLI and controlled host, not public game acceptance',observations},null,2)+'\n');
++});
+diff --git a/tests/publisher-fixture.mjs b/tests/publisher-fixture.mjs
+new file mode 100644
+index 0000000..e9b5910
+--- /dev/null
++++ b/tests/publisher-fixture.mjs
+@@ -0,0 +1,113 @@
++import fs from "node:fs/promises";
++import path from "node:path";
++import os from "node:os";
++import {spawn} from "node:child_process";
++import {createHash} from "node:crypto";
++import assert from "node:assert/strict";
++import {SOURCE_DIRS,SOURCE_FILES,sourceIdentity,verifyCandidateArtifacts} from "../tools/release-gate.mjs";
++const root=path.resolve(import.meta.dirname,"..");
++const sha=bytes=>createHash("sha256").update(bytes).digest("hex");
++
++export async function publisherFixture(scenario) {
++ const fixture=await fs.mkdtemp(path.join(os.tmpdir(),"scrap-command-"));
++ for(const file of [...SOURCE_DIRS,...SOURCE_FILES])await fs.cp(path.join(root,file),path.join(fixture,file),{recursive:true});
++ const original=JSON.parse(await fs.readFile(path.join(root,"dist/release.json"),"utf8"));
++ for(const file of ["index.html","sw.js","release.json","native-routes","releases/"+original.release])
++  await fs.cp(path.join(root,"dist",file),path.join(fixture,"dist",file),{recursive:true});
++ await fs.symlink(path.join(root,"node_modules"),path.join(fixture,"node_modules"),"junction");
++ await fs.mkdir(path.join(fixture,"audit"),{recursive:true});
++ // An explicit synthetic isolated contract, never copied to game acceptance.
++ const required=[{id:"FIXTURE",stage:"staged",outcome:"Exercise publisher against isolated host",method:"Controlled command fixture"}];
++ await fs.writeFile(path.join(fixture,"requirements.json"),JSON.stringify({version:2,required}));
++ original.sourceHash=(await sourceIdentity(fixture)).hash;
++ await fs.writeFile(path.join(fixture,"dist/release.json"),JSON.stringify(original));
++ const candidate=await verifyCandidateArtifacts(fixture);
++ await fs.writeFile(path.join(fixture,"audit/fixture.txt"),"Isolated publisher mechanics; not game acceptance");
++ const receipt={release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,
++  requirements:[{id:"FIXTURE",status:"passed",artifacts:[{path:"audit/fixture.txt",sha256:sha("Isolated publisher mechanics; not game acceptance")}]}]};
++ await fs.writeFile(path.join(fixture,"audit/current-acceptance.json"),JSON.stringify(receipt));
++ const initial={"/index.html":"<html><head><title>A</title></head><body>Previous game</body></html>",
++  "/release.json":JSON.stringify({release:"sl-aaaaaaaaaaaaaa",files:[{url:"./releases/sl-aaaaaaaaaaaaaa/main.js",hash:sha("previous-client")}]}),
++  "/sw.js":"// Previous verified worker", "/releases/sl-aaaaaaaaaaaaaa/main.js":"previous-client",
++  "/boards/trial.html":"existing unrelated player rows", "/workshop-catalog.html":"existing owned catalog", "/workshop-tracks/player.html":"existing owned track"};
++ const state={scenario,files:Object.fromEntries(Object.entries(initial).map(([key,value])=>[key,{bytes:Buffer.from(value).toString("base64"),etag:'"A"'}])),requests:[],faultUsed:false,version:0,rootWritten:false};
++ await fs.writeFile(path.join(fixture,"audit/host.json"),JSON.stringify(state));
++ await fs.writeFile(path.join(fixture,"audit/adapter.mjs"),adapter);
++ const child=spawn(process.execPath,["--import","./audit/adapter.mjs","tools/deploy-pagelove.mjs"],{cwd:fixture,stdio:["pipe","pipe","pipe"]});
++ let buffer="",pending=null,stderr="";const output=[];
++ child.stderr.on("data",chunk=>stderr+=chunk);
++ child.stdout.on("data",chunk=>{buffer+=chunk;let at;while((at=buffer.indexOf("\n"))>=0){const line=buffer.slice(0,at);buffer=buffer.slice(at+1);if(!line.startsWith("{"))continue;const row=JSON.parse(line);output.push(row);if(pending&&!row.staged){const {resolve,timer}=pending;pending=null;clearTimeout(timer);resolve(row);}}});
++ child.on("exit",()=>{if(pending){const {reject,timer}=pending;pending=null;clearTimeout(timer);reject(Error("CLI exited: "+stderr));}});
++ const command=data=>new Promise((resolve,reject)=>{assert.equal(pending,null);const timer=setTimeout(()=>{pending=null;reject(Error("CLI timeout: "+stderr));},60000);pending={resolve,reject,timer};child.stdin.write(JSON.stringify(data)+"\n");});
++ const host=async()=>JSON.parse(await fs.readFile(path.join(fixture,"audit/host.json"),"utf8"));
++ const journals=async()=>{const dir=path.join(fixture,"audit/deployments");return (await fs.readdir(dir)).sort();};
++ const records=async name=>(await fs.readFile(path.join(fixture,"audit/deployments",name),"utf8")).trim().split("\n").map(JSON.parse);
++ const auth=await command({op:"auth",key:"pk_fixture"});assert.equal(auth.authenticated,true);
++ const baselines=await fs.readdir(path.join(fixture,".local/deployment-baselines"));
++ return {fixture,command,host,journals,records,baseline:baselines[0],initial,output,
++  async editHost(edit){const state=await host();edit(state);await fs.writeFile(path.join(fixture,'audit/host.json'),JSON.stringify(state));},
++  async stop(){
++   if(child.exitCode!==null||child.signalCode!==null)return;
++   await new Promise(resolve=>{child.once('close',resolve);child.stdin.end();child.kill();});
++  },
++  async clean(){
++   await this.stop();
++   // Verify the exact mkdtemp descendant, and unlink the dependency junction
++   // before recursive cleanup so no shared dependencies can be traversed.
++   assert.equal(path.dirname(path.resolve(fixture)),path.resolve(os.tmpdir()));
++   assert.ok(path.basename(fixture).startsWith("scrap-command-"));
++   await fs.unlink(path.join(fixture,"node_modules"));
++   await fs.rm(fixture,{recursive:true,force:true,maxRetries:5,retryDelay:100});
++  }};
++}
++
++const adapter=String.raw`
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import {DOMParser} from 'linkedom';
++const root=process.cwd(), file=path.join(root,'audit/host.json');
++globalThis.fetch=async(url,options={})=>{
++ const u=new URL(url);if(!['hire-poker-8313.onpagelove.com','dav-hire-poker-8313.onpagelove.com'].includes(u.hostname))throw Error('Fixture refused unknown host');
++ const state=JSON.parse(await fs.readFile(file,'utf8')),isOwner=u.hostname.startsWith('dav-'),method=options.method||'GET';
++ const name=u.pathname==='/'?'/index.html':decodeURIComponent(u.pathname),headers=new Headers(options.headers);
++ const save=async()=>fs.writeFile(file,JSON.stringify(state));
++ const respond=async(status,bytes='',etag=null)=>{
++  const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon','.ttf':'font/ttf','.txt':'text/plain','.webmanifest':'application/manifest+json'};
++  let type=/^\/(editor|track)\//.test(name)?'text/html':types[path.extname(name)]||'application/octet-stream';
++  if(!isOwner&&state.scenario==='wrong-dependency-type'&&name.endsWith('.js'))type='text/plain';
++  state.requests.push({method,path:name,owner:isOwner,status});await save();return new Response(bytes,{status,headers:{...(etag?{'ETag':etag}:{}),'Content-Type':type}});
++ };
++ if(method==='PROPFIND')return respond(207,'');
++ if(isOwner&&headers.get('Authorization')!=='Bearer pk_fixture')return respond(401,'');
++ if(method==='MKCOL')return respond(201,'');
++ if(method==='GET'){
++  if(state.rootWritten&&!state.readFaultUsed&&((state.scenario==='post-write-public-failure'&&!isOwner&&name==='/index.html')||(['post-write-DAV-failure','ambiguous-unreadable'].includes(state.scenario)&&isOwner&&name==='/index.html'))){state.readFaultUsed=true;return respond(503,'qualified read failure');}
++  const item=state.files[name];let bytes=item?Buffer.from(item.bytes,'base64'):'';
++  if(item&&!isOwner&&/^\/(editor|track)\//.test(name)){
++   const doc=new DOMParser().parseFromString(bytes.toString(),'text/html');
++   for(const include of doc.querySelectorAll('p\\:include')){
++    const resource=state.files[include.getAttribute('resource')];if(!resource)throw Error('Controlled host dependency missing');
++    const source=new DOMParser().parseFromString(Buffer.from(resource.bytes,'base64').toString(),'text/html');
++    const fragment=source.querySelector(include.getAttribute('selector'));if(!fragment)throw Error('Controlled host selector missing');include.replaceWith(fragment);
++   }
++   if(state.scenario==='composed-style-loss'&&!state.faultUsed){doc.querySelector('link[rel="stylesheet"]')?.remove();state.faultUsed=true;}
++   bytes=doc.toString();
++  }
++  return respond(item?200:404,bytes,item?.etag);
++ }
++ if(method!=='PUT'||!isOwner)return respond(405,'');
++ const before=state.files[name];
++ if((headers.get('If-Match')&&headers.get('If-Match')!==before?.etag)||(headers.get('If-None-Match')==='*'&&before))return respond(412,'');
++ if(!headers.has('If-Match')&&!headers.has('If-None-Match'))return respond(428,'');
++ const rootWrite=name==='/index.html';
++ const lose=!state.faultUsed&&((rootWrite&&['ambiguous-applied','ambiguous-not-applied','ambiguous-unreadable'].includes(state.scenario))||(state.scenario==='rollback-ambiguous'&&name==='/release.json'));
++ if(lose&&state.scenario==='ambiguous-not-applied'){state.faultUsed=true;state.requests.push({method,path:name,owner:isOwner,status:'lost-not-applied'});await save();throw Error('Response lost before application');}
++ state.files[name]={bytes:Buffer.from(options.body).toString('base64'),etag:'"v'+(++state.version)+'"'};
++ if(rootWrite)state.rootWritten=true;
++ if(state.scenario==='gate-change-after-native'&&!state.faultUsed&&name.startsWith('/track/')){
++  state.faultUsed=true;const p=path.join(root,'audit/current-acceptance.json'),ledger=JSON.parse(await fs.readFile(p,'utf8'));ledger.requirements[0].status='failed';await fs.writeFile(p,JSON.stringify(ledger));
++ }
++ if(lose){state.faultUsed=true;state.requests.push({method,path:name,owner:isOwner,status:'lost-applied'});await save();throw Error('Response lost after application');}
++ return respond(before?200:201,'');
++};
++`;
+diff --git a/tests/rejected-score-recovery.test.mjs b/tests/rejected-score-recovery.test.mjs
+new file mode 100644
+index 0000000..cd08abb
+--- /dev/null
++++ b/tests/rejected-score-recovery.test.mjs
+@@ -0,0 +1,40 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {IDBFactory} from 'fake-indexeddb';
++import {DOMParser} from 'linkedom';
++import {Boards,runHTML,RETENTION_MS,contentKeys} from '../app/boards.js';
++import {openStore} from '../app/storage.js';
++import {loadContent} from '../tools/content.mjs';
++import {RULES} from '../app/builds.js';
++const content=await loadContent(),keys=await contentKeys(content);
++const run={id:crypto.randomUUID(),alias:'Recovery fixture',mode:'trial',trackId:content.tracks[0].track.id,
++ trackRevision:content.tracks[0].revision,rulesRevision:RULES,buildRevision:[...keys.builds][0],
++ assist:'steering-off:manual',laps:3,challenge:'',elapsedMs:90000,splits:[30000,30000,30000]};
++const config={policyRevision:'isolated-recovery-fixture',paths:{trial:'/boards/trial.html',daily:'/boards/daily.html'}};
++
++test('a player can explicitly retry a denied valid score with the same identity, reconcile lost acceptance and avoid automatic retries',async()=>{
++ const store=await openStore({factory:new IDBFactory()});let posts=0,stored='';
++ const board=new Boards(store,{config,Parser:DOMParser,fetcher:async(_url,options)=>{
++  if(options.method==='POST'){
++   posts++;assert.equal(options.body,runHTML(run));
++   if(posts===1)return new Response('Permission unavailable',{status:403});
++   const now=Date.now();stored=runHTML(run).replace('</li>',`<meta itemprop="receivedAt" content="${now}"><meta itemprop="expiresAt" content="${now+RETENTION_MS}"></li>`);
++   throw Error('Accepted but response lost');
++  }
++  return new Response('<ul id="runs">'+stored+'</ul>');
++ }});
++ await store.enqueueRun(run);await board.pump();await board.pump();
++ assert.equal(posts,1);assert.equal((await store.get('outbox:'+run.id)).state,'rejected');
++ await board.retryRejected(run.id);
++ const after=await store.get('outbox:'+run.id);assert.equal(after.state,'confirmed');assert.deepEqual(after.run,run);assert.equal(posts,2);
++ await assert.rejects(board.retryRejected(run.id),/Only a rejected/);await board.pump();assert.equal(posts,2);store.close();
++});
++
++test('manual rejected-score retry cannot exceed pending capacity or mutate its captured score',async()=>{
++ const store=await openStore({factory:new IDBFactory()});await store.enqueueRun(run);
++ const claim=await store.claimRun('fixture');await store.settleRun(run.id,claim.lease.id,'rejected','403 fixture');
++ for(let n=0;n<100;n++)await store.enqueueRun({...run,id:crypto.randomUUID()});
++ const before=await store.get('outbox:'+run.id);
++ await assert.rejects(store.retryRejectedRun(run.id),/queue is full/);
++ assert.deepEqual(await store.get('outbox:'+run.id),before);store.close();
++});
+diff --git a/tests/release-gate.test.mjs b/tests/release-gate.test.mjs
+index 48632ae..f83b81b 100644
+--- a/tests/release-gate.test.mjs
++++ b/tests/release-gate.test.mjs
+@@ -50,13 +50,23 @@ test("release gate refuses missing asset, stale source, omitted evidence and fai
+     const requirements = JSON.parse(
+       await fs.readFile(path.join(fixture, "requirements.json"), "utf8"),
+     );
++    const inventoryHash = sha(await fs.readFile(path.join(fixture, "requirements.json")));
++    await fs.mkdir(path.dirname(path.join(fixture, requirements.governingGuide.snapshot)), { recursive: true });
++    await fs.copyFile(path.join(root, requirements.governingGuide.snapshot), path.join(fixture, requirements.governingGuide.snapshot));
++    const review = { status: "completed", inventoryHash, sourceHash: candidate.source.hash, outputHash: candidate.outputHash,
++      artifact: { path: "audit/fixture.txt", sha256: sha("synthetic refusal fixture") } };
+     const receipt = {
++      inventoryHash,
++      coverageReview: structuredClone(review),
++      evidenceReview: structuredClone(review),
+       release: candidate.release,
+       sourceHash: candidate.source.hash,
+       outputHash: candidate.outputHash,
+       requirements: requirements.required.map((r) => ({
+         id: r.id,
+         status: "passed",
++        scenarios: r.scenarios?.map(scenario => ({ id: scenario.id, status: "passed",
++          artifacts: [{ path: "audit/fixture.txt", sha256: sha("synthetic refusal fixture") }] })),
+         artifacts: [
+           {
+             path: "audit/fixture.txt",
+@@ -72,6 +82,30 @@ test("release gate refuses missing asset, stale source, omitted evidence and fai
+       );
+     await save();
+     await verifyRelease(fixture, "live");
++    const scenario = receipt.requirements.find(row => row.id === "J02").scenarios[0];
++    scenario.status = "not-run";
++    await save();
++    await assert.rejects(verifyRelease(fixture, "local"), /Required scenario.*J02/);
++    scenario.status = "passed";
++    const scenarioArtifact = scenario.artifacts[0];
++    scenario.artifacts = [{ ...scenarioArtifact, sha256: "changed" }];
++    await save();
++    await assert.rejects(verifyRelease(fixture, "local"), /scenario evidence changed.*J02/);
++    scenario.artifacts = [scenarioArtifact];
++    await save();
++    for (const name of ["coverageReview", "evidenceReview"]) {
++      const retained = receipt[name];
++      receipt[name] = { ...retained, sourceHash: "stale" };
++      await save();
++      await assert.rejects(verifyRelease(fixture), /pre-promotion review/);
++      receipt[name] = retained;
++    }
++    const retainedInventoryHash = receipt.inventoryHash;
++    receipt.inventoryHash = "unreviewed inventory";
++    await save();
++    await assert.rejects(verifyRelease(fixture), /inventory changed/);
++    receipt.inventoryHash = retainedInventoryHash;
++    await save();
+     receipt.requirements.find((r) => r.id === "P08").status = "failed";
+     await save();
+     await verifyRelease(fixture, "local");
+@@ -100,12 +134,14 @@ test("release gate refuses missing asset, stale source, omitted evidence and fai
+       ],
+     };
+     await fs.writeFile(path.join(fixture, authorization), JSON.stringify(auth));
+-    await verifyRelease(fixture, "staged", authorization);
++    await assert.rejects(verifyRelease(fixture, "staged", authorization), /Required acceptance.*P08/);
+     await assert.rejects(verifyRelease(fixture, "staged"), /P08/);
+     await fs.appendFile(path.join(fixture, "audit/fixture.txt"), "tampered");
++    receipt.requirements.find((r) => r.id === "P08").status = "passed";
++    await save();
+     await assert.rejects(
+-      verifyRelease(fixture, "staged", authorization),
+-      /evidence changed/,
++      verifyRelease(fixture, "staged"),
++      /pre-promotion review|evidence changed/,
+     );
+     await fs.writeFile(
+       path.join(fixture, "audit/fixture.txt"),
+diff --git a/tests/result-write-validation.test.mjs b/tests/result-write-validation.test.mjs
+new file mode 100644
+index 0000000..a947118
+--- /dev/null
++++ b/tests/result-write-validation.test.mjs
+@@ -0,0 +1,22 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {IDBFactory} from 'fake-indexeddb';
++import {openStore,freshProgress} from '../app/storage.js';
++
++test('malformed unfinished results cannot make a saved campaign unreadable or award progress',async()=>{
++ for(const invalid of [
++  {dnf:undefined,splits:[]},
++  {dnf:false,splits:[]},
++  {dnf:false,splits:[1,2,3]},
++ ]){
++  const store=await openStore({factory:new IDBFactory()});
++  const progress=freshProgress();progress.cup={id:'cup',index:0,rounds:[]};
++  await store.set('progress',progress);
++  const result={id:'invalid-run',key:'fixture',mode:'league',elapsedMs:12000,classification:[{id:'player'}],difficulty:'relaxed',...invalid};
++  await assert.rejects(store.commitResult(result,null,'cup',0),/Invalid saved result/);
++  assert.deepEqual(await store.get('progress'),progress);
++  assert.equal(await store.get('result:invalid-run'),undefined);
++  assert.equal(await store.get('best:fixture'),undefined);
++  store.close();
++ }
++});
+diff --git a/tests/startup-styles.test.mjs b/tests/startup-styles.test.mjs
+new file mode 100644
+index 0000000..c87799d
+--- /dev/null
++++ b/tests/startup-styles.test.mjs
+@@ -0,0 +1,25 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import vm from 'node:vm';
++import fs from 'node:fs/promises';
++
++test('startup missing either required stylesheet keeps controls inert and exposes independent recovery',async()=>{
++ const source=await fs.readFile(new URL('../app/bootstrap.js',import.meta.url),'utf8');
++ for(const missing of ['--scrap-core-ready','--scrap-arcade-ready']){
++  const nodes=Object.fromEntries(['loading','loading-message','startup-retry','stage','header'].map(id=>[id,{hidden:true,style:{},setAttribute(name,value){this[name]=value;},focus(){this.focused=true;}}]));
++  let timerCleared=false,imports=0;
++  const context=vm.createContext({document:{documentElement:{},getElementById:id=>nodes[id]},getComputedStyle:()=>({getPropertyValue:name=>name===missing?'':'1'}),setTimeout:()=>1,clearTimeout:()=>{timerCleared=true;},location:{reload(){}}});
++  const script=new vm.Script(source,{importModuleDynamically:()=>{imports++;throw Error('Game import must not start');}});
++  script.runInContext(context);
++  assert.equal(imports,0);
++  assert.equal(timerCleared,true);
++  assert.equal(nodes.stage.inert,true);
++  assert.equal(nodes.header.inert,true);
++  assert.equal(nodes.loading.hidden,false);
++  assert.equal(nodes['startup-retry'].hidden,false);
++  assert.equal(nodes['startup-retry'].focused,true);
++  assert.equal(nodes.loading.role,'alert');
++  assert.match(nodes.loading.style.cssText,/position:fixed/);
++  assert.match(nodes['loading-message'].textContent,/required game stylesheet/);
++ }
++});
+diff --git a/tools/candidate-publication.mjs b/tools/candidate-publication.mjs
+index 745f7b1..9f401ed 100644
+--- a/tools/candidate-publication.mjs
++++ b/tools/candidate-publication.mjs
+@@ -56,6 +56,14 @@ export function validatePublicationAuthorization(
+     throw Error(
+       "Failed acceptance cannot use this candidate-publication authorization",
+     );
++  // An operation receipt cannot grant an exception to a required outcome.
++  // Apply an actual scope decision to the authoritative contract first; every
++  // publication path still requires all outcomes in that contract to pass.
++  if (incomplete.length)
++    throw Error(
++      "Unresolved required acceptance cannot be waived by a deployment instruction or agent-authored receipt: " +
++        incomplete.map((r) => r.id).join(", "),
++    );
+   if (
+     !Array.isArray(auth.knownIncomplete) ||
+     auth.knownIncomplete.length !== incomplete.length ||
+diff --git a/tools/deploy-pagelove.mjs b/tools/deploy-pagelove.mjs
+index 9e2a4be..466f7bc 100644
+--- a/tools/deploy-pagelove.mjs
++++ b/tools/deploy-pagelove.mjs
+@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
+ import { createHash } from "node:crypto";
+ import { DOMParser } from "linkedom";
+ import { restoreRoot } from "./rollback.mjs";
++import { openDeploymentJournal, readDeploymentJournal, safeError } from "./deployment-journal.mjs";
+ 
+ const root = path.resolve(fileURLToPath(new URL("../", import.meta.url)));
+ const origin = "https://hire-poker-8313.onpagelove.com";
+@@ -27,6 +28,38 @@ let key = "",
+   backupDirectory = "",
+   authenticated = false;
+ let rollbackPlan = null;
++let journal = null, publicationPin = null, knownWrite = false, uncertainWrite = false;
++const publicationFingerprint = async () => sha(Buffer.concat(await Promise.all(
++  ["requirements.json", "audit/current-acceptance.json", "dist/release.json"].map(
++    name => fs.readFile(path.join(root, name)),
++  ),
++)));
++async function recheckPublication(stage, authorization) {
++  const candidate = await verifyRelease(root, stage, authorization);
++  if (publicationPin && await publicationFingerprint() !== publicationPin)
++    throw Error("Publication decision changed during promotion");
++  return candidate;
++}
++async function executeOperation(action) {
++  try {
++    const result = await action();
++    if (journal) {
++      result.journal = journal.relative;
++      await journal.record("operation-complete");
++    }
++    return result;
++  } catch (error) {
++    if (journal) {
++      await journal.record(uncertainWrite ? "outcome-unknown" : knownWrite ? "recovery-required" : "operation-failed",
++        { error: safeError(error), knownWrite, uncertainWrite });
++      error.message = safeError(error) + "; journal " + journal.relative;
++    }
++    throw error;
++  } finally {
++    await journal?.close(); journal = null; publicationPin = null;
++    knownWrite = uncertainWrite = false;
++  }
++}
+ async function prepareRollback(id) {
+   if (
+     !authenticated ||
+@@ -90,6 +123,15 @@ async function rollback() {
+   if (!rollbackPlan) throw Error("Prepare a verified rollback first.");
+   const plan = rollbackPlan;
+   rollbackPlan = null;
++  journal = await openDeploymentJournal(root, "rollback", { origin, dav,
++    baseline: plan.id, candidate: plan.release,
++    scope: "Three root entries only; native routes and application data retained" });
++  await journal.record("preflight-passed");
++  for (const entry of plan.entries) {
++    if (sha(await fs.readFile(path.join(root, ".local/deployment-baselines", plan.id, backupRelativePath(entry.path)))) !== entry.hash)
++      throw Error("Rollback backup changed: " + entry.path);
++    await journal.record("backup-verified", { path: entry.path, sha256: entry.hash });
++  }
+   const files = await restoreRoot(plan.entries, {
+     read,
+     write: (name, bytes, etag) =>
+@@ -102,6 +144,13 @@ async function rollback() {
+         body: bytes,
+       }),
+     equivalent,
++    record: async (state, detail) => {
++      if (state === "write-intent") uncertainWrite = true;
++      if (["entry-promoted-unverified", "authoring-readback-verified"].includes(state)) {
++        knownWrite = true; uncertainWrite = false;
++      }
++      await journal.record(state, detail);
++    },
+   });
+   for (const file of files) {
+     const live = await read(
+@@ -114,10 +163,13 @@ async function rollback() {
+       !publicEquivalent(file.path, target.bytes, live.bytes)
+     )
+       throw Error("Public rollback mismatch: " + file.path);
++    await journal.record("entry-live-verified", { path: file.path,
++      status: live.status, sha256: sha(live.bytes) });
+   }
+   const receipt = {
+     utc: new Date().toISOString(),
+     origin,
++    journal: journal.relative,
+     release: plan.release,
+     files,
+     scope: "Conditional root rollback; no asset or application-data deletion",
+@@ -126,9 +178,69 @@ async function rollback() {
+     path.join(root, "audit/rollback.json"),
+     JSON.stringify(receipt, null, 2),
+   );
++  await journal.record("live-verified", { release: plan.release });
+   return receipt;
+ }
+ 
++let recoveryPlan = null;
++async function prepareRecovery(relative) {
++  if (!authenticated) throw Error("Authenticate before preparing recovery");
++  const rows = await readDeploymentJournal(root, relative), identity = rows[0]?.identity;
++  if (rows[0]?.operation !== "deploy" || identity?.origin !== origin || identity?.dav !== dav)
++    throw Error("Recovery requires a deployment journal for this host");
++  const candidate = await verifyRelease(root, "staged");
++  if (identity.candidate?.sourceHash !== candidate.source.hash ||
++      identity.candidate?.outputHash !== candidate.outputHash ||
++      identity.decisionHash !== await publicationFingerprint())
++    throw Error("Recovery candidate or acceptance changed; review a new operation");
++  if (!/^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z$/.test(identity.baseline))
++    throw Error("Invalid recovery baseline");
++  const directory = path.join(root, ".local/deployment-baselines", identity.baseline);
++  const saved = JSON.parse(await fs.readFile(path.join(directory, "baseline.json"), "utf8"));
++  if (saved.origin !== origin || saved.dav !== dav) throw Error("Recovery backup host changed");
++  for (const entry of saved.entries) {
++    if (entry.status === 200 && sha(await fs.readFile(path.join(directory, backupRelativePath(entry.path)))) !== entry.sha256)
++      throw Error("Recovery backup changed: " + entry.path);
++  }
++  for (const row of rows.filter(row => row.state === "backup-verified" && row.baseline?.relative)) {
++    if (sha(await fs.readFile(path.join(directory, backupRelativePath(row.path)))) !== row.baseline.sha256)
++      throw Error("Recovery backup changed: " + row.path);
++  }
++  const intents = new Map(rows.filter(row => row.state === "write-intent").map(row => [row.path, row]));
++  const entries = [];
++  for (const [name, intent] of intents) {
++    const current = await read(name);
++    const known = rows.filter(row => row.path === name && row.state === "authoring-readback-verified").at(-1);
++    const matchesTarget = current.status === 200 && [intent.targetSha256, known?.artifactSha256].includes(sha(current.bytes));
++    const matchesBefore = current.status === intent.baselineStatus && sha(current.bytes) === intent.baselineSha256;
++    if (!matchesTarget && !matchesBefore) throw Error("Unexpected remote state prevents recovery: " + name);
++    entries.push({ path: name, status: current.status, etag: current.etag, sha256: sha(current.bytes),
++      disposition: matchesTarget ? "candidate-present" : "previous-present" });
++  }
++  recoveryPlan = { journal: relative, entries };
++  return { prepared: true, recovery: relative, entries,
++    scope: "Conditional forward completion; retained original journal/backups; no deletes or blind write replay" };
++}
++async function recover() {
++  if (!recoveryPlan) throw Error("Prepare a verified recovery first");
++  const plan = recoveryPlan; recoveryPlan = null;
++  const recheck = async () => {
++    for (const entry of plan.entries) {
++      const current = await read(entry.path);
++      if (current.status !== entry.status || current.etag !== entry.etag || sha(current.bytes) !== entry.sha256)
++        throw Error("Remote state changed after recovery preparation: " + entry.path);
++    }
++  };
++  await recheck();
++  // A failed operation's original baseline describes pre-write state. Keep it
++  // immutable and capture a separate verified baseline for forward recovery.
++  await authenticate(key);
++  await recheck();
++  const result = await deploy();
++  await journal.record("recovered-operation", { fromJournal: plan.journal });
++  return { ...result, recoveredFrom: plan.journal };
++}
++
+ function knownProviderFooter(element) {
+   if (
+     !element ||
+@@ -221,6 +333,35 @@ export const publicEquivalent = (name, a, b) =>
+     ? htmlIdentity(a, true) === htmlIdentity(b, true)
+     : a.equals(b);
+ 
++function assertPublicType(name, response) {
++  const actual = response.type?.split(";")[0].trim().toLowerCase();
++  const expected = htmlResource(name) ? "text/html" : types[path.extname(name)]?.split(";")[0];
++  const aliases = { ".js": ["text/javascript", "application/javascript"],
++    ".ico": ["image/x-icon", "image/vnd.microsoft.icon"] };
++  if (response.status !== 200 || (expected && !(aliases[path.extname(name)] || [expected]).includes(actual)))
++    throw Error("Public resource status/type mismatch: " + name);
++}
++
++async function assertComposedEntry(file, live) {
++  assertPublicType(file.name, live);
++  const actual = new DOMParser().parseFromString(live.bytes.toString(), "text/html");
++  const source = new DOMParser().parseFromString(file.bytes.toString(), "text/html");
++  const includes = [...source.querySelectorAll("p\\:include")];
++  for (const include of includes) {
++    const resource = include.getAttribute("resource"), selector = include.getAttribute("selector");
++    if (!resource?.startsWith("/") || resource.includes("..")) throw Error("Unpinned composed dependency");
++    const local = resource.startsWith("/content/") ? root : path.join(root, "dist");
++    const dependency = new DOMParser().parseFromString(await fs.readFile(path.join(local,resource), "utf8"), "text/html");
++    const expected = dependency.querySelector(selector), observed = actual.querySelector(selector);
++    const wrap = node => Buffer.from("<html><head></head><body>" + node.outerHTML + "</body></html>");
++    if (!expected || !observed || !publicEquivalent("/composed.html", wrap(expected), wrap(observed)))
++      throw Error("Public composed dependency mismatch: " + file.name + " " + selector);
++  }
++  if (actual.querySelector("p\\:include")) throw Error("Unresolved public include: " + file.name);
++  if (actual.querySelector("#routed-track")?.getAttribute("data-track-id") !== source.querySelector("#routed-track")?.getAttribute("data-track-id"))
++    throw Error("Public route identity mismatch: " + file.name);
++}
++
+ async function request(base, name, options = {}) {
+   if (
+     ![origin, dav].includes(base) ||
+@@ -281,19 +422,28 @@ async function remember(name) {
+   const r = await read(name);
+   if (r.status === 200 && !r.etag)
+     throw Error("Missing conditional-write ETag: " + name);
+-  if (r.status === 200) await saveBaseline(backupDirectory, name, r);
++  if (r.status === 200) {
++    const relative = await saveBaseline(backupDirectory, name, r);
++    if (sha(await fs.readFile(path.join(backupDirectory, relative))) !== sha(r.bytes))
++      throw Error("Backup verification failed: " + name);
++    await journal?.record("backup-verified", { path: name, baseline: {
++      status: r.status, etag: r.etag, sha256: sha(r.bytes), relative,
++    } });
++  }
+   baseline.set(name, r);
+   return r;
+ }
+-async function put(name, bytes, immutable = false) {
++async function put(name, bytes, immutable = false, entry = false, authorization = null) {
+   const before = baseline.get(name) || (await remember(name));
+-  if (before.status === 200 && equivalent(name, bytes, before.bytes))
++  if (before.status === 200 && equivalent(name, bytes, before.bytes)) {
++    if (entry) await recheckPublication("staged", authorization);
+     return {
+       path: name,
+       status: "unchanged",
+       bytes: before.bytes.length,
+       sha256: sha(before.bytes),
+     };
++  }
+   if (immutable && before.status === 200)
+     throw Error("Immutable file conflict: " + name);
+   const current = await read(name);
+@@ -303,8 +453,13 @@ async function put(name, bytes, immutable = false) {
+     current.status === 404
+       ? { "If-None-Match": "*" }
+       : { "If-Match": current.etag };
++  if (entry) await recheckPublication("staged", authorization);
+   let response,
+     ambiguous = false;
++  await journal?.record("write-intent", { path: name, entry,
++    targetSha256: sha(bytes), condition, baselineSha256: sha(current.bytes),
++    baselineStatus: current.status });
++  uncertainWrite = true;
+   try {
+     response = await request(dav, name, {
+       method: "PUT",
+@@ -316,8 +471,14 @@ async function put(name, bytes, immutable = false) {
+       },
+       body: bytes,
+     });
++    if ([200, 201, 204].includes(response.status)) {
++      knownWrite = true; uncertainWrite = false;
++      await journal?.record(entry ? "entry-promoted-unverified" : "dependency-written-unverified",
++        { path: name, responseStatus: response.status, targetSha256: sha(bytes) });
++    }
+   } catch {
+     ambiguous = true;
++    await journal?.record("outcome-unknown", { path: name, entry, reason: "Write response unavailable; reconcile without replay" });
+   }
+   const after = await read(name);
+   if (after.status !== 200 || !equivalent(name, bytes, after.bytes))
+@@ -330,6 +491,9 @@ async function put(name, bytes, immutable = false) {
+     );
+   if (response && ![200, 201, 204].includes(response.status))
+     throw Error("Write refused: " + name + " " + response.status);
++  knownWrite = true; uncertainWrite = false;
++  await journal?.record("authoring-readback-verified", { path: name, entry,
++    sha256: sha(after.bytes), etag: after.etag, reconciled: ambiguous });
+   return {
+     path: name,
+     status: ambiguous ? "reconciled" : response.status,
+@@ -400,6 +564,26 @@ async function authenticate(secret) {
+ async function deploy(publicationAuthorization = null) {
+   const verified = await verifyRelease(root, "local", publicationAuthorization);
+   if (!authenticated) throw Error("Authenticate and read the baseline first");
++  publicationPin = await publicationFingerprint();
++  journal = await openDeploymentJournal(root, "deploy", { origin, dav,
++    candidate: { release: verified.release, sourceHash: verified.source.hash, outputHash: verified.outputHash },
++    previous: baseline.get("/release.json")?.status === 200
++      ? sha(baseline.get("/release.json").bytes) : null,
++    baseline: path.basename(backupDirectory), decisionHash: publicationPin });
++  await journal.record("preflight-passed");
++  const backupMeta = JSON.parse(await fs.readFile(path.join(backupDirectory, "baseline.json"), "utf8"));
++  if (backupMeta.origin !== origin || backupMeta.dav !== dav)
++    throw Error("Backup metadata host changed");
++  for (const name of ["/index.html", "/sw.js", "/release.json"]) {
++    const saved = baseline.get(name);
++    const meta = backupMeta.entries.find(entry => entry.path === name);
++    if (!meta || meta.status !== saved.status || meta.etag !== saved.etag || meta.sha256 !== sha(saved.bytes))
++      throw Error("Backup metadata changed: " + name);
++    if (saved?.status === 200 && sha(await fs.readFile(path.join(backupDirectory, backupRelativePath(name)))) !== sha(saved.bytes))
++      throw Error("Backup verification failed: " + name);
++    await journal.record("backup-verified", { path: name, baseline: {
++      status: saved.status, etag: saved.etag, sha256: sha(saved.bytes) } });
++  }
+   const release = JSON.parse(
+     await fs.readFile(path.join(root, "dist/release.json"), "utf8"),
+   );
+@@ -454,6 +638,7 @@ async function deploy(publicationAuthorization = null) {
+   const publicFiles = [];
+   for (const file of files) {
+     const live = await read(file.name, true);
++    assertPublicType(file.name, live);
+     if (
+       live.status !== 200 ||
+       !publicEquivalent(file.name, file.bytes, live.bytes)
+@@ -467,15 +652,16 @@ async function deploy(publicationAuthorization = null) {
+       type: live.type,
+     });
+   }
+-  await verifyRelease(root, "staged", publicationAuthorization);
++  await journal.record("dependencies-staged", { files: publicFiles.length });
++  await recheckPublication("staged", publicationAuthorization);
+   // Native routes are entry points too. Require staged acceptance or the exact
+   // candidate authorization; included shells are already publicly verified.
+   for (const file of nativeEntries) {
+-    written.push(await put(file.name, file.bytes));
++    written.push(await put(file.name, file.bytes, false, true, publicationAuthorization));
+     const live = await read(file.name, true);
+     // Exact route source is read through DAV; public composition is covered by P07.
+-    if (live.status !== 200)
+-      throw Error("Native entry unavailable: " + file.name);
++    await assertComposedEntry(file, live);
++    await journal.record("entry-live-verified", { path: file.name, status: live.status, sha256: sha(live.bytes) });
+     publicFiles.push({
+       path: file.name,
+       status: live.status,
+@@ -485,13 +671,15 @@ async function deploy(publicationAuthorization = null) {
+     });
+   }
+   const index = await fs.readFile(path.join(root, "dist/index.html"));
+-  written.push(await put("/index.html", index));
++  written.push(await put("/index.html", index, false, true, publicationAuthorization));
+   const publicIndex = await read("/", true);
++  assertPublicType("/index.html", publicIndex);
+   if (
+     publicIndex.status !== 200 ||
+     !publicEquivalent("/index.html", index, publicIndex.bytes)
+   )
+     throw Error("Public entry semantic mismatch");
++  await journal.record("entry-live-verified", { path: "/index.html", status: publicIndex.status, sha256: sha(publicIndex.bytes) });
+   // Pagelove may serialize authored HTML. Verify its semantics, then pin the exact
+   // served bytes in the offline inventory; script/style bytes remain strict.
+   const published = structuredClone(release);
+@@ -515,16 +703,18 @@ async function deploy(publicationAuthorization = null) {
+     ),
+   );
+   written.push(
+-    await put("/release.json", Buffer.from(JSON.stringify(published, null, 2))),
++    await put("/release.json", Buffer.from(JSON.stringify(published, null, 2)), false, true, publicationAuthorization),
+   );
+-  written.push(await put("/sw.js", worker));
++  written.push(await put("/sw.js", worker, false, true, publicationAuthorization));
+   for (const [name, bytes] of [
+     ["/sw.js", worker],
+     ["/release.json", Buffer.from(JSON.stringify(published, null, 2))],
+   ]) {
+     const live = await read(name, true);
++    assertPublicType(name, live);
+     if (live.status !== 200 || !bytes.equals(live.bytes))
+       throw Error("Public entry readback failed: " + name);
++    await journal.record("entry-live-verified", { path: name, status: live.status, sha256: sha(live.bytes) });
+     publicFiles.push({
+       path: name,
+       status: live.status,
+@@ -543,6 +733,7 @@ async function deploy(publicationAuthorization = null) {
+   const receipt = {
+     utc: new Date().toISOString(),
+     origin,
++    journal: journal.relative,
+     authoringHost: dav,
+     release: release.release,
+     sourceHash: verified.source.hash,
+@@ -556,7 +747,7 @@ async function deploy(publicationAuthorization = null) {
+         }
+       : null,
+     productAcceptance: publicationAuthorization
+-      ? "Incomplete outcomes retained; explicitly authorized candidate publication"
++      ? "Required pre-promotion acceptance passed; historical operation receipt retained"
+       : "Required pre-promotion acceptance passed",
+     publication:
+       "Immutable assets and authored content staged and publicly verified before conditional root entry promotion",
+@@ -574,6 +765,7 @@ async function deploy(publicationAuthorization = null) {
+     path.join(root, "audit/deployment.json"),
+     JSON.stringify(receipt, null, 2),
+   );
++  await journal.record("live-verified", { release: release.release, publicFiles: publicFiles.length });
+   return {
+     deployed: true,
+     origin,
+@@ -593,7 +785,7 @@ if (
+   let buffer = "",
+     busy = false;
+   console.log(
+-    "Ready for hidden JSON input: auth, deploy, publish-candidate, prepare-rollback, rollback, quit.",
++    "Ready for hidden JSON input: auth, deploy, publish-candidate, prepare-rollback, rollback, inspect-journal, prepare-recovery, recover, quit.",
+   );
+   process.stdin.on("data", async (chunk) => {
+     if (chunk.includes("\u0003")) process.exit(0);
+@@ -618,13 +810,19 @@ if (
+         c.op === "auth"
+           ? await authenticate(c.key)
+           : c.op === "deploy"
+-            ? await deploy()
++            ? await executeOperation(() => deploy())
+             : c.op === "publish-candidate"
+-              ? await deploy(c.authorization || "missing")
++              ? await executeOperation(() => deploy(c.authorization || "missing"))
+               : c.op === "prepare-rollback"
+                 ? await prepareRollback(c.baseline)
+                 : c.op === "rollback"
+-                  ? await rollback()
++                  ? await executeOperation(() => rollback())
++                  : c.op === "inspect-journal"
++                    ? { journal: c.journal, records: await readDeploymentJournal(root, c.journal) }
++                    : c.op === "prepare-recovery"
++                      ? await prepareRecovery(c.journal)
++                      : c.op === "recover"
++                        ? await executeOperation(() => recover())
+                   : (() => {
+                       throw Error("Unsupported operation");
+                     })();
+diff --git a/tools/deployment-journal.mjs b/tools/deployment-journal.mjs
+new file mode 100644
+index 0000000..ffa7048
+--- /dev/null
++++ b/tools/deployment-journal.mjs
+@@ -0,0 +1,52 @@
++import fs from "node:fs/promises";
++import path from "node:path";
++import { createHash, randomUUID } from "node:crypto";
++const hash = value => createHash("sha256").update(value).digest("hex");
++export const safeError = error => String(error?.message || error)
++  .replace(/pk_[a-zA-Z0-9]+/g, "[redacted]").slice(0, 500);
++
++// Each record is flushed before the externally meaningful next action. A lost
++// response cannot erase a write intent or a known successful entry promotion.
++export async function openDeploymentJournal(root, operation, identity) {
++  if (!["deploy", "rollback", "recover"].includes(operation))
++    throw Error("Unknown journal operation");
++  const id = new Date().toISOString().replace(/[:.]/g, "-") + "-" + randomUUID();
++  const relative = "audit/deployments/" + id + ".jsonl";
++  await fs.mkdir(path.join(root, "audit/deployments"), { recursive: true });
++  const handle = await fs.open(path.join(root, relative), "wx");
++  let previous = null, sequence = 0, closed = false;
++  const journal = {
++    id, relative,
++    async record(state, detail = {}) {
++      if (closed) throw Error("Deployment journal is closed");
++      const { sha256: artifactSha256, ...attributes } = detail;
++      const body = { ...attributes, ...(artifactSha256 ? { artifactSha256 } : {}),
++        version: 1, id, sequence: ++sequence,
++        utc: new Date().toISOString(), operation, state, previous };
++      const record = { ...body, sha256: hash(JSON.stringify(body)) };
++      await handle.write(JSON.stringify(record) + "\n");
++      await handle.sync();
++      previous = record.sha256;
++      return record;
++    },
++    async close() { if (!closed) { closed = true; await handle.close(); } },
++  };
++  await journal.record("operation-started", { identity });
++  return journal;
++}
++
++export async function readDeploymentJournal(root, relative) {
++  if (!/^audit\/deployments\/[0-9TZ.-]+-[a-f0-9-]+\.jsonl$/.test(relative))
++    throw Error("Choose a retained deployment journal");
++  const text = await fs.readFile(path.join(root, relative), "utf8");
++  if (!text.endsWith("\n")) throw Error("Journal has an incomplete final record; outcome unknown");
++  let previous = null;
++  const rows = text.trim().split("\n").map((line, index) => {
++    const row = JSON.parse(line), { sha256, ...body } = row;
++    if (row.sequence !== index + 1 || row.previous !== previous ||
++        hash(JSON.stringify(body)) !== sha256)
++      throw Error("Journal chain changed; recovery refused");
++    previous = sha256; return row;
++  });
++  return rows;
++}
+diff --git a/tools/handbook-lab.js b/tools/handbook-lab.js
+index cfbae56..a3b30eb 100644
+--- a/tools/handbook-lab.js
++++ b/tools/handbook-lab.js
+@@ -16,10 +16,12 @@ const waitFor = async (fn, ms = 20000) => {
+ async function connect() {
+   await waitFor(() => frame.contentDocument?.querySelector("base"));
+   prefix = frame.contentDocument.querySelector("base").href;
+-  const mod = await frame.contentWindow.eval(
+-    `import(${JSON.stringify(prefix + "main.js")})`,
+-  );
++  // A parent-realm dynamic import can retain the previous document's module.
++  // The loopback-only server publishes this handle from the actual app realm.
++  await waitFor(() => frame.contentWindow.__scrapAudit?.document === frame.contentDocument);
++  const mod = frame.contentWindow.__scrapAudit;
+   await mod.ready;
++  await waitFor(() => frame.contentDocument.querySelector("#loading")?.hidden && !frame.contentDocument.querySelector("#stage")?.inert);
+   api = mod.review;
+   release = prefix.split("/").filter(Boolean).at(-1);
+ }
+@@ -61,11 +63,20 @@ async function runToFinish(slow = false) {
+   const { stepRace, aiInput } = await import(prefix + "simulation.js");
+   const { practiceStep } = await import(prefix + "driving-controls.js");
+   api.race.state = "racing";
++  doc().querySelector("#world").focus();
+   const r = api.race;
+   const start = r.time;
++  let interruptions = 0;
+   // The controller drives the same simulation object through normal physics.
+   // Accelerated ticks are not a browser latency or human enjoyment measurement.
+-  while (r.state === "racing" && r.time - start < 480) {
++  while (["racing", "paused", "resuming"].includes(r.state) && r.time - start < 480) {
++    if (r.state === "paused") {
++      check(++interruptions <= 4, "Controller repeatedly interrupted: " + doc().querySelector("#modal-content").textContent);
++      const resume = button("Resume");
++      check(resume, "Interrupted controller has no ordinary Resume action");
++      resume.click();
++      await waitFor(() => r.state !== "resuming");
++    }
+     for (let i = 0; i < 240 && r.state === "racing"; i++) {
+       const p = r.cars.find((c) => c.id === "player"),
+         controls = aiInput(p, r.track, "club", 1, r.cars);
+@@ -77,7 +88,9 @@ async function runToFinish(slow = false) {
+     }
+     await delay(0);
+   }
+-  check(!r.dnf, "Controller did not finish");
++  const player = r.cars.find((c) => c.id === "player");
++  check(r.state === "finished" && r.dnf === false && player.finishTime !== null && player.lapTimes.length === r.laps,
++    "Controller did not finish all laps: " + JSON.stringify({state:r.state,dnf:r.dnf,laps:player.lapTimes.length,expected:r.laps,interruptions}));
+   await api.finish();
+   await waitFor(
+     () =>
+@@ -984,6 +997,12 @@ actions["Closed-store Files recovery"] = async () => {
+     await waitFor(() =>
+       doc().querySelector("#modal-content [data-file=export]"),
+     );
++    // A closed Files dialog can retain its Export node while a new read is pending.
++    // Qualify the open recovery dialog, not the previous content's existence.
++    await waitFor(() =>
++      doc().querySelector("#modal").open &&
++      doc().querySelector("#modal-content").textContent.includes("Some saved drafts could not be read"),
++    );
+     check(
+       doc()
+         .querySelector("#modal-content")
+diff --git a/tools/handbook-server.mjs b/tools/handbook-server.mjs
+index 4daf568..9cc3669 100644
+--- a/tools/handbook-server.mjs
++++ b/tools/handbook-server.mjs
+@@ -109,7 +109,7 @@ http
+       if (target.endsWith(path.sep + "main.js"))
+         bytes = Buffer.from(
+           bytes.toString() +
+-            `\nconst productionInput=input;export const review = {setController(c){input=c||productionInput},get boards(){return boards},get race(){return race},get world(){return world},get workshop(){return workshop},get settings(){return settings},get progress(){return progress},get store(){return store},get content(){return content},get view(){return view},showSharedTimes,openLeaderboards,settingsDialog,input,beginRace,startTrack,finish,show,pause,resume,repairGraphics,openWorkshop,applyPreferences,clearInput};\n`,
++            `\nconst productionInput=input;export const review = {setController(c){input=c||productionInput},get boards(){return boards},get race(){return race},get world(){return world},get workshop(){return workshop},get settings(){return settings},get progress(){return progress},get store(){return store},get content(){return content},get view(){return view},showSharedTimes,openLeaderboards,settingsDialog,input,beginRace,startTrack,finish,show,pause,resume,repairGraphics,openWorkshop,applyPreferences,clearInput};window.__scrapAudit={ready,review,document};\n`,
+         );
+       res.writeHead(200, {
+         "Content-Type":
+diff --git a/tools/release-gate.mjs b/tools/release-gate.mjs
+index f5f9fc6..29a7c99 100644
+--- a/tools/release-gate.mjs
++++ b/tools/release-gate.mjs
+@@ -152,13 +152,30 @@ export async function verifyRelease(
+   if (!stages.includes(stage))
+     throw Error("Unknown release verification stage");
+   const candidate = await verifyCandidateArtifacts(root);
+-  const requirements = JSON.parse(
+-    await readFile(path.join(root, "requirements.json"), "utf8"),
+-  );
++  const inventoryBytes = await readFile(path.join(root, "requirements.json"));
++  const requirements = JSON.parse(inventoryBytes);
+   const receiptBytes = await readFile(
+     path.join(root, "audit/current-acceptance.json"),
+   );
+   const receipt = JSON.parse(receiptBytes);
++  if (requirements.version >= 3) {
++    const guide = requirements.governingGuide;
++    if (!guide?.edition || !guide.requirementMapRevision ||
++        !guide.snapshot?.startsWith("audit/") || guide.snapshot.includes("..") ||
++        sha(await readFile(path.join(root, guide.snapshot))) !== guide.sha256)
++      throw Error("Governing guidance snapshot is missing or changed");
++    const inventoryHash = sha(inventoryBytes);
++    if (receipt.inventoryHash !== inventoryHash)
++      throw Error("Acceptance inventory changed since review");
++    for (const name of ["coverageReview", "evidenceReview"]) {
++      const review = receipt[name];
++      if (review?.status !== "completed" || review.inventoryHash !== inventoryHash ||
++          review.sourceHash !== candidate.source.hash || review.outputHash !== candidate.outputHash ||
++          !review.artifact?.path.startsWith("audit/") || review.artifact.path.includes("..") ||
++          sha(await readFile(path.join(root, review.artifact.path))) !== review.artifact.sha256)
++        throw Error("Missing, stale or changed pre-promotion review: " + name);
++    }
++  }
+   if (
+     new Set(requirements.required.map((r) => r.id)).size !==
+       requirements.required.length ||
+@@ -173,20 +190,8 @@ export async function verifyRelease(
+     receipt.release !== candidate.release
+   )
+     throw Error("Acceptance receipt does not match this exact candidate");
+-  // Explicit candidate publication is separate from passing product acceptance.
+-  // Default package/release/CI callers never supply this authorization.
+-  let knownIncomplete = new Set();
+-  if (publicationAuthorization) {
+-    const { readPublicationAuthorization } =
+-      await import("./candidate-publication.mjs");
+-    knownIncomplete = await readPublicationAuthorization(
+-      root,
+-      publicationAuthorization,
+-      candidate,
+-      receipt,
+-      receiptBytes,
+-    );
+-  }
++  // Historical publication receipts may record operation authority, but cannot
++  // waive a required outcome. All entry points consume the same strict gate.
+   for (const requirement of requirements.required) {
+     if (
+       !requirement.outcome ||
+@@ -196,10 +201,25 @@ export async function verifyRelease(
+       throw Error("Incomplete acceptance contract: " + requirement.id);
+     if (stages.indexOf(requirement.stage) > stages.indexOf(stage)) continue;
+     const evidence = receipt.requirements?.find((r) => r.id === requirement.id);
+-    if (evidence?.status !== "passed" && !knownIncomplete.has(requirement.id))
++    if (evidence?.status !== "passed")
+       throw Error(
+         "Required acceptance is missing or not passed: " + requirement.id,
+       );
++    if (requirements.version >= 4) {
++      if (!requirement.scenarios?.length ||
++          new Set(requirement.scenarios.map(row => row.id)).size !== requirement.scenarios.length)
++        throw Error("Missing or duplicate required scenarios: " + requirement.id);
++      for (const scenario of requirement.scenarios) {
++        const observation = evidence.scenarios?.find(row => row.id === scenario.id);
++        if (!scenario.id || !scenario.outcome || observation?.status !== "passed" || !observation.artifacts?.length)
++          throw Error("Required scenario is missing or not passed: " + requirement.id + "/" + scenario.id);
++        for (const artifact of observation.artifacts) {
++          if (!artifact.path.startsWith("audit/") || artifact.path.includes("..") ||
++              sha(await readFile(path.join(root, artifact.path))) !== artifact.sha256)
++            throw Error("Required scenario evidence changed: " + requirement.id + "/" + scenario.id);
++        }
++      }
++    }
+     if (evidence.status === "passed" && !evidence.artifacts?.length)
+       throw Error("Required acceptance is missing evidence: " + requirement.id);
+     for (const artifact of evidence.artifacts || []) {
+@@ -211,6 +231,12 @@ export async function verifyRelease(
+         throw Error("Acceptance evidence changed: " + requirement.id);
+     }
+   }
++  // An optional operation receipt is considered only after the shared gate.
++  // It cannot change the status or applicability of any required outcome.
++  if (publicationAuthorization) {
++    const { readPublicationAuthorization } = await import("./candidate-publication.mjs");
++    await readPublicationAuthorization(root, publicationAuthorization, candidate, receipt, receiptBytes);
++  }
+   return candidate;
+ }
+ if (
+diff --git a/tools/rollback.mjs b/tools/rollback.mjs
+index 92eecf6..b26043c 100644
+--- a/tools/rollback.mjs
++++ b/tools/rollback.mjs
+@@ -3,7 +3,7 @@ const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
+ const names = ["/index.html", "/release.json", "/sw.js"];
+ // Root promotion rollback leaves content, Workshop/catalog/board data, native
+ // routes and every immutable release intact. Those have their own histories.
+-export async function restoreRoot(plan, { read, write, equivalent }) {
++export async function restoreRoot(plan, { read, write, equivalent, record = async () => {} }) {
+   if (
+     plan.length !== 3 ||
+     names.some((name) => plan.filter((p) => p.path === name).length !== 1)
+@@ -24,12 +24,25 @@ export async function restoreRoot(plan, { read, write, equivalent }) {
+   const receipt = [];
+   for (const name of names) {
+     const item = plan.find((p) => p.path === name);
++    // Recheck each entry immediately before its conditional mutation, including
++    // later entries after earlier restoration writes have already happened.
++    const current = await read(name);
++    if (current.status !== 200 || current.etag !== item.etag ||
++        sha(current.bytes) !== item.currentHash || sha(item.bytes) !== item.hash)
++      throw Error("Concurrent change prevents rollback: " + name);
++    await record("write-intent", { path: name, entry: true,
++      targetSha256: item.hash, condition: { "If-Match": item.etag },
++      baselineSha256: item.currentHash, baselineStatus: current.status });
+     let response;
+     try {
+       response = await write(name, item.bytes, item.etag);
+     } catch {
+       /* Reconcile ambiguity without replay. */
+     }
++    if (response && [200, 201, 204].includes(response.status))
++      await record("entry-promoted-unverified", { path: name, responseStatus: response.status });
++    else if (!response)
++      await record("outcome-unknown", { path: name, reason: "Rollback response unavailable; reconcile without replay" });
+     const after = await read(name);
+     if (
+       after.status !== 200 ||
+@@ -37,6 +50,8 @@ export async function restoreRoot(plan, { read, write, equivalent }) {
+       (response && ![200, 201, 204].includes(response.status))
+     )
+       throw Error("Rollback readback failed: " + name);
++    await record("authoring-readback-verified", { path: name,
++      sha256: sha(after.bytes), etag: after.etag, reconciled: !response });
+     receipt.push({
+       path: name,
+       sha256: sha(after.bytes),
+diff --git a/tools/verify-public-boards.mjs b/tools/verify-public-boards.mjs
+index e172305..9912ab8 100644
+--- a/tools/verify-public-boards.mjs
++++ b/tools/verify-public-boards.mjs
+@@ -1,7 +1,7 @@
+ import fs from "node:fs/promises";
+ import path from "node:path";
+ import { fileURLToPath } from "node:url";
+-import { randomUUID } from "node:crypto";
++import { randomUUID, createHash } from "node:crypto";
+ import { DOMParser } from "linkedom";
+ import { Boards, runHTML } from "../app/boards.js";
+ import { stable } from "../app/model.js";
+@@ -20,11 +20,18 @@ const attempted = new Map(
+ );
+ const failures = [];
+ const checks = [];
++const publicMutationGapMs = 1500;
++let lastPublicMutation = 0;
+ 
+ function url(base, pathname) {
+   return new URL(pathname, base).href;
+ }
+ async function request(base, pathname, options = {}) {
++  if (base === BOARD_ORIGIN && options.method && options.method !== "GET") {
++    const wait = lastPublicMutation + publicMutationGapMs - Date.now();
++    if (wait > 0) await new Promise(resolve => setTimeout(resolve, wait));
++    lastPublicMutation = Date.now();
++  }
+   return fetch(url(base, pathname), {
+     ...options,
+     redirect: "error",
+@@ -69,6 +76,16 @@ async function readOwner(mode) {
+     headers: { Authorization: "Bearer " + ownerKey },
+   });
+ }
++async function policySnapshot(mode) {
++  const response = await readOwner(mode);
++  if (!response.ok) throw Error("Policy baseline unavailable: " + mode);
++  const doc = new DOMParser().parseFromString(await response.text(), "text/html");
++  const rules = [...doc.querySelectorAll('[hidden][itemscope]')];
++  if (rules.length < 5) throw Error("Established policy definitions missing: " + mode);
++  const source = rules.map(rule => rule.outerHTML).join("\n");
++  return { etag: response.headers.get("ETag"), rules: rules.length,
++    sha256: createHash("sha256").update(source).digest("hex") };
++}
+ async function cleanupMode(mode) {
+   const ids = attempted.get(mode), response = await readOwner(mode);
+   if (response.status === 404) return { removed: 0, state: "already-absent" };
+@@ -221,6 +238,12 @@ async function checkMode(mode, identities) {
+   }
+ 
+   const invalid = [
++    { name: "missing-field-rejected", body: positiveBody.replace(/<meta itemprop="alias" content="[^"]*">/, "") },
++    { name: "extra-field-rejected", body: positiveBody.replace("</li>", '<meta itemprop="unknown" content="extra"></li>') },
++    { name: "wrong-type-rejected", body: positiveBody.replace('itemprop="elapsedMs" content="480000"', 'itemprop="elapsedMs" content="not-a-number"') },
++    { name: "unsupported-track-rejected", body: positiveBody.replace('itemprop="trackId" content="'+positive.trackId+'"', 'itemprop="trackId" content="00000000-0000-4000-8000-000000000000"') },
++    { name: "unsupported-rules-rejected", body: positiveBody.replace('itemprop="rulesRevision" content="'+positive.rulesRevision+'"', 'itemprop="rulesRevision" content="unsupported"') },
++    { name: "invalid-split-shape-rejected", body: positiveBody.replace('itemprop="splits" content="[160000,160000,160000]"', 'itemprop="splits" content="[240000,240000]"') },
+     {
+       name: "split-arithmetic-rejected",
+       body: positiveBody.replace(
+@@ -269,6 +292,26 @@ async function checkMode(mode, identities) {
+       checks.at(-1).detail = error.message;
+     }
+   }
++  // Address only this fixture's active row. Never submit a document-wide
++  // mutation or an expiry selector that can select another player's time.
++  const selector = '#runs > li:has(meta[itemprop="id"][content="' + positive.id + '"])';
++  for (const method of ["PUT", "PATCH", "DELETE"]) {
++    try {
++      const response = await request(BOARD_ORIGIN, BOARD_PATHS[mode], {
++        method, headers: { "Content-Type": "text/html", Range: "selector=" + selector },
++        ...(method === "DELETE" ? {} : { body: positiveBody }),
++      });
++      recordCheck("prohibited-" + method.toLowerCase(), mode, positive.id,
++        [401,403,405,422].includes(response.status) ? "passed" : "failed", response.status);
++      const after = await endpoints.readRows(mode);
++      const matches = after.rows.filter(row => row.id === positive.id);
++      recordCheck("active-row-preserved-after-" + method.toLowerCase(), mode, positive.id,
++        matches.length === 1 && matches[0].alias === positive.alias ? "passed" : "failed", matches.length);
++    } catch (error) {
++      recordCheck("prohibited-" + method.toLowerCase(), mode, positive.id, "failed", 0);
++      checks.at(-1).detail = error.message;
++    }
++  }
+ }
+ async function run(key) {
+   ownerKey = key;
+@@ -279,7 +322,9 @@ async function run(key) {
+     headers: { Authorization: "Bearer " + ownerKey, Depth: "0" },
+   });
+   if (auth.status !== 207) throw Error("Pagelove owner authentication failed.");
+-  const identities = await loadOfficialBoardIdentities(), cleanup = {};
++  const identities = await loadOfficialBoardIdentities(), cleanup = {}, policyPreservation = {};
++  for (const mode of Object.keys(BOARD_PATHS))
++    policyPreservation[mode] = { before: await policySnapshot(mode) };
+   try {
+     for (const mode of Object.keys(BOARD_PATHS)) await checkMode(mode, identities);
+   } finally {
+@@ -291,6 +336,13 @@ async function run(key) {
+         failures.push("Synthetic cleanup failed for " + mode + ".");
+       }
+     }
++    for (const mode of Object.keys(BOARD_PATHS)) {
++      try {
++        policyPreservation[mode].after = await policySnapshot(mode);
++        policyPreservation[mode].unchanged = policyPreservation[mode].before.sha256 === policyPreservation[mode].after.sha256;
++        if (!policyPreservation[mode].unchanged) failures.push("Established policy changed for " + mode);
++      } catch (error) { failures.push("Policy preservation readback failed: " + mode); }
++    }
+     ownerKey = "";
+   }
+   const receipt = {
+@@ -299,6 +351,9 @@ async function run(key) {
+     policyRevision: "scrap-league-casual-v1",
+     tests: checks,
+     cleanup,
++    policyPreservation,
++    publicMutationGapMs,
++    pacingScope: "Predeclared low-rate comparison after retained burst failures; no warmup/activation/global-readiness inference and no server-error-as-validation-pass substitution",
+     providerWideReadiness: "not available; endpoint observations are not a global guarantee",
+     passed: failures.length === 0,
+     failures,

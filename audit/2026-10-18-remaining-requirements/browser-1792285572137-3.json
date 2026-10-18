@@ -1,0 +1,383 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Complete injected touch pause settings resume",
+      "status": "passed",
+      "durationMs": 32021,
+      "details": {
+        "rows": [
+          {
+            "viewport": [
+              390,
+              844
+            ],
+            "layout": "pad",
+            "leftHanded": false,
+            "before": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          },
+          {
+            "viewport": [
+              390,
+              844
+            ],
+            "layout": "pad",
+            "leftHanded": true,
+            "before": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          },
+          {
+            "viewport": [
+              390,
+              844
+            ],
+            "layout": "buttons",
+            "leftHanded": false,
+            "before": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          },
+          {
+            "viewport": [
+              390,
+              844
+            ],
+            "layout": "buttons",
+            "leftHanded": true,
+            "before": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          },
+          {
+            "viewport": [
+              844,
+              390
+            ],
+            "layout": "pad",
+            "leftHanded": false,
+            "before": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          },
+          {
+            "viewport": [
+              844,
+              390
+            ],
+            "layout": "pad",
+            "leftHanded": true,
+            "before": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 0.8641304347826086,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          },
+          {
+            "viewport": [
+              844,
+              390
+            ],
+            "layout": "buttons",
+            "leftHanded": false,
+            "before": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          },
+          {
+            "viewport": [
+              844,
+              390
+            ],
+            "layout": "buttons",
+            "leftHanded": true,
+            "before": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "neutral": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "resumed": {
+              "steer": 0,
+              "throttle": 0,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "after": {
+              "steer": 1,
+              "throttle": 1,
+              "brake": 0,
+              "handbrake": false,
+              "boost": false
+            },
+            "captures": [
+              501,
+              502,
+              503,
+              504
+            ],
+            "clockStopped": true
+          }
+        ],
+        "scope": "Complete injected touch contact + ordinary native button activation journeys, portrait/landscape, both layouts/sides. Pointer capture is explicitly stubbed for synthetic contacts; actual trusted pointer/canvas checks are separate, and physical touch is excluded."
+      },
+      "qualification": {
+        "utc": "2026-10-18T01:05:40.073Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4430/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1920,
+          753
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "race",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T01:06:12.137Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "7db5852b496264744a3bfcf8c24f813e66819aa149cb78129451cbe13a714b93",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

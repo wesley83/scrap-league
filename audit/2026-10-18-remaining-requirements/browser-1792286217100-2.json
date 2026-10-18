@@ -1,0 +1,171 @@
+{
+  "release": "sl-df25314411c847",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Critical input and enlarged text layout matrix",
+      "status": "passed",
+      "durationMs": 2145,
+      "details": {
+        "rows": [
+          {
+            "viewport": [
+              320,
+              568
+            ],
+            "surface": "Workshop",
+            "computedFontScale": 2,
+            "measuredFieldFont": "42px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              320,
+              568
+            ],
+            "surface": "Settings",
+            "computedFontScale": 2,
+            "measuredFieldFont": "32px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              390,
+              844
+            ],
+            "surface": "Workshop",
+            "computedFontScale": 2,
+            "measuredFieldFont": "42px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              390,
+              844
+            ],
+            "surface": "Settings",
+            "computedFontScale": 2,
+            "measuredFieldFont": "32px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              844,
+              390
+            ],
+            "surface": "Workshop",
+            "computedFontScale": 2,
+            "measuredFieldFont": "48px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              844,
+              390
+            ],
+            "surface": "Settings",
+            "computedFontScale": 2,
+            "measuredFieldFont": "32px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              768,
+              1024
+            ],
+            "surface": "Workshop",
+            "computedFontScale": 2,
+            "measuredFieldFont": "48px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              768,
+              1024
+            ],
+            "surface": "Settings",
+            "computedFontScale": 2,
+            "measuredFieldFont": "32px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              1024,
+              768
+            ],
+            "surface": "Workshop",
+            "computedFontScale": 2,
+            "measuredFieldFont": "48px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              1024,
+              768
+            ],
+            "surface": "Settings",
+            "computedFontScale": 2,
+            "measuredFieldFont": "32px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              1440,
+              900
+            ],
+            "surface": "Workshop",
+            "computedFontScale": 2,
+            "measuredFieldFont": "48px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          },
+          {
+            "viewport": [
+              1440,
+              900
+            ],
+            "surface": "Settings",
+            "computedFontScale": 2,
+            "measuredFieldFont": "32px",
+            "overflow": 0,
+            "focusedFieldVisible": true
+          }
+        ],
+        "scope": "Actual iframe CSS viewport and every computed descendant font explicitly doubled, with focused-field visibility/scroll checks. This is text-size emulation, not OS zoom, physical phone or a full WCAG certification."
+      },
+      "qualification": {
+        "utc": "2026-10-18T01:16:54.952Z",
+        "release": "sl-df25314411c847",
+        "entry": "http://127.0.0.1:4430/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T01:16:57.100Z",
+  "sourceHash": "7d176b9aacc231798b7cb57d4c11c2a711dbdbafba48a5c7363ec71b6552d7ce",
+  "serverSha256": "1043dcd102f20125c14aeafe6dc4e88ff4e955d90a64492b69c322f55601a0f5",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

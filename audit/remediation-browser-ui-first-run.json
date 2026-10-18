@@ -1,0 +1,124 @@
+{
+  "release": "sl-9b61124be2a09d",
+  "utc": "2026-10-16T14:56:48.623Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Apply verified update between runs",
+      "status": "passed",
+      "detail": {
+        "before": "./releases/sl-771ba0a51f8259/",
+        "after": "./releases/sl-9b61124be2a09d/",
+        "explicitSafeActivation": true
+      },
+      "utc": "2026-10-16T14:53:41.062Z"
+    },
+    {
+      "name": "Injected gamepad, large text and touch interruption",
+      "status": "passed",
+      "detail": {
+        "emulatedGamepad": true,
+        "rangeAdjustment": true,
+        "startPauseResume": true,
+        "disconnect": true,
+        "touchCancellation": true,
+        "textScale": "200% root font, settings dialog",
+        "scope": "Injected browser input; no physical controller or device claim"
+      },
+      "utc": "2026-10-16T14:54:15.235Z"
+    },
+    {
+      "name": "All official circuits through Workshop UI",
+      "status": "passed",
+      "detail": {
+        "rows": [
+          {
+            "slug": "yard-loop",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "tin-can-alley",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "gravel-shift",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "dockside-dash",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "container-switchback",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "salt-flat-sprint",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "furnace-bend",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "mudworks",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "crusher-circuit",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "night-sort",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "redline-ridge",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "the-big-salvage",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          }
+        ],
+        "scope": "Current official copies opened, edited, undone and serialized through actual UI. Original official authoring was CLI; that history is not rewritten."
+      },
+      "utc": "2026-10-16T14:55:29.941Z"
+    },
+    {
+      "name": "Native route client and local include fallback",
+      "status": "failed",
+      "error": "Native route offered no usable action",
+      "utc": "2026-10-16T14:55:49.353Z"
+    }
+  ]
+}

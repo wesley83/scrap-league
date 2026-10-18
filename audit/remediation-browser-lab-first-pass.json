@@ -1,0 +1,90 @@
+{
+  "release": "sl-852386ae2d4314",
+  "utc": "2026-10-16T13:54:36.686Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Storage migration, abort and backup",
+      "status": "passed",
+      "detail": {
+        "database": "Real browser IndexedDB; isolated disposable database",
+        "abort": true,
+        "conflict": true,
+        "reopen": true,
+        "backup": true
+      },
+      "utc": "2026-10-16T13:48:08.951Z"
+    },
+    {
+      "name": "Audio signal and voice budget",
+      "status": "passed",
+      "detail": [
+        {
+          "scene": "yard",
+          "voices": 24,
+          "peak": 0.0699876993894577,
+          "rms": 0.009140108336438841
+        },
+        {
+          "scene": "docks",
+          "voices": 24,
+          "peak": 0.07079418748617172,
+          "rms": 0.009135273118185632
+        },
+        {
+          "scene": "foundry",
+          "voices": 24,
+          "peak": 0.06938960403203964,
+          "rms": 0.009108347210048386
+        },
+        {
+          "scene": "final",
+          "voices": 24,
+          "peak": 0.07215198874473572,
+          "rms": 0.009116634456632503
+        }
+      ],
+      "utc": "2026-10-16T13:52:29.292Z"
+    },
+    {
+      "name": "Settings, input and graphics interruption",
+      "status": "failed",
+      "error": "Pause advanced time",
+      "utc": "2026-10-16T13:52:43.240Z"
+    },
+    {
+      "name": "Startup import failure fallback",
+      "status": "passed",
+      "detail": {
+        "failure": "The yard could not open. Failed to fetch dynamically imported module: http://127.0.0.1:4392/startup-fault/releases/sl-852386ae2d4314/main.js Your saved progress and drafts are kept.",
+        "reloadVisible": true
+      },
+      "utc": "2026-10-16T13:53:57.049Z"
+    },
+    {
+      "name": "Offline corruption and repair",
+      "status": "passed",
+      "detail": {
+        "missingEntryRefused": true,
+        "repairVerified": true
+      },
+      "utc": "2026-10-16T13:54:07.116Z"
+    },
+    {
+      "name": "Offline reload with network unavailable",
+      "status": "passed",
+      "detail": {
+        "network503": true,
+        "offlineGame": true,
+        "workshop": true,
+        "scope": "Existing browser process, newly loaded document"
+      },
+      "utc": "2026-10-16T13:54:23.153Z"
+    }
+  ]
+}

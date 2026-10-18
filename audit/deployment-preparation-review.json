@@ -1,0 +1,95 @@
+{
+  "utc": "2026-10-16T16:35:55.164Z",
+  "patch": {
+    "path": ".local/deployment-preparation.patch",
+    "sha256": "3182ef56501b655487e7aa9736c6a2a65a0304e876c524e80f6b548c45b00c1f"
+  },
+  "files": [
+    {
+      "path": "DEPLOYMENT.md",
+      "sha256": "d6f2674dfae80c4a85bfefb271a508c81f493e407f6854ef5fea5d851af71385"
+    },
+    {
+      "path": "IMPLEMENTATION-STATUS.md",
+      "sha256": "861b930f232ec598b2834f18de215ef4fe6a22c869f8932ec8803ede632d03b4"
+    },
+    {
+      "path": "PLAY.md",
+      "sha256": "03021108d71fcee1f8686ffbf9a2a29ccbbaef3c9061ddcfd412da00d2fb6cbd"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ba4f95c0ad991999d85ba542980e4ff6f1b18d6416562f03d655207bdc94aa4d"
+    },
+    {
+      "path": "audit/2026-10-16-remediation.md",
+      "sha256": "66114126ada7557fe1523b6e9eb1af71967823ff8908ea070c88efa206d48bef"
+    },
+    {
+      "path": "audit/current-acceptance.json",
+      "sha256": "c0a914b30d2a444fb6af3064a540574dd28e41c2e438cffffb1d36d4a0effe2a"
+    },
+    {
+      "path": "audit/deployment-authorization-2026-10-16.json",
+      "sha256": "b62866d4f0b533104f4dd9642fefba63d90ed408d6d6c492f4a52a28b2cfb9b3"
+    },
+    {
+      "path": "audit/deployment-before-remediation.json",
+      "sha256": "eaef983560b9cdd9091b239b73d69c69edc434a2e1216442250e79525457d1ae"
+    },
+    {
+      "path": "audit/deployment-candidate-tests.txt",
+      "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+    },
+    {
+      "path": "audit/remediation-candidate-hashes.json",
+      "sha256": "6d14d5f5b91d9a7a43363103e6e96633c1f6e6bffeaabc6b765cdec916f8118c"
+    },
+    {
+      "path": "audit/remediation-handling.json",
+      "sha256": "ed3cd21c2c3a6b3ec641002776a382373d642768b0ed0e1be3f6b5cbff10e6a9"
+    },
+    {
+      "path": "audit/remediation-persisted-campaigns.json",
+      "sha256": "c9eec29a86a0bb8279748826913a273cf95c68af605191128f7d7f546580dd7a"
+    },
+    {
+      "path": "audit/remediation-simulation-races.json",
+      "sha256": "92edfb80d69f0749d2977a224b1a9e2417d51394c8768f5a34b858192e581fcc"
+    },
+    {
+      "path": "dist/release.json",
+      "sha256": "6511c1d23650399b985cc22d51c983f400917c2f1dc9c22b28b320199cb273ca"
+    },
+    {
+      "path": "references/GAME-DEVELOPMENT-BEST-PRACTICES-2026-10-16.md",
+      "sha256": "a36ca9adcf2fbca0178cc92bf11f43f647aaf36a5b819a42e5112b094518a2fb"
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "421da25f5e649fbc2be9f83af94722153780d554d087735d516f823f8478e875"
+    },
+    {
+      "path": "tests/candidate-publication.test.mjs",
+      "sha256": "8980795c599b8c419ed608a99ef92d699a9b81592ef0aba883b7f0df6cdcebbb"
+    },
+    {
+      "path": "tests/release-gate.test.mjs",
+      "sha256": "0f99883b2e921555a5ce8168c8b3bd596c7bd2efb71172463e822c72457af542"
+    },
+    {
+      "path": "tools/candidate-publication.mjs",
+      "sha256": "89434e0f5e9256ab692c82d968ffb9ae4a4c19e65d9ef69e80cb7031d78dc78a"
+    },
+    {
+      "path": "tools/deploy-pagelove.mjs",
+      "sha256": "59e91974150e2a92f2c1c077b990fce62c89ef646f22db11df0e76c3f2cc036f"
+    },
+    {
+      "path": "tools/release-gate.mjs",
+      "sha256": "e5ffe9d1306307f5e93c8a3b3967fa6303ef061ace466ea9e8741283b0ecf403"
+    }
+  ],
+  "stagedBytesMatch": true,
+  "credentialScanPassed": true
+}

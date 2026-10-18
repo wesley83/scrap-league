@@ -1,0 +1,19 @@
+{
+  "scope": "Actual CLI and controlled host, not public game acceptance",
+  "observations": [
+    {
+      "scenario": "corrupt-backup",
+      "result": {
+        "error": "Backup verification failed: /index.html; journal audit/deployments/2026-10-18T01-11-57-509Z-9c8f3eb1-125f-4cc7-9e78-8ea179793fc1.jsonl"
+      },
+      "remoteWrites": 0
+    },
+    {
+      "scenario": "recovery-concurrency",
+      "result": {
+        "error": "Remote state changed after recovery preparation: /index.html"
+      },
+      "newRemoteWrites": 0
+    }
+  ]
+}

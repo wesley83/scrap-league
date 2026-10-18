@@ -1,0 +1,95 @@
+{
+  "utc": "2026-10-17T23:56:49.779Z",
+  "method": "Read-only public HTTP checks; no validation/write or provider-wide readiness claim",
+  "liveRelease": "sl-8c38d2602f174d",
+  "localRelease": "sl-475e681fb90505",
+  "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
+  "entry": {
+    "status": 200,
+    "sha256": "0a01843c1158df1fba3e2d21655f27a8c760fb344ebcc946f540ea0d8e2aadd9",
+    "base": "https://hire-poker-8313.onpagelove.com/releases/sl-8c38d2602f174d/"
+  },
+  "requests": [
+    {
+      "path": "/releases/sl-8c38d2602f174d/icons/favicon.ico",
+      "status": 200,
+      "type": "image/x-icon",
+      "bytes": 1539,
+      "sha256": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039",
+      "inventoryMatch": true
+    },
+    {
+      "path": "/releases/sl-8c38d2602f174d/icons/icon-180.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2563,
+      "sha256": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2",
+      "inventoryMatch": true
+    },
+    {
+      "path": "/releases/sl-8c38d2602f174d/icon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 426,
+      "sha256": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02",
+      "inventoryMatch": true
+    },
+    {
+      "path": "/releases/sl-8c38d2602f174d/style.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 30199,
+      "sha256": "73c2beba91c320753d2d3afdf37fd1a1f15d5f95bcea31495727400cfeca52c4",
+      "inventoryMatch": true
+    },
+    {
+      "path": "/releases/sl-8c38d2602f174d/arcade.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 17995,
+      "sha256": "97f39b2b00c55e335d771d1c55f9d7fd9efc2566d19a55fa8baa9be892c71e37",
+      "inventoryMatch": true
+    },
+    {
+      "path": "/releases/sl-8c38d2602f174d/social/og-landscape-v1.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 116757,
+      "sha256": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa",
+      "inventoryMatch": true
+    },
+    {
+      "path": "/editor/yard-loop",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 22023,
+      "sha256": "04df0db1d5e4f24a797b861ca389697d688030cbd64e6cbbc3c5bc38c5b10436",
+      "inventoryMatch": null
+    },
+    {
+      "path": "/track/yard-loop",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 22023,
+      "sha256": "04df0db1d5e4f24a797b861ca389697d688030cbd64e6cbbc3c5bc38c5b10436",
+      "inventoryMatch": null
+    },
+    {
+      "path": "/boards/trial.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 17082,
+      "sha256": "c030d9311b7d33c12cc9ba8ff26890a4426ba3242f09ad916f678f0ae74a891d",
+      "inventoryMatch": null
+    },
+    {
+      "path": "/boards/daily.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 32822,
+      "sha256": "ebabf021bb75cc88c126d20bbbce40a202f7b4d8627017e8b36d4cc967382056",
+      "inventoryMatch": null
+    }
+  ],
+  "localCandidatePublished": false
+}

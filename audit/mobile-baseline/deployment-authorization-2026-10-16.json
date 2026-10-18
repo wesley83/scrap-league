@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "operation": "publish-candidate",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "authorizedBy": "Wesley",
+  "request": "Commit, push, deploy",
+  "context": "The user explicitly requested publication immediately after the assistant disclosed that the repaired PWA install/close/offline-reopen journey remained unverified, and after the fuller acceptance-gap report. This authorizes this candidate publication with those recorded limitations, without marking them passed or permanently removing them.",
+  "utc": "2026-10-16T16:35:32.791Z",
+  "release": "sl-eca6f97d1308a3",
+  "sourceHash": "6095fdba162a2288fdbde6a490d9b3dc8f397e5a4d3e11036542f50a8bbf532e",
+  "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
+  "acceptanceHash": "c0a914b30d2a444fb6af3064a540574dd28e41c2e438cffffb1d36d4a0effe2a",
+  "knownIncomplete": [
+    {
+      "id": "J01",
+      "status": "partial",
+      "note": "Prior ordinary-drive browser evidence exists, but the full fresh-player finish journey has not been repeated on this candidate."
+    },
+    {
+      "id": "J03",
+      "status": "partial",
+      "note": "Continuous persisted campaigns and atomic reward tests pass. Complete cup UI/reload journey remains unverified."
+    },
+    {
+      "id": "J06",
+      "status": "partial",
+      "note": "Independent timing arithmetic and best/ghost transactions pass; complete compatible-ghost improvement UI journey remains to verify."
+    },
+    {
+      "id": "J08",
+      "status": "partial",
+      "note": "Earlier UI-built loop completed a normal lap. Current editor commands, topology and official-copy editing pass; full current pointer/keyboard/emulated-touch creator journey remains incomplete."
+    },
+    {
+      "id": "J09",
+      "status": "partial",
+      "note": "View/selection restoration, history, save-failure navigation and stored-revision tests pass. Complete current five-AI test/return/undo/reload UI sequence remains incomplete."
+    },
+    {
+      "id": "J12",
+      "status": "partial",
+      "note": "Publication survives catalog failure in isolated fixtures. Actual provider track-success/catalog-conflict/retry journey remains unverified."
+    },
+    {
+      "id": "J13",
+      "status": "blocked",
+      "note": "Available browser control cannot restart the browser process. Offline new-document load and isolated worker-runtime restart passed but are narrower than the adopted cold-relaunch outcome."
+    },
+    {
+      "id": "J15",
+      "status": "blocked",
+      "note": "Durable two-client timeout-after-acceptance reconciliation passes in fixtures. Actual public endpoint remains disabled pending provider validation/readiness."
+    },
+    {
+      "id": "J18",
+      "status": "partial",
+      "note": "Audio signals/voice bounds and five scene families were checked in the browser. Complete muted/reduced-motion/low-effects finish journeys remain unverified."
+    },
+    {
+      "id": "P01",
+      "status": "partial",
+      "note": "Migration, conflicts, quota/failure-then-navigation, backups and abort/reopen checks pass. Complete crash-boundary matrix remains narrower than the adopted method."
+    },
+    {
+      "id": "P04",
+      "status": "partial",
+      "note": "Actual pinned-host conditional writes, wrong credential, stale ETag and ambiguity readback passed. Create-only conflict and full application UI evidence remain incomplete."
+    },
+    {
+      "id": "P05",
+      "status": "blocked",
+      "note": "Actual public application validation endpoint has not been enabled or verified. Client checks are not a server validation boundary."
+    },
+    {
+      "id": "P06",
+      "status": "blocked",
+      "note": "Client exact-expiry filtering passed. Provider cleanup policy and separate physical storage inspection remain unverified."
+    },
+    {
+      "id": "P07",
+      "status": "partial",
+      "note": "Native primitive probes and five local production-wrapper routes passed. Earlier method memory-budget 500 retained; final static route provider readback pending."
+    },
+    {
+      "id": "P08",
+      "status": "blocked",
+      "note": "The user confirmed no supported provider policy activation/readiness procedure is available. Source ETag, OPTIONS and warmup cannot establish enforcement readiness; public boards remain disabled."
+    },
+    {
+      "id": "M02",
+      "status": "partial",
+      "note": "Advanced editor tools implemented and current official-copy UI checks pass. Complete new-track keyboard/emulated-touch end-to-end sequence remains incomplete."
+    },
+    {
+      "id": "M03",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance."
+    },
+    {
+      "id": "M04",
+      "status": "blocked",
+      "note": "Offline faults, sharing, audio, saved continuation and updates implemented. Actual cold browser-process relaunch unavailable; some exact UI journeys remain incomplete."
+    },
+    {
+      "id": "M05",
+      "status": "blocked",
+      "note": "Owner/native client implementation and primitive probes exist. Server validation/retention/readiness remain unresolved."
+    },
+    {
+      "id": "M06",
+      "status": "blocked",
+      "note": "Not all required rows pass; no current production promotion or final public readback."
+    },
+    {
+      "id": "C06",
+      "status": "not-run",
+      "note": "No current candidate production promotion; final public status/type/hash/route readback not run."
+    },
+    {
+      "id": "C10",
+      "status": "partial",
+      "note": "All 83 automated tests passed after adding exact-candidate publication authorization and its refusal fixtures. Required end-to-end/provider rows remain incomplete; ordinary acceptance stays refused. The user separately authorized publishing this candidate with recorded limitations."
+    }
+  ],
+  "publicBoards": "disabled",
+  "deploymentControls": "Exact artifact/evidence hashes, pinned host, conditional writes, private backups, preservation of old assets/player data and public readback remain mandatory."
+}

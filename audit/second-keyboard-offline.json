@@ -1,0 +1,62 @@
+{
+  "utc": "2026-10-17T23:01:52.328Z",
+  "release": "sl-7480f2b6675883",
+  "equivalentCandidate": "sl-8c38d2602f174d",
+  "method": "Normal installed local browser, semantic locators with native Enter/select keys/typing, real file download and file-chooser import; no review exports on this origin.",
+  "journeyRelease": "sl-dacba7fbb6b074",
+  "creator": {
+    "name": "Keyboard recovery circuit",
+    "pieces": 8,
+    "lengthMeters": 491,
+    "newBlank": true,
+    "closedAndValidated": true,
+    "sixGridPositions": true,
+    "fiveAI": true,
+    "testLaps": 1,
+    "observedNativeKeySpeedKmh": 59,
+    "pausedReturned": true,
+    "undoRedo": true,
+    "downloadedHTML": true,
+    "importedNewCopy": true,
+    "savedCopyReloaded": true
+  },
+  "limits": "Connector locators focus controls before keyboard activation; not every transition used sequential Tab. Real-key test did not finish a lap. Separate same-model legal-controller browser fixtures finish three laps. Final source changes entry/recovery only; model/compiler/editor commands/input/simulation are unchanged.",
+  "finalUpdate": {
+    "from": "sl-37615e5369f322",
+    "to": "sl-7480f2b6675883",
+    "explicitReviewAndApply": true,
+    "progress": "5/12 parts, 1/12 events",
+    "draftBefore": "Offline keyboard recovered final",
+    "draftRetained": true
+  },
+  "routeRecovery": {
+    "serverStopped": true,
+    "independentlyConfirmedUnavailable": true,
+    "track": "/track/yard-loop",
+    "explicitInstalledCopyNotice": true,
+    "hostile": "/editor/%3Cscript%3E",
+    "safeChooser": true,
+    "savedWorkshopAction": true,
+    "finalDraft": "Offline final checked",
+    "offlineEditFreshDocumentReload": true,
+    "coldBrowserProcessRestart": false
+  },
+  "export": {
+    "path": "audit/second-keyboard-track.html",
+    "sha256": "5a9ae05e0dc0f01bb6364343913ac1371e6d039c0866017b517836987f608eb9"
+  },
+  "screenshots": [
+    {
+      "path": "audit/screenshots/second-keyboard-editor.jpg",
+      "sha256": "f09d382257dd57891a72f8128ff7ae3cd53775f45bd26ef00350938a0cf1abf0"
+    },
+    {
+      "path": "audit/screenshots/second-keyboard-final.jpg",
+      "sha256": "012ca09b429c59779ebb322811868916b5f5f08cb1a1ddb4a4a9d462196ca8aa"
+    },
+    {
+      "path": "audit/screenshots/second-keyboard-corrected.jpg",
+      "sha256": "c527293444c1ca9fc688d06fed0146afadf1023150f27211fd1686330388f35a"
+    }
+  ]
+}

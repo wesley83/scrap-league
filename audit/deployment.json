@@ -1,131 +1,367 @@
 {
-  "utc": "2026-10-16T11:36:57.066Z",
+  "utc": "2026-10-18T04:51:16.469Z",
   "origin": "https://hire-poker-8313.onpagelove.com",
+  "journal": "audit/deployments/2026-10-18T04-49-46-569Z-696fdf9e-51bc-4b8a-bcab-1e62f40b8ea3.jsonl",
   "authoringHost": "https://dav-hire-poker-8313.onpagelove.com",
-  "release": "sl-b5f8aa986aa675",
+  "release": "sl-28ec5378c02128",
+  "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
+  "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
+  "publicationAuthorization": null,
+  "productAcceptance": "Required pre-promotion acceptance passed",
   "publication": "Immutable assets and authored content staged and publicly verified before conditional root entry promotion",
   "htmlSerializationAdjusted": true,
-  "sourceIndexSha256": "b8589d8251c666afa43113b5c71330425db02f8011b68180540eb9da8b8cf9c3",
-  "publicIndexSha256": "48a21db8a1518c849dc2b67b37c6c9c27b96120829549efd3e145f9b664214d2",
+  "sourceIndexSha256": "d78876f2f1f3f792a2dec2925af18475bad964a1e90c53b531b6a6cd94b14001",
+  "publicIndexSha256": "5cb3d2bfeabb64c623fdce825bba98cf73d89e5b76f745370c41605d2054b663",
   "files": [
     {
-      "path": "/releases/sl-b5f8aa986aa675/audio.js",
+      "path": "/releases/sl-28ec5378c02128/ai-profile.js",
       "status": 201,
-      "bytes": 1736,
-      "sha256": "ff4ef73d62c47215587a83840e9b932a691b3b64596136bdd53ca1904b42479c",
-      "sourceSha256": "ff4ef73d62c47215587a83840e9b932a691b3b64596136bdd53ca1904b42479c"
+      "bytes": 1269,
+      "sha256": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
+      "sourceSha256": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/builds.js",
+      "path": "/releases/sl-28ec5378c02128/arcade-renderer.js",
       "status": 201,
-      "bytes": 1556,
-      "sha256": "7250ed84bdd8ed089692df177a1ea844b01103ee2b4a33791e066db6ddbabd95",
-      "sourceSha256": "7250ed84bdd8ed089692df177a1ea844b01103ee2b4a33791e066db6ddbabd95"
+      "bytes": 18610,
+      "sha256": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd",
+      "sourceSha256": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/icon.svg",
+      "path": "/releases/sl-28ec5378c02128/arcade.css",
       "status": 201,
-      "bytes": 436,
-      "sha256": "bd0e21954bddbd1a030e91cc7c66d531f558b5b126e05f3df2c59d5dc1221585",
-      "sourceSha256": "bd0e21954bddbd1a030e91cc7c66d531f558b5b126e05f3df2c59d5dc1221585"
+      "bytes": 20553,
+      "sha256": "c30dfabd6a1c8d2b8d7053e7bd76a933fb1d26c6d87019dc703ee954d963c7f4",
+      "sourceSha256": "c30dfabd6a1c8d2b8d7053e7bd76a933fb1d26c6d87019dc703ee954d963c7f4"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/main.js",
+      "path": "/releases/sl-28ec5378c02128/audio.js",
       "status": 201,
-      "bytes": 35819,
-      "sha256": "74133f83e92e18b0546489791d393968d4042430a5c1c6c6b120b5454db6c462",
-      "sourceSha256": "74133f83e92e18b0546489791d393968d4042430a5c1c6c6b120b5454db6c462"
+      "bytes": 6501,
+      "sha256": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
+      "sourceSha256": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/model.js",
+      "path": "/releases/sl-28ec5378c02128/boards.js",
       "status": 201,
-      "bytes": 8168,
-      "sha256": "3168bad66939c8208c59f6b9a58bfb5d030e37b772a7ec58b4b97ebfe99608fd",
-      "sourceSha256": "3168bad66939c8208c59f6b9a58bfb5d030e37b772a7ec58b4b97ebfe99608fd"
+      "bytes": 15729,
+      "sha256": "696747b34f4ef9d61eb161eaf143972237801de8034c07fd3e18ca7b4102ecf3",
+      "sourceSha256": "696747b34f4ef9d61eb161eaf143972237801de8034c07fd3e18ca7b4102ecf3"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/pagelove.js",
+      "path": "/releases/sl-28ec5378c02128/bootstrap.js",
       "status": 201,
-      "bytes": 2954,
-      "sha256": "19e0054f464ec8dc5cb6f1bf0e68b0ee991669684e893565c37d600deed8cda1",
-      "sourceSha256": "19e0054f464ec8dc5cb6f1bf0e68b0ee991669684e893565c37d600deed8cda1"
+      "bytes": 1786,
+      "sha256": "4d2fe542b81d30d1ab1cee50ed2aecaf936ff55468ed9a72e5f0aa4e2516d94d",
+      "sourceSha256": "4d2fe542b81d30d1ab1cee50ed2aecaf936ff55468ed9a72e5f0aa4e2516d94d"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/renderer.js",
+      "path": "/releases/sl-28ec5378c02128/builds.js",
       "status": 201,
-      "bytes": 13526,
-      "sha256": "9ea8f16a4770767b93f0a52897ef3fded340f3b86f0a0db8c1f85bc3c06c1d21",
-      "sourceSha256": "9ea8f16a4770767b93f0a52897ef3fded340f3b86f0a0db8c1f85bc3c06c1d21"
+      "bytes": 2135,
+      "sha256": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f",
+      "sourceSha256": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/simulation.js",
+      "path": "/releases/sl-28ec5378c02128/collision.js",
       "status": 201,
-      "bytes": 13887,
-      "sha256": "7e5dfe7122830a7c4800fb96c947c1c3b828a76f472e6f6a38278a1de34e769e",
-      "sourceSha256": "7e5dfe7122830a7c4800fb96c947c1c3b828a76f472e6f6a38278a1de34e769e"
+      "bytes": 8116,
+      "sha256": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
+      "sourceSha256": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/storage.js",
+      "path": "/releases/sl-28ec5378c02128/continuation.js",
       "status": 201,
-      "bytes": 3722,
-      "sha256": "fc15fa064fdeb4c26c36932d1310ac9c6609bfcb44c38b6789fbe5ffa310bd7b",
-      "sourceSha256": "fc15fa064fdeb4c26c36932d1310ac9c6609bfcb44c38b6789fbe5ffa310bd7b"
+      "bytes": 2762,
+      "sha256": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
+      "sourceSha256": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/style.css",
+      "path": "/releases/sl-28ec5378c02128/driver-profile.js",
       "status": 201,
-      "bytes": 20853,
-      "sha256": "6369c3c03494e15a6ac884d675934889c09994104884d4cb86dc258347a12122",
-      "sourceSha256": "6369c3c03494e15a6ac884d675934889c09994104884d4cb86dc258347a12122"
+      "bytes": 2012,
+      "sha256": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89",
+      "sourceSha256": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/track.js",
+      "path": "/releases/sl-28ec5378c02128/driving-controls.js",
       "status": 201,
-      "bytes": 10999,
-      "sha256": "4f6ba0307349d7a80f46d70244e5bbc80103dafea16346d2f492c48c5b8260b4",
-      "sourceSha256": "4f6ba0307349d7a80f46d70244e5bbc80103dafea16346d2f492c48c5b8260b4"
+      "bytes": 5606,
+      "sha256": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e",
+      "sourceSha256": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/workshop.js",
+      "path": "/releases/sl-28ec5378c02128/editor-commands.js",
       "status": 201,
-      "bytes": 23121,
-      "sha256": "3bb8b35cbb6ba1442bd7af0ccf9881dd35ec83160f02cc0f88f6dabc6bba6e08",
-      "sourceSha256": "3bb8b35cbb6ba1442bd7af0ccf9881dd35ec83160f02cc0f88f6dabc6bba6e08"
+      "bytes": 4419,
+      "sha256": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
+      "sourceSha256": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/content.json",
+      "path": "/releases/sl-28ec5378c02128/fonts/Barlow-OFL.txt",
+      "status": 201,
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "sourceSha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/Barlow-Regular.ttf",
+      "status": 201,
+      "bytes": 104068,
+      "sha256": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea",
+      "sourceSha256": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/Barlow-SemiBold.ttf",
+      "status": 201,
+      "bytes": 108348,
+      "sha256": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5",
+      "sourceSha256": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/BebasNeue-OFL.txt",
+      "status": 201,
+      "bytes": 4337,
+      "sha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "sourceSha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/BebasNeue-Regular.ttf",
+      "status": 201,
+      "bytes": 61400,
+      "sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "sourceSha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/graphics-policy.js",
+      "status": 201,
+      "bytes": 1076,
+      "sha256": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72",
+      "sourceSha256": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icon.svg",
+      "status": 201,
+      "bytes": 426,
+      "sha256": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02",
+      "sourceSha256": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/favicon.ico",
+      "status": 201,
+      "bytes": 1539,
+      "sha256": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039",
+      "sourceSha256": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-16.png",
+      "status": 201,
+      "bytes": 374,
+      "sha256": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c",
+      "sourceSha256": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-180.png",
+      "status": 201,
+      "bytes": 2563,
+      "sha256": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2",
+      "sourceSha256": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-192.png",
+      "status": 201,
+      "bytes": 2469,
+      "sha256": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431",
+      "sourceSha256": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-32.png",
+      "status": 201,
+      "bytes": 500,
+      "sha256": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228",
+      "sourceSha256": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-48.png",
+      "status": 201,
+      "bytes": 611,
+      "sha256": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30",
+      "sourceSha256": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-512.png",
+      "status": 201,
+      "bytes": 12129,
+      "sha256": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0",
+      "sourceSha256": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-maskable-512.png",
+      "status": 201,
+      "bytes": 8231,
+      "sha256": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f",
+      "sourceSha256": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/main.js",
+      "status": 201,
+      "bytes": 84759,
+      "sha256": "ac7a43c6dc0ccf53390e743d41d6eb3a024c4e2c0245058d2881ce31d2377922",
+      "sourceSha256": "ac7a43c6dc0ccf53390e743d41d6eb3a024c4e2c0245058d2881ce31d2377922"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/model.js",
+      "status": 201,
+      "bytes": 10482,
+      "sha256": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
+      "sourceSha256": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/offline.js",
+      "status": 201,
+      "bytes": 1018,
+      "sha256": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "sourceSha256": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/pagelove.js",
+      "status": 201,
+      "bytes": 4568,
+      "sha256": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
+      "sourceSha256": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/preferences.js",
+      "status": 201,
+      "bytes": 3181,
+      "sha256": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1",
+      "sourceSha256": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/publication.js",
+      "status": 201,
+      "bytes": 8831,
+      "sha256": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193",
+      "sourceSha256": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/renderer.js",
+      "status": 201,
+      "bytes": 137,
+      "sha256": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20",
+      "sourceSha256": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/scenes.js",
+      "status": 201,
+      "bytes": 1086,
+      "sha256": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f",
+      "sourceSha256": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/sharing.js",
+      "status": 201,
+      "bytes": 4010,
+      "sha256": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084",
+      "sourceSha256": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/simulation.js",
+      "status": 201,
+      "bytes": 18652,
+      "sha256": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d",
+      "sourceSha256": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/social/og-landscape-v1.png",
+      "status": 201,
+      "bytes": 116757,
+      "sha256": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa",
+      "sourceSha256": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/social/og-square-v1.png",
+      "status": 201,
+      "bytes": 122050,
+      "sha256": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa",
+      "sourceSha256": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/storage.js",
+      "status": 201,
+      "bytes": 24574,
+      "sha256": "a3d9f944d74bbeae073ea4065044e4417bf9f784105f9b25e56934781eb193d8",
+      "sourceSha256": "a3d9f944d74bbeae073ea4065044e4417bf9f784105f9b25e56934781eb193d8"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/style.css",
+      "status": 201,
+      "bytes": 30234,
+      "sha256": "696efcab035118cc26c295058b36c6f66cece28e1a336621d5561d561f746227",
+      "sourceSha256": "696efcab035118cc26c295058b36c6f66cece28e1a336621d5561d561f746227"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/submission-ui.js",
+      "status": 201,
+      "bytes": 5284,
+      "sha256": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144",
+      "sourceSha256": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/track-document.js",
+      "status": 201,
+      "bytes": 1451,
+      "sha256": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33",
+      "sourceSha256": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/track.js",
+      "status": 201,
+      "bytes": 16204,
+      "sha256": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
+      "sourceSha256": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/vendor/QR-LICENSE.txt",
+      "status": 201,
+      "bytes": 1094,
+      "sha256": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827",
+      "sourceSha256": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/vendor/qr.js",
+      "status": 201,
+      "bytes": 51907,
+      "sha256": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+      "sourceSha256": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/workshop.js",
+      "status": 201,
+      "bytes": 57837,
+      "sha256": "a2cd0ecb7f8a8335f19de2a60cca311e61b63153fd3557c7ae347f88a18e3b91",
+      "sourceSha256": "a2cd0ecb7f8a8335f19de2a60cca311e61b63153fd3557c7ae347f88a18e3b91"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/content.json",
       "status": 201,
       "bytes": 136198,
       "sha256": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c",
       "sourceSha256": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/vendor/three.module.js",
+      "path": "/releases/sl-28ec5378c02128/manifest.webmanifest",
       "status": 201,
-      "bytes": 603113,
-      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
-      "sourceSha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+      "bytes": 568,
+      "sha256": "eec195a39856e8258f43cdd4bd98a40625675c5afb58353f1522439f021fb02c",
+      "sourceSha256": "eec195a39856e8258f43cdd4bd98a40625675c5afb58353f1522439f021fb02c"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/vendor/three.core.js",
+      "path": "/releases/sl-28ec5378c02128/native-shell.html",
       "status": 201,
-      "bytes": 1403455,
-      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
-      "sourceSha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/vendor/THREE-LICENSE.txt",
-      "status": 201,
-      "bytes": 1081,
-      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
-      "sourceSha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/manifest.webmanifest",
-      "status": 201,
-      "bytes": 261,
-      "sha256": "4e2bbeac2d6c9b542d221e5df6bec0e1e8d2d3edd4b0b49da3afbbeaefb68a04",
-      "sourceSha256": "4e2bbeac2d6c9b542d221e5df6bec0e1e8d2d3edd4b0b49da3afbbeaefb68a04"
+      "bytes": 7511,
+      "sha256": "3d47951ed553c0af86626f5068f76775f436238fe653e618b2b0ef4bc78678f5",
+      "sourceSha256": "5db14cae56f3c5a6c603624d5a13f9ba4d417879c33f320dbd08b557a3203271"
     },
     {
       "path": "/content/catalog.html",
@@ -314,146 +550,573 @@
       "sha256": "226c951426123ccab21aa2c8a384773db213ec5441972731d75dff7c06e7eb76"
     },
     {
+      "path": "/editor/:slug",
+      "status": 200,
+      "bytes": 578,
+      "sha256": "c773c01e565fb16cb47d20f5428c75f2d3cadeae1f8c3b59e78400e37f08ad41",
+      "sourceSha256": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+    },
+    {
+      "path": "/editor/index.html",
+      "status": 200,
+      "bytes": 578,
+      "sha256": "c773c01e565fb16cb47d20f5428c75f2d3cadeae1f8c3b59e78400e37f08ad41",
+      "sourceSha256": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+    },
+    {
+      "path": "/editor/yard-loop",
+      "status": 200,
+      "bytes": 712,
+      "sha256": "13018356f03cd5e30d809adcfe5d60905a8ea7de305ed56e57e6955c3e31c969",
+      "sourceSha256": "84a14314e80cf80045843c2002730465d14fc1857d2a426e97512a16f467eef2"
+    },
+    {
+      "path": "/editor/tin-can-alley",
+      "status": 200,
+      "bytes": 716,
+      "sha256": "192ba7340b5854fb3e627ee8bca818c9f9f1a8e982b07601bf7bdf7658a7440f",
+      "sourceSha256": "2c83a42ea5b9923be60f22ecef17e9f72f86116ad23d7a837a78d23e39490492"
+    },
+    {
+      "path": "/editor/gravel-shift",
+      "status": 200,
+      "bytes": 715,
+      "sha256": "5c5563bf430b54d361562af668358bbfa10bb4130e865ff72a2d7b0ba465e891",
+      "sourceSha256": "dddad74a9218efd330a02d4d4d9cd3c65c66eb3e8c526f2f6f7cdc3a65e3830a"
+    },
+    {
+      "path": "/editor/dockside-dash",
+      "status": 200,
+      "bytes": 716,
+      "sha256": "556e4a58af05b141d3542649ba19c17d6d5bbc25e6d61125fdf8fb9aea2ea872",
+      "sourceSha256": "fe2d1d881d13cec00087f9881e7f5417eaed990503337226b700388a4d613d18"
+    },
+    {
+      "path": "/editor/container-switchback",
+      "status": 200,
+      "bytes": 723,
+      "sha256": "a46563086c5f2a3fef7eba7d94f0ed1e017b51698c87c78ce805ff282bb48fc6",
+      "sourceSha256": "bf0251eab8a8b18566b7f12503d213b1fa4ae9cb6e7ed19c33c67c28ee6c1ebc"
+    },
+    {
+      "path": "/editor/salt-flat-sprint",
+      "status": 200,
+      "bytes": 719,
+      "sha256": "beee04836257c266b8ce88bb9ca42944084c7bfd4716b4b88847c8babd129ee0",
+      "sourceSha256": "c0a2ae1b18e7d90b3205131806f9aa9b2ccd2ad908e31dd506ccf66f405c5197"
+    },
+    {
+      "path": "/editor/furnace-bend",
+      "status": 200,
+      "bytes": 715,
+      "sha256": "6cf97e16593763bcefe21d67176d390cbc09e8976c32950d5d5c8930112e0b91",
+      "sourceSha256": "b3d2241ff82ca34ec44a5864629028ff49471f263bd395c5e7e01c8959877482"
+    },
+    {
+      "path": "/editor/mudworks",
+      "status": 200,
+      "bytes": 711,
+      "sha256": "90025f73d9c525bd32e5052b93b2fd12fb70954cbf4fdb5f5a4771b4f6ae5418",
+      "sourceSha256": "9b4f09c82cfb4af330be835dd4a91c7f962097d9d72c8767449b70e83cc64964"
+    },
+    {
+      "path": "/editor/crusher-circuit",
+      "status": 200,
+      "bytes": 718,
+      "sha256": "ad573b8a2ec7f66424df80a6ae09dc9810441c18bc297b4c06998cf61947688d",
+      "sourceSha256": "62a39c120fa4a335326d9d973dbf71680d60dfff83391e4ece3aebebda9b9149"
+    },
+    {
+      "path": "/editor/night-sort",
+      "status": 200,
+      "bytes": 713,
+      "sha256": "7a1a2326cc5a36f495f43b40eb36bb5a9d1ad8b54d2967e2d864f3ea83341f87",
+      "sourceSha256": "3349192e65c3f040cc44c707180062cfd1d7ba69514d75966f479e925a4972e4"
+    },
+    {
+      "path": "/editor/redline-ridge",
+      "status": 200,
+      "bytes": 716,
+      "sha256": "ae39be9a4db9fdf6bf09b02be5346a819c9b4e8424c1e46016bc486b586cfbf5",
+      "sourceSha256": "23e18f1a40410703c35fcb784575273bdfd331a9d88cff9ece9bbecb5d8dba4f"
+    },
+    {
+      "path": "/editor/the-big-salvage",
+      "status": 200,
+      "bytes": 718,
+      "sha256": "2a59560b97646c708191db72325f103ec8f669f1bfbbbbedb82c829678e25ad9",
+      "sourceSha256": "0928da17af2275b9c4f802de1ab5f3086ba51da5b61a8885dcce5ac8a84a50f7"
+    },
+    {
+      "path": "/track/:slug",
+      "status": 200,
+      "bytes": 578,
+      "sha256": "c773c01e565fb16cb47d20f5428c75f2d3cadeae1f8c3b59e78400e37f08ad41",
+      "sourceSha256": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+    },
+    {
+      "path": "/track/index.html",
+      "status": 200,
+      "bytes": 578,
+      "sha256": "c773c01e565fb16cb47d20f5428c75f2d3cadeae1f8c3b59e78400e37f08ad41",
+      "sourceSha256": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+    },
+    {
+      "path": "/track/yard-loop",
+      "status": 200,
+      "bytes": 712,
+      "sha256": "13018356f03cd5e30d809adcfe5d60905a8ea7de305ed56e57e6955c3e31c969",
+      "sourceSha256": "84a14314e80cf80045843c2002730465d14fc1857d2a426e97512a16f467eef2"
+    },
+    {
+      "path": "/track/tin-can-alley",
+      "status": 200,
+      "bytes": 716,
+      "sha256": "192ba7340b5854fb3e627ee8bca818c9f9f1a8e982b07601bf7bdf7658a7440f",
+      "sourceSha256": "2c83a42ea5b9923be60f22ecef17e9f72f86116ad23d7a837a78d23e39490492"
+    },
+    {
+      "path": "/track/gravel-shift",
+      "status": 200,
+      "bytes": 715,
+      "sha256": "5c5563bf430b54d361562af668358bbfa10bb4130e865ff72a2d7b0ba465e891",
+      "sourceSha256": "dddad74a9218efd330a02d4d4d9cd3c65c66eb3e8c526f2f6f7cdc3a65e3830a"
+    },
+    {
+      "path": "/track/dockside-dash",
+      "status": 200,
+      "bytes": 716,
+      "sha256": "556e4a58af05b141d3542649ba19c17d6d5bbc25e6d61125fdf8fb9aea2ea872",
+      "sourceSha256": "fe2d1d881d13cec00087f9881e7f5417eaed990503337226b700388a4d613d18"
+    },
+    {
+      "path": "/track/container-switchback",
+      "status": 200,
+      "bytes": 723,
+      "sha256": "a46563086c5f2a3fef7eba7d94f0ed1e017b51698c87c78ce805ff282bb48fc6",
+      "sourceSha256": "bf0251eab8a8b18566b7f12503d213b1fa4ae9cb6e7ed19c33c67c28ee6c1ebc"
+    },
+    {
+      "path": "/track/salt-flat-sprint",
+      "status": 200,
+      "bytes": 719,
+      "sha256": "beee04836257c266b8ce88bb9ca42944084c7bfd4716b4b88847c8babd129ee0",
+      "sourceSha256": "c0a2ae1b18e7d90b3205131806f9aa9b2ccd2ad908e31dd506ccf66f405c5197"
+    },
+    {
+      "path": "/track/furnace-bend",
+      "status": 200,
+      "bytes": 715,
+      "sha256": "6cf97e16593763bcefe21d67176d390cbc09e8976c32950d5d5c8930112e0b91",
+      "sourceSha256": "b3d2241ff82ca34ec44a5864629028ff49471f263bd395c5e7e01c8959877482"
+    },
+    {
+      "path": "/track/mudworks",
+      "status": 200,
+      "bytes": 711,
+      "sha256": "90025f73d9c525bd32e5052b93b2fd12fb70954cbf4fdb5f5a4771b4f6ae5418",
+      "sourceSha256": "9b4f09c82cfb4af330be835dd4a91c7f962097d9d72c8767449b70e83cc64964"
+    },
+    {
+      "path": "/track/crusher-circuit",
+      "status": 200,
+      "bytes": 718,
+      "sha256": "ad573b8a2ec7f66424df80a6ae09dc9810441c18bc297b4c06998cf61947688d",
+      "sourceSha256": "62a39c120fa4a335326d9d973dbf71680d60dfff83391e4ece3aebebda9b9149"
+    },
+    {
+      "path": "/track/night-sort",
+      "status": 200,
+      "bytes": 713,
+      "sha256": "7a1a2326cc5a36f495f43b40eb36bb5a9d1ad8b54d2967e2d864f3ea83341f87",
+      "sourceSha256": "3349192e65c3f040cc44c707180062cfd1d7ba69514d75966f479e925a4972e4"
+    },
+    {
+      "path": "/track/redline-ridge",
+      "status": 200,
+      "bytes": 716,
+      "sha256": "ae39be9a4db9fdf6bf09b02be5346a819c9b4e8424c1e46016bc486b586cfbf5",
+      "sourceSha256": "23e18f1a40410703c35fcb784575273bdfd331a9d88cff9ece9bbecb5d8dba4f"
+    },
+    {
+      "path": "/track/the-big-salvage",
+      "status": 200,
+      "bytes": 718,
+      "sha256": "2a59560b97646c708191db72325f103ec8f669f1bfbbbbedb82c829678e25ad9",
+      "sourceSha256": "0928da17af2275b9c4f802de1ab5f3086ba51da5b61a8885dcce5ac8a84a50f7"
+    },
+    {
       "path": "/index.html",
       "status": 200,
-      "bytes": 6836,
-      "sha256": "fe725e41bddf1175b560bba35e9b8aa65d2315d2e2e7c6094194d85c3c6dba80",
-      "sourceSha256": "b8589d8251c666afa43113b5c71330425db02f8011b68180540eb9da8b8cf9c3"
+      "bytes": 9229,
+      "sha256": "ab65b507303678fcd50ecda657b3580bdaba459ab481cd5b693d8634c0fe690e",
+      "sourceSha256": "d78876f2f1f3f792a2dec2925af18475bad964a1e90c53b531b6a6cd94b14001"
     },
     {
       "path": "/release.json",
       "status": 200,
-      "bytes": 2820,
-      "sha256": "2fa0fefd5ea50f6ae37fef095885ac115a40cde090f725edcee2115162dc77e1",
-      "sourceSha256": "2fa0fefd5ea50f6ae37fef095885ac115a40cde090f725edcee2115162dc77e1"
+      "bytes": 20729,
+      "sha256": "eedc315cf3d221e0c15b642ca2f8193d21cbe18803a08db054ac18f29c13096f",
+      "sourceSha256": "eedc315cf3d221e0c15b642ca2f8193d21cbe18803a08db054ac18f29c13096f"
     },
     {
       "path": "/sw.js",
       "status": 200,
-      "bytes": 3622,
-      "sha256": "363eb584405cb69e1412908a89fec699b1975bdec589b2c0bd98a52ce83ec407",
-      "sourceSha256": "363eb584405cb69e1412908a89fec699b1975bdec589b2c0bd98a52ce83ec407"
+      "bytes": 17965,
+      "sha256": "b6e8f6c7933c3615a93cdcba937ec5b3d2157393685e2b158c9cc8a4759ee7f8",
+      "sourceSha256": "b6e8f6c7933c3615a93cdcba937ec5b3d2157393685e2b158c9cc8a4759ee7f8"
     }
   ],
   "publicFiles": [
     {
-      "path": "/releases/sl-b5f8aa986aa675/audio.js",
+      "path": "/releases/sl-28ec5378c02128/ai-profile.js",
       "status": 200,
-      "sha256": "ff4ef73d62c47215587a83840e9b932a691b3b64596136bdd53ca1904b42479c",
-      "bytes": 1736,
+      "sha256": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
+      "bytes": 1269,
       "type": "text/javascript"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/builds.js",
+      "path": "/releases/sl-28ec5378c02128/arcade-renderer.js",
       "status": 200,
-      "sha256": "7250ed84bdd8ed089692df177a1ea844b01103ee2b4a33791e066db6ddbabd95",
-      "bytes": 1556,
+      "sha256": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd",
+      "bytes": 18610,
       "type": "text/javascript"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/icon.svg",
+      "path": "/releases/sl-28ec5378c02128/arcade.css",
       "status": 200,
-      "sha256": "bd0e21954bddbd1a030e91cc7c66d531f558b5b126e05f3df2c59d5dc1221585",
-      "bytes": 436,
-      "type": "image/svg+xml"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/main.js",
-      "status": 200,
-      "sha256": "74133f83e92e18b0546489791d393968d4042430a5c1c6c6b120b5454db6c462",
-      "bytes": 35819,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/model.js",
-      "status": 200,
-      "sha256": "3168bad66939c8208c59f6b9a58bfb5d030e37b772a7ec58b4b97ebfe99608fd",
-      "bytes": 8168,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/pagelove.js",
-      "status": 200,
-      "sha256": "19e0054f464ec8dc5cb6f1bf0e68b0ee991669684e893565c37d600deed8cda1",
-      "bytes": 2954,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/renderer.js",
-      "status": 200,
-      "sha256": "9ea8f16a4770767b93f0a52897ef3fded340f3b86f0a0db8c1f85bc3c06c1d21",
-      "bytes": 13526,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/simulation.js",
-      "status": 200,
-      "sha256": "7e5dfe7122830a7c4800fb96c947c1c3b828a76f472e6f6a38278a1de34e769e",
-      "bytes": 13887,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/storage.js",
-      "status": 200,
-      "sha256": "fc15fa064fdeb4c26c36932d1310ac9c6609bfcb44c38b6789fbe5ffa310bd7b",
-      "bytes": 3722,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/style.css",
-      "status": 200,
-      "sha256": "6369c3c03494e15a6ac884d675934889c09994104884d4cb86dc258347a12122",
-      "bytes": 20853,
+      "sha256": "c30dfabd6a1c8d2b8d7053e7bd76a933fb1d26c6d87019dc703ee954d963c7f4",
+      "bytes": 20553,
       "type": "text/css"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/track.js",
+      "path": "/releases/sl-28ec5378c02128/audio.js",
       "status": 200,
-      "sha256": "4f6ba0307349d7a80f46d70244e5bbc80103dafea16346d2f492c48c5b8260b4",
-      "bytes": 10999,
+      "sha256": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
+      "bytes": 6501,
       "type": "text/javascript"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/workshop.js",
+      "path": "/releases/sl-28ec5378c02128/boards.js",
       "status": 200,
-      "sha256": "3bb8b35cbb6ba1442bd7af0ccf9881dd35ec83160f02cc0f88f6dabc6bba6e08",
-      "bytes": 23121,
+      "sha256": "696747b34f4ef9d61eb161eaf143972237801de8034c07fd3e18ca7b4102ecf3",
+      "bytes": 15729,
       "type": "text/javascript"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/content.json",
+      "path": "/releases/sl-28ec5378c02128/bootstrap.js",
+      "status": 200,
+      "sha256": "4d2fe542b81d30d1ab1cee50ed2aecaf936ff55468ed9a72e5f0aa4e2516d94d",
+      "bytes": 1786,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/builds.js",
+      "status": 200,
+      "sha256": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f",
+      "bytes": 2135,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/collision.js",
+      "status": 200,
+      "sha256": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
+      "bytes": 8116,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/continuation.js",
+      "status": 200,
+      "sha256": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
+      "bytes": 2762,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/driver-profile.js",
+      "status": 200,
+      "sha256": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89",
+      "bytes": 2012,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/driving-controls.js",
+      "status": 200,
+      "sha256": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e",
+      "bytes": 5606,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/editor-commands.js",
+      "status": 200,
+      "sha256": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
+      "bytes": 4419,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/Barlow-OFL.txt",
+      "status": 200,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "bytes": 4377,
+      "type": "text/plain"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/Barlow-Regular.ttf",
+      "status": 200,
+      "sha256": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea",
+      "bytes": 104068,
+      "type": "font/ttf"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/Barlow-SemiBold.ttf",
+      "status": 200,
+      "sha256": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5",
+      "bytes": 108348,
+      "type": "font/ttf"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/BebasNeue-OFL.txt",
+      "status": 200,
+      "sha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "bytes": 4337,
+      "type": "text/plain"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/fonts/BebasNeue-Regular.ttf",
+      "status": 200,
+      "sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "bytes": 61400,
+      "type": "font/ttf"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/graphics-policy.js",
+      "status": 200,
+      "sha256": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72",
+      "bytes": 1076,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icon.svg",
+      "status": 200,
+      "sha256": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02",
+      "bytes": 426,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/favicon.ico",
+      "status": 200,
+      "sha256": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039",
+      "bytes": 1539,
+      "type": "image/x-icon"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-16.png",
+      "status": 200,
+      "sha256": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c",
+      "bytes": 374,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-180.png",
+      "status": 200,
+      "sha256": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2",
+      "bytes": 2563,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-192.png",
+      "status": 200,
+      "sha256": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431",
+      "bytes": 2469,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-32.png",
+      "status": 200,
+      "sha256": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228",
+      "bytes": 500,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-48.png",
+      "status": 200,
+      "sha256": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30",
+      "bytes": 611,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-512.png",
+      "status": 200,
+      "sha256": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0",
+      "bytes": 12129,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/icons/icon-maskable-512.png",
+      "status": 200,
+      "sha256": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f",
+      "bytes": 8231,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/main.js",
+      "status": 200,
+      "sha256": "ac7a43c6dc0ccf53390e743d41d6eb3a024c4e2c0245058d2881ce31d2377922",
+      "bytes": 84759,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/model.js",
+      "status": 200,
+      "sha256": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
+      "bytes": 10482,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/offline.js",
+      "status": 200,
+      "sha256": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "bytes": 1018,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/pagelove.js",
+      "status": 200,
+      "sha256": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
+      "bytes": 4568,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/preferences.js",
+      "status": 200,
+      "sha256": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1",
+      "bytes": 3181,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/publication.js",
+      "status": 200,
+      "sha256": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193",
+      "bytes": 8831,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/renderer.js",
+      "status": 200,
+      "sha256": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20",
+      "bytes": 137,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/scenes.js",
+      "status": 200,
+      "sha256": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f",
+      "bytes": 1086,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/sharing.js",
+      "status": 200,
+      "sha256": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084",
+      "bytes": 4010,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/simulation.js",
+      "status": 200,
+      "sha256": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d",
+      "bytes": 18652,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/social/og-landscape-v1.png",
+      "status": 200,
+      "sha256": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa",
+      "bytes": 116757,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/social/og-square-v1.png",
+      "status": 200,
+      "sha256": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa",
+      "bytes": 122050,
+      "type": "image/png"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/storage.js",
+      "status": 200,
+      "sha256": "a3d9f944d74bbeae073ea4065044e4417bf9f784105f9b25e56934781eb193d8",
+      "bytes": 24574,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/style.css",
+      "status": 200,
+      "sha256": "696efcab035118cc26c295058b36c6f66cece28e1a336621d5561d561f746227",
+      "bytes": 30234,
+      "type": "text/css"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/submission-ui.js",
+      "status": 200,
+      "sha256": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144",
+      "bytes": 5284,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/track-document.js",
+      "status": 200,
+      "sha256": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33",
+      "bytes": 1451,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/track.js",
+      "status": 200,
+      "sha256": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
+      "bytes": 16204,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/vendor/QR-LICENSE.txt",
+      "status": 200,
+      "sha256": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827",
+      "bytes": 1094,
+      "type": "text/plain"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/vendor/qr.js",
+      "status": 200,
+      "sha256": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+      "bytes": 51907,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/workshop.js",
+      "status": 200,
+      "sha256": "a2cd0ecb7f8a8335f19de2a60cca311e61b63153fd3557c7ae347f88a18e3b91",
+      "bytes": 57837,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/content.json",
       "status": 200,
       "sha256": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c",
       "bytes": 136198,
       "type": "application/json"
     },
     {
-      "path": "/releases/sl-b5f8aa986aa675/vendor/three.module.js",
+      "path": "/releases/sl-28ec5378c02128/manifest.webmanifest",
       "status": 200,
-      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
-      "bytes": 603113,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/vendor/three.core.js",
-      "status": 200,
-      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
-      "bytes": 1403455,
-      "type": "text/javascript"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/vendor/THREE-LICENSE.txt",
-      "status": 200,
-      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
-      "bytes": 1081,
-      "type": "text/plain"
-    },
-    {
-      "path": "/releases/sl-b5f8aa986aa675/manifest.webmanifest",
-      "status": 200,
-      "sha256": "4e2bbeac2d6c9b542d221e5df6bec0e1e8d2d3edd4b0b49da3afbbeaefb68a04",
-      "bytes": 261,
+      "sha256": "eec195a39856e8258f43cdd4bd98a40625675c5afb58353f1522439f021fb02c",
+      "bytes": 568,
       "type": "application/manifest+json"
+    },
+    {
+      "path": "/releases/sl-28ec5378c02128/native-shell.html",
+      "status": 200,
+      "sha256": "ae1339f0d0c7b67e2e0d8750021593e54e4c3240ccb776aa9b38ef6c3dd5f0ce",
+      "bytes": 8270,
+      "type": "text/html"
     },
     {
       "path": "/content/catalog.html",
@@ -673,28 +1336,224 @@
       "type": "text/html"
     },
     {
+      "path": "/editor/:slug",
+      "status": 200,
+      "sha256": "cb2028dbb2be9f3dd217d4c5dbbc89783951cb4ef049befe0345d25c2c8e5c7b",
+      "bytes": 8616,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/index.html",
+      "status": 200,
+      "sha256": "cb2028dbb2be9f3dd217d4c5dbbc89783951cb4ef049befe0345d25c2c8e5c7b",
+      "bytes": 8616,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/yard-loop",
+      "status": 200,
+      "sha256": "ab5a7e91e5580242426188cc478a82f6e254e26dc19d4d1d210e00f1ba37cf45",
+      "bytes": 22023,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/tin-can-alley",
+      "status": 200,
+      "sha256": "5fdce7402d3b16a8fa037d89d874c441513401c956302cd59d3e06a211ab918c",
+      "bytes": 26194,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/gravel-shift",
+      "status": 200,
+      "sha256": "b404c331cc7378019c43d4c9d83c1a2b6215f5055c58cab9432d0a000a72feaa",
+      "bytes": 24366,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/dockside-dash",
+      "status": 200,
+      "sha256": "53ec5367250476ae8a636fae5ce0313eb1bd9fd8ebff4cbed79472249dd76607",
+      "bytes": 26476,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/container-switchback",
+      "status": 200,
+      "sha256": "2d5a9ad4c0d82f777a3fa286f26665f7b4315bd7ccc9c0fc849ec060363f8716",
+      "bytes": 28210,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/salt-flat-sprint",
+      "status": 200,
+      "sha256": "847a6d7305747abde8015924aff55318c552134863c7c0d3597bcf58a5043957",
+      "bytes": 30595,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/furnace-bend",
+      "status": 200,
+      "sha256": "bebfef23b8ab2e2ca1bfb719945f7e8bfbde860cc87ea425b9c02bd47dbeb534",
+      "bytes": 27589,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/mudworks",
+      "status": 200,
+      "sha256": "fd331e65dbbcf890d45ce8956db401a05030bc18b2c3c33934ec8fb8ce2c436e",
+      "bytes": 26825,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/crusher-circuit",
+      "status": 200,
+      "sha256": "63899535b95b708befe7a3f3f2cb5bf2d7c3639182e1be1c174f65305bdd0dc0",
+      "bytes": 31095,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/night-sort",
+      "status": 200,
+      "sha256": "2e9ca3864688703fad38a9bba899874c623897799b8a30f27d9f2a8d722c4776",
+      "bytes": 28822,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/redline-ridge",
+      "status": 200,
+      "sha256": "ba47e9fd293b9839297945f37df0067f87acfedd347a8f662e35c0e0520a99b7",
+      "bytes": 29816,
+      "type": "text/html"
+    },
+    {
+      "path": "/editor/the-big-salvage",
+      "status": 200,
+      "sha256": "f53954f8bd2922e4984ffc45593560001e85ee1ab78a20887eb94113b6d48927",
+      "bytes": 32570,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/:slug",
+      "status": 200,
+      "sha256": "cb2028dbb2be9f3dd217d4c5dbbc89783951cb4ef049befe0345d25c2c8e5c7b",
+      "bytes": 8616,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/index.html",
+      "status": 200,
+      "sha256": "cb2028dbb2be9f3dd217d4c5dbbc89783951cb4ef049befe0345d25c2c8e5c7b",
+      "bytes": 8616,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/yard-loop",
+      "status": 200,
+      "sha256": "ab5a7e91e5580242426188cc478a82f6e254e26dc19d4d1d210e00f1ba37cf45",
+      "bytes": 22023,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/tin-can-alley",
+      "status": 200,
+      "sha256": "5fdce7402d3b16a8fa037d89d874c441513401c956302cd59d3e06a211ab918c",
+      "bytes": 26194,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/gravel-shift",
+      "status": 200,
+      "sha256": "b404c331cc7378019c43d4c9d83c1a2b6215f5055c58cab9432d0a000a72feaa",
+      "bytes": 24366,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/dockside-dash",
+      "status": 200,
+      "sha256": "53ec5367250476ae8a636fae5ce0313eb1bd9fd8ebff4cbed79472249dd76607",
+      "bytes": 26476,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/container-switchback",
+      "status": 200,
+      "sha256": "2d5a9ad4c0d82f777a3fa286f26665f7b4315bd7ccc9c0fc849ec060363f8716",
+      "bytes": 28210,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/salt-flat-sprint",
+      "status": 200,
+      "sha256": "847a6d7305747abde8015924aff55318c552134863c7c0d3597bcf58a5043957",
+      "bytes": 30595,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/furnace-bend",
+      "status": 200,
+      "sha256": "bebfef23b8ab2e2ca1bfb719945f7e8bfbde860cc87ea425b9c02bd47dbeb534",
+      "bytes": 27589,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/mudworks",
+      "status": 200,
+      "sha256": "fd331e65dbbcf890d45ce8956db401a05030bc18b2c3c33934ec8fb8ce2c436e",
+      "bytes": 26825,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/crusher-circuit",
+      "status": 200,
+      "sha256": "63899535b95b708befe7a3f3f2cb5bf2d7c3639182e1be1c174f65305bdd0dc0",
+      "bytes": 31095,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/night-sort",
+      "status": 200,
+      "sha256": "2e9ca3864688703fad38a9bba899874c623897799b8a30f27d9f2a8d722c4776",
+      "bytes": 28822,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/redline-ridge",
+      "status": 200,
+      "sha256": "ba47e9fd293b9839297945f37df0067f87acfedd347a8f662e35c0e0520a99b7",
+      "bytes": 29816,
+      "type": "text/html"
+    },
+    {
+      "path": "/track/the-big-salvage",
+      "status": 200,
+      "sha256": "f53954f8bd2922e4984ffc45593560001e85ee1ab78a20887eb94113b6d48927",
+      "bytes": 32570,
+      "type": "text/html"
+    },
+    {
       "path": "/sw.js",
       "status": 200,
-      "sha256": "363eb584405cb69e1412908a89fec699b1975bdec589b2c0bd98a52ce83ec407",
-      "bytes": 3622,
+      "sha256": "b6e8f6c7933c3615a93cdcba937ec5b3d2157393685e2b158c9cc8a4759ee7f8",
+      "bytes": 17965,
       "type": "text/javascript"
     },
     {
       "path": "/release.json",
       "status": 200,
-      "sha256": "2fa0fefd5ea50f6ae37fef095885ac115a40cde090f725edcee2115162dc77e1",
-      "bytes": 2820,
+      "sha256": "eedc315cf3d221e0c15b642ca2f8193d21cbe18803a08db054ac18f29c13096f",
+      "bytes": 20729,
       "type": "application/json"
     },
     {
       "path": "/",
       "status": 200,
-      "sha256": "48a21db8a1518c849dc2b67b37c6c9c27b96120829549efd3e145f9b664214d2",
-      "bytes": 7595,
+      "sha256": "5cb3d2bfeabb64c623fdce825bba98cf73d89e5b76f745370c41605d2054b663",
+      "bytes": 9988,
       "type": "text/html"
     }
   ],
   "credentialStored": false,
   "baselineBackup": "Local ignored .local/deployment-baselines only",
-  "applicationServices": "Local saves/editor only; shared boards and owner publishing UI remain disconnected"
+  "applicationServices": "Owner publication/discovery plus separately provisioned casual Trial/Daily boards"
 }

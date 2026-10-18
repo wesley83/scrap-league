@@ -1,0 +1,60 @@
+{
+  "utc": "2026-10-16T18:33:47.947Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-644d25b8e44419",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html",
+      "sha256": "f079c74bd076a74676b9c4e20e74247ec0cfae72d8a45bf1e587da8e266b37db",
+      "exactLocalBytes": false,
+      "validPublishedEntry": true
+    },
+    {
+      "path": "/sw.js",
+      "status": 200,
+      "contentType": "text/javascript",
+      "sha256": "1377cbdde6d59f3cb5371ed79e33e11a2fc22df21c0db7834087d6fc35d1c0ec",
+      "exactLocalBytes": false,
+      "identicalWorkerLogic": true,
+      "inventoryMatchesWithPublishedEntry": true
+    },
+    {
+      "path": "/release.json",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "ac7397d9cad1aaeca2111ff163bcb21c051d1715569db9f4a84ae8bba1406c61",
+      "exactLocalBytes": false,
+      "inventoryMatchesPublishedHtml": true
+    },
+    {
+      "path": "/releases/sl-644d25b8e44419/main.js",
+      "status": 200,
+      "contentType": "text/javascript",
+      "sha256": "667930e5829bdaff57c225809027fee632d97c16621158c4b15e1792d138023c",
+      "exactLocalBytes": true
+    },
+    {
+      "path": "/releases/sl-644d25b8e44419/offline.js",
+      "status": 200,
+      "contentType": "text/javascript",
+      "sha256": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "exactLocalBytes": true
+    },
+    {
+      "path": "/releases/sl-644d25b8e44419/storage.js",
+      "status": 200,
+      "contentType": "text/javascript",
+      "sha256": "2b9e99d37fd313d27b4df74d2b14ed31e225f3dc29b87122a08e7c5b5ce500dd",
+      "exactLocalBytes": true
+    },
+    {
+      "path": "/releases/sl-644d25b8e44419/manifest.webmanifest",
+      "status": 200,
+      "contentType": "application/manifest+json",
+      "sha256": "538052501165ded8f73b5ded96154dc0132ee65bce4f61fb14949e5f06aa9c90",
+      "exactLocalBytes": true
+    }
+  ]
+}

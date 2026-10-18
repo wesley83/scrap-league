@@ -1,0 +1,13 @@
+✔ publication receipts bind identity and destination but cannot authorize unresolved acceptance (4.1066ms)
+✔ test evidence retains different runs and never overwrites a historical receipt (30.8989ms)
+✔ a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes (2.8515ms)
+✔ release gate refuses missing asset, stale source, omitted evidence and failed provider gate (4633.1623ms)
+✔ malformed unfinished results cannot make a saved campaign unreadable or award progress (27.7471ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5321.9042

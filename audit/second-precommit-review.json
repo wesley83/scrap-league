@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-17T22:49:55.216Z",
+  "baseline": "1906743",
+  "files": 127,
+  "credentialScan": "passed; no credential-like strings in staged files",
+  "diffSha256": "00c839a83e07e8ac393d4e154795c7c583096dd70674c430148482640e871b7d",
+  "diff": "audit/second-precommit-diff.patch",
+  "runtimeReview": "Reviewed Workshop entry token ordering, source validation, Files error isolation and worker navigation guards; successful/auth/API responses and verified cache remain preserved.",
+  "tests": "111 passing unit tests, 16 passing browser checks plus aggregate; final normal installed offline/update journey"
+}

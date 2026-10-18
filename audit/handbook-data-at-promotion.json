@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-17T21:29:35.398Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "path": "/boards/trial.html",
+  "synthetic": {
+    "id": "1e5636b1-fa29-4734-b0fc-a99dd644a94c",
+    "alias": "Release check",
+    "mode": "trial",
+    "trackId": "51000000-0000-4000-8000-000000000001",
+    "trackRevision": "5d78cd7ea6c2d3b6305fc6444acb69d0630736a3186f3f8384f5860225c85d07",
+    "rulesRevision": "scrap-physics-v1.1.0",
+    "buildRevision": "01cd0e3bf38d746d23c2c4915d249d622c2aa22316ff087ea1d543b7b8ba1bf7",
+    "assist": "steering-off:manual",
+    "laps": 3,
+    "challenge": "",
+    "elapsedMs": 480000,
+    "splits": [
+      160000,
+      160000,
+      160000
+    ]
+  },
+  "before": {
+    "etag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+    "rows": []
+  },
+  "state": "awaiting-publication",
+  "scope": "Owned synthetic row and unchanged hashes of pre-existing rows; no private row payload recorded.",
+  "postStatus": 500,
+  "attempts": [
+    {
+      "status": 500,
+      "note": "First response body not retained"
+    },
+    {
+      "utc": "2026-10-17T21:30:58.138Z",
+      "status": 206,
+      "detail": ""
+    }
+  ],
+  "populated": {
+    "utc": "2026-10-17T21:30:58.771Z",
+    "etag": "\"42bbc7176edf89a4daea7075fcb55f747c650d2e3a15883c543c9f49143c8b8e\"",
+    "rows": [
+      {
+        "id": "1e5636b1-fa29-4734-b0fc-a99dd644a94c",
+        "hash": "1058e361a82b42a755e11a3bb4d7986a1eeb8c7632959c288876a5a2d79f5f38"
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "utc": "2026-10-16T16:04:36.666Z",
+  "patch": {
+    "path": ".local/remediation-final-review.patch",
+    "sha256": "8cb5c3f5c84f4d140d54230686c6d4d21c0675800c498ac53e3c334d7c2ce476"
+  },
+  "files": [
+    {
+      "path": "IMPLEMENTATION-STATUS.md",
+      "sha256": "a74165fe50aab43f99e3d5ea2ff665e93bf715484a8f748bf971ee0e9679aa5b"
+    },
+    {
+      "path": "audit/2026-10-16-remediation.md",
+      "sha256": "0a6d11c350937bb06a87c57890b9aabe4d353e707dfc6b760cdcc8cc33524425"
+    },
+    {
+      "path": "audit/current-acceptance.json",
+      "sha256": "db4e3de69dd4af8a9d8dcf58afabbd8adc4251faa8679562609cc5c2ab2e84a1"
+    },
+    {
+      "path": "audit/remediation-browser-evidence-reuse.json",
+      "sha256": "e4142468888b5f742999ae87600ac7c9ec7ab9f44dafe907df38762159bf32d9"
+    },
+    {
+      "path": "audit/remediation-browser-lab.json",
+      "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+    },
+    {
+      "path": "audit/remediation-browser-update-eca6.json",
+      "sha256": "b27b2a0fbde191d3667bc2095212f458a2059daf7692ef2a2a45c4f6dd4f295f"
+    },
+    {
+      "path": "audit/remediation-candidate-hashes.json",
+      "sha256": "2b8439c95b262087bdfc0cb1c0753828ce3b88b14e4e2c2e8847f17506d75cfb"
+    },
+    {
+      "path": "audit/remediation-garage-share-final.json",
+      "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+    },
+    {
+      "path": "audit/remediation-garage-share-first.json",
+      "sha256": "93086b4114f0c1068ebebf6ddf1de0bb86abb49ede737464d4823496cd03f323"
+    },
+    {
+      "path": "audit/remediation-hosted-ci-e908b82.json",
+      "sha256": "4f354cc1185b635b85552ec22c608571c30715c2733e16b3c85ef7c9a155e0c3"
+    },
+    {
+      "path": "audit/remediation-hosted-refusal-e908b82.txt",
+      "sha256": "20a29bc11b9459340915893b2828f9e9048f3ad5970998ee2c0e4374f9b47cfa"
+    },
+    {
+      "path": "audit/remediation-hosted-tests-e908b82.txt",
+      "sha256": "34febcc19b213e7195fb09c4351e6d28fcf0973c1d717346b35dc35f138de4b9"
+    },
+    {
+      "path": "audit/remediation-performance-isolated.json",
+      "sha256": "b62ed23064287e7c12b3fd9c62a39946b2b4852a8fdef88984fbdeb4feedac2d"
+    },
+    {
+      "path": "audit/screenshots/remediation-current-yard.jpg",
+      "sha256": "cfab60732e8614832e806671a45315810787f8840a92131dbcb0064f4f4334b2"
+    },
+    {
+      "path": "dist/release.json",
+      "sha256": "421be750a8b71d9da0b67645aa29584031c18bb65e1d4544d92e58075e9f5601"
+    },
+    {
+      "path": "tools/ui-review-lab.js",
+      "sha256": "7793f3834e90b05355db917f71d0e8b8c9fcc5f527b7b0269543fc020470ce8b"
+    }
+  ],
+  "checks": {
+    "stagedWorkingBytesMatch": true,
+    "credentialLikeScanPassed": true
+  }
+}

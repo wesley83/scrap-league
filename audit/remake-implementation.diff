@@ -1,0 +1,579 @@
+diff --git a/app/boards.js b/app/boards.js
+index 01e95ba..902b560 100644
+--- a/app/boards.js
++++ b/app/boards.js
+@@ -219,10 +219,7 @@ export class Boards {
+       if (!Number.isSafeInteger(page) || page < 1 || page > BOARD_MAX_PAGES + 1)
+         throw Error("Board page exceeds the safe-read limit.");
+       url.searchParams.set("paginate:runs:page", String(page));
+-      url.searchParams.set(
+-        "paginate:runs:length",
+-        String(BOARD_PAGE_SIZE),
+-      );
++      url.searchParams.set("paginate:runs:length", String(BOARD_PAGE_SIZE));
+     }
+     const init = {
+       ...fetchOptions,
+@@ -233,7 +230,9 @@ export class Boards {
+     };
+     const retryable = !fetchOptions.method || fetchOptions.method === "GET";
+     for (let attempt = 0; ; attempt++) {
+-      const response = await this.fetcher(url.href, init);
++      // Browser fetch requires the Window receiver; injected transports retain
++      // the same call contract instead of receiving the Boards instance.
++      const response = await this.fetcher.call(globalThis, url.href, init);
+       if (
+         !retryable ||
+         ![429, 502, 503, 504].includes(response.status) ||
+@@ -395,6 +394,21 @@ export class Boards {
+   }
+   async refresh(run) {
+     validateRun(run);
++    return this.browse(run);
++  }
++  async browse(run) {
++    if (
++      !["trial", "daily"].includes(run?.mode) ||
++      !/^[a-f0-9]{64}$/.test(run.trackRevision) ||
++      !/^[a-f0-9]{64}$/.test(run.buildRevision) ||
++      (run.rulesRevision !== undefined && run.rulesRevision !== RULES) ||
++      run.laps !== 3 ||
++      !/^steering-(on|off):(auto|manual)$/.test(run.assist) ||
++      (run.mode === "trial"
++        ? run.challenge !== ""
++        : !/^daily-v\d+:\d{4}-\d{2}-\d{2}$/.test(run.challenge))
++    )
++      throw Error("Invalid leaderboard comparison.");
+     const key = boardKey(run);
+     try {
+       const { rows, serverTime } = await this.readRows(run.mode),
+diff --git a/app/main.js b/app/main.js
+index 48d21ed..db86479 100644
+--- a/app/main.js
++++ b/app/main.js
+@@ -3,7 +3,13 @@ import { Boards, submission, contentKeys, recognized } from "./boards.js";
+ import { readPublishedTrack, discoverTracks } from "./publication.js";
+ import { resultInvitation, shareInvitation, scorecard } from "./sharing.js";
+ import { workerRequest } from "./offline.js";
+-import { World } from "./renderer.js";
++import { World } from "./arcade-renderer.js";
++import {
++  ContactActions,
++  bindTouchControls,
++  practiceStep,
++  practicePrompt,
++} from "./driving-controls.js";
+ import {
+   defaultSettings,
+   normalizeSettings,
+@@ -77,8 +83,9 @@ let content,
+   installPrompt,
+   waitingWorker;
+ const keys = new Set(),
+-  held = new Set();
++  held = new ContactActions();
+ let steering = 0;
++let resetTouch;
+ let repairingGraphics = false;
+ let graphicsSnapshot;
+ const sound = new Sound();
+@@ -241,7 +248,7 @@ function dialog(title, body, actions = [{ label: "Close" }]) {
+     b.textContent = item.label;
+     if (i === 0) b.className = "primary";
+     b.onclick = async () => {
+-      modal.close();
++      if (!item.keep) modal.close();
+       try {
+         await item.action?.();
+       } catch (e) {
+@@ -271,6 +278,7 @@ function clearInput() {
+   keys.clear();
+   held.clear();
+   steering = 0;
++  resetTouch?.();
+ }
+ function show(next) {
+   if (updateLock)
+@@ -279,6 +287,7 @@ function show(next) {
+   clearInput();
+   if (["race", "result", "scene"].includes(view) && next !== view) sound.stop();
+   view = next;
++  document.body.dataset.view = next;
+   lastRender = 0;
+   q("stage").className = "view-" + next;
+   document
+@@ -552,7 +561,14 @@ async function beginRace(track, mode, options = {}) {
+         (raceSettings.assist ? "steering-on" : "steering-off") +
+         ":" +
+         (raceSettings.autoAccelerate ? "auto" : "manual"),
+-      laps = mode === "lesson" ? 1 : mode === "workshop" ? track.laps : 3,
++      laps =
++        mode === "lesson"
++          ? 1
++          : mode === "exhibition"
++            ? 2
++            : mode === "workshop"
++              ? track.laps
++              : 3,
+       key = comparisonKey({
+         mode,
+         trackRevision,
+@@ -600,7 +616,10 @@ async function beginRace(track, mode, options = {}) {
+       key,
+       build,
+       laps,
+-      difficulty: cup?.difficulty || q("difficulty").value,
++      difficulty:
++        mode === "exhibition"
++          ? "relaxed"
++          : cup?.difficulty || q("difficulty").value,
+       cars,
+       ghost: [],
+       bestGhost: best?.ghost || null,
+@@ -616,6 +635,16 @@ async function beginRace(track, mode, options = {}) {
+       rivals: clone(options.rivals || content.rivals),
+       options: clone(options),
+       degraded: 0,
++      practice:
++        mode === "lesson"
++          ? {
++              heading: cars[0].heading,
++              accelerate: false,
++              steer: false,
++              brake: false,
++              boost: false,
++            }
++          : null,
+     };
+     if (cup) {
+       cup.pending = captureAttempt(race, parts);
+@@ -642,10 +671,12 @@ async function beginRace(track, mode, options = {}) {
+         daily: "DAILY SPEC",
+         workshop: "WORKSHOP TEST",
+         lesson: "DRIVING LESSON",
+-        exhibition: "EXHIBITION",
++        exhibition: "QUICK RACE · 2 LAPS",
+         league: race.difficulty.toUpperCase(),
+       }[mode];
+     document.body.classList.toggle("touch", settings.touch);
++    document.body.dataset.auto = String(raceSettings.autoAccelerate);
++    q("practice-progress").hidden = mode !== "lesson";
+     sound.enabled = settings.sound;
+     sound.musicEnabled = settings.music;
+     await sound.activate();
+@@ -668,6 +699,16 @@ function pause(reason = "Take a breath. The race clock is stopped.") {
+       ? { label: "Resume", action: resume }
+       : { label: "Repair graphics", action: () => repairGraphics() },
+     { label: "Settings", action: settingsDialog },
++    {
++      label: "Reset car to checkpoint",
++      action: () => {
++        resetCar(
++          race.cars.find((c) => c.id === "player"),
++          race.track,
++        );
++        resume();
++      },
++    },
+     { label: "Restart race", action: () => restart() },
+     {
+       label: race.mode === "workshop" ? "Return to editor" : "Leave race",
+@@ -807,15 +848,31 @@ function updateHUD() {
+         : p.stuckTime > 4
+           ? "Stuck? Press R or Reset car."
+           : race.mode === "lesson"
+-            ? race.time < 12
+-              ? "W to accelerate · A / D to steer"
+-              : race.time < 25
+-                ? "Brake with S before the bend."
+-                : race.time < 40
+-                  ? "Shift boosts on the straight. R resets at your last gate."
+-                  : "Complete the lap. The next gate is highlighted on the map."
++            ? practicePrompt(race.practice, {
++                ...settings,
++                autoAccelerate: race.settingsSnapshot.autoAccelerate,
++              })
+             : "";
+   q("race-message").textContent = message;
++  if (race.practice)
++    q("practice-progress").textContent = [
++      "accelerate",
++      "steer",
++      "brake",
++      "boost",
++    ]
++      .map((k) => (race.practice[k] ? "✓ " : "○ ") + k)
++      .join("   ");
++  const here = nearest(race.track, p.x, p.z),
++    ahead = atDistance(race.track, here.s + 28),
++    turn = wrap(ahead.heading - here.heading);
++  q("corner-hint").textContent = p.boosting
++    ? "BOOSTING"
++    : p.surface !== "asphalt"
++      ? p.surface.toUpperCase() + " · easy on the throttle"
++      : Math.abs(turn) > 0.18
++        ? (turn > 0 ? "↱ Right bend" : "↰ Left bend") + " · brake early"
++        : "Straight · find your line";
+   const canvas = q("minimap"),
+     ctx = canvas.getContext("2d"),
+     samples = race.track.samples,
+@@ -869,7 +926,9 @@ async function finish() {
+   q("result-title").textContent = result.dnf
+     ? "TRY THAT AGAIN."
+     : race.mode === "lesson"
+-      ? "READY TO RACE."
++      ? Object.values(race.practice).filter((v) => v === true).length === 4
++        ? "READY TO RACE."
++        : "LAP COMPLETE."
+       : place === 1 && race.cars.length > 1
+         ? "FIRST HOME."
+         : race.previousBest && result.elapsedMs < race.previousBest.elapsedMs
+@@ -940,7 +999,11 @@ function renderResultActions() {
+     );
+   else if (race.mode === "lesson")
+     button("Enter the league", () => enterLeague(), true);
+-  button("Race again", restart, race.mode === "trial" || race.mode === "daily");
++  button(
++    "Race again",
++    restart,
++    ["trial", "daily", "exhibition"].includes(race.mode),
++  );
+   if (!race.saved) button("Retry save", persistResult);
+   button("Share result", shareResult);
+   if (
+@@ -1242,7 +1305,7 @@ function settingsDialog() {
+     assist: "Gentle steering assistance (next race)",
+     northUp: "Fixed north-up camera",
+     lowEffects: "Reduced visual effects",
+-    safeGraphics: "Safer graphics (lower detail)",
++    safeGraphics: "Lower canvas resolution",
+     reducedMotion: "Reduced motion",
+     ghost: "Show compatible personal-best ghost",
+     touch: "Show touch controls",
+@@ -1308,7 +1371,7 @@ function settingsDialog() {
+   repair.onclick = () => repairGraphics();
+   graphicsStatus.className = "muted";
+   graphicsStatus.textContent =
+-    "Blank racing view? Repair graphics rebuilds it with lower detail and keeps your progress. Release " +
++    "Canvas 2D racing. Repair graphics recreates the view and keeps your progress. Release " +
+     new URL(".", import.meta.url).pathname.split("/").filter(Boolean).at(-1) +
+     ".";
+   body.prepend(repair, graphicsStatus);
+@@ -1372,7 +1435,13 @@ function settingsDialog() {
+ function applyPreferences() {
+   const hint = bindingHint(settings);
+   document.querySelector(".keyboard-hint").textContent = hint;
+-  q("world").setAttribute("aria-label", "3D racing view. " + hint);
++  q("world").setAttribute("aria-label", "Overhead racing view. " + hint);
++  document.querySelector(".start-controls").textContent = settings.touch
++    ? "Use the steering wheel and brake before bends. " +
++      (settings.autoAccelerate
++        ? "Auto throttle is on."
++        : "Hold GAS to accelerate.")
++    : hint;
+   document.body.classList.toggle("touch", settings.touch);
+   document.body.classList.toggle("large-hud", settings.largeHud);
+   document.body.classList.toggle("left-handed", settings.leftHanded);
+@@ -1544,6 +1613,11 @@ q("home").onclick = async () => {
+ document
+   .querySelectorAll("[data-home]")
+   .forEach((b) => (b.onclick = () => show("start")));
++q("quick-race").onclick = () =>
++  beginRace(clone(content.tracks[0].track), "exhibition", {
++    build: progress.build,
++  });
++q("leaderboard-button").onclick = openLeaderboards;
+ q("race-button").onclick = () => events("league");
+ q("trial-button").onclick = () => events("trial");
+ q("continue-cup").onclick = () => enterLeague();
+@@ -1720,49 +1794,14 @@ const orientationPause = () => {
+ };
+ screen.orientation?.addEventListener("change", orientationPause);
+ window.addEventListener("orientationchange", orientationPause);
+-document.querySelectorAll("[data-hold]").forEach((b) => {
+-  b.onpointerdown = (e) => {
+-    e.preventDefault();
+-    b.setPointerCapture(e.pointerId);
+-    held.add(b.dataset.hold);
+-  };
+-  for (const type of ["pointerup", "pointercancel", "lostpointercapture"])
+-    b.addEventListener(type, () => {
+-      const interrupted = type !== "pointerup" && held.has(b.dataset.hold);
+-      held.delete(b.dataset.hold);
+-      if (interrupted && view === "race")
+-        pause("A touch control was interrupted. Resume when ready.");
+-    });
++resetTouch = bindTouchControls(q("touch-controls"), {
++  held,
++  steer: (value) => (steering = value),
++  active: () =>
++    view === "race" &&
++    ["countdown", "racing"].includes(race?.state) &&
++    !q("modal").open,
+ });
+-q("steering-pad").onpointerdown = (e) => {
+-  e.preventDefault();
+-  e.currentTarget.setPointerCapture(e.pointerId);
+-  q("steering-pad").dataset.pointer = e.pointerId;
+-  steerTouch(e);
+-};
+-function steerTouch(e) {
+-  if (String(e.pointerId) !== q("steering-pad").dataset.pointer) return;
+-  const r = q("steering-pad").getBoundingClientRect();
+-  steering = clamp((e.clientX - r.left - r.width / 2) / (r.width * 0.4), -1, 1);
+-  q("steering-pad").setAttribute("aria-valuenow", steering.toFixed(2));
+-}
+-q("steering-pad").onpointermove = steerTouch;
+-for (const type of ["pointerup", "pointercancel", "lostpointercapture"])
+-  q("steering-pad").addEventListener(type, () => {
+-    const interrupted =
+-      type !== "pointerup" && q("steering-pad").dataset.pointer !== undefined;
+-    steering = 0;
+-    delete q("steering-pad").dataset.pointer;
+-    if (interrupted && view === "race")
+-      pause("Steering was interrupted. Resume when ready.");
+-  });
+-q("steering-pad").onkeydown = (e) => {
+-  if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+-    e.preventDefault();
+-    steering = e.key === "ArrowLeft" ? -1 : 1;
+-  }
+-};
+-q("steering-pad").onkeyup = () => (steering = 0);
+ window.addEventListener("unhandledrejection", (e) => {
+   notify(
+     "Action could not finish: " + (e.reason?.message || "Unknown error"),
+@@ -1983,6 +2022,11 @@ function frame(now) {
+         let steps = 0;
+         while (accumulator >= DT && steps < 8 && race.state === "racing") {
+           stepRace(race, controls);
++          practiceStep(
++            race.practice,
++            race.cars.find((c) => c.id === "player"),
++            controls,
++          );
+           accumulator -= DT;
+           steps++;
+         }
+@@ -2102,6 +2146,108 @@ async function showSharedTimes() {
+     dialog("Shared times could not load", error.message);
+   }
+ }
++async function openLeaderboards() {
++  const body = document.createElement("div");
++  body.innerHTML = `<p>Three laps. The same circuit, car and assists. Set your time in Time Trial or try today's fixed Daily Spec.</p><div class="board-controls"><label>Board<select id="board-mode"><option value="trial">Time Trial</option><option value="daily">Daily Spec</option></select></label><label>Circuit<select id="board-track">${content.tracks.map((t, i) => `<option value="${i}">${esc(t.track.name)}</option>`).join("")}</select></label></div><p id="board-spec" class="muted"></p><p id="board-state" role="status">Loading times…</p><ol class="board-list"></ol><p class="muted">Community times are client-reported. Entries remain on the board for five days. Your local bests stay on your device.</p>`;
++  const mode = body.querySelector("#board-mode"),
++    track = body.querySelector("#board-track"),
++    state = body.querySelector("#board-state"),
++    list = body.querySelector("ol");
++  let revision = 0,
++    selection = null;
++  const refresh = async () => {
++    const token = ++revision;
++    selection = null;
++    list.replaceChildren();
++    state.textContent = "Loading times…";
++    const date = new Date().toISOString().slice(0, 10),
++      d = content.daily.find((d) => d.date === date);
++    track.disabled = mode.value === "daily";
++    if (mode.value === "daily" && !d) {
++      state.textContent =
++        "No Daily Spec is included for today. Time Trial is available.";
++      return;
++    }
++    const index =
++      mode.value === "daily"
++        ? content.tracks.findIndex((t) => t.track.id === d.track)
++        : Number(track.value);
++    track.value = String(index);
++    const build =
++        mode.value === "daily"
++          ? Object.fromEntries(SLOTS.map((s) => [s, d[s]]))
++          : clone(progress.build),
++      spec = assemble(build, content.parts);
++    const options =
++      mode.value === "daily"
++        ? { build, challenge: d.id, challengeDate: d.date }
++        : { build };
++    const capturedMode = mode.value;
++    body.querySelector("#board-spec").textContent =
++      SLOTS.map((s) => spec[s].name).join(" / ") +
++      " · " +
++      (settings.autoAccelerate ? "Auto throttle" : "Manual throttle") +
++      " · Steering assist " +
++      (settings.assist ? "on" : "off") +
++      (capturedMode === "daily" ? " · " + date + " UTC" : "");
++    try {
++      const buildRevision = await hash(
++        SLOTS.map((s) => {
++          const { name, description, unlock, ...physical } = spec[s];
++          return physical;
++        }),
++      );
++      if (token !== revision || !body.isConnected) return;
++      const query = {
++        mode: capturedMode,
++        trackRevision: content.tracks[index].revision,
++        buildRevision,
++        laps: 3,
++        assist:
++          (settings.assist ? "steering-on" : "steering-off") +
++          ":" +
++          (settings.autoAccelerate ? "auto" : "manual"),
++        challenge: options.challenge || "",
++      };
++      selection = { index, mode: capturedMode, options };
++      const board = await boards.browse(query);
++      if (token !== revision || !body.isConnected) return;
++      state.textContent = board.stale
++        ? "Saved times · could not refresh. " + board.error
++        : board.rows.length
++          ? "Latest confirmed times"
++          : "No times for this combination yet. Set the first one.";
++      for (const [i, row] of board.rows.entries()) {
++        const li = document.createElement("li"),
++          name = document.createElement("span"),
++          value = document.createElement("strong");
++        name.textContent = i + 1 + ". " + row.alias;
++        value.textContent = time(row.elapsedMs);
++        li.append(name, value);
++        list.append(li);
++      }
++    } catch (e) {
++      if (token === revision && body.isConnected)
++        state.textContent =
++          "Times unavailable: " +
++          e.message +
++          " You can still race and keep your result locally.";
++    }
++  };
++  mode.onchange = track.onchange = refresh;
++  dialog("LEADERBOARDS", body, [
++    {
++      label: "Set a time",
++      action: () => {
++        if (selection)
++          startTrack(selection.index, selection.mode, selection.options);
++      },
++    },
++    { label: "Refresh", keep: true, action: refresh },
++    { label: "Close" },
++  ]);
++  await refresh();
++}
+ async function openNativeRoute() {
+   const mode = location.pathname.split("/")[1];
+   let slug = "",
+diff --git a/app/workshop.js b/app/workshop.js
+index 9c17e5b..aac3c77 100644
+--- a/app/workshop.js
++++ b/app/workshop.js
+@@ -36,7 +36,17 @@ import {
+   nearest,
+   atDistance,
+ } from "./track.js";
++import { TrackDocument } from "./track-document.js";
+ export class Workshop {
++  get track() {
++    return this.sourceDocument
++      ? this.sourceDocument.read()
++      : this.headlessTrack;
++  }
++  set track(value) {
++    if (this.sourceDocument) this.sourceDocument.replace(value);
++    else this.headlessTrack = value;
++  }
+   constructor(
+     root,
+     { store, templates, onTest, notify, dialog, download, build },
+@@ -68,6 +78,16 @@ export class Workshop {
+     this.ctx = this.canvas.getContext("2d");
+     this.selection = new Set();
+     this.setupAdvanced();
++    const sourceRoot = document.createElement("div");
++    sourceRoot.hidden = true;
++    sourceRoot.dataset.authoringSource = "track";
++    this.root.append(sourceRoot);
++    this.sourceDocument = new TrackDocument(sourceRoot);
++    const help = document.createElement("div");
++    help.className = "workshop-help";
++    help.textContent =
++      "Start with a complete circuit. Select a road or object to edit it. Files opens templates and HTML import/export. Test drive returns to this draft; changes save automatically.";
++    this.root.querySelector(".workshop-bar").after(help);
+     q("track-name").onchange = () =>
+       this.command((t) => {
+         t.name = q("track-name").value.trim() || "Untitled circuit";
+@@ -262,9 +282,10 @@ export class Workshop {
+         const dx =
+             Math.round((e.clientX - this.drag.x) / this.scale / grid) * grid,
+           dz = Math.round((e.clientY - this.drag.y) / this.scale / grid) * grid;
+-        this.track = clone(this.drag.snapshot);
++        const nextTrack = clone(this.drag.snapshot);
+         try {
+-          transformSelection(this.track, this.selection, { dx, dz });
++          transformSelection(nextTrack, this.selection, { dx, dz });
++          this.track = nextTrack;
+           this.compiled = compile(this.track);
+           this.drag.moved = dx !== 0 || dz !== 0;
+         } catch {}
+@@ -800,7 +821,9 @@ export class Workshop {
+     try {
+       const next = clone(this.track);
+       fn(next);
+-      this.history.push(clone(this.track));
++      const previous = clone(this.track);
++      this.track = next;
++      this.history.push(previous);
+       while (
+         this.history.length > 100 ||
+         JSON.stringify(this.history).length > 10 * 1024 * 1024
+@@ -809,7 +832,6 @@ export class Workshop {
+         this.historyTrimmed = true;
+       }
+       this.future = [];
+-      this.track = next;
+       if (game) this.tested = "";
+       this.refresh();
+       this.save();
+@@ -1238,7 +1260,9 @@ export class Workshop {
+   export() {
+     this.download(
+       this.track.slug + (this.compiled.valid ? "" : ".draft") + ".html",
+-      serializeTrack(this.track),
++      this.sourceDocument
++        ? this.sourceDocument.html()
++        : serializeTrack(this.track),
+       "text/html",
+     );
+   }
+diff --git a/tools/build.mjs b/tools/build.mjs
+index 6dacdc4..3c7e59d 100644
+--- a/tools/build.mjs
++++ b/tools/build.mjs
+@@ -32,15 +32,6 @@ async function collect(relative = "") {
+ }
+ await collect();
+ files.set("content.json", Buffer.from(JSON.stringify(bundle)));
+-for (const f of ["three.module.js", "three.core.js"])
+-  files.set(
+-    "vendor/" + f,
+-    await readFile(path.join(root, "node_modules/three/build", f)),
+-  );
+-files.set(
+-  "vendor/THREE-LICENSE.txt",
+-  await readFile(path.join(root, "node_modules/three/LICENSE")),
+-);
+ const sourceIndex = await readFile(path.join(root, "app/index.html"), "utf8");
+ const release =
+   "sl-" +
+@@ -61,8 +52,8 @@ const manifest = {
+   scope: "../../",
+   display: "fullscreen",
+   display_override: ["fullscreen", "standalone"],
+-  background_color: "#253126",
+-  theme_color: "#202721",
++  background_color: "#18343b",
++  theme_color: "#142b31",
+   icons: [
+     { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
+     {

@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-16T16:43:41.524Z",
+  "release": "sl-eca6f97d1308a3",
+  "sourceHash": "6095fdba162a2288fdbde6a490d9b3dc8f397e5a4d3e11036542f50a8bbf532e",
+  "outputHash": "06ff8413784d3a9ee208d605f552b4704544bcda2c4efcf06f45025161a63035",
+  "patch": {
+    "path": ".local/publication-evidence.patch",
+    "sha256": "53df33f716fb3df9a9270b3a65c94465dd92f7d0e82c72df4efe6836e4afe898"
+  },
+  "files": [
+    {
+      "path": "audit/2026-10-16-remediation.md",
+      "sha256": "3e42027f6fb510f530cb61d6c210bdea898f865c9da7114642596b1216d7eacc"
+    },
+    {
+      "path": "audit/current-acceptance.json",
+      "sha256": "6476f315aed64a6015d94ac5950738941ede649326ecbffd730f147b06c7ad26"
+    },
+    {
+      "path": "audit/deployment-acceptance-before-publication.json",
+      "sha256": "c0a914b30d2a444fb6af3064a540574dd28e41c2e438cffffb1d36d4a0effe2a"
+    },
+    {
+      "path": "audit/deployment-browser-verification.json",
+      "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+    },
+    {
+      "path": "audit/deployment-hosted-ci.json",
+      "sha256": "e0b4a27dc52b68eea0a8908e81fc632568f5ee48cf6ace7918d0a808bb694637"
+    },
+    {
+      "path": "audit/deployment-hosted-default-refusal.txt",
+      "sha256": "e95b55af84d0f38c146d0f69c5a65df625a7db54fec536d97bef3e5ef4d4188b"
+    },
+    {
+      "path": "audit/deployment-hosted-tests.txt",
+      "sha256": "75e454fdd4ba363f2faaed6075a7041c12d0512ba93172bdebcc2cbf368e15ad"
+    },
+    {
+      "path": "audit/deployment-live-readback-method.mjs",
+      "sha256": "5261c4c091cc632643fd5a2c8c6f7860d38d488dd1c7d52f477b44d0faf5a3b9"
+    },
+    {
+      "path": "audit/deployment-live-readback.json",
+      "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+    },
+    {
+      "path": "audit/deployment.json",
+      "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
+    },
+    {
+      "path": "audit/screenshots/deployed-remediation-workshop.jpg",
+      "sha256": "7947af048f40339215dd1c4bf0e423ce7b2b53ab7218c21443448aab6e95773e"
+    },
+    {
+      "path": "audit/screenshots/deployed-remediation-yard.jpg",
+      "sha256": "3cac668e74d39eb517fc49c0abb667ed47ae981021e413b9a058f458b94d18e0"
+    }
+  ],
+  "stagedBytesMatch": true,
+  "credentialScanPassed": true,
+  "prePublicationLedgerMatchesAuthorization": true
+}

@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-18T01:26:45.073Z",
+  "subjects": {
+    "A": "sl-8c38d2602f174d",
+    "B": "sl-5c1afcc9442899",
+    "hashes": {
+      "A": {
+        "index.html": "0cc6de5a5b4d467f93bf13ce3dfc0f699fe335aa595e8b802847145cedd650a0",
+        "sw.js": "e79c25f47c67dc25e65baf90b6993aedfbf3d511db9eefebdbf104f0cc87f906",
+        "release.json": "3be1faa1c9b46eeb5f4cdb49586bf16d69154640e6b732f1ecbc648c58f2d78d"
+      },
+      "B": {
+        "index.html": "fd008519992f72bf021cae8fe374745ae2c3bb48d20eb5667d7066215dbfc755",
+        "sw.js": "cafd333a6aa2e71c75784e49955658eb8f46a272de827e84d37b60ad90f103ec",
+        "release.json": "44cd3b0422f90c8fe65c26e708ffadc2efabd8aaa8d19ea78e43932ef3e79ab8"
+      }
+    },
+    "phase": "A",
+    "offline": false,
+    "corrupt": false,
+    "delay": 0,
+    "requests": []
+  },
+  "environment": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "scope": "Real service workers on isolated localhost; synthetic progression; ordinary game UI for draft edits and activation; no physical device or process restart claim",
+  "results": [
+    {
+      "name": "1. Install A and prepare saved data",
+      "status": "passed",
+      "detail": {
+        "active": "sl-8c38d2602f174d",
+        "windows": 2,
+        "syntheticCompletedEvents": [
+          1,
+          2
+        ],
+        "draftName": "PWA update retention fixture",
+        "customSettings": true
+      },
+      "utc": "2026-10-18T01:25:21.740Z"
+    },
+    {
+      "name": "2. Automatic notice while another window races",
+      "status": "passed",
+      "detail": {
+        "trigger": "Normal game reload; no Check offline pack click",
+        "active": "sl-8c38d2602f174d",
+        "waiting": "sl-5c1afcc9442899",
+        "notice": "Update verified · apply from the yard",
+        "automaticPopup": false,
+        "raceDocumentUnchanged": true,
+        "raceTimeAdvanced": true
+      },
+      "utc": "2026-10-18T01:26:45.073Z"
+    }
+  ]
+}

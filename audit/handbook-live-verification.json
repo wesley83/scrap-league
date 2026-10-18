@@ -1,0 +1,66 @@
+{
+  "utc": "2026-10-17T22:01:39.189Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-6f79bfd18ca0be",
+  "sourceCommit": "69aabbf",
+  "method": "Normal installed public client in the in-app Chromium browser; semantic controls, native typed input and screenshots. No review exports on public origin.",
+  "update": {
+    "from": "sl-60bf1fb46ea8c0",
+    "to": "sl-6f79bfd18ca0be",
+    "manualCheckDiscovered": true,
+    "explicitReviewAndApply": true,
+    "progressBeforeAndAfter": "4/12 parts, 0/12 events",
+    "offlinePackVerified": true
+  },
+  "leaderboard": {
+    "sameOriginRead": true,
+    "status": "No times for this combination yet. Set the first one.",
+    "nameFieldVisible": true,
+    "nativeTyped": "Release Driver",
+    "savedAndRetainedAfterReload": true,
+    "originalDriverNameRestored": "Driver",
+    "testNamePublished": false
+  },
+  "driving": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "canvasVisible": true,
+    "manualGasAndBoostVisible": true,
+    "nativeKeyboardHeldMs": 1500,
+    "observedSpeedKmh": 77,
+    "observedClock": "00:06.342",
+    "pausedAndExplicitlyLeft": true,
+    "progressUnchanged": true
+  },
+  "recentBrowserLogInspection": {
+    "levels": [
+      "error",
+      "warn"
+    ],
+    "limit": 10,
+    "entries": []
+  },
+  "screenshots": [
+    {
+      "path": "audit/screenshots/handbook-live-leaderboard.jpg",
+      "sha256": "45cf7c0717d4769438bc52866d9321576798cc6a9ab5547b74f92ebba330b1b5"
+    },
+    {
+      "path": "audit/screenshots/handbook-live-race.jpg",
+      "sha256": "0015bd30855a2f35fa59580c8dcdb048ea788663c3c42f088b7ed1c6c6d4adf5"
+    }
+  ],
+  "preservation": {
+    "board": "audit/handbook-data-preservation.json",
+    "workshop": "audit/handbook-workshop-publication.json",
+    "oldClientAssets": "audit/handbook-old-client-assets.json"
+  },
+  "limits": [
+    "Viewport emulation, not a physical-phone test.",
+    "Public endpoint successes do not establish provider-wide policy activation or resolve intermittent server errors.",
+    "Publication readback is complete; the separate full-product acceptance ledger still contains incomplete broader outcomes."
+  ],
+  "passed": true
+}

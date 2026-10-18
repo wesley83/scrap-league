@@ -1,0 +1,28 @@
+{
+  "release": "sl-255db97ff955f4",
+  "at": "2026-10-17T20:08:10.259Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "results": [
+    {
+      "name": "Quick race journey",
+      "status": "passed",
+      "durationMs": 2480,
+      "details": {
+        "finish": {
+          "elapsedMs": 68843,
+          "laps": 2,
+          "place": 1,
+          "contacts": 139
+        },
+        "pauseAndRetry": true,
+        "simulationController": true
+      }
+    },
+    {
+      "name": "Input ownership and camera",
+      "status": "failed",
+      "error": "win is not a constructor",
+      "stack": "TypeError: win is not a constructor\n    at send (http://127.0.0.1:4398/__remake__/lab.js:53:51)\n    at Input ownership and camera (http://127.0.0.1:4398/__remake__/lab.js:58:5)\n    at async record (http://127.0.0.1:4398/__remake__/lab.js:17:23)"
+    }
+  ]
+}

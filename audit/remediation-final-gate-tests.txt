@@ -1,0 +1,11 @@
+✔ declared assets decode, and removing or corrupting a social image fails independently of the generated inventory (416.1923ms)
+✔ initial HTML metadata selects exact public image and missing metadata fails (419.7992ms)
+✔ release gate refuses missing asset, stale source, omitted evidence and failed provider gate (3465.1583ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5109.3504

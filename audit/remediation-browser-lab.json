@@ -1,0 +1,65 @@
+{
+  "release": "sl-eca6f97d1308a3",
+  "utc": "2026-10-16T16:03:04.980Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Garage comparison, equip and ordinary-input test",
+      "status": "passed",
+      "detail": {
+        "rows": [
+          {
+            "id": "mixed",
+            "description": "Predictable grip across mixed surfaces.",
+            "asphalt": 1,
+            "gravel": 0.88,
+            "mud": 0.66
+          },
+          {
+            "id": "rally",
+            "description": "Better loose-surface control, less asphalt peak grip.",
+            "asphalt": 0.92,
+            "gravel": 1.02,
+            "mud": 0.82
+          },
+          {
+            "id": "road",
+            "description": "The strongest paved-road grip.",
+            "asphalt": 1.1,
+            "gravel": 0.72,
+            "mud": 0.48
+          }
+        ],
+        "selected": "rally",
+        "speedKmh": 18,
+        "compared": true,
+        "equipped": true,
+        "driven": true,
+        "returnPreserved": true,
+        "scope": "Workshop test garage; all parts are legitimately available. Bench handling measurements are a separate receipt."
+      },
+      "utc": "2026-10-16T16:02:33.534Z"
+    },
+    {
+      "name": "Browser invitation success, cancellation and fallbacks",
+      "status": "passed",
+      "detail": {
+        "success": "shared",
+        "cancelled": "cancelled",
+        "clipboard": "copied",
+        "fallback": "manual",
+        "date": "2026-10-16",
+        "url": "https://hire-poker-8313.onpagelove.com/#daily=2026-10-16",
+        "cancellationSideEffects": 0,
+        "statePreserved": true,
+        "scope": "Production share function executed by a browser fixture with injected navigator APIs; no OS share sheet or external message sent."
+      },
+      "utc": "2026-10-16T16:02:54.946Z"
+    }
+  ]
+}

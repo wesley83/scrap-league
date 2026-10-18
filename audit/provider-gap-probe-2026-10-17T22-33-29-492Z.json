@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-17T22:33:29.492Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "owned": [
+    "/boards/audit-c683b93a-d257-499e-a6b2-a1ee776eab30-trial.html"
+  ],
+  "created": [
+    "/boards/audit-c683b93a-d257-499e-a6b2-a1ee776eab30-trial.html"
+  ],
+  "mirrors": [
+    {
+      "mode": "trial",
+      "path": "/boards/audit-c683b93a-d257-499e-a6b2-a1ee776eab30-trial.html",
+      "type": "urn:ScrapLeague:ProbeRun:c683b93a-d257-499e-a6b2-a1ee776eab30:trial",
+      "sourceETag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+      "emptyPolicySha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142",
+      "normalizedMirrorSha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142"
+    }
+  ],
+  "routes": [],
+  "checks": [
+    {
+      "name": "trial: positive public write/readback",
+      "state": "passed",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ],
+      "oneCopy": true,
+      "durationMs": 1991
+    },
+    {
+      "name": "retention: interleaved physical cleanup and eligibility boundary",
+      "state": "failed",
+      "detail": "Public retention read failed: 503",
+      "durationMs": 1325
+    },
+    {
+      "name": "complete trial boundary fixture",
+      "state": "passed",
+      "executed": true,
+      "durationMs": 3920
+    }
+  ],
+  "only": "retention",
+  "attempts": [
+    {
+      "name": "trial: positive public write/readback",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/boards/audit-c683b93a-d257-499e-a6b2-a1ee776eab30-trial.html",
+      "status": 204,
+      "absent": true
+    }
+  ],
+  "scope": "Actual public application endpoints on this host, using nonce-owned empty policy mirrors with unique run namespaces. Only resource paths/type namespaces differ from retained production policy; no live policy or player record is changed.",
+  "passed": false
+}

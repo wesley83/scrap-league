@@ -1,0 +1,1044 @@
+/* Arcade edition: scene space and controls have distinct rectangles. */
+:root {
+  color-scheme: dark;
+}
+body {
+  --yellow: #ffd34e;
+  --muted: #bbc9c6;
+  --line: #4c6466;
+  --panel: #1b343a;
+  background: #142b31;
+  color: #f7f0df;
+  font-size: 16px;
+}
+button,
+input,
+select {
+  border-radius: 6px;
+  min-height: 48px;
+  font-size: 15px;
+}
+button {
+  background: #26464c;
+  border-color: #60797b;
+}
+button:hover {
+  background: #355b60;
+}
+button.primary {
+  color: #172d32;
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+button:disabled {
+  opacity: 0.55;
+}
+input,
+select {
+  background: #1a353c;
+  color: #f7f0df;
+  border-color: #617b7e;
+}
+label,
+.muted {
+  font-size: 14px;
+  color: #c6d1cb;
+}
+small {
+  font-size: 11px;
+}
+.eyebrow {
+  font-size: 11px;
+  color: #bbd1c9;
+  letter-spacing: 0.14em;
+}
+.quiet {
+  border: 1px solid #567277;
+  background: transparent;
+}
+#header {
+  height: 64px;
+  padding: 0 24px;
+  background: #142b31;
+  border-color: #3b555b;
+  gap: 20px;
+}
+#header nav button {
+  font-size: 13px;
+  padding: 10px;
+}
+.wordmark {
+  font-size: 27px;
+}
+.wordmark span {
+  color: #ffd34e;
+}
+.wordmark i {
+  border-color: #8fa8a8;
+  color: #bed1ce;
+}
+#context {
+  color: #b3c9c7;
+}
+#footer {
+  background: #142b31;
+  color: #b0c4c1;
+  font-size: 12px;
+  min-height: 36px;
+}
+#footer a {
+  color: #c6d7d0;
+}
+#stage {
+  min-height: 0;
+  height: calc(100dvh - 100px - var(--host-footer-space, 0px));
+  background: #18343b;
+}
+#stage.view-start {
+  overflow-y: auto;
+}
+#stage.view-start:after {
+  display: none;
+}
+#stage.view-start #world {
+  left: 44%;
+  top: 0;
+  width: 56%;
+  height: calc(100% - 88px);
+}
+#screen-start {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.home-copy {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 45%;
+  padding: 28px clamp(24px, 3.5vw, 60px) 20px;
+  background: #18343b;
+  flex: 1;
+}
+.home-copy h1 {
+  font-size: clamp(52px, 5vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  margin: 16px 0;
+}
+.home-copy h1 em {
+  font-style: normal;
+  color: #ffd34e;
+}
+.intro {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #d2ded6;
+}
+#quick-race {
+  margin: 18px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  min-height: 60px;
+}
+#quick-race > span {
+  font:
+    30px LeagueDisplay,
+    sans-serif;
+  letter-spacing: 0.035em;
+}
+#quick-race small {
+  font-size: 10px;
+  font-weight: 700;
+}
+.home-actions {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.home-actions button {
+  min-height: 68px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+}
+.home-actions small {
+  font-size: 10px;
+}
+.home-copy .secondary-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 12px;
+}
+.home-copy .quiet {
+  font-size: 12px;
+  min-height: 44px;
+  padding: 6px;
+}
+.start-controls {
+  color: #bacdc8;
+  font-size: 12px;
+  margin-top: 14px;
+}
+.hero-label {
+  top: 28px;
+  right: 28px;
+  bottom: auto;
+  color: #193338;
+  text-shadow: none;
+}
+.hero-label .eyebrow {
+  color: #233a3b;
+}
+.hero-label h2 {
+  font-size: 48px;
+}
+.home-bottom {
+  position: relative;
+  min-height: 88px;
+  background: #142b31;
+  border-color: #4c6466;
+  gap: 40px;
+  padding: 18px 3.5%;
+}
+.home-bottom span {
+  font-size: 10px;
+  color: #a8c2bc;
+}
+.home-bottom strong {
+  font-size: 14px;
+}
+.page {
+  background: #1b343a;
+  padding: 32px 4%;
+}
+.page-heading h1 {
+  font-size: 54px;
+}
+.event-controls {
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.track-card {
+  background: #234249;
+  border-color: #668184;
+}
+.track-card .map {
+  background: #33555b;
+}
+.track-card p {
+  color: #c6d5ce;
+  font-size: 14px;
+}
+.track-card .card-top,
+.cup-label span {
+  color: #d9dfca;
+  font-size: 11px;
+}
+.garage-panel {
+  background: #19343b;
+}
+.part-slot p,
+.part-slot label,
+.garage-panel .command-row button {
+  font-size: 14px;
+  color: #c3d3ca;
+}
+.garage-caption {
+  bottom: 7%;
+}
+.garage-stats span {
+  font-size: 11px;
+}
+body[data-view="race"] #header {
+  height: 48px;
+}
+body[data-view="race"] #context,
+body[data-view="race"] #fullscreen {
+  display: none;
+}
+#stage.view-race,
+#stage.view-result {
+  height: calc(100dvh - 48px - var(--host-footer-space, 0px)) !important;
+  min-height: 0 !important;
+}
+body[data-view="result"] #header {
+  height: 48px;
+}
+#stage.view-race #world {
+  left: 0;
+  top: 94px;
+  width: 100%;
+  height: calc(100% - 170px);
+}
+.race-hud {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  padding: 8px max(12px, env(safe-area-inset-right)) 8px
+    max(12px, env(safe-area-inset-left));
+  background: #172f36;
+  align-items: center;
+  gap: 10px;
+}
+.hud-main {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  gap: 24px;
+}
+.hud-main span {
+  font-size: 10px;
+  color: #b8ccc4;
+}
+.hud-main strong {
+  font-size: 32px;
+  margin-top: 4px;
+}
+.hud-main small {
+  font-size: 15px;
+  color: #c6d6c6;
+}
+.hud-main .time {
+  font-size: 25px;
+  min-width: 130px;
+  margin-top: 7px;
+}
+.race-buttons {
+  gap: 8px;
+  align-items: center;
+}
+.race-buttons button {
+  min-height: 44px;
+  padding: 8px 14px;
+  font-size: 14px;
+  background: #2b4d55;
+}
+#race-title {
+  top: 68px;
+  left: 0;
+  right: 0;
+  height: 26px;
+  padding: 5px 12px;
+  font-size: 11px;
+  background: #23444b;
+  color: #dce8d5;
+}
+#corner-hint {
+  position: absolute;
+  right: 12px;
+  top: 107px;
+  padding: 8px 12px;
+  background: #173239ee;
+  color: #f8efd9;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+}
+#corner-hint:empty {
+  display: none;
+}
+#countdown {
+  top: 35%;
+  font-size: 112px;
+  color: #ffd34e;
+  text-shadow:
+    0 3px 0 #19333a,
+    0 0 20px #18343b;
+  z-index: 1;
+}
+#race-message {
+  top: 107px;
+  left: 12px;
+  transform: none;
+  font-size: 14px;
+  text-align: left;
+  max-width: min(65%, 500px);
+  padding: 9px 12px;
+  background: #18343bef;
+  color: #f2eed4;
+}
+.race-bottom,
+.touch .race-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  padding: 8px 16px;
+  background: #173239;
+  align-items: center;
+}
+.speed,
+.touch .speed {
+  width: 200px;
+  padding: 0;
+  background: none;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  column-gap: 8px;
+}
+.speed > strong,
+.touch .speed > strong {
+  font-size: 32px;
+  line-height: 1;
+}
+.speed > span {
+  font-size: 10px;
+  margin: 0;
+}
+.charge-caption {
+  margin: 5px 0;
+  font-size: 10px;
+  display: none;
+}
+#boost-bar {
+  grid-column: 1/-1;
+  margin-top: 7px;
+  height: 7px;
+}
+#minimap,
+.touch #minimap {
+  width: 90px;
+  height: 64px;
+  background: #28474c;
+}
+.keyboard-hint {
+  bottom: 26px;
+  left: 240px;
+  right: 125px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #cee0d6;
+  padding: 0 15px;
+  text-shadow: none;
+}
+.touch #stage.view-race #world {
+  height: calc(100% - 254px - env(safe-area-inset-bottom, 0px));
+}
+.touch .race-bottom {
+  bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+  height: 68px;
+}
+#touch-controls {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 92px;
+  padding: 10px max(12px, env(safe-area-inset-right))
+    max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  background: #102a32;
+  align-items: center;
+  gap: 16px;
+}
+.steering {
+  gap: 8px;
+  align-items: center;
+}
+.touch #steering-pad {
+  position: relative;
+  width: 140px;
+  height: 64px;
+  border-radius: 32px;
+  background: #34575d;
+  border: 2px solid #92b6b2;
+  color: #eef3da;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+#steering-pad small {
+  position: absolute;
+  font-size: 9px;
+  top: 5px;
+}
+.steer-knob {
+  font-size: 26px;
+  transform: translateX(calc(var(--steer, 0) * 39px));
+  transition: transform 0.05s;
+  padding-top: 9px;
+}
+#touch-controls button {
+  font-size: 12px;
+  min-height: 64px;
+  min-width: 52px;
+  padding: 8px;
+  border: 1px solid #92b6b2;
+  border-radius: 9px;
+  background: #31545c;
+}
+#touch-controls button[data-pressed="true"] {
+  background: #a6cfc3;
+  color: #172f36;
+  box-shadow: inset 0 0 0 2px #fff3ca;
+}
+#touch-controls .boost-button {
+  background: #ffd34e !important;
+  min-width: 66px;
+}
+#touch-controls .boost-button[data-pressed="true"] {
+  background: #ffed9e !important;
+}
+.steering button {
+  width: 58px;
+}
+.pedals {
+  gap: 8px;
+}
+body[data-auto="true"] .throttle-button {
+  display: none;
+}
+.touch .keyboard-hint {
+  display: none;
+}
+#practice-progress {
+  position: absolute;
+  bottom: 174px;
+  left: 12px;
+  color: #f9f0db;
+  background: #18343be8;
+  padding: 8px 12px;
+  font-size: 13px;
+  pointer-events: none;
+}
+body:not(.touch) #practice-progress {
+  bottom: 90px;
+}
+.result-screen {
+  padding: 26px;
+  background: #142c35a0;
+}
+.result-sheet {
+  background: #19353df5;
+  border-color: #7c9b9a;
+  max-width: 650px;
+  padding: 28px;
+}
+.result-sheet > p {
+  font-size: 15px;
+  color: #ccded4;
+}
+.result-stats span {
+  font-size: 11px;
+  color: #c0d3c9;
+}
+.ranking {
+  font-size: 15px;
+}
+.ranking td {
+  padding: 10px;
+  border-color: #436169;
+}
+.result-sheet .command-row button {
+  font-size: 14px;
+}
+dialog {
+  background: #1b3941;
+  border-color: #829e9b;
+  color: #f4f0df;
+  border-radius: 12px;
+  padding: 26px;
+  max-height: 85dvh;
+  overflow-y: auto;
+}
+dialog::backdrop {
+  background: #0d222bdd;
+}
+#modal-content {
+  font-size: 16px;
+}
+.settings-grid {
+  gap: 16px;
+}
+.settings-grid label {
+  font-size: 15px;
+}
+#toast {
+  color: #f7f0de;
+  background: #17393f;
+  border: 1px solid #91b5a9;
+  bottom: 20px;
+  font-size: 15px;
+}
+#loading {
+  background: #16333c;
+}
+.board-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+.board-list {
+  padding: 0;
+  list-style: none;
+}
+.board-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #5a767b;
+}
+.board-list strong {
+  color: #ffd34e;
+  font-variant-numeric: tabular-nums;
+}
+.workshop-bar,
+.workbench,
+.workshop-status {
+  background: #1b343a;
+}
+.workshop-bar {
+  height: 100px;
+}
+.workbench {
+  grid-template-columns: 220px 1fr 270px;
+}
+.palette label,
+.palette button,
+.palette select,
+.palette input,
+.inspector label,
+.inspector input,
+.inspector select,
+.inspector button {
+  font-size: 14px;
+  min-height: 44px;
+}
+.palette label,
+.inspector label {
+  min-height: 0;
+}
+.workshop-status {
+  height: auto;
+  min-height: 40px;
+  font-size: 12px;
+}
+.workshop-help {
+  padding: 10px 18px;
+  background: #24454c;
+  color: #cfdfd2;
+  font-size: 14px;
+}
+#screen-workshop .workbench {
+  height: calc(100% - 184px);
+}
+@media (max-width: 1000px) {
+  #context {
+    display: none;
+  }
+  .home-copy {
+    width: 49%;
+    padding: 28px 24px;
+  }
+  #stage.view-start #world {
+    left: 49%;
+    width: 51%;
+  }
+  .home-copy h1 {
+    font-size: 64px;
+  }
+  .home-bottom {
+    gap: 20px;
+  }
+  .home-bottom > div:last-child {
+    display: none;
+  }
+  .workbench {
+    grid-template-columns: 190px 1fr 230px;
+  }
+}
+@media (max-width: 720px) {
+  #header {
+    height: 56px;
+    padding: 0 14px;
+  }
+  #header nav {
+    gap: 0;
+  }
+  #header nav button {
+    font-size: 12px;
+    padding: 7px;
+  }
+  #fullscreen {
+    display: none;
+  }
+  .wordmark {
+    font-size: 24px;
+  }
+  .wordmark i {
+    display: none;
+  }
+  #stage {
+    height: calc(100dvh - 92px - var(--host-footer-space, 0px));
+    min-height: 0;
+  }
+  #stage.view-start #world {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 220px;
+  }
+  .home-copy {
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 220px;
+    padding: 26px 22px;
+  }
+  .home-copy h1 {
+    font-size: 64px;
+    margin: 12px 0;
+  }
+  .hero-label {
+    top: 14px;
+    right: 18px;
+  }
+  .hero-label h2 {
+    font-size: 30px;
+    margin: 5px 0;
+  }
+  .hero-label > span:last-child {
+    display: none;
+  }
+  .home-bottom {
+    min-height: 100px;
+    padding: 18px 22px;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .home-bottom > div {
+    flex: 1;
+    min-width: 130px;
+  }
+  #footer {
+    padding: 8px 12px;
+    gap: 10px;
+    font-size: 10px;
+    flex-wrap: wrap;
+  }
+  #storage-state {
+    display: none;
+  }
+  .track-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .page-heading h1 {
+    font-size: 40px;
+  }
+  .event-controls {
+    align-items: start;
+    gap: 12px;
+  }
+  .event-controls p {
+    font-size: 15px;
+  }
+  .garage-panel {
+    position: relative;
+    top: auto;
+    width: 100%;
+    height: auto;
+    padding: 24px;
+  }
+  #screen-garage {
+    overflow-y: auto;
+    padding-top: 300px;
+  }
+  .view-garage #world {
+    width: 100%;
+    height: 300px;
+  }
+  .garage-caption {
+    top: 170px;
+    bottom: auto;
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+  .garage-caption h1 {
+    font-size: 36px;
+    margin: 4px 0;
+  }
+  .garage-caption > p {
+    font-size: 13px;
+  }
+  .garage-stats {
+    display: none;
+  }
+  .hud-main {
+    gap: 14px;
+  }
+  .hud-main strong {
+    font-size: 27px;
+  }
+  .hud-main .time {
+    font-size: 21px;
+    min-width: 104px;
+    margin-top: 8px;
+  }
+  .hud-main small {
+    font-size: 13px;
+  }
+  .hud-main span {
+    font-size: 9px;
+  }
+  .race-buttons {
+    flex-direction: row;
+    gap: 6px;
+  }
+  .race-buttons button {
+    min-width: 44px;
+    padding: 7px;
+    font-size: 12px;
+  }
+  #race-reset {
+    display: none;
+  }
+  #corner-hint {
+    font-size: 12px;
+    padding: 7px 9px;
+    top: 104px;
+    right: 8px;
+  }
+  #race-message {
+    top: 142px;
+    left: 8px;
+    max-width: calc(100% - 16px);
+    padding: 7px 9px;
+    font-size: 13px;
+  }
+  .race-bottom,
+  .touch .race-bottom {
+    padding: 8px 12px;
+  }
+  .speed,
+  .touch .speed {
+    width: 130px;
+  }
+  .keyboard-hint {
+    left: 150px;
+    right: 106px;
+    bottom: 12px;
+    font-size: 10px;
+    padding: 0 6px;
+  }
+  .touch #touch-controls {
+    gap: 10px;
+  }
+  .touch #steering-pad {
+    width: 112px;
+  }
+  .steer-knob {
+    transform: translateX(calc(var(--steer, 0) * 29px));
+  }
+  #touch-controls button {
+    min-width: 48px;
+    font-size: 11px;
+    padding: 8px 6px;
+  }
+  .steering button {
+    width: 48px;
+  }
+  .steering,
+  .pedals {
+    gap: 6px;
+  }
+  #touch-controls .boost-button {
+    min-width: 57px;
+  }
+  body[data-auto="false"] #steering-pad {
+    width: 90px;
+  }
+  .result-screen {
+    padding: 16px;
+  }
+  .result-sheet {
+    padding: 22px 18px;
+  }
+  .result-sheet h1 {
+    font-size: 54px;
+  }
+  .result-stats {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .result-stats strong {
+    font-size: 23px;
+  }
+  .workshop-bar {
+    height: auto;
+    min-height: 110px;
+    padding: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .workshop-bar .command-row {
+    min-width: 0;
+    width: 100%;
+  }
+  .workshop-bar .command-row button {
+    padding: 8px;
+    font-size: 13px;
+  }
+  .workshop-help {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  #screen-workshop {
+    overflow: auto;
+  }
+  #screen-workshop .workbench {
+    height: calc(100dvh - 330px);
+    min-height: 260px;
+  }
+  #screen-workshop .palette,
+  #screen-workshop .inspector {
+    background: #1b3941;
+  }
+  .editor-sheets {
+    background: #24454c;
+  }
+  .workshop-status {
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+}
+@media (max-width: 380px) {
+  .home-copy h1 {
+    font-size: 56px;
+  }
+  .track-grid {
+    grid-template-columns: 1fr;
+  }
+  .hud-main {
+    gap: 10px;
+  }
+  .hud-main .time {
+    min-width: 92px;
+    font-size: 19px;
+  }
+  .touch #steering-pad {
+    width: 100px;
+  }
+  body.touch[data-auto="false"] #steering-pad {
+    width: 78px;
+  }
+  #touch-controls {
+    padding-inline: 8px;
+  }
+  #touch-controls button {
+    min-width: 44px;
+  }
+  .pedals {
+    gap: 5px;
+  }
+}
+@media (max-height: 540px) and (min-width: 550px) {
+  body[data-view="race"] #header {
+    display: none;
+  }
+  #stage.view-race {
+    height: calc(100dvh - var(--host-footer-space, 0px)) !important;
+  }
+  .race-hud {
+    height: 54px;
+    padding-block: 4px;
+  }
+  .hud-main strong {
+    font-size: 24px;
+  }
+  .hud-main .time {
+    font-size: 23px;
+    margin-top: 4px;
+  }
+  #race-title {
+    top: 54px;
+    height: 23px;
+    font-size: 10px;
+  }
+  #stage.view-race #world {
+    top: 77px;
+    height: calc(100% - 133px);
+  }
+  .touch #stage.view-race #world {
+    top: 77px;
+    height: calc(100% - 149px);
+  }
+  .race-bottom {
+    height: 56px;
+  }
+  .touch .race-bottom {
+    bottom: 8px;
+    left: calc(50% - 90px);
+    right: auto;
+    width: 180px;
+    height: 56px;
+    padding: 0;
+    z-index: 2;
+    background: none;
+  }
+  .touch #minimap {
+    display: none;
+  }
+  .touch .speed {
+    width: 100%;
+  }
+  .touch #touch-controls {
+    min-height: 72px;
+    height: 72px;
+    padding: 6px 14px;
+  }
+  #touch-controls button,
+  #steering-pad {
+    min-height: 56px;
+    height: 56px;
+  }
+  #touch-controls [data-hold="handbrake"] {
+    display: block;
+  }
+  #corner-hint {
+    top: 86px;
+  }
+  #race-message {
+    top: 86px;
+    left: 10px;
+    max-width: 62%;
+    font-size: 12px;
+  }
+  #countdown {
+    top: 30%;
+    font-size: 76px;
+  }
+  #practice-progress {
+    bottom: 80px;
+    font-size: 12px;
+  }
+  .keyboard-hint {
+    bottom: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

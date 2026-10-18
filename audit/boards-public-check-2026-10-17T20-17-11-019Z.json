@@ -1,0 +1,179 @@
+{
+  "utc": "2026-10-17T20:17:11.019Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "policyRevision": "scrap-league-casual-v1",
+  "tests": [
+    {
+      "name": "bounded-page-read",
+      "mode": "trial",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "trial",
+      "testId": "e51a11bc-576f-48eb-b1b5-d4fd61e1358e",
+      "state": "passed",
+      "status": 206,
+      "attemptStatuses": [
+        206
+      ]
+    },
+    {
+      "name": "public-write-readback",
+      "mode": "trial",
+      "testId": "e51a11bc-576f-48eb-b1b5-d4fd61e1358e",
+      "state": "passed",
+      "status": 1,
+      "diagnostics": {
+        "oneRow": true,
+        "runIdentityMatches": true,
+        "serverReceiptPresent": true,
+        "fiveDayExpiry": true
+      }
+    },
+    {
+      "name": "duplicate-run-rejected",
+      "mode": "trial",
+      "testId": "e51a11bc-576f-48eb-b1b5-d4fd61e1358e",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "duplicate-not-appended",
+      "mode": "trial",
+      "testId": "e51a11bc-576f-48eb-b1b5-d4fd61e1358e",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "second-distinct-public-write",
+      "mode": "trial",
+      "testId": "4f46e1fd-4534-4b8b-8af1-499fc96ef0a5",
+      "state": "passed",
+      "status": 206
+    },
+    {
+      "name": "split-arithmetic-rejected",
+      "mode": "trial",
+      "testId": "b1d324d3-ad74-426f-8fcc-a22be4a89856",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "client-expiry-rejected",
+      "mode": "trial",
+      "testId": "a4dbab2b-dc1c-4f12-9922-e0c00e2bbbe4",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "unsupported-build-rejected",
+      "mode": "trial",
+      "testId": "7962287d-5a1a-4700-8c27-5e44b8321fdf",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "bounded-page-read",
+      "mode": "daily",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "daily",
+      "testId": "4dec0310-fc6e-4714-b7dd-811bf9bd0083",
+      "state": "passed",
+      "status": 206,
+      "attemptStatuses": [
+        503,
+        206
+      ]
+    },
+    {
+      "name": "public-write-readback",
+      "mode": "daily",
+      "testId": "4dec0310-fc6e-4714-b7dd-811bf9bd0083",
+      "state": "passed",
+      "status": 1,
+      "diagnostics": {
+        "oneRow": true,
+        "runIdentityMatches": true,
+        "serverReceiptPresent": true,
+        "fiveDayExpiry": true
+      }
+    },
+    {
+      "name": "duplicate-run-rejected",
+      "mode": "daily",
+      "testId": "4dec0310-fc6e-4714-b7dd-811bf9bd0083",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "duplicate-not-appended",
+      "mode": "daily",
+      "testId": "4dec0310-fc6e-4714-b7dd-811bf9bd0083",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "second-distinct-public-write",
+      "mode": "daily",
+      "testId": "d398afb7-a19c-4a80-9623-7e5bcd17c497",
+      "state": "passed",
+      "status": 206
+    },
+    {
+      "name": "split-arithmetic-rejected",
+      "mode": "daily",
+      "testId": "accb03dc-894d-42b3-a917-597a50f8003f",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "client-expiry-rejected",
+      "mode": "daily",
+      "testId": "287bed74-e8dc-4015-a084-51a93113e0aa",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "unsupported-build-rejected",
+      "mode": "daily",
+      "testId": "9c4b0935-a9cf-4d94-9cb3-24482aae6b51",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    }
+  ],
+  "cleanup": {
+    "trial": {
+      "removed": 2,
+      "state": "conditionally-removed",
+      "etagConfirmed": true
+    },
+    "daily": {
+      "removed": 2,
+      "state": "conditionally-removed",
+      "etagConfirmed": true
+    }
+  },
+  "providerWideReadiness": "not available; endpoint observations are not a global guarantee",
+  "passed": false,
+  "failures": [
+    "duplicate-run-rejected failed for trial.",
+    "split-arithmetic-rejected failed for trial.",
+    "duplicate-run-rejected failed for daily.",
+    "split-arithmetic-rejected failed for daily."
+  ],
+  "scope": "Anonymous public endpoint checks; local results remain authoritative; synthetic run rows are conditionally removed when ETags permit"
+}

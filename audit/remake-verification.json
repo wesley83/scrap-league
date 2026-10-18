@@ -1,0 +1,104 @@
+{
+  "utc": "2026-10-17T20:29:44.316Z",
+  "release": "sl-60bf1fb46ea8c0",
+  "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
+  "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
+  "tests": {
+    "full": {
+      "passed": 101,
+      "failed": 0,
+      "durationMs": 80864,
+      "artifact": "audit/remake-unit-tests-final.txt"
+    },
+    "finalPromptChange": {
+      "passed": 5,
+      "failed": 0,
+      "artifact": "audit/remake-prompt-tests.txt"
+    }
+  },
+  "browser": {
+    "release": "sl-100882d0435165",
+    "artifact": "audit/remake-browser.json",
+    "runtimeDifference": [
+      "driving-controls.js"
+    ],
+    "scope": "Reuse explicit: only final runtime difference is the manual-touch practice prompt GAS text, covered by focused assertions. No simulation, geometry, controls, renderer, editor, network or worker behavior differs.",
+    "results": [
+      {
+        "name": "Quick race journey",
+        "status": "passed"
+      },
+      {
+        "name": "Input ownership and camera",
+        "status": "passed"
+      },
+      {
+        "name": "Manual throttle layout",
+        "status": "passed"
+      },
+      {
+        "name": "Leaderboard browse",
+        "status": "failed",
+        "error": "Times unavailable: Failed to fetch You can still race and keep your result locally."
+      },
+      {
+        "name": "Workshop round trip",
+        "status": "passed"
+      },
+      {
+        "name": "Practice and ghost",
+        "status": "passed"
+      },
+      {
+        "name": "All tracks and recovery",
+        "status": "passed"
+      },
+      {
+        "name": "Render budget",
+        "status": "passed"
+      }
+    ],
+    "localhostBoardFailure": {
+      "observed": "Failed to fetch",
+      "diagnosis": "Public endpoint returns 206 with no allow-origin for http://127.0.0.1:4398; exact public origin receives its own allow-origin. Same-origin UI must be checked after publication."
+    }
+  },
+  "offline": {
+    "origin": "http://127.0.0.1:4397",
+    "from": "sl-de66ac8ab06a61",
+    "to": "sl-100882d0435165",
+    "normalControls": true,
+    "updateConfirmedInSettings": true,
+    "serverStopped": true,
+    "serverConnectionRefusalConfirmed": true,
+    "freshDocumentLoaded": true,
+    "verifiedFooter": true,
+    "actualKeyboardDriving": {
+      "speedKmh": 41,
+      "time": "00:02.667"
+    },
+    "draftRenamedAndReopened": "Offline remake circuit",
+    "browserProcessRestart": false
+  },
+  "liveBoards": {
+    "artifact": "audit/boards-public-check-2026-10-17T20-17-11-019Z.json",
+    "passed": false,
+    "validTrialAndDailyReadback": true,
+    "ownedSyntheticRowsRemoved": true,
+    "limitation": "Some duplicate and split-arithmetic requests returned provider memory-budget errors instead of 422. No duplicate was appended. Do not claim the negative-policy probe passed."
+  },
+  "screenshots": [
+    "audit/screenshots/remake-phone.jpg"
+  ],
+  "judgement": {
+    "author": "LLM review",
+    "claim": "Primary action, visible player, road direction and reserved touch area are clear. Workshop geometry and source share the compiler.",
+    "notClaimed": [
+      "physical-phone verification",
+      "human enjoyment",
+      "browser-process cold restart",
+      "twenty-minute soak for the new renderer",
+      "full legacy product acceptance"
+    ]
+  }
+}

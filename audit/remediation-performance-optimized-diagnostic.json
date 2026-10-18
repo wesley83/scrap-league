@@ -1,0 +1,53 @@
+{
+  "release": "sl-edbd4cb4ecc6af",
+  "utc": "2026-10-16T14:53:07.628Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "One-minute performance diagnostic",
+      "status": "passed",
+      "detail": {
+        "durationMs": 60014.5,
+        "hiddenMs": 0,
+        "frames": 3583,
+        "sceneCycles": 2,
+        "viewport": {
+          "width": 1233,
+          "height": 720
+        },
+        "p95FrameMs": 16.80000000000291,
+        "p99FrameMs": 16.899999999999636,
+        "p95WorkMs": 4.200000017881393,
+        "p99WorkMs": 5.699999988079071,
+        "p95SimulationMs": 1,
+        "p95RenderMs": 3.399999976158142,
+        "budgets": {
+          "calls": 51,
+          "triangles": 12340
+        },
+        "heaps": [
+          {
+            "ms": 0,
+            "heap": 41480163,
+            "geometries": 15,
+            "textures": 7
+          },
+          {
+            "ms": 30013.699999994038,
+            "heap": 47240890,
+            "geometries": 9,
+            "textures": 1
+          }
+        ],
+        "scope": "Available-browser WebGL and real six-car fixed-step simulation with legal AI input; no stored rewards, no hardware/human requirement",
+        "withinFrameBudget": true
+      },
+      "utc": "2026-10-16T14:48:49.147Z"
+    }
+  ]
+}

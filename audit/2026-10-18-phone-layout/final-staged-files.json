@@ -1,0 +1,197 @@
+{
+  "utc": "2026-10-18T04:54:59.277Z",
+  "scope": "Audit-only closure; source/inventory/output unchanged from 09bc927; generated patch/manifest exclude themselves",
+  "release": "sl-28ec5378c02128",
+  "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
+  "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
+  "liveGate": "passed",
+  "credentialPatternMatches": 0,
+  "workingBytesEqualStagedBytes": true,
+  "files": [
+    {
+      "path": "audit/2026-10-18-phone-layout/ci-completed.json",
+      "bytes": 4693,
+      "sha256": "3b2102f4ff037e6968dfff5046cd08539f7ec7b7077d55d127301ef74cd66fc0"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/ci-progress-2.json",
+      "bytes": 2232,
+      "sha256": "450a3a9137ee0196b651321616e9791935575c7523e0850f7527bae3e55e4a2a"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/ci-progress-3.json",
+      "bytes": 4294,
+      "sha256": "b4c07f6a34e98388b78782b81cfbe64e31dac3f6faec05d6d166c2f852a81869"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/ci-progress.json",
+      "bytes": 2232,
+      "sha256": "450a3a9137ee0196b651321616e9791935575c7523e0850f7527bae3e55e4a2a"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/coverage-review.md",
+      "bytes": 6099,
+      "sha256": "0f231e343fefb9d62bb0474f6f7ae57e7555e56a1da0f6217de1b56160a4ba5c"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/data-preservation.json",
+      "bytes": 2603,
+      "sha256": "04413fe30e8952c20ef2c9c12a092679802e63edcad0a99f9de2b7290b09cfe5"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/data-seed-first-503.json",
+      "bytes": 1748,
+      "sha256": "53ef848a4c14fcf1530bdd25b46162fccb3376b49266a4d11561389a49a04a02"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/local/acceptance.json",
+      "bytes": 1039063,
+      "sha256": "758c902cce6a40451736351fd0ad783278905a1e8ff65638f84b8d5e32630c55"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/local/coverage-review.md",
+      "bytes": 6099,
+      "sha256": "9ffa45d3b635131e39f17a88e423e6688618d6c1d7268b8ead6e729ceaf9c3b8"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/local/evidence-review.md",
+      "bytes": 22896,
+      "sha256": "9dc5811d532e4b9d3b2e8d661901c84805c332c9e415965eb900516f65b8ff83"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/local/report.md",
+      "bytes": 1398,
+      "sha256": "ae52d8a4d3d2f494375337592d9c542951605654b81edd597c995865cd39c301"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/local/reuse.json",
+      "bytes": 20758,
+      "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/staged/acceptance.json",
+      "bytes": 1040866,
+      "sha256": "0bceebc413f650136096396e0d2daf30f2440e6e7ab6c87e06841791df8712d8"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/staged/coverage-review.md",
+      "bytes": 6099,
+      "sha256": "cb9b3619fb173621a32cfff1e4ce4de04f910d01c88b378643a4442c4055787e"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/staged/evidence-review.md",
+      "bytes": 22880,
+      "sha256": "8545c8c93e949c7cb0a35693f24aa7b0967968727c35af2fbb26b2b32e1e9792"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/staged/identity.json",
+      "bytes": 476,
+      "sha256": "0a3b9e5951c540f9bd57c347d821b147d8d1f6ce97ff3c39614485e9f18347f3"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/staged/report.md",
+      "bytes": 1393,
+      "sha256": "dfa0fa54d5e34ab1326a503c9a265d4205242a08460cb8527286043674b0892d"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/decisions/staged/reuse.json",
+      "bytes": 20758,
+      "sha256": "d6476fa5c6aa18f9464182da8639d6081b0849e56e01fb705adcf8ade93207b3"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+      "bytes": 54511,
+      "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/evidence-review.md",
+      "bytes": 22848,
+      "sha256": "43fa4ff2f13df4837053c2ead9c59a16c114972f39b49ea4eea27ec3f6f381d2"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/finalize.mjs",
+      "bytes": 2583,
+      "sha256": "bb99552f4df79f5cbeff9873c1e72032691fcfc0970737de208c7ed306bb4ad8"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/github-required-checks.json",
+      "bytes": 1191,
+      "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
+      "bytes": 147245,
+      "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
+      "bytes": 7572,
+      "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/live-verification-paced-raw.json",
+      "bytes": 1439,
+      "sha256": "2f4da8d72be7be21f9548660e10a94e647cedcb0a472a7fa5eab5b8ea333c947"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/live-verification.json",
+      "bytes": 1944,
+      "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/observations.md",
+      "bytes": 5115,
+      "sha256": "69563f9769c110f6d1f4ba42d8e128af87c14576de784ddbffc659e9230def73"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/public-browser.json",
+      "bytes": 619,
+      "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/public-race.png",
+      "bytes": 53865,
+      "sha256": "2855aedc6c5a52b9f2cc71d0935d62f89355fd58769a4d9aceef07b050821a58"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/public-service-first-503.json",
+      "bytes": 474,
+      "sha256": "923c3236066c4a48e2a8fbc2392c30dbaca09eaac944dc5562773c320cb4bda2"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/report.md",
+      "bytes": 1389,
+      "sha256": "3eb3272ef7dc67a3f09ea62eb7efc638704c83411b4ee6fe5b0186e8d32655b0"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/reuse.json",
+      "bytes": 20758,
+      "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/review.mjs",
+      "bytes": 10335,
+      "sha256": "f7b0abf143b30d2ac1b81efff0c33d6a342284cd26c2bb1fefdfade4344d7921"
+    },
+    {
+      "path": "audit/2026-10-18-phone-layout/verify-live-paced.mjs",
+      "bytes": 3273,
+      "sha256": "1592aa11ec7c848101ff4f92249c26f54959cb4f70b7631521d3e36c06541123"
+    },
+    {
+      "path": "audit/current-acceptance.json",
+      "bytes": 1047276,
+      "sha256": "677c694d7f1be3a0a8293b105a04d237d209e9a409cd4e2de930f1307b509b48"
+    },
+    {
+      "path": "audit/deployment.json",
+      "bytes": 54511,
+      "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+    },
+    {
+      "path": "audit/deployments/2026-10-18T04-49-46-569Z-696fdf9e-51bc-4b8a-bcab-1e62f40b8ea3.jsonl",
+      "bytes": 193931,
+      "sha256": "54e45ce141e40612b69305dfee6bb4d5312c83942cf2015861bbdc8deadd6efd"
+    }
+  ]
+}

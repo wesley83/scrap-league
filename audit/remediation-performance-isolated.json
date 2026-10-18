@@ -1,0 +1,802 @@
+{
+  "release": "sl-9dcfecb358e003",
+  "utc": "2026-10-16T16:00:23.374Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Apply verified update between runs",
+      "status": "passed",
+      "detail": {
+        "before": "./releases/sl-92595a0b385359/",
+        "expected": "sl-9dcfecb358e003",
+        "after": "./releases/sl-9dcfecb358e003/",
+        "explicitSafeActivation": true
+      },
+      "utc": "2026-10-16T15:33:50.967Z"
+    },
+    {
+      "name": "Injected gamepad, large text and touch interruption",
+      "status": "passed",
+      "detail": {
+        "emulatedGamepad": true,
+        "rangeAdjustment": true,
+        "startPauseResume": true,
+        "disconnect": true,
+        "touchCancellation": true,
+        "textScale": "200% computed body font, settings dialog",
+        "scope": "Injected browser input; no physical controller or device claim"
+      },
+      "utc": "2026-10-16T15:34:23.744Z"
+    },
+    {
+      "name": "Settings, input and graphics interruption",
+      "status": "passed",
+      "detail": {
+        "pause": true,
+        "settingsReturnedToPause": true,
+        "contextRebuilt": true,
+        "explicitResume": true,
+        "focus": true
+      },
+      "utc": "2026-10-16T15:36:07.423Z"
+    },
+    {
+      "name": "Scene and renderer budgets",
+      "status": "passed",
+      "detail": {
+        "rows": [
+          {
+            "track": "yard-loop",
+            "coldRenderMs": 154.40000000596046,
+            "calls": 54,
+            "triangles": 11740
+          },
+          {
+            "track": "tin-can-alley",
+            "coldRenderMs": 111.09999999403954,
+            "calls": 54,
+            "triangles": 12404
+          },
+          {
+            "track": "gravel-shift",
+            "coldRenderMs": 83.90000000596046,
+            "calls": 55,
+            "triangles": 12852
+          },
+          {
+            "track": "dockside-dash",
+            "coldRenderMs": 67.69999998807907,
+            "calls": 58,
+            "triangles": 13384
+          },
+          {
+            "track": "container-switchback",
+            "coldRenderMs": 85.5,
+            "calls": 56,
+            "triangles": 12740
+          },
+          {
+            "track": "salt-flat-sprint",
+            "coldRenderMs": 72.2000000178814,
+            "calls": 58,
+            "triangles": 16208
+          },
+          {
+            "track": "furnace-bend",
+            "coldRenderMs": 74,
+            "calls": 55,
+            "triangles": 11956
+          },
+          {
+            "track": "mudworks",
+            "coldRenderMs": 63.79999998211861,
+            "calls": 56,
+            "triangles": 14656
+          },
+          {
+            "track": "crusher-circuit",
+            "coldRenderMs": 91.2999999821186,
+            "calls": 56,
+            "triangles": 13728
+          },
+          {
+            "track": "night-sort",
+            "coldRenderMs": 81.40000000596046,
+            "calls": 55,
+            "triangles": 15024
+          },
+          {
+            "track": "redline-ridge",
+            "coldRenderMs": 80.19999998807907,
+            "calls": 57,
+            "triangles": 15708
+          },
+          {
+            "track": "the-big-salvage",
+            "coldRenderMs": 84.80000001192093,
+            "calls": 58,
+            "triangles": 16020
+          }
+        ],
+        "scenes": [
+          {
+            "title": "THE GATES ARE OPEN.",
+            "held": true,
+            "calls": 33
+          },
+          {
+            "title": "TAKE IT TO THE DOCKS.",
+            "held": true,
+            "calls": 35
+          },
+          {
+            "title": "KEEP THE FURNACE LIT.",
+            "held": true,
+            "calls": 34
+          },
+          {
+            "title": "ONE LAST NIGHT SHIFT.",
+            "held": true,
+            "calls": 34
+          },
+          {
+            "title": "THE YARD IS YOURS.",
+            "held": true,
+            "calls": 33
+          }
+        ],
+        "allBuilds": 81,
+        "gpuWithinBudget": true,
+        "scope": "Real WebGL rendering with source modules; scene fixture does not grant campaign completion"
+      },
+      "utc": "2026-10-16T15:36:47.374Z"
+    },
+    {
+      "name": "Offline corruption and repair",
+      "status": "passed",
+      "detail": {
+        "missingEntryRefused": true,
+        "repairVerified": true
+      },
+      "utc": "2026-10-16T15:37:19.536Z"
+    },
+    {
+      "name": "Offline reload with network unavailable",
+      "status": "passed",
+      "detail": {
+        "network503": true,
+        "offlineGame": true,
+        "workshop": true,
+        "scope": "Existing browser process, newly loaded document"
+      },
+      "utc": "2026-10-16T15:37:56.440Z"
+    },
+    {
+      "name": "Storage abort, reopen and backup",
+      "status": "passed",
+      "detail": {
+        "database": "Real browser IndexedDB; isolated disposable database",
+        "abort": true,
+        "conflict": true,
+        "reopen": true,
+        "backup": true
+      },
+      "utc": "2026-10-16T15:38:08.403Z"
+    },
+    {
+      "name": "Audio signal and voice budget",
+      "status": "passed",
+      "detail": [
+        {
+          "scene": "yard",
+          "voices": 24,
+          "peak": 0.0699876993894577,
+          "rms": 0.00914010834319481
+        },
+        {
+          "scene": "docks",
+          "voices": 24,
+          "peak": 0.07079418748617172,
+          "rms": 0.009135273111455478
+        },
+        {
+          "scene": "foundry",
+          "voices": 24,
+          "peak": 0.06938961148262024,
+          "rms": 0.009108347198441894
+        },
+        {
+          "scene": "final",
+          "voices": 24,
+          "peak": 0.07215208560228348,
+          "rms": 0.009116636681027048
+        }
+      ],
+      "utc": "2026-10-16T15:38:15.099Z"
+    },
+    {
+      "name": "Startup import failure fallback",
+      "status": "passed",
+      "detail": {
+        "failure": "The yard could not open. Failed to fetch dynamically imported module: http://127.0.0.1:4392/startup-fault/releases/sl-9dcfecb358e003/main.js Your saved progress and drafts are kept.",
+        "reloadVisible": true
+      },
+      "utc": "2026-10-16T15:38:26.158Z"
+    },
+    {
+      "name": "Native route client and local include fallback",
+      "status": "passed",
+      "detail": {
+        "rows": [
+          {
+            "path": "/track/yard-loop",
+            "stage": "view-start",
+            "dialog": "Yard Loop",
+            "sourceTrack": "51000000-0000-4000-8000-000000000001"
+          },
+          {
+            "path": "/editor/yard-loop",
+            "stage": "view-workshop",
+            "dialog": "",
+            "sourceTrack": "51000000-0000-4000-8000-000000000001"
+          },
+          {
+            "path": "/track/unknown-fixture",
+            "stage": "view-start",
+            "dialog": "Choose a circuit",
+            "sourceTrack": null
+          },
+          {
+            "path": "/editor/",
+            "stage": "view-start",
+            "dialog": "Choose a circuit",
+            "sourceTrack": null
+          },
+          {
+            "path": "/track/%3Cscript%3E",
+            "stage": "view-start",
+            "dialog": "Choose a circuit",
+            "sourceTrack": null
+          }
+        ],
+        "scope": "Local native-include emulation with production wrapper and client modules; actual provider primitive evidence is recorded separately."
+      },
+      "utc": "2026-10-16T15:38:52.821Z"
+    },
+    {
+      "name": "All official circuits through Workshop UI",
+      "status": "passed",
+      "detail": {
+        "rows": [
+          {
+            "slug": "yard-loop",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "tin-can-alley",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "gravel-shift",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "dockside-dash",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "container-switchback",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "salt-flat-sprint",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "furnace-bend",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "mudworks",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "crusher-circuit",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "night-sort",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "redline-ridge",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          },
+          {
+            "slug": "the-big-salvage",
+            "uiCopy": true,
+            "numericEditUndo": true,
+            "canonicalRoundTrip": true
+          }
+        ],
+        "scope": "Current official copies opened, edited, undone and serialized through actual UI. Original official authoring was CLI; that history is not rewritten."
+      },
+      "utc": "2026-10-16T15:39:01.777Z"
+    },
+    {
+      "name": "Save browser evidence",
+      "status": "passed",
+      "detail": "Saved browser receipt",
+      "utc": "2026-10-16T15:39:38.212Z"
+    },
+    {
+      "name": "Twenty-minute rendering and simulation soak",
+      "status": "passed",
+      "detail": {
+        "durationMs": 1200003,
+        "hiddenMs": 0,
+        "frames": 71856,
+        "sceneCycles": 40,
+        "longestFrameMs": 116.60000000009313,
+        "framesOver50Ms": 20,
+        "framesOver1000Ms": 0,
+        "sceneLoads": [
+          {
+            "index": 0,
+            "durationMs": 235.80000001192093
+          },
+          {
+            "index": 1,
+            "durationMs": 75.80000001192093
+          },
+          {
+            "index": 2,
+            "durationMs": 66.09999999403954
+          },
+          {
+            "index": 3,
+            "durationMs": 75
+          },
+          {
+            "index": 4,
+            "durationMs": 74.40000000596046
+          },
+          {
+            "index": 5,
+            "durationMs": 93.90000000596046
+          },
+          {
+            "index": 6,
+            "durationMs": 109.5
+          },
+          {
+            "index": 7,
+            "durationMs": 70.2000000178814
+          },
+          {
+            "index": 8,
+            "durationMs": 82.30000001192093
+          },
+          {
+            "index": 9,
+            "durationMs": 73.2000000178814
+          },
+          {
+            "index": 10,
+            "durationMs": 86.59999999403954
+          },
+          {
+            "index": 11,
+            "durationMs": 89.19999998807907
+          },
+          {
+            "index": 12,
+            "durationMs": 106.59999999403954
+          },
+          {
+            "index": 13,
+            "durationMs": 56.5
+          },
+          {
+            "index": 14,
+            "durationMs": 79.10000002384186
+          },
+          {
+            "index": 15,
+            "durationMs": 65.30000001192093
+          },
+          {
+            "index": 16,
+            "durationMs": 75.09999999403954
+          },
+          {
+            "index": 17,
+            "durationMs": 82
+          },
+          {
+            "index": 18,
+            "durationMs": 113.80000001192093
+          },
+          {
+            "index": 19,
+            "durationMs": 49.599999994039536
+          },
+          {
+            "index": 20,
+            "durationMs": 31.099999994039536
+          },
+          {
+            "index": 21,
+            "durationMs": 33.39999997615814
+          },
+          {
+            "index": 22,
+            "durationMs": 39.69999998807907
+          },
+          {
+            "index": 23,
+            "durationMs": 36.10000002384186
+          },
+          {
+            "index": 24,
+            "durationMs": 48.30000001192093
+          },
+          {
+            "index": 25,
+            "durationMs": 28.30000001192093
+          },
+          {
+            "index": 26,
+            "durationMs": 55.29999998211861
+          },
+          {
+            "index": 27,
+            "durationMs": 33.900000005960464
+          },
+          {
+            "index": 28,
+            "durationMs": 30.700000017881393
+          },
+          {
+            "index": 29,
+            "durationMs": 39.79999998211861
+          },
+          {
+            "index": 30,
+            "durationMs": 52
+          },
+          {
+            "index": 31,
+            "durationMs": 36.599999994039536
+          },
+          {
+            "index": 32,
+            "durationMs": 34.599999994039536
+          },
+          {
+            "index": 33,
+            "durationMs": 37.19999998807907
+          },
+          {
+            "index": 34,
+            "durationMs": 40.10000002384186
+          },
+          {
+            "index": 35,
+            "durationMs": 37.5
+          },
+          {
+            "index": 36,
+            "durationMs": 46.400000005960464
+          },
+          {
+            "index": 37,
+            "durationMs": 32
+          },
+          {
+            "index": 38,
+            "durationMs": 32.80000001192093
+          },
+          {
+            "index": 39,
+            "durationMs": 37.900000005960464
+          }
+        ],
+        "viewport": {
+          "width": 1233,
+          "height": 720
+        },
+        "visibleCanvas": {
+          "left": 16,
+          "top": 0.2083333432674408,
+          "right": 1248.666748046875,
+          "bottom": 720.2083333432674,
+          "windowWidth": 1280,
+          "windowHeight": 720
+        },
+        "p95FrameMs": 17,
+        "p99FrameMs": 17.299999999813735,
+        "p95WorkMs": 3.5999999940395355,
+        "p99WorkMs": 4.5,
+        "p95SimulationMs": 1,
+        "p95RenderMs": 2.699999988079071,
+        "budgets": {
+          "calls": 54,
+          "triangles": 16096
+        },
+        "heaps": [
+          {
+            "ms": 0,
+            "heap": 51650222,
+            "geometries": 15,
+            "textures": 7
+          },
+          {
+            "ms": 30005.300000017858,
+            "heap": 56691769,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 60005.600000017905,
+            "heap": 61126229,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 90005.9000000179,
+            "heap": 67072781,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 120006.30000001786,
+            "heap": 55745861,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 150006.70000001788,
+            "heap": 54467163,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 180007.1000000179,
+            "heap": 58304388,
+            "geometries": 11,
+            "textures": 3
+          },
+          {
+            "ms": 210007.40000001783,
+            "heap": 57515692,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 240007.70000001788,
+            "heap": 59760569,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 270008.1000000179,
+            "heap": 59665331,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 300008.5000000179,
+            "heap": 62298141,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 330008.90000001783,
+            "heap": 66515372,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 360009.2000000179,
+            "heap": 60783764,
+            "geometries": 13,
+            "textures": 5
+          },
+          {
+            "ms": 390009.6000000179,
+            "heap": 56373379,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 420009.90000001783,
+            "heap": 67583091,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 450010.30000001786,
+            "heap": 66614601,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 480010.6000000179,
+            "heap": 60016016,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 510011.0000000179,
+            "heap": 61744212,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 540011.4000000178,
+            "heap": 61545693,
+            "geometries": 11,
+            "textures": 3
+          },
+          {
+            "ms": 570011.8000000179,
+            "heap": 76316047,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 600012.4000000178,
+            "heap": 82622265,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 630012.7000000179,
+            "heap": 82781573,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 660012.800000018,
+            "heap": 81567599,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 690013.1000000178,
+            "heap": 69458381,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 720014.0000000179,
+            "heap": 76524216,
+            "geometries": 13,
+            "textures": 5
+          },
+          {
+            "ms": 750014.0000000179,
+            "heap": 61979320,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 780014.300000018,
+            "heap": 56002473,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 810014.7000000179,
+            "heap": 60082527,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 840015.1000000178,
+            "heap": 66758700,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 870015.7000000179,
+            "heap": 72667435,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 900015.9000000178,
+            "heap": 86155125,
+            "geometries": 11,
+            "textures": 3
+          },
+          {
+            "ms": 930016.300000018,
+            "heap": 86941519,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 960000.2000000179,
+            "heap": 61999069,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 990000.2000000179,
+            "heap": 80738980,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1020000.5000000179,
+            "heap": 61834624,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1050000.9000000178,
+            "heap": 77672240,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1080001.300000018,
+            "heap": 76240975,
+            "geometries": 14,
+            "textures": 6
+          },
+          {
+            "ms": 1110001.6000000178,
+            "heap": 87599983,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1140002.1000000178,
+            "heap": 90006097,
+            "geometries": 9,
+            "textures": 1
+          },
+          {
+            "ms": 1170002.300000018,
+            "heap": 88949461,
+            "geometries": 9,
+            "textures": 1
+          }
+        ],
+        "scope": "Available-browser WebGL and real six-car fixed-step simulation with legal AI input; no stored rewards, no hardware/human requirement",
+        "withinFrameBudget": true
+      },
+      "utc": "2026-10-16T16:00:14.042Z"
+    }
+  ]
+}

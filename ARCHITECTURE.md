@@ -60,13 +60,13 @@ Compute a canonical gameplay representation containing geometry, surfaces, gates
 
 `buildRevision` hashes the four part IDs and their complete effective physical definitions. Comparison key is mode + track gameplay revision + rules revision + build revision + laps + assistance profile + challenge identity when applicable. Visual quality, audio, camera mode and cosmetic paint do not affect the key. A result carries the actual key captured for that run.
 
-The compiler produces road meshes, collision primitives, a spatial index, route arc-length samples, AI lookahead data, minimap paths and compact surface intervals. These are generated outputs with source revisions. The editor manipulates a typed working model with a lossless canonical HTML serializer; it is a view of the same contract rather than a second hand-maintained track format.
+The compiler produces road polygons, collision primitives, a spatial index, route arc-length samples, AI lookahead data, minimap paths and compact surface intervals. These are generated outputs with source revisions. The Workshop owns an inert semantic HTML subtree through `TrackDocument`. Each command validates and atomically replaces that source, then derives a frozen typed projection for its views and compiler. Exports reparse that DOM. Draft persistence and undo snapshots retain lossless representations of the same contract; they are never independent editable authorities. Incomplete loops may be saved, while race entry requires the shared compiler to accept the geometry.
 
 Ghosts are a deliberate specialized binary representation. Record vehicle pose, wheel/steer visualization and time at 20 Hz, with interpolation, maximum eight-minute duration and a 512 KiB per-ghost budget. Ghosts are non-colliding visual comparisons and never drive gameplay. They bind to the full comparison key, store with the associated best in one transaction and can be disabled. This avoids a promise of bit-identical replay across browsers and future engines. Input/event traces for diagnostics are separate bounded opt-in exports.
 
 ## Runtime modules and state
 
-Use portable ES modules with a bundled, pinned Three.js renderer and Bun for local build, validation, preview and CI tooling. Select and verify exact library/toolchain versions during implementation; ship a lockfile and local runtime assets. No runtime CDN dependency is required. A small HTML/CSS application shell is sufficient; specialized simulation does not require a page framework.
+Use portable ES modules with a Canvas 2D renderer and Bun/Node for local build, validation, preview and CI tooling. Ship the pinned lockfile and local runtime assets. No runtime CDN or WebGL dependency is required. A small HTML/CSS application shell surrounds the specialized simulation. Rendering consumes compiled geometry and race state without mutating either. Pixel allocation is capped at 2.4 million pixels and a 4096-pixel dimension; safer graphics caps pixel ratio at one. Context loss pauses the race; repair replaces the canvas while preserving the race and requires explicit resume.
 
 | Module | Responsibility | Important boundary |
 | --- | --- | --- |
@@ -150,7 +150,7 @@ The proposed retention contract follows the accepted previous-game pattern: elig
 
 Offer improved valid Time Trial/Daily results for submission; do not automatically send every practice run. Commit the pending record before showing Queued. Maximum pending outbox is 100 entries; on reaching it, offer export or explicit review rather than silently evicting results. Two tabs use an atomic claim with a random lease token and 30-second expiration; responses acknowledge only the matching token and run contents. Retry transient failures with jittered backoff up to five minutes. Permanent rejections remain recoverable with a reason. An ambiguous success reconciles the original run ID, never generates a new one.
 
-Public-policy source publication is distinct from effective enforcement. The previous project recorded stale-policy windows and intermittent processor errors. Establish the new game's initial application route through the provider-supported activation procedure before enabling submission, with positive/negative and duplicate controls. If the provider cannot supply adequate activation guarantees, keep online submission disabled and retain local results while resolving that deployment requirement. Warm-up reads or a fixed sleep are not proof of global readiness. Routine subsequent releases preserve established policies.
+Public-policy source publication is distinct from effective enforcement. The previous project recorded stale-policy windows and intermittent processor errors. The user chose to include the casual board despite Pagelove's lack of a provider-wide activation/readiness procedure. Create the two game-specific resources only when absent, then check exact-host positive/negative writes, duplicate IDs, pagination, and expiry before promoting the client. Report the observed per-host behavior without claiming all workers are globally ready. Warm-up reads or a fixed sleep do not establish global readiness. Local records remain authoritative for progression, and routine releases preserve established policies.
 
 ## Daily time and history
 
@@ -162,22 +162,26 @@ Challenge identity is schedule revision plus UTC date, with resolved track/build
 
 ## Performance and content budgets
 
-These are acceptance targets, not measurements. Baseline is a mid-range Android device with 6 GB RAM and a supported browser plus a typical integrated-GPU laptop; record the actual hardware when testing.
+These are acceptance targets, not measurements. Measure in the available browser environment and record its browser/OS and viewport. No physical-phone or hardware acquisition is required.
 
 | Area | Initial budget or target | Measurement |
 | --- | --- | --- |
 | First playable download | ≤5 MiB compressed critical path; ≤15 MiB complete offline pack | Build inventory and cold network profile |
 | Startup | Ready within 5 s on 10 Mbps / 80 ms RTT after connection; subsequent menu within 1 s | Cold and warm traces, including parser/compile/warmup |
-| Racing | Target 60 FPS; p95 frame ≤20 ms, p99 ≤33 ms on baseline at default quality | Full race including first collision/pad and six cars |
-| Input response | Input reflected by next simulation step; visual response target ≤50 ms | Instrumented event-to-frame and real-device observation |
-| GPU | ≤200 draw calls, ≤200k visible triangles, DPR cap 1.5 default on mobile | GPU/frame inspection, all scenes/effects |
+| Racing | Target 60 FPS; p95 frame ≤20 ms, p99 ≤33 ms on baseline at default quality | Full race including first collision/pad and six cars; static curb paths cached per track and equal-style trails batched |
+| Input response | Input reflected by next simulation step; visual response target ≤50 ms | Instrumented event-to-frame in the available browser |
+| Canvas allocation | At most 2.4 million backing pixels, dimensions at most 4096, DPR at most 2 (1 for safer graphics) | Actual Canvas 2D backing sizes, all scenes/effects; legacy WebGL draw/triangle targets are inapplicable to the replacement renderer |
 | Memory | Working set target ≤200 MiB where measurable; no monotonic growth after 20 race/editor cycles | Browser/platform tools with exact limitations recorded |
 | Editor | Common placement/undo feedback ≤50 ms; full max-track validation ≤250 ms off main path when necessary | Typical and worst bounded fixtures |
-| Assets/effects | Particle pools capped at 256; simultaneous audio voices ≤24 | Stress race and long-session counters |
+| Assets/effects | Canvas skid trails capped at 360; simultaneous audio voices ≤24 | Stress race and long-session counters; original particle-pool target belongs to the retired WebGL renderer |
 
 Prepare representative car parts, surface shaders, effects and audio paths before Go. Reuse bounded pools and dispose obsolete meshes/materials/targets. Graphics-context loss pauses simulation and input, rebuilds resources, warms them and requires explicit resume. The startup fallback is independent of the main module import and offers a functioning Retry/Reload path.
 
 ## Offline, installation and updates
+
+The installed worker also handles same-origin editor/track navigation failures. It verifies the cached yard against its root inventory hash, adjusts only the returned document's release base to the absolute worker scope, and marks the response for an explicit installed-copy notice. The verified cache remains unchanged. Only network failures, 404/410 and selected 5xx qualify; successful pages, authorization errors, query/API requests and non-navigation fetches retain their network behavior. An unverified/missing cache never becomes a fallback. First-ever clients still depend on successful server composition.
+
+Workshop entry is deduplicated and its controls stay hidden until a valid source exists. A delayed entry is cancelled when another view is chosen. Saved drafts cross the semantic document validation boundary before selection. Incomplete reads open a visibly explained separate identity without replacing unreadable records. Files independently isolates listing/record errors, preserving working-source export and explicit save retry.
 
 Build a manifest of every required immutable runtime asset with integrity hashes. The official track bundle, car parts and Workshop tools belong in the complete offline set. A worker verifies actual entries before declaring readiness. Keep published-track snapshots and local drafts separate from static code caches; a current mutable read must not be served as if it were a confirmed fresh publication. The bundled app's Workshop chooser opens local drafts and imports offline; a native `/editor/:slug` composition remains a network operation and falls back to that chooser with an explicit cached-source choice when available.
 
@@ -199,6 +203,6 @@ Use a manifest with requested fullscreen display and fallbacks, regular and mask
 
 ## Significant decisions and exceptions
 
-Planar physics permits clear readable collision, stable mobile controls and an editor whose topology can be fully validated. Elevated 3D rendering supplies the diorama presentation. Dense route arrays, meshes, audio buffers, ghost recordings and browser storage records are justified specialized representations; the durable published content remains inspectable HTML with traceable revisions.
+Planar physics permits readable collision, mobile controls and an editor whose topology can be validated. The overhead renderer shows numbered cars, kerbs, direction marks and the next checkpoint. Dense route arrays, canvas paths, audio buffers, ghost recordings and browser storage records are justified specialized representations; durable published content remains inspectable HTML with traceable revisions.
 
 A track owns its dependent geometry to keep structural validation coherent. Immutable official snapshots protect ongoing events. Mutable Workshop publication uses owner trust and conditional writes. Shared casual times use the distinct application boundary. No external server is introduced merely to exercise a feature, and no real-time transport or anti-cheat service is implied by Pagelove document persistence.

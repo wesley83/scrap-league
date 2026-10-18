@@ -8,7 +8,7 @@ Scrap League is an arcade racing game about assembling a scrappy little car, lea
 
 ## Play the game
 
-Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390. The game includes twelve circuits, four cups, 81 builds, six-car races, Daily Spec, Time Trial, local progress/ghosts and a working track editor. The current prebuilt game is included in `dist/`. The selected Pagelove site and publishing procedure are in [deployment instructions](DEPLOYMENT.md). Shared online boards and owner Workshop publishing are not connected in this release.
+Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390. The game includes twelve circuits, four cups, 81 builds, six-car races, Daily Spec, Time Trial, local progress/ghosts, shared casual Trial/Daily times and a working track editor. The current prebuilt game is included in `dist/`. The selected Pagelove site and publishing procedure are in [deployment instructions](DEPLOYMENT.md). Shared boards use separate per-game native documents, server-validated record shapes and server-assigned five-day expiry; modified clients can still submit fabricated times. [The deployment receipt](audit/deployment.json) identifies the last completed publication; publication does not imply that every product acceptance row has passed.
 
 ## Read the design
 
@@ -21,16 +21,18 @@ Run `START-GAME.cmd`, or `node tools/serve.mjs`, then open http://127.0.0.1:4390
 
 ## Product decisions
 
-- Elevated orthographic 3D presentation over a planar, fixed-step racing simulation.
+- Overhead Canvas 2D presentation over a planar, fixed-step racing simulation, with a road-ahead camera and reserved touch-control space.
 - Twelve authored circuits in four cups; one player and five computer drivers.
 - Four interchangeable assembly slots with three choices each: 81 possible builds.
-- Campaign, Time Trial, Daily Spec and Workshop modes. The editor and every editing tool are available immediately.
+- One-action two-lap Quick Race, optional action-based Driving School, League, Time Trial, Daily Spec and Workshop. The editor and every editing tool are available immediately.
 - Track geometry uses connected modular pieces, three driveable surfaces and bounded obstacle recipes.
 - Local progress and drafts; owner-authorized track publishing; casual shared times through a separate validated application path.
 - Immutable official race definitions; edited tracks start a distinct revision and never alter an active race.
 - Offline play and editing after a verified complete download; confirmed shared writes require a connection.
 
 ## Design authority
+
+The current [requirement follow-up](audit/2026-10-18-remaining-requirements/report.md) builds on the [handbook 2.10 audit](audit/2026-10-17-guide-2-10-audit/report.md), uses the [pinned 2.10.0 snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md) and [current acceptance mapping](ACCEPTANCE.md#handbook-210-audit-adoption), and records the user's native-desktop exclusion and corrected policy-capability mapping. Older snapshots below preserve design provenance. `requirements.json` is the authoritative outcome/scenario inventory; `audit/current-acceptance.json` records the exact candidate's current verdict.
 
 This package applies snapshots of the [Pagelove document-first standard](references/DOCUMENT-FIRST-DEVELOPMENT.md) and the [game development handbook](references/GAME-DEVELOPMENT-BEST-PRACTICES.md). It adapts the [previous editor architecture](references/PRISM-BREAKER-ARCHITECTURE.md), including the support-confirmed distinction between trusted WebDAV authoring and validated application writes. [Reference provenance](references/README.md) identifies their canonical sources and precedence.
 

@@ -1,0 +1,134 @@
+diff --git a/tests/evidence.mjs b/tests/evidence.mjs
+new file mode 100644
+--- /dev/null
++++ b/tests/evidence.mjs
+@@ -0,0 +1,20 @@
++import {mkdir,readFile,writeFile} from 'node:fs/promises';
++import {createHash} from 'node:crypto';
++import path from 'node:path';
++import {fileURLToPath} from 'node:url';
++
++// Keep the old named receipts historical. A new run cannot overwrite them or
++// make an old acceptance ledger silently refer to a different observation.
++export async function retainEvidence(legacyURL,content) {
++ const legacy=fileURLToPath(legacyURL),bytes=Buffer.from(content);
++ const digest=createHash('sha256').update(bytes).digest('hex');
++ const folder=path.join(path.dirname(legacy),'runs');
++ await mkdir(folder,{recursive:true});
++ const target=path.join(folder,path.basename(legacy,'.json')+'-'+digest+'.json');
++ try { await writeFile(target,bytes,{flag:'wx'}); }
++ catch(error) {
++  if(error.code!=='EEXIST')throw error;
++  if(!(await readFile(target)).equals(bytes))throw Error('Retained evidence identity collision');
++ }
++ return target;
++}
+diff --git a/tests/evidence.test.mjs b/tests/evidence.test.mjs
+new file mode 100644
+--- /dev/null
++++ b/tests/evidence.test.mjs
+@@ -0,0 +1,25 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import os from 'node:os';
++import {pathToFileURL} from 'node:url';
++import {retainEvidence} from './evidence.mjs';
++
++test('test evidence retains different runs and never overwrites a historical receipt',async()=>{
++ const fixture=await fs.mkdtemp(path.join(os.tmpdir(),'scrap-evidence-'));
++ try {
++  const historical=path.join(fixture,'observation.json');
++  await fs.writeFile(historical,'historical observation');
++  const first=await retainEvidence(pathToFileURL(historical),'first run');
++  const second=await retainEvidence(pathToFileURL(historical),'second run');
++  assert.notEqual(first,second);
++  assert.equal(await retainEvidence(pathToFileURL(historical),'first run'),first);
++  assert.equal(await fs.readFile(first,'utf8'),'first run');
++  assert.equal(await fs.readFile(second,'utf8'),'second run');
++  assert.equal(await fs.readFile(historical,'utf8'),'historical observation');
++ }finally{
++  if(!path.resolve(fixture).startsWith(path.resolve(os.tmpdir())+path.sep+'scrap-evidence-'))throw Error('Unsafe fixture cleanup');
++  await fs.rm(fixture,{recursive:true,force:true});
++ }
++});
+diff --git a/tests/guide-release-controls.test.mjs b/tests/guide-release-controls.test.mjs
+new file mode 100644
+--- /dev/null
++++ b/tests/guide-release-controls.test.mjs
+@@ -0,0 +1,17 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {validatePublicationAuthorization} from '../tools/candidate-publication.mjs';
++import {HOST_CONFIG} from '../app/pagelove.js';
++import {sha} from '../tools/release-gate.mjs';
++
++test('a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes',()=>{
++ const candidate={release:'sl-aaaaaaaaaaaaaa',source:{hash:'source'},outputHash:'output'};
++ for(const request of ['Commit, push, deploy','There is no meaningful reason not to have a leaderboard']){
++  for(const status of ['blocked','partial','not-run']){
++   const receipt={requirements:[{id:'J13',status,note:'Required outcome remains unverified',artifacts:[]}]};
++   const bytes=Buffer.from(JSON.stringify(receipt));
++   const auth={version:1,operation:'publish-candidate',origin:HOST_CONFIG.publicOrigin,authorizedBy:'Wesley',request,context:'Agent-authored list is not an outcome waiver',utc:'2026-10-17T00:00:00Z',release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,acceptanceHash:sha(bytes),knownIncomplete:receipt.requirements.map(({id,status,note})=>({id,status,note}))};
++   assert.throws(()=>validatePublicationAuthorization(auth,candidate,receipt,bytes,HOST_CONFIG),/unresolved|not passed|cannot waive/i,`${request}: ${status}`);
++  }
++ }
++});
+diff --git a/tests/result-write-validation.test.mjs b/tests/result-write-validation.test.mjs
+new file mode 100644
+--- /dev/null
++++ b/tests/result-write-validation.test.mjs
+@@ -0,0 +1,22 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {IDBFactory} from 'fake-indexeddb';
++import {openStore,freshProgress} from '../app/storage.js';
++
++test('malformed unfinished results cannot make a saved campaign unreadable or award progress',async()=>{
++ for(const invalid of [
++  {dnf:undefined,splits:[]},
++  {dnf:false,splits:[]},
++  {dnf:false,splits:[1,2,3]},
++ ]){
++  const store=await openStore({factory:new IDBFactory()});
++  const progress=freshProgress();progress.cup={id:'cup',index:0,rounds:[]};
++  await store.set('progress',progress);
++  const result={id:'invalid-run',key:'fixture',mode:'league',elapsedMs:12000,classification:[{id:'player'}],difficulty:'relaxed',...invalid};
++  await assert.rejects(store.commitResult(result,null,'cup',0),/Invalid saved result/);
++  assert.deepEqual(await store.get('progress'),progress);
++  assert.equal(await store.get('result:invalid-run'),undefined);
++  assert.equal(await store.get('best:fixture'),undefined);
++  store.close();
++ }
++});
+diff --git a/tests/startup-styles.test.mjs b/tests/startup-styles.test.mjs
+new file mode 100644
+--- /dev/null
++++ b/tests/startup-styles.test.mjs
+@@ -0,0 +1,25 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import vm from 'node:vm';
++import fs from 'node:fs/promises';
++
++test('startup missing either required stylesheet keeps controls inert and exposes independent recovery',async()=>{
++ const source=await fs.readFile(new URL('../app/bootstrap.js',import.meta.url),'utf8');
++ for(const missing of ['--scrap-core-ready','--scrap-arcade-ready']){
++  const nodes=Object.fromEntries(['loading','loading-message','startup-retry','stage','header'].map(id=>[id,{hidden:true,style:{},setAttribute(name,value){this[name]=value;},focus(){this.focused=true;}}]));
++  let timerCleared=false,imports=0;
++  const context=vm.createContext({document:{documentElement:{},getElementById:id=>nodes[id]},getComputedStyle:()=>({getPropertyValue:name=>name===missing?'':'1'}),setTimeout:()=>1,clearTimeout:()=>{timerCleared=true;},location:{reload(){}}});
++  const script=new vm.Script(source,{importModuleDynamically:()=>{imports++;throw Error('Game import must not start');}});
++  script.runInContext(context);
++  assert.equal(imports,0);
++  assert.equal(timerCleared,true);
++  assert.equal(nodes.stage.inert,true);
++  assert.equal(nodes.header.inert,true);
++  assert.equal(nodes.loading.hidden,false);
++  assert.equal(nodes['startup-retry'].hidden,false);
++  assert.equal(nodes['startup-retry'].focused,true);
++  assert.equal(nodes.loading.role,'alert');
++  assert.match(nodes.loading.style.cssText,/position:fixed/);
++  assert.match(nodes['loading-message'].textContent,/required game stylesheet/);
++ }
++});

@@ -1,0 +1,328 @@
+{
+  "utc": "2026-10-16T14:13:46.220Z",
+  "fixtureId": "7405cc31-9f8d-43c8-ac9d-3298518a88cd",
+  "scope": "Disposable DAV track and read-only native composition; no public mutation policy activation claimed",
+  "checks": {
+    "create": "Published",
+    "conditionalUpdate": "Published",
+    "staleEditorRefused": true,
+    "ambiguous": "Published",
+    "wrongCredentialRefused": true,
+    "composition": [
+      {
+        "slug": "safe-circuit",
+        "status": 200,
+        "shell": true,
+        "track": true
+      },
+      {
+        "slug": "unknown",
+        "status": 500,
+        "shell": false,
+        "track": false,
+        "bodyPreview": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>500 Internal Server Error - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Internal Server Error</h1>\n    <meta itemprop=\"statusCode\" content=\"500\">\n    <p itemprop=\"description\">Composition failed: internal error: JS method &#x27;track&#x27; failed: javascript/module binding exceeded memory budget</p>\n  </body>\n</html>"
+      },
+      {
+        "slug": "%3Cscript%3E",
+        "status": 200,
+        "shell": true,
+        "track": false
+      }
+    ],
+    "nativeCompositionPassed": false
+  },
+  "log": [
+    {
+      "utc": "2026-10-16T14:13:46.792Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/",
+      "method": "MKCOL",
+      "status": 201,
+      "bytes": 0,
+      "etag": "\"0000000000000000000000000000000000000000000000000000000000000000\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:47.015Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/",
+      "method": "MKCOL",
+      "status": 201,
+      "bytes": 0,
+      "etag": "\"0000000000000000000000000000000000000000000000000000000000000000\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:47.101Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/",
+      "method": "MKCOL",
+      "status": 201,
+      "bytes": 0,
+      "etag": "\"0000000000000000000000000000000000000000000000000000000000000000\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:47.175Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 404,
+      "bytes": 220,
+      "etag": null,
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:47.417Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "PUT",
+      "status": 201,
+      "bytes": 13540,
+      "etag": "\"fb3006b8717c9c2254bf7dc90afb807ae5b658b96b5b207787ccce8506857ba8\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:47.483Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13540,
+      "etag": "\"fb3006b8717c9c2254bf7dc90afb807ae5b658b96b5b207787ccce8506857ba8\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:47.685Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13540,
+      "etag": "\"fb3006b8717c9c2254bf7dc90afb807ae5b658b96b5b207787ccce8506857ba8\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:47.967Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "PUT",
+      "status": 200,
+      "bytes": 13518,
+      "etag": "\"923f49b3b4940ece873fb02afec0954d3fc19e9286cfb980cc1e737e4921df68\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.057Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13518,
+      "etag": "\"923f49b3b4940ece873fb02afec0954d3fc19e9286cfb980cc1e737e4921df68\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.145Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13518,
+      "etag": "\"923f49b3b4940ece873fb02afec0954d3fc19e9286cfb980cc1e737e4921df68\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.251Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13518,
+      "etag": "\"923f49b3b4940ece873fb02afec0954d3fc19e9286cfb980cc1e737e4921df68\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.474Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "PUT",
+      "status": 200,
+      "bytes": 13526,
+      "etag": "\"51124f56db5e21547b30fed8045b3fd215b122aa4cbca65ac57df6473d90b5b6\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.562Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13526,
+      "etag": "\"51124f56db5e21547b30fed8045b3fd215b122aa4cbca65ac57df6473d90b5b6\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.652Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 401,
+      "bytes": 161,
+      "etag": null,
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.773Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/shell.html",
+      "method": "PUT",
+      "status": 201,
+      "bytes": 198,
+      "etag": "\"40b937f8ac67d0bc6950ad291dce9a46f1cbe191c3470b002a5970d9ead7fbb5\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:48.923Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/:slug",
+      "method": "PUT",
+      "status": 201,
+      "bytes": 1182,
+      "etag": "\"1682a33a42ceca721e1df7320e1e98b0e086a4494131860322dbf4cb9bf2b709\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:49.703Z",
+      "host": "public",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/safe-circuit",
+      "method": "GET",
+      "status": 200,
+      "bytes": 15209,
+      "etag": "W/\"19d0e51b452001ef060682a428b7bd23efdccfc3efd1df10410e0a763402d8d5\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.001Z",
+      "host": "public",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/unknown",
+      "method": "GET",
+      "status": 500,
+      "bytes": 421,
+      "etag": null,
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.302Z",
+      "host": "public",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/%3Cscript%3E",
+      "method": "GET",
+      "status": 200,
+      "bytes": 1816,
+      "etag": "W/\"cbbd04e27a06bb0a18dc8fe8a8e7680d1b7bc2bd0b49ef38d775a2570426958e\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.420Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/:slug",
+      "method": "GET",
+      "status": 200,
+      "bytes": 1182,
+      "etag": "\"1682a33a42ceca721e1df7320e1e98b0e086a4494131860322dbf4cb9bf2b709\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.554Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/:slug",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": "\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.619Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/shell.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 198,
+      "etag": "\"40b937f8ac67d0bc6950ad291dce9a46f1cbe191c3470b002a5970d9ead7fbb5\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.722Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/shell.html",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": "\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.785Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 13526,
+      "etag": "\"51124f56db5e21547b30fed8045b3fd215b122aa4cbca65ac57df6473d90b5b6\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.917Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": "\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"",
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:50.981Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": null,
+      "correlation": null
+    },
+    {
+      "utc": "2026-10-16T14:13:51.057Z",
+      "host": "authoring",
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/",
+      "method": "DELETE",
+      "status": 204,
+      "bytes": 0,
+      "etag": null,
+      "correlation": null
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/:slug",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/shell.html",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/definition.html",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/editor/",
+      "status": 204
+    },
+    {
+      "path": "/workshop-tracks/7405cc31-9f8d-43c8-ac9d-3298518a88cd/",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "release": "sl-475e681fb90505",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Inspect campaign persistence",
+      "status": "passed",
+      "durationMs": 7,
+      "details": {
+        "scope": "Diagnostic of owned isolated fixture, not a passing campaign",
+        "readError": "Invalid saved result.",
+        "raw": {
+          "progression": {
+            "version": 1,
+            "revision": 4,
+            "completed": [
+              1
+            ],
+            "medals": {
+              "1:relaxed": 3
+            },
+            "build": {
+              "chassis": "mule",
+              "engine": "courier",
+              "tires": "road",
+              "utility": "roll-cage"
+            },
+            "history": [
+              "9ae20036-326a-4cdc-9142-c35a8ecd850d"
+            ]
+          },
+          "cups": {
+            "id": "8fff2a85-e58b-457a-a42e-6354d90d7c1b",
+            "index": 0,
+            "difficulty": "relaxed",
+            "seed": 1624721107,
+            "rivals": [
+              "bea",
+              "otto",
+              "kit",
+              "mags",
+              "riv"
+            ],
+            "rounds": [
+              {
+                "id": "9ae20036-326a-4cdc-9142-c35a8ecd850d",
+                "mode": "league",
+                "key": "league|5d78cd7ea6c2d3b6305fc6444acb69d0630736a3186f3f8384f5860225c85d07|scrap-physics-v1.1.0|c41feae0c5251b5c55c3b52662d783ebe7f2fce46607014d806c10c4d91d0956|3|steering-off:manual|",
+                "trackId": "51000000-0000-4000-8000-000000000001",
+                "trackName": "Yard Loop",
+                "build": {
+                  "chassis": "mule",
+                  "engine": "courier",
+                  "tires": "road",
+                  "utility": "roll-cage"
+                },
+                "challenge": "",
+                "challengeDate": "",
+                "trackRevision": "5d78cd7ea6c2d3b6305fc6444acb69d0630736a3186f3f8384f5860225c85d07",
+                "rulesRevision": "scrap-physics-v1.1.0",
+                "buildRevision": "c41feae0c5251b5c55c3b52662d783ebe7f2fce46607014d806c10c4d91d0956",
+                "assistance": "steering-off:manual",
+                "performanceDegraded": false,
+                "seed": 1624721107,
+                "laps": 3,
+                "difficulty": "relaxed",
+                "elapsedMs": 12317,
+                "splits": [],
+                "classification": [
+                  {
+                    "id": "player",
+                    "name": "You",
+                    "time": null
+                  },
+                  {
+                    "id": "otto",
+                    "name": "Otto",
+                    "time": null
+                  },
+                  {
+                    "id": "riv",
+                    "name": "Riv",
+                    "time": null
+                  },
+                  {
+                    "id": "kit",
+                    "name": "Kit",
+                    "time": null
+                  },
+                  {
+                    "id": "bea",
+                    "name": "Bea Bolts",
+                    "time": null
+                  },
+                  {
+                    "id": "mags",
+                    "name": "Mags",
+                    "time": null
+                  }
+                ],
+                "contacts": 142,
+                "resets": 0,
+                "createdAt": "2026-10-17T23:56:15.082Z"
+              }
+            ],
+            "pending": null,
+            "openingSeen": true
+          },
+          "presets": []
+        },
+        "visibleProgress": {
+          "version": 1,
+          "revision": 0,
+          "completed": [],
+          "medals": {},
+          "cup": null,
+          "build": {
+            "chassis": "mule",
+            "engine": "courier",
+            "tires": "road",
+            "utility": "roll-cage"
+          },
+          "presets": [],
+          "history": []
+        }
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:59:36.434Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4419/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:59:36.447Z",
+  "sourceHash": "b8fe0e70f580a3909d9a8939d16927f8d3f34915f9c7b4f9d4507349b071de45",
+  "serverSha256": "2ec05f2667f2cddf460888df6ef2b2fc59978a371cfe74e2c9ddc2a28d8f5bf0",
+  "labSha256": "27c96a5baa912a54350276240dfd8c63cb368774271143ba6269ad6bd44834f4"
+}

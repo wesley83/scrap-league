@@ -1,0 +1,171 @@
+{
+  "release": "sl-5c1afcc9442899",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Twelve events, reload and ending",
+      "status": "passed",
+      "durationMs": 46457,
+      "details": {
+        "rows": [
+          {
+            "event": 1,
+            "elapsedMs": 101731,
+            "laps": 3,
+            "place": 1,
+            "contacts": 94
+          },
+          {
+            "event": 2,
+            "elapsedMs": 141869,
+            "laps": 3,
+            "place": 1,
+            "contacts": 561
+          },
+          {
+            "event": 3,
+            "elapsedMs": 120420,
+            "laps": 3,
+            "place": 1,
+            "contacts": 571
+          },
+          {
+            "event": 4,
+            "elapsedMs": 134109,
+            "laps": 3,
+            "place": 1,
+            "contacts": 106
+          },
+          {
+            "event": 5,
+            "elapsedMs": 164035,
+            "laps": 3,
+            "place": 1,
+            "contacts": 363
+          },
+          {
+            "event": 6,
+            "elapsedMs": 160843,
+            "laps": 3,
+            "place": 2,
+            "contacts": 687
+          },
+          {
+            "event": 7,
+            "elapsedMs": 155900,
+            "laps": 3,
+            "place": 1,
+            "contacts": 438
+          },
+          {
+            "event": 8,
+            "elapsedMs": 137686,
+            "laps": 3,
+            "place": 1,
+            "contacts": 104
+          },
+          {
+            "event": 9,
+            "elapsedMs": 183101,
+            "laps": 3,
+            "place": 1,
+            "contacts": 170
+          },
+          {
+            "event": 10,
+            "elapsedMs": 162135,
+            "laps": 3,
+            "place": 1,
+            "contacts": 273
+          },
+          {
+            "event": 11,
+            "elapsedMs": 155870,
+            "laps": 3,
+            "place": 2,
+            "contacts": 570
+          },
+          {
+            "event": 12,
+            "elapsedMs": 199052,
+            "laps": 3,
+            "place": 1,
+            "contacts": 836
+          }
+        ],
+        "reloadAfterFirstRound": true,
+        "allFourScenes": true,
+        "heldEnding": true,
+        "reducedMotion": true,
+        "lowEffects": true,
+        "muted": true,
+        "scope": "Legal synthetic controller through actual UI/persistence; no human enjoyment claim"
+      },
+      "qualification": {
+        "utc": "2026-10-18T02:21:24.084Z",
+        "release": "sl-5c1afcc9442899",
+        "entry": "http://127.0.0.1:4430/?parity-return=1792290064489",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          708,
+          532
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T02:22:10.570Z",
+  "sourceHash": "069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9",
+  "verifiers": [
+    {
+      "source": "file:///C:/Users/Wesley/Documents/ChatGPT/Demos/scrap-league/audit/2026-10-18-remaining-requirements/browser-server.mjs",
+      "sha256": "f6cedd84bf41fead220087d06398fe5037844106b5b24e4d600db4c6323244f0",
+      "snapshot": "verifier-snapshots/f6cedd84bf41fead220087d06398fe5037844106b5b24e4d600db4c6323244f0.txt"
+    },
+    {
+      "source": "C:\\Users\\Wesley\\Documents\\ChatGPT\\Demos\\scrap-league\\tools\\handbook-lab.js",
+      "sha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544",
+      "snapshot": "verifier-snapshots/43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544.txt"
+    },
+    {
+      "source": "C:\\Users\\Wesley\\Documents\\ChatGPT\\Demos\\scrap-league\\tools\\ui-review-lab.js",
+      "sha256": "ddf3699aa2769fe2c5e0aba70ce243a71ffb21fe0e09f3e9924a11ad7b06121f",
+      "snapshot": "verifier-snapshots/ddf3699aa2769fe2c5e0aba70ce243a71ffb21fe0e09f3e9924a11ad7b06121f.txt"
+    },
+    {
+      "source": "C:\\Users\\Wesley\\Documents\\ChatGPT\\Demos\\scrap-league\\tools\\handbook-soak.js",
+      "sha256": "7e73d1e2573f1585945918ae04baab004f929fed06166ac96e0c86539c545aaf",
+      "snapshot": "verifier-snapshots/7e73d1e2573f1585945918ae04baab004f929fed06166ac96e0c86539c545aaf.txt"
+    },
+    {
+      "source": "C:\\Users\\Wesley\\Documents\\ChatGPT\\Demos\\scrap-league\\audit\\2026-10-18-remaining-requirements\\browser-extra.js",
+      "sha256": "a19518b2cb4f0c1b1847dee3ea5d672afab27eb0476854cd67ee840fed78e525",
+      "snapshot": "verifier-snapshots/a19518b2cb4f0c1b1847dee3ea5d672afab27eb0476854cd67ee840fed78e525.txt"
+    },
+    {
+      "source": "C:\\Users\\Wesley\\Documents\\ChatGPT\\Demos\\scrap-league\\audit\\2026-10-18-remaining-requirements\\journeys.js",
+      "sha256": "363b04463eaa91c51755452cebc73b59dbb4452db84929d53a50335fa945dccb",
+      "snapshot": "verifier-snapshots/363b04463eaa91c51755452cebc73b59dbb4452db84929d53a50335fa945dccb.txt"
+    },
+    {
+      "source": "C:\\Users\\Wesley\\Documents\\ChatGPT\\Demos\\scrap-league\\audit\\2026-10-18-remaining-requirements\\storage-worker.js",
+      "sha256": "d5ab82da03109f3c23602049d00564f1b7fcdc7653a89ec8a34673b62584cc2c",
+      "snapshot": "verifier-snapshots/d5ab82da03109f3c23602049d00564f1b7fcdc7653a89ec8a34673b62584cc2c.txt"
+    },
+    {
+      "source": "C:\\Users\\Wesley\\Documents\\ChatGPT\\Demos\\scrap-league\\audit\\2026-10-18-remaining-requirements\\proof.js",
+      "sha256": "ed8384c4c9130535dd745c9c8dc3f200a3694e5b2acd6e6b4630c1d60b11767a",
+      "snapshot": "verifier-snapshots/ed8384c4c9130535dd745c9c8dc3f200a3694e5b2acd6e6b4630c1d60b11767a.txt"
+    }
+  ],
+  "serverSha256": "f6cedd84bf41fead220087d06398fe5037844106b5b24e4d600db4c6323244f0",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

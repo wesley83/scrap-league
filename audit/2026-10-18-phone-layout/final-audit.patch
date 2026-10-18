@@ -1,0 +1,2237 @@
+diff --git a/audit/2026-10-18-phone-layout/coverage-review.md b/audit/2026-10-18-phone-layout/coverage-review.md
+index f3e7f83..553f9a8 100644
+--- a/audit/2026-10-18-phone-layout/coverage-review.md
++++ b/audit/2026-10-18-phone-layout/coverage-review.md
+@@ -1,6 +1,6 @@
+ # Responsive scope coverage
+ 
+-Actor Codex; 2026-10-18T04:43:58.491Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++Actor Codex; 2026-10-18T04:54:57.473Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
+ 
+ Retain every adopted 47/102 baseline outcome and add R01's four required local layout scenarios (48/106 total). Current guide 2.11 Sections 10/11 supplement the original pinned 2.10 scope; no unrelated genre or native/physical requirement is adopted or waived. Review each home action, header/footer, card content and menu/race transitions, not only document width. Previous Workshop/Settings checks missed the home grid; the user's screenshot and red geometry now establish that omitted risk.
+ 
+diff --git a/audit/2026-10-18-phone-layout/decisions/local/coverage-review.md b/audit/2026-10-18-phone-layout/decisions/local/coverage-review.md
+new file mode 100644
+index 0000000..f3e7f83
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/decisions/local/coverage-review.md
+@@ -0,0 +1,54 @@
++# Responsive scope coverage
++
++Actor Codex; 2026-10-18T04:43:58.491Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++
++Retain every adopted 47/102 baseline outcome and add R01's four required local layout scenarios (48/106 total). Current guide 2.11 Sections 10/11 supplement the original pinned 2.10 scope; no unrelated genre or native/physical requirement is adopted or waived. Review each home action, header/footer, card content and menu/race transitions, not only document width. Previous Workshop/Settings checks missed the home grid; the user's screenshot and red geometry now establish that omitted risk.
++
++- J01 / local: Fresh player loads, learns the controls, starts and finishes Yard Loop without an account
++- J02 / local: Player pauses, opens settings, returns, resumes and immediately steers without a focus/input surprise
++- J03 / local: Player completes a three-race cup, reloads between rounds, and keeps exactly one set of rewards
++- J04 / local: Player completes all twelve events with ordinary inputs/resources and sees the held final scene
++- J05 / local: Player compares and equips a part, tests it and can explain its tradeoff
++- J06 / local: Player finishes a Time Trial, sees correct lap arithmetic, races a compatible ghost and improves a best
++- J07 / local: Player starts before UTC midnight, finishes after it, uploads later and remains on the original challenge
++- J08 / local: New creator builds a closed circuit, corrects a gap, places gates and drives a valid lap
++- J09 / local: Creator tests against five AI, returns to exact editor context, undoes, reloads and recovers work
++- J10 / local: Creator exports, imports and gets identical gameplay meaning without executing hostile content
++- J11 / staged: Two owner editors conflict; stale editor preserves work and never overwrites the newer track
++- J12 / staged: Published track succeeds but catalog update conflicts; exact link works and listing retry is safe
++- J13 / local: Player downloads complete content, stops the server, opens a fresh browser document and races/edits offline
++- J14 / local: Existing release discovers a new version naturally and updates between runs without losing state
++- J15 / staged: Score submission times out after server acceptance; original ID reconciles once across two tabs
++- J16 / local: Graphics context is lost, phone rotates or input disconnects; invisible simulation stops and explicit resume works
++- J17 / local: Result/track invitation contains useful text and link; canceled share preserves state
++- J18 / local: Reduced-motion, muted and low-effects players can finish and read every transition/result
++- P01 / local: Draft storage
++- P02 / local: Result transaction
++- P03 / local: Outbox
++- P04 / staged: Owner authoring
++- P05 / staged: Public records
++- P06 / staged: Retention
++- P07 / staged: Native composition
++- P08 / staged: Record supported policy activation capability and preserve established public policies when no safe activation contract exists
++- P09 / local: Data-preserving release
++- M01 / local: Shared schemas, parser/serializer/compiler, independent geometric fixtures, one car and a loop; Clean source regeneration; round-trip integrity; swept collisions, skidpad/slalom/braking checks; input/pause/recovery state contracts
++- M02 / local: Six-car race, modular road editor, surface/prop/gate tools, real test drive, history and drafts; A new track can be built, validated, driven, recovered and exported/imported through the UI; one complete keyboard/touch-emulated journey
++- M03 / local: All 81 builds, twelve circuits, four cups, eight rivals, unlocks and results; Official tracks authored in Workshop; all references resolve; all tracks finish under seeded AI; seeded handling/pacing measurements complete
++- M04 / local: Saves, ghosts, daily definitions, offline pack, install/fullscreen, audio and sharing; Transaction/failure tests; genuine offline relaunch; natural update journey; phone layouts and keyboard focus
++- M05 / staged: Native composition, owner publication, discovery index, casual boards; Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation where available, otherwise established-policy preservation, plus positive/negative record checks
++- M06 / live: Complete asset pack, required CI, audit evidence, release/rollback tools and browser verification; All required rows pass or have explicitly accepted scoped exceptions; exact package verified and previous-client update succeeds
++- C01 / local: Social artwork and complete initial OG/Twitter metadata
++- C02 / local: Favicon, raster, touch and maskable icon set
++- C03 / local: Complete asset sources, licenses, fonts and export inventory
++- C04 / staged: Required hosted CI refuses failed acceptance
++- C05 / local: Exact-source package and acceptance gate before every publication path
++- C06 / live: All required public assets and routes resolve after promotion
++- C07 / local: Credentials and private baselines absent from public package
++- C08 / local: Rollback preserves state and old-client dependencies
++- C09 / local: Reproducible browser evidence identifies exact tested environment
++- C10 / local: Fresh complete automated suite and accurate acceptance ledger
++- C11 / local: Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate
++- C12 / local: Required shared styles load consistently or produce recoverable startup failure through root and composed entry points
++- C13 / local: Every supported publisher refuses unresolved outcomes despite generic deployment instructions or agent-authored exception lists
++- C14 / staged: Publication phase journaling and operator recovery are exercised through the supported command after successful and ambiguous entry writes
++- R01 / local: Every home/menu action remains readable and reachable in phone portrait/landscape and enlarged text without horizontal clipping
+diff --git a/audit/2026-10-18-phone-layout/decisions/local/evidence-review.md b/audit/2026-10-18-phone-layout/decisions/local/evidence-review.md
+new file mode 100644
+index 0000000..47832c1
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/decisions/local/evidence-review.md
+@@ -0,0 +1,56 @@
++# Responsive evidence review
++
++Actor Codex; 2026-10-18T04:43:58.493Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++
++Raw geometry includes container/client widths, per-action target rectangles, hit testing and actual CSS viewport. Enlarged text doubles measured computed font sizes; insets use explicit local CSS env substitution. Footer precondition requires the actual provider markup's 32px reservation. Native/physical evidence is excluded. Original failed setups and actual defects remain retained.
++
++| ID | Status | Supported claim / limit |
++| --- | --- | --- |
++| J01 | passed | Account-free Quick Race and action-based practice pass in the current browser fixture. Actual normal-browser offline keyboard racing separately passed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J02 | passed | Sequential connector keyboard cycle, actual game-loop injected gamepad cycle and eight touch layout/side/orientation cycles pass; fresh controls and restored world focus verified. No physical device claim. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J03 | passed | Strict current browser campaign requires terminal finished state and every lap, reloads after round one, and checks one unique event award per race. No unfinished fixture result counts as completion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J04 | passed | All twelve events and four scenes through legal accelerated controller inputs; held ending and unique awards checked. This is not a human pacing/enjoyment measurement. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J05 | passed | Current garage fixture compares matching tire descriptions/grip, equips rally tires, drives and returns with selection preserved. All 81 independent handling measurements pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J06 | passed | Current browser completes a slower then improved three-lap solo run, saves/loads a compatible ghost and confirms the better best. Independent split arithmetic regressions pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J07 | passed | Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J08 | passed | Sequential keyboard creates a closed eight-piece circuit, exposes/corrects a real gap, places surface/prop/gate and tests against five AI. Separate mouse/touch-emulated journeys each create from blank, correct gap, complete a legal lap and round-trip a semantic copy. Full laps use explicitly identified legal seeded controllers. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J09 | passed | Actual closed IndexedDB recovery, current open Files warning/export, delayed first entry, corrupt source and latest navigation intent are separately qualified. Download capture proves export content, not OS delivery. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J10 | passed | Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J11 | passed | Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J12 | passed | Production publication wrapper on a disposable live circuit encounters an actual 412 from an injected stale catalog ETag; the exact public track remains semantically readable and listing retry succeeds. This is endpoint/function evidence, not a full owner-key form browser journey. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J13 | passed | Real verified B pack; origin process stopped and independent Node request returned ECONNREFUSED. Fresh browser document boots, drives and edits/reloads a saved circuit. Native desktop/browser-process restart excluded explicitly. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J14 | passed | Real unmodified service workers update previous public sl-8c38d2602f174d to current sl-5c1afcc9442899 through six natural discovery, veto, consent, preservation, failure and offline boundaries. Synthetic seeded saves are labeled; native desktop checks excluded. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J15 | passed | Two independent production Store/Boards connections reconcile an intentionally dropped response after actual public acceptance: one claim, original identity, one public copy and confirmed outbox. IndexedDB is emulated in this endpoint fixture; browser storage and leases are covered separately. Owned row conditionally removed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J16 | passed | Canvas failure injection and replacement preserve the paused race and clock. Six viewport layouts and independent pointer cancellation pass; actual offline keyboard input works. No physical-device claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J17 | passed | Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J18 | passed | Exact current twelve-event campaign runs muted, reduced motion and low effects, checks all scene captions and held ending. Existing bounded audio signal/voice tests pass; no perceptual listening claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P01 | passed | Full atomic quota/abort/conflict/schema regressions plus real browser IndexedDB Worker termination before and after transaction commit. Previous/new committed revision independently reopened; no OS power-loss claim. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P02 | passed | Fresh regressions reject malformed/unfinished results before rewards/bests/progression writes, preserve prior state and retain atomic abort/idempotency guarantees. Strict current campaign verifies readable committed rounds across reload. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P03 | passed | Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P04 | passed | Current live production publication functions pass pinned-host writes, wrong credential, stale baseline, create-only 412, lost accepted-response reconciliation and public semantic readback. Complete browser owner-key form operation is not inferred from these endpoint checks. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P05 | passed | All 42 actual endpoint checks pass at a predeclared 1.5-second mutation interval, owned accepted rows removed, policy hashes unchanged. Earlier seven burst errors retained as operational limitation. Explicit client retry preserves a denied valid time and reconciles a lost acceptance response. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P06 | passed | Server receipt/five-day lifetime and exact inclusive expiry/offline filtering pass local contracts. Actual public access removes multiple interleaved expired rows, preserves active controls, removes a near-boundary row and remains stable on repeat; independent owner DAV inspection confirms physical removal. Owner-seeded times exercise the predicate without claiming five elapsed days. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P07 | passed | Actual provider fixtures verify intended shell/track and 404 on missing includes. Final installed browser with server stopped recovers track links, hostile chooser and next saved-editor action; worker fixtures additionally cover HTTP404/503, success/auth passthrough, cache integrity and no API/query interception. First-ever clients without a verified pack retain provider errors. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P08 | passed | Unsupported provider-wide activation procedure recorded; established policy definitions pinned and preserved per the adopted guide. Positive/negative public enforcement required separately under P05; no global readiness guarantee. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P09 | passed | Deployment preserved the populated owned leaderboard fixture and all pre-existing row hashes; conditional cleanup removed only the owned test row. Existing Workshop documents/catalog and older release dependencies remain preserved by publisher contract/readback and controlled two-release restoration. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M01 | passed | Shared model/source/compiler, collision/handling, transactional editor source, controls and recovery pass current tests; renderer remains a derived view. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M02 | passed | Complete keyboard creator plus mouse/touch-emulated creator test/return/history/export/import/IndexedDB journeys. Actual keyboard export reached disk; connector filechooser event unavailable, so import is explicitly File/DataTransfer emulation through production parser/confirmation. Inspector focus and six-size enlarged-text overflow regression fixed and verified. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M03 | passed | All 81 builds, seeded circuit/campaign references and pacing verified by fresh suite. Twelve present-tense Workshop recreations/exports independently bound byte-identically to authoritative content. Original CLI authoring history remains disclosed. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M04 | passed | Six real-worker update boundaries plus actual stopped-server fresh-document race/edit, complete input/settings cycles, enlarged-text matrix and current save/ghost/daily/audio/share/install contracts. Native desktop/OS install checks excluded; no physical-device certification. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M05 | passed | Retained qualified owner conflict/catalog/retention/composition evidence, unchanged-policy decision and fresh complete paced public validation matrix. No policy edits or provider-wide readiness claim. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M06 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| C01 | passed | Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C02 | passed | ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C03 | passed | Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C04 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| C05 | passed | Gate version 4 independently binds all 102 named scenario decisions, exact source/output/inventory/reviews and checks before every mutable entry. Actual supported CLI controlled-host matrix refuses acceptance changes before next entry and wrong dependencies before promotion. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C06 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| C07 | passed | Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C08 | passed | Actual CLI A-to-B-to-A conditional restoration, lost response reconciliation, stale/corrupt backup refusal and unrelated state/old assets preserved. Restoration scope is exactly three root entries; no data/content rollback claimed. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C09 | passed | Receipts identify release/source, actual viewport/buffer/renderer, method and limits. Corrected connection requires its actual document; stale/unfinished fixtures remain failures and are not reused as complete journeys. Physical devices and full WCAG conformance are not claimed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C10 | passed | Frozen source full suite passed 119/119 with zero failures/skips. Named scenario statuses, limits and future-stage pending states are independently retained. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C11 | passed | Pinned guide 2.10.0, requirement map handbook-2.10-r2 and 47/102 inventory digest; separate exact-source/output coverage and evidence reviews plus preserved prior decisions and refusal regressions. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C12 | passed | Qualified required-CSS failures and ordinary Reload recovery must pass root and locally composed entries; installed shell uses the same bootstrap/styles. Public-host reads verify its current older routes separately. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C13 | passed | Both actual CLI operations must refuse this unresolved candidate before authentication/writes, with independent generic-instruction/agent-receipt refusal fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C14 | passed | Flushed chained phase journal records intent, known promotions before readback, post-write failures and applied/unapplied/unknown outcomes. Supported inspection/prepare/recovery performs conditional state checks, captures separate backups and refuses corrupted/concurrent baselines. Controlled-host fixture acceptance is synthetic and never used as product acceptance. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| R01 | passed | Ten CSS viewport sizes, doubled computed text, complete portrait/landscape menus/race/result/retry and live rotation, changing heights and injected safe insets pass with qualified provider-footer reservation. All rendered home actions including synthetic update availability are measured and hit-tested. Full laps use explicitly labeled legal accelerated controls; native/physical behavior not claimed. |
+diff --git a/audit/2026-10-18-phone-layout/decisions/local/report.md b/audit/2026-10-18-phone-layout/decisions/local/report.md
+new file mode 100644
+index 0000000..9c945aa
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/decisions/local/report.md
+@@ -0,0 +1,11 @@
++# Phone layout repair
++
++sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++
++The inherited phone two-column home grid conflicted with the arcade menu's nested action grid. Reset mobile flow, bounded/wrapping action columns, adaptive heading, dynamic header/footer sizing and safe margins fix the reported overflow. The same inherited grid conflict clipped event cards; explicit card flow and text wrapping fix it.
++
++R01 verifies ten CSS viewport sizes from 320 to 1440 pixels (including 720/721), doubled text, action bounds/hit testing, complete portrait/landscape menus and legal racing/result/retry, live rotation, viewport heights and injected insets. All four responsive scenarios passed. Fresh automated suite: 119 passed, zero failed/skipped. Native/physical-device checks excluded as requested; no full WCAG or every-device certification.
++
++Current stages: 45/48 requirements passed. Pending: M06, C04, C06.
++
++[Evidence review](evidence-review.md), [coverage review](coverage-review.md), [dependency reuse](reuse.json), [observations/failures](observations.md). Previous provider burst errors remain a bounded hosting limitation; this change does not alter its policies/data or claim universal readiness.
+diff --git a/audit/2026-10-18-phone-layout/decisions/staged/coverage-review.md b/audit/2026-10-18-phone-layout/decisions/staged/coverage-review.md
+new file mode 100644
+index 0000000..81132d2
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/decisions/staged/coverage-review.md
+@@ -0,0 +1,54 @@
++# Responsive scope coverage
++
++Actor Codex; 2026-10-18T04:49:40.139Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++
++Retain every adopted 47/102 baseline outcome and add R01's four required local layout scenarios (48/106 total). Current guide 2.11 Sections 10/11 supplement the original pinned 2.10 scope; no unrelated genre or native/physical requirement is adopted or waived. Review each home action, header/footer, card content and menu/race transitions, not only document width. Previous Workshop/Settings checks missed the home grid; the user's screenshot and red geometry now establish that omitted risk.
++
++- J01 / local: Fresh player loads, learns the controls, starts and finishes Yard Loop without an account
++- J02 / local: Player pauses, opens settings, returns, resumes and immediately steers without a focus/input surprise
++- J03 / local: Player completes a three-race cup, reloads between rounds, and keeps exactly one set of rewards
++- J04 / local: Player completes all twelve events with ordinary inputs/resources and sees the held final scene
++- J05 / local: Player compares and equips a part, tests it and can explain its tradeoff
++- J06 / local: Player finishes a Time Trial, sees correct lap arithmetic, races a compatible ghost and improves a best
++- J07 / local: Player starts before UTC midnight, finishes after it, uploads later and remains on the original challenge
++- J08 / local: New creator builds a closed circuit, corrects a gap, places gates and drives a valid lap
++- J09 / local: Creator tests against five AI, returns to exact editor context, undoes, reloads and recovers work
++- J10 / local: Creator exports, imports and gets identical gameplay meaning without executing hostile content
++- J11 / staged: Two owner editors conflict; stale editor preserves work and never overwrites the newer track
++- J12 / staged: Published track succeeds but catalog update conflicts; exact link works and listing retry is safe
++- J13 / local: Player downloads complete content, stops the server, opens a fresh browser document and races/edits offline
++- J14 / local: Existing release discovers a new version naturally and updates between runs without losing state
++- J15 / staged: Score submission times out after server acceptance; original ID reconciles once across two tabs
++- J16 / local: Graphics context is lost, phone rotates or input disconnects; invisible simulation stops and explicit resume works
++- J17 / local: Result/track invitation contains useful text and link; canceled share preserves state
++- J18 / local: Reduced-motion, muted and low-effects players can finish and read every transition/result
++- P01 / local: Draft storage
++- P02 / local: Result transaction
++- P03 / local: Outbox
++- P04 / staged: Owner authoring
++- P05 / staged: Public records
++- P06 / staged: Retention
++- P07 / staged: Native composition
++- P08 / staged: Record supported policy activation capability and preserve established public policies when no safe activation contract exists
++- P09 / local: Data-preserving release
++- M01 / local: Shared schemas, parser/serializer/compiler, independent geometric fixtures, one car and a loop; Clean source regeneration; round-trip integrity; swept collisions, skidpad/slalom/braking checks; input/pause/recovery state contracts
++- M02 / local: Six-car race, modular road editor, surface/prop/gate tools, real test drive, history and drafts; A new track can be built, validated, driven, recovered and exported/imported through the UI; one complete keyboard/touch-emulated journey
++- M03 / local: All 81 builds, twelve circuits, four cups, eight rivals, unlocks and results; Official tracks authored in Workshop; all references resolve; all tracks finish under seeded AI; seeded handling/pacing measurements complete
++- M04 / local: Saves, ghosts, daily definitions, offline pack, install/fullscreen, audio and sharing; Transaction/failure tests; genuine offline relaunch; natural update journey; phone layouts and keyboard focus
++- M05 / staged: Native composition, owner publication, discovery index, casual boards; Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation where available, otherwise established-policy preservation, plus positive/negative record checks
++- M06 / live: Complete asset pack, required CI, audit evidence, release/rollback tools and browser verification; All required rows pass or have explicitly accepted scoped exceptions; exact package verified and previous-client update succeeds
++- C01 / local: Social artwork and complete initial OG/Twitter metadata
++- C02 / local: Favicon, raster, touch and maskable icon set
++- C03 / local: Complete asset sources, licenses, fonts and export inventory
++- C04 / staged: Required hosted CI refuses failed acceptance
++- C05 / local: Exact-source package and acceptance gate before every publication path
++- C06 / live: All required public assets and routes resolve after promotion
++- C07 / local: Credentials and private baselines absent from public package
++- C08 / local: Rollback preserves state and old-client dependencies
++- C09 / local: Reproducible browser evidence identifies exact tested environment
++- C10 / local: Fresh complete automated suite and accurate acceptance ledger
++- C11 / local: Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate
++- C12 / local: Required shared styles load consistently or produce recoverable startup failure through root and composed entry points
++- C13 / local: Every supported publisher refuses unresolved outcomes despite generic deployment instructions or agent-authored exception lists
++- C14 / staged: Publication phase journaling and operator recovery are exercised through the supported command after successful and ambiguous entry writes
++- R01 / local: Every home/menu action remains readable and reachable in phone portrait/landscape and enlarged text without horizontal clipping
+diff --git a/audit/2026-10-18-phone-layout/decisions/staged/evidence-review.md b/audit/2026-10-18-phone-layout/decisions/staged/evidence-review.md
+new file mode 100644
+index 0000000..92f1554
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/decisions/staged/evidence-review.md
+@@ -0,0 +1,56 @@
++# Responsive evidence review
++
++Actor Codex; 2026-10-18T04:49:40.141Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++
++Raw geometry includes container/client widths, per-action target rectangles, hit testing and actual CSS viewport. Enlarged text doubles measured computed font sizes; insets use explicit local CSS env substitution. Footer precondition requires the actual provider markup's 32px reservation. Native/physical evidence is excluded. Original failed setups and actual defects remain retained.
++
++| ID | Status | Supported claim / limit |
++| --- | --- | --- |
++| J01 | passed | Account-free Quick Race and action-based practice pass in the current browser fixture. Actual normal-browser offline keyboard racing separately passed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J02 | passed | Sequential connector keyboard cycle, actual game-loop injected gamepad cycle and eight touch layout/side/orientation cycles pass; fresh controls and restored world focus verified. No physical device claim. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J03 | passed | Strict current browser campaign requires terminal finished state and every lap, reloads after round one, and checks one unique event award per race. No unfinished fixture result counts as completion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J04 | passed | All twelve events and four scenes through legal accelerated controller inputs; held ending and unique awards checked. This is not a human pacing/enjoyment measurement. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J05 | passed | Current garage fixture compares matching tire descriptions/grip, equips rally tires, drives and returns with selection preserved. All 81 independent handling measurements pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J06 | passed | Current browser completes a slower then improved three-lap solo run, saves/loads a compatible ghost and confirms the better best. Independent split arithmetic regressions pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J07 | passed | Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J08 | passed | Sequential keyboard creates a closed eight-piece circuit, exposes/corrects a real gap, places surface/prop/gate and tests against five AI. Separate mouse/touch-emulated journeys each create from blank, correct gap, complete a legal lap and round-trip a semantic copy. Full laps use explicitly identified legal seeded controllers. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J09 | passed | Actual closed IndexedDB recovery, current open Files warning/export, delayed first entry, corrupt source and latest navigation intent are separately qualified. Download capture proves export content, not OS delivery. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J10 | passed | Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J11 | passed | Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J12 | passed | Production publication wrapper on a disposable live circuit encounters an actual 412 from an injected stale catalog ETag; the exact public track remains semantically readable and listing retry succeeds. This is endpoint/function evidence, not a full owner-key form browser journey. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J13 | passed | Real verified B pack; origin process stopped and independent Node request returned ECONNREFUSED. Fresh browser document boots, drives and edits/reloads a saved circuit. Native desktop/browser-process restart excluded explicitly. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J14 | passed | Real unmodified service workers update previous public sl-8c38d2602f174d to current sl-5c1afcc9442899 through six natural discovery, veto, consent, preservation, failure and offline boundaries. Synthetic seeded saves are labeled; native desktop checks excluded. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J15 | passed | Two independent production Store/Boards connections reconcile an intentionally dropped response after actual public acceptance: one claim, original identity, one public copy and confirmed outbox. IndexedDB is emulated in this endpoint fixture; browser storage and leases are covered separately. Owned row conditionally removed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J16 | passed | Canvas failure injection and replacement preserve the paused race and clock. Six viewport layouts and independent pointer cancellation pass; actual offline keyboard input works. No physical-device claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J17 | passed | Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| J18 | passed | Exact current twelve-event campaign runs muted, reduced motion and low effects, checks all scene captions and held ending. Existing bounded audio signal/voice tests pass; no perceptual listening claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P01 | passed | Full atomic quota/abort/conflict/schema regressions plus real browser IndexedDB Worker termination before and after transaction commit. Previous/new committed revision independently reopened; no OS power-loss claim. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P02 | passed | Fresh regressions reject malformed/unfinished results before rewards/bests/progression writes, preserve prior state and retain atomic abort/idempotency guarantees. Strict current campaign verifies readable committed rounds across reload. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P03 | passed | Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P04 | passed | Current live production publication functions pass pinned-host writes, wrong credential, stale baseline, create-only 412, lost accepted-response reconciliation and public semantic readback. Complete browser owner-key form operation is not inferred from these endpoint checks. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P05 | passed | All 42 actual endpoint checks pass at a predeclared 1.5-second mutation interval, owned accepted rows removed, policy hashes unchanged. Earlier seven burst errors retained as operational limitation. Explicit client retry preserves a denied valid time and reconciles a lost acceptance response. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P06 | passed | Server receipt/five-day lifetime and exact inclusive expiry/offline filtering pass local contracts. Actual public access removes multiple interleaved expired rows, preserves active controls, removes a near-boundary row and remains stable on repeat; independent owner DAV inspection confirms physical removal. Owner-seeded times exercise the predicate without claiming five elapsed days. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P07 | passed | Actual provider fixtures verify intended shell/track and 404 on missing includes. Final installed browser with server stopped recovers track links, hostile chooser and next saved-editor action; worker fixtures additionally cover HTTP404/503, success/auth passthrough, cache integrity and no API/query interception. First-ever clients without a verified pack retain provider errors. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P08 | passed | Unsupported provider-wide activation procedure recorded; established policy definitions pinned and preserved per the adopted guide. Positive/negative public enforcement required separately under P05; no global readiness guarantee. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| P09 | passed | Deployment preserved the populated owned leaderboard fixture and all pre-existing row hashes; conditional cleanup removed only the owned test row. Existing Workshop documents/catalog and older release dependencies remain preserved by publisher contract/readback and controlled two-release restoration. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M01 | passed | Shared model/source/compiler, collision/handling, transactional editor source, controls and recovery pass current tests; renderer remains a derived view. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M02 | passed | Complete keyboard creator plus mouse/touch-emulated creator test/return/history/export/import/IndexedDB journeys. Actual keyboard export reached disk; connector filechooser event unavailable, so import is explicitly File/DataTransfer emulation through production parser/confirmation. Inspector focus and six-size enlarged-text overflow regression fixed and verified. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M03 | passed | All 81 builds, seeded circuit/campaign references and pacing verified by fresh suite. Twelve present-tense Workshop recreations/exports independently bound byte-identically to authoritative content. Original CLI authoring history remains disclosed. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M04 | passed | Six real-worker update boundaries plus actual stopped-server fresh-document race/edit, complete input/settings cycles, enlarged-text matrix and current save/ghost/daily/audio/share/install contracts. Native desktop/OS install checks excluded; no physical-device certification. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M05 | passed | Retained qualified owner conflict/catalog/retention/composition evidence, unchanged-policy decision and fresh complete paced public validation matrix. No policy edits or provider-wide readiness claim. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| M06 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| C01 | passed | Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C02 | passed | ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C03 | passed | Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C04 | passed | Fresh exact-source hosted/live boundary verified; see current receipts. |
++| C05 | passed | Gate version 4 independently binds all 102 named scenario decisions, exact source/output/inventory/reviews and checks before every mutable entry. Actual supported CLI controlled-host matrix refuses acceptance changes before next entry and wrong dependencies before promotion. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C06 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| C07 | passed | Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C08 | passed | Actual CLI A-to-B-to-A conditional restoration, lost response reconciliation, stale/corrupt backup refusal and unrelated state/old assets preserved. Restoration scope is exactly three root entries; no data/content rollback claimed. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C09 | passed | Receipts identify release/source, actual viewport/buffer/renderer, method and limits. Corrected connection requires its actual document; stale/unfinished fixtures remain failures and are not reused as complete journeys. Physical devices and full WCAG conformance are not claimed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C10 | passed | Frozen source full suite passed 119/119 with zero failures/skips. Named scenario statuses, limits and future-stage pending states are independently retained. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C11 | passed | Pinned guide 2.10.0, requirement map handbook-2.10-r2 and 47/102 inventory digest; separate exact-source/output coverage and evidence reviews plus preserved prior decisions and refusal regressions. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C12 | passed | Qualified required-CSS failures and ordinary Reload recovery must pass root and locally composed entries; installed shell uses the same bootstrap/styles. Public-host reads verify its current older routes separately. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C13 | passed | Both actual CLI operations must refuse this unresolved candidate before authentication/writes, with independent generic-instruction/agent-receipt refusal fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| C14 | passed | Flushed chained phase journal records intent, known promotions before readback, post-write failures and applied/unapplied/unknown outcomes. Supported inspection/prepare/recovery performs conditional state checks, captures separate backups and refuses corrupted/concurrent baselines. Controlled-host fixture acceptance is synthetic and never used as product acceptance. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
++| R01 | passed | Ten CSS viewport sizes, doubled computed text, complete portrait/landscape menus/race/result/retry and live rotation, changing heights and injected safe insets pass with qualified provider-footer reservation. All rendered home actions including synthetic update availability are measured and hit-tested. Full laps use explicitly labeled legal accelerated controls; native/physical behavior not claimed. |
+diff --git a/audit/2026-10-18-phone-layout/decisions/staged/report.md b/audit/2026-10-18-phone-layout/decisions/staged/report.md
+new file mode 100644
+index 0000000..f72edaa
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/decisions/staged/report.md
+@@ -0,0 +1,11 @@
++# Phone layout repair
++
++sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++
++The inherited phone two-column home grid conflicted with the arcade menu's nested action grid. Reset mobile flow, bounded/wrapping action columns, adaptive heading, dynamic header/footer sizing and safe margins fix the reported overflow. The same inherited grid conflict clipped event cards; explicit card flow and text wrapping fix it.
++
++R01 verifies ten CSS viewport sizes from 320 to 1440 pixels (including 720/721), doubled text, action bounds/hit testing, complete portrait/landscape menus and legal racing/result/retry, live rotation, viewport heights and injected insets. All four responsive scenarios passed. Fresh automated suite: 119 passed, zero failed/skipped. Native/physical-device checks excluded as requested; no full WCAG or every-device certification.
++
++Current stages: 46/48 requirements passed. Pending: M06, C06.
++
++[Evidence review](evidence-review.md), [coverage review](coverage-review.md), [dependency reuse](reuse.json), [observations/failures](observations.md). Previous provider burst errors remain a bounded hosting limitation; this change does not alter its policies/data or claim universal readiness.
+diff --git a/audit/2026-10-18-phone-layout/evidence-review.md b/audit/2026-10-18-phone-layout/evidence-review.md
+index 47832c1..738708f 100644
+--- a/audit/2026-10-18-phone-layout/evidence-review.md
++++ b/audit/2026-10-18-phone-layout/evidence-review.md
+@@ -1,6 +1,6 @@
+ # Responsive evidence review
+ 
+-Actor Codex; 2026-10-18T04:43:58.493Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
++Actor Codex; 2026-10-18T04:54:57.475Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
+ 
+ Raw geometry includes container/client widths, per-action target rectangles, hit testing and actual CSS viewport. Enlarged text doubles measured computed font sizes; insets use explicit local CSS env substitution. Footer precondition requires the actual provider markup's 32px reservation. Native/physical evidence is excluded. Original failed setups and actual defects remain retained.
+ 
+@@ -38,13 +38,13 @@ Raw geometry includes container/client widths, per-action target rectangles, hit
+ | M03 | passed | All 81 builds, seeded circuit/campaign references and pacing verified by fresh suite. Twelve present-tense Workshop recreations/exports independently bound byte-identically to authoritative content. Original CLI authoring history remains disclosed. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+ | M04 | passed | Six real-worker update boundaries plus actual stopped-server fresh-document race/edit, complete input/settings cycles, enlarged-text matrix and current save/ghost/daily/audio/share/install contracts. Native desktop/OS install checks excluded; no physical-device certification. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+ | M05 | passed | Retained qualified owner conflict/catalog/retention/composition evidence, unchanged-policy decision and fresh complete paced public validation matrix. No policy edits or provider-wide readiness claim. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+-| M06 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| M06 | passed | Fresh exact-source hosted/live boundary verified; see current receipts. |
+ | C01 | passed | Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+ | C02 | passed | ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+ | C03 | passed | Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+-| C04 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| C04 | passed | Fresh exact-source hosted/live boundary verified; see current receipts. |
+ | C05 | passed | Gate version 4 independently binds all 102 named scenario decisions, exact source/output/inventory/reviews and checks before every mutable entry. Actual supported CLI controlled-host matrix refuses acceptance changes before next entry and wrong dependencies before promotion. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+-| C06 | not-run | Exact candidate future hosted/live stage has not run; old success does not substitute. |
++| C06 | passed | Fresh exact-source hosted/live boundary verified; see current receipts. |
+ | C07 | passed | Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+ | C08 | passed | Actual CLI A-to-B-to-A conditional restoration, lost response reconciliation, stale/corrupt backup refusal and unrelated state/old assets preserved. Restoration scope is exactly three root entries; no data/content rollback claimed. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+ | C09 | passed | Receipts identify release/source, actual viewport/buffer/renderer, method and limits. Corrected connection requires its actual document; stale/unfinished fixtures remain failures and are not reused as complete journeys. Physical devices and full WCAG conformance are not claimed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits. |
+diff --git a/audit/2026-10-18-phone-layout/finalize.mjs b/audit/2026-10-18-phone-layout/finalize.mjs
+new file mode 100644
+index 0000000..5b330dc
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/finalize.mjs
+@@ -0,0 +1,18 @@
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import assert from 'node:assert/strict';
++import {spawnSync} from 'node:child_process';
++import {createHash} from 'node:crypto';
++import {verifyRelease} from '../../tools/release-gate.mjs';
++const root=path.resolve(import.meta.dirname,'../..'),dir=import.meta.dirname,prefix='audit/2026-10-18-phone-layout/';
++const git=(...args)=>{const r=spawnSync('git',['-c','safe.directory='+root.replaceAll('\\','/'),...args],{cwd:root,maxBuffer:32e6});assert.equal(r.status,0,r.stderr.toString());return r.stdout;};
++const candidate=await verifyRelease(root,'live');
++const excluded=[prefix+'final-staged-files.json',prefix+'final-audit.patch'];
++const names=git('diff','--cached','--name-only','-z').toString().split('\0').filter(n=>n&&!excluded.includes(n));
++assert.ok(names.length>0&&names.every(n=>n.startsWith('audit/')),'Final commit must contain only evidence; application/inventory/output frozen');
++const b=spawnSync('git',['-c','safe.directory='+root.replaceAll('\\','/'),'cat-file','--batch'],{cwd:root,input:names.map(n=>':'+n+'\n').join(''),maxBuffer:32e6});assert.equal(b.status,0);let offset=0;
++const files=[];
++for(const name of names){const end=b.stdout.indexOf(10,offset),header=b.stdout.subarray(offset,end).toString(),size=Number(header.split(' ')[2]);assert.match(header,/^[a-f0-9]+ blob \d+$/);const bytes=b.stdout.subarray(end+1,end+1+size);offset=end+size+2;assert.ok(bytes.equals(await fs.readFile(path.join(root,name))),'Working/staged difference '+name);if(/\.(md|json|jsonl|mjs|js|txt|patch)$/.test(name))assert.ok(!/pk_[a-f0-9]{32,}|\bgh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----/i.test(bytes.toString()),'Credential-like data in '+name);files.push({path:name,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});}
++await fs.writeFile(path.join(dir,'final-audit.patch'),git('diff','--cached','--no-ext-diff','--','audit/*.md',prefix+'*.md',prefix+'*.mjs','audit/current-acceptance.json'));
++await fs.writeFile(path.join(dir,'final-staged-files.json'),JSON.stringify({utc:new Date().toISOString(),scope:'Audit-only closure; source/inventory/output unchanged from 09bc927; generated patch/manifest exclude themselves',release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,liveGate:'passed',credentialPatternMatches:0,workingBytesEqualStagedBytes:true,files},null,2)+'\n');
++console.log(JSON.stringify({release:candidate.release,auditFiles:files.length,credentialPatternMatches:0,liveGate:'passed'}));
+diff --git a/audit/2026-10-18-phone-layout/observations.md b/audit/2026-10-18-phone-layout/observations.md
+index 89a2d7b..bc7b7f1 100644
+--- a/audit/2026-10-18-phone-layout/observations.md
++++ b/audit/2026-10-18-phone-layout/observations.md
+@@ -6,3 +6,10 @@ The first rotation/control check failed because the local provider-footer fixtur
+ 
+ Frozen candidate sl-28ec5378c02128 passed all four required responsive browser actions with the qualified provider footer: ten normal-size viewports, doubled text including update action, complete portrait/landscape menus and racing/result/retry plus rotation, and height/safe-inset fixtures preserving settings. Final complete suite passed 119/119, zero failed/skipped. Equal 432x900 CSS viewport old/new production-page screenshots were visually inspected. Explicit reuse review retains original scopes for byte-identical simulation/storage/worker/provider modules; only arcade.css changes runtime behavior. Current local gate passed with hosted CI and two live rows pending.
+ - Precommit review checked the complete stylesheet delta: explicit mobile home flow, bounded grid tracks, em-based badge, actual-height shell and card display/wrapping. Working/staged bytes match; fifty current immutable release assets included, zero credential-pattern matches and clean source/docs whitespace. Remote fetch showed 0/0 divergence. Local exact-candidate gate passed; hosted/live stages remain pending.
++- First owned public fixture seed returned the previously documented provider 503 memory-budget error and was not confirmed. No preservation/public-validation pass is inferred. A single bounded same-ID retry is predeclared using the existing reconciliation-first helper; the original response is retained separately. This is fixture establishment for data preservation, not a change or claim about provider reliability.
++
++Supported deployment completed all 112 public resources and 31 entry checks with a 341-record journal. The independent additional dynamic-service read then returned 503 for Daily boards; this is retained as a failed availability observation, not relabeled. The owned preservation row survived and cleanup passed. One full 1.5-second-paced comparison of all three configured services is predeclared, with no unbounded retries or provider-policy changes.
++
++The predeclared paced service comparison passed Trial, Daily and the configured Workshop catalog, with all prior failed HTTP responses retained. Supported deployment checked 112 resources; the full comparison verified 51 inventory entries and 28 native routes. Preservation cleanup passed and removed only the owned ID. These outcomes do not fix or claim universal provider availability.
++- Actual public PWA naturally offered the new pack after reload; ordinary Apply update changed sl-5c1afcc9442899 to sl-28ec5378c02128. The public home shell uses flex with equal client/scroll width (569px at the desktop viewport), and trusted W driving reached 57 km/h after the update. Phone viewport evidence remains separately qualified. Hosting/owner-key sessions and local servers are closed. Final review next; application source and published assets remain the CI-tested bytes.
++- Final coverage and evidence review passed 48/48 adopted requirements and 106/106 scenarios. Live gate passed exact sl-28ec5378c02128. Final evidence-only commit will retain the hosted run, both failed provider probes and the bounded successful comparisons, deployment journal, public update/driving evidence and scoped browser geometry. Temporary public race returned to yard; all temporary tabs, local servers and owner-key helper sessions closed. Application/inventory/output bytes remain those of hosted-tested code commit 09bc927.
+diff --git a/audit/2026-10-18-phone-layout/report.md b/audit/2026-10-18-phone-layout/report.md
+index 9c945aa..0ec5980 100644
+--- a/audit/2026-10-18-phone-layout/report.md
++++ b/audit/2026-10-18-phone-layout/report.md
+@@ -6,6 +6,6 @@ The inherited phone two-column home grid conflicted with the arcade menu's neste
+ 
+ R01 verifies ten CSS viewport sizes from 320 to 1440 pixels (including 720/721), doubled text, action bounds/hit testing, complete portrait/landscape menus and legal racing/result/retry, live rotation, viewport heights and injected insets. All four responsive scenarios passed. Fresh automated suite: 119 passed, zero failed/skipped. Native/physical-device checks excluded as requested; no full WCAG or every-device certification.
+ 
+-Current stages: 45/48 requirements passed. Pending: M06, C04, C06.
++Current stages: 48/48 requirements passed. Pending: none.
+ 
+ [Evidence review](evidence-review.md), [coverage review](coverage-review.md), [dependency reuse](reuse.json), [observations/failures](observations.md). Previous provider burst errors remain a bounded hosting limitation; this change does not alter its policies/data or claim universal readiness.
+diff --git a/audit/2026-10-18-phone-layout/review.mjs b/audit/2026-10-18-phone-layout/review.mjs
+index 5071daa..0ae1fc3 100644
+--- a/audit/2026-10-18-phone-layout/review.mjs
++++ b/audit/2026-10-18-phone-layout/review.mjs
+@@ -27,6 +27,7 @@ for(const r of inventory.required){
+  let passed=true;if(r.id==='C04'&&!hosted||['C06','M06'].includes(r.id)&&!live)passed=false;
+  const extra=[];if(r.id==='C04'&&hosted)extra.push(await art(prefix+'hosted-ci.json'),await art(prefix+'hosted-ci-log.txt'));
+  if(['C06','M06'].includes(r.id)&&live)for(const p of ['live-verification.json','deployment-receipt.json','public-browser.json'])extra.push(await art(prefix+p));
++ if(r.id==='J14'&&live)extra.push(await art(prefix+'public-browser.json'));
+  if(r.id==='P09'&&live)extra.push(await art(prefix+'data-preservation.json'));
+  const affected=['R01','J01','J02','J05','J08','J09','J16','M02','M04','C12'].includes(r.id),artifacts=[...retained,...common,...(affected?responsive:[]),...extra];
+  const note=r.id==='R01'?'Ten CSS viewport sizes, doubled computed text, complete portrait/landscape menus/race/result/retry and live rotation, changing heights and injected safe insets pass with qualified provider-footer reservation. All rendered home actions including synthetic update availability are measured and hit-tested. Full laps use explicitly labeled legal accelerated controls; native/physical behavior not claimed.':!passed?'Exact candidate future hosted/live stage has not run; old success does not substitute.':(['C04','C06','M06'].includes(r.id)?'Fresh exact-source hosted/live boundary verified; see current receipts.':old.note+' Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits.');
+diff --git a/audit/2026-10-18-phone-layout/verify-live-paced.mjs b/audit/2026-10-18-phone-layout/verify-live-paced.mjs
+new file mode 100644
+index 0000000..fbfb8c2
+--- /dev/null
++++ b/audit/2026-10-18-phone-layout/verify-live-paced.mjs
+@@ -0,0 +1,25 @@
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import assert from 'node:assert/strict';
++import {createHash} from 'node:crypto';
++import {verifyCandidateArtifacts} from '../../tools/release-gate.mjs';
++import {readDeploymentJournal} from '../../tools/deployment-journal.mjs';
++const root=path.resolve(import.meta.dirname,'../..'),folder=import.meta.dirname,sha=b=>createHash('sha256').update(b).digest('hex');
++const candidate=await verifyCandidateArtifacts(root),receipt=JSON.parse(await fs.readFile(path.join(root,'audit/deployment.json'),'utf8'));
++assert.equal(receipt.release,candidate.release);assert.equal(receipt.sourceHash,candidate.source.hash);assert.equal(receipt.outputHash,candidate.outputHash);
++const journal=await readDeploymentJournal(root,receipt.journal);assert.equal(journal.at(-1).state,'operation-complete');assert.ok(journal.some(r=>r.state==='live-verified'));
++assert.equal(receipt.credentialStored,false);assert.ok(receipt.publicFiles.every(r=>r.status===200&&r.sha256&&r.bytes>0&&r.type));
++const published=await fetch(receipt.origin+'/release.json',{cache:'no-store',redirect:'error',signal:AbortSignal.timeout(15000)});assert.equal(published.status,200);const release=await published.json();
++assert.equal(release.release,candidate.release);assert.equal(release.sourceHash,candidate.source.hash);
++for(const entry of release.files){const remote=receipt.publicFiles.find(r=>r.path===(entry.url==='./'?'/':entry.url.slice(1)));assert.ok(remote,'Missing public inventory receipt '+entry.url);assert.equal(remote.sha256,entry.hash);}
++for(const entry of release.nativeFiles)assert.ok(receipt.publicFiles.some(r=>r.path===entry.url&&r.status===200),'Missing native route '+entry.url);
++const services=[];
++// Catalog route is the production path declared by app/publication.js.
++for(const route of ['/boards/trial.html','/boards/daily.html','/workshop-tracks/catalog.html']){
++ await new Promise(resolve=>setTimeout(resolve,1500));
++ const response=await fetch(receipt.origin+route,{cache:'no-store',redirect:'error',signal:AbortSignal.timeout(15000)}),bytes=Buffer.from(await response.arrayBuffer());
++ assert.equal(response.status,200,route);assert.match(response.headers.get('content-type'),/^text\/html/);assert.ok(bytes.length>0);services.push({route,status:response.status,type:response.headers.get('content-type'),bytes:bytes.length,sha256:sha(bytes)});
++}
++await fs.copyFile(path.join(root,'audit/deployment.json'),path.join(folder,'deployment-receipt.json'));
++const proof={utc:new Date().toISOString(),passed:true,release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,journal:receipt.journal,journalSha256:sha(await fs.readFile(path.join(root,receipt.journal))),journalRecords:journal.length,publicResources:receipt.publicFiles.length,verifiedInventory:release.files.length,nativeRoutes:release.nativeFiles.length,services,scope:'Supported publisher verified actual status/type/hash and semantic composed entry dependencies. Independent final published inventory/journal comparison and actual board/catalog availability. Provider burst reliability is not established.'};
++await fs.writeFile(path.join(folder,'live-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));
+diff --git a/audit/current-acceptance.json b/audit/current-acceptance.json
+index 578e6e9..7e8898d 100644
+--- a/audit/current-acceptance.json
++++ b/audit/current-acceptance.json
+@@ -1,6 +1,6 @@
+ {
+   "version": 4,
+-  "utc": "2026-10-18T04:43:58.494Z",
++  "utc": "2026-10-18T04:54:57.476Z",
+   "release": "sl-28ec5378c02128",
+   "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
+   "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
+@@ -19,7 +19,7 @@
+     "snapshot": "audit/2026-10-18-phone-layout/guide-2.11.md",
+     "scope": "Sections 10/11 adaptive layout and bounded browser evidence apply to this responsive repair. Original 2.10 adopted outcomes remain; this is not a silent full-game re-audit against all later guidance."
+   },
+-  "status": "stages-pending",
++  "status": "passed",
+   "scopeChange": "User excluded real hardware and human playtesting on 2026-10-16, and explicitly answered Skip native desktop checks on 2026-10-18. Native Windows input/browser close-relaunch and OS-process crash checks are excluded. Browser-connector interaction, fresh-document offline recovery and real IndexedDB context-termination checks remain required. No other adopted outcome waived.",
+   "coverageReview": {
+     "status": "completed",
+@@ -28,7 +28,7 @@
+     "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
+     "artifact": {
+       "path": "audit/2026-10-18-phone-layout/coverage-review.md",
+-      "sha256": "9ffa45d3b635131e39f17a88e423e6688618d6c1d7268b8ead6e729ceaf9c3b8"
++      "sha256": "0f231e343fefb9d62bb0474f6f7ae57e7555e56a1da0f6217de1b56160a4ba5c"
+     }
+   },
+   "evidenceReview": {
+@@ -38,12 +38,12 @@
+     "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
+     "artifact": {
+       "path": "audit/2026-10-18-phone-layout/evidence-review.md",
+-      "sha256": "9dc5811d532e4b9d3b2e8d661901c84805c332c9e415965eb900516f65b8ff83"
++      "sha256": "43fa4ff2f13df4837053c2ead9c59a16c114972f39b49ea4eea27ec3f6f381d2"
+     }
+   },
+   "evidenceReuse": {
+     "path": "audit/2026-10-18-phone-layout/reuse.json",
+-    "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++    "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+   },
+   "requirements": [
+     {
+@@ -182,7 +182,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -341,7 +341,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -511,7 +511,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -678,7 +678,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -845,7 +845,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -1012,7 +1012,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -1174,7 +1174,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -1317,7 +1317,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -1471,7 +1471,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -1622,7 +1622,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -1768,7 +1768,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -1927,7 +1927,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -2085,7 +2085,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -2224,7 +2224,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -2362,7 +2362,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -2497,7 +2497,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -2651,7 +2651,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -2818,7 +2818,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -2985,7 +2985,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -3152,7 +3152,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -3326,7 +3326,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -3497,7 +3497,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -3651,7 +3651,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -3786,7 +3786,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -3924,7 +3924,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -4059,7 +4059,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -4201,7 +4201,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -4340,7 +4340,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -4494,7 +4494,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -4645,7 +4645,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -4796,7 +4796,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -4947,7 +4947,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -5098,7 +5098,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -5264,11 +5264,15 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/public-browser.json",
++          "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+         }
+       ],
+       "scenarios": [
+@@ -5427,11 +5431,15 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         }
+@@ -5573,7 +5581,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -5716,7 +5724,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -5862,7 +5870,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -6021,7 +6029,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -6187,7 +6195,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -6334,7 +6342,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -6480,7 +6488,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -6623,7 +6631,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -6773,7 +6781,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -6920,7 +6928,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -7067,7 +7075,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -7214,7 +7222,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -7361,7 +7369,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -7508,7 +7516,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -7646,7 +7654,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -7781,7 +7789,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -7927,7 +7935,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -8070,7 +8078,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -8168,7 +8176,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -8263,7 +8271,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -8429,7 +8437,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -8592,7 +8600,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -8755,7 +8763,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -8918,7 +8926,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -9081,7 +9089,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -9244,7 +9252,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -9407,7 +9415,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -9570,7 +9578,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -9733,7 +9741,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -9896,7 +9904,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -10054,7 +10062,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -10209,7 +10217,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -10375,7 +10383,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -10538,7 +10546,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -10692,7 +10700,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -10843,7 +10851,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -10994,7 +11002,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -11100,11 +11108,15 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/data-preservation.json",
++          "sha256": "04413fe30e8952c20ef2c9c12a092679802e63edcad0a99f9de2b7290b09cfe5"
+         }
+       ],
+       "scenarios": [
+@@ -11203,11 +11215,15 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/data-preservation.json",
++              "sha256": "04413fe30e8952c20ef2c9c12a092679802e63edcad0a99f9de2b7290b09cfe5"
+             }
+           ]
+         }
+@@ -11349,7 +11365,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -11492,7 +11508,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -11646,7 +11662,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -11813,7 +11829,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -11980,7 +11996,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -12147,7 +12163,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -12314,7 +12330,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -12481,7 +12497,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -12651,7 +12667,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -12802,7 +12818,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -12953,7 +12969,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -13104,7 +13120,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -13255,7 +13271,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -13406,7 +13422,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -13576,7 +13592,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -13759,7 +13775,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -13942,7 +13958,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -14125,7 +14141,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -14308,7 +14324,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -14491,7 +14507,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -14685,7 +14701,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -14860,7 +14876,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -15035,7 +15051,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -15210,7 +15226,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -15385,7 +15401,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -15560,7 +15576,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -15573,8 +15589,8 @@
+     {
+       "id": "M06",
+       "stage": "live",
+-      "status": "not-run",
+-      "note": "Exact candidate future hosted/live stage has not run; old success does not substitute.",
++      "status": "passed",
++      "note": "Fresh exact-source hosted/live boundary verified; see current receipts.",
+       "artifacts": [
+         {
+           "path": "audit/deployment-candidate-tests.txt",
+@@ -15726,18 +15742,30 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/live-verification.json",
++          "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++          "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/public-browser.json",
++          "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+         }
+       ],
+       "scenarios": [
+         {
+           "id": "prepromotion-outcomes",
+-          "status": "not-run",
+-          "observation": "prepromotion outcomes. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "prepromotion outcomes. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -15889,18 +15917,30 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         },
+         {
+           "id": "exact-package",
+-          "status": "not-run",
+-          "observation": "exact package. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "exact package. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -16052,18 +16092,30 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         },
+         {
+           "id": "previous-client-update",
+-          "status": "not-run",
+-          "observation": "previous client update. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "previous client update. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -16215,18 +16267,30 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         },
+         {
+           "id": "live-outcomes",
+-          "status": "not-run",
+-          "observation": "live outcomes. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "live outcomes. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -16378,11 +16442,23 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         }
+@@ -16516,7 +16592,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -16651,7 +16727,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -16797,7 +16873,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -16940,7 +17016,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -17078,7 +17154,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -17213,7 +17289,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -17226,8 +17302,8 @@
+     {
+       "id": "C04",
+       "stage": "staged",
+-      "status": "not-run",
+-      "note": "Exact candidate future hosted/live stage has not run; old success does not substitute.",
++      "status": "passed",
++      "note": "Fresh exact-source hosted/live boundary verified; see current receipts.",
+       "artifacts": [
+         {
+           "path": "audit/handbook-hosted-ci.json",
+@@ -17331,18 +17407,26 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
++          "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
++          "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
+         }
+       ],
+       "scenarios": [
+         {
+           "id": "hosted-regressions",
+-          "status": "not-run",
+-          "observation": "hosted regressions. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "hosted regressions. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -17446,18 +17530,26 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
++              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
++              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
+             }
+           ]
+         },
+         {
+           "id": "hosted-candidate-check",
+-          "status": "not-run",
+-          "observation": "hosted candidate check. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "hosted candidate check. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -17561,18 +17653,26 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
++              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
++              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
+             }
+           ]
+         },
+         {
+           "id": "required-rule-readback",
+-          "status": "not-run",
+-          "observation": "required rule readback. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "required rule readback. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -17676,18 +17776,26 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
++              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
++              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
+             }
+           ]
+         },
+         {
+           "id": "negative-refusal-fixture",
+-          "status": "not-run",
+-          "observation": "negative refusal fixture. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "negative refusal fixture. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -17791,11 +17899,19 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
++              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
++              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
+             }
+           ]
+         }
+@@ -17937,7 +18053,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -18080,7 +18196,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -18223,7 +18339,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -18366,7 +18482,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -18379,8 +18495,8 @@
+     {
+       "id": "C06",
+       "stage": "live",
+-      "status": "not-run",
+-      "note": "Exact candidate future hosted/live stage has not run; old success does not substitute.",
++      "status": "passed",
++      "note": "Fresh exact-source hosted/live boundary verified; see current receipts.",
+       "artifacts": [
+         {
+           "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+@@ -18456,18 +18572,30 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/live-verification.json",
++          "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++          "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++        },
++        {
++          "path": "audit/2026-10-18-phone-layout/public-browser.json",
++          "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+         }
+       ],
+       "scenarios": [
+         {
+           "id": "root-status-type-identity",
+-          "status": "not-run",
+-          "observation": "root status type identity. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "root status type identity. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+@@ -18543,18 +18671,30 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         },
+         {
+           "id": "immutable-assets-status-type-hash",
+-          "status": "not-run",
+-          "observation": "immutable assets status type hash. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "immutable assets status type hash. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+@@ -18630,18 +18770,30 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         },
+         {
+           "id": "native-routes-composition",
+-          "status": "not-run",
+-          "observation": "native routes composition. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "native routes composition. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+@@ -18717,18 +18869,30 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         },
+         {
+           "id": "board-workshop-availability",
+-          "status": "not-run",
+-          "observation": "board workshop availability. Exact candidate future hosted/live stage has not run; old success does not substitute.",
++          "status": "passed",
++          "observation": "board workshop availability. Fresh exact-source hosted/live boundary verified; see current receipts.",
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+@@ -18804,11 +18968,23 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/live-verification.json",
++              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
++              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
++            },
++            {
++              "path": "audit/2026-10-18-phone-layout/public-browser.json",
++              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
+             }
+           ]
+         }
+@@ -18942,7 +19118,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -19077,7 +19253,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -19219,7 +19395,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -19358,7 +19534,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -19497,7 +19673,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -19636,7 +19812,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -19775,7 +19951,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -19937,7 +20113,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20096,7 +20272,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20238,7 +20414,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20377,7 +20553,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20447,7 +20623,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20514,7 +20690,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20588,7 +20764,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20675,7 +20851,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20761,7 +20937,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20828,7 +21004,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20902,7 +21078,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -20973,7 +21149,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21044,7 +21220,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21115,7 +21291,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21186,7 +21362,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21257,7 +21433,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21328,7 +21504,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21346,7 +21522,7 @@
+       "artifacts": [
+         {
+           "path": "audit/2026-10-18-phone-layout/reuse.json",
+-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+         },
+         {
+           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21377,7 +21553,7 @@
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21396,7 +21572,7 @@
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21415,7 +21591,7 @@
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
+@@ -21434,7 +21610,7 @@
+           "artifacts": [
+             {
+               "path": "audit/2026-10-18-phone-layout/reuse.json",
+-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
++              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
+             },
+             {
+               "path": "audit/2026-10-18-phone-layout/final-tests.txt",

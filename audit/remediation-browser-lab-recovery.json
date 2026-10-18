@@ -1,0 +1,30 @@
+{
+  "release": "sl-1feba7265a8b3f",
+  "utc": "2026-10-16T14:01:37.925Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Apply verified update between runs",
+      "status": "failed",
+      "error": "Cannot read properties of undefined (reading 'click')",
+      "utc": "2026-10-16T14:00:21.775Z"
+    },
+    {
+      "name": "Settings, input and graphics interruption",
+      "status": "passed",
+      "detail": {
+        "pause": true,
+        "settingsReturnedToPause": true,
+        "contextRebuilt": true,
+        "explicitResume": true,
+        "focus": true
+      },
+      "utc": "2026-10-16T14:00:55.337Z"
+    }
+  ]
+}

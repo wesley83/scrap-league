@@ -1,0 +1,2337 @@
+{
+  "utc": "2026-10-18T01:19:13.370Z",
+  "status": "partial",
+  "method": "Sequential connector keyboard only",
+  "steps": [
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "home",
+        "tag": "BUTTON",
+        "text": "SCRAPLEAGUE04",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "sound-toggle",
+        "tag": "BUTTON",
+        "text": "Sound off",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "settings-button",
+        "tag": "BUTTON",
+        "text": "Settings",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "fullscreen",
+        "tag": "BUTTON",
+        "text": "Full screen",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "world",
+        "tag": "CANVAS",
+        "text": "",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "quick-race",
+        "tag": "BUTTON",
+        "text": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "race-button",
+        "tag": "BUTTON",
+        "text": "Race the league YARD SHIFT",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "daily-button",
+        "tag": "BUTTON",
+        "text": "Daily Spec 10-18 · UTC",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "workshop-button",
+        "tag": "BUTTON",
+        "text": "Track Workshop MAKE YOUR OWN CIRCUIT",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BODY",
+        "text": "SCRAPLEAGUE04MAKE YOUR OWN LINE.Sound offSettingsFull screen\nGraphics could not ",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-name",
+        "tag": "INPUT",
+        "text": "",
+        "value": "The Big Salvage"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "work-file",
+        "tag": "BUTTON",
+        "text": "Files",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BUTTON",
+        "text": "Close",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BODY",
+        "text": "SCRAPLEAGUE04MAKE YOUR OWN LINE.Sound offSettingsFull screen\nGraphics could not ",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "modal",
+        "tag": "DIALOG",
+        "text": "Track filesTrack definitions contain editable geometry. They contain no game cod",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BUTTON",
+        "text": "Save a separate copy",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BUTTON",
+        "text": "Retry save",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": "starter",
+        "id": "",
+        "tag": "BUTTON",
+        "text": "New starter loop",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": "blank",
+        "id": "",
+        "tag": "BUTTON",
+        "text": "New blank track",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "work-file",
+        "tag": "BUTTON",
+        "text": "Files",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-name",
+        "tag": "INPUT",
+        "text": "",
+        "value": "Untitled circuit"
+      }
+    },
+    {
+      "key": "Control_L+a",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-name",
+        "tag": "INPUT",
+        "text": "",
+        "value": "Untitled circuit"
+      }
+    },
+    {
+      "typed": "Keyboard Circuit",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-name",
+        "tag": "INPUT",
+        "text": "",
+        "value": "Keyboard Circuit"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "work-file",
+        "tag": "BUTTON",
+        "text": "Files",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "End",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "start"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "start"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Down",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Down",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Down",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Shift_L+Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "straight"
+      }
+    },
+    {
+      "key": "Down",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "close-loop",
+        "tag": "BUTTON",
+        "text": "Connect last to first",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "close-loop",
+        "tag": "BUTTON",
+        "text": "Connect last to first",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "setup-race",
+        "tag": "BUTTON",
+        "text": "Suggest gates & grid",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "setup-race",
+        "tag": "BUTTON",
+        "text": "Suggest gates & grid",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "editor-tool",
+        "tag": "SELECT",
+        "text": "SelectPanPlace boost padPlace tire barrierPlace scrap islandMove selection",
+        "value": "select"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "add-prop",
+        "tag": "BUTTON",
+        "text": "Place object on selected road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "add-gate",
+        "tag": "BUTTON",
+        "text": "Add checkpoint on selected road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "fit-track",
+        "tag": "BUTTON",
+        "text": "Fit track",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "test-ai",
+        "tag": "INPUT",
+        "text": "",
+        "value": "on"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-laps",
+        "tag": "INPUT",
+        "text": "",
+        "value": "3"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-scene",
+        "tag": "SELECT",
+        "text": "The yardDocksideFoundryNight shift",
+        "value": "yard"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "work-garage",
+        "tag": "BUTTON",
+        "text": "Choose test car",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "select-all",
+        "tag": "BUTTON",
+        "text": "Select all objects",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "rotate-left",
+        "tag": "BUTTON",
+        "text": "Rotate −90°",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "rotate-right",
+        "tag": "BUTTON",
+        "text": "Rotate +90°",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "move-x",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "move-z",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "move-group",
+        "tag": "BUTTON",
+        "text": "Move selection",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "partial-patch",
+        "tag": "BUTTON",
+        "text": "Add partial surface",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "recipes",
+        "tag": "BUTTON",
+        "text": "Custom recipes",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "source-preview",
+        "tag": "BUTTON",
+        "text": "Preview HTML",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "publish-track",
+        "tag": "BUTTON",
+        "text": "Publish with owner key",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "discover-tracks",
+        "tag": "BUTTON",
+        "text": "Browse published circuits",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-canvas",
+        "tag": "CANVAS",
+        "text": "",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "zoom-in",
+        "tag": "BUTTON",
+        "text": "+",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "zoom-out",
+        "tag": "BUTTON",
+        "text": "−",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "object-list",
+        "tag": "SELECT",
+        "text": "Road 1 · startRoad 2 · quarterRoad 3 · straightRoad 4 · quarterRoad 5 · straight",
+        "value": "a3533c41-5663-4c4a-b985-7e6d78d015b4"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "object-list",
+        "tag": "SELECT",
+        "text": "Road 1 · startRoad 2 · quarterRoad 3 · straightRoad 4 · quarterRoad 5 · straight",
+        "value": "cd0327a1-df52-4151-8a93-3c9a24af0b0f"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "x",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Control_L+a",
+      "focus": {
+        "field": "x",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "typed": "20",
+      "focus": {
+        "field": "x",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "20"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "z",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "heading",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "length",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "width",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "12"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "exitWidth",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "12"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "apply-object",
+        "tag": "BUTTON",
+        "text": "Apply fields",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BODY",
+        "text": "SCRAPLEAGUE04MAKE YOUR OWN LINE.Sound offSettingsFull screen\nGraphics could not ",
+        "value": ""
+      }
+    },
+    {
+      "step": "qualified-gap",
+      "message": "491 m · 8 pieces · 4 problems"
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "x",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "20"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "z",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "heading",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "length",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "width",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "12"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "exitWidth",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "12"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "apply-object",
+        "tag": "BUTTON",
+        "text": "Apply fields",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "reflow-road",
+        "tag": "BUTTON",
+        "text": "Snap following pieces",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "road-surface",
+        "tag": "SELECT",
+        "text": "AsphaltGravelMud",
+        "value": "asphalt"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "apply-surface",
+        "tag": "BUTTON",
+        "text": "Paint entire piece",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "delete-object",
+        "tag": "BUTTON",
+        "text": "Delete selected",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BUTTON",
+        "text": "Connector gap, direction or width mismatch.",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BUTTON",
+        "text": "Connector gap, direction or width mismatch.",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BUTTON",
+        "text": "Nonadjacent roads overlap or have insufficient clearance.",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BUTTON",
+        "text": "Respawn must be 3–12 m beyond its gate.",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "A",
+        "text": "Made for Pagelove",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "proof-drive",
+        "tag": "BUTTON",
+        "text": "Verify test laps with legal controller",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "proof-save",
+        "tag": "BUTTON",
+        "text": "Save keyboard creator evidence",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BODY",
+        "text": "SCRAPLEAGUE04MAKE YOUR OWN LINE.Sound offSettingsFull screen\nGraphics could not ",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "home",
+        "tag": "BUTTON",
+        "text": "SCRAPLEAGUE04",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "sound-toggle",
+        "tag": "BUTTON",
+        "text": "Sound off",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "settings-button",
+        "tag": "BUTTON",
+        "text": "Settings",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "fullscreen",
+        "tag": "BUTTON",
+        "text": "Full screen",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "world",
+        "tag": "CANVAS",
+        "text": "",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-name",
+        "tag": "INPUT",
+        "text": "",
+        "value": "Keyboard Circuit"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "work-undo",
+        "tag": "BUTTON",
+        "text": "Undo",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "work-file",
+        "tag": "BUTTON",
+        "text": "Files",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-kind",
+        "tag": "SELECT",
+        "text": "StraightQuarter bendHairpinWidth transitionStart straight",
+        "value": "quarter"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-length",
+        "tag": "SELECT",
+        "text": "604020",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-radius",
+        "tag": "SELECT",
+        "text": "4020",
+        "value": "40"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "piece-turn",
+        "tag": "SELECT",
+        "text": "RightLeft",
+        "value": "1"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "place-road",
+        "tag": "BUTTON",
+        "text": "Append road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "close-loop",
+        "tag": "BUTTON",
+        "text": "Connect last to first",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "setup-race",
+        "tag": "BUTTON",
+        "text": "Suggest gates & grid",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "editor-tool",
+        "tag": "SELECT",
+        "text": "SelectPanPlace boost padPlace tire barrierPlace scrap islandMove selection",
+        "value": "select"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "add-prop",
+        "tag": "BUTTON",
+        "text": "Place object on selected road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "add-gate",
+        "tag": "BUTTON",
+        "text": "Add checkpoint on selected road",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "fit-track",
+        "tag": "BUTTON",
+        "text": "Fit track",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "test-ai",
+        "tag": "INPUT",
+        "text": "",
+        "value": "on"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-laps",
+        "tag": "INPUT",
+        "text": "",
+        "value": "3"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-scene",
+        "tag": "SELECT",
+        "text": "The yardDocksideFoundryNight shift",
+        "value": "yard"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "work-garage",
+        "tag": "BUTTON",
+        "text": "Choose test car",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "select-all",
+        "tag": "BUTTON",
+        "text": "Select all objects",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "rotate-left",
+        "tag": "BUTTON",
+        "text": "Rotate −90°",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "rotate-right",
+        "tag": "BUTTON",
+        "text": "Rotate +90°",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "move-x",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "move-z",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "move-group",
+        "tag": "BUTTON",
+        "text": "Move selection",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "partial-patch",
+        "tag": "BUTTON",
+        "text": "Add partial surface",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "recipes",
+        "tag": "BUTTON",
+        "text": "Custom recipes",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "source-preview",
+        "tag": "BUTTON",
+        "text": "Preview HTML",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "publish-track",
+        "tag": "BUTTON",
+        "text": "Publish with owner key",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "discover-tracks",
+        "tag": "BUTTON",
+        "text": "Browse published circuits",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "track-canvas",
+        "tag": "CANVAS",
+        "text": "",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "zoom-in",
+        "tag": "BUTTON",
+        "text": "+",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "zoom-out",
+        "tag": "BUTTON",
+        "text": "−",
+        "value": ""
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "object-list",
+        "tag": "SELECT",
+        "text": "Road 1 · startRoad 2 · quarterRoad 3 · straightRoad 4 · quarterRoad 5 · straight",
+        "value": "cd0327a1-df52-4151-8a93-3c9a24af0b0f"
+      }
+    },
+    {
+      "key": "Home",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "object-list",
+        "tag": "SELECT",
+        "text": "Road 1 · startRoad 2 · quarterRoad 3 · straightRoad 4 · quarterRoad 5 · straight",
+        "value": "cd0327a1-df52-4151-8a93-3c9a24af0b0f"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "x",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "20"
+      }
+    },
+    {
+      "key": "Control_L+a",
+      "focus": {
+        "field": "x",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "20"
+      }
+    },
+    {
+      "typed": "0",
+      "focus": {
+        "field": "x",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "z",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "heading",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "0"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "length",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "60"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "width",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "12"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": "exitWidth",
+        "file": null,
+        "id": "",
+        "tag": "INPUT",
+        "text": "",
+        "value": "12"
+      }
+    },
+    {
+      "key": "Tab",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "apply-object",
+        "tag": "BUTTON",
+        "text": "Apply fields",
+        "value": ""
+      }
+    },
+    {
+      "key": "Return",
+      "focus": {
+        "field": null,
+        "file": null,
+        "id": "",
+        "tag": "BODY",
+        "text": "SCRAPLEAGUE04MAKE YOUR OWN LINE.Sound offSettingsFull screen\nGraphics could not ",
+        "value": ""
+      }
+    },
+    {
+      "step": "gap-corrected",
+      "message": "491 m · 8 pieces · Race-ready"
+    }
+  ],
+  "observedDefect": "Applying inspector fields rebuilt the focused button and returned focus to the document body. Circuit gap introduction/correction succeeded; full journey rerun required after focus repair."
+}

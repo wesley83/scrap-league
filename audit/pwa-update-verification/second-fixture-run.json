@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-16T18:34:06.038Z",
+  "subjects": {
+    "A": "sl-eca6f97d1308a3",
+    "B": "sl-644d25b8e44419",
+    "hashes": {
+      "A": {
+        "index.html": "6b763669841296bb57545918c40709e977c04013fadcf6218c842800302e6935",
+        "sw.js": "176952a57e480c6b2b203201a6be7986705fcbb1e83d946a9daf934cc542caa1",
+        "release.json": "6511c1d23650399b985cc22d51c983f400917c2f1dc9c22b28b320199cb273ca"
+      },
+      "B": {
+        "index.html": "f079c74bd076a74676b9c4e20e74247ec0cfae72d8a45bf1e587da8e266b37db",
+        "sw.js": "1377cbdde6d59f3cb5371ed79e33e11a2fc22df21c0db7834087d6fc35d1c0ec",
+        "release.json": "ac7397d9cad1aaeca2111ff163bcb21c051d1715569db9f4a84ae8bba1406c61"
+      }
+    },
+    "phase": "A",
+    "offline": false,
+    "corrupt": false,
+    "requests": []
+  },
+  "environment": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "scope": "Real service workers on isolated localhost; synthetic progression; ordinary game UI for draft edits and activation; no physical device or process restart claim",
+  "results": [
+    {
+      "name": "1. Install A and prepare saved data",
+      "status": "passed",
+      "detail": {
+        "active": "sl-eca6f97d1308a3",
+        "windows": 2,
+        "syntheticCompletedEvents": [
+          1,
+          2
+        ],
+        "draftName": "PWA update retention fixture",
+        "customSettings": true
+      },
+      "utc": "2026-10-16T18:33:00.276Z"
+    },
+    {
+      "name": "2. Automatic notice while another window races",
+      "status": "passed",
+      "detail": {
+        "trigger": "Normal game reload; no Check offline pack click",
+        "active": "sl-eca6f97d1308a3",
+        "waiting": "sl-644d25b8e44419",
+        "notice": "Update verified · apply from the yard",
+        "automaticPopup": false,
+        "raceDocumentUnchanged": true,
+        "raceTimeAdvanced": true
+      },
+      "utc": "2026-10-16T18:33:11.356Z"
+    },
+    {
+      "name": "3. Later defers; racing window blocks activation",
+      "status": "passed",
+      "detail": {
+        "laterKeepsA": true,
+        "unsafeActivationRefused": true,
+        "racingDocumentUnchanged": true,
+        "uiUnlockedAfterVeto": true,
+        "message": "Finish or leave the race and return every game window to the yard."
+      },
+      "utc": "2026-10-16T18:33:20.689Z"
+    },
+    {
+      "name": "4. Workshop also blocks; apply safely and preserve data",
+      "status": "failed",
+      "error": "Timed out: draft visible after update",
+      "utc": "2026-10-16T18:34:06.038Z"
+    }
+  ]
+}

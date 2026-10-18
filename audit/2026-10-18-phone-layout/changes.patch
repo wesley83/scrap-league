@@ -1,0 +1,249 @@
+diff --git a/ACCEPTANCE.md b/ACCEPTANCE.md
+index 8af071a..44d8488 100644
+--- a/ACCEPTANCE.md
++++ b/ACCEPTANCE.md
+@@ -1,10 +1,14 @@
+ # Scrap League acceptance and implementation plan
+ 
++## Responsive-layout supplement — October 18, 2026
++
++R01 adds four required local scenarios for the reported phone defect: home/action geometry at 320–1440 CSS pixels including the breakpoint boundary, enlarged text, complete portrait/landscape menu/play journeys, and changing viewport heights/injected safe regions. The inventory now contains 48 requirements and 106 named scenarios. Its `layoutGuidanceSupplement` pins edition 2.11.0 Sections 10/11 and records the bounded impact review; the original 47/102 contract and 2.10 governing snapshot remain historical baseline obligations. No native/physical requirement is reinstated and no existing required outcome is waived. Current evidence and limitations are in the responsive-layout audit.
++
+ ## Delivery boundary
+ 
+ ### Handbook 2.10 audit adoption
+ 
+-The October 17, 2026 audit adopts handbook **2.10.0**, SHA-256 `b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4`, retained at [the pinned snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md). `requirements.json` is the authoritative inventory; its `governingGuide` records map revision **handbook-2.10-r2**, with 47 requirements and 102 individually required scenarios. The [follow-up scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) retains the user's explicit native-desktop exclusion and corrects P08 to capability recording/established-policy preservation while retaining actual endpoint validation. Real hardware and human playtesting remain excluded. The earlier numbered best-practice table below describes historical design-time mapping, not the current guide's section numbers. Old reference snapshots remain historical. Future guide changes require an explicit impact review.
++The October 17, 2026 audit adopts handbook **2.10.0**, SHA-256 `b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4`, retained at [the pinned snapshot](audit/2026-10-17-guide-2-10-audit/governing-guide.md). `requirements.json` is the authoritative inventory; its `governingGuide` records map revision **handbook-2.10-r2**, with the original baseline of 47 requirements and 102 individually required scenarios; the responsive-layout supplement above extends the current inventory to 48/106. The [follow-up scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) retains the user's explicit native-desktop exclusion and corrects P08 to capability recording/established-policy preservation while retaining actual endpoint validation. Real hardware and human playtesting remain excluded. The earlier numbered best-practice table below describes historical design-time mapping, not the current guide's section numbers. Old reference snapshots remain historical. Future guide changes require an explicit impact review.
+ 
+ | Current guide section | Applicable contract and inventory IDs |
+ | --- | --- |
+diff --git a/IMPLEMENTATION-STATUS.md b/IMPLEMENTATION-STATUS.md
+index 8a0366f..9cc3249 100644
+--- a/IMPLEMENTATION-STATUS.md
++++ b/IMPLEMENTATION-STATUS.md
+@@ -1,5 +1,9 @@
+ # Scrap League implementation and release status
+ 
++## Phone layout repair — October 18, 2026
++
++The [responsive-layout report](audit/2026-10-18-phone-layout/report.md) and current acceptance ledger identify this candidate's verified scope. The phone home menu explicitly resets the inherited two-column grid, wraps actions within bounded columns and sizes its heading to the available width. Its scrollable stage uses the space remaining after the actual header/footer, including enlarged text and safe-area spacing. R01 adds required home-action geometry, text-size, phone-journey and viewport/safe-region evidence; previous Workshop/Settings checks did not establish home-menu responsiveness. The 2.11 layout guidance supplement and the retained 2.10 baseline are distinguished in the inventory. Native/physical checks remain excluded.
++
+ ## Remaining-requirement follow-up
+ 
+ The [current follow-up report](audit/2026-10-18-remaining-requirements/report.md) and `audit/current-acceptance.json` identify the actual candidate and verdict. The pinned handbook remains 2.10.0; map handbook-2.10-r2 declares 47 requirements and 102 named scenarios. Aggregate passing labels cannot substitute for a missing required scenario. Native desktop/process checks are explicitly excluded by the user; connector browser interaction, fresh-document offline recovery and real IndexedDB context termination remain required. The [scope record](audit/2026-10-18-remaining-requirements/scope-corrections.md) corrects the inventory's unsupported global-readiness demand without claiming provider-wide enforcement.
+diff --git a/app/arcade.css b/app/arcade.css
+index c76ca93..43f76d0 100644
+--- a/app/arcade.css
++++ b/app/arcade.css
+@@ -77,6 +77,9 @@ small {
+ .wordmark i {
+   border-color: #8fa8a8;
+   color: #bed1ce;
++  width: 2.4em;
++  height: 2.4em;
++  flex-shrink: 0;
+ }
+ #context {
+   color: #b3c9c7;
+@@ -101,6 +104,38 @@ small {
+ #stage.view-start:after {
+   display: none;
+ }
++/* Menus get the space left by the actual header/footer, including wrapped text. */
++body[data-view="start"] {
++  display: flex;
++  flex-direction: column;
++  height: 100vh;
++  height: 100dvh;
++  min-height: 0;
++  padding-bottom: max(var(--host-footer-space, 0px), env(safe-area-inset-bottom, 0px));
++}
++body[data-view="start"] #header {
++  flex: 0 0 auto;
++  height: auto;
++  min-height: 64px;
++  padding: max(8px, env(safe-area-inset-top, 0px))
++    max(24px, env(safe-area-inset-right, 0px)) 8px
++    max(24px, env(safe-area-inset-left, 0px));
++  flex-wrap: wrap;
++  gap: 4px 12px;
++}
++body[data-view="start"] #header nav {
++  flex-wrap: wrap;
++  max-width: 100%;
++  min-width: 0;
++}
++body[data-view="start"] #stage {
++  flex: 1 1 0;
++  height: auto;
++  min-height: 0;
++}
++body[data-view="start"] #footer {
++  flex: 0 0 auto;
++}
+ #stage.view-start #world {
+   left: 44%;
+   top: 0;
+@@ -159,7 +194,7 @@ small {
+   font-weight: 700;
+ }
+ .home-actions {
+-  grid-template-columns: repeat(3, 1fr);
++  grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: 8px;
+   margin-top: 12px;
+ }
+@@ -178,7 +213,7 @@ small {
+ }
+ .home-copy .secondary-actions {
+   display: grid;
+-  grid-template-columns: repeat(4, 1fr);
++  grid-template-columns: repeat(4, minmax(0, 1fr));
+   gap: 6px;
+   margin-top: 12px;
+ }
+@@ -187,6 +222,13 @@ small {
+   min-height: 44px;
+   padding: 6px;
+ }
++.home-copy > *,
++.home-actions button,
++.home-copy .secondary-actions button {
++  min-width: 0;
++  max-width: 100%;
++  overflow-wrap: anywhere;
++}
+ .start-controls {
+   color: #bacdc8;
+   font-size: 12px;
+@@ -235,6 +277,11 @@ small {
+ .track-card {
+   background: #234249;
+   border-color: #668184;
++  display: block;
++}
++.track-card h3,
++.track-card p {
++  overflow-wrap: anywhere;
+ }
+ .track-card .map {
+   background: #33555b;
+@@ -248,6 +295,9 @@ small {
+   color: #d9dfca;
+   font-size: 11px;
+ }
++.track-card .card-top {
++  flex-wrap: wrap;
++}
+ .garage-panel {
+   background: #19343b;
+ }
+@@ -708,6 +758,12 @@ dialog::backdrop {
+   }
+ }
+ @media (max-width: 720px) {
++  body[data-view="start"] #header {
++    min-height: 56px;
++    padding: max(4px, env(safe-area-inset-top, 0px))
++      max(14px, env(safe-area-inset-right, 0px)) 4px
++      max(14px, env(safe-area-inset-left, 0px));
++  }
+   #header {
+     height: 56px;
+     padding: 0 14px;
+@@ -736,19 +792,34 @@ dialog::backdrop {
+     left: 0;
+     top: 0;
+     width: 100%;
+-    height: 220px;
++    height: clamp(144px, 40vw, 220px);
+   }
+   .home-copy {
+     top: auto;
+     left: auto;
+     width: 100%;
+-    margin-top: 220px;
+-    padding: 26px 22px;
++    margin-top: clamp(144px, 40vw, 220px);
++    padding: 22px max(20px, env(safe-area-inset-right)) 22px
++      max(20px, env(safe-area-inset-left));
++    display: flex;
++    flex-direction: column;
+   }
+   .home-copy h1 {
+-    font-size: 64px;
++    font-size: clamp(40px, 11.5vw, 56px);
+     margin: 12px 0;
+   }
++  .home-actions {
++    grid-column: auto;
++    grid-row: auto;
++    align-self: stretch;
++    grid-template-columns: repeat(2, minmax(0, 1fr));
++  }
++  .home-actions #workshop-button {
++    grid-column: 1 / -1;
++  }
++  .home-copy .secondary-actions {
++    grid-template-columns: repeat(2, minmax(0, 1fr));
++  }
+   .hero-label {
+     top: 14px;
+     right: 18px;
+@@ -964,7 +1035,7 @@ dialog::backdrop {
+ }
+ @media (max-width: 380px) {
+   .home-copy h1 {
+-    font-size: 56px;
++    font-size: 40px;
+   }
+   .track-grid {
+     grid-template-columns: 1fr;
+diff --git a/requirements.json b/requirements.json
+index 3a9333d..24aceec 100644
+--- a/requirements.json
++++ b/requirements.json
+@@ -790,6 +790,30 @@
+           "outcome": "supported forward recovery"
+         }
+       ]
++    },
++    {
++      "id": "R01",
++      "outcome": "Every home/menu action remains readable and reachable in phone portrait/landscape and enlarged text without horizontal clipping",
++      "method": "Actual browser viewport/container geometry, hit testing, complete phone journeys and inspected screenshots; native/physical checks excluded",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "home-width-matrix",
++          "outcome": "All home action groups fit 320 to 1440 CSS pixels, including both sides of the mobile breakpoint"
++        },
++        {
++          "id": "enlarged-home-text",
++          "outcome": "Doubled computed text preserves header and all menu actions without lateral overflow"
++        },
++        {
++          "id": "phone-menu-journeys",
++          "outcome": "Portrait and landscape start, drive, pause/settings, resume, result/retry, Garage, Workshop and boards retain usable controls"
++        },
++        {
++          "id": "viewport-safe-regions",
++          "outcome": "Resized browser-height and injected safe insets preserve state and reachable content; actual bounds and hit points are checked"
++        }
++      ]
+     }
+   ],
+   "governingGuide": {
+@@ -799,5 +823,11 @@
+     "canonicalSource": "Pagelove workspace: games/prism-breaker/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+     "requirementMapRevision": "handbook-2.10-r2",
+     "requirementMap": "ACCEPTANCE.md#handbook-210-audit-adoption"
++  },
++  "layoutGuidanceSupplement": {
++    "edition": "2.11.0",
++    "sha256": "1b32feff2af6ec4042283e8ce21a1cfa32e6516ce48da834cce98ff065c11054",
++    "snapshot": "audit/2026-10-18-phone-layout/guide-2.11.md",
++    "scope": "Sections 10/11 adaptive layout and bounded browser evidence apply to this responsive repair. Original 2.10 adopted outcomes remain; this is not a silent full-game re-audit against all later guidance."
+   }
+ }

@@ -1,0 +1,28 @@
+{
+  "release": "sl-771ba0a51f8259",
+  "utc": "2026-10-16T14:16:17.422Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-executed source tests via local review controls; injected faults are labeled",
+  "results": [
+    {
+      "name": "Apply verified update between runs",
+      "status": "passed",
+      "detail": {
+        "before": "./releases/sl-1feba7265a8b3f/",
+        "after": "./releases/sl-771ba0a51f8259/",
+        "explicitSafeActivation": true
+      },
+      "utc": "2026-10-16T14:14:07.360Z"
+    },
+    {
+      "name": "Twenty-minute rendering and simulation soak",
+      "status": "failed",
+      "error": "Cannot read properties of undefined (reading 'state')",
+      "utc": "2026-10-16T14:15:47.375Z"
+    }
+  ]
+}
