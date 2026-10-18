@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "utc": "2026-10-18T04:43:58.494Z",
+  "utc": "2026-10-18T04:54:57.476Z",
   "release": "sl-28ec5378c02128",
   "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
   "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
@@ -19,7 +19,7 @@
     "snapshot": "audit/2026-10-18-phone-layout/guide-2.11.md",
     "scope": "Sections 10/11 adaptive layout and bounded browser evidence apply to this responsive repair. Original 2.10 adopted outcomes remain; this is not a silent full-game re-audit against all later guidance."
   },
-  "status": "stages-pending",
+  "status": "passed",
   "scopeChange": "User excluded real hardware and human playtesting on 2026-10-16, and explicitly answered Skip native desktop checks on 2026-10-18. Native Windows input/browser close-relaunch and OS-process crash checks are excluded. Browser-connector interaction, fresh-document offline recovery and real IndexedDB context-termination checks remain required. No other adopted outcome waived.",
   "coverageReview": {
     "status": "completed",
@@ -28,7 +28,7 @@
     "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
     "artifact": {
       "path": "audit/2026-10-18-phone-layout/coverage-review.md",
-      "sha256": "9ffa45d3b635131e39f17a88e423e6688618d6c1d7268b8ead6e729ceaf9c3b8"
+      "sha256": "0f231e343fefb9d62bb0474f6f7ae57e7555e56a1da0f6217de1b56160a4ba5c"
     }
   },
   "evidenceReview": {
@@ -38,12 +38,12 @@
     "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
     "artifact": {
       "path": "audit/2026-10-18-phone-layout/evidence-review.md",
-      "sha256": "9dc5811d532e4b9d3b2e8d661901c84805c332c9e415965eb900516f65b8ff83"
+      "sha256": "43fa4ff2f13df4837053c2ead9c59a16c114972f39b49ea4eea27ec3f6f381d2"
     }
   },
   "evidenceReuse": {
     "path": "audit/2026-10-18-phone-layout/reuse.json",
-    "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+    "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
   },
   "requirements": [
     {
@@ -182,7 +182,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -341,7 +341,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -511,7 +511,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -678,7 +678,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -845,7 +845,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -1012,7 +1012,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -1174,7 +1174,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -1317,7 +1317,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -1471,7 +1471,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -1622,7 +1622,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -1768,7 +1768,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -1927,7 +1927,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -2085,7 +2085,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -2224,7 +2224,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -2362,7 +2362,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -2497,7 +2497,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -2651,7 +2651,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -2818,7 +2818,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -2985,7 +2985,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -3152,7 +3152,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -3326,7 +3326,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -3497,7 +3497,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -3651,7 +3651,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -3786,7 +3786,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -3924,7 +3924,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -4059,7 +4059,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -4201,7 +4201,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -4340,7 +4340,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -4494,7 +4494,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -4645,7 +4645,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -4796,7 +4796,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -4947,7 +4947,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -5098,7 +5098,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -5264,11 +5264,15 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/public-browser.json",
+          "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
         }
       ],
       "scenarios": [
@@ -5427,11 +5431,15 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         }
@@ -5573,7 +5581,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -5716,7 +5724,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -5862,7 +5870,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -6021,7 +6029,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -6187,7 +6195,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -6334,7 +6342,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -6480,7 +6488,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -6623,7 +6631,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -6773,7 +6781,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -6920,7 +6928,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -7067,7 +7075,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -7214,7 +7222,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -7361,7 +7369,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -7508,7 +7516,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -7646,7 +7654,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -7781,7 +7789,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -7927,7 +7935,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -8070,7 +8078,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -8168,7 +8176,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -8263,7 +8271,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -8429,7 +8437,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -8592,7 +8600,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -8755,7 +8763,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -8918,7 +8926,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -9081,7 +9089,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -9244,7 +9252,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -9407,7 +9415,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -9570,7 +9578,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -9733,7 +9741,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -9896,7 +9904,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -10054,7 +10062,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -10209,7 +10217,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -10375,7 +10383,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -10538,7 +10546,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -10692,7 +10700,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -10843,7 +10851,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -10994,7 +11002,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -11100,11 +11108,15 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/data-preservation.json",
+          "sha256": "04413fe30e8952c20ef2c9c12a092679802e63edcad0a99f9de2b7290b09cfe5"
         }
       ],
       "scenarios": [
@@ -11203,11 +11215,15 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/data-preservation.json",
+              "sha256": "04413fe30e8952c20ef2c9c12a092679802e63edcad0a99f9de2b7290b09cfe5"
             }
           ]
         }
@@ -11349,7 +11365,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -11492,7 +11508,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -11646,7 +11662,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -11813,7 +11829,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -11980,7 +11996,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -12147,7 +12163,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -12314,7 +12330,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -12481,7 +12497,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -12651,7 +12667,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -12802,7 +12818,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -12953,7 +12969,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -13104,7 +13120,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -13255,7 +13271,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -13406,7 +13422,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -13576,7 +13592,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -13759,7 +13775,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -13942,7 +13958,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -14125,7 +14141,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -14308,7 +14324,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -14491,7 +14507,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -14685,7 +14701,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -14860,7 +14876,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -15035,7 +15051,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -15210,7 +15226,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -15385,7 +15401,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -15560,7 +15576,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -15573,8 +15589,8 @@
     {
       "id": "M06",
       "stage": "live",
-      "status": "not-run",
-      "note": "Exact candidate future hosted/live stage has not run; old success does not substitute.",
+      "status": "passed",
+      "note": "Fresh exact-source hosted/live boundary verified; see current receipts.",
       "artifacts": [
         {
           "path": "audit/deployment-candidate-tests.txt",
@@ -15726,18 +15742,30 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/live-verification.json",
+          "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+          "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/public-browser.json",
+          "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
         }
       ],
       "scenarios": [
         {
           "id": "prepromotion-outcomes",
-          "status": "not-run",
-          "observation": "prepromotion outcomes. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "prepromotion outcomes. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/deployment-candidate-tests.txt",
@@ -15889,18 +15917,30 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         },
         {
           "id": "exact-package",
-          "status": "not-run",
-          "observation": "exact package. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "exact package. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/deployment-candidate-tests.txt",
@@ -16052,18 +16092,30 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         },
         {
           "id": "previous-client-update",
-          "status": "not-run",
-          "observation": "previous client update. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "previous client update. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/deployment-candidate-tests.txt",
@@ -16215,18 +16267,30 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         },
         {
           "id": "live-outcomes",
-          "status": "not-run",
-          "observation": "live outcomes. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "live outcomes. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/deployment-candidate-tests.txt",
@@ -16378,11 +16442,23 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         }
@@ -16516,7 +16592,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -16651,7 +16727,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -16797,7 +16873,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -16940,7 +17016,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -17078,7 +17154,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -17213,7 +17289,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -17226,8 +17302,8 @@
     {
       "id": "C04",
       "stage": "staged",
-      "status": "not-run",
-      "note": "Exact candidate future hosted/live stage has not run; old success does not substitute.",
+      "status": "passed",
+      "note": "Fresh exact-source hosted/live boundary verified; see current receipts.",
       "artifacts": [
         {
           "path": "audit/handbook-hosted-ci.json",
@@ -17331,18 +17407,26 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
+          "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
+          "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
         }
       ],
       "scenarios": [
         {
           "id": "hosted-regressions",
-          "status": "not-run",
-          "observation": "hosted regressions. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "hosted regressions. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/handbook-hosted-ci.json",
@@ -17446,18 +17530,26 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
+              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
+              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
             }
           ]
         },
         {
           "id": "hosted-candidate-check",
-          "status": "not-run",
-          "observation": "hosted candidate check. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "hosted candidate check. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/handbook-hosted-ci.json",
@@ -17561,18 +17653,26 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
+              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
+              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
             }
           ]
         },
         {
           "id": "required-rule-readback",
-          "status": "not-run",
-          "observation": "required rule readback. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "required rule readback. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/handbook-hosted-ci.json",
@@ -17676,18 +17776,26 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
+              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
+              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
             }
           ]
         },
         {
           "id": "negative-refusal-fixture",
-          "status": "not-run",
-          "observation": "negative refusal fixture. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "negative refusal fixture. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/handbook-hosted-ci.json",
@@ -17791,11 +17899,19 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci.json",
+              "sha256": "40f2aab5f0f956233734a34ed0c50d6d2b7ecd02fe89e3431f1f94b7bd65d245"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/hosted-ci-log.txt",
+              "sha256": "df87d922d7486f7c827f28f3123180c4260e01c76478a88ec8d2886734c40864"
             }
           ]
         }
@@ -17937,7 +18053,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -18080,7 +18196,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -18223,7 +18339,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -18366,7 +18482,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -18379,8 +18495,8 @@
     {
       "id": "C06",
       "stage": "live",
-      "status": "not-run",
-      "note": "Exact candidate future hosted/live stage has not run; old success does not substitute.",
+      "status": "passed",
+      "note": "Fresh exact-source hosted/live boundary verified; see current receipts.",
       "artifacts": [
         {
           "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
@@ -18456,18 +18572,30 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
           "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/live-verification.json",
+          "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+          "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+        },
+        {
+          "path": "audit/2026-10-18-phone-layout/public-browser.json",
+          "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
         }
       ],
       "scenarios": [
         {
           "id": "root-status-type-identity",
-          "status": "not-run",
-          "observation": "root status type identity. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "root status type identity. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
@@ -18543,18 +18671,30 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         },
         {
           "id": "immutable-assets-status-type-hash",
-          "status": "not-run",
-          "observation": "immutable assets status type hash. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "immutable assets status type hash. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
@@ -18630,18 +18770,30 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         },
         {
           "id": "native-routes-composition",
-          "status": "not-run",
-          "observation": "native routes composition. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "native routes composition. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
@@ -18717,18 +18869,30 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         },
         {
           "id": "board-workshop-availability",
-          "status": "not-run",
-          "observation": "board workshop availability. Exact candidate future hosted/live stage has not run; old success does not substitute.",
+          "status": "passed",
+          "observation": "board workshop availability. Fresh exact-source hosted/live boundary verified; see current receipts.",
           "artifacts": [
             {
               "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
@@ -18804,11 +18968,23 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
               "sha256": "fc9726c3f61ae0df98dc1d2554c239d13575dbd90a9bcee81c967c36689493b7"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/live-verification.json",
+              "sha256": "e0e984e0d5560d29f3277ae09d49e252ea3d4d6e9ab6a6abc9a5b85e8e30d5d1"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/deployment-receipt.json",
+              "sha256": "09b6382e4799e4adffdc62771162b6b011295ad7ec1a2e4d3635b48b927c2198"
+            },
+            {
+              "path": "audit/2026-10-18-phone-layout/public-browser.json",
+              "sha256": "fec9c6931e4e40e14c21cabfb6e8bb6cbf18ec6c8350e177731c88c8d8386f3b"
             }
           ]
         }
@@ -18942,7 +19118,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -19077,7 +19253,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -19219,7 +19395,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -19358,7 +19534,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -19497,7 +19673,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -19636,7 +19812,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -19775,7 +19951,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -19937,7 +20113,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20096,7 +20272,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20238,7 +20414,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20377,7 +20553,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20447,7 +20623,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20514,7 +20690,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20588,7 +20764,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20675,7 +20851,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20761,7 +20937,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20828,7 +21004,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20902,7 +21078,7 @@
         },
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -20973,7 +21149,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21044,7 +21220,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21115,7 +21291,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21186,7 +21362,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21257,7 +21433,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21328,7 +21504,7 @@
             },
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21346,7 +21522,7 @@
       "artifacts": [
         {
           "path": "audit/2026-10-18-phone-layout/reuse.json",
-          "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+          "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
         },
         {
           "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21377,7 +21553,7 @@
           "artifacts": [
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21396,7 +21572,7 @@
           "artifacts": [
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21415,7 +21591,7 @@
           "artifacts": [
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",
@@ -21434,7 +21610,7 @@
           "artifacts": [
             {
               "path": "audit/2026-10-18-phone-layout/reuse.json",
-              "sha256": "9987fe636bd03611b26988e4108e6c3afb338e0591a3b6317c8df277aa63374f"
+              "sha256": "04893dd271eaa09ae43c57aeb14bbe902fc69b59a24fc416f654081fdfcffc7f"
             },
             {
               "path": "audit/2026-10-18-phone-layout/final-tests.txt",

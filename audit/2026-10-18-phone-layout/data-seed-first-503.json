@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-18T04:45:35.314Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "path": "/boards/trial.html",
+  "synthetic": {
+    "id": "7c2e5291-8924-4f2f-930c-2eca404d9665",
+    "alias": "Release check",
+    "mode": "trial",
+    "trackId": "51000000-0000-4000-8000-000000000001",
+    "trackRevision": "5d78cd7ea6c2d3b6305fc6444acb69d0630736a3186f3f8384f5860225c85d07",
+    "rulesRevision": "scrap-physics-v1.1.0",
+    "buildRevision": "01cd0e3bf38d746d23c2c4915d249d622c2aa22316ff087ea1d543b7b8ba1bf7",
+    "assist": "steering-off:manual",
+    "laps": 3,
+    "challenge": "",
+    "elapsedMs": 480000,
+    "splits": [
+      160000,
+      160000,
+      160000
+    ]
+  },
+  "before": {
+    "etag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+    "rows": []
+  },
+  "state": "seed-not-confirmed",
+  "scope": "Owned synthetic row and unchanged hashes of pre-existing rows; no private row payload recorded.",
+  "attempts": [
+    {
+      "utc": "2026-10-18T04:45:36.743Z",
+      "status": 503,
+      "detail": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>503 Service Unavailable - Budget Exceeded</title>\n  </head>\n  <body itemscope itemtype=\"https://schema.org/FailedActionStatus\">\n    <h1 itemprop=\"name\">Budget Exceeded</h1>\n    <p itemprop=\"description\">The request exceeded the allocated memory budget.</p>\n\n    <div itemscope itemtype=\"https://pagelove.org/BudgetLimit\">\n      <span itemprop=\"resourceType\">memory</span>\n      <dl>\n        <dt>Allocated:</dt>\n        <dd><span itemprop=\"allocated\">33234932</span> bytes</dd>\n        <dt>Consumed:</dt>\n        <dd><span itemprop=\"consumed\">33234932</span> bytes</dd>\n      </dl>\n    </div>\n  </body>\n</html>"
+    }
+  ]
+}

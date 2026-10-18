@@ -6,6 +6,6 @@ The inherited phone two-column home grid conflicted with the arcade menu's neste
 
 R01 verifies ten CSS viewport sizes from 320 to 1440 pixels (including 720/721), doubled text, action bounds/hit testing, complete portrait/landscape menus and legal racing/result/retry, live rotation, viewport heights and injected insets. All four responsive scenarios passed. Fresh automated suite: 119 passed, zero failed/skipped. Native/physical-device checks excluded as requested; no full WCAG or every-device certification.
 
-Current stages: 45/48 requirements passed. Pending: M06, C04, C06.
+Current stages: 48/48 requirements passed. Pending: none.
 
 [Evidence review](evidence-review.md), [coverage review](coverage-review.md), [dependency reuse](reuse.json), [observations/failures](observations.md). Previous provider burst errors remain a bounded hosting limitation; this change does not alter its policies/data or claim universal readiness.

@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-18T04:52:31.458Z",
+  "passed": true,
+  "release": "sl-28ec5378c02128",
+  "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
+  "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61",
+  "journal": "audit/deployments/2026-10-18T04-49-46-569Z-696fdf9e-51bc-4b8a-bcab-1e62f40b8ea3.jsonl",
+  "journalSha256": "54e45ce141e40612b69305dfee6bb4d5312c83942cf2015861bbdc8deadd6efd",
+  "journalRecords": 341,
+  "publicResources": 112,
+  "verifiedInventory": 51,
+  "nativeRoutes": 28,
+  "services": [
+    {
+      "route": "/boards/trial.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 17082,
+      "sha256": "c030d9311b7d33c12cc9ba8ff26890a4426ba3242f09ad916f678f0ae74a891d"
+    },
+    {
+      "route": "/boards/daily.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 32822,
+      "sha256": "ebabf021bb75cc88c126d20bbbce40a202f7b4d8627017e8b36d4cc967382056"
+    },
+    {
+      "route": "/workshop-tracks/catalog.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 929,
+      "sha256": "bc9d9b61fb8ce5fe09a2ddb49591a9c1697641586907a8d5372e7275c7481b6b"
+    }
+  ],
+  "scope": "Supported publisher verified actual status/type/hash and semantic composed entry dependencies. Independent final published inventory/journal comparison and actual board/catalog availability. Provider burst reliability is not established.",
+  "serviceReadMethod": "One predeclared full service comparison with 1500 ms gaps after a retained failed Daily read; no unbounded retry loop",
+  "earlierFailedObservation": {
+    "path": "audit/2026-10-18-phone-layout/public-service-first-503.json",
+    "sha256": "923c3236066c4a48e2a8fbc2392c30dbaca09eaac944dc5562773c320cb4bda2"
+  },
+  "serviceAvailabilityLimit": "Paced reads passed at the recorded time; earlier provider 503s remain failures and no universal availability/burst guarantee is implied"
+}

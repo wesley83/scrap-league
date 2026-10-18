@@ -1,6 +1,6 @@
 # Responsive scope coverage
 
-Actor Codex; 2026-10-18T04:43:58.491Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
+Actor Codex; 2026-10-18T04:54:57.473Z. sl-28ec5378c02128; source 9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd; output 49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61; inventory ce143632848d2abb251bd5c391ac12fe86fcf777f9a58443f62d27cb8b8113ed.
 
 Retain every adopted 47/102 baseline outcome and add R01's four required local layout scenarios (48/106 total). Current guide 2.11 Sections 10/11 supplement the original pinned 2.10 scope; no unrelated genre or native/physical requirement is adopted or waived. Review each home action, header/footer, card content and menu/race transitions, not only document width. Previous Workshop/Settings checks missed the home grid; the user's screenshot and red geometry now establish that omitted risk.
 

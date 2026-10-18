@@ -1,0 +1,492 @@
+{
+  "utc": "2026-10-18T04:43:58.003Z",
+  "candidate": {
+    "release": "sl-28ec5378c02128",
+    "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
+    "outputHash": "49fb670837ed58b52eb2a36273138c223b567f338beeaa0dd7dfb06e2a78fa61"
+  },
+  "baselineCommit": "7dd7db161cadb687a746d5c79ffca5e7a330bbf5",
+  "runtimeAndContent": [
+    {
+      "file": "app/ai-profile.js",
+      "before": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
+      "after": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
+      "unchanged": true
+    },
+    {
+      "file": "app/arcade-renderer.js",
+      "before": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd",
+      "after": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd",
+      "unchanged": true
+    },
+    {
+      "file": "app/arcade.css",
+      "before": "47ae0db84c5b72f02623346c444016704149f8bc3a224871a12c71f83c48624e",
+      "after": "c30dfabd6a1c8d2b8d7053e7bd76a933fb1d26c6d87019dc703ee954d963c7f4",
+      "unchanged": false
+    },
+    {
+      "file": "app/audio.js",
+      "before": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
+      "after": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
+      "unchanged": true
+    },
+    {
+      "file": "app/boards.js",
+      "before": "696747b34f4ef9d61eb161eaf143972237801de8034c07fd3e18ca7b4102ecf3",
+      "after": "696747b34f4ef9d61eb161eaf143972237801de8034c07fd3e18ca7b4102ecf3",
+      "unchanged": true
+    },
+    {
+      "file": "app/bootstrap.js",
+      "before": "4d2fe542b81d30d1ab1cee50ed2aecaf936ff55468ed9a72e5f0aa4e2516d94d",
+      "after": "4d2fe542b81d30d1ab1cee50ed2aecaf936ff55468ed9a72e5f0aa4e2516d94d",
+      "unchanged": true
+    },
+    {
+      "file": "app/builds.js",
+      "before": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f",
+      "after": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f",
+      "unchanged": true
+    },
+    {
+      "file": "app/collision.js",
+      "before": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
+      "after": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
+      "unchanged": true
+    },
+    {
+      "file": "app/continuation.js",
+      "before": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
+      "after": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
+      "unchanged": true
+    },
+    {
+      "file": "app/driver-profile.js",
+      "before": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89",
+      "after": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89",
+      "unchanged": true
+    },
+    {
+      "file": "app/driving-controls.js",
+      "before": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e",
+      "after": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e",
+      "unchanged": true
+    },
+    {
+      "file": "app/editor-commands.js",
+      "before": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
+      "after": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
+      "unchanged": true
+    },
+    {
+      "file": "app/fonts/Barlow-OFL.txt",
+      "before": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "after": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "unchanged": true
+    },
+    {
+      "file": "app/fonts/Barlow-Regular.ttf",
+      "before": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea",
+      "after": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea",
+      "unchanged": true
+    },
+    {
+      "file": "app/fonts/Barlow-SemiBold.ttf",
+      "before": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5",
+      "after": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5",
+      "unchanged": true
+    },
+    {
+      "file": "app/fonts/BebasNeue-OFL.txt",
+      "before": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "after": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "unchanged": true
+    },
+    {
+      "file": "app/fonts/BebasNeue-Regular.ttf",
+      "before": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "after": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "unchanged": true
+    },
+    {
+      "file": "app/graphics-policy.js",
+      "before": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72",
+      "after": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72",
+      "unchanged": true
+    },
+    {
+      "file": "app/icon.svg",
+      "before": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02",
+      "after": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/favicon.ico",
+      "before": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039",
+      "after": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/icon-16.png",
+      "before": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c",
+      "after": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/icon-180.png",
+      "before": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2",
+      "after": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/icon-192.png",
+      "before": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431",
+      "after": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/icon-32.png",
+      "before": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228",
+      "after": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/icon-48.png",
+      "before": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30",
+      "after": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/icon-512.png",
+      "before": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0",
+      "after": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0",
+      "unchanged": true
+    },
+    {
+      "file": "app/icons/icon-maskable-512.png",
+      "before": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f",
+      "after": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f",
+      "unchanged": true
+    },
+    {
+      "file": "app/index.html",
+      "before": "43685f9aac91cff74458542f406b45f2e5d30c7985286f73151f332236782d58",
+      "after": "43685f9aac91cff74458542f406b45f2e5d30c7985286f73151f332236782d58",
+      "unchanged": true
+    },
+    {
+      "file": "app/main.js",
+      "before": "ac7a43c6dc0ccf53390e743d41d6eb3a024c4e2c0245058d2881ce31d2377922",
+      "after": "ac7a43c6dc0ccf53390e743d41d6eb3a024c4e2c0245058d2881ce31d2377922",
+      "unchanged": true
+    },
+    {
+      "file": "app/model.js",
+      "before": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
+      "after": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
+      "unchanged": true
+    },
+    {
+      "file": "app/offline.js",
+      "before": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "after": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "unchanged": true
+    },
+    {
+      "file": "app/pagelove.js",
+      "before": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
+      "after": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
+      "unchanged": true
+    },
+    {
+      "file": "app/preferences.js",
+      "before": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1",
+      "after": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1",
+      "unchanged": true
+    },
+    {
+      "file": "app/publication.js",
+      "before": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193",
+      "after": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193",
+      "unchanged": true
+    },
+    {
+      "file": "app/renderer.js",
+      "before": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20",
+      "after": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20",
+      "unchanged": true
+    },
+    {
+      "file": "app/scenes.js",
+      "before": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f",
+      "after": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f",
+      "unchanged": true
+    },
+    {
+      "file": "app/sharing.js",
+      "before": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084",
+      "after": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084",
+      "unchanged": true
+    },
+    {
+      "file": "app/simulation.js",
+      "before": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d",
+      "after": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d",
+      "unchanged": true
+    },
+    {
+      "file": "app/social/og-landscape-v1.png",
+      "before": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa",
+      "after": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa",
+      "unchanged": true
+    },
+    {
+      "file": "app/social/og-square-v1.png",
+      "before": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa",
+      "after": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa",
+      "unchanged": true
+    },
+    {
+      "file": "app/storage.js",
+      "before": "a3d9f944d74bbeae073ea4065044e4417bf9f784105f9b25e56934781eb193d8",
+      "after": "a3d9f944d74bbeae073ea4065044e4417bf9f784105f9b25e56934781eb193d8",
+      "unchanged": true
+    },
+    {
+      "file": "app/style.css",
+      "before": "696efcab035118cc26c295058b36c6f66cece28e1a336621d5561d561f746227",
+      "after": "696efcab035118cc26c295058b36c6f66cece28e1a336621d5561d561f746227",
+      "unchanged": true
+    },
+    {
+      "file": "app/submission-ui.js",
+      "before": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144",
+      "after": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144",
+      "unchanged": true
+    },
+    {
+      "file": "app/track-document.js",
+      "before": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33",
+      "after": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33",
+      "unchanged": true
+    },
+    {
+      "file": "app/track.js",
+      "before": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
+      "after": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
+      "unchanged": true
+    },
+    {
+      "file": "app/vendor/QR-LICENSE.txt",
+      "before": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827",
+      "after": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827",
+      "unchanged": true
+    },
+    {
+      "file": "app/vendor/qr.js",
+      "before": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+      "after": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+      "unchanged": true
+    },
+    {
+      "file": "app/workshop.js",
+      "before": "a2cd0ecb7f8a8335f19de2a60cca311e61b63153fd3557c7ae347f88a18e3b91",
+      "after": "a2cd0ecb7f8a8335f19de2a60cca311e61b63153fd3557c7ae347f88a18e3b91",
+      "unchanged": true
+    },
+    {
+      "file": "content/catalog.html",
+      "before": "1c9cb0b901041a463def5af187f0b2d95381f66e52cd2be8689da1919ea38f3e",
+      "after": "1c9cb0b901041a463def5af187f0b2d95381f66e52cd2be8689da1919ea38f3e",
+      "unchanged": true
+    },
+    {
+      "file": "content/cups/dock-circuit.html",
+      "before": "2728ee56c523b084aea397fce2e0491d6125ca1a81d3e819a7f424739ea70b57",
+      "after": "2728ee56c523b084aea397fce2e0491d6125ca1a81d3e819a7f424739ea70b57",
+      "unchanged": true
+    },
+    {
+      "file": "content/cups/foundry-run.html",
+      "before": "197cc53611af317e0c238cc122cacff5097079dec0114cdea45945c960897628",
+      "after": "197cc53611af317e0c238cc122cacff5097079dec0114cdea45945c960897628",
+      "unchanged": true
+    },
+    {
+      "file": "content/cups/scrap-league-final.html",
+      "before": "40de86aca35330d6b25f7ccbb89c02f643f852d9fd5322c7f21d2399de7e3450",
+      "after": "40de86aca35330d6b25f7ccbb89c02f643f852d9fd5322c7f21d2399de7e3450",
+      "unchanged": true
+    },
+    {
+      "file": "content/cups/yard-shift.html",
+      "before": "175676c0024aa1daa01858404fbbb0a6de35d1826ed6d6d4a41cca483c4802fc",
+      "after": "175676c0024aa1daa01858404fbbb0a6de35d1826ed6d6d4a41cca483c4802fc",
+      "unchanged": true
+    },
+    {
+      "file": "content/daily/daily-v1.html",
+      "before": "cfd738c75e944e2ad43247d9c77a9ddced07833395c08f3866c7f3e2ab1fdb5a",
+      "after": "cfd738c75e944e2ad43247d9c77a9ddced07833395c08f3866c7f3e2ab1fdb5a",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/anvil.html",
+      "before": "58587f9b067070c2380363aa988dad18158cf67e1f4909fed4ae27c577f77e52",
+      "after": "58587f9b067070c2380363aa988dad18158cf67e1f4909fed4ae27c577f77e52",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/capacitor.html",
+      "before": "add34554f55a4958a4f91f7e8148be32fb62b0424f8c616377d6f5c466f1f90d",
+      "after": "add34554f55a4958a4f91f7e8148be32fb62b0424f8c616377d6f5c466f1f90d",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/courier.html",
+      "before": "2ec4b049a73be8ea3547df1a750f2fc726dac519b231df49af4b866229e2b6fc",
+      "after": "2ec4b049a73be8ea3547df1a750f2fc726dac519b231df49af4b866229e2b6fc",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/flywheel.html",
+      "before": "00beea574a1768daf717205962c49bd10c70fc2f8d5f01a20038442268beb646",
+      "after": "00beea574a1768daf717205962c49bd10c70fc2f8d5f01a20038442268beb646",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/kite.html",
+      "before": "91b8a86b6c13a9eb07dacde5fd6cada494c2617341734fba74deccef5b0f5cf9",
+      "after": "91b8a86b6c13a9eb07dacde5fd6cada494c2617341734fba74deccef5b0f5cf9",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/longrunner.html",
+      "before": "6ec1895359136a7164eac472667b3ad173de813ab7f933797d35e2cfb1ba1d9d",
+      "after": "6ec1895359136a7164eac472667b3ad173de813ab7f933797d35e2cfb1ba1d9d",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/mixed.html",
+      "before": "e55ab3be32681d04f098a91e8b114d6baf594e8225241ff52db812938a1dd788",
+      "after": "e55ab3be32681d04f098a91e8b114d6baf594e8225241ff52db812938a1dd788",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/mule.html",
+      "before": "c52d9cb4e71f40b5a59511c016fd73aabf83f31c6055813a8aa5fd2f209f81fd",
+      "after": "c52d9cb4e71f40b5a59511c016fd73aabf83f31c6055813a8aa5fd2f209f81fd",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/rally.html",
+      "before": "de06ca5fad980fef338f618ab469139437cd718095f01fed1d39b35cfab9e9ad",
+      "after": "de06ca5fad980fef338f618ab469139437cd718095f01fed1d39b35cfab9e9ad",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/road.html",
+      "before": "025d7c05150c21f008c18226c187abc7f2a54f17fff3f06d713461a345535d54",
+      "after": "025d7c05150c21f008c18226c187abc7f2a54f17fff3f06d713461a345535d54",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/roll-cage.html",
+      "before": "019850e2d5cebd87cb6a509c3a20c9c4d64b94ebf019e606b38b6c6f069afb93",
+      "after": "019850e2d5cebd87cb6a509c3a20c9c4d64b94ebf019e606b38b6c6f069afb93",
+      "unchanged": true
+    },
+    {
+      "file": "content/parts/torque-box.html",
+      "before": "41520d5e66d6cec86306dbb3ab500ea32f2c560d08e00c915a8480dd9c5b2f8b",
+      "after": "41520d5e66d6cec86306dbb3ab500ea32f2c560d08e00c915a8480dd9c5b2f8b",
+      "unchanged": true
+    },
+    {
+      "file": "content/rivals.html",
+      "before": "94be9f030f67ba259df1fd45e33349a4cbbfbbd2e43778484b5dd92ab3afea03",
+      "after": "94be9f030f67ba259df1fd45e33349a4cbbfbbd2e43778484b5dd92ab3afea03",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/container-switchback/definition.html",
+      "before": "ff32a0f4a09518d756e32cdd9ed8027aa0e04f3f8a46954e346025f80d480567",
+      "after": "ff32a0f4a09518d756e32cdd9ed8027aa0e04f3f8a46954e346025f80d480567",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/crusher-circuit/definition.html",
+      "before": "67aeee5843efb91631393e7deac2e3c8838d05ccf5b1222987739daa22d8bdf0",
+      "after": "67aeee5843efb91631393e7deac2e3c8838d05ccf5b1222987739daa22d8bdf0",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/dockside-dash/definition.html",
+      "before": "43136a576bd76de093bdea2ece080db55539661697b3ee5f912ff1acbc0eb08e",
+      "after": "43136a576bd76de093bdea2ece080db55539661697b3ee5f912ff1acbc0eb08e",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/furnace-bend/definition.html",
+      "before": "e2b7da7c4ce93496a2ce20e662a257faec665011af9319756f0b7447668951ee",
+      "after": "e2b7da7c4ce93496a2ce20e662a257faec665011af9319756f0b7447668951ee",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/gravel-shift/definition.html",
+      "before": "5536b1b1c71c8a4a2ea29c3d5ef46ad084e61f2d0d5b57cb65973fb634985409",
+      "after": "5536b1b1c71c8a4a2ea29c3d5ef46ad084e61f2d0d5b57cb65973fb634985409",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/mudworks/definition.html",
+      "before": "34ee702cd0ef15cf58e9bb855717a2fd21e2e7844505bf55d554f43e660c37c7",
+      "after": "34ee702cd0ef15cf58e9bb855717a2fd21e2e7844505bf55d554f43e660c37c7",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/night-sort/definition.html",
+      "before": "50f2a4d875a16e69145c87f24768ae8edb73b0163af52b80cf45b01cd7aca9a1",
+      "after": "50f2a4d875a16e69145c87f24768ae8edb73b0163af52b80cf45b01cd7aca9a1",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/redline-ridge/definition.html",
+      "before": "f62a3b3e724a83510d873ec167f973329178dc9806fc5ca115205e4d30f97979",
+      "after": "f62a3b3e724a83510d873ec167f973329178dc9806fc5ca115205e4d30f97979",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/salt-flat-sprint/definition.html",
+      "before": "3030862554af857d4142c3ba6285e5576bbb2565e9b305273e80dbed6bfaa58e",
+      "after": "3030862554af857d4142c3ba6285e5576bbb2565e9b305273e80dbed6bfaa58e",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/the-big-salvage/definition.html",
+      "before": "8a60cf827f7842daf64f350a8df3bdadc321f79ae94aa01761eb068152c222ab",
+      "after": "8a60cf827f7842daf64f350a8df3bdadc321f79ae94aa01761eb068152c222ab",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/tin-can-alley/definition.html",
+      "before": "c1d96529fdf7accc7a831a8fa73191da977ef3384e8e1cd3187ab346c2f4b9cf",
+      "after": "c1d96529fdf7accc7a831a8fa73191da977ef3384e8e1cd3187ab346c2f4b9cf",
+      "unchanged": true
+    },
+    {
+      "file": "content/tracks/yard-loop/definition.html",
+      "before": "156f4eef17033e1b8f3d628b71ab34c7d4ae39b4e82cd1ae782b69c342892578",
+      "after": "156f4eef17033e1b8f3d628b71ab34c7d4ae39b4e82cd1ae782b69c342892578",
+      "unchanged": true
+    }
+  ],
+  "decision": "Only arcade.css changes runtime behavior. Content, simulation, storage, worker, publication, policies, imports and controller modules are byte-identical. Retain their original bounded evidence; fresh 119-test suite covers the complete source. R01 fresh geometry, enlarged-text, menu/play/rotation and safe-region observations replace earlier insufficient layout coverage. Fresh hosted CI and live publication are separately required. Old provider burst limits and native exclusions remain.",
+  "guideImpact": {
+    "edition": "2.11.0",
+    "sha256": "1b32feff2af6ec4042283e8ce21a1cfa32e6516ce48da834cce98ff065c11054",
+    "snapshot": "audit/2026-10-18-phone-layout/guide-2.11.md",
+    "scope": "Sections 10/11 adaptive layout and bounded browser evidence apply to this responsive repair. Original 2.10 adopted outcomes remain; this is not a silent full-game re-audit against all later guidance."
+  }
+}

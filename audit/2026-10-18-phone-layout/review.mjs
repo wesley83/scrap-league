@@ -27,6 +27,7 @@ for(const r of inventory.required){
  let passed=true;if(r.id==='C04'&&!hosted||['C06','M06'].includes(r.id)&&!live)passed=false;
  const extra=[];if(r.id==='C04'&&hosted)extra.push(await art(prefix+'hosted-ci.json'),await art(prefix+'hosted-ci-log.txt'));
  if(['C06','M06'].includes(r.id)&&live)for(const p of ['live-verification.json','deployment-receipt.json','public-browser.json'])extra.push(await art(prefix+p));
+ if(r.id==='J14'&&live)extra.push(await art(prefix+'public-browser.json'));
  if(r.id==='P09'&&live)extra.push(await art(prefix+'data-preservation.json'));
  const affected=['R01','J01','J02','J05','J08','J09','J16','M02','M04','C12'].includes(r.id),artifacts=[...retained,...common,...(affected?responsive:[]),...extra];
  const note=r.id==='R01'?'Ten CSS viewport sizes, doubled computed text, complete portrait/landscape menus/race/result/retry and live rotation, changing heights and injected safe insets pass with qualified provider-footer reservation. All rendered home actions including synthetic update availability are measured and hit-tested. Full laps use explicitly labeled legal accelerated controls; native/physical behavior not claimed.':!passed?'Exact candidate future hosted/live stage has not run; old success does not substitute.':(['C04','C06','M06'].includes(r.id)?'Fresh exact-source hosted/live boundary verified; see current receipts.':old.note+' Current change impact: unchanged contracts retained with their original method/date; fresh responsive checks cover affected presentation, with original provider/native limits.');
