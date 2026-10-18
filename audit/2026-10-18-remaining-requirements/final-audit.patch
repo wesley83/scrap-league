@@ -1,0 +1,2403 @@
+diff --git a/audit/2026-10-18-remaining-requirements/coverage-review.md b/audit/2026-10-18-remaining-requirements/coverage-review.md
+index a877b70..2ab0851 100644
+--- a/audit/2026-10-18-remaining-requirements/coverage-review.md
++++ b/audit/2026-10-18-remaining-requirements/coverage-review.md
+@@ -1,6 +1,6 @@
+ # Coverage review
+ 
+-Actor Codex, 2026-10-18T02:24:07.303Z. Independently reviewed guide/player/editor contracts against all 47 adopted requirements and 102 named scenarios; no test-name-derived omissions. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++Actor Codex, 2026-10-18T02:35:35.921Z. Independently reviewed guide/player/editor contracts against all 47 adopted requirements and 102 named scenarios; no test-name-derived omissions. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
+ 
+ The handbook 2.10 r2 map preserves every adopted ID. Scope correction records the user's native desktop exclusion and restores P08 to the handbook's established-policy preservation instruction. Original CLI provenance remains; present-tense Workshop recreation is independently bound. Applicable deliverables and exact review statuses are in the separate evidence review. Completion of this review is not a claim that future hosted/live stages happened. No extra approval or separate agent is implied.
+ 
+diff --git a/audit/2026-10-18-remaining-requirements/decisions/local/coverage-review.md b/audit/2026-10-18-remaining-requirements/decisions/local/coverage-review.md
+new file mode 100644
+index 0000000..a877b70
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/decisions/local/coverage-review.md
+@@ -0,0 +1,53 @@
++# Coverage review
++
++Actor Codex, 2026-10-18T02:24:07.303Z. Independently reviewed guide/player/editor contracts against all 47 adopted requirements and 102 named scenarios; no test-name-derived omissions. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++
++The handbook 2.10 r2 map preserves every adopted ID. Scope correction records the user's native desktop exclusion and restores P08 to the handbook's established-policy preservation instruction. Original CLI provenance remains; present-tense Workshop recreation is independently bound. Applicable deliverables and exact review statuses are in the separate evidence review. Completion of this review is not a claim that future hosted/live stages happened. No extra approval or separate agent is implied.
++
++- J01 / local: Fresh player loads, learns the controls, starts and finishes Yard Loop without an account [outcome]
++- J02 / local: Player pauses, opens settings, returns, resumes and immediately steers without a focus/input surprise [keyboard-cycle, gamepad-cycle, touch-cycle]
++- J03 / local: Player completes a three-race cup, reloads between rounds, and keeps exactly one set of rewards [outcome]
++- J04 / local: Player completes all twelve events with ordinary inputs/resources and sees the held final scene [outcome]
++- J05 / local: Player compares and equips a part, tests it and can explain its tradeoff [outcome]
++- J06 / local: Player finishes a Time Trial, sees correct lap arithmetic, races a compatible ghost and improves a best [outcome]
++- J07 / local: Player starts before UTC midnight, finishes after it, uploads later and remains on the original challenge [outcome]
++- J08 / local: New creator builds a closed circuit, corrects a gap, places gates and drives a valid lap [keyboard-create-gap-gates-lap, pointer-create-gap-gates-lap, touch-create-gap-gates-lap]
++- J09 / local: Creator tests against five AI, returns to exact editor context, undoes, reloads and recovers work [outcome]
++- J10 / local: Creator exports, imports and gets identical gameplay meaning without executing hostile content [outcome]
++- J11 / staged: Two owner editors conflict; stale editor preserves work and never overwrites the newer track [outcome]
++- J12 / staged: Published track succeeds but catalog update conflicts; exact link works and listing retry is safe [outcome]
++- J13 / local: Player downloads complete content, stops the server, opens a fresh browser document and races/edits offline [verified-pack, fresh-document-server-stopped, race-offline, edit-offline]
++- J14 / local: Existing release discovers a new version naturally and updates between runs without losing state [outcome]
++- J15 / staged: Score submission times out after server acceptance; original ID reconciles once across two tabs [outcome]
++- J16 / local: Graphics context is lost, phone rotates or input disconnects; invisible simulation stops and explicit resume works [outcome]
++- J17 / local: Result/track invitation contains useful text and link; canceled share preserves state [outcome]
++- J18 / local: Reduced-motion, muted and low-effects players can finish and read every transition/result [outcome]
++- P01 / local: Draft storage [abort-quota, tab-conflict, incompatible-schema, termination-before-commit, termination-after-commit]
++- P02 / local: Result transaction [outcome]
++- P03 / local: Outbox [outcome]
++- P04 / staged: Owner authoring [outcome]
++- P05 / staged: Public records [trial-positive, daily-positive, missing-extra-fields, wrong-types, unsupported-content, invalid-splits, client-expiry, duplicate-id, prohibited-mutations]
++- P06 / staged: Retention [outcome]
++- P07 / staged: Native composition [outcome]
++- P08 / staged: Record supported policy activation capability and preserve established public policies when no safe activation contract exists [provider-capability-record, established-policy-preserved]
++- P09 / local: Data-preserving release [outcome]
++- M01 / local: Shared schemas, parser/serializer/compiler, independent geometric fixtures, one car and a loop; Clean source regeneration; round-trip integrity; swept collisions, skidpad/slalom/braking checks; input/pause/recovery state contracts [outcome]
++- M02 / local: Six-car race, modular road editor, surface/prop/gate tools, real test drive, history and drafts; A new track can be built, validated, driven, recovered and exported/imported through the UI; one complete keyboard/touch-emulated journey [road-surface-prop-gate-tools, keyboard-editor-journey, touch-editor-journey, test-return-history, export-import-recover]
++- M03 / local: All 81 builds, twelve circuits, four cups, eight rivals, unlocks and results; Official tracks authored in Workshop; all references resolve; all tracks finish under seeded AI; seeded handling/pacing measurements complete [all-81-builds, twelve-workshop-exports, references-resolve, seeded-circuits, seeded-pacing-campaign]
++- M04 / local: Saves, ghosts, daily definitions, offline pack, install/fullscreen, audio and sharing; Transaction/failure tests; genuine offline relaunch; natural update journey; phone layouts and keyboard focus [cold-offline-journey, input-zoom-matrix, natural-update, storage-ghost-daily, audio-sharing-install]
++- M05 / staged: Native composition, owner publication, discovery index, casual boards; Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation where available, otherwise established-policy preservation, plus positive/negative record checks [composition, owner-conflict-recovery, public-record-validation, policy-preservation, retention-outbox]
++- M06 / live: Complete asset pack, required CI, audit evidence, release/rollback tools and browser verification; All required rows pass or have explicitly accepted scoped exceptions; exact package verified and previous-client update succeeds [prepromotion-outcomes, exact-package, previous-client-update, live-outcomes]
++- C01 / local: Social artwork and complete initial OG/Twitter metadata [outcome]
++- C02 / local: Favicon, raster, touch and maskable icon set [outcome]
++- C03 / local: Complete asset sources, licenses, fonts and export inventory [outcome]
++- C04 / staged: Required hosted CI refuses failed acceptance [hosted-regressions, hosted-candidate-check, required-rule-readback, negative-refusal-fixture]
++- C05 / local: Exact-source package and acceptance gate before every publication path [source-output-inventory-binding, every-entry-recheck, required-scenario-refusal]
++- C06 / live: All required public assets and routes resolve after promotion [root-status-type-identity, immutable-assets-status-type-hash, native-routes-composition, board-workshop-availability]
++- C07 / local: Credentials and private baselines absent from public package [outcome]
++- C08 / local: Rollback preserves state and old-client dependencies [two-release-restoration, conditional-stale-refusal, ambiguous-rollback, unrelated-state-preserved]
++- C09 / local: Reproducible browser evidence identifies exact tested environment [outcome]
++- C10 / local: Fresh complete automated suite and accurate acceptance ledger [outcome]
++- C11 / local: Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate [outcome]
++- C12 / local: Required shared styles load consistently or produce recoverable startup failure through root and composed entry points [outcome]
++- C13 / local: Every supported publisher refuses unresolved outcomes despite generic deployment instructions or agent-authored exception lists [outcome]
++- C14 / staged: Publication phase journaling and operator recovery are exercised through the supported command after successful and ambiguous entry writes [durable-phase-journal, post-write-verification-failure, ambiguous-applied, ambiguous-unapplied, unknown-readback, supported-forward-recovery]
+diff --git a/audit/2026-10-18-remaining-requirements/decisions/local/evidence-review.md b/audit/2026-10-18-remaining-requirements/decisions/local/evidence-review.md
+new file mode 100644
+index 0000000..8b9221e
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/decisions/local/evidence-review.md
+@@ -0,0 +1,57 @@
++# Evidence review
++
++Actor Codex, 2026-10-18T02:24:07.304Z. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++
++Reviewed raw expected/actual outcomes, environment/method qualification, negative controls, preserved failures and reuse dependencies separately from coverage. Full suite 119 passed, zero failed/skipped. Future stages remain not-run until actual receipts exist.
++
++| ID | Stage | Status | Supported outcome / limits |
++| --- | --- | --- | --- |
++| J01 | local | passed | Account-free Quick Race and action-based practice pass in the current browser fixture. Actual normal-browser offline keyboard racing separately passed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J02 | local | passed | Sequential connector keyboard cycle, actual game-loop injected gamepad cycle and eight touch layout/side/orientation cycles pass; fresh controls and restored world focus verified. No physical device claim. |
++| J03 | local | passed | Strict current browser campaign requires terminal finished state and every lap, reloads after round one, and checks one unique event award per race. No unfinished fixture result counts as completion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J04 | local | passed | All twelve events and four scenes through legal accelerated controller inputs; held ending and unique awards checked. This is not a human pacing/enjoyment measurement. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J05 | local | passed | Current garage fixture compares matching tire descriptions/grip, equips rally tires, drives and returns with selection preserved. All 81 independent handling measurements pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J06 | local | passed | Current browser completes a slower then improved three-lap solo run, saves/loads a compatible ghost and confirms the better best. Independent split arithmetic regressions pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J07 | local | passed | Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J08 | local | passed | Sequential keyboard creates a closed eight-piece circuit, exposes/corrects a real gap, places surface/prop/gate and tests against five AI. Separate mouse/touch-emulated journeys each create from blank, correct gap, complete a legal lap and round-trip a semantic copy. Full laps use explicitly identified legal seeded controllers. |
++| J09 | local | passed | Actual closed IndexedDB recovery, current open Files warning/export, delayed first entry, corrupt source and latest navigation intent are separately qualified. Download capture proves export content, not OS delivery. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J10 | local | passed | Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J11 | staged | passed | Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J12 | staged | passed | Production publication wrapper on a disposable live circuit encounters an actual 412 from an injected stale catalog ETag; the exact public track remains semantically readable and listing retry succeeds. This is endpoint/function evidence, not a full owner-key form browser journey. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J13 | local | passed | Real verified B pack; origin process stopped and independent Node request returned ECONNREFUSED. Fresh browser document boots, drives and edits/reloads a saved circuit. Native desktop/browser-process restart excluded explicitly. |
++| J14 | local | passed | Normal installed browser copy updates from sl-de66ac8ab06a61 to the current runtime through explicit game controls, retaining progress. Current foreground/reconnect discovery and visible review control pass injected-worker tests; activation is never automatic. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J15 | staged | passed | Two independent production Store/Boards connections reconcile an intentionally dropped response after actual public acceptance: one claim, original identity, one public copy and confirmed outbox. IndexedDB is emulated in this endpoint fixture; browser storage and leases are covered separately. Owned row conditionally removed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J16 | local | passed | Canvas failure injection and replacement preserve the paused race and clock. Six viewport layouts and independent pointer cancellation pass; actual offline keyboard input works. No physical-device claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J17 | local | passed | Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J18 | local | passed | Exact current twelve-event campaign runs muted, reduced motion and low effects, checks all scene captions and held ending. Existing bounded audio signal/voice tests pass; no perceptual listening claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P01 | local | passed | Full atomic quota/abort/conflict/schema regressions plus real browser IndexedDB Worker termination before and after transaction commit. Previous/new committed revision independently reopened; no OS power-loss claim. |
++| P02 | local | passed | Fresh regressions reject malformed/unfinished results before rewards/bests/progression writes, preserve prior state and retain atomic abort/idempotency guarantees. Strict current campaign verifies readable committed rounds across reload. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P03 | local | passed | Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P04 | staged | passed | Current live production publication functions pass pinned-host writes, wrong credential, stale baseline, create-only 412, lost accepted-response reconciliation and public semantic readback. Complete browser owner-key form operation is not inferred from these endpoint checks. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P05 | staged | passed | All 42 actual endpoint checks pass at a predeclared 1.5-second mutation interval, owned accepted rows removed, policy hashes unchanged. Earlier seven burst errors retained as operational limitation. Explicit client retry preserves a denied valid time and reconciles a lost acceptance response. |
++| P06 | staged | passed | Server receipt/five-day lifetime and exact inclusive expiry/offline filtering pass local contracts. Actual public access removes multiple interleaved expired rows, preserves active controls, removes a near-boundary row and remains stable on repeat; independent owner DAV inspection confirms physical removal. Owner-seeded times exercise the predicate without claiming five elapsed days. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P07 | staged | passed | Actual provider fixtures verify intended shell/track and 404 on missing includes. Final installed browser with server stopped recovers track links, hostile chooser and next saved-editor action; worker fixtures additionally cover HTTP404/503, success/auth passthrough, cache integrity and no API/query interception. First-ever clients without a verified pack retain provider errors. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P08 | staged | passed | Unsupported provider-wide activation procedure recorded; established policy definitions pinned and preserved per the adopted guide. Positive/negative public enforcement required separately under P05; no global readiness guarantee. |
++| P09 | local | passed | Both existing boards and Workshop catalog retain identical owner hashes across this pass's promotions; baseline catalog has no referenced definitions. 50 original, 50 first-intermediate and 50 pre-native-fix immutable dependencies remain intact. Earlier populated owned fixture evidence stays scoped to its prior promotion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| M01 | local | passed | Shared model/source/compiler, collision/handling, transactional editor source, controls and recovery pass current tests; renderer remains a derived view. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| M02 | local | passed | Complete keyboard creator plus mouse/touch-emulated creator test/return/history/export/import/IndexedDB journeys. Actual keyboard export reached disk; connector filechooser event unavailable, so import is explicitly File/DataTransfer emulation through production parser/confirmation. Inspector focus and six-size enlarged-text overflow regression fixed and verified. |
++| M03 | local | passed | All 81 builds, seeded circuit/campaign references and pacing verified by fresh suite. Twelve present-tense Workshop recreations/exports independently bound byte-identically to authoritative content. Original CLI authoring history remains disclosed. |
++| M04 | local | passed | Six real-worker update boundaries plus actual stopped-server fresh-document race/edit, complete input/settings cycles, enlarged-text matrix and current save/ghost/daily/audio/share/install contracts. Native desktop/OS install checks excluded; no physical-device certification. |
++| M05 | staged | passed | Retained qualified owner conflict/catalog/retention/composition evidence, unchanged-policy decision and fresh complete paced public validation matrix. No policy edits or provider-wide readiness claim. |
++| M06 | live | not-run | Future exact hosted/live boundary; no success inferred. |
++| C01 | local | passed | Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C02 | local | passed | ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C03 | local | passed | Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C04 | staged | not-run | Future exact hosted/live boundary; no success inferred. |
++| C05 | local | passed | Gate version 4 independently binds all 102 named scenario decisions, exact source/output/inventory/reviews and checks before every mutable entry. Actual supported CLI controlled-host matrix refuses acceptance changes before next entry and wrong dependencies before promotion. |
++| C06 | live | not-run | Future exact hosted/live boundary; no success inferred. |
++| C07 | local | passed | Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C08 | local | passed | Actual CLI A-to-B-to-A conditional restoration, lost response reconciliation, stale/corrupt backup refusal and unrelated state/old assets preserved. Restoration scope is exactly three root entries; no data/content rollback claimed. |
++| C09 | local | passed | Receipts identify release/source, actual viewport/buffer/renderer, method and limits. Corrected connection requires its actual document; stale/unfinished fixtures remain failures and are not reused as complete journeys. Physical devices and full WCAG conformance are not claimed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C10 | local | passed | Complete fresh 115-test suite and focused final gate regressions; this ledger explicitly retains unfulfilled outcomes. Passing tests do not imply full acceptance. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C11 | local | passed | Pinned guide 2.10.0, inventory digest and map r1; separate source/output-bound coverage and evidence reviews. Stale-inventory/review refusal fixtures pass. Review completion includes unresolved outcomes. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C12 | local | passed | Qualified required-CSS failures and ordinary Reload recovery must pass root and locally composed entries; installed shell uses the same bootstrap/styles. Public-host reads verify its current older routes separately. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C13 | local | passed | Both actual CLI operations must refuse this unresolved candidate before authentication/writes, with independent generic-instruction/agent-receipt refusal fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C14 | staged | passed | Flushed chained phase journal records intent, known promotions before readback, post-write failures and applied/unapplied/unknown outcomes. Supported inspection/prepare/recovery performs conditional state checks, captures separate backups and refuses corrupted/concurrent baselines. Controlled-host fixture acceptance is synthetic and never used as product acceptance. |
++
++Provider burst failures, fixture failures and native exclusions are retained; no universal reliability, physical input, OS restart or unperformed hosted/live outcome is inferred.
+diff --git a/audit/2026-10-18-remaining-requirements/decisions/local/report.md b/audit/2026-10-18-remaining-requirements/decisions/local/report.md
+new file mode 100644
+index 0000000..092c842
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/decisions/local/report.md
+@@ -0,0 +1,11 @@
++# Remaining requirement closure
++
++Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++
++44/47 requirements passed; 90/102 named scenarios passed. M06 live, C04 staged, C06 live
++
++119 automated tests passed, zero failed/skipped. Complete browser creator/input/zoom, real IndexedDB termination, natural two-window update and stopped-origin fresh-document race/edit evidence retained. Fixed score retry, inspector focus, narrow enlarged-text layout and publisher/gate/journal/recovery gaps. Twelve Workshop recreations match authoritative source bytes.
++
++The [evidence review](evidence-review.md), [coverage review](coverage-review.md), [reuse decision](reuse.json), [scope corrections](scope-corrections.md) and [append-only observations](progress.md) provide per-requirement decisions and limits. Prior audits are retained without rewriting.
++
++Material limit: earlier burst provider errors remain unresolved at the hosting layer. The predeclared paced 42-case endpoint matrix passed; explicit score retry now recovers rejected valid submissions without changing identity. No universal provider readiness or burst reliability is claimed. Native desktop checks were excluded by the user. Pointer/touch/gamepad injection and seeded legal controllers are identified separately from connector keyboard input.
+diff --git a/audit/2026-10-18-remaining-requirements/decisions/staged/coverage-review.md b/audit/2026-10-18-remaining-requirements/decisions/staged/coverage-review.md
+new file mode 100644
+index 0000000..6feae81
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/decisions/staged/coverage-review.md
+@@ -0,0 +1,53 @@
++# Coverage review
++
++Actor Codex, 2026-10-18T02:31:24.877Z. Independently reviewed guide/player/editor contracts against all 47 adopted requirements and 102 named scenarios; no test-name-derived omissions. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++
++The handbook 2.10 r2 map preserves every adopted ID. Scope correction records the user's native desktop exclusion and restores P08 to the handbook's established-policy preservation instruction. Original CLI provenance remains; present-tense Workshop recreation is independently bound. Applicable deliverables and exact review statuses are in the separate evidence review. Completion of this review is not a claim that future hosted/live stages happened. No extra approval or separate agent is implied.
++
++- J01 / local: Fresh player loads, learns the controls, starts and finishes Yard Loop without an account [outcome]
++- J02 / local: Player pauses, opens settings, returns, resumes and immediately steers without a focus/input surprise [keyboard-cycle, gamepad-cycle, touch-cycle]
++- J03 / local: Player completes a three-race cup, reloads between rounds, and keeps exactly one set of rewards [outcome]
++- J04 / local: Player completes all twelve events with ordinary inputs/resources and sees the held final scene [outcome]
++- J05 / local: Player compares and equips a part, tests it and can explain its tradeoff [outcome]
++- J06 / local: Player finishes a Time Trial, sees correct lap arithmetic, races a compatible ghost and improves a best [outcome]
++- J07 / local: Player starts before UTC midnight, finishes after it, uploads later and remains on the original challenge [outcome]
++- J08 / local: New creator builds a closed circuit, corrects a gap, places gates and drives a valid lap [keyboard-create-gap-gates-lap, pointer-create-gap-gates-lap, touch-create-gap-gates-lap]
++- J09 / local: Creator tests against five AI, returns to exact editor context, undoes, reloads and recovers work [outcome]
++- J10 / local: Creator exports, imports and gets identical gameplay meaning without executing hostile content [outcome]
++- J11 / staged: Two owner editors conflict; stale editor preserves work and never overwrites the newer track [outcome]
++- J12 / staged: Published track succeeds but catalog update conflicts; exact link works and listing retry is safe [outcome]
++- J13 / local: Player downloads complete content, stops the server, opens a fresh browser document and races/edits offline [verified-pack, fresh-document-server-stopped, race-offline, edit-offline]
++- J14 / local: Existing release discovers a new version naturally and updates between runs without losing state [outcome]
++- J15 / staged: Score submission times out after server acceptance; original ID reconciles once across two tabs [outcome]
++- J16 / local: Graphics context is lost, phone rotates or input disconnects; invisible simulation stops and explicit resume works [outcome]
++- J17 / local: Result/track invitation contains useful text and link; canceled share preserves state [outcome]
++- J18 / local: Reduced-motion, muted and low-effects players can finish and read every transition/result [outcome]
++- P01 / local: Draft storage [abort-quota, tab-conflict, incompatible-schema, termination-before-commit, termination-after-commit]
++- P02 / local: Result transaction [outcome]
++- P03 / local: Outbox [outcome]
++- P04 / staged: Owner authoring [outcome]
++- P05 / staged: Public records [trial-positive, daily-positive, missing-extra-fields, wrong-types, unsupported-content, invalid-splits, client-expiry, duplicate-id, prohibited-mutations]
++- P06 / staged: Retention [outcome]
++- P07 / staged: Native composition [outcome]
++- P08 / staged: Record supported policy activation capability and preserve established public policies when no safe activation contract exists [provider-capability-record, established-policy-preserved]
++- P09 / local: Data-preserving release [outcome]
++- M01 / local: Shared schemas, parser/serializer/compiler, independent geometric fixtures, one car and a loop; Clean source regeneration; round-trip integrity; swept collisions, skidpad/slalom/braking checks; input/pause/recovery state contracts [outcome]
++- M02 / local: Six-car race, modular road editor, surface/prop/gate tools, real test drive, history and drafts; A new track can be built, validated, driven, recovered and exported/imported through the UI; one complete keyboard/touch-emulated journey [road-surface-prop-gate-tools, keyboard-editor-journey, touch-editor-journey, test-return-history, export-import-recover]
++- M03 / local: All 81 builds, twelve circuits, four cups, eight rivals, unlocks and results; Official tracks authored in Workshop; all references resolve; all tracks finish under seeded AI; seeded handling/pacing measurements complete [all-81-builds, twelve-workshop-exports, references-resolve, seeded-circuits, seeded-pacing-campaign]
++- M04 / local: Saves, ghosts, daily definitions, offline pack, install/fullscreen, audio and sharing; Transaction/failure tests; genuine offline relaunch; natural update journey; phone layouts and keyboard focus [cold-offline-journey, input-zoom-matrix, natural-update, storage-ghost-daily, audio-sharing-install]
++- M05 / staged: Native composition, owner publication, discovery index, casual boards; Correct-host readback, ETag conflict and ambiguous-write recovery; supported public-policy activation where available, otherwise established-policy preservation, plus positive/negative record checks [composition, owner-conflict-recovery, public-record-validation, policy-preservation, retention-outbox]
++- M06 / live: Complete asset pack, required CI, audit evidence, release/rollback tools and browser verification; All required rows pass or have explicitly accepted scoped exceptions; exact package verified and previous-client update succeeds [prepromotion-outcomes, exact-package, previous-client-update, live-outcomes]
++- C01 / local: Social artwork and complete initial OG/Twitter metadata [outcome]
++- C02 / local: Favicon, raster, touch and maskable icon set [outcome]
++- C03 / local: Complete asset sources, licenses, fonts and export inventory [outcome]
++- C04 / staged: Required hosted CI refuses failed acceptance [hosted-regressions, hosted-candidate-check, required-rule-readback, negative-refusal-fixture]
++- C05 / local: Exact-source package and acceptance gate before every publication path [source-output-inventory-binding, every-entry-recheck, required-scenario-refusal]
++- C06 / live: All required public assets and routes resolve after promotion [root-status-type-identity, immutable-assets-status-type-hash, native-routes-composition, board-workshop-availability]
++- C07 / local: Credentials and private baselines absent from public package [outcome]
++- C08 / local: Rollback preserves state and old-client dependencies [two-release-restoration, conditional-stale-refusal, ambiguous-rollback, unrelated-state-preserved]
++- C09 / local: Reproducible browser evidence identifies exact tested environment [outcome]
++- C10 / local: Fresh complete automated suite and accurate acceptance ledger [outcome]
++- C11 / local: Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate [outcome]
++- C12 / local: Required shared styles load consistently or produce recoverable startup failure through root and composed entry points [outcome]
++- C13 / local: Every supported publisher refuses unresolved outcomes despite generic deployment instructions or agent-authored exception lists [outcome]
++- C14 / staged: Publication phase journaling and operator recovery are exercised through the supported command after successful and ambiguous entry writes [durable-phase-journal, post-write-verification-failure, ambiguous-applied, ambiguous-unapplied, unknown-readback, supported-forward-recovery]
+diff --git a/audit/2026-10-18-remaining-requirements/decisions/staged/evidence-review.md b/audit/2026-10-18-remaining-requirements/decisions/staged/evidence-review.md
+new file mode 100644
+index 0000000..8973324
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/decisions/staged/evidence-review.md
+@@ -0,0 +1,57 @@
++# Evidence review
++
++Actor Codex, 2026-10-18T02:31:24.879Z. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++
++Reviewed raw expected/actual outcomes, environment/method qualification, negative controls, preserved failures and reuse dependencies separately from coverage. Full suite 119 passed, zero failed/skipped. Future stages remain not-run until actual receipts exist.
++
++| ID | Stage | Status | Supported outcome / limits |
++| --- | --- | --- | --- |
++| J01 | local | passed | Account-free Quick Race and action-based practice pass in the current browser fixture. Actual normal-browser offline keyboard racing separately passed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J02 | local | passed | Sequential connector keyboard cycle, actual game-loop injected gamepad cycle and eight touch layout/side/orientation cycles pass; fresh controls and restored world focus verified. No physical device claim. |
++| J03 | local | passed | Strict current browser campaign requires terminal finished state and every lap, reloads after round one, and checks one unique event award per race. No unfinished fixture result counts as completion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J04 | local | passed | All twelve events and four scenes through legal accelerated controller inputs; held ending and unique awards checked. This is not a human pacing/enjoyment measurement. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J05 | local | passed | Current garage fixture compares matching tire descriptions/grip, equips rally tires, drives and returns with selection preserved. All 81 independent handling measurements pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J06 | local | passed | Current browser completes a slower then improved three-lap solo run, saves/loads a compatible ghost and confirms the better best. Independent split arithmetic regressions pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J07 | local | passed | Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J08 | local | passed | Sequential keyboard creates a closed eight-piece circuit, exposes/corrects a real gap, places surface/prop/gate and tests against five AI. Separate mouse/touch-emulated journeys each create from blank, correct gap, complete a legal lap and round-trip a semantic copy. Full laps use explicitly identified legal seeded controllers. |
++| J09 | local | passed | Actual closed IndexedDB recovery, current open Files warning/export, delayed first entry, corrupt source and latest navigation intent are separately qualified. Download capture proves export content, not OS delivery. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J10 | local | passed | Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J11 | staged | passed | Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J12 | staged | passed | Production publication wrapper on a disposable live circuit encounters an actual 412 from an injected stale catalog ETag; the exact public track remains semantically readable and listing retry succeeds. This is endpoint/function evidence, not a full owner-key form browser journey. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J13 | local | passed | Real verified B pack; origin process stopped and independent Node request returned ECONNREFUSED. Fresh browser document boots, drives and edits/reloads a saved circuit. Native desktop/browser-process restart excluded explicitly. |
++| J14 | local | passed | Real unmodified service workers update previous public sl-8c38d2602f174d to current sl-5c1afcc9442899 through six natural discovery, veto, consent, preservation, failure and offline boundaries. Synthetic seeded saves are labeled; native desktop checks excluded. |
++| J15 | staged | passed | Two independent production Store/Boards connections reconcile an intentionally dropped response after actual public acceptance: one claim, original identity, one public copy and confirmed outbox. IndexedDB is emulated in this endpoint fixture; browser storage and leases are covered separately. Owned row conditionally removed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J16 | local | passed | Canvas failure injection and replacement preserve the paused race and clock. Six viewport layouts and independent pointer cancellation pass; actual offline keyboard input works. No physical-device claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J17 | local | passed | Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J18 | local | passed | Exact current twelve-event campaign runs muted, reduced motion and low effects, checks all scene captions and held ending. Existing bounded audio signal/voice tests pass; no perceptual listening claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P01 | local | passed | Full atomic quota/abort/conflict/schema regressions plus real browser IndexedDB Worker termination before and after transaction commit. Previous/new committed revision independently reopened; no OS power-loss claim. |
++| P02 | local | passed | Fresh regressions reject malformed/unfinished results before rewards/bests/progression writes, preserve prior state and retain atomic abort/idempotency guarantees. Strict current campaign verifies readable committed rounds across reload. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P03 | local | passed | Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P04 | staged | passed | Current live production publication functions pass pinned-host writes, wrong credential, stale baseline, create-only 412, lost accepted-response reconciliation and public semantic readback. Complete browser owner-key form operation is not inferred from these endpoint checks. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P05 | staged | passed | All 42 actual endpoint checks pass at a predeclared 1.5-second mutation interval, owned accepted rows removed, policy hashes unchanged. Earlier seven burst errors retained as operational limitation. Explicit client retry preserves a denied valid time and reconciles a lost acceptance response. |
++| P06 | staged | passed | Server receipt/five-day lifetime and exact inclusive expiry/offline filtering pass local contracts. Actual public access removes multiple interleaved expired rows, preserves active controls, removes a near-boundary row and remains stable on repeat; independent owner DAV inspection confirms physical removal. Owner-seeded times exercise the predicate without claiming five elapsed days. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P07 | staged | passed | Actual provider fixtures verify intended shell/track and 404 on missing includes. Final installed browser with server stopped recovers track links, hostile chooser and next saved-editor action; worker fixtures additionally cover HTTP404/503, success/auth passthrough, cache integrity and no API/query interception. First-ever clients without a verified pack retain provider errors. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P08 | staged | passed | Unsupported provider-wide activation procedure recorded; established policy definitions pinned and preserved per the adopted guide. Positive/negative public enforcement required separately under P05; no global readiness guarantee. |
++| P09 | local | passed | Both existing boards and Workshop catalog retain identical owner hashes across this pass's promotions; baseline catalog has no referenced definitions. 50 original, 50 first-intermediate and 50 pre-native-fix immutable dependencies remain intact. Earlier populated owned fixture evidence stays scoped to its prior promotion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| M01 | local | passed | Shared model/source/compiler, collision/handling, transactional editor source, controls and recovery pass current tests; renderer remains a derived view. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| M02 | local | passed | Complete keyboard creator plus mouse/touch-emulated creator test/return/history/export/import/IndexedDB journeys. Actual keyboard export reached disk; connector filechooser event unavailable, so import is explicitly File/DataTransfer emulation through production parser/confirmation. Inspector focus and six-size enlarged-text overflow regression fixed and verified. |
++| M03 | local | passed | All 81 builds, seeded circuit/campaign references and pacing verified by fresh suite. Twelve present-tense Workshop recreations/exports independently bound byte-identically to authoritative content. Original CLI authoring history remains disclosed. |
++| M04 | local | passed | Six real-worker update boundaries plus actual stopped-server fresh-document race/edit, complete input/settings cycles, enlarged-text matrix and current save/ghost/daily/audio/share/install contracts. Native desktop/OS install checks excluded; no physical-device certification. |
++| M05 | staged | passed | Retained qualified owner conflict/catalog/retention/composition evidence, unchanged-policy decision and fresh complete paced public validation matrix. No policy edits or provider-wide readiness claim. |
++| M06 | live | not-run | Future exact hosted/live boundary; no success inferred. |
++| C01 | local | passed | Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C02 | local | passed | ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C03 | local | passed | Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C04 | staged | passed | Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite. |
++| C05 | local | passed | Gate version 4 independently binds all 102 named scenario decisions, exact source/output/inventory/reviews and checks before every mutable entry. Actual supported CLI controlled-host matrix refuses acceptance changes before next entry and wrong dependencies before promotion. |
++| C06 | live | not-run | Future exact hosted/live boundary; no success inferred. |
++| C07 | local | passed | Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C08 | local | passed | Actual CLI A-to-B-to-A conditional restoration, lost response reconciliation, stale/corrupt backup refusal and unrelated state/old assets preserved. Restoration scope is exactly three root entries; no data/content rollback claimed. |
++| C09 | local | passed | Receipts identify release/source, actual viewport/buffer/renderer, method and limits. Corrected connection requires its actual document; stale/unfinished fixtures remain failures and are not reused as complete journeys. Physical devices and full WCAG conformance are not claimed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C10 | local | passed | Frozen source full suite passed 119/119 with zero failures/skips. Named scenario statuses, limits and future-stage pending states are independently retained. |
++| C11 | local | passed | Pinned guide 2.10.0, requirement map handbook-2.10-r2 and 47/102 inventory digest; separate exact-source/output coverage and evidence reviews plus preserved prior decisions and refusal regressions. |
++| C12 | local | passed | Qualified required-CSS failures and ordinary Reload recovery must pass root and locally composed entries; installed shell uses the same bootstrap/styles. Public-host reads verify its current older routes separately. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C13 | local | passed | Both actual CLI operations must refuse this unresolved candidate before authentication/writes, with independent generic-instruction/agent-receipt refusal fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C14 | staged | passed | Flushed chained phase journal records intent, known promotions before readback, post-write failures and applied/unapplied/unknown outcomes. Supported inspection/prepare/recovery performs conditional state checks, captures separate backups and refuses corrupted/concurrent baselines. Controlled-host fixture acceptance is synthetic and never used as product acceptance. |
++
++Provider burst failures, fixture failures and native exclusions are retained; no universal reliability, physical input, OS restart or unperformed hosted/live outcome is inferred.
+diff --git a/audit/2026-10-18-remaining-requirements/decisions/staged/report.md b/audit/2026-10-18-remaining-requirements/decisions/staged/report.md
+new file mode 100644
+index 0000000..a948456
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/decisions/staged/report.md
+@@ -0,0 +1,11 @@
++# Remaining requirement closure
++
++Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++
++45/47 requirements passed; 94/102 named scenarios passed. M06 live, C06 live
++
++119 automated tests passed, zero failed/skipped. Complete browser creator/input/zoom, real IndexedDB termination, natural two-window update and stopped-origin fresh-document race/edit evidence retained. Fixed score retry, inspector focus, narrow enlarged-text layout and publisher/gate/journal/recovery gaps. Twelve Workshop recreations match authoritative source bytes.
++
++The [evidence review](evidence-review.md), [coverage review](coverage-review.md), [reuse decision](reuse.json), [scope corrections](scope-corrections.md) and [append-only observations](progress.md) provide per-requirement decisions and limits. Prior audits are retained without rewriting.
++
++Material limit: earlier burst provider errors remain unresolved at the hosting layer. The predeclared paced 42-case endpoint matrix passed; explicit score retry now recovers rejected valid submissions without changing identity. No universal provider readiness or burst reliability is claimed. Native desktop checks were excluded by the user. Pointer/touch/gamepad injection and seeded legal controllers are identified separately from connector keyboard input.
+diff --git a/audit/2026-10-18-remaining-requirements/evidence-review.md b/audit/2026-10-18-remaining-requirements/evidence-review.md
+index 8b9221e..7077989 100644
+--- a/audit/2026-10-18-remaining-requirements/evidence-review.md
++++ b/audit/2026-10-18-remaining-requirements/evidence-review.md
+@@ -1,6 +1,6 @@
+ # Evidence review
+ 
+-Actor Codex, 2026-10-18T02:24:07.304Z. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
++Actor Codex, 2026-10-18T02:35:35.924Z. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
+ 
+ Reviewed raw expected/actual outcomes, environment/method qualification, negative controls, preserved failures and reuse dependencies separately from coverage. Full suite 119 passed, zero failed/skipped. Future stages remain not-run until actual receipts exist.
+ 
+@@ -19,7 +19,7 @@ Reviewed raw expected/actual outcomes, environment/method qualification, negativ
+ | J11 | staged | passed | Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | J12 | staged | passed | Production publication wrapper on a disposable live circuit encounters an actual 412 from an injected stale catalog ETag; the exact public track remains semantically readable and listing retry succeeds. This is endpoint/function evidence, not a full owner-key form browser journey. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | J13 | local | passed | Real verified B pack; origin process stopped and independent Node request returned ECONNREFUSED. Fresh browser document boots, drives and edits/reloads a saved circuit. Native desktop/browser-process restart excluded explicitly. |
+-| J14 | local | passed | Normal installed browser copy updates from sl-de66ac8ab06a61 to the current runtime through explicit game controls, retaining progress. Current foreground/reconnect discovery and visible review control pass injected-worker tests; activation is never automatic. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| J14 | local | passed | Real unmodified service workers update previous public sl-8c38d2602f174d to current sl-5c1afcc9442899 through six natural discovery, veto, consent, preservation, failure and offline boundaries. Synthetic seeded saves are labeled; native desktop checks excluded. |
+ | J15 | staged | passed | Two independent production Store/Boards connections reconcile an intentionally dropped response after actual public acceptance: one claim, original identity, one public copy and confirmed outbox. IndexedDB is emulated in this endpoint fixture; browser storage and leases are covered separately. Owned row conditionally removed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | J16 | local | passed | Canvas failure injection and replacement preserve the paused race and clock. Six viewport layouts and independent pointer cancellation pass; actual offline keyboard input works. No physical-device claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | J17 | local | passed | Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+@@ -32,24 +32,24 @@ Reviewed raw expected/actual outcomes, environment/method qualification, negativ
+ | P06 | staged | passed | Server receipt/five-day lifetime and exact inclusive expiry/offline filtering pass local contracts. Actual public access removes multiple interleaved expired rows, preserves active controls, removes a near-boundary row and remains stable on repeat; independent owner DAV inspection confirms physical removal. Owner-seeded times exercise the predicate without claiming five elapsed days. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | P07 | staged | passed | Actual provider fixtures verify intended shell/track and 404 on missing includes. Final installed browser with server stopped recovers track links, hostile chooser and next saved-editor action; worker fixtures additionally cover HTTP404/503, success/auth passthrough, cache integrity and no API/query interception. First-ever clients without a verified pack retain provider errors. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | P08 | staged | passed | Unsupported provider-wide activation procedure recorded; established policy definitions pinned and preserved per the adopted guide. Positive/negative public enforcement required separately under P05; no global readiness guarantee. |
+-| P09 | local | passed | Both existing boards and Workshop catalog retain identical owner hashes across this pass's promotions; baseline catalog has no referenced definitions. 50 original, 50 first-intermediate and 50 pre-native-fix immutable dependencies remain intact. Earlier populated owned fixture evidence stays scoped to its prior promotion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| P09 | local | passed | Deployment preserved the populated owned leaderboard fixture and all pre-existing row hashes; conditional cleanup removed only the owned test row. Existing Workshop documents/catalog and older release dependencies remain preserved by publisher contract/readback and controlled two-release restoration. |
+ | M01 | local | passed | Shared model/source/compiler, collision/handling, transactional editor source, controls and recovery pass current tests; renderer remains a derived view. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | M02 | local | passed | Complete keyboard creator plus mouse/touch-emulated creator test/return/history/export/import/IndexedDB journeys. Actual keyboard export reached disk; connector filechooser event unavailable, so import is explicitly File/DataTransfer emulation through production parser/confirmation. Inspector focus and six-size enlarged-text overflow regression fixed and verified. |
+ | M03 | local | passed | All 81 builds, seeded circuit/campaign references and pacing verified by fresh suite. Twelve present-tense Workshop recreations/exports independently bound byte-identically to authoritative content. Original CLI authoring history remains disclosed. |
+ | M04 | local | passed | Six real-worker update boundaries plus actual stopped-server fresh-document race/edit, complete input/settings cycles, enlarged-text matrix and current save/ghost/daily/audio/share/install contracts. Native desktop/OS install checks excluded; no physical-device certification. |
+ | M05 | staged | passed | Retained qualified owner conflict/catalog/retention/composition evidence, unchanged-policy decision and fresh complete paced public validation matrix. No policy edits or provider-wide readiness claim. |
+-| M06 | live | not-run | Future exact hosted/live boundary; no success inferred. |
++| M06 | live | passed | All adopted local, hosted and live requirements/scenarios have bounded qualified evidence. Exact assets/source package, previous-public-client update, required hosted checks, conditional deployment and final public outcomes verified; native exclusions and provider burst limitation remain explicit. |
+ | C01 | local | passed | Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | C02 | local | passed | ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | C03 | local | passed | Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+-| C04 | staged | not-run | Future exact hosted/live boundary; no success inferred. |
++| C04 | staged | passed | Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite. |
+ | C05 | local | passed | Gate version 4 independently binds all 102 named scenario decisions, exact source/output/inventory/reviews and checks before every mutable entry. Actual supported CLI controlled-host matrix refuses acceptance changes before next entry and wrong dependencies before promotion. |
+-| C06 | live | not-run | Future exact hosted/live boundary; no success inferred. |
++| C06 | live | passed | Actual supported publisher public status/type/hash, composed fragments/route identity and independent final inventory/journal comparison pass, with real public-browser driving and board/catalog availability. |
+ | C07 | local | passed | Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | C08 | local | passed | Actual CLI A-to-B-to-A conditional restoration, lost response reconciliation, stale/corrupt backup refusal and unrelated state/old assets preserved. Restoration scope is exactly three root entries; no data/content rollback claimed. |
+ | C09 | local | passed | Receipts identify release/source, actual viewport/buffer/renderer, method and limits. Corrected connection requires its actual document; stale/unfinished fixtures remain failures and are not reused as complete journeys. Physical devices and full WCAG conformance are not claimed. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+-| C10 | local | passed | Complete fresh 115-test suite and focused final gate regressions; this ledger explicitly retains unfulfilled outcomes. Passing tests do not imply full acceptance. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+-| C11 | local | passed | Pinned guide 2.10.0, inventory digest and map r1; separate source/output-bound coverage and evidence reviews. Stale-inventory/review refusal fixtures pass. Review completion includes unresolved outcomes. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
++| C10 | local | passed | Frozen source full suite passed 119/119 with zero failures/skips. Named scenario statuses, limits and future-stage pending states are independently retained. |
++| C11 | local | passed | Pinned guide 2.10.0, requirement map handbook-2.10-r2 and 47/102 inventory digest; separate exact-source/output coverage and evidence reviews plus preserved prior decisions and refusal regressions. |
+ | C12 | local | passed | Qualified required-CSS failures and ordinary Reload recovery must pass root and locally composed entries; installed shell uses the same bootstrap/styles. Public-host reads verify its current older routes separately. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | C13 | local | passed | Both actual CLI operations must refuse this unresolved candidate before authentication/writes, with independent generic-instruction/agent-receipt refusal fixtures. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite. |
+ | C14 | staged | passed | Flushed chained phase journal records intent, known promotions before readback, post-write failures and applied/unapplied/unknown outcomes. Supported inspection/prepare/recovery performs conditional state checks, captures separate backups and refuses corrupted/concurrent baselines. Controlled-host fixture acceptance is synthetic and never used as product acceptance. |
+diff --git a/audit/2026-10-18-remaining-requirements/finalize.mjs b/audit/2026-10-18-remaining-requirements/finalize.mjs
+new file mode 100644
+index 0000000..fe4daa4
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/finalize.mjs
+@@ -0,0 +1,18 @@
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import assert from 'node:assert/strict';
++import {spawnSync} from 'node:child_process';
++import {createHash} from 'node:crypto';
++import {verifyRelease} from '../../tools/release-gate.mjs';
++const root=path.resolve(import.meta.dirname,'../..'),dir=import.meta.dirname,prefix='audit/2026-10-18-remaining-requirements/';
++const git=(...args)=>{const r=spawnSync('git',['-c','safe.directory='+root.replaceAll('\\','/'),...args],{cwd:root,maxBuffer:32e6});assert.equal(r.status,0,r.stderr.toString());return r.stdout;};
++const candidate=await verifyRelease(root,'live');
++const excluded=[prefix+'final-staged-files.json',prefix+'final-audit.patch'];
++const names=git('diff','--cached','--name-only','-z').toString().split('\0').filter(n=>n&&!excluded.includes(n));
++assert.ok(names.length>0&&names.every(n=>n.startsWith('audit/')),'Final commit must contain only evidence; application/inventory/output frozen');
++const b=spawnSync('git',['-c','safe.directory='+root.replaceAll('\\','/'),'cat-file','--batch'],{cwd:root,input:names.map(n=>':'+n+'\n').join(''),maxBuffer:32e6});assert.equal(b.status,0);let offset=0;
++const files=[];
++for(const name of names){const end=b.stdout.indexOf(10,offset),header=b.stdout.subarray(offset,end).toString(),size=Number(header.split(' ')[2]);assert.match(header,/^[a-f0-9]+ blob \d+$/);const bytes=b.stdout.subarray(end+1,end+1+size);offset=end+size+2;assert.ok(bytes.equals(await fs.readFile(path.join(root,name))),'Working/staged difference '+name);if(/\.(md|json|jsonl|mjs|js|txt|patch)$/.test(name))assert.ok(!/pk_[a-f0-9]{32,}|\bgh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----/i.test(bytes.toString()),'Credential-like data in '+name);files.push({path:name,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});}
++await fs.writeFile(path.join(dir,'final-audit.patch'),git('diff','--cached','--no-ext-diff','--','audit/*.md',prefix+'*.md',prefix+'*.mjs','audit/current-acceptance.json'));
++await fs.writeFile(path.join(dir,'final-staged-files.json'),JSON.stringify({utc:new Date().toISOString(),scope:'Audit-only closure; source/inventory/output unchanged from 6e1fbea; generated patch/manifest exclude themselves',release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,liveGate:'passed',credentialPatternMatches:0,workingBytesEqualStagedBytes:true,files},null,2)+'\n');
++console.log(JSON.stringify({release:candidate.release,auditFiles:files.length,credentialPatternMatches:0,liveGate:'passed'}));
+diff --git a/audit/2026-10-18-remaining-requirements/progress.md b/audit/2026-10-18-remaining-requirements/progress.md
+index e9b89e3..b6d8df9 100644
+--- a/audit/2026-10-18-remaining-requirements/progress.md
++++ b/audit/2026-10-18-remaining-requirements/progress.md
+@@ -22,3 +22,5 @@
+ - Final frozen-source browser regression group passed all fifteen contained boundaries. Real IndexedDB before/after termination, complete gamepad cycle, eight touch cycles, closed-store Files recovery, entry readiness/corrupt-record recovery and root/composed dependency parity also passed on sl-5c1afcc9442899. Local candidate gate passed with 44/47 requirements; hosted CI and the two live-stage rows remain pending and are not waived. Source review checked explicit retry atomicity/capacity, focus restoration, strict terminal-result validation and journal write/readback ordering. Existing raw audit evidence remains byte-preserved; source/docs whitespace checked separately.
+ - Precommit whitespace check identified two unchanged bundled font-license lines with vendor trailing spaces in generated immutable dist assets. They remain byte-preserved with their source licenses; source/docs whitespace checking now excludes generated dist as well as raw audit bytes. No license or historical evidence was rewritten. The first scripted edit attempt also failed PowerShell quoting without changing files; apply_patch corrected the audit-only checker.
+ - Precommit exact staged review passed: 451 files plus separately generated review artifacts, fifty current immutable assets, zero credential-pattern matches, source/docs whitespace clean, working bytes equal staged bytes. Readable source diff and SHA-256 inventory retained. Full campaign browser rerun also passed all twelve complete races, reload and held ending. Normal remote fetch showed 0/0 divergence. Local gate passed for exact sl-5c1afcc9442899. Commit/push next; no hosted/live pass claimed yet.
++- Hosted Release checks run 39090035499 passed both required jobs on source commit 6e1fbea: 119 tests and exact acceptance gate. Fresh default-branch rule readback preserved strict required checks and admin enforcement. Pre-promotion decision frozen under decisions/staged. Actual supported deployment completed with 341 chained journal records, 31 publicly verified mutable entries and 112 total verified public resources. Independent live verifier initially requested an incorrect catalog path and retained its 404 fixture failure; corrected only the verifier to the configured /workshop-tracks/catalog.html, which returned 200. Both boards and the catalog are available. Owned populated-board fixture survived publication; conditional cleanup removed only its ID and preserved other rows. Actual public previous sl-8c38d2602f174d offered Update ready, ordinary Apply update reloaded sl-5c1afcc9442899, and trusted W/A driving reached 72 km/h. Native checks remained excluded. Owner-key PTY sessions and local fixture servers are closed.
++- Final coverage/evidence review records 47/47 requirements and 102/102 named scenarios passed within the explicitly adopted scope. The live gate passed exact sl-5c1afcc9442899 source/output/inventory. Public browser screenshot was inspected: the track, cars, HUD and touch controls render; actual trusted driving/update evidence retained. Temporary owned public attempt returned to yard and the temporary browser tab closed. Final commit is audit-only: source/inventory/output remain those of CI-tested code commit 6e1fbea. Precommit finalizer requires that invariant, exact staged/working bytes, live acceptance and a zero credential-pattern scan; generated review artifacts exclude themselves.
+diff --git a/audit/2026-10-18-remaining-requirements/report.md b/audit/2026-10-18-remaining-requirements/report.md
+index 092c842..46a4753 100644
+--- a/audit/2026-10-18-remaining-requirements/report.md
++++ b/audit/2026-10-18-remaining-requirements/report.md
+@@ -2,7 +2,7 @@
+ 
+ Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
+ 
+-44/47 requirements passed; 90/102 named scenarios passed. M06 live, C04 staged, C06 live
++47/47 requirements passed; 102/102 named scenarios passed. All required stages verified.
+ 
+ 119 automated tests passed, zero failed/skipped. Complete browser creator/input/zoom, real IndexedDB termination, natural two-window update and stopped-origin fresh-document race/edit evidence retained. Fixed score retry, inspector focus, narrow enlarged-text layout and publisher/gate/journal/recovery gaps. Twelve Workshop recreations match authoritative source bytes.
+ 
+diff --git a/audit/2026-10-18-remaining-requirements/review.mjs b/audit/2026-10-18-remaining-requirements/review.mjs
+index d2ae104..916ce23 100644
+--- a/audit/2026-10-18-remaining-requirements/review.mjs
++++ b/audit/2026-10-18-remaining-requirements/review.mjs
+@@ -64,12 +64,16 @@ const notes={
+  C14:'Flushed chained phase journal records intent, known promotions before readback, post-write failures and applied/unapplied/unknown outcomes. Supported inspection/prepare/recovery performs conditional state checks, captures separate backups and refuses corrupted/concurrent baselines. Controlled-host fixture acceptance is synthetic and never used as product acceptance.',
+ };
+ const hosted=await exists(prefix+'hosted-ci.json'),live=await exists(prefix+'live-verification.json');
+-if(hosted)extra.C04=[prefix+'hosted-ci.json',prefix+'github-required-checks.json'];
+-if(live){extra.C06=[prefix+'live-verification.json',prefix+'deployment-receipt.json',prefix+'public-browser.json'];extra.M06=[...extra.C06,pwaFile,prefix+'hosted-ci.json'];}
++notes.J14='Real unmodified service workers update previous public sl-8c38d2602f174d to current sl-5c1afcc9442899 through six natural discovery, veto, consent, preservation, failure and offline boundaries. Synthetic seeded saves are labeled; native desktop checks excluded.';
++notes.C10='Frozen source full suite passed 119/119 with zero failures/skips. Named scenario statuses, limits and future-stage pending states are independently retained.';
++notes.C11='Pinned guide 2.10.0, requirement map handbook-2.10-r2 and 47/102 inventory digest; separate exact-source/output coverage and evidence reviews plus preserved prior decisions and refusal regressions.';
++if(hosted){const ci=await json(prefix+'hosted-ci.json');assert.equal(ci.sourceHash,candidate.source.hash);assert.equal(ci.outputHash,candidate.outputHash);assert.equal(ci.conclusion,'success');for(const name of ['Automated regression suite','Exact candidate acceptance'])assert.ok(ci.jobs.some(j=>j.name===name&&j.conclusion==='success'));extra.C04=[prefix+'hosted-ci.json',prefix+'hosted-ci-log.txt',prefix+'github-required-checks.json',prefix+'github-required-checks-promotion.json'];notes.C04='Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite.';}
++if(live){assert.equal((await json(prefix+'live-verification.json')).passed,true);assert.equal((await json(prefix+'data-preservation.json')).state,'passed');const ui=await json(prefix+'public-browser.json');assert.ok(ui.speed>0&&ui.release===candidate.release);extra.C06=[prefix+'live-verification.json',prefix+'deployment-receipt.json',prefix+'public-browser.json'];extra.M06=[...extra.C06,pwaFile,prefix+'hosted-ci.json'];extra.P09=[prefix+'data-preservation.json',prefix+'deployment-receipt.json'];}
++if(live){notes.C06='Actual supported publisher public status/type/hash, composed fragments/route identity and independent final inventory/journal comparison pass, with real public-browser driving and board/catalog availability.';notes.M06='All adopted local, hosted and live requirements/scenarios have bounded qualified evidence. Exact assets/source package, previous-public-client update, required hosted checks, conditional deployment and final public outcomes verified; native exclusions and provider burst limitation remain explicit.';notes.P09='Deployment preserved the populated owned leaderboard fixture and all pre-existing row hashes; conditional cleanup removed only the owned test row. Existing Workshop documents/catalog and older release dependencies remain preserved by publisher contract/readback and controlled two-release restoration.';}
+ const rows=[];
+ for(const req of inventory.required){
+  const old=prior.requirements.find(r=>r.id===req.id),retained=[];
+- for(const a of old.artifacts||[]){if(await exists(a.path)&&sha(await read(a.path))===a.sha256)retained.push(a);else if(a.path==='audit/build.json'){const p='audit/2026-10-17-guide-2-10-audit/prior-build.json';if(await exists(p)&&sha(await read(p))===a.sha256)retained.push(await artifact(p));}}
++ for(const a of old.artifacts||[]){const frozen=a.path==='audit/deployment.json'?prefix+'prior-deployment.json':null;if(frozen&&await exists(frozen)&&sha(await read(frozen))===a.sha256)retained.push(await artifact(frozen));else if(await exists(a.path)&&sha(await read(a.path))===a.sha256)retained.push(a);else if(a.path==='audit/build.json'){const p='audit/2026-10-17-guide-2-10-audit/prior-build.json';if(await exists(p)&&sha(await read(p))===a.sha256)retained.push(await artifact(p));}}
+  let status='passed';if(req.id==='C04'&&!hosted||['C06','M06'].includes(req.id)&&!live)status='not-run';
+  const paths=[...new Set([newTests,reuse,scope,...extra[req.id]||[]])];const artifacts=[...retained,...await Promise.all(paths.map(artifact))];
+  const note=notes[req.id]||(status==='not-run'?'Future exact hosted/live boundary; no success inferred.':old.note+' Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.');
+diff --git a/audit/2026-10-18-remaining-requirements/verify-live.mjs b/audit/2026-10-18-remaining-requirements/verify-live.mjs
+new file mode 100644
+index 0000000..5bed8dd
+--- /dev/null
++++ b/audit/2026-10-18-remaining-requirements/verify-live.mjs
+@@ -0,0 +1,24 @@
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import assert from 'node:assert/strict';
++import {createHash} from 'node:crypto';
++import {verifyCandidateArtifacts} from '../../tools/release-gate.mjs';
++import {readDeploymentJournal} from '../../tools/deployment-journal.mjs';
++const root=path.resolve(import.meta.dirname,'../..'),folder=import.meta.dirname,sha=b=>createHash('sha256').update(b).digest('hex');
++const candidate=await verifyCandidateArtifacts(root),receipt=JSON.parse(await fs.readFile(path.join(root,'audit/deployment.json'),'utf8'));
++assert.equal(receipt.release,candidate.release);assert.equal(receipt.sourceHash,candidate.source.hash);assert.equal(receipt.outputHash,candidate.outputHash);
++const journal=await readDeploymentJournal(root,receipt.journal);assert.equal(journal.at(-1).state,'operation-complete');assert.ok(journal.some(r=>r.state==='live-verified'));
++assert.equal(receipt.credentialStored,false);assert.ok(receipt.publicFiles.every(r=>r.status===200&&r.sha256&&r.bytes>0&&r.type));
++const published=await fetch(receipt.origin+'/release.json',{cache:'no-store',redirect:'error',signal:AbortSignal.timeout(15000)});assert.equal(published.status,200);const release=await published.json();
++assert.equal(release.release,candidate.release);assert.equal(release.sourceHash,candidate.source.hash);
++for(const entry of release.files){const remote=receipt.publicFiles.find(r=>r.path===(entry.url==='./'?'/':entry.url.slice(1)));assert.ok(remote,'Missing public inventory receipt '+entry.url);assert.equal(remote.sha256,entry.hash);}
++for(const entry of release.nativeFiles)assert.ok(receipt.publicFiles.some(r=>r.path===entry.url&&r.status===200),'Missing native route '+entry.url);
++const services=[];
++// Catalog route is the production path declared by app/publication.js.
++for(const route of ['/boards/trial.html','/boards/daily.html','/workshop-tracks/catalog.html']){
++ const response=await fetch(receipt.origin+route,{cache:'no-store',redirect:'error',signal:AbortSignal.timeout(15000)}),bytes=Buffer.from(await response.arrayBuffer());
++ assert.equal(response.status,200,route);assert.match(response.headers.get('content-type'),/^text\/html/);assert.ok(bytes.length>0);services.push({route,status:response.status,type:response.headers.get('content-type'),bytes:bytes.length,sha256:sha(bytes)});
++}
++await fs.copyFile(path.join(root,'audit/deployment.json'),path.join(folder,'deployment-receipt.json'));
++const proof={utc:new Date().toISOString(),passed:true,release:candidate.release,sourceHash:candidate.source.hash,outputHash:candidate.outputHash,journal:receipt.journal,journalSha256:sha(await fs.readFile(path.join(root,receipt.journal))),journalRecords:journal.length,publicResources:receipt.publicFiles.length,verifiedInventory:release.files.length,nativeRoutes:release.nativeFiles.length,services,scope:'Supported publisher verified actual status/type/hash and semantic composed entry dependencies. Independent final published inventory/journal comparison and actual board/catalog availability. Provider burst reliability is not established.'};
++await fs.writeFile(path.join(folder,'live-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));
+diff --git a/audit/current-acceptance.json b/audit/current-acceptance.json
+index 965bfe2..945389e 100644
+--- a/audit/current-acceptance.json
++++ b/audit/current-acceptance.json
+@@ -1,6 +1,6 @@
+ {
+   "version": 4,
+-  "utc": "2026-10-18T02:24:07.305Z",
++  "utc": "2026-10-18T02:35:35.926Z",
+   "release": "sl-5c1afcc9442899",
+   "sourceHash": "069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9",
+   "outputHash": "02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1",
+@@ -13,7 +13,7 @@
+     "requirementMapRevision": "handbook-2.10-r2",
+     "requirementMap": "ACCEPTANCE.md#handbook-210-audit-adoption"
+   },
+-  "status": "stages-pending",
++  "status": "passed",
+   "scopeChange": "User excluded real hardware and human playtesting on 2026-10-16, and explicitly answered Skip native desktop checks on 2026-10-18. Native Windows input/browser close-relaunch and OS-process crash checks are excluded. Browser-connector interaction, fresh-document offline recovery and real IndexedDB context-termination checks remain required. No other adopted outcome waived.",
+   "coverageReview": {
+     "status": "completed",
+@@ -22,7 +22,7 @@
+     "outputHash": "02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1",
+     "artifact": {
+       "path": "audit/2026-10-18-remaining-requirements/coverage-review.md",
+-      "sha256": "8832b33b2f8352bebc4ce9433506d8432233850af0b64fddab5754fe4bfafd37"
++      "sha256": "69f18db8a5ffe7ae36c8eb85a12c588589a086e7c529f62994ab26369e5ff4f5"
+     }
+   },
+   "evidenceReview": {
+@@ -32,12 +32,12 @@
+     "outputHash": "02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1",
+     "artifact": {
+       "path": "audit/2026-10-18-remaining-requirements/evidence-review.md",
+-      "sha256": "8eaf880623b56bc36cf81076e642487c7189754bcae6ef30a1045079830b1227"
++      "sha256": "ac9e0c224964b96aea74c85acd70a170ff8d02fe792ab95833b7224a93dac215"
+     }
+   },
+   "evidenceReuse": {
+     "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-    "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++    "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+   },
+   "requirements": [
+     {
+@@ -164,7 +164,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -299,7 +299,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -438,7 +438,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -581,7 +581,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -724,7 +724,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -867,7 +867,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1014,7 +1014,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1149,7 +1149,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1296,7 +1296,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1439,7 +1439,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1578,7 +1578,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1713,7 +1713,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1848,7 +1848,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -1979,7 +1979,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -2114,7 +2114,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -2241,7 +2241,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -2380,7 +2380,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -2523,7 +2523,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -2666,7 +2666,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -2809,7 +2809,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -2948,7 +2948,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -3095,7 +3095,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -3246,7 +3246,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -3373,7 +3373,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -3504,7 +3504,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -3631,7 +3631,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -3766,7 +3766,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -3897,7 +3897,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -4032,7 +4032,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -4175,7 +4175,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -4318,7 +4318,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -4461,7 +4461,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -4604,7 +4604,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -4631,7 +4631,7 @@
+       "id": "J14",
+       "stage": "local",
+       "status": "passed",
+-      "note": "Normal installed browser copy updates from sl-de66ac8ab06a61 to the current runtime through explicit game controls, retaining progress. Current foreground/reconnect discovery and visible review control pass injected-worker tests; activation is never automatic. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++      "note": "Real unmodified service workers update previous public sl-8c38d2602f174d to current sl-5c1afcc9442899 through six natural discovery, veto, consent, preservation, failure and offline boundaries. Synthetic seeded saves are labeled; native desktop checks excluded.",
+       "artifacts": [
+         {
+           "path": "audit/remediation-browser-update-eca6.json",
+@@ -4767,7 +4767,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -4786,7 +4786,7 @@
+         {
+           "id": "outcome",
+           "status": "passed",
+-          "observation": "Existing release discovers a new version naturally and updates between runs without losing state. Normal installed browser copy updates from sl-de66ac8ab06a61 to the current runtime through explicit game controls, retaining progress. Current foreground/reconnect discovery and visible review control pass injected-worker tests; activation is never automatic. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++          "observation": "Existing release discovers a new version naturally and updates between runs without losing state. Real unmodified service workers update previous public sl-8c38d2602f174d to current sl-5c1afcc9442899 through six natural discovery, veto, consent, preservation, failure and offline boundaries. Synthetic seeded saves are labeled; native desktop checks excluded.",
+           "artifacts": [
+             {
+               "path": "audit/remediation-browser-update-eca6.json",
+@@ -4922,7 +4922,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -5069,7 +5069,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -5204,7 +5204,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -5339,7 +5339,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -5474,7 +5474,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -5617,7 +5617,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -5756,7 +5756,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -5895,7 +5895,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -6030,7 +6030,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -6169,7 +6169,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -6308,7 +6308,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -6447,7 +6447,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -6586,7 +6586,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -6725,7 +6725,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -6864,7 +6864,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7003,7 +7003,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7130,7 +7130,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7265,7 +7265,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7400,7 +7400,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7495,7 +7495,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7582,7 +7582,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7733,7 +7733,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -7888,7 +7888,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -8043,7 +8043,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -8198,7 +8198,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -8353,7 +8353,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -8508,7 +8508,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -8663,7 +8663,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -8818,7 +8818,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -8973,7 +8973,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -9128,7 +9128,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -9287,7 +9287,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -9434,7 +9434,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -9593,7 +9593,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -9748,7 +9748,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -9891,7 +9891,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -10034,7 +10034,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -10177,7 +10177,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -10196,7 +10196,7 @@
+       "id": "P09",
+       "stage": "local",
+       "status": "passed",
+-      "note": "Both existing boards and Workshop catalog retain identical owner hashes across this pass's promotions; baseline catalog has no referenced definitions. 50 original, 50 first-intermediate and 50 pre-native-fix immutable dependencies remain intact. Earlier populated owned fixture evidence stays scoped to its prior promotion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++      "note": "Deployment preserved the populated owned leaderboard fixture and all pre-existing row hashes; conditional cleanup removed only the owned test row. Existing Workshop documents/catalog and older release dependencies remain preserved by publisher contract/readback and controlled two-release restoration.",
+       "artifacts": [
+         {
+           "path": "audit/second-data-preservation.json",
+@@ -10223,7 +10223,7 @@
+           "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
+         },
+         {
+-          "path": "audit/deployment.json",
++          "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+           "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+         },
+         {
+@@ -10272,18 +10272,26 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+           "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/data-preservation.json",
++          "sha256": "a1a16cbfd8e7883720a7a1ca20bb6e60fe8f7a31d8edeb816155fca92175a891"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++          "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
+         }
+       ],
+       "scenarios": [
+         {
+           "id": "outcome",
+           "status": "passed",
+-          "observation": "Data-preserving release. Both existing boards and Workshop catalog retain identical owner hashes across this pass's promotions; baseline catalog has no referenced definitions. 50 original, 50 first-intermediate and 50 pre-native-fix immutable dependencies remain intact. Earlier populated owned fixture evidence stays scoped to its prior promotion. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++          "observation": "Data-preserving release. Deployment preserved the populated owned leaderboard fixture and all pre-existing row hashes; conditional cleanup removed only the owned test row. Existing Workshop documents/catalog and older release dependencies remain preserved by publisher contract/readback and controlled two-release restoration.",
+           "artifacts": [
+             {
+               "path": "audit/second-data-preservation.json",
+@@ -10310,7 +10318,7 @@
+               "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
+             },
+             {
+-              "path": "audit/deployment.json",
++              "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+               "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+             },
+             {
+@@ -10359,11 +10367,19 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/data-preservation.json",
++              "sha256": "a1a16cbfd8e7883720a7a1ca20bb6e60fe8f7a31d8edeb816155fca92175a891"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
+             }
+           ]
+         }
+@@ -10498,7 +10514,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -10633,7 +10649,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -10768,7 +10784,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -10911,7 +10927,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -11054,7 +11070,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -11197,7 +11213,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -11340,7 +11356,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -11483,7 +11499,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -11634,7 +11650,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -11777,7 +11793,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -11920,7 +11936,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -12063,7 +12079,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -12206,7 +12222,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -12349,7 +12365,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -12488,7 +12504,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -12647,7 +12663,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -12806,7 +12822,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -12965,7 +12981,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -13124,7 +13140,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -13283,7 +13299,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -13478,7 +13494,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -13645,7 +13661,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -13812,7 +13828,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -13979,7 +13995,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -14146,7 +14162,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -14313,7 +14329,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -14335,8 +14351,8 @@
+     {
+       "id": "M06",
+       "stage": "live",
+-      "status": "not-run",
+-      "note": "Future exact hosted/live boundary; no success inferred.",
++      "status": "passed",
++      "note": "All adopted local, hosted and live requirements/scenarios have bounded qualified evidence. Exact assets/source package, previous-public-client update, required hosted checks, conditional deployment and final public outcomes verified; native exclusions and provider burst limitation remain explicit.",
+       "artifacts": [
+         {
+           "path": "audit/deployment-candidate-tests.txt",
+@@ -14460,18 +14476,38 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+           "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++          "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++          "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++          "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/pwa/browser-results-1792286993073.json",
++          "sha256": "8bff01906f8a402c020036700b3889892367f9ef55577776a1aa62278e21ae68"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++          "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
+         }
+       ],
+       "scenarios": [
+         {
+           "id": "prepromotion-outcomes",
+-          "status": "not-run",
+-          "observation": "prepromotion outcomes. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "prepromotion outcomes. All adopted local, hosted and live requirements/scenarios have bounded qualified evidence. Exact assets/source package, previous-public-client update, required hosted checks, conditional deployment and final public outcomes verified; native exclusions and provider burst limitation remain explicit.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -14595,18 +14631,38 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/pwa/browser-results-1792286993073.json",
++              "sha256": "8bff01906f8a402c020036700b3889892367f9ef55577776a1aa62278e21ae68"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
+             }
+           ]
+         },
+         {
+           "id": "exact-package",
+-          "status": "not-run",
+-          "observation": "exact package. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "exact package. All adopted local, hosted and live requirements/scenarios have bounded qualified evidence. Exact assets/source package, previous-public-client update, required hosted checks, conditional deployment and final public outcomes verified; native exclusions and provider burst limitation remain explicit.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -14730,18 +14786,38 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/pwa/browser-results-1792286993073.json",
++              "sha256": "8bff01906f8a402c020036700b3889892367f9ef55577776a1aa62278e21ae68"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
+             }
+           ]
+         },
+         {
+           "id": "previous-client-update",
+-          "status": "not-run",
+-          "observation": "previous client update. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "previous client update. All adopted local, hosted and live requirements/scenarios have bounded qualified evidence. Exact assets/source package, previous-public-client update, required hosted checks, conditional deployment and final public outcomes verified; native exclusions and provider burst limitation remain explicit.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -14865,18 +14941,38 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/pwa/browser-results-1792286993073.json",
++              "sha256": "8bff01906f8a402c020036700b3889892367f9ef55577776a1aa62278e21ae68"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
+             }
+           ]
+         },
+         {
+           "id": "live-outcomes",
+-          "status": "not-run",
+-          "observation": "live outcomes. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "live outcomes. All adopted local, hosted and live requirements/scenarios have bounded qualified evidence. Exact assets/source package, previous-public-client update, required hosted checks, conditional deployment and final public outcomes verified; native exclusions and provider burst limitation remain explicit.",
+           "artifacts": [
+             {
+               "path": "audit/deployment-candidate-tests.txt",
+@@ -15000,11 +15096,31 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/pwa/browser-results-1792286993073.json",
++              "sha256": "8bff01906f8a402c020036700b3889892367f9ef55577776a1aa62278e21ae68"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
+             }
+           ]
+         }
+@@ -15131,7 +15247,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -15258,7 +15374,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -15397,7 +15513,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -15532,7 +15648,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -15663,7 +15779,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -15790,7 +15906,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -15804,8 +15920,8 @@
+     {
+       "id": "C04",
+       "stage": "staged",
+-      "status": "not-run",
+-      "note": "Future exact hosted/live boundary; no success inferred.",
++      "status": "passed",
++      "note": "Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite.",
+       "artifacts": [
+         {
+           "path": "audit/handbook-hosted-ci.json",
+@@ -15885,18 +16001,34 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+           "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++          "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/hosted-ci-log.txt",
++          "sha256": "a885be5e57588468b17193bf2fd4609a4aa772cd1b730ac490868519d43a0969"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/github-required-checks.json",
++          "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/github-required-checks-promotion.json",
++          "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
+         }
+       ],
+       "scenarios": [
+         {
+           "id": "hosted-regressions",
+-          "status": "not-run",
+-          "observation": "hosted regressions. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "hosted regressions. Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -15976,18 +16108,34 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci-log.txt",
++              "sha256": "a885be5e57588468b17193bf2fd4609a4aa772cd1b730ac490868519d43a0969"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks-promotion.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
+             }
+           ]
+         },
+         {
+           "id": "hosted-candidate-check",
+-          "status": "not-run",
+-          "observation": "hosted candidate check. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "hosted candidate check. Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -16067,18 +16215,34 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci-log.txt",
++              "sha256": "a885be5e57588468b17193bf2fd4609a4aa772cd1b730ac490868519d43a0969"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks-promotion.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
+             }
+           ]
+         },
+         {
+           "id": "required-rule-readback",
+-          "status": "not-run",
+-          "observation": "required rule readback. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "required rule readback. Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -16158,18 +16322,34 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci-log.txt",
++              "sha256": "a885be5e57588468b17193bf2fd4609a4aa772cd1b730ac490868519d43a0969"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks-promotion.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
+             }
+           ]
+         },
+         {
+           "id": "negative-refusal-fixture",
+-          "status": "not-run",
+-          "observation": "negative refusal fixture. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "negative refusal fixture. Actual hosted Automated regression suite (119/119) and Exact candidate acceptance passed on the committed exact source/output. Fresh required default-branch rule readback confirms both checks, strict mode and admin enforcement. Feature branch push does not claim default-branch integration. Negative gate fixtures run inside the hosted regression suite.",
+           "artifacts": [
+             {
+               "path": "audit/handbook-hosted-ci.json",
+@@ -16249,11 +16429,27 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci.json",
++              "sha256": "52bfdbdeb1039d9c793cfb94f2b7bc0bb9bdb9e4a735104125fe120a484bcd56"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/hosted-ci-log.txt",
++              "sha256": "a885be5e57588468b17193bf2fd4609a4aa772cd1b730ac490868519d43a0969"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/github-required-checks-promotion.json",
++              "sha256": "f86d7afb37cbdba8e1caf529265781490761c937e81417b41d63b3dcb9b33adc"
+             }
+           ]
+         }
+@@ -16380,7 +16576,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -16515,7 +16711,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -16650,7 +16846,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -16785,7 +16981,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -16807,11 +17003,11 @@
+     {
+       "id": "C06",
+       "stage": "live",
+-      "status": "not-run",
+-      "note": "Future exact hosted/live boundary; no success inferred.",
++      "status": "passed",
++      "note": "Actual supported publisher public status/type/hash, composed fragments/route identity and independent final inventory/journal comparison pass, with real public-browser driving and board/catalog availability.",
+       "artifacts": [
+         {
+-          "path": "audit/deployment.json",
++          "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+           "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+         },
+         {
+@@ -16864,21 +17060,33 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+           "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++          "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++          "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++        },
++        {
++          "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++          "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
+         }
+       ],
+       "scenarios": [
+         {
+           "id": "root-status-type-identity",
+-          "status": "not-run",
+-          "observation": "root status type identity. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "root status type identity. Actual supported publisher public status/type/hash, composed fragments/route identity and independent final inventory/journal comparison pass, with real public-browser driving and board/catalog availability.",
+           "artifacts": [
+             {
+-              "path": "audit/deployment.json",
++              "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+               "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+             },
+             {
+@@ -16931,21 +17139,33 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
+             }
+           ]
+         },
+         {
+           "id": "immutable-assets-status-type-hash",
+-          "status": "not-run",
+-          "observation": "immutable assets status type hash. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "immutable assets status type hash. Actual supported publisher public status/type/hash, composed fragments/route identity and independent final inventory/journal comparison pass, with real public-browser driving and board/catalog availability.",
+           "artifacts": [
+             {
+-              "path": "audit/deployment.json",
++              "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+               "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+             },
+             {
+@@ -16998,21 +17218,33 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
+             }
+           ]
+         },
+         {
+           "id": "native-routes-composition",
+-          "status": "not-run",
+-          "observation": "native routes composition. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "native routes composition. Actual supported publisher public status/type/hash, composed fragments/route identity and independent final inventory/journal comparison pass, with real public-browser driving and board/catalog availability.",
+           "artifacts": [
+             {
+-              "path": "audit/deployment.json",
++              "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+               "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+             },
+             {
+@@ -17065,21 +17297,33 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
+             }
+           ]
+         },
+         {
+           "id": "board-workshop-availability",
+-          "status": "not-run",
+-          "observation": "board workshop availability. Future exact hosted/live boundary; no success inferred.",
++          "status": "passed",
++          "observation": "board workshop availability. Actual supported publisher public status/type/hash, composed fragments/route identity and independent final inventory/journal comparison pass, with real public-browser driving and board/catalog availability.",
+           "artifacts": [
+             {
+-              "path": "audit/deployment.json",
++              "path": "audit/2026-10-18-remaining-requirements/prior-deployment.json",
+               "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+             },
+             {
+@@ -17132,11 +17376,23 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+               "sha256": "754fbc81694dca0ccb7097a93da698f3509f85514b38ff282fa4bbe9e44f3b1e"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/live-verification.json",
++              "sha256": "16d2a20fd08bcb579d5ed3722631b3c0cd9d03214525031a4e218aa6477e4ff4"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/deployment-receipt.json",
++              "sha256": "d693379340805f5b390d0da93f46f53d0cd4ba3960ad8a42d1d63202d6429e50"
++            },
++            {
++              "path": "audit/2026-10-18-remaining-requirements/public-browser.json",
++              "sha256": "983a86949db73dd22db14faa553ac1f92cfdfae95a4a6cbbc226b5fdefd90e26"
+             }
+           ]
+         }
+@@ -17263,7 +17519,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -17390,7 +17646,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -17521,7 +17777,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -17652,7 +17908,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -17783,7 +18039,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -17914,7 +18170,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18045,7 +18301,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18204,7 +18460,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18355,7 +18611,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18370,7 +18626,7 @@
+       "id": "C10",
+       "stage": "local",
+       "status": "passed",
+-      "note": "Complete fresh 115-test suite and focused final gate regressions; this ledger explicitly retains unfulfilled outcomes. Passing tests do not imply full acceptance. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++      "note": "Frozen source full suite passed 119/119 with zero failures/skips. Named scenario statuses, limits and future-stage pending states are independently retained.",
+       "artifacts": [
+         {
+           "path": "audit/leaderboard-local-tests.txt",
+@@ -18490,7 +18746,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18501,7 +18757,7 @@
+         {
+           "id": "outcome",
+           "status": "passed",
+-          "observation": "Fresh complete automated suite and accurate acceptance ledger. Complete fresh 115-test suite and focused final gate regressions; this ledger explicitly retains unfulfilled outcomes. Passing tests do not imply full acceptance. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++          "observation": "Fresh complete automated suite and accurate acceptance ledger. Frozen source full suite passed 119/119 with zero failures/skips. Named scenario statuses, limits and future-stage pending states are independently retained.",
+           "artifacts": [
+             {
+               "path": "audit/leaderboard-local-tests.txt",
+@@ -18621,7 +18877,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18636,7 +18892,7 @@
+       "id": "C11",
+       "stage": "local",
+       "status": "passed",
+-      "note": "Pinned guide 2.10.0, inventory digest and map r1; separate source/output-bound coverage and evidence reviews. Stale-inventory/review refusal fixtures pass. Review completion includes unresolved outcomes. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++      "note": "Pinned guide 2.10.0, requirement map handbook-2.10-r2 and 47/102 inventory digest; separate exact-source/output coverage and evidence reviews plus preserved prior decisions and refusal regressions.",
+       "artifacts": [
+         {
+           "path": "audit/2026-10-17-guide-2-10-audit/result-guard-tests.txt",
+@@ -18684,7 +18940,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18695,7 +18951,7 @@
+         {
+           "id": "outcome",
+           "status": "passed",
+-          "observation": "Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate. Pinned guide 2.10.0, inventory digest and map r1; separate source/output-bound coverage and evidence reviews. Stale-inventory/review refusal fixtures pass. Review completion includes unresolved outcomes. Current scope is limited by explicit dependency-impact review and fresh 119-test regression suite.",
++          "observation": "Pinned handbook 2.10 guidance and separate coverage/evidence decisions match the inventory and candidate. Pinned guide 2.10.0, requirement map handbook-2.10-r2 and 47/102 inventory digest; separate exact-source/output coverage and evidence reviews plus preserved prior decisions and refusal regressions.",
+           "artifacts": [
+             {
+               "path": "audit/2026-10-17-guide-2-10-audit/result-guard-tests.txt",
+@@ -18743,7 +18999,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18806,7 +19062,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18869,7 +19125,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18936,7 +19192,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -18995,7 +19251,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -19058,7 +19314,7 @@
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-          "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++          "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+         },
+         {
+           "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -19121,7 +19377,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -19184,7 +19440,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -19247,7 +19503,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -19310,7 +19566,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -19373,7 +19629,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",
+@@ -19436,7 +19692,7 @@
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/reuse.json",
+-              "sha256": "7da791cd8121c031b18a89d2c56da66c78952f920b736e29ee3f9d106b560637"
++              "sha256": "69c4dd3a02e31a69f092aaa3b521cc4ecb94595a52556a591d8ab83b127a6494"
+             },
+             {
+               "path": "audit/2026-10-18-remaining-requirements/scope-corrections.md",

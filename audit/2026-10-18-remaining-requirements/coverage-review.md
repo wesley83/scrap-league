@@ -1,6 +1,6 @@
 # Coverage review
 
-Actor Codex, 2026-10-18T02:24:07.303Z. Independently reviewed guide/player/editor contracts against all 47 adopted requirements and 102 named scenarios; no test-name-derived omissions. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
+Actor Codex, 2026-10-18T02:35:35.921Z. Independently reviewed guide/player/editor contracts against all 47 adopted requirements and 102 named scenarios; no test-name-derived omissions. Candidate sl-5c1afcc9442899; source 069b19d7a9cc1ac3afe17a44a61d26a743ae012f3af92b7e5f4ce60319b6c9a9; output 02b9d5ce8f2959766b877cb619b9e880803d7666e1e82fc7b71ba307806418d1; inventory 12e5ec3304cb2431d893388825f5e16c5d19194f04f16b13b21698ededa66ac2.
 
 The handbook 2.10 r2 map preserves every adopted ID. Scope correction records the user's native desktop exclusion and restores P08 to the handbook's established-policy preservation instruction. Original CLI provenance remains; present-tense Workshop recreation is independently bound. Applicable deliverables and exact review statuses are in the separate evidence review. Completion of this review is not a claim that future hosted/live stages happened. No extra approval or separate agent is implied.
 

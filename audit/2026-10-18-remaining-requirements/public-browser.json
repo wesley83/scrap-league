@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-18T02:35:09.394Z",
+  "release": "sl-5c1afcc9442899",
+  "beforeUpdate": {
+    "release": "sl-8c38d2602f174d",
+    "notice": "Update ready · review update"
+  },
+  "publicUpdateApplied": true,
+  "speed": 72,
+  "time": "00:13.358",
+  "canvas": {
+    "cssHeight": 386,
+    "cssWidth": 1280,
+    "height": 386,
+    "width": 1280
+  },
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  },
+  "scope": "Actual public root, ordinary previous installed-client update and trusted connector W/A driving. No inspection hook, forced state, OS restart or physical-phone claim."
+}
