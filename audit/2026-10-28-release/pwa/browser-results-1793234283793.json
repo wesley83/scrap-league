@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-29T00:38:03.789Z",
+  "subjects": {
+    "A": "sl-28ec5378c02128",
+    "B": "sl-c84ff03afc7e71",
+    "hashes": {
+      "A": {
+        "index.html": "d78876f2f1f3f792a2dec2925af18475bad964a1e90c53b531b6a6cd94b14001",
+        "sw.js": "4c93d4b4bd2f2f0c7ca705e35492886c09908cc54429c5d3f120f5d5a9760160",
+        "release.json": "4cb937f512e887ba8753fc9f93eaac502eecda13f21d46969fc28f174754a284"
+      },
+      "B": {
+        "index.html": "0cc0f2ceed7f727c8328db1ed6d3db5313e28828aeafabf5cb5ddad40c0a9a84",
+        "sw.js": "0bd9c1bb7d8fcab0a8d46ba66b32a5d9e05b0263caa9638b64f1c6ba3343ab2c",
+        "release.json": "8e25c5ce8b195fdfc7ec58ddc056223d65f58dda8d3acfe5e7b53b03d5dd5afa"
+      }
+    },
+    "phase": "A",
+    "offline": false,
+    "corrupt": false,
+    "delay": 0,
+    "requests": []
+  },
+  "environment": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "scope": "Real service workers on isolated localhost; synthetic progression; ordinary game UI for draft edits and activation; no physical device or process restart claim",
+  "results": [
+    {
+      "name": "1. Install A and prepare saved data",
+      "status": "passed",
+      "detail": {
+        "active": "sl-28ec5378c02128",
+        "windows": 2,
+        "syntheticCompletedEvents": [
+          1,
+          2
+        ],
+        "draftName": "PWA update retention fixture",
+        "customSettings": true
+      },
+      "utc": "2026-10-29T00:37:32.468Z"
+    },
+    {
+      "name": "2. Automatic notice while another window races",
+      "status": "passed",
+      "detail": {
+        "trigger": "Normal game reload; no Check offline pack click",
+        "active": "sl-28ec5378c02128",
+        "waiting": "sl-c84ff03afc7e71",
+        "notice": "Update verified · apply from the yard",
+        "automaticPopup": false,
+        "raceDocumentUnchanged": true,
+        "raceTimeAdvanced": true
+      },
+      "utc": "2026-10-29T00:38:03.789Z"
+    }
+  ]
+}

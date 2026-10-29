@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-29T00:33:01.778Z",
+  "priorCommit": "7dbddf0c7fbf3511836f16bed1d5ce6482223712",
+  "scope": "Recognized validator identity change only; established controls and existing rows preserved",
+  "outcomes": [
+    {
+      "mode": "trial",
+      "state": "conditionally-migrated",
+      "status": 200,
+      "error": null,
+      "priorPolicySha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142",
+      "policySha256": "90643b59a4ecb2304db2ea49891fae73e28a33d9ea7ac831cd208a1564e7cef9",
+      "rowsPreserved": 0,
+      "rowHashes": [],
+      "privateBackupVerified": true
+    },
+    {
+      "mode": "daily",
+      "state": "conditionally-migrated",
+      "status": 200,
+      "error": null,
+      "priorPolicySha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607",
+      "policySha256": "e4a7eac0374bb24af0609d4607d9291428d4148b8c54f1440bda64278b0dc3c1",
+      "rowsPreserved": 0,
+      "rowHashes": [],
+      "privateBackupVerified": true
+    }
+  ]
+}

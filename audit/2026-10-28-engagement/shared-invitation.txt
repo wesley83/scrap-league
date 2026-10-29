@@ -1,0 +1,64 @@
+- banner:
+  - button "Scrap League home":
+    - text: SCRAP
+    - generic: LEAGUE
+    - generic: "04"
+  - generic: THE YARD IS YOURS.
+  - navigation "Game tools":
+    - button "Toggle sound": Sound off
+    - button "Settings"
+    - button "Toggle fullscreen": Full screen
+- main:
+  - generic "Overhead racing view. W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause"
+  - paragraph: SCRAP LEAGUE / ARCADE RACING CLUB
+  - heading "SMALL CARS. BIG RIVALRIES." [level=1]:
+    - text: SMALL CARS.
+    - emphasis: BIG RIVALRIES.
+  - paragraph:
+    - text: Find your line. Brake into the bend.
+    - text: Leave the rest in the dust.
+  - button "LET’S RACE 2 LAPS · 5 RIVALS · JUMP IN":
+    - generic: LET’S RACE
+    - generic: 2 LAPS · 5 RIVALS · JUMP IN
+  - button "Race the league YARD SHIFT":
+    - text: Race the league
+    - generic: YARD SHIFT
+  - button "Daily Spec 10-28 · UTC":
+    - text: Daily Spec
+    - generic: 10-28 · UTC
+  - button "Track Workshop MAKE YOUR OWN CIRCUIT":
+    - text: Track Workshop
+    - generic: MAKE YOUR OWN CIRCUIT
+  - button "Time Trial"
+  - button "Crew challenges"
+  - button "Leaderboards"
+  - button "Garage"
+  - button "Driving school"
+  - paragraph: W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause
+  - text: YOUR FIRST CIRCUIT
+  - heading "THE YARD" [level=2]
+  - text: SCRAP, RUBBER & SECOND CHANCES.
+  - generic: YOUR MACHINE
+  - strong: Mule / Courier / Road / Roll Cage
+  - generic: YOUR PROGRESS
+  - strong: 4 of 12 parts · 0/12 events
+  - generic: THE WORKSHOP IS OPEN
+  - strong: 12 circuits. Infinite possibilities.
+- contentinfo:
+  - generic: Progress saved on this device
+  - generic: Offline pack verified
+  - link "Pagelove, opens a new tab":
+    - /url: https://pagelove.com
+    - text: Made for Pagelove
+- dialog "CREW CHALLENGES":
+  - heading "CREW CHALLENGES" [level=2]
+  - paragraph: Three circuits. Three reachable targets. Recorded runs use the starter car, 3 laps, manual throttle and steering assist off. Targets are local challenges; League unlocks are unchanged.
+  - heading "Dockside Dash" [level=3]
+  - paragraph: "Twin dock lights: the gravel-side boost strip rewards a precise line. The center asphalt leaves room to pass and brake. Keep every checkpoint in order."
+  - paragraph: By Scrap League crew · Mule / Courier / Road / Roll Cage
+  - button "BRONZE · 02:42.235"
+  - button "SILVER · 02:19.785" [active]
+  - button "GOLD · 02:05.553"
+  - button "Remix in Workshop"
+  - button "All crew challenges"
+  - button "Close"

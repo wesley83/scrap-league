@@ -1,4 +1,5 @@
-import { profiledInput } from "./ai-profile.js";
+import { profiledInput, rivalBehavior } from "./ai-profile.js";
+import { recordDriving, recordSector } from "./race-insights.js";
 import { RULES } from "./builds.js";
 import { advanceBodies } from "./collision.js";
 import { clamp, wrap } from "./model.js";
@@ -185,6 +186,7 @@ export function processGates(car, previous, track, startTime, dt, laps) {
     lastFraction = fraction;
     car.lastGate = car.nextGate;
     car.gateCount++;
+    recordSector(car, startTime + fraction * dt, car.nextGate);
     if (car.nextGate === 0) {
       const exact = startTime + fraction * dt;
       car.lap++;
@@ -416,7 +418,9 @@ export function aiInput(
     pace =
       ({ relaxed: 0.76, club: 0.88, expert: 0.99 }[difficulty] || 0.88) *
       personality;
-  let lane = Math.sin(car.grid * 2.4) * 1.0;
+  const tactic = rivalBehavior(car.id);
+  let lane = Math.sin(car.grid * 2.4) * tactic.wander;
+  let chasing = false;
   for (const other of cars)
     if (
       other !== car &&
@@ -425,8 +429,13 @@ export function aiInput(
         { x: other.x - car.x, z: other.z - car.z },
         { x: Math.cos(car.heading), z: Math.sin(car.heading) },
       ) > 0
-    )
-      lane = (car.grid % 2 ? 1 : -1) * 2.4;
+    ) {
+      chasing = true;
+      lane = (car.grid % 2 ? 1 : -1) * tactic.pass;
+    }
+  const bend = wrap(atDistance(track, q.s + 30).heading - q.heading);
+  if (car.id === "kit" && chasing && Math.abs(bend) > 0.12)
+    lane = (bend > 0 ? 1 : -1) * tactic.pass;
   for (const prop of track.props || track.source.props)
     if (
       ["barrier", "island"].includes(prop.kind) &&
@@ -437,6 +446,11 @@ export function aiInput(
         (prop.z - goal.z) * Math.cos(goal.heading);
       lane = side > 0 ? -3 : 3;
     }
+  lane = clamp(
+    lane,
+    -goal.width / 2 + car.spec.chassis.width / 2 + 0.6,
+    goal.width / 2 - car.spec.chassis.width / 2 - 0.6,
+  );
   goal.x -= Math.sin(goal.heading) * lane;
   goal.z += Math.cos(goal.heading) * lane;
   const error = wrap(Math.atan2(goal.z - car.z, goal.x - car.x) - car.heading),
@@ -456,7 +470,10 @@ export function aiInput(
       const turnSpeed = Math.sqrt((grip * 9.81 * 0.72) / curve) * pace;
       target = Math.min(
         target,
-        Math.sqrt(turnSpeed * turnSpeed + 2 * 5 * Math.max(0, ahead - 7)),
+        Math.sqrt(
+          turnSpeed * turnSpeed +
+            2 * 5 * Math.max(0, ahead - tactic.brakeMargin),
+        ),
       );
     }
   }
@@ -466,25 +483,28 @@ export function aiInput(
     brake: speed > target + 1 ? clamp((speed - target) / 4, 0, 1) : 0,
     steer: clamp((steerAngle / limit) * 1.45, -1, 1),
     boost:
-      target > 30 && Math.abs(error) < 0.08 && speed > 15 && car.charge > 25,
+      target > 30 &&
+      Math.abs(error) < 0.08 &&
+      speed > 15 &&
+      car.charge > tactic.reserve &&
+      (car.id !== "mags" || chasing || car.charge > 95),
     reset: car.stuckTime > 5,
   };
 }
 export function stepRace(r, input, dt = DT) {
   if (r.state !== "racing") return;
 
-  for (const c of r.cars)
-    drive(
-      c,
+  const controls = new Map();
+  for (const c of r.cars) {
+    const control =
       c.id === "player"
         ? input
         : profiledInput(c, r, () =>
             aiInput(c, r.track, r.difficulty, c.personality, r.cars),
-          ),
-      r.track,
-      dt,
-      true,
-    );
+          );
+    controls.set(c, control);
+    drive(c, control, r.track, dt, true);
+  }
   const paths = advanceBodies(r.cars, r.track, dt, nearbyWalls);
   for (const c of r.cars) {
     const final = { x: c.x, z: c.z };
@@ -501,6 +521,8 @@ export function stepRace(r, input, dt = DT) {
       );
     }
     Object.assign(c, final);
+    if (c.finishTime === null)
+      recordDriving(c, r.track, controls.get(c), r.time + dt, dt);
   }
   r.collisionOverload = r.cars.some((c) => c.collisionLimited)
     ? (r.collisionOverload || 0) + dt
@@ -576,6 +598,9 @@ export function resultOf(r) {
       time: c.finishTime === null ? null : Math.round(c.finishTime * 1000),
     })),
     contacts: p.contacts,
+    incidents: p.insights?.incidents || 0,
+    cleanExits: p.insights?.cleanExits || 0,
+    sectors: p.sectors || [],
     resets: p.resets,
     createdAt: new Date().toISOString(),
   };

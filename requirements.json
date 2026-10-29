@@ -814,6 +814,118 @@
           "outcome": "Resized browser-height and injected safe insets preserve state and reachable content; actual bounds and hit points are checked"
         }
       ]
+    },
+    {
+      "id": "E1",
+      "outcome": "Reachable crew goals, compatible recorded ghosts and measured coaching",
+      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
+      "stage": "local",
+      "scenarios": [
+        {
+          "id": "target-replays",
+          "outcome": "Nine recorded runs reproduce ordinary-control finishes; ladder ordered"
+        },
+        {
+          "id": "identity",
+          "outcome": "Fixed setup and revisions prevent incompatible replay/best comparison"
+        },
+        {
+          "id": "results",
+          "outcome": "Recorded sectors, incident counts and next target support retry"
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "outcome": "Clean controlled exits reward bounded boost without farming",
+      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
+      "stage": "local",
+      "scenarios": [
+        {
+          "id": "eligibility",
+          "outcome": "Forward full bend with gate progress, controlled exit speed and no contact/reset/slide"
+        },
+        {
+          "id": "caps-and-farming",
+          "outcome": "Capacity cap and one attempt per bend/lap reject repeat traversal"
+        },
+        {
+          "id": "feedback",
+          "outcome": "HUD labels success without another touch action; pause preserves rules"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "outcome": "Three authored circuits offer legible legal risk/reward lines",
+      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
+      "stage": "local",
+      "scenarios": [
+        {
+          "id": "line-comparison",
+          "outcome": "Asphalt and inside gravel/pad lines finish legally with measured distinct consequences"
+        },
+        {
+          "id": "landmarks",
+          "outcome": "Named authored landmarks and briefings identify the decision"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "outcome": "Garage presets explain tradeoffs and compare the same short section",
+      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
+      "stage": "local",
+      "scenarios": [
+        {
+          "id": "comparison",
+          "outcome": "Deterministic 20-second comparison uses actual simulation for each build"
+        },
+        {
+          "id": "unlocks",
+          "outcome": "Preview and test do not equip locked League parts"
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "outcome": "Named rivals use distinct fair tactics and relevant goals",
+      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
+      "stage": "local",
+      "scenarios": [
+        {
+          "id": "strategies",
+          "outcome": "Distinct bounded braking, passing and boost tactics remain deterministic"
+        },
+        {
+          "id": "race-goal",
+          "outcome": "Actual roster rival is named and result classification determines objective"
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "outcome": "Workshop featured-remix-test-target-share loop preserves authoring work",
+      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
+      "stage": "local",
+      "scenarios": [
+        {
+          "id": "author",
+          "outcome": "A valid completed current test captures time, car, laps, controls and creator credit"
+        },
+        {
+          "id": "import-export",
+          "outcome": "HTML chooser import/export, save and reopen preserve a valid fixed challenge in new IDs"
+        },
+        {
+          "id": "invalidation",
+          "outcome": "Gameplay edits/duplication invalidate targets; stale revisions cannot launch"
+        },
+        {
+          "id": "publication",
+          "outcome": "Existing owner publication round-trips metadata and playable fixed setup in a controlled transport fixture"
+        }
+      ]
     }
   ],
   "governingGuide": {
@@ -829,5 +941,11 @@
     "sha256": "1b32feff2af6ec4042283e8ce21a1cfa32e6516ce48da834cce98ff065c11054",
     "snapshot": "audit/2026-10-18-phone-layout/guide-2.11.md",
     "scope": "Sections 10/11 adaptive layout and bounded browser evidence apply to this responsive repair. Original 2.10 adopted outcomes remain; this is not a silent full-game re-audit against all later guidance."
+  },
+  "engagementGuidanceSupplement": {
+    "edition": "2.13.0",
+    "sha256": "194e3da1d55c799e7156bcbde6c7a546a18d6fd367a6672d51b763a26d3cfa3e",
+    "snapshot": "audit/2026-10-28-engagement/guide-2.13.md",
+    "scope": "Sections 1–4, 6–11 and 14–17 where impacted by E1–E6. Prior adopted requirements remain. This is local engagement implementation, not full release acceptance or a silent waiver of old outcomes."
   }
 }

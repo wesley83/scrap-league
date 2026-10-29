@@ -192,3 +192,10 @@ Track sharing distinguishes a published link from a downloadable HTML definition
 ## Definition of the first complete experience
 
 A player can finish all four cups, understand and change a car build, retry a time trial, play the correct daily challenge, create a valid circuit from scratch, race it against five AI cars, recover the draft after interruption, export/import it without changing its meaning, and publish through the authorized owner flow. The same player can install/download the game, relaunch offline, and later apply an update without losing progress or creations. Each promise requires the evidence in ACCEPTANCE.md.
+# Engagement revision — October 28, 2026
+
+The six connected additions are implemented in the local candidate: a three-tier crew ghost ladder on three circuits, recorded sector coaching, a clean-exit resource reward, legal surface/pad line choices with landmarks, garage style presets with a measured comparison, deterministic rival strategies/objectives, and a creator-credit/fixed-setup Workshop challenge loop. See PLAY.md for player rules and audit/2026-10-28-engagement/plan.md for the outcome contract.
+
+Driving rules are `scrap-physics-v1.2.0`. Historical records, cup attempts and installed releases retain their old identities; new results cannot enter an old comparison bucket. Official target recordings in references/target-runs.json are derived from current authoritative HTML, part physics and the ordinary controller by the explicit tools/record-targets.mjs maintenance command. Normal builds validate them and refuse stale revisions. They are measured trajectories, not hand-drawn guides or invented timings.
+
+Retention/enjoyment is a design hypothesis. Available evidence establishes legal traversals, differentiated choices, deterministic rivals, feedback, save/import recovery and browser usability under the reported fixtures. It does not establish unobserved player enjoyment or physical-device behavior.

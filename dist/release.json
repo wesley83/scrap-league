@@ -1,404 +1,436 @@
 {
-  "release": "sl-28ec5378c02128",
-  "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
-  "createdAt": "2026-10-18T04:38:30.354Z",
+  "release": "sl-c84ff03afc7e71",
+  "sourceHash": "59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37",
+  "createdAt": "2026-10-29T00:38:57.443Z",
   "files": [
     {
       "url": "./",
-      "hash": "d78876f2f1f3f792a2dec2925af18475bad964a1e90c53b531b6a6cd94b14001"
+      "hash": "0cc0f2ceed7f727c8328db1ed6d3db5313e28828aeafabf5cb5ddad40c0a9a84"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/ai-profile.js",
-      "hash": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029"
+      "url": "./releases/sl-c84ff03afc7e71/ai-profile.js",
+      "hash": "b4b06683ab9218bcf93b9357e22d6cc23d15359e3df3ce264555838bd9a00ee4"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/arcade-renderer.js",
-      "hash": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd"
+      "url": "./releases/sl-c84ff03afc7e71/arcade-renderer.js",
+      "hash": "128b1efb080e668fc4214a9596fdc8faa9fc9f601c7bb2cab18ac3194c0f7e06"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/arcade.css",
-      "hash": "c30dfabd6a1c8d2b8d7053e7bd76a933fb1d26c6d87019dc703ee954d963c7f4"
+      "url": "./releases/sl-c84ff03afc7e71/arcade.css",
+      "hash": "6314b22b85751a0b62b10ed10a4a2f44bc69ddbc79753d40b37f3fd8bbac371b"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/audio.js",
+      "url": "./releases/sl-c84ff03afc7e71/audio.js",
       "hash": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/boards.js",
+      "url": "./releases/sl-c84ff03afc7e71/boards.js",
       "hash": "696747b34f4ef9d61eb161eaf143972237801de8034c07fd3e18ca7b4102ecf3"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/bootstrap.js",
+      "url": "./releases/sl-c84ff03afc7e71/bootstrap.js",
       "hash": "4d2fe542b81d30d1ab1cee50ed2aecaf936ff55468ed9a72e5f0aa4e2516d94d"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/builds.js",
-      "hash": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f"
+      "url": "./releases/sl-c84ff03afc7e71/build-lab.js",
+      "hash": "12f727d5914dbae9b52082731a2d2bfee21e57b96ce653508fd742a2946e9fd4"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/collision.js",
+      "url": "./releases/sl-c84ff03afc7e71/builds.js",
+      "hash": "33a5e0032fdfec2653cda8059f7a529e27d59c7125e2152e18575e20b750668e"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/challenge-schema.js",
+      "hash": "7cd32be4eb4ada45ce6058ef003a85786c88e73a038b718dae17c6671607c817"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/challenges.js",
+      "hash": "626e73f34a9525fcb0d46078b6911cac5b7da8ec2c36860d3ca9dc195cd88465"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/collision.js",
       "hash": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/continuation.js",
+      "url": "./releases/sl-c84ff03afc7e71/continuation.js",
       "hash": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/driver-profile.js",
+      "url": "./releases/sl-c84ff03afc7e71/driver-profile.js",
       "hash": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/driving-controls.js",
+      "url": "./releases/sl-c84ff03afc7e71/driving-controls.js",
       "hash": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/editor-commands.js",
+      "url": "./releases/sl-c84ff03afc7e71/editor-commands.js",
       "hash": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/Barlow-OFL.txt",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/Barlow-OFL.txt",
       "hash": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/Barlow-Regular.ttf",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/Barlow-Regular.ttf",
       "hash": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/Barlow-SemiBold.ttf",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/Barlow-SemiBold.ttf",
       "hash": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/BebasNeue-OFL.txt",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/BebasNeue-OFL.txt",
       "hash": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/BebasNeue-Regular.ttf",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/BebasNeue-Regular.ttf",
       "hash": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/graphics-policy.js",
+      "url": "./releases/sl-c84ff03afc7e71/graphics-policy.js",
       "hash": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icon.svg",
+      "url": "./releases/sl-c84ff03afc7e71/icon.svg",
       "hash": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/favicon.ico",
+      "url": "./releases/sl-c84ff03afc7e71/icons/favicon.ico",
       "hash": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-16.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-16.png",
       "hash": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-180.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-180.png",
       "hash": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-192.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-192.png",
       "hash": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-32.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-32.png",
       "hash": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-48.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-48.png",
       "hash": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-512.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-512.png",
       "hash": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-maskable-512.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-maskable-512.png",
       "hash": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/main.js",
-      "hash": "ac7a43c6dc0ccf53390e743d41d6eb3a024c4e2c0245058d2881ce31d2377922"
+      "url": "./releases/sl-c84ff03afc7e71/main.js",
+      "hash": "d6be439ad42e3c4762a9dae3f5152259e36a72ce991e5b6d1fad4da991c4f58a"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/model.js",
-      "hash": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1"
+      "url": "./releases/sl-c84ff03afc7e71/model.js",
+      "hash": "654e91d8a9cf35eb5951e3cce68784c4794a0dff51f6ab09afd2c45d4412cbe4"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/offline.js",
+      "url": "./releases/sl-c84ff03afc7e71/offline.js",
       "hash": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/pagelove.js",
+      "url": "./releases/sl-c84ff03afc7e71/pagelove.js",
       "hash": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/preferences.js",
+      "url": "./releases/sl-c84ff03afc7e71/preferences.js",
       "hash": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/publication.js",
-      "hash": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193"
+      "url": "./releases/sl-c84ff03afc7e71/publication.js",
+      "hash": "df268b21108979c651fc4b97de1c6da6301fe5076ee2cec0ff0d1914ba12f601"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/renderer.js",
+      "url": "./releases/sl-c84ff03afc7e71/race-insights.js",
+      "hash": "1caed2688959cc6170c0a65de43d683fdb79e1681c357d8fdc7f088de24de0b3"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/renderer.js",
       "hash": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/scenes.js",
+      "url": "./releases/sl-c84ff03afc7e71/scenes.js",
       "hash": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/sharing.js",
-      "hash": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084"
+      "url": "./releases/sl-c84ff03afc7e71/sharing.js",
+      "hash": "cee78c4559eb9f1e0b74ca1d330fbcdc1df0ae28b18e8e1e5bdac6e80892163f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/simulation.js",
-      "hash": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d"
+      "url": "./releases/sl-c84ff03afc7e71/simulation.js",
+      "hash": "7779d194460f8017205124cf7832874d5a98618782049627202599d755902c67"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/social/og-landscape-v1.png",
+      "url": "./releases/sl-c84ff03afc7e71/social/og-landscape-v1.png",
       "hash": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/social/og-square-v1.png",
+      "url": "./releases/sl-c84ff03afc7e71/social/og-square-v1.png",
       "hash": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/storage.js",
-      "hash": "a3d9f944d74bbeae073ea4065044e4417bf9f784105f9b25e56934781eb193d8"
+      "url": "./releases/sl-c84ff03afc7e71/storage.js",
+      "hash": "df1774987f1b47d0c87364ca50082c3b6ae8ca9dd4751e30e964eea3e9761db0"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/style.css",
+      "url": "./releases/sl-c84ff03afc7e71/style.css",
       "hash": "696efcab035118cc26c295058b36c6f66cece28e1a336621d5561d561f746227"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/submission-ui.js",
+      "url": "./releases/sl-c84ff03afc7e71/submission-ui.js",
       "hash": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/track-document.js",
+      "url": "./releases/sl-c84ff03afc7e71/track-document.js",
       "hash": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/track.js",
+      "url": "./releases/sl-c84ff03afc7e71/track.js",
       "hash": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/vendor/QR-LICENSE.txt",
+      "url": "./releases/sl-c84ff03afc7e71/vendor/QR-LICENSE.txt",
       "hash": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/vendor/qr.js",
+      "url": "./releases/sl-c84ff03afc7e71/vendor/qr.js",
       "hash": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/workshop.js",
-      "hash": "a2cd0ecb7f8a8335f19de2a60cca311e61b63153fd3557c7ae347f88a18e3b91"
+      "url": "./releases/sl-c84ff03afc7e71/workshop.js",
+      "hash": "a26de9114bfc900ac36ee3335ef7a989c695b355c8ce7f76bde415749ce41742"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/content.json",
-      "hash": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c"
+      "url": "./releases/sl-c84ff03afc7e71/content.json",
+      "hash": "095dda0f8e621b479ddf4aaf5dbf7023e304dcc7296ca181006b334c20e16eb3"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/manifest.webmanifest",
+      "url": "./releases/sl-c84ff03afc7e71/manifest.webmanifest",
       "hash": "eec195a39856e8258f43cdd4bd98a40625675c5afb58353f1522439f021fb02c"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/native-shell.html",
-      "hash": "5db14cae56f3c5a6c603624d5a13f9ba4d417879c33f320dbd08b557a3203271"
+      "url": "./releases/sl-c84ff03afc7e71/native-shell.html",
+      "hash": "78554ef023b69c53c04ec755009238ac251bd76b04d8723ff7faa21e9ff74b93"
     }
   ],
   "offlineFiles": [
     {
       "url": "./",
-      "hash": "d78876f2f1f3f792a2dec2925af18475bad964a1e90c53b531b6a6cd94b14001"
+      "hash": "0cc0f2ceed7f727c8328db1ed6d3db5313e28828aeafabf5cb5ddad40c0a9a84"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/ai-profile.js",
-      "hash": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029"
+      "url": "./releases/sl-c84ff03afc7e71/ai-profile.js",
+      "hash": "b4b06683ab9218bcf93b9357e22d6cc23d15359e3df3ce264555838bd9a00ee4"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/arcade-renderer.js",
-      "hash": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd"
+      "url": "./releases/sl-c84ff03afc7e71/arcade-renderer.js",
+      "hash": "128b1efb080e668fc4214a9596fdc8faa9fc9f601c7bb2cab18ac3194c0f7e06"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/arcade.css",
-      "hash": "c30dfabd6a1c8d2b8d7053e7bd76a933fb1d26c6d87019dc703ee954d963c7f4"
+      "url": "./releases/sl-c84ff03afc7e71/arcade.css",
+      "hash": "6314b22b85751a0b62b10ed10a4a2f44bc69ddbc79753d40b37f3fd8bbac371b"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/audio.js",
+      "url": "./releases/sl-c84ff03afc7e71/audio.js",
       "hash": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/boards.js",
+      "url": "./releases/sl-c84ff03afc7e71/boards.js",
       "hash": "696747b34f4ef9d61eb161eaf143972237801de8034c07fd3e18ca7b4102ecf3"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/bootstrap.js",
+      "url": "./releases/sl-c84ff03afc7e71/bootstrap.js",
       "hash": "4d2fe542b81d30d1ab1cee50ed2aecaf936ff55468ed9a72e5f0aa4e2516d94d"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/builds.js",
-      "hash": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f"
+      "url": "./releases/sl-c84ff03afc7e71/build-lab.js",
+      "hash": "12f727d5914dbae9b52082731a2d2bfee21e57b96ce653508fd742a2946e9fd4"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/collision.js",
+      "url": "./releases/sl-c84ff03afc7e71/builds.js",
+      "hash": "33a5e0032fdfec2653cda8059f7a529e27d59c7125e2152e18575e20b750668e"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/challenge-schema.js",
+      "hash": "7cd32be4eb4ada45ce6058ef003a85786c88e73a038b718dae17c6671607c817"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/challenges.js",
+      "hash": "626e73f34a9525fcb0d46078b6911cac5b7da8ec2c36860d3ca9dc195cd88465"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/collision.js",
       "hash": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/continuation.js",
+      "url": "./releases/sl-c84ff03afc7e71/continuation.js",
       "hash": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/driver-profile.js",
+      "url": "./releases/sl-c84ff03afc7e71/driver-profile.js",
       "hash": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/driving-controls.js",
+      "url": "./releases/sl-c84ff03afc7e71/driving-controls.js",
       "hash": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/editor-commands.js",
+      "url": "./releases/sl-c84ff03afc7e71/editor-commands.js",
       "hash": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/Barlow-OFL.txt",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/Barlow-OFL.txt",
       "hash": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/Barlow-Regular.ttf",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/Barlow-Regular.ttf",
       "hash": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/Barlow-SemiBold.ttf",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/Barlow-SemiBold.ttf",
       "hash": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/BebasNeue-OFL.txt",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/BebasNeue-OFL.txt",
       "hash": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/fonts/BebasNeue-Regular.ttf",
+      "url": "./releases/sl-c84ff03afc7e71/fonts/BebasNeue-Regular.ttf",
       "hash": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/graphics-policy.js",
+      "url": "./releases/sl-c84ff03afc7e71/graphics-policy.js",
       "hash": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icon.svg",
+      "url": "./releases/sl-c84ff03afc7e71/icon.svg",
       "hash": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/favicon.ico",
+      "url": "./releases/sl-c84ff03afc7e71/icons/favicon.ico",
       "hash": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-16.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-16.png",
       "hash": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-180.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-180.png",
       "hash": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-192.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-192.png",
       "hash": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-32.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-32.png",
       "hash": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-48.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-48.png",
       "hash": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-512.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-512.png",
       "hash": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/icons/icon-maskable-512.png",
+      "url": "./releases/sl-c84ff03afc7e71/icons/icon-maskable-512.png",
       "hash": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/main.js",
-      "hash": "ac7a43c6dc0ccf53390e743d41d6eb3a024c4e2c0245058d2881ce31d2377922"
+      "url": "./releases/sl-c84ff03afc7e71/main.js",
+      "hash": "d6be439ad42e3c4762a9dae3f5152259e36a72ce991e5b6d1fad4da991c4f58a"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/model.js",
-      "hash": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1"
+      "url": "./releases/sl-c84ff03afc7e71/model.js",
+      "hash": "654e91d8a9cf35eb5951e3cce68784c4794a0dff51f6ab09afd2c45d4412cbe4"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/offline.js",
+      "url": "./releases/sl-c84ff03afc7e71/offline.js",
       "hash": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/pagelove.js",
+      "url": "./releases/sl-c84ff03afc7e71/pagelove.js",
       "hash": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/preferences.js",
+      "url": "./releases/sl-c84ff03afc7e71/preferences.js",
       "hash": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/publication.js",
-      "hash": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193"
+      "url": "./releases/sl-c84ff03afc7e71/publication.js",
+      "hash": "df268b21108979c651fc4b97de1c6da6301fe5076ee2cec0ff0d1914ba12f601"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/renderer.js",
+      "url": "./releases/sl-c84ff03afc7e71/race-insights.js",
+      "hash": "1caed2688959cc6170c0a65de43d683fdb79e1681c357d8fdc7f088de24de0b3"
+    },
+    {
+      "url": "./releases/sl-c84ff03afc7e71/renderer.js",
       "hash": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/scenes.js",
+      "url": "./releases/sl-c84ff03afc7e71/scenes.js",
       "hash": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/sharing.js",
-      "hash": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084"
+      "url": "./releases/sl-c84ff03afc7e71/sharing.js",
+      "hash": "cee78c4559eb9f1e0b74ca1d330fbcdc1df0ae28b18e8e1e5bdac6e80892163f"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/simulation.js",
-      "hash": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d"
+      "url": "./releases/sl-c84ff03afc7e71/simulation.js",
+      "hash": "7779d194460f8017205124cf7832874d5a98618782049627202599d755902c67"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/storage.js",
-      "hash": "a3d9f944d74bbeae073ea4065044e4417bf9f784105f9b25e56934781eb193d8"
+      "url": "./releases/sl-c84ff03afc7e71/storage.js",
+      "hash": "df1774987f1b47d0c87364ca50082c3b6ae8ca9dd4751e30e964eea3e9761db0"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/style.css",
+      "url": "./releases/sl-c84ff03afc7e71/style.css",
       "hash": "696efcab035118cc26c295058b36c6f66cece28e1a336621d5561d561f746227"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/submission-ui.js",
+      "url": "./releases/sl-c84ff03afc7e71/submission-ui.js",
       "hash": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/track-document.js",
+      "url": "./releases/sl-c84ff03afc7e71/track-document.js",
       "hash": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/track.js",
+      "url": "./releases/sl-c84ff03afc7e71/track.js",
       "hash": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/vendor/QR-LICENSE.txt",
+      "url": "./releases/sl-c84ff03afc7e71/vendor/QR-LICENSE.txt",
       "hash": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/vendor/qr.js",
+      "url": "./releases/sl-c84ff03afc7e71/vendor/qr.js",
       "hash": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/workshop.js",
-      "hash": "a2cd0ecb7f8a8335f19de2a60cca311e61b63153fd3557c7ae347f88a18e3b91"
+      "url": "./releases/sl-c84ff03afc7e71/workshop.js",
+      "hash": "a26de9114bfc900ac36ee3335ef7a989c695b355c8ce7f76bde415749ce41742"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/content.json",
-      "hash": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c"
+      "url": "./releases/sl-c84ff03afc7e71/content.json",
+      "hash": "095dda0f8e621b479ddf4aaf5dbf7023e304dcc7296ca181006b334c20e16eb3"
     },
     {
-      "url": "./releases/sl-28ec5378c02128/manifest.webmanifest",
+      "url": "./releases/sl-c84ff03afc7e71/manifest.webmanifest",
       "hash": "eec195a39856e8258f43cdd4bd98a40625675c5afb58353f1522439f021fb02c"
     }
   ],
@@ -406,143 +438,143 @@
     {
       "url": "/editor/:slug",
       "file": "native-routes/editor-fallback.html",
-      "hash": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+      "hash": "65aa521e72c65d40b4b0a766c3efaa61c6ef7f71c72505861bf0d896dbabd266"
     },
     {
       "url": "/editor/index.html",
       "file": "native-routes/editor-index.html",
-      "hash": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+      "hash": "65aa521e72c65d40b4b0a766c3efaa61c6ef7f71c72505861bf0d896dbabd266"
     },
     {
       "url": "/editor/yard-loop",
       "file": "native-routes/editor-yard-loop.html",
-      "hash": "84a14314e80cf80045843c2002730465d14fc1857d2a426e97512a16f467eef2"
+      "hash": "2245c045bcd8aa647135418c381b472d1728368f9c5edf2e122b0dd099fc4210"
     },
     {
       "url": "/editor/tin-can-alley",
       "file": "native-routes/editor-tin-can-alley.html",
-      "hash": "2c83a42ea5b9923be60f22ecef17e9f72f86116ad23d7a837a78d23e39490492"
+      "hash": "bbc043a71fcd26750f55fcb3d3a3028f8fcb52b0a6b7b56702b3f0f65e4df0e2"
     },
     {
       "url": "/editor/gravel-shift",
       "file": "native-routes/editor-gravel-shift.html",
-      "hash": "dddad74a9218efd330a02d4d4d9cd3c65c66eb3e8c526f2f6f7cdc3a65e3830a"
+      "hash": "552f1bc103aa92f25fdbf4c32863c2e93e3ecf63b041ea8ed84e238faea5253c"
     },
     {
       "url": "/editor/dockside-dash",
       "file": "native-routes/editor-dockside-dash.html",
-      "hash": "fe2d1d881d13cec00087f9881e7f5417eaed990503337226b700388a4d613d18"
+      "hash": "d71b3ab00f55d245db9fdb88f158376bbf762e643671096881642c2e05035db1"
     },
     {
       "url": "/editor/container-switchback",
       "file": "native-routes/editor-container-switchback.html",
-      "hash": "bf0251eab8a8b18566b7f12503d213b1fa4ae9cb6e7ed19c33c67c28ee6c1ebc"
+      "hash": "748868ce8d1ca36ef394eecaea403be1d1123a7b0f783725c2e57760733f47a5"
     },
     {
       "url": "/editor/salt-flat-sprint",
       "file": "native-routes/editor-salt-flat-sprint.html",
-      "hash": "c0a2ae1b18e7d90b3205131806f9aa9b2ccd2ad908e31dd506ccf66f405c5197"
+      "hash": "4a016b5a10c6978eeac60b750df636ce0ed1b83467ac20c9fced02575d848b81"
     },
     {
       "url": "/editor/furnace-bend",
       "file": "native-routes/editor-furnace-bend.html",
-      "hash": "b3d2241ff82ca34ec44a5864629028ff49471f263bd395c5e7e01c8959877482"
+      "hash": "41ca900912c5af464c10bb0c87693c1a5d104f8836b74a076344232478454756"
     },
     {
       "url": "/editor/mudworks",
       "file": "native-routes/editor-mudworks.html",
-      "hash": "9b4f09c82cfb4af330be835dd4a91c7f962097d9d72c8767449b70e83cc64964"
+      "hash": "e78d0e739af3dc9c398184252645d94f2a9486b5cf1a2a14fe955145b594d7f3"
     },
     {
       "url": "/editor/crusher-circuit",
       "file": "native-routes/editor-crusher-circuit.html",
-      "hash": "62a39c120fa4a335326d9d973dbf71680d60dfff83391e4ece3aebebda9b9149"
+      "hash": "e0a2a3feaa16b02d85f035870a752671168d13601385431b9548fbcb6daf01e8"
     },
     {
       "url": "/editor/night-sort",
       "file": "native-routes/editor-night-sort.html",
-      "hash": "3349192e65c3f040cc44c707180062cfd1d7ba69514d75966f479e925a4972e4"
+      "hash": "a485148a4bfe100ceb6622b4ef3760d10e47012cb2ef2e972fed5cfe7e21b2e3"
     },
     {
       "url": "/editor/redline-ridge",
       "file": "native-routes/editor-redline-ridge.html",
-      "hash": "23e18f1a40410703c35fcb784575273bdfd331a9d88cff9ece9bbecb5d8dba4f"
+      "hash": "f6ab90606b598a758793515b26785b747f065225e33cb8604bfe54a252ae4119"
     },
     {
       "url": "/editor/the-big-salvage",
       "file": "native-routes/editor-the-big-salvage.html",
-      "hash": "0928da17af2275b9c4f802de1ab5f3086ba51da5b61a8885dcce5ac8a84a50f7"
+      "hash": "f180c3b84edee254aaa26c36a70374753e674b885b18020cbf728570b1a4bc1c"
     },
     {
       "url": "/track/:slug",
       "file": "native-routes/track-fallback.html",
-      "hash": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+      "hash": "65aa521e72c65d40b4b0a766c3efaa61c6ef7f71c72505861bf0d896dbabd266"
     },
     {
       "url": "/track/index.html",
       "file": "native-routes/track-index.html",
-      "hash": "358abc2d7848f47bd2b03eebcc2be3a27c76a3d8d7411e96d7e2645077f90efc"
+      "hash": "65aa521e72c65d40b4b0a766c3efaa61c6ef7f71c72505861bf0d896dbabd266"
     },
     {
       "url": "/track/yard-loop",
       "file": "native-routes/track-yard-loop.html",
-      "hash": "84a14314e80cf80045843c2002730465d14fc1857d2a426e97512a16f467eef2"
+      "hash": "2245c045bcd8aa647135418c381b472d1728368f9c5edf2e122b0dd099fc4210"
     },
     {
       "url": "/track/tin-can-alley",
       "file": "native-routes/track-tin-can-alley.html",
-      "hash": "2c83a42ea5b9923be60f22ecef17e9f72f86116ad23d7a837a78d23e39490492"
+      "hash": "bbc043a71fcd26750f55fcb3d3a3028f8fcb52b0a6b7b56702b3f0f65e4df0e2"
     },
     {
       "url": "/track/gravel-shift",
       "file": "native-routes/track-gravel-shift.html",
-      "hash": "dddad74a9218efd330a02d4d4d9cd3c65c66eb3e8c526f2f6f7cdc3a65e3830a"
+      "hash": "552f1bc103aa92f25fdbf4c32863c2e93e3ecf63b041ea8ed84e238faea5253c"
     },
     {
       "url": "/track/dockside-dash",
       "file": "native-routes/track-dockside-dash.html",
-      "hash": "fe2d1d881d13cec00087f9881e7f5417eaed990503337226b700388a4d613d18"
+      "hash": "d71b3ab00f55d245db9fdb88f158376bbf762e643671096881642c2e05035db1"
     },
     {
       "url": "/track/container-switchback",
       "file": "native-routes/track-container-switchback.html",
-      "hash": "bf0251eab8a8b18566b7f12503d213b1fa4ae9cb6e7ed19c33c67c28ee6c1ebc"
+      "hash": "748868ce8d1ca36ef394eecaea403be1d1123a7b0f783725c2e57760733f47a5"
     },
     {
       "url": "/track/salt-flat-sprint",
       "file": "native-routes/track-salt-flat-sprint.html",
-      "hash": "c0a2ae1b18e7d90b3205131806f9aa9b2ccd2ad908e31dd506ccf66f405c5197"
+      "hash": "4a016b5a10c6978eeac60b750df636ce0ed1b83467ac20c9fced02575d848b81"
     },
     {
       "url": "/track/furnace-bend",
       "file": "native-routes/track-furnace-bend.html",
-      "hash": "b3d2241ff82ca34ec44a5864629028ff49471f263bd395c5e7e01c8959877482"
+      "hash": "41ca900912c5af464c10bb0c87693c1a5d104f8836b74a076344232478454756"
     },
     {
       "url": "/track/mudworks",
       "file": "native-routes/track-mudworks.html",
-      "hash": "9b4f09c82cfb4af330be835dd4a91c7f962097d9d72c8767449b70e83cc64964"
+      "hash": "e78d0e739af3dc9c398184252645d94f2a9486b5cf1a2a14fe955145b594d7f3"
     },
     {
       "url": "/track/crusher-circuit",
       "file": "native-routes/track-crusher-circuit.html",
-      "hash": "62a39c120fa4a335326d9d973dbf71680d60dfff83391e4ece3aebebda9b9149"
+      "hash": "e0a2a3feaa16b02d85f035870a752671168d13601385431b9548fbcb6daf01e8"
     },
     {
       "url": "/track/night-sort",
       "file": "native-routes/track-night-sort.html",
-      "hash": "3349192e65c3f040cc44c707180062cfd1d7ba69514d75966f479e925a4972e4"
+      "hash": "a485148a4bfe100ceb6622b4ef3760d10e47012cb2ef2e972fed5cfe7e21b2e3"
     },
     {
       "url": "/track/redline-ridge",
       "file": "native-routes/track-redline-ridge.html",
-      "hash": "23e18f1a40410703c35fcb784575273bdfd331a9d88cff9ece9bbecb5d8dba4f"
+      "hash": "f6ab90606b598a758793515b26785b747f065225e33cb8604bfe54a252ae4119"
     },
     {
       "url": "/track/the-big-salvage",
       "file": "native-routes/track-the-big-salvage.html",
-      "hash": "0928da17af2275b9c4f802de1ab5f3086ba51da5b61a8885dcce5ac8a84a50f7"
+      "hash": "f180c3b84edee254aaa26c36a70374753e674b885b18020cbf728570b1a4bc1c"
     }
   ],
-  "bytes": 1119571
+  "bytes": 1984090
 }

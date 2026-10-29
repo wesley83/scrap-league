@@ -7,6 +7,12 @@ import {
 } from "./publication.js";
 import { shareInvitation } from "./sharing.js";
 import {
+  resolveChallenge,
+  targetFromResult,
+  importTrackCopy,
+} from "./challenges.js";
+import { time } from "./builds.js";
+import {
   transformSelection,
   addPatch,
   createRecipe,
@@ -81,7 +87,18 @@ export class Workshop {
   }
   constructor(
     root,
-    { store, templates, onTest, notify, dialog, download, build },
+    {
+      store,
+      templates,
+      onTest,
+      notify,
+      dialog,
+      download,
+      build,
+      onFeatured,
+      onChallenge,
+      parts,
+    },
   ) {
     Object.assign(this, {
       root,
@@ -92,6 +109,9 @@ export class Workshop {
       dialog,
       download,
       build,
+      onFeatured,
+      onChallenge,
+      parts,
     });
     this.history = [];
     this.publications = new Map();
@@ -254,12 +274,21 @@ export class Workshop {
           c = compile(t);
         await this.dialog(
           "Import " + t.name,
-          `${t.pieces.length} road pieces · ${Math.round(c.length)} m · ${c.valid ? "Race-ready" : "Draft with " + c.problems.length + " problems"}. Your current draft remains saved.`,
+          `${t.pieces.length} road pieces · ${Math.round(c.length)} m · ${c.valid ? "Race-ready" : "Draft with " + c.problems.length + " problems"}. Your current draft remains saved.${t.challenge ? " Imported challenge by " + t.challenge.creator + " · " + time(t.challenge.targetMs) + ". The fixed setup is preserved in a separate copy." : ""}`,
           [
             {
               label: "Import as a new copy",
-              action: () => this.open(duplicateTrack(t)),
+              action: async () =>
+                this.open(await importTrackCopy(t, this.parts)),
             },
+            ...(t.challenge
+              ? [
+                  {
+                    label: "Import circuit without target",
+                    action: () => this.open(duplicateTrack(t)),
+                  },
+                ]
+              : []),
             { label: "Cancel" },
           ],
         );
@@ -542,6 +571,7 @@ export class Workshop {
             throw Error(
               "Complete a valid test lap of this gameplay revision before publishing.",
             );
+          if (snapshot.challenge) await resolveChallenge(snapshot, this.parts);
           this.publications ||= new Map();
           const baseline =
             this.publications.get(snapshot.id) ||
@@ -596,11 +626,15 @@ export class Workshop {
                     text:
                       "Race " +
                       snapshot.name +
-                      " in Scrap League, then build your own circuit.",
+                      (snapshot.challenge
+                        ? ` · beat ${time(snapshot.challenge.targetMs)} with the fixed setup by ${snapshot.challenge.creator}.`
+                        : " in Scrap League, then build your own circuit."),
                     url: result.url,
                     complete:
                       snapshot.name +
-                      " — race this circuit in Scrap League.\n" +
+                      (snapshot.challenge
+                        ? ` — beat ${time(snapshot.challenge.targetMs)} with the fixed setup by ${snapshot.challenge.creator}.\n`
+                        : " — race this circuit in Scrap League.\n") +
                       result.url,
                   },
                   {
@@ -836,6 +870,7 @@ export class Workshop {
     this.historyTrimmed = false;
     this.baseline = stored?.revision || 0;
     this.tested = stored?.tested || "";
+    this.lastTest = null;
     this.history = [];
     this.future = [];
     this.selected = stored?.view?.selected || track.pieces[0]?.id;
@@ -853,6 +888,7 @@ export class Workshop {
     try {
       const next = clone(this.track);
       fn(next);
+      if (game) delete next.challenge;
       const previous = clone(this.track);
       this.track = next;
       this.history.push(previous);
@@ -864,7 +900,10 @@ export class Workshop {
         this.historyTrimmed = true;
       }
       this.future = [];
-      if (game) this.tested = "";
+      if (game) {
+        this.tested = "";
+        this.lastTest = null;
+      }
       this.refresh();
       this.save();
     } catch (e) {
@@ -889,9 +928,14 @@ export class Workshop {
   }
   refresh() {
     const active = this.root.ownerDocument.activeElement;
-    const ownedFocus = active && this.root.contains(active)
-      ? { id: active.id, field: active.dataset?.field, patch: active.dataset?.patch }
-      : null;
+    const ownedFocus =
+      active && this.root.contains(active)
+        ? {
+            id: active.id,
+            field: active.dataset?.field,
+            patch: active.dataset?.patch,
+          }
+        : null;
     this.compiled = compile(this.track);
     const q = this.q;
     q("track-name").value = this.track.name;
@@ -962,10 +1006,15 @@ export class Workshop {
     if (ownedFocus && (!active.isConnected || active.disabled)) {
       let replacement = ownedFocus.id ? this.q(ownedFocus.id) : null;
       if (!replacement && ownedFocus.field)
-        replacement = [...this.root.querySelectorAll("[data-field]")].find(element => element.dataset.field === ownedFocus.field);
+        replacement = [...this.root.querySelectorAll("[data-field]")].find(
+          (element) => element.dataset.field === ownedFocus.field,
+        );
       if (!replacement && ownedFocus.patch)
-        replacement = [...this.root.querySelectorAll("[data-patch]")].find(element => element.dataset.patch === ownedFocus.patch);
-      if (!replacement || replacement.disabled) replacement = this.q("object-list");
+        replacement = [...this.root.querySelectorAll("[data-patch]")].find(
+          (element) => element.dataset.patch === ownedFocus.patch,
+        );
+      if (!replacement || replacement.disabled)
+        replacement = this.q("object-list");
       replacement?.focus?.({ preventScroll: true });
     }
   }
@@ -1295,9 +1344,17 @@ export class Workshop {
     await this.flush();
     this.onTest(clone(this.track), this.q("test-ai").checked);
   }
-  async markTest(revision) {
-    if ((await hash(gameplay(this.track))) === revision) {
+  async markTest(revision, result, settings) {
+    const source = this.track,
+      generation = this.generation;
+    if (
+      (await hash(gameplay(source))) === revision &&
+      this.track === source &&
+      this.generation === generation
+    ) {
       this.tested = revision;
+      if (result && settings)
+        this.lastTest = { result: clone(result), settings: clone(settings) };
       this.refresh();
       this.save();
     }
@@ -1310,6 +1367,46 @@ export class Workshop {
         : serializeTrack(this.track),
       "text/html",
     );
+  }
+  challengeDialog() {
+    const body = document.createElement("div");
+    body.innerHTML =
+      '<p>Finish a valid test of this exact draft first. Its actual time, car, lap count and steering/throttle settings become the fixed challenge. Editing geometry removes the target. Export HTML to share offline, or publish with the owner key.</p><label>Creator credit<input maxlength="40" autocomplete="off"></label>';
+    body.querySelector("input").value = this.track.challenge?.creator || "";
+    const generation = this.generation,
+      id = this.track.id;
+    this.dialog("SET CHALLENGE TARGET", body, [
+      {
+        label: "Use my completed test",
+        action: async () => {
+          const source = this.track,
+            test = this.lastTest;
+          const revision = await hash(gameplay(source));
+          if (
+            !test ||
+            this.generation !== generation ||
+            this.track.id !== id ||
+            this.track !== source ||
+            this.tested !== revision
+          )
+            throw Error("Finish a valid test of this current draft first.");
+          const challenge = targetFromResult(
+            source,
+            test.result,
+            body.querySelector("input").value,
+            test.settings,
+          );
+          this.command((t) => {
+            t.challenge = challenge;
+          }, false);
+          await this.flush();
+          this.notify(
+            `Challenge saved · beat ${time(challenge.targetMs)} · export or publish from Files.`,
+          );
+        },
+      },
+      { label: "Keep current draft" },
+    ]);
   }
   async files() {
     // Recovery actions must stay reachable even when the normal save failed.
@@ -1364,6 +1461,24 @@ export class Workshop {
         }
       };
       body.querySelector(".file-actions").prepend(button);
+    }
+    for (const [label, action] of [
+      ["Featured crew circuits", () => this.onFeatured?.()],
+      ["Set challenge target", () => this.challengeDialog()],
+      ["Race saved challenge", () => this.onChallenge?.(clone(this.track))],
+    ]) {
+      const button = document.createElement("button");
+      button.textContent = label;
+      button.onclick = () => {
+        close();
+        action();
+      };
+      body.querySelector(".file-actions").append(button);
+    }
+    if (this.track.challenge) {
+      const p = document.createElement("p");
+      p.textContent = `Challenge by ${this.track.challenge.creator} · ${time(this.track.challenge.targetMs)} · fixed car and controls. Editing the circuit removes this target.`;
+      body.prepend(p);
     }
     const trashButton = document.createElement("button");
     trashButton.textContent = "Move current draft to Trash";

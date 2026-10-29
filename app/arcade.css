@@ -111,7 +111,10 @@ body[data-view="start"] {
   height: 100vh;
   height: 100dvh;
   min-height: 0;
-  padding-bottom: max(var(--host-footer-space, 0px), env(safe-area-inset-bottom, 0px));
+  padding-bottom: max(
+    var(--host-footer-space, 0px),
+    env(safe-area-inset-bottom, 0px)
+  );
 }
 body[data-view="start"] #header {
   flex: 0 0 auto;
@@ -1192,4 +1195,38 @@ dialog::backdrop {
 .workshop-status > span {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+/* Engagement controls remain stacked and reachable on narrow screens. */
+.challenge-list,
+.comparison-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 18px;
+}
+.challenge-list > p {
+  grid-column: 1 / -1;
+}
+.challenge-list section,
+.comparison-results section,
+#suggested-builds {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.challenge-list button,
+#suggested-builds button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  white-space: normal;
+  min-height: 44px;
+  text-align: left;
+}
+#suggested-builds button small {
+  display: block;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+#race-message {
+  pointer-events: none;
 }

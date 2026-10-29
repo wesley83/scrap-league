@@ -6,6 +6,10 @@ import { readPublishedTrack, discoverTracks } from "./publication.js";
 import { resultInvitation, shareInvitation, scorecard } from "./sharing.js";
 import { workerRequest } from "./offline.js";
 import { World } from "./arcade-renderer.js";
+import { coaching, nextGoal } from "./race-insights.js";
+import { rivalBehavior } from "./ai-profile.js";
+import { measureBuild } from "./build-lab.js";
+import { resolveChallenge } from "./challenges.js";
 import {
   ContactActions,
   bindTouchControls,
@@ -36,10 +40,12 @@ import {
   clamp,
   duplicateTrack,
   parseTrack,
+  serializeTrack,
 } from "./model.js";
 import { compile, nearest, atDistance } from "./track.js";
 import {
   STARTER,
+  BUILD_PRESETS,
   SLOTS,
   assemble,
   unlocked,
@@ -180,7 +186,8 @@ function download(name, text, type = "application/json") {
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 5000);
 }
-let dialogOrigin;
+let dialogOrigin,
+  dialogRevision = 0;
 let updateLock = null,
   updateUnlockTimer;
 function unlockUpdate(token) {
@@ -234,6 +241,7 @@ navigator.serviceWorker?.addEventListener("message", async (event) => {
   event.ports[0]?.postMessage({ token: message.token, safe });
 });
 function dialog(title, body, actions = [{ label: "Close" }]) {
+  dialogRevision++;
   const modal = q("modal");
   if (modal.open) modal.close();
   dialogOrigin = document.activeElement;
@@ -378,6 +386,92 @@ function events(mode) {
           else enterLeague(i);
         }),
     );
+  if (mode === "trial") {
+    const featured = document.createElement("button");
+    featured.className = "primary wide";
+    featured.textContent =
+      "Crew challenges · Bronze, Silver & Gold target ghosts";
+    featured.onclick = featuredChallenges;
+    q("event-list").prepend(featured);
+  }
+}
+async function featuredChallenges(invited = null) {
+  const token = ++prepareToken,
+    priorDialog = dialogRevision;
+  const body = document.createElement("div");
+  body.className = "challenge-list";
+  body.innerHTML =
+    "<p>Three circuits. Three reachable targets. Recorded runs use the starter car, 3 laps, manual throttle and steering assist off. Targets are local challenges; League unlocks are unchanged.</p>";
+  for (const target of content.targets) {
+    if (invited?.slug && target.slug !== invited.slug) continue;
+    const track = content.tracks.find(
+      (t) => t.track.slug === target.slug,
+    ).track;
+    const card = document.createElement("section");
+    card.innerHTML = `<h3>${esc(track.name)}</h3><p>${esc(track.description)}</p><p class="muted">By ${esc(target.creator)} · Mule / Courier / Road / Roll Cage</p>`;
+    for (const tier of ["bronze", "silver", "gold"]) {
+      const key = comparisonKey({
+        mode: "workshop",
+        trackRevision: target.trackRevision,
+        buildRevision: target.buildRevision,
+        laps: 3,
+        assist: target.assist,
+        challenge: `crew-${target.slug}`,
+      });
+      let best;
+      try {
+        best = await store?.get("best:" + key);
+      } catch {
+        /* racing remains available */
+      }
+      if (token !== prepareToken || priorDialog !== dialogRevision) return;
+      const b = document.createElement("button");
+      b.textContent = `${tier.toUpperCase()} · ${time(target.runs[tier].result.elapsedMs)}${best ? " · your best " + time(best.result.elapsedMs) : ""}`;
+      if (best && best.result.elapsedMs <= target.runs[tier].result.elapsedMs)
+        b.textContent += " · BEATEN";
+      if (invited?.tier === tier) {
+        b.className = "primary";
+        b.dataset.invited = "true";
+      }
+      b.onclick = () => {
+        q("modal").close();
+        beginRace(track, "workshop", {
+          published: true,
+          featured: { slug: target.slug, tier },
+          build: target.build,
+          settings: { assist: false, autoAccelerate: false },
+          challenge: `crew-${target.slug}`,
+        });
+      };
+      card.append(b);
+    }
+    const edit = document.createElement("button");
+    edit.textContent = "Remix in Workshop";
+    edit.onclick = async () => {
+      q("modal").close();
+      await openWorkshop();
+      await workshop.open(duplicateTrack(track));
+      notify(
+        "Edit this copy, finish a test, then use Set challenge target in Files.",
+      );
+    };
+    card.append(edit);
+    body.append(card);
+  }
+  dialog(
+    "CREW CHALLENGES",
+    body,
+    invited?.slug
+      ? [
+          { label: "All crew challenges", action: () => featuredChallenges() },
+          { label: "Close" },
+        ]
+      : [{ label: "Close" }],
+  );
+  (body.querySelector("[data-invited]") || body.querySelector("button"))?.focus(
+    { preventScroll: true },
+  );
+  q("modal").scrollTop = 0;
 }
 async function saveProgress() {
   if (!store) return;
@@ -581,6 +675,21 @@ async function beginRace(track, mode, options = {}) {
         challengeDate: options.challengeDate,
       }),
       best = await store?.get("best:" + key);
+    const target =
+      options.featured &&
+      content.targets.find((t) => t.slug === options.featured.slug);
+    const targetRun = target?.runs[options.featured.tier];
+    if (
+      options.featured &&
+      (!targetRun ||
+        target.trackRevision !== trackRevision ||
+        target.buildRevision !== buildRevision ||
+        target.assist !== assist ||
+        target.laps !== laps)
+    )
+      throw Error(
+        "That target replay does not match this track, build or control setup.",
+      );
     if (token !== prepareToken) return;
     const cup = mode === "league" ? progress.cup : null,
       ai = mode === "league" || mode === "exhibition" || options.ai,
@@ -624,8 +733,15 @@ async function beginRace(track, mode, options = {}) {
           : cup?.difficulty || q("difficulty").value,
       cars,
       ghost: [],
-      bestGhost: best?.ghost || null,
+      bestGhost: targetRun
+        ? new Float32Array(targetRun.ghost.flat())
+        : best?.ghost || null,
       previousBest: best?.result || null,
+      target,
+      targetRun,
+      rivalObjective: ai
+        ? roster[(cup?.rounds.length || 0) % roster.length]
+        : null,
       challenge: options.challenge,
       challengeDate: options.challengeDate,
       cupId: cup?.id,
@@ -676,6 +792,12 @@ async function beginRace(track, mode, options = {}) {
         exhibition: "QUICK RACE · 2 LAPS",
         league: race.difficulty.toUpperCase(),
       }[mode];
+    if (targetRun)
+      q("race-title").textContent =
+        `${track.name.toUpperCase()} / ${options.featured.tier.toUpperCase()} ${time(targetRun.result.elapsedMs)} · CREW GHOST`;
+    if (options.targetMs)
+      q("race-title").textContent =
+        `${track.name.toUpperCase()} / BEAT ${time(options.targetMs)} · BY ${options.creator}`;
     document.body.classList.toggle("touch", settings.touch);
     document.body.dataset.auto = String(raceSettings.autoAccelerate);
     q("practice-progress").hidden = mode !== "lesson";
@@ -713,11 +835,26 @@ function pause(reason = "Take a breath. The race clock is stopped.") {
     },
     { label: "Restart race", action: () => restart() },
     {
-      label: race.mode === "workshop" ? "Return to editor" : "Leave race",
+      label:
+        race.mode === "workshop"
+          ? race.options.published
+            ? "Back to yard"
+            : "Return to editor"
+          : "Leave race",
       action: abandon,
     },
   ];
-  dialog("PAUSED", reason, actions);
+  dialog(
+    "PAUSED",
+    reason +
+      (race.rivalObjective
+        ? " Rival goal: finish ahead of " +
+          race.cars.find((c) => c.id === race.rivalObjective).name +
+          ". " +
+          rivalBehavior(race.rivalObjective).description
+        : ""),
+    actions,
+  );
 }
 function resume() {
   if (!world?.available() || !world.render(race, view, settings, 0)) {
@@ -748,8 +885,10 @@ function abandon() {
   if (race.mode === "workshop") {
     q("modal").close();
     const fromGarage = race.options.garageTest;
+    const published = race.options.published;
     race = null;
     if (fromGarage) openGarage(garageOrigin);
+    else if (published) show("start");
     else show("workshop");
     return;
   }
@@ -859,7 +998,14 @@ function updateHUD() {
                 ...settings,
                 autoAccelerate: race.settingsSnapshot.autoAccelerate,
               })
-            : "";
+            : p.insights?.feedbackUntil > race.time
+              ? p.insights.feedback
+              : race.rivalObjective
+                ? "Rival goal: finish ahead of " +
+                  race.cars.find((c) => c.id === race.rivalObjective).name
+                : race.targetRun
+                  ? `Chase ${race.options.featured.tier}: ${time(race.targetRun.result.elapsedMs)} · clean exits earn boost`
+                  : "Clean exit above 43 km/h · up to +6 boost per bend";
   q("race-message").textContent = message;
   if (race.practice)
     q("practice-progress").textContent = [
@@ -914,7 +1060,13 @@ function updateHUD() {
   }
 }
 async function finish() {
-  if (savingResult || !race || race.state !== "finished" || typeof race.dnf !== "boolean") return;
+  if (
+    savingResult ||
+    !race ||
+    race.state !== "finished" ||
+    typeof race.dnf !== "boolean"
+  )
+    return;
   savingResult = true;
   sound.stop();
   q("countdown").textContent = "";
@@ -924,11 +1076,15 @@ async function finish() {
   show("result");
   q("result-kicker").textContent = result.dnf
     ? "ATTEMPT ENDED"
-    : race.mode === "workshop"
-      ? "WORKSHOP / TEST COMPLETE"
-      : race.mode === "lesson"
-        ? "YOU KNOW THE WAY"
-        : "FINISH LINE / " + race.mode.toUpperCase();
+    : race.options.featured
+      ? "CREW CHALLENGE / " + race.options.featured.tier.toUpperCase()
+      : race.options.targetMs
+        ? "FIXED WORKSHOP CHALLENGE / BY " + race.options.creator
+        : race.mode === "workshop"
+          ? "WORKSHOP / TEST COMPLETE"
+          : race.mode === "lesson"
+            ? "YOU KNOW THE WAY"
+            : "FINISH LINE / " + race.mode.toUpperCase();
   const place = result.classification.findIndex((c) => c.id === "player") + 1;
   q("result-title").textContent = result.dnf
     ? "TRY THAT AGAIN."
@@ -953,13 +1109,32 @@ async function finish() {
     `<div><span>RACE TIME</span><strong>${result.dnf ? "DNF" : time(result.elapsedMs)}</strong></div><div><span>BEST LAP</span><strong>${result.splits.length ? time(Math.min(...result.splits)) : "—"}</strong></div><div><span>PLACE</span><strong>${place} / ${race.cars.length}</strong></div>`;
   q("result-ranking").innerHTML =
     `<table class="ranking"><tbody>${result.classification.map((c, i) => `<tr class="${c.id === "player" ? "player" : ""}"><td>${i + 1}</td><td>${esc(c.name)}</td><td>${c.time === null ? "Behind" : time(c.time)}</td></tr>`).join("")}</tbody></table><p class="muted">${result.splits.map((s, i) => "Lap " + (i + 1) + " · " + time(s)).join(" / ")}</p>`;
-  q("result-tip").textContent = result.dnf
-    ? "The cup remains before this round. Retry whenever you are ready."
-    : result.contacts === 0
-      ? "A clean run. No solid contacts recorded."
-      : result.resets
-        ? `${result.resets} reset${result.resets === 1 ? "" : "s"} this run. Each reset kept the race clock running.`
-        : `${result.contacts} contact steps recorded. Try braking before the bend.`;
+  q("result-tip").textContent = coaching(
+    result,
+    race.previousBest || race.targetRun?.result,
+  );
+  const comparison = race.previousBest || race.targetRun?.result;
+  const goal = document.createElement("p");
+  if (!result.dnf && race.target) {
+    const ladder = Object.fromEntries(
+      Object.entries(race.target.runs).map(([tier, run]) => [
+        tier,
+        run.result.elapsedMs,
+      ]),
+    );
+    const achieved = nextGoal(result.elapsedMs, ladder);
+    goal.textContent = `${achieved.achieved ? achieved.achieved.toUpperCase() + " TARGET BEATEN" : "TARGET IN REACH"} · ${achieved.next ? (achieved.gapMs / 1000).toFixed(2) + "s to " + achieved.next.tier : "All three targets beaten. Try a Workshop remix."}`;
+  } else if (!result.dnf && race.options.targetMs) {
+    goal.textContent = `${result.elapsedMs <= race.options.targetMs ? "CHALLENGE BEATEN" : ((result.elapsedMs - race.options.targetMs) / 1000).toFixed(2) + "s TO TARGET"} · by ${race.options.creator}`;
+  } else if (!result.dnf && race.rivalObjective) {
+    const rivalIndex = result.classification.findIndex(
+      (c) => c.id === race.rivalObjective,
+    );
+    goal.textContent = `Rival goal ${place - 1 < rivalIndex ? "complete" : "next attempt"}: finish ahead of ${result.classification[rivalIndex].name}. ${rivalBehavior(race.rivalObjective).description}`;
+  }
+  if (comparison && !result.dnf)
+    goal.textContent += ` · ${(Math.abs(result.elapsedMs - comparison.elapsedMs) / 1000).toFixed(2)}s ${result.elapsedMs <= comparison.elapsedMs ? "ahead of" : "behind"} ${race.previousBest ? "your compatible best" : "the crew target"}.`;
+  q("result-ranking").append(goal);
   q("result-reward").textContent = "";
   q("result-save").textContent = "Saving result…";
   renderResultActions();
@@ -1006,13 +1181,27 @@ function renderResultActions() {
     );
   else if (race.mode === "lesson")
     button("Enter the league", () => enterLeague(), true);
+  if (race.options.featured)
+    button("Choose next crew target", featuredChallenges);
   button(
     "Race again",
     restart,
     ["trial", "daily", "exhibition"].includes(race.mode),
   );
   if (!race.saved) button("Retry save", persistResult);
-  button("Share result", shareResult);
+  if (race.mode === "workshop" && !race.options.published)
+    button(
+      race.track.source.challenge
+        ? "Export challenge HTML"
+        : "Export circuit HTML",
+      () =>
+        download(
+          race.track.source.slug + ".html",
+          serializeTrack(race.track.source),
+          "text/html",
+        ),
+    );
+  else button("Share result", shareResult);
   if (
     ["trial", "daily"].includes(race.mode) &&
     !race.result.dnf &&
@@ -1063,7 +1252,11 @@ async function persistResult() {
       !race.options.garageTest &&
       !race.options.published
     )
-      await workshop.markTest(race.trackRevision);
+      await workshop.markTest(
+        race.trackRevision,
+        result,
+        race.settingsSnapshot,
+      );
     const newly = progress.completed.filter((n) => !before.includes(n)),
       rewards =
         result.mode === "league"
@@ -1153,8 +1346,11 @@ function invitationForRace() {
       race.result.challengeDate ||
       content.daily.find((d) => d.id === race.result.challenge)?.date ||
       "",
-    slug: race.track.source.slug,
+    slug: content.tracks.some((t) => t.track.id === race.track.source.id)
+      ? race.track.source.slug
+      : "",
     publishedId: race.options.published ? race.track.source.id : "",
+    crew: race.options.featured,
   });
 }
 async function shareResult() {
@@ -1255,6 +1451,73 @@ function refreshGarage() {
     );
   q("garage-status").textContent =
     "Values are physical specifications, not an overall performance rating.";
+  let presets = q("suggested-builds");
+  if (!presets) {
+    presets = document.createElement("section");
+    presets.id = "suggested-builds";
+    q("part-slots").before(presets);
+  }
+  presets.innerHTML =
+    "<h3>Choose a driving style</h3>" +
+    BUILD_PRESETS.map((p, i) => {
+      const available = SLOTS.every((s) =>
+        unlocked(assemble(p.build, content.parts)[s], progress),
+      );
+      return `<button data-style="${i}">${esc(p.name)}${!available && garageOrigin !== "workshop" ? " · preview" : ""}<small>${esc(p.description)}</small></button>`;
+    }).join("") +
+    '<button id="compare-styles">Compare on the same 20-second section</button>';
+  presets.querySelectorAll("[data-style]").forEach(
+    (b) =>
+      (b.onclick = () => {
+        garageBuild = clone(BUILD_PRESETS[+b.dataset.style].build);
+        refreshGarage();
+      }),
+  );
+  q("compare-styles").onclick = compareStyles;
+}
+async function compareStyles() {
+  const build = clone(garageBuild);
+  const body = document.createElement("div");
+  body.innerHTML =
+    '<p>Yard Loop · standing start · 20 seconds · same deterministic controller, manual throttle, assist off. Measured simulation, not a human skill rating. All builds may be previewed here; League unlocks still apply.</p><p role="status">Measuring builds…</p>';
+  dialog("BUILD COMPARISON", body);
+  body.tabIndex = -1;
+  body.focus({ preventScroll: true });
+  q("modal").scrollTop = 0;
+  const rows = [];
+  for (const entry of [{ name: "Your selection", build }, ...BUILD_PRESETS]) {
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    if (!q("modal").open || !body.isConnected) return;
+    rows.push({
+      name: entry.name,
+      ...measureBuild(content.tracks[0].track, entry.build, content.parts),
+    });
+  }
+  if (!body.isConnected) return;
+  body.querySelector('[role="status"]').remove();
+  const list = document.createElement("div");
+  list.className = "comparison-results";
+  for (const r of rows) {
+    const card = document.createElement("section");
+    card.innerHTML = `<h3>${esc(r.name)}</h3><p>${r.meters} m advanced · ${r.exitKmh} km/h at 20s<br>${r.incidents} contact incidents · ${r.maxSlip} m/s peak sideways speed</p>`;
+    list.append(card);
+  }
+  body.append(list);
+}
+async function raceWorkshopChallenge(track, published = true) {
+  const token = ++prepareToken,
+    priorDialog = dialogRevision;
+  try {
+    const fixed = await resolveChallenge(track, content.parts);
+    if (token !== prepareToken || priorDialog !== dialogRevision) return;
+    if (!fixed)
+      throw Error(
+        "This circuit has no saved target. Finish a test and set one in Workshop Files.",
+      );
+    await beginRace(track, "workshop", { ...fixed, published, ai: false });
+  } catch (e) {
+    notify(e.message, true);
+  }
 }
 async function closeGarage() {
   const legal = SLOTS.every((s) =>
@@ -1335,7 +1598,7 @@ function settingsDialog() {
     lowEffects: "Reduced visual effects",
     safeGraphics: "Lower canvas resolution",
     reducedMotion: "Reduced motion",
-    ghost: "Show compatible personal-best ghost",
+    ghost: "Show replay ghost (personal best or crew target)",
     touch: "Show touch controls",
     leftHanded: "Swap touch control sides",
     largeHud: "Larger race display",
@@ -2375,8 +2638,20 @@ async function openNativeRoute() {
         track.name,
         (installedFallback
           ? "Online circuit page unavailable. This circuit is from the installed pack. "
-          : "") + "Race this circuit or open an editable copy.",
+          : "") +
+          track.description +
+          (track.challenge
+            ? ` Challenge by ${track.challenge.creator} · beat ${time(track.challenge.targetMs)} with the fixed setup.`
+            : " Race this circuit or open an editable copy."),
         [
+          ...(track.challenge
+            ? [
+                {
+                  label: "Race fixed challenge",
+                  action: () => raceWorkshopChallenge(track),
+                },
+              ]
+            : []),
           {
             label: "Race circuit",
             action: () =>
@@ -2454,6 +2729,7 @@ async function init() {
     world = createWorld(q("world"));
     workshop = new Workshop(q("screen-workshop"), {
       store,
+      parts: content.parts,
       templates: content.tracks.map((t) => t.track),
       onTest: (t, ai) =>
         beginRace(t, "workshop", {
@@ -2464,6 +2740,8 @@ async function init() {
       dialog,
       download,
       build: () => openGarage("workshop"),
+      onFeatured: featuredChallenges,
+      onChallenge: (t) => raceWorkshopChallenge(t, false),
     });
     q("sound-toggle").textContent = settings.sound ? "Sound on" : "Sound off";
     sound.enabled = settings.sound;
@@ -2471,12 +2749,19 @@ async function init() {
     document.body.classList.toggle("touch", settings.touch);
     applyPreferences();
     show("start");
+    q("crew-challenges").onclick = featuredChallenges;
     checkOffline();
     requestAnimationFrame(frame);
     if (/^\/(editor|track)(\/|$)/.test(location.pathname))
       await openNativeRoute();
     if (/^#daily=\d{4}-\d{2}-\d{2}$/.test(location.hash))
       await daily(location.hash.slice(7));
+    if (/^#crew=[a-z-]+:(bronze|silver|gold)$/.test(location.hash)) {
+      const [slug, tier] = location.hash.slice(6).split(":");
+      await featuredChallenges(
+        content.targets.some((t) => t.slug === slug) ? { slug, tier } : null,
+      );
+    }
     if (location.hash.startsWith("#workshop=")) {
       try {
         const track = await readPublishedTrack(location.hash.slice(10));
@@ -2486,8 +2771,19 @@ async function init() {
         });
         dialog(
           track.name,
-          "Race this published circuit or open an editable copy.",
+          track.description +
+            (track.challenge
+              ? ` Challenge by ${track.challenge.creator} · beat ${time(track.challenge.targetMs)} with the fixed setup.`
+              : " Race this published circuit or open an editable copy."),
           [
+            ...(track.challenge
+              ? [
+                  {
+                    label: "Race fixed challenge",
+                    action: () => raceWorkshopChallenge(track),
+                  },
+                ]
+              : []),
             {
               label: "Race circuit",
               action: () =>

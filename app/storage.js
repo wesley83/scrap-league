@@ -187,6 +187,46 @@ function validateRecord(key, value) {
 }
 function validateResult(value) {
   if (
+    value?.sectors !== undefined &&
+    (!Array.isArray(value.sectors) ||
+      value.sectors.length > 300 ||
+      value.sectors.some(
+        (s, i, list) =>
+          !s ||
+          !Number.isInteger(s.order) ||
+          s.order < 0 ||
+          s.order > 32 ||
+          !Number.isInteger(s.lap) ||
+          s.lap < 0 ||
+          s.lap > 8 ||
+          !Number.isSafeInteger(s.durationMs) ||
+          s.durationMs < 1 ||
+          s.durationMs > 480000 ||
+          !Number.isSafeInteger(s.endMs) ||
+          s.endMs < 1 ||
+          s.endMs > 480000 ||
+          s.endMs - (list[i - 1]?.endMs || 0) !== s.durationMs ||
+          !Number.isSafeInteger(s.stoppedMs) ||
+          s.stoppedMs < 0 ||
+          s.stoppedMs > s.endMs + 20 ||
+          !Number.isInteger(s.incidents) ||
+          s.incidents < 0 ||
+          s.incidents > 57600 ||
+          !Number.isInteger(s.resets) ||
+          s.resets < 0 ||
+          s.resets > 57600,
+      ))
+  )
+    throw Error("Invalid saved sector telemetry.");
+  for (const field of ["incidents", "cleanExits"])
+    if (
+      value?.[field] !== undefined &&
+      (!Number.isInteger(value[field]) ||
+        value[field] < 0 ||
+        value[field] > 57600)
+    )
+      throw Error("Invalid saved driving telemetry.");
+  if (
     !value ||
     typeof value.id !== "string" ||
     value.id.length > 100 ||
@@ -204,7 +244,8 @@ function validateResult(value) {
     value.splits.length > 9 ||
     value.splits.some((n) => !Number.isFinite(n) || n <= 0) ||
     (!value.dnf &&
-      (!value.splits.length || value.splits.reduce((sum, n) => sum + n, 0) !== value.elapsedMs)) ||
+      (!value.splits.length ||
+        value.splits.reduce((sum, n) => sum + n, 0) !== value.elapsedMs)) ||
     !Array.isArray(value.classification) ||
     value.classification.length > 6 ||
     value.classification.some(
@@ -740,7 +781,8 @@ export class Store {
   }
   retryRejectedRun(id, now = Date.now()) {
     return this.atomic((tx, done, fail) => {
-      const records = tx.objectStore("outbox"), key = "outbox:" + id;
+      const records = tx.objectStore("outbox"),
+        key = "outbox:" + id;
       const request = records.get(key);
       request.onsuccess = () => {
         const old = request.result;
@@ -750,13 +792,25 @@ export class Store {
         }
         const all = records.getAll();
         all.onsuccess = () => {
-          if (all.result.filter(value => ["pending", "retry", "sending"].includes(value.state)).length >= 100) {
-            fail(Error("The pending score queue is full. Your rejected time is kept."));
+          if (
+            all.result.filter((value) =>
+              ["pending", "retry", "sending"].includes(value.state),
+            ).length >= 100
+          ) {
+            fail(
+              Error(
+                "The pending score queue is full. Your rejected time is kept.",
+              ),
+            );
             return;
           }
-          const next = { ...old, state: "retry", lease: null,
+          const next = {
+            ...old,
+            state: "retry",
+            lease: null,
             message: "Retry requested by player.",
-            nextAttemptAt: Math.max(now, old.serverRetryAt || 0) };
+            nextAttemptAt: Math.max(now, old.serverRetryAt || 0),
+          };
           records.put(next, key);
           done(next);
         };

@@ -5,7 +5,45 @@ export const STARTER = {
   utility: "roll-cage",
 };
 export const SLOTS = ["chassis", "engine", "tires", "utility"];
-export const RULES = "scrap-physics-v1.1.0";
+export const RULES = "scrap-physics-v1.2.0";
+export const BUILD_PRESETS = Object.freeze([
+  {
+    id: "grip",
+    name: "Grip Specialist",
+    description:
+      "Light chassis, road tires and quick recovery. Trade top speed for asphalt corners.",
+    build: {
+      chassis: "kite",
+      engine: "courier",
+      tires: "road",
+      utility: "flywheel",
+    },
+  },
+  {
+    id: "rocket",
+    name: "Straight-Line Rocket",
+    description:
+      "Longrunner and extra boost storage. Brake early; weight costs agility.",
+    build: {
+      chassis: "anvil",
+      engine: "longrunner",
+      tires: "road",
+      utility: "capacitor",
+    },
+  },
+  {
+    id: "stable",
+    name: "Stable All-Rounder",
+    description:
+      "Mule, mixed tires and roll cage. A forgiving compromise across loose and paved roads.",
+    build: {
+      chassis: "mule",
+      engine: "courier",
+      tires: "mixed",
+      utility: "roll-cage",
+    },
+  },
+]);
 export function assemble(build, parts) {
   const p = {};
   for (const slot of SLOTS) {

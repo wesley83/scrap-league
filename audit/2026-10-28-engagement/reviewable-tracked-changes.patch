@@ -1,0 +1,1813 @@
+diff --git a/GAME-DESIGN.md b/GAME-DESIGN.md
+index b21a8a3..d3f86d4 100644
+--- a/GAME-DESIGN.md
++++ b/GAME-DESIGN.md
+@@ -192,3 +192,10 @@ Track sharing distinguishes a published link from a downloadable HTML definition
+ ## Definition of the first complete experience
+ 
+ A player can finish all four cups, understand and change a car build, retry a time trial, play the correct daily challenge, create a valid circuit from scratch, race it against five AI cars, recover the draft after interruption, export/import it without changing its meaning, and publish through the authorized owner flow. The same player can install/download the game, relaunch offline, and later apply an update without losing progress or creations. Each promise requires the evidence in ACCEPTANCE.md.
++# Engagement revision — October 28, 2026
++
++The six connected additions are implemented in the local candidate: a three-tier crew ghost ladder on three circuits, recorded sector coaching, a clean-exit resource reward, legal surface/pad line choices with landmarks, garage style presets with a measured comparison, deterministic rival strategies/objectives, and a creator-credit/fixed-setup Workshop challenge loop. See PLAY.md for player rules and audit/2026-10-28-engagement/plan.md for the outcome contract.
++
++Driving rules are `scrap-physics-v1.2.0`. Historical records, cup attempts and installed releases retain their old identities; new results cannot enter an old comparison bucket. Official target recordings in references/target-runs.json are derived from current authoritative HTML, part physics and the ordinary controller by the explicit tools/record-targets.mjs maintenance command. Normal builds validate them and refuse stale revisions. They are measured trajectories, not hand-drawn guides or invented timings.
++
++Retention/enjoyment is a design hypothesis. Available evidence establishes legal traversals, differentiated choices, deterministic rivals, feedback, save/import recovery and browser usability under the reported fixtures. It does not establish unobserved player enjoyment or physical-device behavior.
+diff --git a/IMPLEMENTATION-STATUS.md b/IMPLEMENTATION-STATUS.md
+index 9cc3249..560895a 100644
+--- a/IMPLEMENTATION-STATUS.md
++++ b/IMPLEMENTATION-STATUS.md
+@@ -1,5 +1,11 @@
+ # Scrap League implementation and release status
+ 
++## Six engagement improvements — October 28, 2026
++
++The local candidate adds crew target ghosts/coaching, clean-exit boost rewards, three authored risk/reward lines and landmarks, explained/measured garage presets, distinct legal rival strategies/goals, and fixed-setup Workshop challenges with creator credit and HTML sharing. New E1–E6 requirement rows supplement existing obligations. Current evidence and explicit limits are in audit/2026-10-28-engagement/report.md; earlier acceptance does not certify this changed candidate.
++
++Driving rules are 1.2.0 and three official geometry revisions changed. Existing public leaderboard records and prior immutable releases have not been rewritten. This entry describes local implementation, not a new hosted deployment. A later deployment must refresh the exact-candidate release evidence and migrate existing board identity policies through the established preservation path, retaining player records. The six new features do not require a new public write service.
++
+ ## Phone layout repair — October 18, 2026
+ 
+ The [responsive-layout report](audit/2026-10-18-phone-layout/report.md) and current acceptance ledger identify this candidate's verified scope. The phone home menu explicitly resets the inherited two-column grid, wraps actions within bounded columns and sizes its heading to the available width. Its scrollable stage uses the space remaining after the actual header/footer, including enlarged text and safe-area spacing. R01 adds required home-action geometry, text-size, phone-journey and viewport/safe-region evidence; previous Workshop/Settings checks did not establish home-menu responsiveness. The 2.11 layout guidance supplement and the retained 2.10 baseline are distinguished in the inventory. Native/physical checks remain excluded.
+diff --git a/PLAY.md b/PLAY.md
+index 7c65538..5975c7f 100644
+--- a/PLAY.md
++++ b/PLAY.md
+@@ -70,3 +70,16 @@ The local game and editor work without a Pagelove credential. Owner publication
+ Real-hardware sessions, human playtesting and perceptual listening are outside required scope by user instruction. Available-browser and automated checks remain required. This candidate does not yet pass every production release row in ACCEPTANCE.md.
+ 
+ If the racing view is blank, open **Settings → Repair graphics**. This rebuilds the view using safer graphics without erasing your progress. During a race, the clock stays paused until you choose Resume. Phones use safer graphics by default; the setting can also be toggled in Settings.
++# October 28 engagement update
++
++**Crew challenges** on the home menu offers Bronze, Silver and Gold recorded ghosts on Yard Loop, Dockside Dash and Furnace Bend. Each uses Mule / Courier / Road / Roll Cage, three laps, manual throttle and steering assist off. These are local target runs; League rewards and public Trial/Daily boards remain separate. Your compatible best is remembered. Results show the next target, its gap and coaching from recorded sectors. Ghost visibility is available in Settings.
++
++**Clean exits** earn up to six boost charge, within your car's capacity, once per bend per lap. Follow the checkpoints, enter and traverse the bend forward, stay within the road, avoid contact/reset/handbraking and straighten the car above 43 km/h on exit. Slow or sliding exits earn nothing. The HUD names successful exits. Checkpoint charge and pad/driver boost rules still apply; no extra button is required.
++
++The three featured circuits have an inside gravel line and a narrow turquoise boost strip on the exit. Center asphalt offers recovery space. The paired yellow lights and named gantry/dock/furnace landmark help locate the decision. Road boundaries and checkpoints apply to both lines.
++
++**Garage driving styles** preview Grip Specialist, Straight-Line Rocket and Stable All-Rounder. Locked parts remain previews for League; Workshop can test every part. Compare the builds on the same measured 20-second Yard Loop section, then drive the selection yourself with Test this build. More meters indicates faster progress on that section; lower sideways speed indicates less sliding. Other tracks and surfaces can change the tradeoff.
++
++**Rival goals** name a racer in the actual roster. Bea brakes earlier, Kit commits to an inside pass near bends, and Mags reserves charge for a straight-line overtake. All use normal steering, throttle, brakes and boost; their physics and collision rules match the player's.
++
++**Workshop challenges:** choose a featured circuit, Remix in Workshop, edit it and finish a valid test. Files → Set challenge target captures that completed time, car, laps and control setup with your creator credit. Files → Race saved challenge uses the fixed setup. Export HTML shares it offline; recipients use Files → Import HTML. Import preserves a valid target in a separate copy; Remix/Duplicate clears it for a new creator run. Geometry edits clear the target. Owner publication and its existing share link remain available from Tools. Challenge times are client-reported, not competitive verification.
+diff --git a/TRACK-WORKSHOP.md b/TRACK-WORKSHOP.md
+index d69ae57..79c4c4d 100644
+--- a/TRACK-WORKSHOP.md
++++ b/TRACK-WORKSHOP.md
+@@ -136,3 +136,10 @@ Deleting a published track is outside the editor's first-release UI; archive it
+ ## Acceptance journeys
+ 
+ The bundled editor is complete only after a keyboard user and a touch user can each create a closed circuit, correct an invalid connection, set gates, test a lap, return, undo an edit, recover after reload and export/import the result. The owner flow additionally needs a real conditional-write conflict, ambiguous-save reconciliation and readback on the selected Pagelove host. Official tracks must round-trip through the editor without changing gameplay meaning.
++# Fixed-setup challenge workflow — October 28, 2026
++
++Home → Crew challenges → Remix in Workshop opens a new editable identity. Edit and finish a valid ordinary test; Files → Set challenge target captures the actual time/build/laps/assistance and a public creator credit (1–40 printable characters). The target is optional semantic `TrackChallenge` data in the authoritative HTML document. It is never executable content.
++
++Files → Race saved challenge validates the physical source/rules revision and uses the captured car and control setup. Invalid/stale targets cannot launch; ordinary tests and importing without the target remain available. Editing gameplay clears the target. Duplicate/remix creates new IDs and requires a new target run. Import validates an existing target, remaps all entity IDs for a safe separate local copy and rebinds only its physical-source identity; geometry, time, attribution and fixed setup are unchanged. Imported targets remain client-reported.
++
++Export HTML distributes the circuit and target offline. The result screen also exports its captured circuit/challenge instead of sharing a link to an unpublished draft. The existing owner publication path publishes the complete semantic document and validates a present challenge before sending. Recipients of a published link can choose Race fixed challenge or edit a separate copy. Owner credentials are not stored. Ordinary public score submission is still limited to official Trial/Daily results.
+diff --git a/app/ai-profile.js b/app/ai-profile.js
+index 3f5d3cb..0d87cf1 100644
+--- a/app/ai-profile.js
++++ b/app/ai-profile.js
+@@ -4,6 +4,61 @@ export const AI_PROFILES = Object.freeze({
+   club: { reaction: 0.14, mistake: 0.06, error: 0.08 },
+   expert: { reaction: 0.075, mistake: 0.02, error: 0.04 },
+ });
++const DEFAULT_TACTIC = Object.freeze({
++  brakeMargin: 7,
++  reserve: 25,
++  pass: 2.4,
++  wander: 1,
++  description: "Looks for room on the straight.",
++});
++export const RIVAL_BEHAVIORS = Object.freeze({
++  bea: {
++    brakeMargin: 15,
++    reserve: 35,
++    pass: 1.6,
++    wander: 0.2,
++    description: "Bea brakes early and protects a clean exit.",
++  },
++  kit: {
++    brakeMargin: 3,
++    reserve: 25,
++    pass: 2.6,
++    wander: 0.4,
++    description: "Kit commits to an inside pass near a bend.",
++  },
++  mags: {
++    brakeMargin: 10,
++    reserve: 55,
++    pass: 2.4,
++    wander: 0.5,
++    description: "Mags stores boost for a straight-line overtake.",
++  },
++  otto: {
++    ...DEFAULT_TACTIC,
++    pass: 1.2,
++    wander: 0.1,
++    description: "Otto holds a steady central line.",
++  },
++  sol: {
++    ...DEFAULT_TACTIC,
++    brakeMargin: 14,
++    description: "Sol leaves a wide braking margin.",
++  },
++  patch: {
++    ...DEFAULT_TACTIC,
++    brakeMargin: 16,
++    pass: 1.5,
++    description: "Patch gives traffic space on loose roads.",
++  },
++  pip: {
++    ...DEFAULT_TACTIC,
++    brakeMargin: 4,
++    pass: 2.8,
++    reserve: 15,
++    description: "Pip takes passing opportunities early.",
++  },
++});
++export const rivalBehavior = (id) => RIVAL_BEHAVIORS[id] || DEFAULT_TACTIC;
+ export function seededValue(seed, id, decision) {
+   let hash = 2166136261;
+   for (const char of `${seed}:${id}:${decision}`) {
+diff --git a/app/arcade-renderer.js b/app/arcade-renderer.js
+index c6031dd..1bf21cb 100644
+--- a/app/arcade-renderer.js
++++ b/app/arcade-renderer.js
+@@ -419,9 +419,11 @@ export class World {
+       ctx.fillStyle =
+         p.kind === "pad"
+           ? "#63c5b5"
+-          : p.kind === "barrier"
+-            ? "#182c30"
+-            : "#73826d";
++          : p.kind === "light"
++            ? "#ffd34e"
++            : p.kind === "barrier"
++              ? "#182c30"
++              : "#73826d";
+       ctx.fillRect(-p.length / 2, -p.width / 2, p.length, p.width);
+       ctx.strokeStyle = p.kind === "pad" ? "#e9f8d5" : "#f0d481";
+       ctx.lineWidth = 0.25;
+@@ -436,6 +438,31 @@ export class World {
+         }
+       ctx.restore();
+     }
++    // Landmarks are presentation derived from authored track description/props.
++    const landmark = t.source.description.split(":")[0];
++    const lights = t.props.filter((p) => p.kind === "light");
++    if (
++      lights.length >= 2 &&
++      t.source.description.includes(":") &&
++      landmark.length <= 32
++    ) {
++      const a = lights.at(-2),
++        b = lights.at(-1);
++      ctx.strokeStyle = "#ffd34e";
++      ctx.lineWidth = 0.8;
++      ctx.beginPath();
++      ctx.moveTo(a.x, a.z);
++      ctx.lineTo(b.x, b.z);
++      ctx.stroke();
++      ctx.save();
++      ctx.translate(a.x, a.z);
++      ctx.rotate(a.heading);
++      ctx.font = "bold 3px sans-serif";
++      ctx.fillStyle = t.source.scenePreset === "night" ? "#fff4cf" : "#18343b";
++      ctx.textAlign = "center";
++      ctx.fillText(landmark.toUpperCase(), 5, -5);
++      ctx.restore();
++    }
+     this.drawGate(ctx, t.gates[0]);
+     for (const s of t.grid) {
+       ctx.save();
+diff --git a/app/arcade.css b/app/arcade.css
+index 43f76d0..55caf51 100644
+--- a/app/arcade.css
++++ b/app/arcade.css
+@@ -111,7 +111,10 @@ body[data-view="start"] {
+   height: 100vh;
+   height: 100dvh;
+   min-height: 0;
+-  padding-bottom: max(var(--host-footer-space, 0px), env(safe-area-inset-bottom, 0px));
++  padding-bottom: max(
++    var(--host-footer-space, 0px),
++    env(safe-area-inset-bottom, 0px)
++  );
+ }
+ body[data-view="start"] #header {
+   flex: 0 0 auto;
+@@ -1193,3 +1196,37 @@ dialog::backdrop {
+   min-width: 0;
+   overflow-wrap: anywhere;
+ }
++
++/* Engagement controls remain stacked and reachable on narrow screens. */
++.challenge-list,
++.comparison-results {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
++  gap: 18px;
++}
++.challenge-list > p {
++  grid-column: 1 / -1;
++}
++.challenge-list section,
++.comparison-results section,
++#suggested-builds {
++  min-width: 0;
++  overflow-wrap: anywhere;
++}
++.challenge-list button,
++#suggested-builds button {
++  display: block;
++  width: 100%;
++  margin: 8px 0;
++  white-space: normal;
++  min-height: 44px;
++  text-align: left;
++}
++#suggested-builds button small {
++  display: block;
++  font-size: 0.8em;
++  margin-top: 5px;
++}
++#race-message {
++  pointer-events: none;
++}
+diff --git a/app/builds.js b/app/builds.js
+index 1e3c9e4..f6a5ad0 100644
+--- a/app/builds.js
++++ b/app/builds.js
+@@ -5,7 +5,45 @@ export const STARTER = {
+   utility: "roll-cage",
+ };
+ export const SLOTS = ["chassis", "engine", "tires", "utility"];
+-export const RULES = "scrap-physics-v1.1.0";
++export const RULES = "scrap-physics-v1.2.0";
++export const BUILD_PRESETS = Object.freeze([
++  {
++    id: "grip",
++    name: "Grip Specialist",
++    description:
++      "Light chassis, road tires and quick recovery. Trade top speed for asphalt corners.",
++    build: {
++      chassis: "kite",
++      engine: "courier",
++      tires: "road",
++      utility: "flywheel",
++    },
++  },
++  {
++    id: "rocket",
++    name: "Straight-Line Rocket",
++    description:
++      "Longrunner and extra boost storage. Brake early; weight costs agility.",
++    build: {
++      chassis: "anvil",
++      engine: "longrunner",
++      tires: "road",
++      utility: "capacitor",
++    },
++  },
++  {
++    id: "stable",
++    name: "Stable All-Rounder",
++    description:
++      "Mule, mixed tires and roll cage. A forgiving compromise across loose and paved roads.",
++    build: {
++      chassis: "mule",
++      engine: "courier",
++      tires: "mixed",
++      utility: "roll-cage",
++    },
++  },
++]);
+ export function assemble(build, parts) {
+   const p = {};
+   for (const slot of SLOTS) {
+diff --git a/app/index.html b/app/index.html
+index 0fb3249..4826ad5 100644
+--- a/app/index.html
++++ b/app/index.html
+@@ -2,7 +2,7 @@
+ <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#142b31"><meta name="description" content="Build your car. Find your line. Race twelve scrapyard circuits, then make your own in the bundled Track Workshop."><title>Scrap League — Make it. Race it.</title><link rel="canonical" href="https://hire-poker-8313.onpagelove.com/"><meta property="og:title" content="Scrap League — Make it. Race it."><meta property="og:description" content="Build your car, race twelve scrapyard circuits, and make your own in the Track Workshop."><meta property="og:type" content="website"><meta property="og:url" content="https://hire-poker-8313.onpagelove.com/"><meta property="og:image" content="__PUBLIC_RELEASE__social/og-landscape-v1.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1726"><meta property="og:image:height" content="911"><meta property="og:image:alt" content="Scrap League overhead arcade racing: numbered cars, a scrapyard circuit, and a bundled track workshop."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Scrap League"><meta name="twitter:description" content="Build your car. Find your line. Make your own circuits."><meta name="twitter:image" content="__PUBLIC_RELEASE__social/og-landscape-v1.png"><meta name="twitter:image:alt" content="Scrap League: Small cars. Big rivalries."><link rel="icon" href="icons/favicon.ico" sizes="16x16 32x32 48x48"><link rel="apple-touch-icon" href="icons/icon-180.png" sizes="180x180"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="arcade.css"></head>
+ <body><header id="header"><button class="wordmark" id="home" aria-label="Scrap League home">SCRAP<span>LEAGUE</span><i>04</i></button><span id="context">THE YARD IS YOURS.</span><nav aria-label="Game tools"><button id="sound-toggle" aria-label="Toggle sound">Sound off</button><button id="settings-button">Settings</button><button id="fullscreen" aria-label="Toggle fullscreen">Full screen</button></nav></header>
+ <main id="stage" class="view-start"><canvas id="world" tabindex="0" aria-label="Overhead racing view. W accelerates, S brakes, A and D steer, Shift boosts, Space handbrakes, R resets and Escape pauses."></canvas><div id="webgl-error" hidden><h2>Graphics could not start</h2><p>Reload to recreate the racing canvas. Your saved drafts and progress are retained.</p></div>
+-<section id="screen-start" class="screen"><div class="home-copy"><p class="eyebrow">SCRAP LEAGUE / ARCADE RACING CLUB</p><h1>SMALL CARS.<br><em>BIG RIVALRIES.</em></h1><p class="intro">Find your line. Brake into the bend.<br>Leave the rest in the dust.</p><button id="quick-race" class="primary"><span>LET’S RACE</span><small>2 LAPS · 5 RIVALS · JUMP IN</small></button><button id="update-ready" class="quiet" hidden>Update ready · review update</button><div class="home-actions"><button id="race-button">Race the league <small id="next-event">YARD SHIFT</small></button><button id="daily-button">Daily Spec <small id="daily-date"></small></button><button id="workshop-button">Track Workshop <small>MAKE YOUR OWN CIRCUIT</small></button></div><div class="secondary-actions"><button id="trial-button" class="quiet">Time Trial</button><button id="leaderboard-button" class="quiet">Leaderboards</button><button id="garage-button" class="quiet">Garage</button><button id="lesson-button" class="quiet">Driving school</button></div><p class="start-controls">Steer with A / D or ← / →. W to accelerate.<br>On a phone, use the wheel and auto throttle.</p></div><div class="hero-label"><span class="eyebrow">YOUR FIRST CIRCUIT</span><h2>THE YARD</h2><span>SCRAP, RUBBER &amp; SECOND CHANCES.</span></div><div class="home-bottom"><div><span>YOUR MACHINE</span><strong id="home-build"></strong></div><div><span>YOUR PROGRESS</span><strong id="home-progress"></strong></div><div><span>THE WORKSHOP IS OPEN</span><strong>12 circuits. Infinite possibilities.</strong></div></div></section>
++<section id="screen-start" class="screen"><div class="home-copy"><p class="eyebrow">SCRAP LEAGUE / ARCADE RACING CLUB</p><h1>SMALL CARS.<br><em>BIG RIVALRIES.</em></h1><p class="intro">Find your line. Brake into the bend.<br>Leave the rest in the dust.</p><button id="quick-race" class="primary"><span>LET’S RACE</span><small>2 LAPS · 5 RIVALS · JUMP IN</small></button><button id="update-ready" class="quiet" hidden>Update ready · review update</button><div class="home-actions"><button id="race-button">Race the league <small id="next-event">YARD SHIFT</small></button><button id="daily-button">Daily Spec <small id="daily-date"></small></button><button id="workshop-button">Track Workshop <small>MAKE YOUR OWN CIRCUIT</small></button></div><div class="secondary-actions"><button id="trial-button" class="quiet">Time Trial</button><button id="crew-challenges" class="quiet">Crew challenges</button><button id="leaderboard-button" class="quiet">Leaderboards</button><button id="garage-button" class="quiet">Garage</button><button id="lesson-button" class="quiet">Driving school</button></div><p class="start-controls">Steer with A / D or ← / →. W to accelerate.<br>On a phone, use the wheel and auto throttle.</p></div><div class="hero-label"><span class="eyebrow">YOUR FIRST CIRCUIT</span><h2>THE YARD</h2><span>SCRAP, RUBBER &amp; SECOND CHANCES.</span></div><div class="home-bottom"><div><span>YOUR MACHINE</span><strong id="home-build"></strong></div><div><span>YOUR PROGRESS</span><strong id="home-progress"></strong></div><div><span>THE WORKSHOP IS OPEN</span><strong>12 circuits. Infinite possibilities.</strong></div></div></section>
+ <section id="screen-events" class="screen page" hidden><div class="page-heading"><div><p class="eyebrow">FIND YOUR NEXT RACE</p><h1 id="events-title">THE LEAGUE</h1></div><button data-home>Back to yard</button></div><div class="event-controls"><label>Difficulty<select id="difficulty"><option value="relaxed">Relaxed</option><option value="club" selected>Club</option><option value="expert">Expert</option></select></label><p id="events-description">Three races. Five rivals. Every finish moves you forward.</p><button id="restart-cup">Restart cup</button><button id="continue-cup" class="primary">Continue cup</button></div><div id="event-list"></div></section>
+ <section id="screen-garage" class="screen" hidden><div class="garage-caption"><p class="eyebrow">YOUR MACHINE / <span id="garage-context">LEAGUE BUILD</span></p><h1 id="garage-name">MULE</h1><p id="garage-build"></p><div class="garage-stats" id="garage-stats"></div></div><aside class="garage-panel"><div class="page-heading"><h2>THE GARAGE</h2><button id="garage-back">Done</button></div><p class="muted">Choose a part. Feel the compromise.</p><div id="part-slots"></div><div class="command-row"><button id="save-build">Save preset</button><button id="load-build">Load preset</button><button id="restore-build">Starter build</button></div><button id="garage-test" class="primary wide">Test this build</button><p id="garage-status" role="status"></p></aside></section>
+ <section id="screen-race" class="screen" hidden><div class="race-hud"><div class="hud-main"><div><span>POSITION</span><strong id="hud-place">4<small>/6</small></strong></div><div><span>LAP</span><strong id="hud-lap">1<small>/3</small></strong></div><div><span>RACE TIME</span><strong id="hud-time" class="time">00:00.000</strong></div></div><div class="race-buttons"><button id="race-reset">Reset</button><button id="pause-button">Pause</button></div></div><div id="race-title"></div><div id="corner-hint" aria-label="Road ahead"></div><div id="practice-progress" hidden></div><div id="countdown" aria-live="polite"></div><div id="race-message" role="status"></div><div class="race-bottom"><div class="speed"><strong id="hud-speed">0</strong><span>KM/H</span><div class="charge-caption"><span>BOOST</span><span id="charge-value">60</span></div><progress id="boost-bar" max="100" value="60" aria-label="Boost charge"></progress></div><canvas id="minimap" width="240" height="180" aria-label="Circuit map and next checkpoint"></canvas></div><div id="touch-controls"><div class="steering"><button data-hold="left" aria-label="Steer left">◀</button><div id="steering-pad" role="slider" tabindex="0" aria-label="Steering pad" aria-valuemin="-1" aria-valuemax="1" aria-valuenow="0"><span class="steer-knob">↔</span><small>STEER</small></div><button data-hold="right" aria-label="Steer right">▶</button></div><div class="pedals"><button data-hold="throttle" class="throttle-button">GAS</button><button data-hold="brake">BRAKE</button><button data-hold="handbrake">SLIDE</button><button data-hold="boost" class="boost-button">BOOST</button></div></div><div class="keyboard-hint">W / S DRIVE <b>·</b> A / D STEER <b>·</b> SHIFT BOOST <b>·</b> SPACE SLIDE <b>·</b> R RESET <b>·</b> ESC PAUSE</div></section>
+diff --git a/app/main.js b/app/main.js
+index 4086fc9..bda5a66 100644
+--- a/app/main.js
++++ b/app/main.js
+@@ -6,6 +6,10 @@ import { readPublishedTrack, discoverTracks } from "./publication.js";
+ import { resultInvitation, shareInvitation, scorecard } from "./sharing.js";
+ import { workerRequest } from "./offline.js";
+ import { World } from "./arcade-renderer.js";
++import { coaching, nextGoal } from "./race-insights.js";
++import { rivalBehavior } from "./ai-profile.js";
++import { measureBuild } from "./build-lab.js";
++import { resolveChallenge } from "./challenges.js";
+ import {
+   ContactActions,
+   bindTouchControls,
+@@ -36,10 +40,12 @@ import {
+   clamp,
+   duplicateTrack,
+   parseTrack,
++  serializeTrack,
+ } from "./model.js";
+ import { compile, nearest, atDistance } from "./track.js";
+ import {
+   STARTER,
++  BUILD_PRESETS,
+   SLOTS,
+   assemble,
+   unlocked,
+@@ -180,7 +186,8 @@ function download(name, text, type = "application/json") {
+   a.click();
+   setTimeout(() => URL.revokeObjectURL(url), 5000);
+ }
+-let dialogOrigin;
++let dialogOrigin,
++  dialogRevision = 0;
+ let updateLock = null,
+   updateUnlockTimer;
+ function unlockUpdate(token) {
+@@ -234,6 +241,7 @@ navigator.serviceWorker?.addEventListener("message", async (event) => {
+   event.ports[0]?.postMessage({ token: message.token, safe });
+ });
+ function dialog(title, body, actions = [{ label: "Close" }]) {
++  dialogRevision++;
+   const modal = q("modal");
+   if (modal.open) modal.close();
+   dialogOrigin = document.activeElement;
+@@ -378,6 +386,92 @@ function events(mode) {
+           else enterLeague(i);
+         }),
+     );
++  if (mode === "trial") {
++    const featured = document.createElement("button");
++    featured.className = "primary wide";
++    featured.textContent =
++      "Crew challenges · Bronze, Silver & Gold target ghosts";
++    featured.onclick = featuredChallenges;
++    q("event-list").prepend(featured);
++  }
++}
++async function featuredChallenges(invited = null) {
++  const token = ++prepareToken,
++    priorDialog = dialogRevision;
++  const body = document.createElement("div");
++  body.className = "challenge-list";
++  body.innerHTML =
++    "<p>Three circuits. Three reachable targets. Recorded runs use the starter car, 3 laps, manual throttle and steering assist off. Targets are local challenges; League unlocks are unchanged.</p>";
++  for (const target of content.targets) {
++    if (invited?.slug && target.slug !== invited.slug) continue;
++    const track = content.tracks.find(
++      (t) => t.track.slug === target.slug,
++    ).track;
++    const card = document.createElement("section");
++    card.innerHTML = `<h3>${esc(track.name)}</h3><p>${esc(track.description)}</p><p class="muted">By ${esc(target.creator)} · Mule / Courier / Road / Roll Cage</p>`;
++    for (const tier of ["bronze", "silver", "gold"]) {
++      const key = comparisonKey({
++        mode: "workshop",
++        trackRevision: target.trackRevision,
++        buildRevision: target.buildRevision,
++        laps: 3,
++        assist: target.assist,
++        challenge: `crew-${target.slug}`,
++      });
++      let best;
++      try {
++        best = await store?.get("best:" + key);
++      } catch {
++        /* racing remains available */
++      }
++      if (token !== prepareToken || priorDialog !== dialogRevision) return;
++      const b = document.createElement("button");
++      b.textContent = `${tier.toUpperCase()} · ${time(target.runs[tier].result.elapsedMs)}${best ? " · your best " + time(best.result.elapsedMs) : ""}`;
++      if (best && best.result.elapsedMs <= target.runs[tier].result.elapsedMs)
++        b.textContent += " · BEATEN";
++      if (invited?.tier === tier) {
++        b.className = "primary";
++        b.dataset.invited = "true";
++      }
++      b.onclick = () => {
++        q("modal").close();
++        beginRace(track, "workshop", {
++          published: true,
++          featured: { slug: target.slug, tier },
++          build: target.build,
++          settings: { assist: false, autoAccelerate: false },
++          challenge: `crew-${target.slug}`,
++        });
++      };
++      card.append(b);
++    }
++    const edit = document.createElement("button");
++    edit.textContent = "Remix in Workshop";
++    edit.onclick = async () => {
++      q("modal").close();
++      await openWorkshop();
++      await workshop.open(duplicateTrack(track));
++      notify(
++        "Edit this copy, finish a test, then use Set challenge target in Files.",
++      );
++    };
++    card.append(edit);
++    body.append(card);
++  }
++  dialog(
++    "CREW CHALLENGES",
++    body,
++    invited?.slug
++      ? [
++          { label: "All crew challenges", action: () => featuredChallenges() },
++          { label: "Close" },
++        ]
++      : [{ label: "Close" }],
++  );
++  (body.querySelector("[data-invited]") || body.querySelector("button"))?.focus(
++    { preventScroll: true },
++  );
++  q("modal").scrollTop = 0;
+ }
+ async function saveProgress() {
+   if (!store) return;
+@@ -581,6 +675,21 @@ async function beginRace(track, mode, options = {}) {
+         challengeDate: options.challengeDate,
+       }),
+       best = await store?.get("best:" + key);
++    const target =
++      options.featured &&
++      content.targets.find((t) => t.slug === options.featured.slug);
++    const targetRun = target?.runs[options.featured.tier];
++    if (
++      options.featured &&
++      (!targetRun ||
++        target.trackRevision !== trackRevision ||
++        target.buildRevision !== buildRevision ||
++        target.assist !== assist ||
++        target.laps !== laps)
++    )
++      throw Error(
++        "That target replay does not match this track, build or control setup.",
++      );
+     if (token !== prepareToken) return;
+     const cup = mode === "league" ? progress.cup : null,
+       ai = mode === "league" || mode === "exhibition" || options.ai,
+@@ -624,8 +733,15 @@ async function beginRace(track, mode, options = {}) {
+           : cup?.difficulty || q("difficulty").value,
+       cars,
+       ghost: [],
+-      bestGhost: best?.ghost || null,
++      bestGhost: targetRun
++        ? new Float32Array(targetRun.ghost.flat())
++        : best?.ghost || null,
+       previousBest: best?.result || null,
++      target,
++      targetRun,
++      rivalObjective: ai
++        ? roster[(cup?.rounds.length || 0) % roster.length]
++        : null,
+       challenge: options.challenge,
+       challengeDate: options.challengeDate,
+       cupId: cup?.id,
+@@ -676,6 +792,12 @@ async function beginRace(track, mode, options = {}) {
+         exhibition: "QUICK RACE · 2 LAPS",
+         league: race.difficulty.toUpperCase(),
+       }[mode];
++    if (targetRun)
++      q("race-title").textContent =
++        `${track.name.toUpperCase()} / ${options.featured.tier.toUpperCase()} ${time(targetRun.result.elapsedMs)} · CREW GHOST`;
++    if (options.targetMs)
++      q("race-title").textContent =
++        `${track.name.toUpperCase()} / BEAT ${time(options.targetMs)} · BY ${options.creator}`;
+     document.body.classList.toggle("touch", settings.touch);
+     document.body.dataset.auto = String(raceSettings.autoAccelerate);
+     q("practice-progress").hidden = mode !== "lesson";
+@@ -713,11 +835,26 @@ function pause(reason = "Take a breath. The race clock is stopped.") {
+     },
+     { label: "Restart race", action: () => restart() },
+     {
+-      label: race.mode === "workshop" ? "Return to editor" : "Leave race",
++      label:
++        race.mode === "workshop"
++          ? race.options.published
++            ? "Back to yard"
++            : "Return to editor"
++          : "Leave race",
+       action: abandon,
+     },
+   ];
+-  dialog("PAUSED", reason, actions);
++  dialog(
++    "PAUSED",
++    reason +
++      (race.rivalObjective
++        ? " Rival goal: finish ahead of " +
++          race.cars.find((c) => c.id === race.rivalObjective).name +
++          ". " +
++          rivalBehavior(race.rivalObjective).description
++        : ""),
++    actions,
++  );
+ }
+ function resume() {
+   if (!world?.available() || !world.render(race, view, settings, 0)) {
+@@ -748,8 +885,10 @@ function abandon() {
+   if (race.mode === "workshop") {
+     q("modal").close();
+     const fromGarage = race.options.garageTest;
++    const published = race.options.published;
+     race = null;
+     if (fromGarage) openGarage(garageOrigin);
++    else if (published) show("start");
+     else show("workshop");
+     return;
+   }
+@@ -859,7 +998,14 @@ function updateHUD() {
+                 ...settings,
+                 autoAccelerate: race.settingsSnapshot.autoAccelerate,
+               })
+-            : "";
++            : p.insights?.feedbackUntil > race.time
++              ? p.insights.feedback
++              : race.rivalObjective
++                ? "Rival goal: finish ahead of " +
++                  race.cars.find((c) => c.id === race.rivalObjective).name
++                : race.targetRun
++                  ? `Chase ${race.options.featured.tier}: ${time(race.targetRun.result.elapsedMs)} · clean exits earn boost`
++                  : "Clean exit above 43 km/h · up to +6 boost per bend";
+   q("race-message").textContent = message;
+   if (race.practice)
+     q("practice-progress").textContent = [
+@@ -914,7 +1060,13 @@ function updateHUD() {
+   }
+ }
+ async function finish() {
+-  if (savingResult || !race || race.state !== "finished" || typeof race.dnf !== "boolean") return;
++  if (
++    savingResult ||
++    !race ||
++    race.state !== "finished" ||
++    typeof race.dnf !== "boolean"
++  )
++    return;
+   savingResult = true;
+   sound.stop();
+   q("countdown").textContent = "";
+@@ -924,11 +1076,15 @@ async function finish() {
+   show("result");
+   q("result-kicker").textContent = result.dnf
+     ? "ATTEMPT ENDED"
+-    : race.mode === "workshop"
+-      ? "WORKSHOP / TEST COMPLETE"
+-      : race.mode === "lesson"
+-        ? "YOU KNOW THE WAY"
+-        : "FINISH LINE / " + race.mode.toUpperCase();
++    : race.options.featured
++      ? "CREW CHALLENGE / " + race.options.featured.tier.toUpperCase()
++      : race.options.targetMs
++        ? "FIXED WORKSHOP CHALLENGE / BY " + race.options.creator
++        : race.mode === "workshop"
++          ? "WORKSHOP / TEST COMPLETE"
++          : race.mode === "lesson"
++            ? "YOU KNOW THE WAY"
++            : "FINISH LINE / " + race.mode.toUpperCase();
+   const place = result.classification.findIndex((c) => c.id === "player") + 1;
+   q("result-title").textContent = result.dnf
+     ? "TRY THAT AGAIN."
+@@ -953,13 +1109,32 @@ async function finish() {
+     `<div><span>RACE TIME</span><strong>${result.dnf ? "DNF" : time(result.elapsedMs)}</strong></div><div><span>BEST LAP</span><strong>${result.splits.length ? time(Math.min(...result.splits)) : "—"}</strong></div><div><span>PLACE</span><strong>${place} / ${race.cars.length}</strong></div>`;
+   q("result-ranking").innerHTML =
+     `<table class="ranking"><tbody>${result.classification.map((c, i) => `<tr class="${c.id === "player" ? "player" : ""}"><td>${i + 1}</td><td>${esc(c.name)}</td><td>${c.time === null ? "Behind" : time(c.time)}</td></tr>`).join("")}</tbody></table><p class="muted">${result.splits.map((s, i) => "Lap " + (i + 1) + " · " + time(s)).join(" / ")}</p>`;
+-  q("result-tip").textContent = result.dnf
+-    ? "The cup remains before this round. Retry whenever you are ready."
+-    : result.contacts === 0
+-      ? "A clean run. No solid contacts recorded."
+-      : result.resets
+-        ? `${result.resets} reset${result.resets === 1 ? "" : "s"} this run. Each reset kept the race clock running.`
+-        : `${result.contacts} contact steps recorded. Try braking before the bend.`;
++  q("result-tip").textContent = coaching(
++    result,
++    race.previousBest || race.targetRun?.result,
++  );
++  const comparison = race.previousBest || race.targetRun?.result;
++  const goal = document.createElement("p");
++  if (!result.dnf && race.target) {
++    const ladder = Object.fromEntries(
++      Object.entries(race.target.runs).map(([tier, run]) => [
++        tier,
++        run.result.elapsedMs,
++      ]),
++    );
++    const achieved = nextGoal(result.elapsedMs, ladder);
++    goal.textContent = `${achieved.achieved ? achieved.achieved.toUpperCase() + " TARGET BEATEN" : "TARGET IN REACH"} · ${achieved.next ? (achieved.gapMs / 1000).toFixed(2) + "s to " + achieved.next.tier : "All three targets beaten. Try a Workshop remix."}`;
++  } else if (!result.dnf && race.options.targetMs) {
++    goal.textContent = `${result.elapsedMs <= race.options.targetMs ? "CHALLENGE BEATEN" : ((result.elapsedMs - race.options.targetMs) / 1000).toFixed(2) + "s TO TARGET"} · by ${race.options.creator}`;
++  } else if (!result.dnf && race.rivalObjective) {
++    const rivalIndex = result.classification.findIndex(
++      (c) => c.id === race.rivalObjective,
++    );
++    goal.textContent = `Rival goal ${place - 1 < rivalIndex ? "complete" : "next attempt"}: finish ahead of ${result.classification[rivalIndex].name}. ${rivalBehavior(race.rivalObjective).description}`;
++  }
++  if (comparison && !result.dnf)
++    goal.textContent += ` · ${(Math.abs(result.elapsedMs - comparison.elapsedMs) / 1000).toFixed(2)}s ${result.elapsedMs <= comparison.elapsedMs ? "ahead of" : "behind"} ${race.previousBest ? "your compatible best" : "the crew target"}.`;
++  q("result-ranking").append(goal);
+   q("result-reward").textContent = "";
+   q("result-save").textContent = "Saving result…";
+   renderResultActions();
+@@ -1006,13 +1181,27 @@ function renderResultActions() {
+     );
+   else if (race.mode === "lesson")
+     button("Enter the league", () => enterLeague(), true);
++  if (race.options.featured)
++    button("Choose next crew target", featuredChallenges);
+   button(
+     "Race again",
+     restart,
+     ["trial", "daily", "exhibition"].includes(race.mode),
+   );
+   if (!race.saved) button("Retry save", persistResult);
+-  button("Share result", shareResult);
++  if (race.mode === "workshop" && !race.options.published)
++    button(
++      race.track.source.challenge
++        ? "Export challenge HTML"
++        : "Export circuit HTML",
++      () =>
++        download(
++          race.track.source.slug + ".html",
++          serializeTrack(race.track.source),
++          "text/html",
++        ),
++    );
++  else button("Share result", shareResult);
+   if (
+     ["trial", "daily"].includes(race.mode) &&
+     !race.result.dnf &&
+@@ -1063,7 +1252,11 @@ async function persistResult() {
+       !race.options.garageTest &&
+       !race.options.published
+     )
+-      await workshop.markTest(race.trackRevision);
++      await workshop.markTest(
++        race.trackRevision,
++        result,
++        race.settingsSnapshot,
++      );
+     const newly = progress.completed.filter((n) => !before.includes(n)),
+       rewards =
+         result.mode === "league"
+@@ -1153,8 +1346,11 @@ function invitationForRace() {
+       race.result.challengeDate ||
+       content.daily.find((d) => d.id === race.result.challenge)?.date ||
+       "",
+-    slug: race.track.source.slug,
++    slug: content.tracks.some((t) => t.track.id === race.track.source.id)
++      ? race.track.source.slug
++      : "",
+     publishedId: race.options.published ? race.track.source.id : "",
++    crew: race.options.featured,
+   });
+ }
+ async function shareResult() {
+@@ -1255,6 +1451,73 @@ function refreshGarage() {
+     );
+   q("garage-status").textContent =
+     "Values are physical specifications, not an overall performance rating.";
++  let presets = q("suggested-builds");
++  if (!presets) {
++    presets = document.createElement("section");
++    presets.id = "suggested-builds";
++    q("part-slots").before(presets);
++  }
++  presets.innerHTML =
++    "<h3>Choose a driving style</h3>" +
++    BUILD_PRESETS.map((p, i) => {
++      const available = SLOTS.every((s) =>
++        unlocked(assemble(p.build, content.parts)[s], progress),
++      );
++      return `<button data-style="${i}">${esc(p.name)}${!available && garageOrigin !== "workshop" ? " · preview" : ""}<small>${esc(p.description)}</small></button>`;
++    }).join("") +
++    '<button id="compare-styles">Compare on the same 20-second section</button>';
++  presets.querySelectorAll("[data-style]").forEach(
++    (b) =>
++      (b.onclick = () => {
++        garageBuild = clone(BUILD_PRESETS[+b.dataset.style].build);
++        refreshGarage();
++      }),
++  );
++  q("compare-styles").onclick = compareStyles;
++}
++async function compareStyles() {
++  const build = clone(garageBuild);
++  const body = document.createElement("div");
++  body.innerHTML =
++    '<p>Yard Loop · standing start · 20 seconds · same deterministic controller, manual throttle, assist off. Measured simulation, not a human skill rating. All builds may be previewed here; League unlocks still apply.</p><p role="status">Measuring builds…</p>';
++  dialog("BUILD COMPARISON", body);
++  body.tabIndex = -1;
++  body.focus({ preventScroll: true });
++  q("modal").scrollTop = 0;
++  const rows = [];
++  for (const entry of [{ name: "Your selection", build }, ...BUILD_PRESETS]) {
++    await new Promise((resolve) => setTimeout(resolve, 0));
++    if (!q("modal").open || !body.isConnected) return;
++    rows.push({
++      name: entry.name,
++      ...measureBuild(content.tracks[0].track, entry.build, content.parts),
++    });
++  }
++  if (!body.isConnected) return;
++  body.querySelector('[role="status"]').remove();
++  const list = document.createElement("div");
++  list.className = "comparison-results";
++  for (const r of rows) {
++    const card = document.createElement("section");
++    card.innerHTML = `<h3>${esc(r.name)}</h3><p>${r.meters} m advanced · ${r.exitKmh} km/h at 20s<br>${r.incidents} contact incidents · ${r.maxSlip} m/s peak sideways speed</p>`;
++    list.append(card);
++  }
++  body.append(list);
++}
++async function raceWorkshopChallenge(track, published = true) {
++  const token = ++prepareToken,
++    priorDialog = dialogRevision;
++  try {
++    const fixed = await resolveChallenge(track, content.parts);
++    if (token !== prepareToken || priorDialog !== dialogRevision) return;
++    if (!fixed)
++      throw Error(
++        "This circuit has no saved target. Finish a test and set one in Workshop Files.",
++      );
++    await beginRace(track, "workshop", { ...fixed, published, ai: false });
++  } catch (e) {
++    notify(e.message, true);
++  }
+ }
+ async function closeGarage() {
+   const legal = SLOTS.every((s) =>
+@@ -1335,7 +1598,7 @@ function settingsDialog() {
+     lowEffects: "Reduced visual effects",
+     safeGraphics: "Lower canvas resolution",
+     reducedMotion: "Reduced motion",
+-    ghost: "Show compatible personal-best ghost",
++    ghost: "Show replay ghost (personal best or crew target)",
+     touch: "Show touch controls",
+     leftHanded: "Swap touch control sides",
+     largeHud: "Larger race display",
+@@ -2375,8 +2638,20 @@ async function openNativeRoute() {
+         track.name,
+         (installedFallback
+           ? "Online circuit page unavailable. This circuit is from the installed pack. "
+-          : "") + "Race this circuit or open an editable copy.",
++          : "") +
++          track.description +
++          (track.challenge
++            ? ` Challenge by ${track.challenge.creator} · beat ${time(track.challenge.targetMs)} with the fixed setup.`
++            : " Race this circuit or open an editable copy."),
+         [
++          ...(track.challenge
++            ? [
++                {
++                  label: "Race fixed challenge",
++                  action: () => raceWorkshopChallenge(track),
++                },
++              ]
++            : []),
+           {
+             label: "Race circuit",
+             action: () =>
+@@ -2454,6 +2729,7 @@ async function init() {
+     world = createWorld(q("world"));
+     workshop = new Workshop(q("screen-workshop"), {
+       store,
++      parts: content.parts,
+       templates: content.tracks.map((t) => t.track),
+       onTest: (t, ai) =>
+         beginRace(t, "workshop", {
+@@ -2464,6 +2740,8 @@ async function init() {
+       dialog,
+       download,
+       build: () => openGarage("workshop"),
++      onFeatured: featuredChallenges,
++      onChallenge: (t) => raceWorkshopChallenge(t, false),
+     });
+     q("sound-toggle").textContent = settings.sound ? "Sound on" : "Sound off";
+     sound.enabled = settings.sound;
+@@ -2471,12 +2749,19 @@ async function init() {
+     document.body.classList.toggle("touch", settings.touch);
+     applyPreferences();
+     show("start");
++    q("crew-challenges").onclick = featuredChallenges;
+     checkOffline();
+     requestAnimationFrame(frame);
+     if (/^\/(editor|track)(\/|$)/.test(location.pathname))
+       await openNativeRoute();
+     if (/^#daily=\d{4}-\d{2}-\d{2}$/.test(location.hash))
+       await daily(location.hash.slice(7));
++    if (/^#crew=[a-z-]+:(bronze|silver|gold)$/.test(location.hash)) {
++      const [slug, tier] = location.hash.slice(6).split(":");
++      await featuredChallenges(
++        content.targets.some((t) => t.slug === slug) ? { slug, tier } : null,
++      );
++    }
+     if (location.hash.startsWith("#workshop=")) {
+       try {
+         const track = await readPublishedTrack(location.hash.slice(10));
+@@ -2486,8 +2771,19 @@ async function init() {
+         });
+         dialog(
+           track.name,
+-          "Race this published circuit or open an editable copy.",
++          track.description +
++            (track.challenge
++              ? ` Challenge by ${track.challenge.creator} · beat ${time(track.challenge.targetMs)} with the fixed setup.`
++              : " Race this published circuit or open an editable copy."),
+           [
++            ...(track.challenge
++              ? [
++                  {
++                    label: "Race fixed challenge",
++                    action: () => raceWorkshopChallenge(track),
++                  },
++                ]
++              : []),
+             {
+               label: "Race circuit",
+               action: () =>
+diff --git a/app/model.js b/app/model.js
+index 45ba9db..da4b3a8 100644
+--- a/app/model.js
++++ b/app/model.js
+@@ -1,3 +1,4 @@
++import { challengeErrors } from "./challenge-schema.js";
+ export const UUID =
+   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+ export const uid = () => crypto.randomUUID();
+@@ -34,7 +35,15 @@ export async function hash(value) {
+     .join("");
+ }
+ export function gameplay(t) {
+-  const { name, description, slug, scenePreset, musicPreset, ...rest } = t;
++  const {
++    name,
++    description,
++    slug,
++    scenePreset,
++    musicPreset,
++    challenge,
++    ...rest
++  } = t;
+   return rest;
+ }
+ export const schemas = {
+@@ -152,6 +161,20 @@ export const schemas = {
+     utility: "str",
+     scheduleRevision: "str",
+   },
++  TrackChallenge: {
++    creator: "str",
++    targetMs: "num",
++    trackRevision: "str",
++    buildRevision: "str",
++    rulesRevision: "str",
++    chassis: "str",
++    engine: "str",
++    tires: "str",
++    utility: "str",
++    assist: "num",
++    autoAccelerate: "num",
++    laps: "num",
++  },
+ };
+ export const collections = {
+   pieces: "RoadPiece",
+@@ -173,7 +196,11 @@ export function serializeTrack(t) {
+       (k) =>
+         `<${k === "name" ? "h1" : "p"} itemprop="${k}">${esc(t[k])}</${k === "name" ? "h1" : "p"}>`,
+     )
+-    .join("\n")}\n${Object.entries(collections)
++    .join(
++      "\n",
++    )}\n${t.challenge ? entityHTML("TrackChallenge", t.challenge) : ""}\n${Object.entries(
++    collections,
++  )
+     .map(
+       ([key, type]) =>
+         `<section><h2>${key}</h2><ol data-collection="${key}">${t[key].map((v) => entityHTML(type, v)).join("\n")}</ol></section>`,
+@@ -258,11 +285,18 @@ export function parseTrack(html, Parser = DOMParser) {
+     const type = e.getAttribute("itemtype")?.replace("urn:ScrapLeague:", "");
+     if (
+       !schemas[type] ||
+-      (!Object.values(collections).includes(type) && type !== "Track")
++      (!Object.values(collections).includes(type) &&
++        !["Track", "TrackChallenge"].includes(type))
+     )
+       throw Error("Unsupported entity type.");
+     if (e !== root && !root.contains(e)) throw Error("Entity outside track.");
+   }
++  const challenges = root.querySelectorAll(
++    '[itemtype="urn:ScrapLeague:TrackChallenge"]',
++  );
++  if (challenges.length > 1) throw Error("Expected at most one challenge.");
++  if (challenges.length)
++    t.challenge = readEntity(challenges[0], "TrackChallenge");
+   for (const [key, type] of Object.entries(collections)) {
+     const lists = root.querySelectorAll(`[data-collection="${key}"]`);
+     if (lists.length !== 1) throw Error(`Expected one ${key} list.`);
+@@ -288,6 +322,7 @@ export function parseEntities(html, type, Parser = DOMParser) {
+ }
+ export function structuralErrors(t) {
+   const e = [];
++  if (t.challenge) e.push(...challengeErrors(t.challenge));
+   if (t.schemaVersion !== 1) e.push("Unsupported track schema.");
+   if (t.pieceCatalogRevision !== "pieces-v1")
+     e.push("Unsupported piece catalog.");
+@@ -339,6 +374,7 @@ export function structuralErrors(t) {
+ export function duplicateTrack(t, newId = uid) {
+   const copy = clone(t),
+     ids = new Map();
++  delete copy.challenge;
+   [copy, ...Object.keys(collections).flatMap((k) => copy[k])].forEach((o) => {
+     const id = newId();
+     ids.set(o.id, id);
+diff --git a/app/publication.js b/app/publication.js
+index ca6d1a3..bf14e34 100644
+--- a/app/publication.js
++++ b/app/publication.js
+@@ -1,6 +1,7 @@
+ import { parseTrack, gameplay, hash, stable, esc, UUID } from "./model.js";
+ import { compile } from "./track.js";
+ import { publishTrack, HOST_CONFIG } from "./pagelove.js";
++import { assertChallengeSource } from "./challenges.js";
+ const entryFields = ["id", "slug", "name", "revision"];
+ export function catalogDocument(entries) {
+   return (
+@@ -176,6 +177,7 @@ export async function publishOwnerTrack(
+ ) {
+   if (!compile(track).valid)
+     throw Error("Fix the track validation problems before publishing.");
++  await assertChallengeSource(track);
+   if (!key?.startsWith("pk_"))
+     throw Error("Enter the owner key for the pinned authoring host.");
+   const request = authorFetch(key, fetcher);
+diff --git a/app/sharing.js b/app/sharing.js
+index 5574ddd..685e7b1 100644
+--- a/app/sharing.js
++++ b/app/sharing.js
+@@ -3,10 +3,16 @@ import { time } from "./builds.js";
+ export const GAME_URL = "https://hire-poker-8313.onpagelove.com/";
+ export function resultInvitation(
+   result,
+-  { date = "", slug = "", publishedId = "" } = {},
++  { date = "", slug = "", publishedId = "", crew = null } = {},
+ ) {
+   const url = new URL(GAME_URL);
+-  if (result.mode === "daily" && /^\d{4}-\d{2}-\d{2}$/.test(date))
++  if (
++    crew &&
++    /^[a-z-]+$/.test(crew.slug) &&
++    ["bronze", "silver", "gold"].includes(crew.tier)
++  )
++    url.hash = `crew=${crew.slug}:${crew.tier}`;
++  else if (result.mode === "daily" && /^\d{4}-\d{2}-\d{2}$/.test(date))
+     url.hash = "daily=" + date;
+   else if (publishedId)
+     url.hash = "workshop=" + encodeURIComponent(publishedId);
+diff --git a/app/simulation.js b/app/simulation.js
+index c7a35d2..ea42ed3 100644
+--- a/app/simulation.js
++++ b/app/simulation.js
+@@ -1,4 +1,5 @@
+-import { profiledInput } from "./ai-profile.js";
++import { profiledInput, rivalBehavior } from "./ai-profile.js";
++import { recordDriving, recordSector } from "./race-insights.js";
+ import { RULES } from "./builds.js";
+ import { advanceBodies } from "./collision.js";
+ import { clamp, wrap } from "./model.js";
+@@ -185,6 +186,7 @@ export function processGates(car, previous, track, startTime, dt, laps) {
+     lastFraction = fraction;
+     car.lastGate = car.nextGate;
+     car.gateCount++;
++    recordSector(car, startTime + fraction * dt, car.nextGate);
+     if (car.nextGate === 0) {
+       const exact = startTime + fraction * dt;
+       car.lap++;
+@@ -416,7 +418,9 @@ export function aiInput(
+     pace =
+       ({ relaxed: 0.76, club: 0.88, expert: 0.99 }[difficulty] || 0.88) *
+       personality;
+-  let lane = Math.sin(car.grid * 2.4) * 1.0;
++  const tactic = rivalBehavior(car.id);
++  let lane = Math.sin(car.grid * 2.4) * tactic.wander;
++  let chasing = false;
+   for (const other of cars)
+     if (
+       other !== car &&
+@@ -425,8 +429,13 @@ export function aiInput(
+         { x: other.x - car.x, z: other.z - car.z },
+         { x: Math.cos(car.heading), z: Math.sin(car.heading) },
+       ) > 0
+-    )
+-      lane = (car.grid % 2 ? 1 : -1) * 2.4;
++    ) {
++      chasing = true;
++      lane = (car.grid % 2 ? 1 : -1) * tactic.pass;
++    }
++  const bend = wrap(atDistance(track, q.s + 30).heading - q.heading);
++  if (car.id === "kit" && chasing && Math.abs(bend) > 0.12)
++    lane = (bend > 0 ? 1 : -1) * tactic.pass;
+   for (const prop of track.props || track.source.props)
+     if (
+       ["barrier", "island"].includes(prop.kind) &&
+@@ -437,6 +446,11 @@ export function aiInput(
+         (prop.z - goal.z) * Math.cos(goal.heading);
+       lane = side > 0 ? -3 : 3;
+     }
++  lane = clamp(
++    lane,
++    -goal.width / 2 + car.spec.chassis.width / 2 + 0.6,
++    goal.width / 2 - car.spec.chassis.width / 2 - 0.6,
++  );
+   goal.x -= Math.sin(goal.heading) * lane;
+   goal.z += Math.cos(goal.heading) * lane;
+   const error = wrap(Math.atan2(goal.z - car.z, goal.x - car.x) - car.heading),
+@@ -456,7 +470,10 @@ export function aiInput(
+       const turnSpeed = Math.sqrt((grip * 9.81 * 0.72) / curve) * pace;
+       target = Math.min(
+         target,
+-        Math.sqrt(turnSpeed * turnSpeed + 2 * 5 * Math.max(0, ahead - 7)),
++        Math.sqrt(
++          turnSpeed * turnSpeed +
++            2 * 5 * Math.max(0, ahead - tactic.brakeMargin),
++        ),
+       );
+     }
+   }
+@@ -466,25 +483,28 @@ export function aiInput(
+     brake: speed > target + 1 ? clamp((speed - target) / 4, 0, 1) : 0,
+     steer: clamp((steerAngle / limit) * 1.45, -1, 1),
+     boost:
+-      target > 30 && Math.abs(error) < 0.08 && speed > 15 && car.charge > 25,
++      target > 30 &&
++      Math.abs(error) < 0.08 &&
++      speed > 15 &&
++      car.charge > tactic.reserve &&
++      (car.id !== "mags" || chasing || car.charge > 95),
+     reset: car.stuckTime > 5,
+   };
+ }
+ export function stepRace(r, input, dt = DT) {
+   if (r.state !== "racing") return;
+ 
+-  for (const c of r.cars)
+-    drive(
+-      c,
++  const controls = new Map();
++  for (const c of r.cars) {
++    const control =
+       c.id === "player"
+         ? input
+         : profiledInput(c, r, () =>
+             aiInput(c, r.track, r.difficulty, c.personality, r.cars),
+-          ),
+-      r.track,
+-      dt,
+-      true,
+-    );
++          );
++    controls.set(c, control);
++    drive(c, control, r.track, dt, true);
++  }
+   const paths = advanceBodies(r.cars, r.track, dt, nearbyWalls);
+   for (const c of r.cars) {
+     const final = { x: c.x, z: c.z };
+@@ -501,6 +521,8 @@ export function stepRace(r, input, dt = DT) {
+       );
+     }
+     Object.assign(c, final);
++    if (c.finishTime === null)
++      recordDriving(c, r.track, controls.get(c), r.time + dt, dt);
+   }
+   r.collisionOverload = r.cars.some((c) => c.collisionLimited)
+     ? (r.collisionOverload || 0) + dt
+@@ -576,6 +598,9 @@ export function resultOf(r) {
+       time: c.finishTime === null ? null : Math.round(c.finishTime * 1000),
+     })),
+     contacts: p.contacts,
++    incidents: p.insights?.incidents || 0,
++    cleanExits: p.insights?.cleanExits || 0,
++    sectors: p.sectors || [],
+     resets: p.resets,
+     createdAt: new Date().toISOString(),
+   };
+diff --git a/app/storage.js b/app/storage.js
+index ea1d6d3..d634cf8 100644
+--- a/app/storage.js
++++ b/app/storage.js
+@@ -186,6 +186,46 @@ function validateRecord(key, value) {
+   if (key.startsWith("result:")) validateResult(value);
+ }
+ function validateResult(value) {
++  if (
++    value?.sectors !== undefined &&
++    (!Array.isArray(value.sectors) ||
++      value.sectors.length > 300 ||
++      value.sectors.some(
++        (s, i, list) =>
++          !s ||
++          !Number.isInteger(s.order) ||
++          s.order < 0 ||
++          s.order > 32 ||
++          !Number.isInteger(s.lap) ||
++          s.lap < 0 ||
++          s.lap > 8 ||
++          !Number.isSafeInteger(s.durationMs) ||
++          s.durationMs < 1 ||
++          s.durationMs > 480000 ||
++          !Number.isSafeInteger(s.endMs) ||
++          s.endMs < 1 ||
++          s.endMs > 480000 ||
++          s.endMs - (list[i - 1]?.endMs || 0) !== s.durationMs ||
++          !Number.isSafeInteger(s.stoppedMs) ||
++          s.stoppedMs < 0 ||
++          s.stoppedMs > s.endMs + 20 ||
++          !Number.isInteger(s.incidents) ||
++          s.incidents < 0 ||
++          s.incidents > 57600 ||
++          !Number.isInteger(s.resets) ||
++          s.resets < 0 ||
++          s.resets > 57600,
++      ))
++  )
++    throw Error("Invalid saved sector telemetry.");
++  for (const field of ["incidents", "cleanExits"])
++    if (
++      value?.[field] !== undefined &&
++      (!Number.isInteger(value[field]) ||
++        value[field] < 0 ||
++        value[field] > 57600)
++    )
++      throw Error("Invalid saved driving telemetry.");
+   if (
+     !value ||
+     typeof value.id !== "string" ||
+@@ -204,7 +244,8 @@ function validateResult(value) {
+     value.splits.length > 9 ||
+     value.splits.some((n) => !Number.isFinite(n) || n <= 0) ||
+     (!value.dnf &&
+-      (!value.splits.length || value.splits.reduce((sum, n) => sum + n, 0) !== value.elapsedMs)) ||
++      (!value.splits.length ||
++        value.splits.reduce((sum, n) => sum + n, 0) !== value.elapsedMs)) ||
+     !Array.isArray(value.classification) ||
+     value.classification.length > 6 ||
+     value.classification.some(
+@@ -740,7 +781,8 @@ export class Store {
+   }
+   retryRejectedRun(id, now = Date.now()) {
+     return this.atomic((tx, done, fail) => {
+-      const records = tx.objectStore("outbox"), key = "outbox:" + id;
++      const records = tx.objectStore("outbox"),
++        key = "outbox:" + id;
+       const request = records.get(key);
+       request.onsuccess = () => {
+         const old = request.result;
+@@ -750,13 +792,25 @@ export class Store {
+         }
+         const all = records.getAll();
+         all.onsuccess = () => {
+-          if (all.result.filter(value => ["pending", "retry", "sending"].includes(value.state)).length >= 100) {
+-            fail(Error("The pending score queue is full. Your rejected time is kept."));
++          if (
++            all.result.filter((value) =>
++              ["pending", "retry", "sending"].includes(value.state),
++            ).length >= 100
++          ) {
++            fail(
++              Error(
++                "The pending score queue is full. Your rejected time is kept.",
++              ),
++            );
+             return;
+           }
+-          const next = { ...old, state: "retry", lease: null,
++          const next = {
++            ...old,
++            state: "retry",
++            lease: null,
+             message: "Retry requested by player.",
+-            nextAttemptAt: Math.max(now, old.serverRetryAt || 0) };
++            nextAttemptAt: Math.max(now, old.serverRetryAt || 0),
++          };
+           records.put(next, key);
+           done(next);
+         };
+diff --git a/app/workshop.js b/app/workshop.js
+index e903b35..e87b592 100644
+--- a/app/workshop.js
++++ b/app/workshop.js
+@@ -6,6 +6,12 @@ import {
+   readPublishedTrack,
+ } from "./publication.js";
+ import { shareInvitation } from "./sharing.js";
++import {
++  resolveChallenge,
++  targetFromResult,
++  importTrackCopy,
++} from "./challenges.js";
++import { time } from "./builds.js";
+ import {
+   transformSelection,
+   addPatch,
+@@ -81,7 +87,18 @@ export class Workshop {
+   }
+   constructor(
+     root,
+-    { store, templates, onTest, notify, dialog, download, build },
++    {
++      store,
++      templates,
++      onTest,
++      notify,
++      dialog,
++      download,
++      build,
++      onFeatured,
++      onChallenge,
++      parts,
++    },
+   ) {
+     Object.assign(this, {
+       root,
+@@ -92,6 +109,9 @@ export class Workshop {
+       dialog,
+       download,
+       build,
++      onFeatured,
++      onChallenge,
++      parts,
+     });
+     this.history = [];
+     this.publications = new Map();
+@@ -254,12 +274,21 @@ export class Workshop {
+           c = compile(t);
+         await this.dialog(
+           "Import " + t.name,
+-          `${t.pieces.length} road pieces · ${Math.round(c.length)} m · ${c.valid ? "Race-ready" : "Draft with " + c.problems.length + " problems"}. Your current draft remains saved.`,
++          `${t.pieces.length} road pieces · ${Math.round(c.length)} m · ${c.valid ? "Race-ready" : "Draft with " + c.problems.length + " problems"}. Your current draft remains saved.${t.challenge ? " Imported challenge by " + t.challenge.creator + " · " + time(t.challenge.targetMs) + ". The fixed setup is preserved in a separate copy." : ""}`,
+           [
+             {
+               label: "Import as a new copy",
+-              action: () => this.open(duplicateTrack(t)),
++              action: async () =>
++                this.open(await importTrackCopy(t, this.parts)),
+             },
++            ...(t.challenge
++              ? [
++                  {
++                    label: "Import circuit without target",
++                    action: () => this.open(duplicateTrack(t)),
++                  },
++                ]
++              : []),
+             { label: "Cancel" },
+           ],
+         );
+@@ -542,6 +571,7 @@ export class Workshop {
+             throw Error(
+               "Complete a valid test lap of this gameplay revision before publishing.",
+             );
++          if (snapshot.challenge) await resolveChallenge(snapshot, this.parts);
+           this.publications ||= new Map();
+           const baseline =
+             this.publications.get(snapshot.id) ||
+@@ -596,11 +626,15 @@ export class Workshop {
+                     text:
+                       "Race " +
+                       snapshot.name +
+-                      " in Scrap League, then build your own circuit.",
++                      (snapshot.challenge
++                        ? ` · beat ${time(snapshot.challenge.targetMs)} with the fixed setup by ${snapshot.challenge.creator}.`
++                        : " in Scrap League, then build your own circuit."),
+                     url: result.url,
+                     complete:
+                       snapshot.name +
+-                      " — race this circuit in Scrap League.\n" +
++                      (snapshot.challenge
++                        ? ` — beat ${time(snapshot.challenge.targetMs)} with the fixed setup by ${snapshot.challenge.creator}.\n`
++                        : " — race this circuit in Scrap League.\n") +
+                       result.url,
+                   },
+                   {
+@@ -836,6 +870,7 @@ export class Workshop {
+     this.historyTrimmed = false;
+     this.baseline = stored?.revision || 0;
+     this.tested = stored?.tested || "";
++    this.lastTest = null;
+     this.history = [];
+     this.future = [];
+     this.selected = stored?.view?.selected || track.pieces[0]?.id;
+@@ -853,6 +888,7 @@ export class Workshop {
+     try {
+       const next = clone(this.track);
+       fn(next);
++      if (game) delete next.challenge;
+       const previous = clone(this.track);
+       this.track = next;
+       this.history.push(previous);
+@@ -864,7 +900,10 @@ export class Workshop {
+         this.historyTrimmed = true;
+       }
+       this.future = [];
+-      if (game) this.tested = "";
++      if (game) {
++        this.tested = "";
++        this.lastTest = null;
++      }
+       this.refresh();
+       this.save();
+     } catch (e) {
+@@ -889,9 +928,14 @@ export class Workshop {
+   }
+   refresh() {
+     const active = this.root.ownerDocument.activeElement;
+-    const ownedFocus = active && this.root.contains(active)
+-      ? { id: active.id, field: active.dataset?.field, patch: active.dataset?.patch }
+-      : null;
++    const ownedFocus =
++      active && this.root.contains(active)
++        ? {
++            id: active.id,
++            field: active.dataset?.field,
++            patch: active.dataset?.patch,
++          }
++        : null;
+     this.compiled = compile(this.track);
+     const q = this.q;
+     q("track-name").value = this.track.name;
+@@ -962,10 +1006,15 @@ export class Workshop {
+     if (ownedFocus && (!active.isConnected || active.disabled)) {
+       let replacement = ownedFocus.id ? this.q(ownedFocus.id) : null;
+       if (!replacement && ownedFocus.field)
+-        replacement = [...this.root.querySelectorAll("[data-field]")].find(element => element.dataset.field === ownedFocus.field);
++        replacement = [...this.root.querySelectorAll("[data-field]")].find(
++          (element) => element.dataset.field === ownedFocus.field,
++        );
+       if (!replacement && ownedFocus.patch)
+-        replacement = [...this.root.querySelectorAll("[data-patch]")].find(element => element.dataset.patch === ownedFocus.patch);
+-      if (!replacement || replacement.disabled) replacement = this.q("object-list");
++        replacement = [...this.root.querySelectorAll("[data-patch]")].find(
++          (element) => element.dataset.patch === ownedFocus.patch,
++        );
++      if (!replacement || replacement.disabled)
++        replacement = this.q("object-list");
+       replacement?.focus?.({ preventScroll: true });
+     }
+   }
+@@ -1295,9 +1344,17 @@ export class Workshop {
+     await this.flush();
+     this.onTest(clone(this.track), this.q("test-ai").checked);
+   }
+-  async markTest(revision) {
+-    if ((await hash(gameplay(this.track))) === revision) {
++  async markTest(revision, result, settings) {
++    const source = this.track,
++      generation = this.generation;
++    if (
++      (await hash(gameplay(source))) === revision &&
++      this.track === source &&
++      this.generation === generation
++    ) {
+       this.tested = revision;
++      if (result && settings)
++        this.lastTest = { result: clone(result), settings: clone(settings) };
+       this.refresh();
+       this.save();
+     }
+@@ -1311,6 +1368,46 @@ export class Workshop {
+       "text/html",
+     );
+   }
++  challengeDialog() {
++    const body = document.createElement("div");
++    body.innerHTML =
++      '<p>Finish a valid test of this exact draft first. Its actual time, car, lap count and steering/throttle settings become the fixed challenge. Editing geometry removes the target. Export HTML to share offline, or publish with the owner key.</p><label>Creator credit<input maxlength="40" autocomplete="off"></label>';
++    body.querySelector("input").value = this.track.challenge?.creator || "";
++    const generation = this.generation,
++      id = this.track.id;
++    this.dialog("SET CHALLENGE TARGET", body, [
++      {
++        label: "Use my completed test",
++        action: async () => {
++          const source = this.track,
++            test = this.lastTest;
++          const revision = await hash(gameplay(source));
++          if (
++            !test ||
++            this.generation !== generation ||
++            this.track.id !== id ||
++            this.track !== source ||
++            this.tested !== revision
++          )
++            throw Error("Finish a valid test of this current draft first.");
++          const challenge = targetFromResult(
++            source,
++            test.result,
++            body.querySelector("input").value,
++            test.settings,
++          );
++          this.command((t) => {
++            t.challenge = challenge;
++          }, false);
++          await this.flush();
++          this.notify(
++            `Challenge saved · beat ${time(challenge.targetMs)} · export or publish from Files.`,
++          );
++        },
++      },
++      { label: "Keep current draft" },
++    ]);
++  }
+   async files() {
+     // Recovery actions must stay reachable even when the normal save failed.
+     await this.flush().catch(() => {});
+@@ -1365,6 +1462,24 @@ export class Workshop {
+       };
+       body.querySelector(".file-actions").prepend(button);
+     }
++    for (const [label, action] of [
++      ["Featured crew circuits", () => this.onFeatured?.()],
++      ["Set challenge target", () => this.challengeDialog()],
++      ["Race saved challenge", () => this.onChallenge?.(clone(this.track))],
++    ]) {
++      const button = document.createElement("button");
++      button.textContent = label;
++      button.onclick = () => {
++        close();
++        action();
++      };
++      body.querySelector(".file-actions").append(button);
++    }
++    if (this.track.challenge) {
++      const p = document.createElement("p");
++      p.textContent = `Challenge by ${this.track.challenge.creator} · ${time(this.track.challenge.targetMs)} · fixed car and controls. Editing the circuit removes this target.`;
++      body.prepend(p);
++    }
+     const trashButton = document.createElement("button");
+     trashButton.textContent = "Move current draft to Trash";
+     trashButton.disabled = !this.store || !this.baseline;
+diff --git a/content/tracks/dockside-dash/definition.html b/content/tracks/dockside-dash/definition.html
+index 7d4a98b..ef5f333 100644
+--- a/content/tracks/dockside-dash/definition.html
++++ b/content/tracks/dockside-dash/definition.html
+@@ -1,11 +1,11 @@
+-<!doctype html>
++<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"><title>Dockside Dash</title></head><body>
+ <article itemscope itemtype="urn:ScrapLeague:Track">
+ <p itemprop="id">51000000-0000-4000-8000-000000000073</p>
+ <p itemprop="slug">dockside-dash</p>
+ <p itemprop="schemaVersion">1</p>
+ <h1 itemprop="name">Dockside Dash</h1>
+-<p itemprop="description">Save boost for the long dockside straight.</p>
++<p itemprop="description">Twin dock lights: the gravel-side boost strip rewards a precise line. The center asphalt leaves room to pass and brake. Keep every checkpoint in order.</p>
+ <p itemprop="pieceCatalogRevision">pieces-v1</p>
+ <p itemprop="laps">3</p>
+ <p itemprop="scenePreset">docks</p>
+@@ -26,8 +26,7 @@
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-000000000081</span><span itemprop="kind">straight</span><span itemprop="x">-4.898587196589412e-15</span><span itemprop="z">120</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">60</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-000000000082</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-000000000082</span><span itemprop="kind">straight</span><span itemprop="x">-1.5920408388915588e-14</span><span itemprop="z">60</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">20</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-000000000083</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-000000000083</span><span itemprop="kind">quarter</span><span itemprop="x">-1.959434878635765e-14</span><span itemprop="z">40</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">40</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-000000000074</span></li></ol></section>
+-<section><h2>patches</h2><ol data-collection="patches"><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-00000000009c</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000080</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">62.83185307179586</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li>
+-<li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-00000000009d</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000083</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">62.83185307179586</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li></ol></section>
++<section><h2>patches</h2><ol data-collection="patches"><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-00000000009c</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000080</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">62.83185307179586</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-00000000009d</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000083</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">62.83185307179586</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">105a7f49-4265-4c80-aeff-b89a60a0872d</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000078</span><span itemprop="surface">gravel</span><span itemprop="start">5</span><span itemprop="end">57.83185307179586</span><span itemprop="lateralMin">1.5</span><span itemprop="lateralMax">6</span></li><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">4c9b187d-72e6-4e47-96c9-ad68dc38c37c</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000079</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">36</span><span itemprop="lateralMin">1.5</span><span itemprop="lateralMax">6</span></li></ol></section>
+ <section><h2>gates</h2><ol data-collection="gates"><li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-000000000084</span><span itemprop="kind">finish</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000074</span><span itemprop="distance">45</span><span itemprop="order">0</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-000000000086</span><span itemprop="kind">checkpoint</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000076</span><span itemprop="distance">24.03637914302044</span><span itemprop="order">1</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-000000000088</span><span itemprop="kind">checkpoint</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000078</span><span itemprop="distance">3.0727582860408718</span><span itemprop="order">2</span></li>
+@@ -52,6 +51,6 @@
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-000000000099</span><span itemprop="role">grid</span><span itemprop="x">68</span><span itemprop="z">2.5</span><span itemprop="heading">0</span><span itemprop="slot">4</span><span itemprop="gateId"></span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-00000000009a</span><span itemprop="role">grid</span><span itemprop="x">60</span><span itemprop="z">-2.5</span><span itemprop="heading">0</span><span itemprop="slot">5</span><span itemprop="gateId"></span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-00000000009b</span><span itemprop="role">grid</span><span itemprop="x">60</span><span itemprop="z">2.5</span><span itemprop="heading">0</span><span itemprop="slot">6</span><span itemprop="gateId"></span></li></ol></section>
+-<section><h2>props</h2><ol data-collection="props"><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">51000000-0000-4000-8000-00000000009e</span><span itemprop="kind">pad</span><span itemprop="x">190</span><span itemprop="z">0</span><span itemprop="heading">0</span><span itemprop="length">8</span><span itemprop="width">6</span><span itemprop="duration">1</span><span itemprop="damping">0.2</span></li></ol></section>
++<section><h2>props</h2><ol data-collection="props"><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">51000000-0000-4000-8000-00000000009e</span><span itemprop="kind">pad</span><span itemprop="x">190</span><span itemprop="z">0</span><span itemprop="heading">0</span><span itemprop="length">8</span><span itemprop="width">6</span><span itemprop="duration">1</span><span itemprop="damping">0.2</span></li><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">d5b8ef25-fc53-44d5-9cb1-f0b8c20962f9</span><span itemprop="kind">pad</span><span itemprop="x">316.9</span><span itemprop="z">59.99999999999999</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">6</span><span itemprop="width">2.4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">d9af7017-f0d5-4e13-9f95-1032e944c314</span><span itemprop="kind">light</span><span itemprop="x">331</span><span itemprop="z">47.99999999999999</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">4</span><span itemprop="width">4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">5c67c72e-7716-4c76-a9fe-04b301c00a66</span><span itemprop="kind">light</span><span itemprop="x">331</span><span itemprop="z">57.99999999999999</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">4</span><span itemprop="width">4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li></ol></section>
+ <section><h2>recipes</h2><ol data-collection="recipes"></ol></section>
+ </article></body></html>
+diff --git a/content/tracks/furnace-bend/definition.html b/content/tracks/furnace-bend/definition.html
+index ca80f30..8b3fc8a 100644
+--- a/content/tracks/furnace-bend/definition.html
++++ b/content/tracks/furnace-bend/definition.html
+@@ -1,11 +1,11 @@
+-<!doctype html>
++<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"><title>Furnace Bend</title></head><body>
+ <article itemscope itemtype="urn:ScrapLeague:Track">
+ <p itemprop="id">51000000-0000-4000-8000-000000000104</p>
+ <p itemprop="slug">furnace-bend</p>
+ <p itemprop="schemaVersion">1</p>
+ <h1 itemprop="name">Furnace Bend</h1>
+-<p itemprop="description">Ease off the throttle to bring a slide back.</p>
++<p itemprop="description">Furnace stacks: a tight inside gravel line leads to a boost strip; the outside asphalt gives more grip and recovery room. Save charge for the exit.</p>
+ <p itemprop="pieceCatalogRevision">pieces-v1</p>
+ <p itemprop="laps">3</p>
+ <p itemprop="scenePreset">foundry</p>
+@@ -30,8 +30,7 @@
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-000000000116</span><span itemprop="kind">straight</span><span itemprop="x">-1.666014831349671e-14</span><span itemprop="z">120</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">60</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-000000000117</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-000000000117</span><span itemprop="kind">straight</span><span itemprop="x">-2.768196950582289e-14</span><span itemprop="z">60</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">40</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-000000000118</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-000000000118</span><span itemprop="kind">quarter</span><span itemprop="x">-3.5029850300707004e-14</span><span itemprop="z">20</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">40</span><span itemprop="radius">20</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-000000000105</span></li></ol></section>
+-<section><h2>patches</h2><ol data-collection="patches"><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-00000000012f</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000108</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">31.41592653589793</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li>
+-<li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-000000000130</span><span itemprop="pieceId">51000000-0000-4000-8000-00000000010b</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">31.41592653589793</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li></ol></section>
++<section><h2>patches</h2><ol data-collection="patches"><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-00000000012f</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000108</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">31.41592653589793</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">51000000-0000-4000-8000-000000000130</span><span itemprop="pieceId">51000000-0000-4000-8000-00000000010b</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">31.41592653589793</span><span itemprop="lateralMin">-6</span><span itemprop="lateralMax">6</span></li><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">621ebd06-6098-4c63-8a06-32c58cd3efef</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000108</span><span itemprop="surface">gravel</span><span itemprop="start">5</span><span itemprop="end">26.41592653589793</span><span itemprop="lateralMin">1.5</span><span itemprop="lateralMax">6</span></li><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">a0ca54af-513e-40b7-8df5-a730ed0c7d39</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000109</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">36</span><span itemprop="lateralMin">1.5</span><span itemprop="lateralMax">6</span></li></ol></section>
+ <section><h2>gates</h2><ol data-collection="gates"><li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-000000000119</span><span itemprop="kind">finish</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000105</span><span itemprop="distance">45</span><span itemprop="order">0</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-00000000011b</span><span itemprop="kind">checkpoint</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000107</span><span itemprop="distance">21.41592653589794</span><span itemprop="order">1</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-00000000011d</span><span itemprop="kind">checkpoint</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000109</span><span itemprop="distance">46.41592653589794</span><span itemprop="order">2</span></li>
+@@ -54,6 +53,6 @@
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-00000000012c</span><span itemprop="role">grid</span><span itemprop="x">48</span><span itemprop="z">2.5</span><span itemprop="heading">0</span><span itemprop="slot">4</span><span itemprop="gateId"></span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-00000000012d</span><span itemprop="role">grid</span><span itemprop="x">40</span><span itemprop="z">-2.5</span><span itemprop="heading">0</span><span itemprop="slot">5</span><span itemprop="gateId"></span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-00000000012e</span><span itemprop="role">grid</span><span itemprop="x">40</span><span itemprop="z">2.5</span><span itemprop="heading">0</span><span itemprop="slot">6</span><span itemprop="gateId"></span></li></ol></section>
+-<section><h2>props</h2><ol data-collection="props"></ol></section>
++<section><h2>props</h2><ol data-collection="props"><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">4b8e9d74-6e8f-4298-931a-79ef5d45fde4</span><span itemprop="kind">pad</span><span itemprop="x">196.9</span><span itemprop="z">40</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">6</span><span itemprop="width">2.4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">864a9c45-e64a-44b5-95e8-40424435e7c7</span><span itemprop="kind">light</span><span itemprop="x">211</span><span itemprop="z">27.999999999999996</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">4</span><span itemprop="width">4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">e41e4a7f-f96d-452e-a46e-c8e34afa0a29</span><span itemprop="kind">light</span><span itemprop="x">211</span><span itemprop="z">38</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">4</span><span itemprop="width">4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li></ol></section>
+ <section><h2>recipes</h2><ol data-collection="recipes"></ol></section>
+ </article></body></html>
+diff --git a/content/tracks/yard-loop/definition.html b/content/tracks/yard-loop/definition.html
+index 0022144..2a4cdb5 100644
+--- a/content/tracks/yard-loop/definition.html
++++ b/content/tracks/yard-loop/definition.html
+@@ -1,11 +1,11 @@
+-<!doctype html>
++<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"><title>Yard Loop</title></head><body>
+ <article itemscope itemtype="urn:ScrapLeague:Track">
+ <p itemprop="id">51000000-0000-4000-8000-000000000001</p>
+ <p itemprop="slug">yard-loop</p>
+ <p itemprop="schemaVersion">1</p>
+ <h1 itemprop="name">Yard Loop</h1>
+-<p itemprop="description">Brake before the bend. Accelerate as the road opens.</p>
++<p itemprop="description">Yellow gantry: keep the center asphalt for a safe exit, or cross the inside gravel to catch the turquoise boost pad. Straighten before boosting.</p>
+ <p itemprop="pieceCatalogRevision">pieces-v1</p>
+ <p itemprop="laps">3</p>
+ <p itemprop="scenePreset">yard</p>
+@@ -22,7 +22,7 @@
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-00000000000b</span><span itemprop="kind">quarter</span><span itemprop="x">40</span><span itemprop="z">140</span><span itemprop="heading">3.141592653589793</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">40</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-00000000000c</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-00000000000c</span><span itemprop="kind">straight</span><span itemprop="x">-4.898587196589412e-15</span><span itemprop="z">100</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">60</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-00000000000d</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:RoadPiece"><span itemprop="id">51000000-0000-4000-8000-00000000000d</span><span itemprop="kind">quarter</span><span itemprop="x">-1.5920408388915588e-14</span><span itemprop="z">40</span><span itemprop="heading">4.71238898038469</span><span itemprop="width">12</span><span itemprop="exitWidth">12</span><span itemprop="length">40</span><span itemprop="radius">40</span><span itemprop="turn">1</span><span itemprop="nextPiece">51000000-0000-4000-8000-000000000002</span></li></ol></section>
+-<section><h2>patches</h2><ol data-collection="patches"></ol></section>
++<section><h2>patches</h2><ol data-collection="patches"><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">f25c1589-e7f7-4ca4-b13c-58ec01cf5f4a</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000005</span><span itemprop="surface">gravel</span><span itemprop="start">5</span><span itemprop="end">57.83185307179586</span><span itemprop="lateralMin">1.5</span><span itemprop="lateralMax">6</span></li><li itemscope itemtype="urn:ScrapLeague:SurfacePatch"><span itemprop="id">0601ee43-a475-496f-86f2-8f76dccff717</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000006</span><span itemprop="surface">gravel</span><span itemprop="start">0</span><span itemprop="end">36</span><span itemprop="lateralMin">1.5</span><span itemprop="lateralMax">6</span></li></ol></section>
+ <section><h2>gates</h2><ol data-collection="gates"><li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-00000000000e</span><span itemprop="kind">finish</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000002</span><span itemprop="distance">45</span><span itemprop="order">0</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-000000000010</span><span itemprop="kind">checkpoint</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000004</span><span itemprop="distance">18.046773183883374</span><span itemprop="order">1</span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Checkpoint"><span itemprop="id">51000000-0000-4000-8000-000000000012</span><span itemprop="kind">checkpoint</span><span itemprop="pieceId">51000000-0000-4000-8000-000000000006</span><span itemprop="distance">28.261693295970872</span><span itemprop="order">2</span></li>
+@@ -43,6 +43,6 @@
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-00000000001f</span><span itemprop="role">grid</span><span itemprop="x">68</span><span itemprop="z">2.5</span><span itemprop="heading">0</span><span itemprop="slot">4</span><span itemprop="gateId"></span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-000000000020</span><span itemprop="role">grid</span><span itemprop="x">60</span><span itemprop="z">-2.5</span><span itemprop="heading">0</span><span itemprop="slot">5</span><span itemprop="gateId"></span></li>
+ <li itemscope itemtype="urn:ScrapLeague:Spawn"><span itemprop="id">51000000-0000-4000-8000-000000000021</span><span itemprop="role">grid</span><span itemprop="x">60</span><span itemprop="z">2.5</span><span itemprop="heading">0</span><span itemprop="slot">6</span><span itemprop="gateId"></span></li></ol></section>
+-<section><h2>props</h2><ol data-collection="props"></ol></section>
++<section><h2>props</h2><ol data-collection="props"><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">38b06e3b-7a29-4f58-9cf6-c5bcb1a91146</span><span itemprop="kind">pad</span><span itemprop="x">216.9</span><span itemprop="z">59.99999999999999</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">6</span><span itemprop="width">2.4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">e94f864f-9ed7-4229-a3a1-63cda925d4c6</span><span itemprop="kind">light</span><span itemprop="x">231</span><span itemprop="z">47.99999999999999</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">4</span><span itemprop="width">4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li><li itemscope itemtype="urn:ScrapLeague:Prop"><span itemprop="id">eb8e82da-e937-43b7-8bf7-3fb6804977ba</span><span itemprop="kind">light</span><span itemprop="x">231</span><span itemprop="z">57.99999999999999</span><span itemprop="heading">1.5707963267948966</span><span itemprop="length">4</span><span itemprop="width">4</span><span itemprop="duration">1</span><span itemprop="damping">0</span></li></ol></section>
+ <section><h2>recipes</h2><ol data-collection="recipes"></ol></section>
+ </article></body></html>
+diff --git a/requirements.json b/requirements.json
+index 24aceec..6e98745 100644
+--- a/requirements.json
++++ b/requirements.json
+@@ -814,6 +814,118 @@
+           "outcome": "Resized browser-height and injected safe insets preserve state and reachable content; actual bounds and hit points are checked"
+         }
+       ]
++    },
++    {
++      "id": "E1",
++      "outcome": "Reachable crew goals, compatible recorded ghosts and measured coaching",
++      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "target-replays",
++          "outcome": "Nine recorded runs reproduce ordinary-control finishes; ladder ordered"
++        },
++        {
++          "id": "identity",
++          "outcome": "Fixed setup and revisions prevent incompatible replay/best comparison"
++        },
++        {
++          "id": "results",
++          "outcome": "Recorded sectors, incident counts and next target support retry"
++        }
++      ]
++    },
++    {
++      "id": "E2",
++      "outcome": "Clean controlled exits reward bounded boost without farming",
++      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "eligibility",
++          "outcome": "Forward full bend with gate progress, controlled exit speed and no contact/reset/slide"
++        },
++        {
++          "id": "caps-and-farming",
++          "outcome": "Capacity cap and one attempt per bend/lap reject repeat traversal"
++        },
++        {
++          "id": "feedback",
++          "outcome": "HUD labels success without another touch action; pause preserves rules"
++        }
++      ]
++    },
++    {
++      "id": "E3",
++      "outcome": "Three authored circuits offer legible legal risk/reward lines",
++      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "line-comparison",
++          "outcome": "Asphalt and inside gravel/pad lines finish legally with measured distinct consequences"
++        },
++        {
++          "id": "landmarks",
++          "outcome": "Named authored landmarks and briefings identify the decision"
++        }
++      ]
++    },
++    {
++      "id": "E4",
++      "outcome": "Garage presets explain tradeoffs and compare the same short section",
++      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "comparison",
++          "outcome": "Deterministic 20-second comparison uses actual simulation for each build"
++        },
++        {
++          "id": "unlocks",
++          "outcome": "Preview and test do not equip locked League parts"
++        }
++      ]
++    },
++    {
++      "id": "E5",
++      "outcome": "Named rivals use distinct fair tactics and relevant goals",
++      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "strategies",
++          "outcome": "Distinct bounded braking, passing and boost tactics remain deterministic"
++        },
++        {
++          "id": "race-goal",
++          "outcome": "Actual roster rival is named and result classification determines objective"
++        }
++      ]
++    },
++    {
++      "id": "E6",
++      "outcome": "Workshop featured-remix-test-target-share loop preserves authoring work",
++      "method": "Executable simulation/schema/storage assertions and available-browser journey with retained evidence",
++      "stage": "local",
++      "scenarios": [
++        {
++          "id": "author",
++          "outcome": "A valid completed current test captures time, car, laps, controls and creator credit"
++        },
++        {
++          "id": "import-export",
++          "outcome": "HTML chooser import/export, save and reopen preserve a valid fixed challenge in new IDs"
++        },
++        {
++          "id": "invalidation",
++          "outcome": "Gameplay edits/duplication invalidate targets; stale revisions cannot launch"
++        },
++        {
++          "id": "publication",
++          "outcome": "Existing owner publication round-trips metadata and playable fixed setup in a controlled transport fixture"
++        }
++      ]
+     }
+   ],
+   "governingGuide": {
+@@ -829,5 +941,11 @@
+     "sha256": "1b32feff2af6ec4042283e8ce21a1cfa32e6516ce48da834cce98ff065c11054",
+     "snapshot": "audit/2026-10-18-phone-layout/guide-2.11.md",
+     "scope": "Sections 10/11 adaptive layout and bounded browser evidence apply to this responsive repair. Original 2.10 adopted outcomes remain; this is not a silent full-game re-audit against all later guidance."
++  },
++  "engagementGuidanceSupplement": {
++    "edition": "2.13.0",
++    "sha256": "194e3da1d55c799e7156bcbde6c7a546a18d6fd367a6672d51b763a26d3cfa3e",
++    "snapshot": "audit/2026-10-28-engagement/guide-2.13.md",
++    "scope": "Sections 1–4, 6–11 and 14–17 where impacted by E1–E6. Prior adopted requirements remain. This is local engagement implementation, not full release acceptance or a silent waiver of old outcomes."
+   }
+ }
+diff --git a/tests/editor-commands.test.mjs b/tests/editor-commands.test.mjs
+index f1679c6..c784379 100644
+--- a/tests/editor-commands.test.mjs
++++ b/tests/editor-commands.test.mjs
+@@ -96,7 +96,13 @@ test("recipes resolve bounded native behavior, duplicate references and reject e
+   );
+   assert.throws(() => deleteRecipe(track, recipe.id), /reassign/);
+   const copy = duplicateTrack(track);
+-  assert.equal(copy.props[0].kind, "recipe:" + copy.recipes[0].id);
++  const copiedRecipeProp = copy.props.find((p) => p.kind.startsWith("recipe:"));
++  assert.equal(copiedRecipeProp.kind, "recipe:" + copy.recipes[0].id);
++  assert.equal(copy.props.length, track.props.length);
++  assert.equal(
++    track.props.find((p) => p.id === prop.id).kind,
++    "recipe:" + recipe.id,
++  );
+   assert.ok(compile(copy).valid);
+   assert.throws(
+     () => createRecipe(track, { kind: "eval", duration: 1, damping: 0.2 }),
+diff --git a/tools/content.mjs b/tools/content.mjs
+index 2ce0491..0e1d205 100644
+--- a/tools/content.mjs
++++ b/tools/content.mjs
+@@ -2,7 +2,8 @@ import { readFile, readdir } from "node:fs/promises";
+ import { DOMParser } from "linkedom";
+ import { parseTrack, parseEntities, hash, gameplay } from "../app/model.js";
+ import { compile } from "../app/track.js";
+-export async function loadContent() {
++import { RULES, SLOTS, assemble } from "../app/builds.js";
++export async function loadContent({ includeTargets = true } = {}) {
+   const root = new URL("../content/", import.meta.url),
+     read = (p) => readFile(new URL(p, root), "utf8");
+   const catalog = parseEntities(
+@@ -58,5 +59,72 @@ export async function loadContent() {
+   for (const d of daily)
+     if (!tracks.some((t) => t.track.id === d.track))
+       throw Error("Invalid daily track");
+-  return { catalog, tracks, parts, cups, rivals, daily };
++  const targets = includeTargets
++    ? JSON.parse(
++        await readFile(
++          new URL("../references/target-runs.json", import.meta.url),
++          "utf8",
++        ),
++      )
++    : [];
++  for (const target of targets) {
++    const track = tracks.find((t) => t.track.slug === target.slug);
++    if (
++      target.rulesRevision !== RULES ||
++      track?.revision !== target.trackRevision
++    )
++      throw Error("Re-record incompatible target runs: " + target.slug);
++    const spec = assemble(target.build, parts);
++    const revision = await hash(
++      SLOTS.map((s) => {
++        const { name, description, unlock, ...physical } = spec[s];
++        return physical;
++      }),
++    );
++    if (
++      revision !== target.buildRevision ||
++      target.laps !== 3 ||
++      target.assist !== "steering-off:manual"
++    )
++      throw Error("Unsupported target setup.");
++    for (const tier of ["bronze", "silver", "gold"]) {
++      const { result, ghost } = target.runs[tier];
++      if (
++        result.trackRevision !== target.trackRevision ||
++        result.buildRevision !== revision ||
++        result.rulesRevision !== RULES ||
++        result.laps !== 3 ||
++        result.dnf ||
++        result.resets ||
++        result.incidents ||
++        !Number.isSafeInteger(result.elapsedMs) ||
++        result.elapsedMs < 1000 ||
++        result.elapsedMs > 480000 ||
++        !Array.isArray(ghost) ||
++        ghost.length < 2 ||
++        ghost.length > 10000
++      )
++        throw Error("Invalid target recording: " + target.slug);
++      for (let i = 0; i < ghost.length; i++) {
++        const frame = ghost[i];
++        if (
++          !Array.isArray(frame) ||
++          frame.length !== 4 ||
++          frame.some((n) => !Number.isFinite(n)) ||
++          frame[0] < 0 ||
++          frame[0] > result.elapsedMs ||
++          (i && frame[0] <= ghost[i - 1][0]) ||
++          Math.abs(frame[1]) > 1000 ||
++          Math.abs(frame[2]) > 1000
++        )
++          throw Error("Invalid target replay frame.");
++      }
++    }
++    if (!(
++      target.runs.gold.result.elapsedMs < target.runs.silver.result.elapsedMs &&
++      target.runs.silver.result.elapsedMs < target.runs.bronze.result.elapsedMs
++    ))
++      throw Error("Unordered target ladder.");
++  }
++  return { catalog, tracks, parts, cups, rivals, daily, targets };
+ }

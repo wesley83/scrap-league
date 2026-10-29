@@ -1,6 +1,7 @@
 import { parseTrack, gameplay, hash, stable, esc, UUID } from "./model.js";
 import { compile } from "./track.js";
 import { publishTrack, HOST_CONFIG } from "./pagelove.js";
+import { assertChallengeSource } from "./challenges.js";
 const entryFields = ["id", "slug", "name", "revision"];
 export function catalogDocument(entries) {
   return (
@@ -176,6 +177,7 @@ export async function publishOwnerTrack(
 ) {
   if (!compile(track).valid)
     throw Error("Fix the track validation problems before publishing.");
+  await assertChallengeSource(track);
   if (!key?.startsWith("pk_"))
     throw Error("Enter the owner key for the pinned authoring host.");
   const request = authorFetch(key, fetcher);

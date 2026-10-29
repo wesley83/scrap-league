@@ -96,7 +96,13 @@ test("recipes resolve bounded native behavior, duplicate references and reject e
   );
   assert.throws(() => deleteRecipe(track, recipe.id), /reassign/);
   const copy = duplicateTrack(track);
-  assert.equal(copy.props[0].kind, "recipe:" + copy.recipes[0].id);
+  const copiedRecipeProp = copy.props.find((p) => p.kind.startsWith("recipe:"));
+  assert.equal(copiedRecipeProp.kind, "recipe:" + copy.recipes[0].id);
+  assert.equal(copy.props.length, track.props.length);
+  assert.equal(
+    track.props.find((p) => p.id === prop.id).kind,
+    "recipe:" + recipe.id,
+  );
   assert.ok(compile(copy).valid);
   assert.throws(
     () => createRecipe(track, { kind: "eval", duration: 1, damping: 0.2 }),

@@ -70,3 +70,16 @@ The local game and editor work without a Pagelove credential. Owner publication 
 Real-hardware sessions, human playtesting and perceptual listening are outside required scope by user instruction. Available-browser and automated checks remain required. This candidate does not yet pass every production release row in ACCEPTANCE.md.
 
 If the racing view is blank, open **Settings → Repair graphics**. This rebuilds the view using safer graphics without erasing your progress. During a race, the clock stays paused until you choose Resume. Phones use safer graphics by default; the setting can also be toggled in Settings.
+# October 28 engagement update
+
+**Crew challenges** on the home menu offers Bronze, Silver and Gold recorded ghosts on Yard Loop, Dockside Dash and Furnace Bend. Each uses Mule / Courier / Road / Roll Cage, three laps, manual throttle and steering assist off. These are local target runs; League rewards and public Trial/Daily boards remain separate. Your compatible best is remembered. Results show the next target, its gap and coaching from recorded sectors. Ghost visibility is available in Settings.
+
+**Clean exits** earn up to six boost charge, within your car's capacity, once per bend per lap. Follow the checkpoints, enter and traverse the bend forward, stay within the road, avoid contact/reset/handbraking and straighten the car above 43 km/h on exit. Slow or sliding exits earn nothing. The HUD names successful exits. Checkpoint charge and pad/driver boost rules still apply; no extra button is required.
+
+The three featured circuits have an inside gravel line and a narrow turquoise boost strip on the exit. Center asphalt offers recovery space. The paired yellow lights and named gantry/dock/furnace landmark help locate the decision. Road boundaries and checkpoints apply to both lines.
+
+**Garage driving styles** preview Grip Specialist, Straight-Line Rocket and Stable All-Rounder. Locked parts remain previews for League; Workshop can test every part. Compare the builds on the same measured 20-second Yard Loop section, then drive the selection yourself with Test this build. More meters indicates faster progress on that section; lower sideways speed indicates less sliding. Other tracks and surfaces can change the tradeoff.
+
+**Rival goals** name a racer in the actual roster. Bea brakes earlier, Kit commits to an inside pass near bends, and Mags reserves charge for a straight-line overtake. All use normal steering, throttle, brakes and boost; their physics and collision rules match the player's.
+
+**Workshop challenges:** choose a featured circuit, Remix in Workshop, edit it and finish a valid test. Files → Set challenge target captures that completed time, car, laps and control setup with your creator credit. Files → Race saved challenge uses the fixed setup. Export HTML shares it offline; recipients use Files → Import HTML. Import preserves a valid target in a separate copy; Remix/Duplicate clears it for a new creator run. Geometry edits clear the target. Owner publication and its existing share link remain available from Tools. Challenge times are client-reported, not competitive verification.

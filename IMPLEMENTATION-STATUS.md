@@ -1,5 +1,15 @@
 # Scrap League implementation and release status
 
+## Engagement release execution — October 29, 2026 UTC
+
+The six engagement features are prepared for publication. The [release execution report](audit/2026-10-28-release/report.md) and exact-candidate acceptance ledger distinguish local checks, hosted CI, commit/push, conditional promotion and live readback. Existing leaderboard policy controls are preserved; the recognized validator identity payload is migrated conditionally for rules 1.2.0 and the three revised tracks, with private backups and row-hash comparisons. Earlier sections and receipts retain their historical delivery state.
+
+## Six engagement improvements — October 28, 2026
+
+The local candidate adds crew target ghosts/coaching, clean-exit boost rewards, three authored risk/reward lines and landmarks, explained/measured garage presets, distinct legal rival strategies/goals, and fixed-setup Workshop challenges with creator credit and HTML sharing. New E1–E6 requirement rows supplement existing obligations. Current evidence and explicit limits are in audit/2026-10-28-engagement/report.md; earlier acceptance does not certify this changed candidate.
+
+Driving rules are 1.2.0 and three official geometry revisions changed. Existing public leaderboard records and prior immutable releases have not been rewritten. This entry describes local implementation, not a new hosted deployment. A later deployment must refresh the exact-candidate release evidence and migrate existing board identity policies through the established preservation path, retaining player records. The six new features do not require a new public write service.
+
 ## Phone layout repair — October 18, 2026
 
 The [responsive-layout report](audit/2026-10-18-phone-layout/report.md) and current acceptance ledger identify this candidate's verified scope. The phone home menu explicitly resets the inherited two-column grid, wraps actions within bounded columns and sizes its heading to the available width. Its scrollable stage uses the space remaining after the actual header/footer, including enlarged text and safe-area spacing. R01 adds required home-action geometry, text-size, phone-journey and viewport/safe-region evidence; previous Workshop/Settings checks did not establish home-menu responsiveness. The 2.11 layout guidance supplement and the retained 2.10 baseline are distinguished in the inventory. Native/physical checks remain excluded.

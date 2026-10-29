@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-29T00:35:23.520Z",
+  "id": "349172b0-62e4-4911-a638-840c2b3a3f05",
+  "state": "awaiting-publication",
+  "checks": {
+    "catalogConflictPreservesExactLink": true,
+    "listingRetry": true,
+    "staleTrackRefused": true,
+    "ambiguousWrite": "Published",
+    "ambiguousSemanticReadback": true,
+    "wrongCredentialRefused": true
+  },
+  "scope": "Real pinned owner/public endpoints; injected stale catalog ETag and lost accepted response; only owned circuit is changed.",
+  "before": {
+    "utc": "2026-10-29T00:35:26.650Z",
+    "definitionHash": "db3f173e655d6e9141a7871443315ae85ad782ee9a552824cafdb8d7e5ade80a",
+    "catalogRows": [
+      {
+        "id": "349172b0-62e4-4911-a638-840c2b3a3f05",
+        "hash": "08270c0bfcce304c4dadfc0af195257d8bc082907837d82ee4534d257aebe41b"
+      }
+    ]
+  }
+}

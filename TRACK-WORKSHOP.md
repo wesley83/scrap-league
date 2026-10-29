@@ -136,3 +136,10 @@ Deleting a published track is outside the editor's first-release UI; archive it 
 ## Acceptance journeys
 
 The bundled editor is complete only after a keyboard user and a touch user can each create a closed circuit, correct an invalid connection, set gates, test a lap, return, undo an edit, recover after reload and export/import the result. The owner flow additionally needs a real conditional-write conflict, ambiguous-save reconciliation and readback on the selected Pagelove host. Official tracks must round-trip through the editor without changing gameplay meaning.
+# Fixed-setup challenge workflow — October 28, 2026
+
+Home → Crew challenges → Remix in Workshop opens a new editable identity. Edit and finish a valid ordinary test; Files → Set challenge target captures the actual time/build/laps/assistance and a public creator credit (1–40 printable characters). The target is optional semantic `TrackChallenge` data in the authoritative HTML document. It is never executable content.
+
+Files → Race saved challenge validates the physical source/rules revision and uses the captured car and control setup. Invalid/stale targets cannot launch; ordinary tests and importing without the target remain available. Editing gameplay clears the target. Duplicate/remix creates new IDs and requires a new target run. Import validates an existing target, remaps all entity IDs for a safe separate local copy and rebinds only its physical-source identity; geometry, time, attribution and fixed setup are unchanged. Imported targets remain client-reported.
+
+Export HTML distributes the circuit and target offline. The result screen also exports its captured circuit/challenge instead of sharing a link to an unpublished draft. The existing owner publication path publishes the complete semantic document and validates a present challenge before sending. Recipients of a published link can choose Race fixed challenge or edit a separate copy. Owner credentials are not stored. Ordinary public score submission is still limited to official Trial/Daily results.

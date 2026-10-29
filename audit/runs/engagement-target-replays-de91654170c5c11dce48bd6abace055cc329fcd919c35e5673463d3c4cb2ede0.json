@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "yard-loop",
+    "tier": "bronze",
+    "elapsedMs": 127298,
+    "cleanExits": 12,
+    "incidents": 0
+  },
+  {
+    "slug": "yard-loop",
+    "tier": "silver",
+    "elapsedMs": 107149,
+    "cleanExits": 12,
+    "incidents": 0
+  },
+  {
+    "slug": "yard-loop",
+    "tier": "gold",
+    "elapsedMs": 94514,
+    "cleanExits": 12,
+    "incidents": 0
+  },
+  {
+    "slug": "dockside-dash",
+    "tier": "bronze",
+    "elapsedMs": 162235,
+    "cleanExits": 6,
+    "incidents": 0
+  },
+  {
+    "slug": "dockside-dash",
+    "tier": "silver",
+    "elapsedMs": 139785,
+    "cleanExits": 12,
+    "incidents": 0
+  },
+  {
+    "slug": "dockside-dash",
+    "tier": "gold",
+    "elapsedMs": 125553,
+    "cleanExits": 12,
+    "incidents": 0
+  },
+  {
+    "slug": "furnace-bend",
+    "tier": "bronze",
+    "elapsedMs": 192105,
+    "cleanExits": 0,
+    "incidents": 0
+  },
+  {
+    "slug": "furnace-bend",
+    "tier": "silver",
+    "elapsedMs": 164330,
+    "cleanExits": 0,
+    "incidents": 0
+  },
+  {
+    "slug": "furnace-bend",
+    "tier": "gold",
+    "elapsedMs": 145615,
+    "cleanExits": 18,
+    "incidents": 0
+  }
+]

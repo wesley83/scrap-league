@@ -1,3 +1,4 @@
+import { challengeErrors } from "./challenge-schema.js";
 export const UUID =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 export const uid = () => crypto.randomUUID();
@@ -34,7 +35,15 @@ export async function hash(value) {
     .join("");
 }
 export function gameplay(t) {
-  const { name, description, slug, scenePreset, musicPreset, ...rest } = t;
+  const {
+    name,
+    description,
+    slug,
+    scenePreset,
+    musicPreset,
+    challenge,
+    ...rest
+  } = t;
   return rest;
 }
 export const schemas = {
@@ -152,6 +161,20 @@ export const schemas = {
     utility: "str",
     scheduleRevision: "str",
   },
+  TrackChallenge: {
+    creator: "str",
+    targetMs: "num",
+    trackRevision: "str",
+    buildRevision: "str",
+    rulesRevision: "str",
+    chassis: "str",
+    engine: "str",
+    tires: "str",
+    utility: "str",
+    assist: "num",
+    autoAccelerate: "num",
+    laps: "num",
+  },
 };
 export const collections = {
   pieces: "RoadPiece",
@@ -173,7 +196,11 @@ export function serializeTrack(t) {
       (k) =>
         `<${k === "name" ? "h1" : "p"} itemprop="${k}">${esc(t[k])}</${k === "name" ? "h1" : "p"}>`,
     )
-    .join("\n")}\n${Object.entries(collections)
+    .join(
+      "\n",
+    )}\n${t.challenge ? entityHTML("TrackChallenge", t.challenge) : ""}\n${Object.entries(
+    collections,
+  )
     .map(
       ([key, type]) =>
         `<section><h2>${key}</h2><ol data-collection="${key}">${t[key].map((v) => entityHTML(type, v)).join("\n")}</ol></section>`,
@@ -258,11 +285,18 @@ export function parseTrack(html, Parser = DOMParser) {
     const type = e.getAttribute("itemtype")?.replace("urn:ScrapLeague:", "");
     if (
       !schemas[type] ||
-      (!Object.values(collections).includes(type) && type !== "Track")
+      (!Object.values(collections).includes(type) &&
+        !["Track", "TrackChallenge"].includes(type))
     )
       throw Error("Unsupported entity type.");
     if (e !== root && !root.contains(e)) throw Error("Entity outside track.");
   }
+  const challenges = root.querySelectorAll(
+    '[itemtype="urn:ScrapLeague:TrackChallenge"]',
+  );
+  if (challenges.length > 1) throw Error("Expected at most one challenge.");
+  if (challenges.length)
+    t.challenge = readEntity(challenges[0], "TrackChallenge");
   for (const [key, type] of Object.entries(collections)) {
     const lists = root.querySelectorAll(`[data-collection="${key}"]`);
     if (lists.length !== 1) throw Error(`Expected one ${key} list.`);
@@ -288,6 +322,7 @@ export function parseEntities(html, type, Parser = DOMParser) {
 }
 export function structuralErrors(t) {
   const e = [];
+  if (t.challenge) e.push(...challengeErrors(t.challenge));
   if (t.schemaVersion !== 1) e.push("Unsupported track schema.");
   if (t.pieceCatalogRevision !== "pieces-v1")
     e.push("Unsupported piece catalog.");
@@ -339,6 +374,7 @@ export function structuralErrors(t) {
 export function duplicateTrack(t, newId = uid) {
   const copy = clone(t),
     ids = new Map();
+  delete copy.challenge;
   [copy, ...Object.keys(collections).flatMap((k) => copy[k])].forEach((o) => {
     const id = newId();
     ids.set(o.id, id);

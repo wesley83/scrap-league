@@ -3,10 +3,16 @@ import { time } from "./builds.js";
 export const GAME_URL = "https://hire-poker-8313.onpagelove.com/";
 export function resultInvitation(
   result,
-  { date = "", slug = "", publishedId = "" } = {},
+  { date = "", slug = "", publishedId = "", crew = null } = {},
 ) {
   const url = new URL(GAME_URL);
-  if (result.mode === "daily" && /^\d{4}-\d{2}-\d{2}$/.test(date))
+  if (
+    crew &&
+    /^[a-z-]+$/.test(crew.slug) &&
+    ["bronze", "silver", "gold"].includes(crew.tier)
+  )
+    url.hash = `crew=${crew.slug}:${crew.tier}`;
+  else if (result.mode === "daily" && /^\d{4}-\d{2}-\d{2}$/.test(date))
     url.hash = "daily=" + date;
   else if (publishedId)
     url.hash = "workshop=" + encodeURIComponent(publishedId);

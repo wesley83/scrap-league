@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-29T00:37:17.620Z",
+  "id": "1d7c8c10-3ec5-4ead-817f-b88ebccb62ad",
+  "requests": [
+    {
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "method": "POST",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "status": 206
+    }
+  ],
+  "attempts": [
+    {
+      "state": "confirmed",
+      "identityPreserved": true,
+      "claims": 1
+    }
+  ],
+  "method": "Production Store and Boards with two independent IndexedDB connections in fake-indexeddb; actual public writes/readback; injected accepted-response loss. Not two physical browser tabs.",
+  "checks": {
+    "confirmed": true,
+    "onePublicCopy": true,
+    "oneAcceptanceAcknowledgementDropped": true,
+    "everyAttemptKeptIdentity": true
+  },
+  "cleanup": {
+    "conditional": true,
+    "absent": true
+  },
+  "passed": true
+}

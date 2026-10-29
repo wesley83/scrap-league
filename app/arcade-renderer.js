@@ -419,9 +419,11 @@ export class World {
       ctx.fillStyle =
         p.kind === "pad"
           ? "#63c5b5"
-          : p.kind === "barrier"
-            ? "#182c30"
-            : "#73826d";
+          : p.kind === "light"
+            ? "#ffd34e"
+            : p.kind === "barrier"
+              ? "#182c30"
+              : "#73826d";
       ctx.fillRect(-p.length / 2, -p.width / 2, p.length, p.width);
       ctx.strokeStyle = p.kind === "pad" ? "#e9f8d5" : "#f0d481";
       ctx.lineWidth = 0.25;
@@ -434,6 +436,31 @@ export class World {
           ctx.lineTo(x - 0.8, p.width * 0.3);
           ctx.stroke();
         }
+      ctx.restore();
+    }
+    // Landmarks are presentation derived from authored track description/props.
+    const landmark = t.source.description.split(":")[0];
+    const lights = t.props.filter((p) => p.kind === "light");
+    if (
+      lights.length >= 2 &&
+      t.source.description.includes(":") &&
+      landmark.length <= 32
+    ) {
+      const a = lights.at(-2),
+        b = lights.at(-1);
+      ctx.strokeStyle = "#ffd34e";
+      ctx.lineWidth = 0.8;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.z);
+      ctx.lineTo(b.x, b.z);
+      ctx.stroke();
+      ctx.save();
+      ctx.translate(a.x, a.z);
+      ctx.rotate(a.heading);
+      ctx.font = "bold 3px sans-serif";
+      ctx.fillStyle = t.source.scenePreset === "night" ? "#fff4cf" : "#18343b";
+      ctx.textAlign = "center";
+      ctx.fillText(landmark.toUpperCase(), 5, -5);
       ctx.restore();
     }
     this.drawGate(ctx, t.gates[0]);
