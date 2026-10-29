@@ -1,0 +1,73 @@
+- banner:
+  - button "Scrap League home":
+    - text: SCRAP
+    - generic: LEAGUE
+  - navigation "Game tools":
+    - button "Toggle sound": Sound off
+    - button "Settings"
+- main:
+  - generic "Overhead racing view. W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause"
+  - paragraph: SCRAP LEAGUE / ARCADE RACING CLUB
+  - heading "SMALL CARS. BIG RIVALRIES." [level=1]:
+    - text: SMALL CARS.
+    - emphasis: BIG RIVALRIES.
+  - paragraph:
+    - text: Find your line. Brake into the bend.
+    - text: Leave the rest in the dust.
+  - button "LET’S RACE 2 LAPS · 5 RIVALS · JUMP IN":
+    - generic: LET’S RACE
+    - generic: 2 LAPS · 5 RIVALS · JUMP IN
+  - button "Race the league YARD SHIFT":
+    - text: Race the league
+    - generic: YARD SHIFT
+  - button "Daily Spec 10-29 · UTC":
+    - text: Daily Spec
+    - generic: 10-29 · UTC
+  - button "Track Workshop MAKE YOUR OWN CIRCUIT":
+    - text: Track Workshop
+    - generic: MAKE YOUR OWN CIRCUIT
+  - button "Time Trial"
+  - button "Crew challenges"
+  - button "Leaderboards"
+  - button "Garage"
+  - button "Driving school"
+  - paragraph: Use the steering wheel and brake before bends. Hold GAS to accelerate. BOOST also holds the throttle, so you can steer with your other thumb.
+  - text: YOUR FIRST CIRCUIT
+  - heading "THE YARD" [level=2]
+  - generic: YOUR MACHINE
+  - strong: Mule / Courier / Road / Roll Cage
+  - generic: YOUR PROGRESS
+  - strong: 4 of 12 parts · 0/12 events
+- contentinfo:
+  - generic: Offline pack verified
+  - link "Pagelove, opens a new tab":
+    - /url: https://pagelove.com
+    - text: Made for Pagelove
+- dialog "CREW CHALLENGES":
+  - heading "CREW CHALLENGES" [level=2]
+  - paragraph: Three circuits. Three reachable targets. Recorded runs use the starter car, 3 laps, manual throttle and steering assist off. Targets are local challenges; League unlocks are unchanged.
+  - heading "Yard Loop" [level=3]
+  - paragraph: "Yellow gantry: keep the center asphalt for a safe exit, or cross the inside gravel to catch the turquoise boost pad. Straighten before boosting."
+  - paragraph: By Scrap League crew · Mule / Courier / Road / Roll Cage
+  - button "BRONZE · 02:07.298" [active]
+  - button "SILVER · 01:47.149"
+  - button "GOLD · 01:34.514"
+  - button "Remix in Workshop"
+  - heading "Dockside Dash" [level=3]
+  - paragraph: "Twin dock lights: the gravel-side boost strip rewards a precise line. The center asphalt leaves room to pass and brake. Keep every checkpoint in order."
+  - paragraph: By Scrap League crew · Mule / Courier / Road / Roll Cage
+  - button "BRONZE · 02:42.235"
+  - button "SILVER · 02:19.785"
+  - button "GOLD · 02:05.553"
+  - button "Remix in Workshop"
+  - heading "Furnace Bend" [level=3]
+  - paragraph: "Furnace stacks: a tight inside gravel line leads to a boost strip; the outside asphalt gives more grip and recovery room. Save charge for the exit."
+  - paragraph: By Scrap League crew · Mule / Courier / Road / Roll Cage
+  - button "BRONZE · 03:12.105"
+  - button "SILVER · 02:44.330"
+  - button "GOLD · 02:25.615"
+  - button "Remix in Workshop"
+  - button "Close"
+- text: Powered by
+- link "Pagelove":
+  - /url: https://pagelove.com/

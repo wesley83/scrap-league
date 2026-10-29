@@ -1,6 +1,6 @@
 # Release coverage review
 
-Actor Codex; 2026-10-29T00:43:40.240Z. Release sl-c84ff03afc7e71; source 59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37; output 0d8db25f539f9b68ad5207f1107f2318830ebf6cf8a1e502b813ad9f1def01a1; inventory 8344b4d7f3dc88338012aed99fbcab65116857ff3a9df26e75241d42973e3b82.
+Actor Codex; 2026-10-29T00:57:39.517Z. Release sl-c84ff03afc7e71; source 59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37; output 0d8db25f539f9b68ad5207f1107f2318830ebf6cf8a1e502b813ad9f1def01a1; inventory 8344b4d7f3dc88338012aed99fbcab65116857ff3a9df26e75241d42973e3b82.
 
 Independently preserve all 54 adopted obligations and 122 named scenarios; E1–E6 add engagement goals without waiving earlier contracts. Compare changed physics/rivals/telemetry, optional challenge HTML, three source surfaces/props, UI and generated board identities to unchanged transport, input, audio, worker and publisher controls. New owner identity migration is a scoped known-policy maintenance operation, not an activation bypass. Native desktop/physical/human checks remain excluded by the existing user decision.
 

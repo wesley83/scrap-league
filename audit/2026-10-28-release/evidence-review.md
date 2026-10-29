@@ -1,6 +1,6 @@
 # Release evidence review
 
-Actor Codex; 2026-10-29T00:43:40.242Z. Release sl-c84ff03afc7e71; source 59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37; output 0d8db25f539f9b68ad5207f1107f2318830ebf6cf8a1e502b813ad9f1def01a1; inventory 8344b4d7f3dc88338012aed99fbcab65116857ff3a9df26e75241d42973e3b82.
+Actor Codex; 2026-10-29T00:57:39.519Z. Release sl-c84ff03afc7e71; source 59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37; output 0d8db25f539f9b68ad5207f1107f2318830ebf6cf8a1e502b813ad9f1def01a1; inventory 8344b4d7f3dc88338012aed99fbcab65116857ff3a9df26e75241d42973e3b82.
 
 Historical observations retain original methods/dates; fresh proof and per-outcome impact decisions are explicit. No aggregate test count establishes unobserved browser/provider behavior. CLI/semantic-editor reconstruction differs from pointer gestures. Real-worker offline failure differs from server-process stop. Two production queue clients on a fake IndexedDB substrate are labeled. Native/physical behavior and enjoyment remain unclaimed.
 
@@ -38,13 +38,13 @@ Historical observations retain original methods/dates; fresh proof and per-outco
 | M03 | passed | All 81 builds and 12 circuits pass fresh seeded handling/race/campaign checks. Twelve current sources re-open/export through Workshop, three feature collections recreated via named semantic commands and undo/redo, independently matched to authoritative meaning; original road UI authorship and new CLI provenance remain disclosed. |
 | M04 | passed | Fresh real-worker prior-public-to-current update and offline-draft journey, layouts/focus, new ghosts and full storage/daily/audio/sharing tests; unchanged genuine stopped-server race/edit observation retained. No OS install/physical input claim. |
 | M05 | passed | Fresh actual-host owner conflict/readback, 42 positive/negative board checks, accepted-response reconciliation and unchanged-policy control verification; native composition and retention retain qualified unchanged-contract observations pending current publisher readback. |
-| M06 | not-run | Future exact hosted/live stage not yet observed; historical success cannot substitute. |
+| M06 | passed | Every adopted outcome/scenario now has qualified local, hosted or live evidence for this candidate. Actual conditional publication, populated-data preservation, live resources/browser and isolated real-worker previous-public-client update passed. Native exclusions and provider behavior limits remain explicit. |
 | C01 | passed | Artwork/OG/Twitter initial metadata and social assets unchanged; fresh asset decode/required-metadata regressions and build checks passed. |
 | C02 | passed | Favicon/touch/maskable bytes unchanged; fresh asset inventory validation and original public proof retained until publisher validates all dependencies again. |
 | C03 | passed | Asset sources, licenses and fonts unchanged; build validates complete current inventory including new replay data and runtime modules. |
-| C04 | not-run | Future exact hosted/live stage not yet observed; historical success cannot substitute. |
+| C04 | passed | Fresh committed-source GitHub Automated regression suite and Exact candidate acceptance both passed; required default-branch rule readback confirms strict checks/admin enforcement. The feature branch push does not claim default-branch integration. Negative refusal fixtures passed inside the hosted suite. |
 | C05 | passed | Current supported-command tests independently reject stale source/inventory/reviews/scenarios and changed acceptance before next entry. No agent-authored exception or alternate publication command bypass. |
-| C06 | not-run | Future exact hosted/live stage not yet observed; historical success cannot substitute. |
+| C06 | passed | Actual supported publisher journal/public status/type/hash and native composed dependency readback plus independent final inventory and browser evidence verify this release; board/catalog availability separately observed. |
 | C07 | passed | Source/package credential regex checks and staged-byte scan before commit; private baselines remain ignored outside package. No actual key in source/audit. |
 | C08 | passed | Fresh supported CLI two-release restoration, ambiguous response reconciliation, stale/corrupt baseline refusal and unrelated data/old assets preservation; actual production rollback is not claimed. |
 | C09 | passed | Browser receipts identify candidate release, actual CSS viewport, verifier hashes, injected controls, real-worker environment and explicit source-command/physical-device limits; existing direct new-feature browser receipts supplement current passes. |
