@@ -1,0 +1,1189 @@
+{
+  "release": "sl-b2a6a7eab4f634",
+  "at": "2026-10-17T21:45:25.463Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "results": [
+    {
+      "name": "Garage compare and test",
+      "status": "failed",
+      "error": "Timed out",
+      "stack": "Error: Timed out\n    at waitFor (http://127.0.0.1:4399/__audit__/lab.js:12:40)\n    at async Garage comparison, equip and ordinary-input test (http://127.0.0.1:4399/__audit__/ui.js:56:7)\n    at async record (http://127.0.0.1:4399/__audit__/lab.js:33:21)\n    at async actions.Remaining browser checks (http://127.0.0.1:4399/__audit__/lab.js:944:5)\n    at async record (http://127.0.0.1:4399/__audit__/lab.js:33:21)"
+    },
+    {
+      "name": "Sharing and fallback",
+      "status": "passed",
+      "durationMs": 9,
+      "details": {
+        "success": "shared",
+        "cancelled": "cancelled",
+        "clipboard": "copied",
+        "fallback": "manual",
+        "date": "2026-10-16",
+        "url": "https://hire-poker-8313.onpagelove.com/#daily=2026-10-16",
+        "cancellationSideEffects": 0,
+        "statePreserved": true,
+        "scope": "Production share function executed by a browser fixture with injected navigator APIs; no OS share sheet or external message sent."
+      }
+    },
+    {
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed",
+      "durationMs": 7155,
+      "details": {
+        "menuConfirm": true,
+        "range": true,
+        "trigger": true,
+        "startPauseResume": true,
+        "disconnect": true,
+        "heldFocusCancellation": true,
+        "syntheticGamepad": true
+      }
+    },
+    {
+      "name": "New circuit, source and failed save",
+      "status": "passed",
+      "durationMs": 2188,
+      "details": {
+        "id": "d7662b55-6ef4-46b2-83a9-f404af86d982",
+        "pieces": 8,
+        "semanticSource": true,
+        "saveFailureNavigation": true,
+        "exportRecovery": true,
+        "fiveAI": true,
+        "completed": {
+          "elapsedMs": 87785,
+          "laps": 3,
+          "place": 4,
+          "contacts": 1499
+        },
+        "undoRedo": true,
+        "scope": "Native form/button route; canvas dragging is a separate fixture"
+      }
+    },
+    {
+      "name": "Solo improvement and submission form",
+      "status": "passed",
+      "durationMs": 1853,
+      "details": {
+        "first": {
+          "elapsedMs": 108869,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "second": {
+          "elapsedMs": 102539,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "ghost": true,
+        "id": "7acf5b10-32af-4114-b691-489470518d3c",
+        "offlineQueue": true,
+        "invalidFormPreserved": true,
+        "escapedName": true
+      }
+    },
+    {
+      "name": "Name form 200 percent reflow",
+      "status": "passed",
+      "durationMs": 256,
+      "details": {
+        "width": 320,
+        "height": 568,
+        "fontScale": 2,
+        "allComputedFontsDoubled": true,
+        "overflow": 0,
+        "focusedNameVisible": true
+      }
+    },
+    {
+      "name": "Quick race journey",
+      "status": "passed",
+      "durationMs": 2160,
+      "details": {
+        "finish": {
+          "elapsedMs": 68832,
+          "laps": 2,
+          "place": 1,
+          "contacts": 141
+        },
+        "pauseAndRetry": true,
+        "simulationController": true
+      }
+    },
+    {
+      "name": "Input ownership and camera",
+      "status": "passed",
+      "durationMs": 681,
+      "details": {
+        "sizes": [
+          {
+            "w": 320,
+            "h": 568,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 320,
+                "h": 266
+              },
+              "#pause-button": {
+                "x": 260.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 16,
+                "y": 489,
+                "w": 100,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 151,
+                "y": 489,
+                "w": 44,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 199,
+                "y": 489,
+                "w": 44,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 247,
+                "y": 489,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 26,
+            "backing": [
+              320,
+              266
+            ]
+          },
+          {
+            "w": 390,
+            "h": 844,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 390,
+                "h": 542
+              },
+              "#pause-button": {
+                "x": 330.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 20,
+                "y": 765,
+                "w": 112,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 209,
+                "y": 765,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 261,
+                "y": 765,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 313,
+                "y": 765,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 40,
+            "backing": [
+              390,
+              542
+            ]
+          },
+          {
+            "w": 412,
+            "h": 915,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 412,
+                "h": 613.3333740234375
+              },
+              "#pause-button": {
+                "x": 352.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 20,
+                "y": 836.3333740234375,
+                "w": 112,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 231,
+                "y": 836.3333740234375,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 283,
+                "y": 836.3333740234375,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 335,
+                "y": 836.3333740234375,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 46,
+            "backing": [
+              412,
+              613
+            ]
+          },
+          {
+            "w": 568,
+            "h": 320,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 77,
+                "w": 568,
+                "h": 171
+              },
+              "#pause-button": {
+                "x": 508.8645935058594,
+                "y": 5,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 22,
+                "y": 252,
+                "w": 112,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 385,
+                "y": 256,
+                "w": 48,
+                "h": 56
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 437,
+                "y": 256,
+                "w": 48,
+                "h": 56
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 489,
+                "y": 256,
+                "w": 57,
+                "h": 56
+              }
+            },
+            "colors": 24,
+            "backing": [
+              568,
+              171
+            ]
+          },
+          {
+            "w": 844,
+            "h": 390,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 77,
+                "w": 844,
+                "h": 241
+              },
+              "#pause-button": {
+                "x": 765.5625,
+                "y": 5,
+                "w": 66.4375,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 14,
+                "y": 322,
+                "w": 140,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 641.25,
+                "y": 326,
+                "w": 54.75,
+                "h": 56
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 704,
+                "y": 326,
+                "w": 52,
+                "h": 56
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 764,
+                "y": 326,
+                "w": 66,
+                "h": 56
+              }
+            },
+            "colors": 38,
+            "backing": [
+              844,
+              241
+            ]
+          },
+          {
+            "w": 1280,
+            "h": 720,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 1280,
+                "h": 418
+              },
+              "#pause-button": {
+                "x": 1201.5625,
+                "y": 60,
+                "w": 66.4375,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 12,
+                "y": 641,
+                "w": 140,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 1079.25,
+                "y": 641,
+                "w": 54.75,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 1142,
+                "y": 641,
+                "w": 52,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 1202,
+                "y": 641,
+                "w": 66,
+                "h": 64
+              }
+            },
+            "colors": 71,
+            "backing": [
+              1280,
+              418
+            ]
+          }
+        ],
+        "syntheticPointerFixture": true
+      }
+    },
+    {
+      "name": "Manual throttle layout",
+      "status": "passed",
+      "durationMs": 456,
+      "details": {
+        "sizes": [
+          {
+            "w": 320,
+            "h": 568,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          },
+          {
+            "w": 390,
+            "h": 844,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          },
+          {
+            "w": 568,
+            "h": 320,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          },
+          {
+            "w": 844,
+            "h": 390,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Workshop round trip",
+      "status": "passed",
+      "durationMs": 173,
+      "details": {
+        "id": "d7662b55-6ef4-46b2-83a9-f404af86d982",
+        "valid": true,
+        "undoRedo": true,
+        "durable": true,
+        "exportImport": true,
+        "testReturn": true
+      }
+    },
+    {
+      "name": "Practice and ghost",
+      "status": "passed",
+      "durationMs": 1126,
+      "details": {
+        "practice": {
+          "elapsedMs": 36223,
+          "laps": 1,
+          "place": 1,
+          "contacts": 0
+        },
+        "learned": {
+          "heading": 0,
+          "accelerate": true,
+          "steer": true,
+          "brake": true,
+          "boost": true
+        },
+        "trial": {
+          "elapsedMs": 102515,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "ghostFrames": 2051
+      }
+    },
+    {
+      "name": "All tracks and recovery",
+      "status": "passed",
+      "durationMs": 197,
+      "details": {
+        "tracks": [
+          {
+            "name": "Yard Loop",
+            "valid": true,
+            "samples": 328
+          },
+          {
+            "name": "Tin Can Alley",
+            "valid": true,
+            "samples": 396
+          },
+          {
+            "name": "Gravel Shift",
+            "valid": true,
+            "samples": 368
+          },
+          {
+            "name": "Dockside Dash",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Container Switchback",
+            "valid": true,
+            "samples": 408
+          },
+          {
+            "name": "Salt Flat Sprint",
+            "valid": true,
+            "samples": 528
+          },
+          {
+            "name": "Furnace Bend",
+            "valid": true,
+            "samples": 388
+          },
+          {
+            "name": "Mudworks",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Crusher Circuit",
+            "valid": true,
+            "samples": 488
+          },
+          {
+            "name": "Night Sort",
+            "valid": true,
+            "samples": 476
+          },
+          {
+            "name": "Redline Ridge",
+            "valid": true,
+            "samples": 548
+          },
+          {
+            "name": "The Big Salvage",
+            "valid": true,
+            "samples": 548
+          }
+        ],
+        "recovery": true
+      }
+    },
+    {
+      "name": "Render budget",
+      "status": "passed",
+      "durationMs": 3111,
+      "details": {
+        "frames": 180,
+        "medianMs": 0.7000000476837158,
+        "p95Ms": 1,
+        "maxMs": 1.199999988079071,
+        "scope": "Canvas render cost, not physical phone FPS"
+      }
+    },
+    {
+      "name": "Foreground update discovery",
+      "status": "passed",
+      "durationMs": 233,
+      "details": {
+        "reconnectChecks": 1,
+        "repeatedEventCoalesced": true,
+        "visibleUpdateButton": true,
+        "manualReview": true,
+        "noAutomaticActivation": true,
+        "scope": "Injected worker adapter through production lifecycle and visible controls; natural real-worker update checked separately"
+      }
+    },
+    {
+      "name": "Remaining browser checks",
+      "status": "failed",
+      "error": "One or more browser checks failed; receipt retained",
+      "stack": "Error: One or more browser checks failed; receipt retained\n    at check (http://127.0.0.1:4399/__audit__/lab.js:7:25)\n    at actions.Remaining browser checks (http://127.0.0.1:4399/__audit__/lab.js:946:3)\n    at async record (http://127.0.0.1:4399/__audit__/lab.js:33:21)"
+    },
+    {
+      "name": "Garage compare and test",
+      "status": "passed",
+      "durationMs": 4874,
+      "details": {
+        "rows": [
+          {
+            "id": "mixed",
+            "description": "Predictable grip across mixed surfaces.",
+            "asphalt": 1,
+            "gravel": 0.88,
+            "mud": 0.66
+          },
+          {
+            "id": "rally",
+            "description": "Better loose-surface control, less asphalt peak grip.",
+            "asphalt": 0.92,
+            "gravel": 1.02,
+            "mud": 0.82
+          },
+          {
+            "id": "road",
+            "description": "The strongest paved-road grip.",
+            "asphalt": 1.1,
+            "gravel": 0.72,
+            "mud": 0.48
+          }
+        ],
+        "selected": "rally",
+        "speedKmh": 18,
+        "compared": true,
+        "equipped": true,
+        "driven": true,
+        "returnPreserved": true,
+        "scope": "Workshop test garage; all parts are legitimately available. Bench handling measurements are a separate receipt."
+      }
+    },
+    {
+      "name": "Save report",
+      "status": "passed",
+      "durationMs": 7,
+      "details": {
+        "saved": true
+      }
+    },
+    {
+      "name": "Twenty-minute live-loop soak",
+      "status": "passed",
+      "durationMs": 1200148,
+      "details": {
+        "release": "sl-b2a6a7eab4f634",
+        "utc": "2026-10-17T21:45:07.798Z",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "durationMs": 1200030.8999999762,
+        "frames": 71846,
+        "hiddenMs": 0,
+        "sceneCycles": 40,
+        "p95FrameMs": 17.099999999976717,
+        "p99FrameMs": 17.400000000023283,
+        "longestFrameMs": 83.5,
+        "framesOver50Ms": 3,
+        "maxTrails": 360,
+        "loads": [
+          {
+            "track": 0,
+            "ms": 6.100000023841858
+          },
+          {
+            "track": 1,
+            "ms": 7.899999976158142
+          },
+          {
+            "track": 2,
+            "ms": 6.100000023841858
+          },
+          {
+            "track": 3,
+            "ms": 8.099999964237213
+          },
+          {
+            "track": 4,
+            "ms": 8
+          },
+          {
+            "track": 5,
+            "ms": 9.399999976158142
+          },
+          {
+            "track": 6,
+            "ms": 5.5
+          },
+          {
+            "track": 7,
+            "ms": 9.199999988079071
+          },
+          {
+            "track": 8,
+            "ms": 7.800000011920929
+          },
+          {
+            "track": 9,
+            "ms": 7.199999988079071
+          },
+          {
+            "track": 10,
+            "ms": 8.199999988079071
+          },
+          {
+            "track": 11,
+            "ms": 10
+          },
+          {
+            "track": 0,
+            "ms": 5
+          },
+          {
+            "track": 1,
+            "ms": 5.699999988079071
+          },
+          {
+            "track": 2,
+            "ms": 10
+          },
+          {
+            "track": 3,
+            "ms": 5.700000047683716
+          },
+          {
+            "track": 4,
+            "ms": 7.400000035762787
+          },
+          {
+            "track": 5,
+            "ms": 7.400000035762787
+          },
+          {
+            "track": 6,
+            "ms": 5.099999964237213
+          },
+          {
+            "track": 7,
+            "ms": 9.700000047683716
+          },
+          {
+            "track": 8,
+            "ms": 5.399999976158142
+          },
+          {
+            "track": 9,
+            "ms": 6.699999988079071
+          },
+          {
+            "track": 10,
+            "ms": 10.100000023841858
+          },
+          {
+            "track": 11,
+            "ms": 6.400000035762787
+          },
+          {
+            "track": 0,
+            "ms": 6.699999988079071
+          },
+          {
+            "track": 1,
+            "ms": 7.5
+          },
+          {
+            "track": 2,
+            "ms": 5.899999976158142
+          },
+          {
+            "track": 3,
+            "ms": 6.5
+          },
+          {
+            "track": 4,
+            "ms": 5.400000035762787
+          },
+          {
+            "track": 5,
+            "ms": 7
+          },
+          {
+            "track": 6,
+            "ms": 5.699999988079071
+          },
+          {
+            "track": 7,
+            "ms": 8.100000023841858
+          },
+          {
+            "track": 8,
+            "ms": 6.399999976158142
+          },
+          {
+            "track": 9,
+            "ms": 5.5
+          },
+          {
+            "track": 10,
+            "ms": 9.599999964237213
+          },
+          {
+            "track": 11,
+            "ms": 6.199999988079071
+          },
+          {
+            "track": 0,
+            "ms": 5.199999988079071
+          },
+          {
+            "track": 1,
+            "ms": 5.899999976158142
+          },
+          {
+            "track": 2,
+            "ms": 6.399999976158142
+          },
+          {
+            "track": 3,
+            "ms": 7.599999964237213
+          }
+        ],
+        "resources": [
+          {
+            "ms": 13.600000023841858,
+            "heap": 15662658,
+            "canvas": [
+              616,
+              612
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 30003.600000023842,
+            "heap": 15055451,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 60010.30000002385,
+            "heap": 14767050,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 90000.20000002382,
+            "heap": 14479761,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 120007.10000002384,
+            "heap": 17992673,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 150013.60000002384,
+            "heap": 16839171,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 180003.50000002387,
+            "heap": 15730448,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 210010.50000002387,
+            "heap": 18314702,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 240001.20000002382,
+            "heap": 15947101,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 270006.80000002385,
+            "heap": 18342968,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 300013.50000002387,
+            "heap": 20291849,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 330003.50000002387,
+            "heap": 20858198,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 360010.4000000239,
+            "heap": 21093545,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 390000.3000000238,
+            "heap": 19729410,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 420006.9000000239,
+            "heap": 18666649,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 450013.8000000238,
+            "heap": 17808523,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 480003.60000002384,
+            "heap": 18552035,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 510010.3000000238,
+            "heap": 20135565,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 540000.2000000238,
+            "heap": 20447263,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 570006.9000000239,
+            "heap": 18795476,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 600013.6000000238,
+            "heap": 19469054,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 630003.7000000238,
+            "heap": 17571569,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 660010.2000000238,
+            "heap": 23987869,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 690000.1000000238,
+            "heap": 22046310,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 720006.8000000238,
+            "heap": 28400834,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 750013.5000000239,
+            "heap": 24800050,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 780003.8000000238,
+            "heap": 27911129,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 810010.1000000238,
+            "heap": 24707880,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 840000.6000000238,
+            "heap": 16242396,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 870006.8000000238,
+            "heap": 24408282,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 900013.8000000238,
+            "heap": 21167491,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 930003.4000000239,
+            "heap": 29236125,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 960011.2000000239,
+            "heap": 20835597,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 990000.6000000238,
+            "heap": 21825776,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 1020006.8000000238,
+            "heap": 24104305,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 1050013.400000024,
+            "heap": 27519090,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 1080003.400000024,
+            "heap": 27543169,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 1110010.1000000238,
+            "heap": 22123713,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 1140000.0000000237,
+            "heap": 17563544,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          },
+          {
+            "ms": 1170006.700000024,
+            "heap": 18307063,
+            "canvas": [
+              1280,
+              502
+            ],
+            "cars": 6
+          }
+        ],
+        "longTasks": [],
+        "scope": "Real application requestAnimationFrame, fixed-step simulation, HUD and Canvas2D rendering; legal injected controller; scheduling intervals, not physical input latency or GPU timing",
+        "passed": true
+      }
+    }
+  ]
+}

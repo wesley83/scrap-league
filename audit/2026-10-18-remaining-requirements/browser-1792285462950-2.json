@@ -1,0 +1,59 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Complete injected gamepad pause settings resume",
+      "status": "passed",
+      "durationMs": 5926,
+      "details": {
+        "before": {
+          "steer": 0.7,
+          "throttle": 0.8,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "after": {
+          "steer": -0.7,
+          "throttle": 0.8,
+          "brake": 0,
+          "handbrake": false,
+          "boost": false
+        },
+        "clockStopped": true,
+        "menuSequence": [
+          "Start",
+          "D-pad down",
+          "A Settings",
+          "B Back to pause",
+          "A Resume"
+        ],
+        "scope": "Injected navigator gamepad through actual game loop and menu handlers; no physical controller/native desktop claim"
+      },
+      "qualification": {
+        "utc": "2026-10-18T01:04:17.000Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4430/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T01:04:22.950Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "7db5852b496264744a3bfcf8c24f813e66819aa149cb78129451cbe13a714b93",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

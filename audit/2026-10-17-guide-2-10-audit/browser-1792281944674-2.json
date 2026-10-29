@@ -1,0 +1,66 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Garage compare and test",
+      "status": "passed",
+      "durationMs": 4962,
+      "details": {
+        "rows": [
+          {
+            "id": "mixed",
+            "description": "Predictable grip across mixed surfaces.",
+            "asphalt": 1,
+            "gravel": 0.88,
+            "mud": 0.66
+          },
+          {
+            "id": "rally",
+            "description": "Better loose-surface control, less asphalt peak grip.",
+            "asphalt": 0.92,
+            "gravel": 1.02,
+            "mud": 0.82
+          },
+          {
+            "id": "road",
+            "description": "The strongest paved-road grip.",
+            "asphalt": 1.1,
+            "gravel": 0.72,
+            "mud": 0.48
+          }
+        ],
+        "selected": "rally",
+        "speedKmh": 18,
+        "compared": true,
+        "equipped": true,
+        "driven": true,
+        "returnPreserved": true,
+        "scope": "Workshop test garage; all parts are legitimately available. Bench handling measurements are a separate receipt."
+      },
+      "qualification": {
+        "utc": "2026-10-18T00:05:39.707Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4420/?reload-cup=1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1920,
+          930
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "workshop",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T00:05:44.674Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "2ec05f2667f2cddf460888df6ef2b2fc59978a371cfe74e2c9ddc2a28d8f5bf0",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

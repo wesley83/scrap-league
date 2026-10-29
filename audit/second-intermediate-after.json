@@ -1,0 +1,359 @@
+{
+  "utc": "2026-10-17T23:04:55.110Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-37615e5369f322",
+  "baselineSha256": "43f423c7b674067b5311b2928ccf589ac32c16d0c434bca722e24d087b70ddc2",
+  "checks": [
+    {
+      "path": "/releases/sl-37615e5369f322/ai-profile.js",
+      "status": 200,
+      "expected": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
+      "actual": "918bf13f3dda30a228dde317cd8cd7b85ef246c8dcf2630d9b9f025d971dd029",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/arcade-renderer.js",
+      "status": 200,
+      "expected": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd",
+      "actual": "a395a308cff068dd0a3b61348e57eabdb43ddd63b7839290e0271366f4461cbd",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/arcade.css",
+      "status": 200,
+      "expected": "97f39b2b00c55e335d771d1c55f9d7fd9efc2566d19a55fa8baa9be892c71e37",
+      "actual": "97f39b2b00c55e335d771d1c55f9d7fd9efc2566d19a55fa8baa9be892c71e37",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/audio.js",
+      "status": 200,
+      "expected": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
+      "actual": "9061857aaa3af9b6a12cd6f0b7cf4ec0b9735e84baeb3cbdd9e7ebd3b095882e",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/boards.js",
+      "status": 200,
+      "expected": "741d74306d1df493d75ee420d53452d179a0246b43997446ccd9e437e3b06552",
+      "actual": "741d74306d1df493d75ee420d53452d179a0246b43997446ccd9e437e3b06552",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/bootstrap.js",
+      "status": 200,
+      "expected": "d96f09f4dbdb6a7e3f191b3e3d788c91469696ea07c06f602ac1d13bb6005cf7",
+      "actual": "d96f09f4dbdb6a7e3f191b3e3d788c91469696ea07c06f602ac1d13bb6005cf7",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/builds.js",
+      "status": 200,
+      "expected": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f",
+      "actual": "d6e8d08ca9a5d6e73a2c7bf2aa8710d1fa16d245c39f27c1c1787b4f976ac26f",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/collision.js",
+      "status": 200,
+      "expected": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
+      "actual": "0084547ebe3ab4d5860134dc7d32863b32281a48c634ccce62ce2482cb9ae7e6",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/content.json",
+      "status": 200,
+      "expected": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c",
+      "actual": "6ae83978fced9398db1df776563467762e6d9085bfcd24b9efd65d8bab5a155c",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/continuation.js",
+      "status": 200,
+      "expected": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
+      "actual": "e823478d1b6187fdf0b0c8ee5375072edd9f2f8dee917af5c1cba63803f0bd88",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/driver-profile.js",
+      "status": 200,
+      "expected": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89",
+      "actual": "41a7c8daf5863f180e9bc2c1713a514cd832a673ece9f83f8387e275e7ea5a89",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/driving-controls.js",
+      "status": 200,
+      "expected": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e",
+      "actual": "1e2c745eeec4d42d632ea9826f501293b0801f8f5d3f6847676362b3da1b6d6e",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/editor-commands.js",
+      "status": 200,
+      "expected": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
+      "actual": "9b5ac48b9ef1a0bfc0d391a8d63f2f2437a09193e8083e22e58d6be21ba3a694",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/fonts/Barlow-OFL.txt",
+      "status": 200,
+      "expected": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "actual": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/fonts/Barlow-Regular.ttf",
+      "status": 200,
+      "expected": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea",
+      "actual": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/fonts/Barlow-SemiBold.ttf",
+      "status": 200,
+      "expected": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5",
+      "actual": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/fonts/BebasNeue-OFL.txt",
+      "status": 200,
+      "expected": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "actual": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/fonts/BebasNeue-Regular.ttf",
+      "status": 200,
+      "expected": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "actual": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/graphics-policy.js",
+      "status": 200,
+      "expected": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72",
+      "actual": "0fdcc07cdec0fb0dfc2ea24f2d496273248bc5a93d81febab2c54d7257d93d72",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icon.svg",
+      "status": 200,
+      "expected": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02",
+      "actual": "9ddd1db815a0f28e3e36839f5e87bd8745a43c00ed9f91c5d4f19f2f5f533f02",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/favicon.ico",
+      "status": 200,
+      "expected": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039",
+      "actual": "3f34b2c065b5c7f17be4efce60efffd8389fb25f007623fb011e711242499039",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/icon-16.png",
+      "status": 200,
+      "expected": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c",
+      "actual": "f75b58b8ff819c1e122742c079fdb409e2984affc23e081bb10903967a0e526c",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/icon-180.png",
+      "status": 200,
+      "expected": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2",
+      "actual": "11a24f28a5770996f7179236291a1682cb54a33e6fdd1db7d871c0eebbc5c1d2",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/icon-192.png",
+      "status": 200,
+      "expected": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431",
+      "actual": "1e2c71a927d22473bdc86b71fa727be0cca742e70655faa2d8b894c032fc0431",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/icon-32.png",
+      "status": 200,
+      "expected": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228",
+      "actual": "608fa07100750bf30e51b537a5cc03b585cadb2cd3eb55dff2afff46c7a53228",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/icon-48.png",
+      "status": 200,
+      "expected": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30",
+      "actual": "5abbdcb93a96d26fa1e9ad840f13db5a62d292c21e0ff00bd653fdf38c4a4b30",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/icon-512.png",
+      "status": 200,
+      "expected": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0",
+      "actual": "b6f195f894f46a4e62dc660db426afdf76f388ec9b68b62cc212917f715e72f0",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/icons/icon-maskable-512.png",
+      "status": 200,
+      "expected": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f",
+      "actual": "11f5bf13e3dced608bfd2b6e40228b1f932a06beac4afebe184f2aa4a5f9334f",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/main.js",
+      "status": 200,
+      "expected": "839bb375fcd9bab4bc516a29fc5d883a5c8b5bd4ab4c42a8d490dfd3c79956a5",
+      "actual": "839bb375fcd9bab4bc516a29fc5d883a5c8b5bd4ab4c42a8d490dfd3c79956a5",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/manifest.webmanifest",
+      "status": 200,
+      "expected": "eec195a39856e8258f43cdd4bd98a40625675c5afb58353f1522439f021fb02c",
+      "actual": "eec195a39856e8258f43cdd4bd98a40625675c5afb58353f1522439f021fb02c",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/model.js",
+      "status": 200,
+      "expected": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
+      "actual": "78733496ab719f8b5d0e0bd2d5c92c1d0778c1f32bddab732d84ed7fa851c3a1",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/native-shell.html",
+      "status": 200,
+      "expected": "c13b4a061dbaec50fc160795a3a54560ac35b66dc50597dbc8a7957139863f58",
+      "actual": "c13b4a061dbaec50fc160795a3a54560ac35b66dc50597dbc8a7957139863f58",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/offline.js",
+      "status": 200,
+      "expected": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "actual": "9b951c6ea363c59cc34ab61f9649725003c2a51c9433e249c7de0d2e2bdacd98",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/pagelove.js",
+      "status": 200,
+      "expected": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
+      "actual": "6ebda2928f59c16549075bae40b6221d328bf76f6800d14a951e443860221021",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/preferences.js",
+      "status": 200,
+      "expected": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1",
+      "actual": "71eba5ce406989d2b0b6c700560c551608be29ecba6999ff4d9e36b1bc95aae1",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/publication.js",
+      "status": 200,
+      "expected": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193",
+      "actual": "a51d69f0f29e44537620ffc2376c7f51ac0b9b576c86cba8a1e70fa97c113193",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/renderer.js",
+      "status": 200,
+      "expected": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20",
+      "actual": "d4bac2f944f785e27f3452ead6fef48e1fa14efb65bb1491e5ed0d8d7a72ce20",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/scenes.js",
+      "status": 200,
+      "expected": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f",
+      "actual": "81adddc0564e4c04272e301864b6729568ca4b7dc9c75e53fdedecc77bbaf34f",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/sharing.js",
+      "status": 200,
+      "expected": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084",
+      "actual": "f1e4343603d96134196f3fe473fea5bf481e2a43850f204abe2cfc499600d084",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/simulation.js",
+      "status": 200,
+      "expected": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d",
+      "actual": "0c1cdbe1c0a7496870b4f40088c302d46981f504a5be4d6301c6c4f1d7b4f70d",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/social/og-landscape-v1.png",
+      "status": 200,
+      "expected": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa",
+      "actual": "852cef7883dc2007168f4094ee9ac898a509ea334fd5ea71da7a4871d83252fa",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/social/og-square-v1.png",
+      "status": 200,
+      "expected": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa",
+      "actual": "4e3ef4c6011625d90acf5247b6a9dd04fcba5f5a2044dd3af919fe01815b00aa",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/storage.js",
+      "status": 200,
+      "expected": "19503644edd4d867a22763aa64eebfca5b2c38316634958c3222d87c2969fa12",
+      "actual": "19503644edd4d867a22763aa64eebfca5b2c38316634958c3222d87c2969fa12",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/style.css",
+      "status": 200,
+      "expected": "73c2beba91c320753d2d3afdf37fd1a1f15d5f95bcea31495727400cfeca52c4",
+      "actual": "73c2beba91c320753d2d3afdf37fd1a1f15d5f95bcea31495727400cfeca52c4",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/submission-ui.js",
+      "status": 200,
+      "expected": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144",
+      "actual": "69abed99246caaff5d44d4f5ef7baee3ec38f626973a206d118e06f719bb2144",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/track-document.js",
+      "status": 200,
+      "expected": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33",
+      "actual": "0eef2ce7a740023a481d953d8c30f5bcde3d7e939554df3fe59b21b30be7ea33",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/track.js",
+      "status": 200,
+      "expected": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
+      "actual": "e82acd4c00e842e68ce00dee60f13748a39ee124afa7d308862dc10bce36f23c",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/vendor/QR-LICENSE.txt",
+      "status": 200,
+      "expected": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827",
+      "actual": "51e9a131e168e6c90797df6eb1f3711f00e7a9c0b8257e3cd77a105677325827",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/vendor/qr.js",
+      "status": 200,
+      "expected": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+      "actual": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+      "passed": true
+    },
+    {
+      "path": "/releases/sl-37615e5369f322/workshop.js",
+      "status": 200,
+      "expected": "ad66ff4dd0bf5e856e40174c699fb2eef55a339a79d8b98d2de67246b45b913e",
+      "actual": "ad66ff4dd0bf5e856e40174c699fb2eef55a339a79d8b98d2de67246b45b913e",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

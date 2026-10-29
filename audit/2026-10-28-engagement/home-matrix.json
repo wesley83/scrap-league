@@ -1,0 +1,548 @@
+[
+  {
+    "buttons": [
+      {
+        "clientWidth": 263,
+        "height": 84.66667175292969,
+        "label": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+        "left": 20,
+        "right": 284.66668701171875,
+        "scrollWidth": 263,
+        "width": 264.66668701171875
+      },
+      {
+        "clientWidth": 127,
+        "height": 68,
+        "label": "Race the league YARD SHIFT",
+        "left": 20,
+        "right": 148.33334350585938,
+        "scrollWidth": 127,
+        "width": 128.33334350585938
+      },
+      {
+        "clientWidth": 127,
+        "height": 68,
+        "label": "Daily Spec 10-28 · UTC",
+        "left": 156.33334350585938,
+        "right": 284.66668701171875,
+        "scrollWidth": 127,
+        "width": 128.33334350585938
+      },
+      {
+        "clientWidth": 263,
+        "height": 68,
+        "label": "Track Workshop MAKE YOUR OWN CIRCUIT",
+        "left": 20,
+        "right": 284.66668701171875,
+        "scrollWidth": 263,
+        "width": 264.66668701171875
+      },
+      {
+        "clientWidth": 128,
+        "height": 44,
+        "label": "Time Trial",
+        "left": 20,
+        "right": 149.33334350585938,
+        "scrollWidth": 128,
+        "width": 129.33334350585938
+      },
+      {
+        "clientWidth": 128,
+        "height": 44,
+        "label": "Crew challenges",
+        "left": 155.33334350585938,
+        "right": 284.66668701171875,
+        "scrollWidth": 128,
+        "width": 129.33334350585938
+      },
+      {
+        "clientWidth": 128,
+        "height": 44,
+        "label": "Leaderboards",
+        "left": 20,
+        "right": 149.33334350585938,
+        "scrollWidth": 128,
+        "width": 129.33334350585938
+      },
+      {
+        "clientWidth": 128,
+        "height": 44,
+        "label": "Garage",
+        "left": 155.33334350585938,
+        "right": 284.66668701171875,
+        "scrollWidth": 128,
+        "width": 129.33334350585938
+      },
+      {
+        "clientWidth": 128,
+        "height": 44,
+        "label": "Driving school",
+        "left": 20,
+        "right": 149.33334350585938,
+        "scrollWidth": 128,
+        "width": 129.33334350585938
+      }
+    ],
+    "documentWidth": 320,
+    "footer": "32px",
+    "viewport": [
+      320,
+      568
+    ]
+  },
+  {
+    "buttons": [
+      {
+        "clientWidth": 333,
+        "height": 64.66667175292969,
+        "label": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+        "left": 20,
+        "right": 354.66668701171875,
+        "scrollWidth": 333,
+        "width": 334.66668701171875
+      },
+      {
+        "clientWidth": 162,
+        "height": 68,
+        "label": "Race the league YARD SHIFT",
+        "left": 20,
+        "right": 183.33334350585935,
+        "scrollWidth": 162,
+        "width": 163.33334350585938
+      },
+      {
+        "clientWidth": 162,
+        "height": 68,
+        "label": "Daily Spec 10-28 · UTC",
+        "left": 191.33334350585935,
+        "right": 354.66668701171875,
+        "scrollWidth": 162,
+        "width": 163.33334350585938
+      },
+      {
+        "clientWidth": 333,
+        "height": 68,
+        "label": "Track Workshop MAKE YOUR OWN CIRCUIT",
+        "left": 20,
+        "right": 354.66668701171875,
+        "scrollWidth": 333,
+        "width": 334.66668701171875
+      },
+      {
+        "clientWidth": 163,
+        "height": 44,
+        "label": "Time Trial",
+        "left": 20,
+        "right": 184.33334350585935,
+        "scrollWidth": 163,
+        "width": 164.33334350585938
+      },
+      {
+        "clientWidth": 163,
+        "height": 44,
+        "label": "Crew challenges",
+        "left": 190.33334350585935,
+        "right": 354.66668701171875,
+        "scrollWidth": 163,
+        "width": 164.33334350585938
+      },
+      {
+        "clientWidth": 163,
+        "height": 44,
+        "label": "Leaderboards",
+        "left": 20,
+        "right": 184.33334350585935,
+        "scrollWidth": 163,
+        "width": 164.33334350585938
+      },
+      {
+        "clientWidth": 163,
+        "height": 44,
+        "label": "Garage",
+        "left": 190.33334350585935,
+        "right": 354.66668701171875,
+        "scrollWidth": 163,
+        "width": 164.33334350585938
+      },
+      {
+        "clientWidth": 163,
+        "height": 44,
+        "label": "Driving school",
+        "left": 20,
+        "right": 184.33334350585935,
+        "scrollWidth": 163,
+        "width": 164.33334350585938
+      }
+    ],
+    "documentWidth": 390,
+    "footer": "32px",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "buttons": [
+      {
+        "clientWidth": 375,
+        "height": 64.66667175292969,
+        "label": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+        "left": 20,
+        "right": 396.6666870117187,
+        "scrollWidth": 375,
+        "width": 376.6666870117187
+      },
+      {
+        "clientWidth": 183,
+        "height": 68,
+        "label": "Race the league YARD SHIFT",
+        "left": 20,
+        "right": 204.33334350585935,
+        "scrollWidth": 183,
+        "width": 184.33334350585935
+      },
+      {
+        "clientWidth": 183,
+        "height": 68,
+        "label": "Daily Spec 10-28 · UTC",
+        "left": 212.33334350585935,
+        "right": 396.6666870117187,
+        "scrollWidth": 183,
+        "width": 184.33334350585935
+      },
+      {
+        "clientWidth": 375,
+        "height": 68,
+        "label": "Track Workshop MAKE YOUR OWN CIRCUIT",
+        "left": 20,
+        "right": 396.6666870117187,
+        "scrollWidth": 375,
+        "width": 376.6666870117187
+      },
+      {
+        "clientWidth": 184,
+        "height": 44,
+        "label": "Time Trial",
+        "left": 20,
+        "right": 205.33334350585935,
+        "scrollWidth": 184,
+        "width": 185.33334350585935
+      },
+      {
+        "clientWidth": 184,
+        "height": 44,
+        "label": "Crew challenges",
+        "left": 211.33334350585935,
+        "right": 396.6666870117187,
+        "scrollWidth": 184,
+        "width": 185.33334350585935
+      },
+      {
+        "clientWidth": 184,
+        "height": 44,
+        "label": "Leaderboards",
+        "left": 20,
+        "right": 205.33334350585935,
+        "scrollWidth": 184,
+        "width": 185.33334350585935
+      },
+      {
+        "clientWidth": 184,
+        "height": 44,
+        "label": "Garage",
+        "left": 211.33334350585935,
+        "right": 396.6666870117187,
+        "scrollWidth": 184,
+        "width": 185.33334350585935
+      },
+      {
+        "clientWidth": 184,
+        "height": 44,
+        "label": "Driving school",
+        "left": 20,
+        "right": 205.33334350585935,
+        "scrollWidth": 184,
+        "width": 185.33334350585935
+      }
+    ],
+    "documentWidth": 432,
+    "footer": "32px",
+    "viewport": [
+      432,
+      900
+    ]
+  },
+  {
+    "buttons": [
+      {
+        "clientWidth": 511,
+        "height": 64.66667175292969,
+        "label": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+        "left": 20,
+        "right": 532.6666870117188,
+        "scrollWidth": 511,
+        "width": 512.6666870117188
+      },
+      {
+        "clientWidth": 251,
+        "height": 68,
+        "label": "Race the league YARD SHIFT",
+        "left": 20,
+        "right": 272.3333435058594,
+        "scrollWidth": 251,
+        "width": 252.33334350585935
+      },
+      {
+        "clientWidth": 251,
+        "height": 68,
+        "label": "Daily Spec 10-28 · UTC",
+        "left": 280.3333435058594,
+        "right": 532.6666870117188,
+        "scrollWidth": 251,
+        "width": 252.33334350585935
+      },
+      {
+        "clientWidth": 511,
+        "height": 68,
+        "label": "Track Workshop MAKE YOUR OWN CIRCUIT",
+        "left": 20,
+        "right": 532.6666870117188,
+        "scrollWidth": 511,
+        "width": 512.6666870117188
+      },
+      {
+        "clientWidth": 252,
+        "height": 44,
+        "label": "Time Trial",
+        "left": 20,
+        "right": 273.3333435058594,
+        "scrollWidth": 252,
+        "width": 253.33334350585935
+      },
+      {
+        "clientWidth": 252,
+        "height": 44,
+        "label": "Crew challenges",
+        "left": 279.3333435058594,
+        "right": 532.6666870117188,
+        "scrollWidth": 252,
+        "width": 253.33334350585935
+      },
+      {
+        "clientWidth": 252,
+        "height": 44,
+        "label": "Leaderboards",
+        "left": 20,
+        "right": 273.3333435058594,
+        "scrollWidth": 252,
+        "width": 253.33334350585935
+      },
+      {
+        "clientWidth": 252,
+        "height": 44,
+        "label": "Garage",
+        "left": 279.3333435058594,
+        "right": 532.6666870117188,
+        "scrollWidth": 252,
+        "width": 253.33334350585935
+      },
+      {
+        "clientWidth": 252,
+        "height": 44,
+        "label": "Driving school",
+        "left": 20,
+        "right": 273.3333435058594,
+        "scrollWidth": 252,
+        "width": 253.33334350585935
+      }
+    ],
+    "documentWidth": 568,
+    "footer": "32px",
+    "viewport": [
+      568,
+      320
+    ]
+  },
+  {
+    "buttons": [
+      {
+        "clientWidth": 357,
+        "height": 64.66667175292969,
+        "label": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+        "left": 24,
+        "right": 382.0416870117187,
+        "scrollWidth": 357,
+        "width": 358.04168701171875
+      },
+      {
+        "clientWidth": 113,
+        "height": 84.66667175292969,
+        "label": "Race the league YARD SHIFT",
+        "left": 24,
+        "right": 138.0104217529297,
+        "scrollWidth": 113,
+        "width": 114.01042175292967
+      },
+      {
+        "clientWidth": 113,
+        "height": 84.66667175292969,
+        "label": "Daily Spec 10-28 · UTC",
+        "left": 146.0104217529297,
+        "right": 260.0208435058594,
+        "scrollWidth": 113,
+        "width": 114.01042175292967
+      },
+      {
+        "clientWidth": 113,
+        "height": 84.66667175292969,
+        "label": "Track Workshop MAKE YOUR OWN CIRCUIT",
+        "left": 268.0208435058594,
+        "right": 382.03126525878906,
+        "scrollWidth": 113,
+        "width": 114.01042175292967
+      },
+      {
+        "clientWidth": 84,
+        "height": 44,
+        "label": "Time Trial",
+        "left": 24,
+        "right": 109.01042175292967,
+        "scrollWidth": 84,
+        "width": 85.01042175292969
+      },
+      {
+        "clientWidth": 84,
+        "height": 44,
+        "label": "Crew challenges",
+        "left": 115.01042175292967,
+        "right": 200.02084350585935,
+        "scrollWidth": 84,
+        "width": 85.01042175292969
+      },
+      {
+        "clientWidth": 84,
+        "height": 44,
+        "label": "Leaderboards",
+        "left": 206.02084350585935,
+        "right": 291.03126525878906,
+        "scrollWidth": 84,
+        "width": 85.01042175292969
+      },
+      {
+        "clientWidth": 84,
+        "height": 44,
+        "label": "Garage",
+        "left": 297.03125,
+        "right": 382.0416717529297,
+        "scrollWidth": 84,
+        "width": 85.01042175292969
+      },
+      {
+        "clientWidth": 84,
+        "height": 44,
+        "label": "Driving school",
+        "left": 24,
+        "right": 109.01042175292967,
+        "scrollWidth": 84,
+        "width": 85.01042175292969
+      }
+    ],
+    "documentWidth": 844,
+    "footer": "32px",
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "buttons": [
+      {
+        "clientWidth": 485,
+        "height": 64.66667175292969,
+        "label": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+        "left": 44.79166793823242,
+        "right": 531.2083549499512,
+        "scrollWidth": 485,
+        "width": 486.4166870117187
+      },
+      {
+        "clientWidth": 155,
+        "height": 68,
+        "label": "Race the league YARD SHIFT",
+        "left": 44.79166793823242,
+        "right": 201.5937614440918,
+        "scrollWidth": 155,
+        "width": 156.80209350585938
+      },
+      {
+        "clientWidth": 155,
+        "height": 68,
+        "label": "Daily Spec 10-28 · UTC",
+        "left": 209.59375,
+        "right": 366.3958435058594,
+        "scrollWidth": 155,
+        "width": 156.80209350585938
+      },
+      {
+        "clientWidth": 155,
+        "height": 68,
+        "label": "Track Workshop MAKE YOUR OWN CIRCUIT",
+        "left": 374.3958435058594,
+        "right": 531.1979370117188,
+        "scrollWidth": 155,
+        "width": 156.80209350585938
+      },
+      {
+        "clientWidth": 116,
+        "height": 44,
+        "label": "Time Trial",
+        "left": 44.79166793823242,
+        "right": 161.8958396911621,
+        "scrollWidth": 116,
+        "width": 117.10417175292967
+      },
+      {
+        "clientWidth": 116,
+        "height": 44,
+        "label": "Crew challenges",
+        "left": 167.89584350585938,
+        "right": 285.00001525878906,
+        "scrollWidth": 116,
+        "width": 117.10417175292967
+      },
+      {
+        "clientWidth": 116,
+        "height": 44,
+        "label": "Leaderboards",
+        "left": 291,
+        "right": 408.1041717529297,
+        "scrollWidth": 116,
+        "width": 117.10417175292967
+      },
+      {
+        "clientWidth": 116,
+        "height": 44,
+        "label": "Garage",
+        "left": 414.1041870117187,
+        "right": 531.2083587646484,
+        "scrollWidth": 116,
+        "width": 117.10417175292967
+      },
+      {
+        "clientWidth": 116,
+        "height": 44,
+        "label": "Driving school",
+        "left": 44.79166793823242,
+        "right": 161.8958396911621,
+        "scrollWidth": 116,
+        "width": 117.10417175292967
+      }
+    ],
+    "documentWidth": 1280,
+    "footer": "32px",
+    "viewport": [
+      1280,
+      800
+    ]
+  }
+]

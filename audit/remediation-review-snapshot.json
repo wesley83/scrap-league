@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-16T15:24:28.336Z",
+  "base": "b777c24e317f27d4347d379863717531195ea9f8",
+  "branch": "codex/release-remediation",
+  "patch": "Private local full staged diff retained at .local/remediation-staged.patch",
+  "patchSha256": "2a1ac7afafb46408da2a7821b6ca3dfc3fec3fabe075dd5949a5c94c9783e3d7",
+  "scope": "Game remediation; original handbook changes are in the separate Pagelove workspace"
+}

@@ -1,0 +1,35 @@
+{
+  "release": "sl-475e681fb90505",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Twelve events, reload and ending",
+      "status": "failed",
+      "error": "Cannot read properties of null (reading 'id')",
+      "stack": "TypeError: Cannot read properties of null (reading 'id')\n    at Twelve events, reload and ending (http://127.0.0.1:4419/__audit__/lab.js:162:30)\n    at async record (http://127.0.0.1:4419/__audit__/lab.js:35:21)\n    at async button.onclick (http://127.0.0.1:4419/__audit__/lab.js:1171:7)",
+      "qualification": {
+        "utc": "2026-10-17T23:56:14.445Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4419/?after-closed-store=1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:56:15.266Z",
+  "sourceHash": "fa67b0efe0257062711aa07c1ffbaa5951b1b06f7116ab374023dc5de8ddbc1b",
+  "serverSha256": "f7b2fa98e0e3b561cd49f6e26dea01b233fdc22ad5560110d9296c90ac06a951",
+  "labSha256": "9921c38662e4625f9871c220b404d678efe2916df499bba17685f04fd283efa2"
+}

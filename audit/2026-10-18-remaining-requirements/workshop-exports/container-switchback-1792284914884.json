@@ -1,0 +1,465 @@
+{
+  "utc": "2026-10-18T00:55:14.837Z",
+  "slug": "container-switchback",
+  "entry": "http://127.0.0.1:4430/",
+  "release": "sl-b63afc9cbb2339",
+  "method": "Browser-executed native form/button commands from New blank track; geometry never assigned directly. Synthetic form activation; not physical keyboard/touch proof.",
+  "originalCreation": "Historical CLI; this is a new Workshop recreation and export, not a claim about original history.",
+  "pendingBinding": "Stable resource IDs/catalog metadata and inactive piece parameters require independently reviewed binding before reuse as official sources.",
+  "trace": [
+    {
+      "action": "button",
+      "id": "work-file"
+    },
+    {
+      "action": "new-blank"
+    },
+    {
+      "action": "form-change",
+      "selector": "#track-name",
+      "value": "Container Switchback"
+    },
+    {
+      "action": "form-change",
+      "selector": "#track-scene",
+      "value": "docks"
+    },
+    {
+      "action": "form-change",
+      "selector": "#track-laps",
+      "value": 3
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "start"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 60
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "inspector-field",
+      "key": "x",
+      "value": 20
+    },
+    {
+      "action": "inspector-field",
+      "key": "z",
+      "value": 0
+    },
+    {
+      "action": "inspector-field",
+      "key": "heading",
+      "value": 0
+    },
+    {
+      "action": "button",
+      "id": "apply-object"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 60
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 60
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": 1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 60
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 40
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": 1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 40
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": 1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 40
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": -1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 20
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": -1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 40
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": 1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 40
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": 1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 60
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "straight"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-length",
+      "value": 40
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-kind",
+      "value": "quarter"
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-radius",
+      "value": 20
+    },
+    {
+      "action": "form-change",
+      "selector": "#piece-turn",
+      "value": 1
+    },
+    {
+      "action": "button",
+      "id": "place-road"
+    },
+    {
+      "action": "button",
+      "id": "close-loop"
+    },
+    {
+      "action": "button",
+      "id": "setup-race"
+    },
+    {
+      "action": "form-change",
+      "selector": "#object-list",
+      "value": "1ea2967b-3d45-43bc-bb85-d9cd17577f26"
+    },
+    {
+      "action": "button",
+      "id": "partial-patch"
+    },
+    {
+      "action": "patch-field",
+      "key": "surface",
+      "value": "gravel"
+    },
+    {
+      "action": "patch-field",
+      "key": "start",
+      "value": 0
+    },
+    {
+      "action": "patch-field",
+      "key": "end",
+      "value": 31.41592653589793
+    },
+    {
+      "action": "patch-field",
+      "key": "lateralMin",
+      "value": -6
+    },
+    {
+      "action": "patch-field",
+      "key": "lateralMax",
+      "value": 6
+    },
+    {
+      "action": "button",
+      "id": "patch-apply"
+    },
+    {
+      "action": "form-change",
+      "selector": "#object-list",
+      "value": "89142330-98e4-433e-b039-85a72d211b3f"
+    },
+    {
+      "action": "button",
+      "id": "partial-patch"
+    },
+    {
+      "action": "patch-field",
+      "key": "surface",
+      "value": "gravel"
+    },
+    {
+      "action": "patch-field",
+      "key": "start",
+      "value": 0
+    },
+    {
+      "action": "patch-field",
+      "key": "end",
+      "value": 31.41592653589793
+    },
+    {
+      "action": "patch-field",
+      "key": "lateralMin",
+      "value": -6
+    },
+    {
+      "action": "patch-field",
+      "key": "lateralMax",
+      "value": 6
+    },
+    {
+      "action": "button",
+      "id": "patch-apply"
+    },
+    {
+      "action": "button",
+      "id": "work-file"
+    }
+  ],
+  "exported": {
+    "filename": "track-7d027cd4.html",
+    "html": "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Container Switchback</title></head><body>\n<article itemscope itemtype=\"urn:ScrapLeague:Track\">\n<p itemprop=\"id\">7d027cd4-f472-470d-b0f1-740f4baa7e5e</p>\n<p itemprop=\"slug\">track-7d027cd4</p>\n<p itemprop=\"schemaVersion\">1</p>\n<h1 itemprop=\"name\">Container Switchback</h1>\n<p itemprop=\"description\">Brake before the bend. Accelerate as the road opens.</p>\n<p itemprop=\"pieceCatalogRevision\">pieces-v1</p>\n<p itemprop=\"laps\">3</p>\n<p itemprop=\"scenePreset\">docks</p>\n<p itemprop=\"musicPreset\">yard</p>\n<section><h2>pieces</h2><ol data-collection=\"pieces\"><li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">260bd83a-24b7-4cca-833e-2ccd48329d8b</span><span itemprop=\"kind\">start</span><span itemprop=\"x\">20</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">b840d59f-d1df-4c00-9a71-d0680cc24920</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">b840d59f-d1df-4c00-9a71-d0680cc24920</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">80</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">86651d88-20d3-4cf3-afea-a0123463bbab</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">86651d88-20d3-4cf3-afea-a0123463bbab</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">140</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">40</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">1ea2967b-3d45-43bc-bb85-d9cd17577f26</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">1ea2967b-3d45-43bc-bb85-d9cd17577f26</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">200</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">21fdcf0d-813a-4be3-8c77-d73386636055</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">21fdcf0d-813a-4be3-8c77-d73386636055</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">220</span><span itemprop=\"z\">19.999999999999996</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">615d4218-37df-402a-8c00-2d3252c32343</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">615d4218-37df-402a-8c00-2d3252c32343</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">220</span><span itemprop=\"z\">80</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">89142330-98e4-433e-b039-85a72d211b3f</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">89142330-98e4-433e-b039-85a72d211b3f</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">220</span><span itemprop=\"z\">120</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">52adce38-04c1-4b25-a26c-3b2cb8f35d88</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">52adce38-04c1-4b25-a26c-3b2cb8f35d88</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">200</span><span itemprop=\"z\">140</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">b1825002-0d27-4848-89c4-3ef0e20bc380</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">b1825002-0d27-4848-89c4-3ef0e20bc380</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">160</span><span itemprop=\"z\">140</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">6fa34026-f143-4512-8642-daec84a11724</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">6fa34026-f143-4512-8642-daec84a11724</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">140</span><span itemprop=\"z\">120</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">d48cd029-eb6f-41cb-b3d8-2ee29dae83f1</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">d48cd029-eb6f-41cb-b3d8-2ee29dae83f1</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">140</span><span itemprop=\"z\">80</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">-1</span><span itemprop=\"nextPiece\">8109abb0-020e-4eb6-933f-7bd06e9bc5ac</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">8109abb0-020e-4eb6-933f-7bd06e9bc5ac</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">120</span><span itemprop=\"z\">60.00000000000001</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">20</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">-1</span><span itemprop=\"nextPiece\">3611865e-ce5a-4869-90ba-889fff206533</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">3611865e-ce5a-4869-90ba-889fff206533</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">100</span><span itemprop=\"z\">60.00000000000001</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">20</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">-1</span><span itemprop=\"nextPiece\">ae0a9820-df13-4603-a897-af27ec056704</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">ae0a9820-df13-4603-a897-af27ec056704</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">80</span><span itemprop=\"z\">80</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">-1</span><span itemprop=\"nextPiece\">ffc71ee6-20c9-48eb-8cb1-cc580c99f6fe</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">ffc71ee6-20c9-48eb-8cb1-cc580c99f6fe</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">80</span><span itemprop=\"z\">120</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">87bbff7c-f895-4221-b205-3e8aee57d0e3</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">87bbff7c-f895-4221-b205-3e8aee57d0e3</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">60</span><span itemprop=\"z\">140</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">954fe721-860d-467e-98d2-71f54c4ac446</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">954fe721-860d-467e-98d2-71f54c4ac446</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">20</span><span itemprop=\"z\">140</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">4483e70a-9315-4031-a4f3-d04e4e97c069</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">4483e70a-9315-4031-a4f3-d04e4e97c069</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">-2.449293598294706e-15</span><span itemprop=\"z\">120</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">60</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">17a1034c-3adb-4067-ac8d-bbe5ef8a6ffe</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">17a1034c-3adb-4067-ac8d-bbe5ef8a6ffe</span><span itemprop=\"kind\">straight</span><span itemprop=\"x\">-1.3471114790620884e-14</span><span itemprop=\"z\">60</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">fa7306a9-5e6d-4a33-a767-c0a04436e716</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:RoadPiece\"><span itemprop=\"id\">fa7306a9-5e6d-4a33-a767-c0a04436e716</span><span itemprop=\"kind\">quarter</span><span itemprop=\"x\">-2.0818995585505e-14</span><span itemprop=\"z\">20</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"width\">12</span><span itemprop=\"exitWidth\">12</span><span itemprop=\"length\">40</span><span itemprop=\"radius\">20</span><span itemprop=\"turn\">1</span><span itemprop=\"nextPiece\">260bd83a-24b7-4cca-833e-2ccd48329d8b</span></li></ol></section>\n<section><h2>patches</h2><ol data-collection=\"patches\"><li itemscope itemtype=\"urn:ScrapLeague:SurfacePatch\"><span itemprop=\"id\">45d6c84a-d850-4499-aaf5-c2d41a3e3df5</span><span itemprop=\"pieceId\">1ea2967b-3d45-43bc-bb85-d9cd17577f26</span><span itemprop=\"surface\">gravel</span><span itemprop=\"start\">0</span><span itemprop=\"end\">31.41592653589793</span><span itemprop=\"lateralMin\">-6</span><span itemprop=\"lateralMax\">6</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:SurfacePatch\"><span itemprop=\"id\">8245f726-0659-4be0-a1ed-eee88dd2a68d</span><span itemprop=\"pieceId\">89142330-98e4-433e-b039-85a72d211b3f</span><span itemprop=\"surface\">gravel</span><span itemprop=\"start\">0</span><span itemprop=\"end\">31.41592653589793</span><span itemprop=\"lateralMin\">-6</span><span itemprop=\"lateralMax\">6</span></li></ol></section>\n<section><h2>gates</h2><ol data-collection=\"gates\"><li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">c2b3c2c4-38b6-4201-82a9-e70db71564c0</span><span itemprop=\"kind\">finish</span><span itemprop=\"pieceId\">260bd83a-24b7-4cca-833e-2ccd48329d8b</span><span itemprop=\"distance\">45</span><span itemprop=\"order\">0</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">7752309b-523f-4a82-851a-2efb6990cca1</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">86651d88-20d3-4cf3-afea-a0123463bbab</span><span itemprop=\"distance\">15.147490254131526</span><span itemprop=\"order\">1</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">d2386343-ff82-41d5-b0cf-b62cc3c9e025</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">21fdcf0d-813a-4be3-8c77-d73386636055</span><span itemprop=\"distance\">13.879053972365114</span><span itemprop=\"order\">2</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">11c181f1-657c-4b9a-aa71-e33af7da624d</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">89142330-98e4-433e-b039-85a72d211b3f</span><span itemprop=\"distance\">4.026544226496628</span><span itemprop=\"order\">3</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">bc96a2ea-2118-4410-86d1-b28a35020c05</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">b1825002-0d27-4848-89c4-3ef0e20bc380</span><span itemprop=\"distance\">22.758107944730227</span><span itemprop=\"order\">4</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">dcf4dd8b-eda8-472d-ac7f-b33559168abe</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">8109abb0-020e-4eb6-933f-7bd06e9bc5ac</span><span itemprop=\"distance\">10.07374512706565</span><span itemprop=\"order\">5</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">256b5780-6e1c-4146-9ea5-636754a7870f</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">ffc71ee6-20c9-48eb-8cb1-cc580c99f6fe</span><span itemprop=\"distance\">8.805308845299425</span><span itemprop=\"order\">6</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">55d4e003-a6b3-430b-82cc-f41c89bb2491</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">954fe721-860d-467e-98d2-71f54c4ac446</span><span itemprop=\"distance\">27.536872563532775</span><span itemprop=\"order\">7</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Checkpoint\"><span itemprop=\"id\">4315894e-19c1-48b0-a2ed-e8b372e73c60</span><span itemprop=\"kind\">checkpoint</span><span itemprop=\"pieceId\">17a1034c-3adb-4067-ac8d-bbe5ef8a6ffe</span><span itemprop=\"distance\">26.268436281766412</span><span itemprop=\"order\">8</span></li></ol></section>\n<section><h2>spawns</h2><ol data-collection=\"spawns\"><li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">f946c75e-f8a3-4a74-9643-56122546dd81</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">70</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">c2b3c2c4-38b6-4201-82a9-e70db71564c0</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">8b68f935-a42c-4e62-80d1-7662f3b4c963</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">160.14749025413153</span><span itemprop=\"z\">0</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">7752309b-523f-4a82-851a-2efb6990cca1</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">19152664-724b-438a-877b-9e68e3fd8dfd</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">220</span><span itemprop=\"z\">38.879053972365114</span><span itemprop=\"heading\">1.5707963267948966</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">d2386343-ff82-41d5-b0cf-b62cc3c9e025</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">d28b692e-05a0-4fa2-a87f-f807bd9db8da</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">217.97645685096097</span><span itemprop=\"z\">128.7132270432106</span><span itemprop=\"heading\">2.022123538119729</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">11c181f1-657c-4b9a-aa71-e33af7da624d</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">58a3caa6-536d-4633-bfe4-facc0496599d</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">140.3448144829321</span><span itemprop=\"z\">123.63565451280668</span><span itemprop=\"heading\">4.529498050826304</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">bc96a2ea-2118-4410-86d1-b28a35020c05</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">d317fe9e-c0ad-43a7-8b94-2ac31da60a84</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">104.92625487293435</span><span itemprop=\"z\">60.00000000000001</span><span itemprop=\"heading\">3.141592653589793</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">dcf4dd8b-eda8-472d-ac7f-b33559168abe</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">8d2701ac-17b0-473c-993d-551884e3d22c</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">75.4193671649146</span><span itemprop=\"z\">132.73292777839075</span><span itemprop=\"heading\">2.261061769059871</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">256b5780-6e1c-4146-9ea5-636754a7870f</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">04424cbb-ade0-4bfa-8343-96329d1fe61b</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">-2.6552080430087068e-15</span><span itemprop=\"z\">118.87905397236511</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">55d4e003-a6b3-430b-82cc-f41c89bb2491</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">d99aa1f2-5180-4ef3-96ab-0c4841c46e53</span><span itemprop=\"role\">respawn</span><span itemprop=\"x\">-1.9215033351642114e-14</span><span itemprop=\"z\">28.731563718233588</span><span itemprop=\"heading\">4.71238898038469</span><span itemprop=\"slot\">0</span><span itemprop=\"gateId\">4315894e-19c1-48b0-a2ed-e8b372e73c60</span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">0286cd6a-aff4-45b2-bbb2-a9605631fa16</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">56</span><span itemprop=\"z\">-2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">1</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">ca248afb-b170-4409-939b-b31cae0c21e6</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">56</span><span itemprop=\"z\">2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">2</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">12c548a4-b7bd-4740-a12e-a3ed60eecbd5</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">48</span><span itemprop=\"z\">-2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">3</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">ffda539c-d308-4d83-82d3-09dad24a5015</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">48</span><span itemprop=\"z\">2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">4</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">77996ef1-6fe2-4a0e-a518-7fb340dd2b75</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">40</span><span itemprop=\"z\">-2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">5</span><span itemprop=\"gateId\"></span></li>\n<li itemscope itemtype=\"urn:ScrapLeague:Spawn\"><span itemprop=\"id\">d5e83ea3-9f37-476c-aece-49ec5a948779</span><span itemprop=\"role\">grid</span><span itemprop=\"x\">40</span><span itemprop=\"z\">2.5</span><span itemprop=\"heading\">0</span><span itemprop=\"slot\">6</span><span itemprop=\"gateId\"></span></li></ol></section>\n<section><h2>props</h2><ol data-collection=\"props\"></ol></section>\n<section><h2>recipes</h2><ol data-collection=\"recipes\"></ol></section>\n</article></body></html>\n",
+    "type": "text/html"
+  }
+}

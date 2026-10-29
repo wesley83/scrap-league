@@ -1,0 +1,22 @@
+{
+  "name": "Phone menu and race journeys",
+  "status": "failed",
+  "error": "Clipped control text {\"id\":\"\",\"text\":\"RACE 013 LAPSYard Loop651 m · yard · Asphalt\",\"width\":164,\"scroll\":220,\"children\":[{\"tag\":\"SPAN\",\"text\":\"\",\"width\":120,\"scroll\":120},{\"tag\":\"SPAN\",\"text\":\"RACE 013 LAPS\",\"width\":72,\"scroll\":72},{\"tag\":\"H3\",\"text\":\"Yard Loop\",\"width\":72,\"scroll\":72},{\"tag\":\"P\",\"text\":\"651 m · yard · Asphalt\",\"width\":72,\"scroll\":72}]}",
+  "stack": "Error: Clipped control text {\"id\":\"\",\"text\":\"RACE 013 LAPSYard Loop651 m · yard · Asphalt\",\"width\":164,\"scroll\":220,\"children\":[{\"tag\":\"SPAN\",\"text\":\"\",\"width\":120,\"scroll\":120},{\"tag\":\"SPAN\",\"text\":\"RACE 013 LAPS\",\"width\":72,\"scroll\":72},{\"tag\":\"H3\",\"text\":\"Yard Loop\",\"width\":72,\"scroll\":72},{\"tag\":\"P\",\"text\":\"651 m · yard · Asphalt\",\"width\":72,\"scroll\":72}]}\n    at check (http://127.0.0.1:4440/audit/lab.js:5:33)\n    at reach (http://127.0.0.1:4440/audit/lab.js:9:453)\n    at async Phone menu and race journeys (http://127.0.0.1:4440/audit/lab.js:30:101)\n    at async b.onclick (http://127.0.0.1:4440/audit/lab.js:53:264)",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "viewport": [
+      390,
+      844
+    ],
+    "release": "http://127.0.0.1:4440/releases/sl-4ae11749013c11/"
+  },
+  "receiptUTC": "2026-10-18T04:36:12.793Z",
+  "release": "sl-4ae11749013c11",
+  "sourceHash": "b8d443f1a3333ccc3b787e402a48c1a3bf9e300f0b0687e24a194e408c2b347b",
+  "verifiers": {
+    "serverSha256": "b8a09a6bdff8c9700bf199a056f139915cee3cec2e1a8996babc3bf04f48b16c",
+    "labSha256": "578dc5d23cbc0103354575f5f04ddd09719327fec1cbebceed57e3b29a32cecd"
+  },
+  "scope": "Actual Chromium iframe CSS viewport; local inspection hook and provider-footer fixture declared; no native/physical-device claim"
+}

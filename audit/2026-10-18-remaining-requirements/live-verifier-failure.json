@@ -1,0 +1,7 @@
+{
+  "utc": "2026-10-18T02:34:14.959Z",
+  "status": "failed-fixture",
+  "requested": "/workshop-catalog.html",
+  "actualHTTP": 404,
+  "correction": "Production app/publication.js declares /workshop-tracks/catalog.html. Audit-only independent verifier route corrected; no product code changed, no failed request counted as a pass."
+}

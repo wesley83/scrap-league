@@ -1,0 +1,391 @@
+{
+  "utc": "2026-10-18T00:55:27.195Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "policyRevision": "scrap-league-casual-v1",
+  "tests": [
+    {
+      "name": "bounded-page-read",
+      "mode": "trial",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 206,
+      "attemptStatuses": [
+        206
+      ]
+    },
+    {
+      "name": "public-write-readback",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 1,
+      "diagnostics": {
+        "oneRow": true,
+        "runIdentityMatches": true,
+        "serverReceiptPresent": true,
+        "fiveDayExpiry": true
+      }
+    },
+    {
+      "name": "duplicate-run-rejected",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 422,
+      "response": "<div itemscope itemtype=\"https://dombase.pagelove.team/ns/error/ConstraintViolation\"><ul itemprop=\"problems\"><li itemprop=\"problem\"><span itemprop=\"message\">Constraint violation: 1 violation(s):\n  - [uniqueness] [itemprop='id'] (unique(id)): Uniqueness violation: another item in '/boards/trial.html' already claims this value for property 'id' (first claimed by item '0.1.1.2.0')</span></li></ul></div>"
+    },
+    {
+      "name": "duplicate-not-appended",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "second-distinct-public-write",
+      "mode": "trial",
+      "testId": "48f098b8-1c2a-41e6-aa1e-4abc0e52507c",
+      "state": "failed",
+      "status": 503,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>503 Service Unavailable - Budget Exceeded</title>\n  </head>\n  <body itemscope itemtype=\"https://schema.org/FailedActionStatus\">\n    <h1 itemprop=\"name\">Budget Exceeded</h1>\n    <p itemprop=\"description\">The request exceeded the allocated memory budget.</p>\n\n    <div itemscope itemtype=\"https://pagelove.org/BudgetLimit\">\n      <span itemprop=\"resourceType\">memory</span>\n      <dl>\n        <dt>Allocated:</dt>\n        <dd><span itemprop=\"allocated\">3353733"
+    },
+    {
+      "name": "missing-field-rejected",
+      "mode": "trial",
+      "testId": "e5a22db6-59e9-4208-bc81-625d414cbc13",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "extra-field-rejected",
+      "mode": "trial",
+      "testId": "97c00450-1676-4cbb-b753-d6ea3934c23e",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "wrong-type-rejected",
+      "mode": "trial",
+      "testId": "46590c6e-566b-4cb7-8a56-3a073899fd2f",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "unsupported-track-rejected",
+      "mode": "trial",
+      "testId": "67e7b650-be3a-45d7-b944-62164a6414f9",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "unsupported-rules-rejected",
+      "mode": "trial",
+      "testId": "d1b8e831-d50b-46c2-b098-5612ff5526bc",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "invalid-split-shape-rejected",
+      "mode": "trial",
+      "testId": "fd3b71e5-e873-48e8-92d5-da2a0f2026fe",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "split-arithmetic-rejected",
+      "mode": "trial",
+      "testId": "891d7588-453d-4960-8d6d-ca295eae6124",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "client-expiry-rejected",
+      "mode": "trial",
+      "testId": "5505b93c-cc48-4c36-aaa0-ae5f84cd67d7",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "unsupported-build-rejected",
+      "mode": "trial",
+      "testId": "5e67f4ff-8903-4924-9959-d8e401c4f5c1",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "prohibited-put",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 401
+    },
+    {
+      "name": "active-row-preserved-after-put",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "prohibited-patch",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 401
+    },
+    {
+      "name": "active-row-preserved-after-patch",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "prohibited-delete",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 403
+    },
+    {
+      "name": "active-row-preserved-after-delete",
+      "mode": "trial",
+      "testId": "60afb79e-01d7-468f-8376-cab37f9d543e",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "bounded-page-read",
+      "mode": "daily",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 206,
+      "attemptStatuses": [
+        206
+      ]
+    },
+    {
+      "name": "public-write-readback",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 1,
+      "diagnostics": {
+        "oneRow": true,
+        "runIdentityMatches": true,
+        "serverReceiptPresent": true,
+        "fiveDayExpiry": true
+      }
+    },
+    {
+      "name": "duplicate-run-rejected",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 422,
+      "response": "<div itemscope itemtype=\"https://dombase.pagelove.team/ns/error/ConstraintViolation\"><ul itemprop=\"problems\"><li itemprop=\"problem\"><span itemprop=\"message\">Constraint violation: 1 violation(s):\n  - [uniqueness] [itemprop='id'] (unique(id)): Uniqueness violation: another item in '/boards/daily.html' already claims this value for property 'id' (first claimed by item '0.1.1.2.0')</span></li></ul></div>"
+    },
+    {
+      "name": "duplicate-not-appended",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "second-distinct-public-write",
+      "mode": "daily",
+      "testId": "ad1a5370-d58f-482b-b3a4-2c2436a94308",
+      "state": "failed",
+      "status": 403,
+      "response": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>403 Forbidden</title>\n</head>\n<body itemscope itemtype=\"https://pagelove.org/1.0/Error\">\n    <h1>403 Forbidden</h1>\n    <p itemprop=\"message\">You do not have permission to access this resource.</p>\n    <dl>\n        <dt>Resource</dt>\n        <dd itemprop=\"resource\">/boards/daily.html</dd>\n    </dl>\n</body>\n</html>"
+    },
+    {
+      "name": "missing-field-rejected",
+      "mode": "daily",
+      "testId": "17db5f47-a11b-4f42-acdf-11a1edafd032",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "extra-field-rejected",
+      "mode": "daily",
+      "testId": "758b3944-fbf0-4fa2-acbc-eace3fef39e7",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "wrong-type-rejected",
+      "mode": "daily",
+      "testId": "902844dd-68e9-4d83-9003-4657e998cd8c",
+      "state": "failed",
+      "status": 403,
+      "response": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>403 Forbidden</title>\n</head>\n<body itemscope itemtype=\"https://pagelove.org/1.0/Error\">\n    <h1>403 Forbidden</h1>\n    <p itemprop=\"message\">You do not have permission to access this resource.</p>\n    <dl>\n        <dt>Resource</dt>\n        <dd itemprop=\"resource\">/boards/daily.html</dd>\n    </dl>\n</body>\n</html>"
+    },
+    {
+      "name": "unsupported-track-rejected",
+      "mode": "daily",
+      "testId": "ff138963-3674-4d74-80dc-c29529b9ef08",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "unsupported-rules-rejected",
+      "mode": "daily",
+      "testId": "a41e1883-0d9c-42b4-810e-d10262cb214b",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "invalid-split-shape-rejected",
+      "mode": "daily",
+      "testId": "18044a17-f4d3-43d0-b237-8198754f5ce7",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "split-arithmetic-rejected",
+      "mode": "daily",
+      "testId": "5164dadc-2300-43ba-95a9-703146b1616c",
+      "state": "failed",
+      "status": 500,
+      "response": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+    },
+    {
+      "name": "client-expiry-rejected",
+      "mode": "daily",
+      "testId": "f3693b44-9c54-491b-aa93-e66815468861",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "unsupported-build-rejected",
+      "mode": "daily",
+      "testId": "6eab4673-0164-4e00-932c-5c6d48529918",
+      "state": "passed",
+      "status": 422,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>422 Unprocessable Entity - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Unprocessable Entity</h1>\n    <meta itemprop=\"statusCode\" content=\"422\">\n    <p itemprop=\"description\">Submit one valid official Scrap League run.</p>\n  </body>\n</html>"
+    },
+    {
+      "name": "prohibited-put",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 401
+    },
+    {
+      "name": "active-row-preserved-after-put",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "prohibited-patch",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 401
+    },
+    {
+      "name": "active-row-preserved-after-patch",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "prohibited-delete",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 403
+    },
+    {
+      "name": "active-row-preserved-after-delete",
+      "mode": "daily",
+      "testId": "ac631911-e374-4e88-bcd7-92acd9d2d286",
+      "state": "passed",
+      "status": 1
+    }
+  ],
+  "cleanup": {
+    "trial": {
+      "removed": 1,
+      "state": "conditionally-removed",
+      "etagConfirmed": true
+    },
+    "daily": {
+      "removed": 1,
+      "state": "conditionally-removed",
+      "etagConfirmed": true
+    }
+  },
+  "policyPreservation": {
+    "trial": {
+      "before": {
+        "etag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+        "rules": 7,
+        "sha256": "a09e759f39e94699a3de7e594278b7afad51e11c7adfe5bbd82c92f3e826bafe"
+      },
+      "after": {
+        "etag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+        "rules": 7,
+        "sha256": "a09e759f39e94699a3de7e594278b7afad51e11c7adfe5bbd82c92f3e826bafe"
+      },
+      "unchanged": true
+    },
+    "daily": {
+      "before": {
+        "etag": "\"8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607\"",
+        "rules": 7,
+        "sha256": "4a165af067e0a8626bf503f84fcd774eda84a3264b9b1464da5a89fcfe471483"
+      },
+      "after": {
+        "etag": "\"8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607\"",
+        "rules": 7,
+        "sha256": "4a165af067e0a8626bf503f84fcd774eda84a3264b9b1464da5a89fcfe471483"
+      },
+      "unchanged": true
+    }
+  },
+  "providerWideReadiness": "not available; endpoint observations are not a global guarantee",
+  "passed": false,
+  "failures": [
+    "second-distinct-public-write failed for trial.",
+    "wrong-type-rejected failed for trial.",
+    "invalid-split-shape-rejected failed for trial.",
+    "unsupported-build-rejected failed for trial.",
+    "second-distinct-public-write failed for daily.",
+    "wrong-type-rejected failed for daily.",
+    "split-arithmetic-rejected failed for daily."
+  ],
+  "scope": "Anonymous public endpoint checks; local results remain authoritative; synthetic run rows are conditionally removed when ETags permit"
+}

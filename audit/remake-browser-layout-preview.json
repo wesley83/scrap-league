@@ -1,0 +1,394 @@
+{
+  "release": "sl-255db97ff955f4",
+  "at": "2026-10-17T20:09:42.689Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "results": [
+    {
+      "name": "Input ownership and camera",
+      "status": "passed",
+      "durationMs": 723,
+      "details": {
+        "sizes": [
+          {
+            "w": 320,
+            "h": 568,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 320,
+                "h": 266
+              },
+              "#pause-button": {
+                "x": 260.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 16,
+                "y": 489,
+                "w": 65,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 151,
+                "y": 489,
+                "w": 44,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 199,
+                "y": 489,
+                "w": 44,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 247,
+                "y": 489,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 16,
+            "backing": [
+              480,
+              399
+            ]
+          },
+          {
+            "w": 390,
+            "h": 844,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 390,
+                "h": 542
+              },
+              "#pause-button": {
+                "x": 330.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 20,
+                "y": 765,
+                "w": 90,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 209,
+                "y": 765,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 261,
+                "y": 765,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 313,
+                "y": 765,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 65,
+            "backing": [
+              585,
+              813
+            ]
+          },
+          {
+            "w": 412,
+            "h": 915,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 412,
+                "h": 613.3333740234375
+              },
+              "#pause-button": {
+                "x": 352.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 20,
+                "y": 836.3333740234375,
+                "w": 90,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 231,
+                "y": 836.3333740234375,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 283,
+                "y": 836.3333740234375,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 335,
+                "y": 836.3333740234375,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 63,
+            "backing": [
+              618,
+              919
+            ]
+          },
+          {
+            "w": 568,
+            "h": 320,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 77,
+                "w": 568,
+                "h": 171
+              },
+              "#pause-button": {
+                "x": 508.8645935058594,
+                "y": 5,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 22,
+                "y": 256,
+                "w": 90,
+                "h": 56
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 385,
+                "y": 256,
+                "w": 48,
+                "h": 56
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 437,
+                "y": 256,
+                "w": 48,
+                "h": 56
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 489,
+                "y": 256,
+                "w": 57,
+                "h": 56
+              }
+            },
+            "colors": 37,
+            "backing": [
+              852,
+              256
+            ]
+          },
+          {
+            "w": 844,
+            "h": 390,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 77,
+                "w": 844,
+                "h": 241
+              },
+              "#pause-button": {
+                "x": 765.5625,
+                "y": 5,
+                "w": 66.4375,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 14,
+                "y": 326,
+                "w": 140,
+                "h": 56
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 641.25,
+                "y": 326,
+                "w": 54.75,
+                "h": 56
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 704,
+                "y": 326,
+                "w": 52,
+                "h": 56
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 764,
+                "y": 326,
+                "w": 66,
+                "h": 56
+              }
+            },
+            "colors": 51,
+            "backing": [
+              1266,
+              361
+            ]
+          },
+          {
+            "w": 1280,
+            "h": 720,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 1280,
+                "h": 418
+              },
+              "#pause-button": {
+                "x": 1201.5625,
+                "y": 60,
+                "w": 66.4375,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 12,
+                "y": 641,
+                "w": 140,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 1079.25,
+                "y": 641,
+                "w": 54.75,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 1142,
+                "y": 641,
+                "w": 52,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 1202,
+                "y": 641,
+                "w": 66,
+                "h": 64
+              }
+            },
+            "colors": 45,
+            "backing": [
+              1920,
+              627
+            ]
+          }
+        ],
+        "syntheticPointerFixture": true
+      }
+    },
+    {
+      "name": "Workshop round trip",
+      "status": "passed",
+      "durationMs": 225,
+      "details": {
+        "id": "b5d98348-63cd-43d3-8e04-4dc858f41a0b",
+        "valid": true,
+        "undoRedo": true,
+        "durable": true,
+        "exportImport": true,
+        "testReturn": true
+      }
+    },
+    {
+      "name": "All tracks and recovery",
+      "status": "passed",
+      "durationMs": 202,
+      "details": {
+        "tracks": [
+          {
+            "name": "Yard Loop",
+            "valid": true,
+            "samples": 328
+          },
+          {
+            "name": "Tin Can Alley",
+            "valid": true,
+            "samples": 396
+          },
+          {
+            "name": "Gravel Shift",
+            "valid": true,
+            "samples": 368
+          },
+          {
+            "name": "Dockside Dash",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Container Switchback",
+            "valid": true,
+            "samples": 408
+          },
+          {
+            "name": "Salt Flat Sprint",
+            "valid": true,
+            "samples": 528
+          },
+          {
+            "name": "Furnace Bend",
+            "valid": true,
+            "samples": 388
+          },
+          {
+            "name": "Mudworks",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Crusher Circuit",
+            "valid": true,
+            "samples": 488
+          },
+          {
+            "name": "Night Sort",
+            "valid": true,
+            "samples": 476
+          },
+          {
+            "name": "Redline Ridge",
+            "valid": true,
+            "samples": 548
+          },
+          {
+            "name": "The Big Salvage",
+            "valid": true,
+            "samples": 548
+          }
+        ],
+        "recovery": true
+      }
+    },
+    {
+      "name": "Render budget",
+      "status": "passed",
+      "durationMs": 3136,
+      "details": {
+        "frames": 180,
+        "medianMs": 0.8999999761581421,
+        "p95Ms": 1.199999988079071,
+        "maxMs": 1.5,
+        "scope": "Canvas render cost, not physical phone FPS"
+      }
+    }
+  ]
+}

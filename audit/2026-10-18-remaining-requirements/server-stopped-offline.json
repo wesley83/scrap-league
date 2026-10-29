@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-18T02:15:06.907Z",
+  "release": "./releases/sl-5c1afcc9442899/",
+  "freshDocument": true,
+  "race": {
+    "time": "00:04.167",
+    "speed": "60"
+  },
+  "draftName": null,
+  "visibleName": "Offline saved with server stopped",
+  "pack": 0,
+  "scope": "Fresh browser document after owned origin server termination and independent ECONNREFUSED; existing browser process, native desktop checks excluded"
+}

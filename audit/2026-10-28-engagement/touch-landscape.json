@@ -1,0 +1,45 @@
+{
+  "controls": [
+    {
+      "bottom": 49,
+      "height": 44,
+      "hit": true,
+      "label": "Pause",
+      "width": 66.4375
+    },
+    {
+      "bottom": 354,
+      "height": 64,
+      "hit": true,
+      "label": "↔STEER",
+      "width": 140
+    },
+    {
+      "bottom": 350,
+      "height": 56,
+      "hit": true,
+      "label": "BRAKE",
+      "width": 54.75
+    },
+    {
+      "bottom": 350,
+      "height": 56,
+      "hit": true,
+      "label": "SLIDE",
+      "width": 52
+    },
+    {
+      "bottom": 350,
+      "height": 56,
+      "hit": true,
+      "label": "BOOST",
+      "width": 66
+    }
+  ],
+  "footer": "32px",
+  "viewport": [
+    844,
+    390
+  ],
+  "width": 844
+}

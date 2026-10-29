@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "operation": "publish-candidate",
+  "utc": "2026-10-17T23:06:28.039Z",
+  "authorizedBy": "Wesley",
+  "request": "Commit, push, deploy",
+  "context": "The current request explicitly asks to compare against the handbook, address gaps and commit, push and deploy. This exact-candidate publication follows the existing authorized workflow; every remaining broad acceptance limitation stays enumerated and is not silently waived. Post-publication C06/P09 evidence reconciliation follows actual public update/readback and read-only preservation. Exact promotion authorization/ledger are archived under second-at-promotion names; no incomplete outcome is waived.",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "release": "sl-8c38d2602f174d",
+  "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
+  "outputHash": "ee95a4e2771ff97d5fbc3c0086e0310c742c705239709385d582978ebfccf422",
+  "acceptanceHash": "b34f05ccbac829d19feb2a53bc2004b5a91ae9ba88fad8e0f7a2ce60225e70a1",
+  "knownIncomplete": [
+    {
+      "id": "J13",
+      "status": "blocked",
+      "note": "Final installed runtime loads fresh documents, recovers deep links, edits/saves/reloads offline with its server stopped and retains progress/nickname. Native process capture approval timed out, so actual browser-process restart is not established."
+    },
+    {
+      "id": "P01",
+      "status": "partial",
+      "note": "Migration, conflict, quota, abort/reopen, backup and actual closed-connection/export recovery pass. Complete process-crash-before/after-commit matrix remains unverified because isolated native browser control was unavailable."
+    },
+    {
+      "id": "P05",
+      "status": "partial",
+      "note": "Live nonce policy mirrors rejected missing/extra/type/split/revision/client receipt/expiry/markup and prohibited mutations. Daily duplicate request still encountered provider 500 while one stored copy remained. Complete all-field public matrix and consistent explicit duplicate rejection are not established; raw failures and cleanup retained."
+    },
+    {
+      "id": "P08",
+      "status": "blocked",
+      "note": "No supported provider-wide readiness procedure is available. Public reads/writes are observed; 500 memory-budget and earlier 403 responses remain recorded. Hosts are not presumed to have different capabilities."
+    },
+    {
+      "id": "M03",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance."
+    },
+    {
+      "id": "M04",
+      "status": "blocked",
+      "note": "Current saves/ghosts/daily/offline/update/sharing/input evidence passes with explicit unchanged-module reuse. Actual browser-process cold relaunch remains unavailable after native control approval timed out."
+    },
+    {
+      "id": "M05",
+      "status": "partial",
+      "note": "Current public boundary and physical retention coverage increased; existing owner conflict/lost-response and queue reconciliation evidence is retained for unchanged functions. Provider-wide readiness is unsupported and intermittent 500/503 remains unresolved."
+    },
+    {
+      "id": "M06",
+      "status": "blocked",
+      "note": "Exact corrected candidate is committed, pushed, deployed and live-verified. All independently repairable confirmed defects in this pass are corrected; retained process-recovery/provider/provenance requirements still prevent full product acceptance. Strict gate is unchanged."
+    }
+  ]
+}

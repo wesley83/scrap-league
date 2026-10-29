@@ -1,0 +1,22 @@
+{
+  "name": "Phone menu and race journeys",
+  "status": "failed",
+  "error": "Unreachable control GAS",
+  "stack": "Error: Unreachable control GAS\n    at check (http://127.0.0.1:4440/audit/lab.js:5:33)\n    at reach (http://127.0.0.1:4440/audit/lab.js:9:283)\n    at async Phone menu and race journeys (http://127.0.0.1:4440/audit/lab.js:36:154)\n    at async b.onclick (http://127.0.0.1:4440/audit/lab.js:54:264)",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "viewport": [
+      844,
+      390
+    ],
+    "release": "http://127.0.0.1:4440/releases/sl-28ec5378c02128/"
+  },
+  "receiptUTC": "2026-10-18T04:38:48.236Z",
+  "release": "sl-28ec5378c02128",
+  "sourceHash": "9143fb42afa4b54db1178ff7af423137f284b71f626fb2c71f3a02144dec50fd",
+  "verifiers": {
+    "serverSha256": "b8a09a6bdff8c9700bf199a056f139915cee3cec2e1a8996babc3bf04f48b16c",
+    "labSha256": "4fe8ff1a5452221a31d87b37625a69f40caf774fecba6c65518f8857d225ce08"
+  },
+  "scope": "Actual Chromium iframe CSS viewport; local inspection hook and provider-footer fixture declared; no native/physical-device claim"
+}

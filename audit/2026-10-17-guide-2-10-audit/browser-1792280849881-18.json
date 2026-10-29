@@ -1,0 +1,960 @@
+{
+  "release": "sl-475e681fb90505",
+  "at": "2026-10-17T23:47:29.878Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "results": [
+    {
+      "name": "Root and composed dependency parity",
+      "status": "passed",
+      "durationMs": 1933,
+      "details": {
+        "root": {
+          "font": "LeagueText, Arial, Helvetica, sans-serif",
+          "fontSize": "13px",
+          "color": "rgb(247, 240, 223)",
+          "background": "rgba(0, 0, 0, 0)",
+          "minHeight": "48px",
+          "height": 48,
+          "core": "1",
+          "arcade": "1",
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "composed": {
+          "font": "LeagueText, Arial, Helvetica, sans-serif",
+          "fontSize": "13px",
+          "color": "rgb(247, 240, 223)",
+          "background": "rgba(0, 0, 0, 0)",
+          "minHeight": "48px",
+          "height": 48,
+          "core": "1",
+          "arcade": "1",
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "results": [
+          {
+            "path": "/?style-fault=1",
+            "faultStatus": 503,
+            "reloadRecovered": true
+          },
+          {
+            "path": "/editor/yard-loop",
+            "faultStatus": 503,
+            "reloadRecovered": true
+          }
+        ],
+        "scope": "Actual browser, local include emulation; public host composition read separately"
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:46:44.045Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          708,
+          532
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Garage compare and test",
+      "status": "passed",
+      "durationMs": 4946,
+      "details": {
+        "rows": [
+          {
+            "id": "mixed",
+            "description": "Predictable grip across mixed surfaces.",
+            "asphalt": 1,
+            "gravel": 0.88,
+            "mud": 0.66
+          },
+          {
+            "id": "rally",
+            "description": "Better loose-surface control, less asphalt peak grip.",
+            "asphalt": 0.92,
+            "gravel": 1.02,
+            "mud": 0.82
+          },
+          {
+            "id": "road",
+            "description": "The strongest paved-road grip.",
+            "asphalt": 1.1,
+            "gravel": 0.72,
+            "mud": 0.48
+          }
+        ],
+        "selected": "rally",
+        "speedKmh": 18,
+        "compared": true,
+        "equipped": true,
+        "driven": true,
+        "returnPreserved": true,
+        "scope": "Workshop test garage; all parts are legitimately available. Bench handling measurements are a separate receipt."
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:04.068Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          708,
+          532
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Sharing and fallback",
+      "status": "passed",
+      "durationMs": 13,
+      "details": {
+        "success": "shared",
+        "cancelled": "cancelled",
+        "clipboard": "copied",
+        "fallback": "manual",
+        "date": "2026-10-16",
+        "url": "https://hire-poker-8313.onpagelove.com/#daily=2026-10-16",
+        "cancellationSideEffects": 0,
+        "statePreserved": true,
+        "scope": "Production share function executed by a browser fixture with injected navigator APIs; no OS share sheet or external message sent."
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:09.023Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          616,
+          612
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed",
+      "durationMs": 7168,
+      "details": {
+        "menuConfirm": true,
+        "range": true,
+        "trigger": true,
+        "startPauseResume": true,
+        "disconnect": true,
+        "heldFocusCancellation": true,
+        "syntheticGamepad": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:09.044Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          616,
+          612
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "New circuit, source and failed save",
+      "status": "passed",
+      "durationMs": 2235,
+      "details": {
+        "id": "bd68d6be-c7bc-4a4e-a9e2-1166f41295d6",
+        "pieces": 8,
+        "semanticSource": true,
+        "saveFailureNavigation": true,
+        "exportRecovery": true,
+        "fiveAI": true,
+        "completed": {
+          "elapsedMs": 88280,
+          "laps": 3,
+          "place": 3,
+          "contacts": 1735
+        },
+        "undoRedo": true,
+        "scope": "Native form/button route; canvas dragging is a separate fixture"
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:16.218Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1100,
+          498
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Solo improvement and submission form",
+      "status": "passed",
+      "durationMs": 2131,
+      "details": {
+        "first": {
+          "elapsedMs": 108874,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "second": {
+          "elapsedMs": 102531,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "ghost": true,
+        "id": "3df47429-99bc-43f0-ac49-6dcbb24f9634",
+        "offlineQueue": true,
+        "invalidFormPreserved": true,
+        "escapedName": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:18.464Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1100,
+          498
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "workshop",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Name form 200 percent reflow",
+      "status": "passed",
+      "durationMs": 521,
+      "details": {
+        "width": 320,
+        "height": 568,
+        "fontScale": 2,
+        "allComputedFontsDoubled": true,
+        "overflow": 0,
+        "focusedNameVisible": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:20.608Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1100,
+          752
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "result",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Quick race journey",
+      "status": "passed",
+      "durationMs": 2319,
+      "details": {
+        "finish": {
+          "elapsedMs": 68852,
+          "laps": 2,
+          "place": 1,
+          "contacts": 138
+        },
+        "pauseAndRetry": true,
+        "simulationController": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:21.139Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          320,
+          568
+        ],
+        "canvas": [
+          289,
+          220
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "start",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Input ownership and camera",
+      "status": "passed",
+      "durationMs": 682,
+      "details": {
+        "sizes": [
+          {
+            "w": 320,
+            "h": 568,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 320,
+                "h": 266
+              },
+              "#pause-button": {
+                "x": 260.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 16,
+                "y": 489,
+                "w": 100,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 151,
+                "y": 489,
+                "w": 44,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 199,
+                "y": 489,
+                "w": 44,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 247,
+                "y": 489,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 11,
+            "backing": [
+              320,
+              266
+            ]
+          },
+          {
+            "w": 390,
+            "h": 844,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 390,
+                "h": 542
+              },
+              "#pause-button": {
+                "x": 330.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 20,
+                "y": 765,
+                "w": 112,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 209,
+                "y": 765,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 261,
+                "y": 765,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 313,
+                "y": 765,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 37,
+            "backing": [
+              390,
+              542
+            ]
+          },
+          {
+            "w": 412,
+            "h": 915,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 412,
+                "h": 613.3333740234375
+              },
+              "#pause-button": {
+                "x": 352.8645935058594,
+                "y": 60,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 20,
+                "y": 836.3333740234375,
+                "w": 112,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 231,
+                "y": 836.3333740234375,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 283,
+                "y": 836.3333740234375,
+                "w": 48,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 335,
+                "y": 836.3333740234375,
+                "w": 57,
+                "h": 64
+              }
+            },
+            "colors": 41,
+            "backing": [
+              412,
+              613
+            ]
+          },
+          {
+            "w": 568,
+            "h": 320,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 77,
+                "w": 568,
+                "h": 171
+              },
+              "#pause-button": {
+                "x": 508.8645935058594,
+                "y": 5,
+                "w": 47.13541793823242,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 22,
+                "y": 252,
+                "w": 112,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 385,
+                "y": 256,
+                "w": 48,
+                "h": 56
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 437,
+                "y": 256,
+                "w": 48,
+                "h": 56
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 489,
+                "y": 256,
+                "w": 57,
+                "h": 56
+              }
+            },
+            "colors": 23,
+            "backing": [
+              568,
+              171
+            ]
+          },
+          {
+            "w": 844,
+            "h": 390,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 77,
+                "w": 844,
+                "h": 241
+              },
+              "#pause-button": {
+                "x": 765.5625,
+                "y": 5,
+                "w": 66.4375,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 14,
+                "y": 322,
+                "w": 140,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 641.25,
+                "y": 326,
+                "w": 54.75,
+                "h": 56
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 704,
+                "y": 326,
+                "w": 52,
+                "h": 56
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 764,
+                "y": 326,
+                "w": 66,
+                "h": 56
+              }
+            },
+            "colors": 66,
+            "backing": [
+              844,
+              241
+            ]
+          },
+          {
+            "w": 1280,
+            "h": 720,
+            "boxes": {
+              "#world": {
+                "x": 0,
+                "y": 142,
+                "w": 1280,
+                "h": 418
+              },
+              "#pause-button": {
+                "x": 1201.5625,
+                "y": 60,
+                "w": 66.4375,
+                "h": 44
+              },
+              "#steering-pad": {
+                "x": 12,
+                "y": 641,
+                "w": 140,
+                "h": 64
+              },
+              "[data-hold=\"brake\"]": {
+                "x": 1079.25,
+                "y": 641,
+                "w": 54.75,
+                "h": 64
+              },
+              "[data-hold=\"handbrake\"]": {
+                "x": 1142,
+                "y": 641,
+                "w": 52,
+                "h": 64
+              },
+              "[data-hold=\"boost\"]": {
+                "x": 1202,
+                "y": 641,
+                "w": 66,
+                "h": 64
+              }
+            },
+            "colors": 50,
+            "backing": [
+              1280,
+              418
+            ]
+          }
+        ],
+        "syntheticPointerFixture": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:23.467Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          320,
+          568
+        ],
+        "canvas": [
+          320,
+          266
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Manual throttle layout",
+      "status": "passed",
+      "durationMs": 466,
+      "details": {
+        "sizes": [
+          {
+            "w": 320,
+            "h": 568,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          },
+          {
+            "w": 390,
+            "h": 844,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          },
+          {
+            "w": 568,
+            "h": 320,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          },
+          {
+            "w": 844,
+            "h": 390,
+            "actions": [
+              "throttle",
+              "brake",
+              "handbrake",
+              "boost"
+            ]
+          }
+        ]
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:24.157Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1280,
+          418
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Workshop round trip",
+      "status": "passed",
+      "durationMs": 242,
+      "details": {
+        "id": "bd68d6be-c7bc-4a4e-a9e2-1166f41295d6",
+        "valid": true,
+        "undoRedo": true,
+        "durable": true,
+        "exportImport": true,
+        "testReturn": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:24.631Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          844,
+          390
+        ],
+        "canvas": [
+          568,
+          171
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Practice and ghost",
+      "status": "passed",
+      "durationMs": 1381,
+      "details": {
+        "practice": {
+          "elapsedMs": 36247,
+          "laps": 1,
+          "place": 1,
+          "contacts": 0
+        },
+        "learned": {
+          "heading": 0,
+          "accelerate": true,
+          "steer": true,
+          "brake": true,
+          "boost": true
+        },
+        "trial": {
+          "elapsedMs": 102551,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "ghostFrames": 2051
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:24.882Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1100,
+          498
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "workshop",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "All tracks and recovery",
+      "status": "passed",
+      "durationMs": 229,
+      "details": {
+        "tracks": [
+          {
+            "name": "Yard Loop",
+            "valid": true,
+            "samples": 328
+          },
+          {
+            "name": "Tin Can Alley",
+            "valid": true,
+            "samples": 396
+          },
+          {
+            "name": "Gravel Shift",
+            "valid": true,
+            "samples": 368
+          },
+          {
+            "name": "Dockside Dash",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Container Switchback",
+            "valid": true,
+            "samples": 408
+          },
+          {
+            "name": "Salt Flat Sprint",
+            "valid": true,
+            "samples": 528
+          },
+          {
+            "name": "Furnace Bend",
+            "valid": true,
+            "samples": 388
+          },
+          {
+            "name": "Mudworks",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Crusher Circuit",
+            "valid": true,
+            "samples": 488
+          },
+          {
+            "name": "Night Sort",
+            "valid": true,
+            "samples": 476
+          },
+          {
+            "name": "Redline Ridge",
+            "valid": true,
+            "samples": 548
+          },
+          {
+            "name": "The Big Salvage",
+            "valid": true,
+            "samples": 548
+          }
+        ],
+        "recovery": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:26.275Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1100,
+          582
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Render budget",
+      "status": "passed",
+      "durationMs": 3117,
+      "details": {
+        "frames": 180,
+        "medianMs": 0.699999988079071,
+        "p95Ms": 1,
+        "maxMs": 1.2000000476837158,
+        "scope": "Canvas render cost, not physical phone FPS"
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:26.515Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1280,
+          502
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    },
+    {
+      "name": "Foreground update discovery",
+      "status": "passed",
+      "durationMs": 229,
+      "details": {
+        "reconnectChecks": 1,
+        "repeatedEventCoalesced": true,
+        "visibleUpdateButton": true,
+        "manualReview": true,
+        "noAutomaticActivation": true,
+        "scope": "Injected worker adapter through production lifecycle and visible controls; natural real-worker update checked separately"
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:29.641Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1280,
+          502
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:47:29.881Z",
+  "sourceHash": "d5463fe122c30415d82618cf1e5b7d7fc8c23d4bc6f9b402d13e3bab7624b8fa",
+  "serverSha256": "4adb53cbe44385e8967d1cc5ea6560eecd125a33d5d4b3a897344b494f0dbf00",
+  "labSha256": "2cd8660febf1207226b9084de5174aa68b916db7d1e2a03ea5f20ac1830e503b"
+}

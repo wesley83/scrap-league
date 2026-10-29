@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-17T23:01:51.697Z",
+  "release": "sl-8c38d2602f174d",
+  "method": "Production native wrappers expanded by the existing loopback include emulator, inspected via normal browser and screenshots; public composed-page readback follows promotion.",
+  "before": {
+    "release": "sl-7480f2b6675883",
+    "styles": [
+      "style.css"
+    ],
+    "observedOldTheme": true
+  },
+  "after": {
+    "styles": [
+      "style.css",
+      "arcade.css"
+    ],
+    "orderMatchesRoot": true,
+    "desktopInspected": true,
+    "phoneFrame": {
+      "width": 390,
+      "height": 844,
+      "visibleCanvas": true,
+      "visibleTrackToolsInspectorTabs": true
+    }
+  },
+  "limits": "The first auxiliary-tab viewport override did not resize that tab; second-native-style-mobile.jpg is a desktop capture and is not phone evidence. The fixed 390x844 frame capture is the phone layout evidence. No physical-device claim.",
+  "screenshots": [
+    {
+      "path": "audit/screenshots/second-native-style-before.jpg",
+      "sha256": "a99eed68ae0597157941111e540ad3219dd9883092c81aebc7e0c8133a4e624d"
+    },
+    {
+      "path": "audit/screenshots/second-native-style-local.jpg",
+      "sha256": "00dd107cc3ea33e15ad4961c68e99b26f61ad85d716784364e0687ac91ecce18"
+    },
+    {
+      "path": "audit/screenshots/second-native-style-phone.jpg",
+      "sha256": "6ed8ba8ab4aae0131057c64695f585eba1b57e968eddb41cd91f0faaefa2a7be"
+    }
+  ],
+  "passed": true
+}

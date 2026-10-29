@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-29T00:56:38.530Z",
+  "release": "sl-c84ff03afc7e71",
+  "url": "https://hire-poker-8313.onpagelove.com/",
+  "beforeUpdate": {
+    "build": "Mule / Courier / Road / Roll Cage",
+    "progress": "4 of 12 parts · 0/12 events",
+    "release": "./releases/sl-28ec5378c02128/"
+  },
+  "afterUpdate": {
+    "build": "Mule / Courier / Road / Roll Cage",
+    "progress": "4 of 12 parts · 0/12 events",
+    "release": "./releases/sl-c84ff03afc7e71/"
+  },
+  "publicUpdateApplied": true,
+  "otherWindowRelease": "./releases/sl-c84ff03afc7e71/",
+  "visibleBuildAndProgressPreserved": true,
+  "speed": 28,
+  "time": "00:20.275",
+  "geometry": {
+    "build": "Mule / Courier / Road / Roll Cage",
+    "documentWidth": 390,
+    "footerSpace": "32px",
+    "progress": "4 of 12 parts · 0/12 events",
+    "release": "./releases/sl-c84ff03afc7e71/",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "scope": "Actual public root, ordinary update consent and trusted connector held W input; no injected simulation or forced finish. Paused and left a crew attempt without creating a result. Real 390 CSS-pixel viewport; not a physical-phone claim."
+}

@@ -1,0 +1,71 @@
+{
+  "utc": "2026-10-17T23:06:53.312Z",
+  "sourceCommit": "df8e30b",
+  "release": "sl-8c38d2602f174d",
+  "files": [
+    {
+      "path": "audit/2026-10-17-handbook-second-pass.md",
+      "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+    },
+    {
+      "path": "audit/current-acceptance.json",
+      "sha256": "b34f05ccbac829d19feb2a53bc2004b5a91ae9ba88fad8e0f7a2ce60225e70a1"
+    },
+    {
+      "path": "audit/deployment-authorization-2026-10-17.json",
+      "sha256": "b3477f19dd3a2062ae4a3ac3f27e62104bcc079de79f857ceb074bb7cd6e4b8c"
+    },
+    {
+      "path": "audit/deployment.json",
+      "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+    },
+    {
+      "path": "audit/screenshots/second-live-editor-final.jpg",
+      "sha256": "9a0914545f557398ecb7e566731534650bce077426b6e11aed48817583e1096e"
+    },
+    {
+      "path": "audit/screenshots/second-live-editor-returned.jpg",
+      "sha256": "fa5fe51b15b22f14482d677e3ecf5eb9f44cbb4947335c244d8e2d40717861e6"
+    },
+    {
+      "path": "audit/screenshots/second-live-native-race.jpg",
+      "sha256": "6fd96e60ca6ae810aee31810a7046d600bd4e58f7570702213e1ed56821c6321"
+    },
+    {
+      "path": "audit/second-acceptance-at-promotion.json",
+      "sha256": "8d75a6b6ba61da74d786ef426a2773c055cfbf53b7841922bba6a32afb9bfd4d"
+    },
+    {
+      "path": "audit/second-authorization-at-promotion.json",
+      "sha256": "b6d912840767ce6adf8fa28b26ece09cd93add90d0dba6d617d8d5cf3bf00e8e"
+    },
+    {
+      "path": "audit/second-data-preservation.json",
+      "sha256": "febba83bf411b92605ffb26af5c4eae6eedb7797e542c7aa7d678b86d47bb856"
+    },
+    {
+      "path": "audit/second-intermediate-after.json",
+      "sha256": "1375ed2e542de1cbf7e0cd40a9ce96f4b741ee24eb30ecbfe81f5b03d91bb99b"
+    },
+    {
+      "path": "audit/second-live-verification.json",
+      "sha256": "6d111ad0137835be7cbb0654afdff7560c78137fff84a6c342ad0b20e9431d17"
+    },
+    {
+      "path": "audit/second-old-client-after.json",
+      "sha256": "356fdf3b9f7551a0eb6806b16a1e2519ff930ef8793c283b6139ca756762c3c1"
+    },
+    {
+      "path": "audit/second-pre-native-after.json",
+      "sha256": "67e1059fe9f1742c97541ce4cec9cef536b498bc391379e2a66a4bf7cea1310e"
+    },
+    {
+      "path": "audit/second-strict-gate-final.txt",
+      "sha256": "d6bd1ef423c7e23c1cc83c7ee35947c89ff578ebd387a400b8461d3f17511d48"
+    }
+  ],
+  "credentialScan": "passed",
+  "diffSha256": "df7c192aeb9ff772580533a06d5b23a9ccadc3df42b6541ad987f8868c7b2490",
+  "publication": "112 current files/routes verified; three mutable documents unchanged; 150 previous dependencies preserved; explicit installed public update and native editor drive/return passed",
+  "acceptance": "35 passed, 8 incomplete; strict gate still refuses J13"
+}

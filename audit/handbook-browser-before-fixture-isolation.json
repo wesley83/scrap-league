@@ -1,0 +1,70 @@
+{
+  "release": "sl-8aadb71801519a",
+  "scope": "Visible local fixture results before fixture isolation correction",
+  "results": [
+    {
+      "name": "New circuit, source and failed save",
+      "status": "passed",
+      "durationMs": 2012,
+      "details": {
+        "id": "e6873c3d-2f1b-40a2-a27b-1c7d82add090",
+        "pieces": 8,
+        "semanticSource": true,
+        "saveFailureNavigation": true,
+        "exportRecovery": true,
+        "fiveAI": true,
+        "completed": {
+          "elapsedMs": 84787,
+          "laps": 3,
+          "place": 1,
+          "contacts": 1826
+        },
+        "undoRedo": true,
+        "scope": "Native form/button route; canvas dragging is a separate fixture"
+      }
+    },
+    {
+      "name": "Solo improvement and submission form",
+      "status": "passed",
+      "durationMs": 2012,
+      "details": {
+        "first": {
+          "elapsedMs": 108875,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "second": {
+          "elapsedMs": 102542,
+          "laps": 3,
+          "place": 1,
+          "contacts": 0
+        },
+        "ghost": true,
+        "id": "02f15aae-caba-4d07-bf78-4a326ad7a832",
+        "offlineQueue": true,
+        "invalidFormPreserved": true,
+        "escapedName": true
+      }
+    },
+    {
+      "name": "Name form 200 percent reflow",
+      "status": "passed",
+      "durationMs": 496,
+      "details": {
+        "width": 320,
+        "height": 568,
+        "fontScale": 2,
+        "allComputedFontsDoubled": true,
+        "overflow": 0,
+        "focusedNameVisible": true
+      }
+    },
+    {
+      "name": "Garage compare and test",
+      "status": "failed",
+      "error": "Ordinary input did not drive equipped build",
+      "stack": "Error: Ordinary input did not drive equipped build\n    at check (http://127.0.0.1:4399/__audit__/lab.js:7:25)\n    at Garage comparison, equip and ordinary-input test (http://127.0.0.1:4399/__audit__/ui.js:74:7)\n    at async record (http://127.0.0.1:4399/__audit__/lab.js:33:21)"
+    }
+  ]
+}

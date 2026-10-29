@@ -1,0 +1,1143 @@
+Automated regression suite	Set up job	﻿2026-10-18T02:25:38.4917194Z Current runner version: '2.337.0'
+Automated regression suite	Set up job	2026-10-18T02:25:38.4945434Z ##[group]Runner Image Provisioner
+Automated regression suite	Set up job	2026-10-18T02:25:38.4946499Z Hosted Compute Agent
+Automated regression suite	Set up job	2026-10-18T02:25:38.4947137Z Version: 20261012.601
+Automated regression suite	Set up job	2026-10-18T02:25:38.4947771Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+Automated regression suite	Set up job	2026-10-18T02:25:38.4948561Z Build Date: 2026-10-12T17:48:21Z
+Automated regression suite	Set up job	2026-10-18T02:25:38.4949257Z Worker ID: {7d47464d-ee93-4cfc-b1de-879045bcb35a}
+Automated regression suite	Set up job	2026-10-18T02:25:38.4949987Z Region: westus
+Automated regression suite	Set up job	2026-10-18T02:25:38.4950655Z Cloud: Azure
+Automated regression suite	Set up job	2026-10-18T02:25:38.4951234Z ##[endgroup]
+Automated regression suite	Set up job	2026-10-18T02:25:38.4952947Z ##[group]Operating System
+Automated regression suite	Set up job	2026-10-18T02:25:38.4954056Z Ubuntu
+Automated regression suite	Set up job	2026-10-18T02:25:38.4954606Z 24.04.5
+Automated regression suite	Set up job	2026-10-18T02:25:38.4955201Z LTS
+Automated regression suite	Set up job	2026-10-18T02:25:38.4955717Z ##[endgroup]
+Automated regression suite	Set up job	2026-10-18T02:25:38.4956312Z ##[group]Runner Image
+Automated regression suite	Set up job	2026-10-18T02:25:38.4956981Z Image: ubuntu-24.04
+Automated regression suite	Set up job	2026-10-18T02:25:38.4957597Z Version: 20261012.334.1
+Automated regression suite	Set up job	2026-10-18T02:25:38.4958780Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Automated regression suite	Set up job	2026-10-18T02:25:38.4960533Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Automated regression suite	Set up job	2026-10-18T02:25:38.4961531Z ##[endgroup]
+Automated regression suite	Set up job	2026-10-18T02:25:38.4963260Z ##[group]GITHUB_TOKEN Permissions
+Automated regression suite	Set up job	2026-10-18T02:25:38.4965531Z Contents: read
+Automated regression suite	Set up job	2026-10-18T02:25:38.4966154Z Metadata: read
+Automated regression suite	Set up job	2026-10-18T02:25:38.4966831Z ##[endgroup]
+Automated regression suite	Set up job	2026-10-18T02:25:38.4969024Z Secret source: Actions
+Automated regression suite	Set up job	2026-10-18T02:25:38.4970117Z Cache mode: write
+Automated regression suite	Set up job	2026-10-18T02:25:38.4970957Z Prepare workflow directory
+Automated regression suite	Set up job	2026-10-18T02:25:38.5366271Z Prepare all required actions
+Automated regression suite	Set up job	2026-10-18T02:25:38.5416989Z Getting action download info
+Automated regression suite	Set up job	2026-10-18T02:25:38.9208258Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Automated regression suite	Set up job	2026-10-18T02:25:39.0351654Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Automated regression suite	Set up job	2026-10-18T02:25:39.1202183Z Download action repository 'oven-sh/setup-bun@v2' (SHA:0c5077e51419868618aeaa5fe8019c62421857d6)
+Automated regression suite	Set up job	2026-10-18T02:25:39.4534907Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Automated regression suite	Set up job	2026-10-18T02:25:39.6688087Z Complete job name: Automated regression suite
+Automated regression suite	Run actions/checkout@v4	﻿2026-10-18T02:25:39.7502810Z ##[group]Run actions/checkout@v4
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7504036Z with:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7504505Z   repository: wesley83/scrap-league
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7508569Z   token: ***
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7508999Z   ssh-strict: true
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7509428Z   ssh-user: git
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7509874Z   persist-credentials: true
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7510349Z   clean: true
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7510779Z   sparse-checkout-cone-mode: true
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7511292Z   fetch-depth: 1
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7511712Z   fetch-tags: false
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7512145Z   show-progress: true
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7512583Z   lfs: false
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7513192Z   submodules: false
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7513665Z   set-safe-directory: true
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7514179Z   allow-unsafe-pr-checkout: false
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.7514999Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8515155Z Syncing repository: wesley83/scrap-league
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8517043Z ##[group]Getting Git version info
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8517861Z Working directory is '/home/runner/work/scrap-league/scrap-league'
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8519300Z [command]/usr/bin/git version
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8584258Z git version 2.55.0
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8606419Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8620550Z Temporarily overriding HOME='/home/runner/work/_temp/6ba26844-8dcd-46e3-b3a9-da1675859355' before making global git config changes
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8626424Z Adding repository directory to the temporary git global config as a safe directory
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8628186Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/scrap-league/scrap-league
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8678517Z Deleting the contents of '/home/runner/work/scrap-league/scrap-league'
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8683826Z ##[group]Initializing the repository
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8688732Z [command]/usr/bin/git init /home/runner/work/scrap-league/scrap-league
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8789760Z hint: Using 'master' as the name for the initial branch. This default branch name
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8791142Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8792200Z hint: to use in all of your new repositories, which will suppress this warning,
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8793853Z hint: call:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8794512Z hint:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8795469Z hint: 	git config --global init.defaultBranch <name>
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8796862Z hint:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8798204Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8800179Z hint: 'development'. The just-created branch can be renamed via this command:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8801828Z hint:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8802736Z hint: 	git branch -m <name>
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8803988Z hint:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8805214Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8807570Z Initialized empty Git repository in /home/runner/work/scrap-league/scrap-league/.git/
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8809443Z [command]/usr/bin/git remote add origin https://github.com/wesley83/scrap-league
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8856174Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8857530Z ##[group]Disabling automatic garbage collection
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8860982Z [command]/usr/bin/git config --local gc.auto 0
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8893229Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8894036Z ##[group]Setting up auth
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8900261Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.8930518Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9267520Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9302009Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9528089Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9559979Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9791053Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9832614Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9834762Z ##[group]Fetching the repository
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:39.9845546Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6e1fbea07cecc75ef1ab15390a69d0b688d61fa7:refs/remotes/origin/codex/release-remediation
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0795204Z From https://github.com/wesley83/scrap-league
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0796133Z  * [new ref]         6e1fbea07cecc75ef1ab15390a69d0b688d61fa7 -> origin/codex/release-remediation
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0799988Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0800776Z ##[group]Determining the checkout info
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0802259Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0808162Z [command]/usr/bin/git sparse-checkout disable
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0856506Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0885752Z ##[group]Checking out the ref
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.0889748Z [command]/usr/bin/git checkout --progress --force -B codex/release-remediation refs/remotes/origin/codex/release-remediation
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.3326409Z Switched to a new branch 'codex/release-remediation'
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.3330822Z branch 'codex/release-remediation' set up to track 'origin/codex/release-remediation'.
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.3345040Z ##[endgroup]
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.3386465Z [command]/usr/bin/git log -1 --format=%H
+Automated regression suite	Run actions/checkout@v4	2026-10-18T02:25:41.3410049Z 6e1fbea07cecc75ef1ab15390a69d0b688d61fa7
+Automated regression suite	Run actions/setup-node@v4	﻿2026-10-18T02:25:41.3759790Z ##[group]Run actions/setup-node@v4
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.3760181Z with:
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.3760440Z   node-version: 22
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.3760705Z   always-auth: false
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.3760980Z   check-latest: false
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.3764343Z   token: ***
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.3764635Z ##[endgroup]
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.5257686Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.5262571Z (node:2307) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.5263653Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:41.5266069Z ##[group]Environment details
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:44.5850614Z node: v22.23.3
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:44.5851519Z npm: 10.9.9
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:44.5851956Z yarn: 1.22.22
+Automated regression suite	Run actions/setup-node@v4	2026-10-18T02:25:44.5853970Z ##[endgroup]
+Automated regression suite	Run oven-sh/setup-bun@v2	﻿2026-10-18T02:25:44.6028184Z ##[group]Run oven-sh/setup-bun@v2
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:44.6028583Z with:
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:44.6028858Z   bun-version: 1.4.3
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:44.6029127Z   no-cache: false
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:44.6031963Z   token: ***
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:44.6032222Z ##[endgroup]
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:45.0317786Z Cache hit for: bun-+NUKu9E/U4apAe78eSCZvQ/GSdc=
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.3391663Z Received 0 of 41001436 (0.0%), 0.0 MBs/sec
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.7696500Z Received 41001436 of 41001436 (100.0%), 27.3 MBs/sec
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.7698307Z Cache Size: ~39 MB (41001436 B)
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.7746341Z [command]/usr/bin/tar -xf /home/runner/work/_temp/95bb15ae-d63e-435e-b534-eb1f5ad72212/cache.tzst -P -C /home/runner/work/scrap-league/scrap-league --use-compress-program unzstd
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.9187213Z Cache restored successfully
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.9215250Z [command]/home/runner/.bun/bin/bun --revision
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.9252269Z 1.4.3+c6da4a4d3
+Automated regression suite	Run oven-sh/setup-bun@v2	2026-10-18T02:25:46.9258564Z Using a cached version of Bun: 1.4.3+c6da4a4d3
+Automated regression suite	Run bun install --frozen-lockfile	﻿2026-10-18T02:25:46.9400243Z ##[group]Run bun install --frozen-lockfile
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:46.9400728Z ^[[36;1mbun install --frozen-lockfile^[[0m
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:46.9707484Z shell: /usr/bin/bash -e {0}
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:46.9707894Z ##[endgroup]
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:46.9841037Z bun install v1.4.3 (c6da4a4d3)
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2193206Z 
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2193949Z + fake-indexeddb@6.2.6
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2194345Z + jsqr@1.4.0
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2194633Z + linkedom@0.18.12
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2194896Z + prettier@3.9.10
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2195132Z + sharp@0.35.5
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2195350Z + three@0.180.0
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2195487Z 
+Automated regression suite	Run bun install --frozen-lockfile	2026-10-18T02:25:47.2195657Z 27 packages installed [235.00ms]
+Automated regression suite	Run node tools/build.mjs	﻿2026-10-18T02:25:47.2267487Z ##[group]Run node tools/build.mjs
+Automated regression suite	Run node tools/build.mjs	2026-10-18T02:25:47.2267883Z ^[[36;1mnode tools/build.mjs^[[0m
+Automated regression suite	Run node tools/build.mjs	2026-10-18T02:25:47.2331778Z shell: /usr/bin/bash -e {0}
+Automated regression suite	Run node tools/build.mjs	2026-10-18T02:25:47.2332079Z ##[endgroup]
+Automated regression suite	Run node tools/build.mjs	2026-10-18T02:25:47.7523497Z Generated Scrap League's host-pinned trial and daily board documents.
+Automated regression suite	Run node tools/build.mjs	2026-10-18T02:25:48.1916340Z Built sl-5c1afcc9442899: 12 tracks / 81 builds / 4 cups / 48 offline files / 51 public files
+Automated regression suite	Run node --test tests/*.test.mjs	﻿2026-10-18T02:25:48.2071981Z ##[group]Run node --test tests/*.test.mjs
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.2072364Z ^[[36;1mnode --test tests/*.test.mjs^[[0m
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.2134659Z shell: /usr/bin/bash -e {0}
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.2134941Z ##[endgroup]
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.2880387Z TAP version 13
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.4914920Z # Subtest: touch contacts retain ownership across duplicate presses, cancellation and pause
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.4994285Z ok 1 - touch contacts retain ownership across duplicate presses, cancellation and pause
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.4998242Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.4999715Z   duration_ms: 1.496299
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5048409Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5073567Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5104031Z # Subtest: steering uses the contact rectangle, a dead zone and clamped travel
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5154100Z ok 2 - steering uses the contact rectangle, a dead zone and clamped travel
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5194498Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5203606Z   duration_ms: 0.443971
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5205623Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5209382Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5210542Z # Subtest: lessons follow accepted driving, not elapsed time or an attempted boost
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5212050Z ok 3 - lessons follow accepted driving, not elapsed time or an attempted boost
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5213452Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5214157Z   duration_ms: 0.75914
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5214633Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5215020Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5215826Z # Subtest: Canvas 2D buffers remain bounded without changing CSS input geometry
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5216996Z ok 4 - Canvas 2D buffers remain bounded without changing CSS input geometry
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5217752Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5218144Z   duration_ms: 1.060073
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5218582Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:48.5218966Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2069687Z # Subtest: Workshop commits semantic source atomically and exposes an immutable projection
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2071365Z ok 5 - Workshop commits semantic source atomically and exposes an immutable projection
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2072667Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2073394Z   duration_ms: 725.000516
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2074122Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2074657Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2815675Z # Subtest: declared assets decode, and removing or corrupting a social image fails independently of the generated inventory
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2817987Z ok 6 - declared assets decode, and removing or corrupting a social image fails independently of the generated inventory
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2819258Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2819847Z   duration_ms: 606.521495
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2820467Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2821002Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2822011Z # Subtest: initial HTML metadata selects exact public image and missing metadata fails
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2823700Z ok 7 - initial HTML metadata selects exact public image and missing metadata fails
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2824744Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2825317Z   duration_ms: 99.17101
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2825977Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.2826518Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.8235328Z # Subtest: owner publication refuses wrong host and stale baseline without a write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.8295032Z ok 8 - owner publication refuses wrong host and stale baseline without a write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.8296003Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.8296396Z   duration_ms: 744.803646
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.8296900Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.8297324Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.9314742Z # Subtest: conditional PUT and semantic readback acknowledge publication
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.9354066Z ok 9 - conditional PUT and semantic readback acknowledge publication
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.9355252Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.9355777Z   duration_ms: 102.846329
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.9356320Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:49.9356900Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0419898Z # Subtest: ambiguous create reconciles without a second write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0421724Z ok 10 - ambiguous create reconciles without a second write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0422710Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0423604Z   duration_ms: 135.518091
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0424801Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0425343Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0426439Z # Subtest: casual run validator rejects extra fields, bad arithmetic, bounds and controls
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0428082Z ok 11 - casual run validator rejects extra fields, bad arithmetic, bounds and controls
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0429152Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0429757Z   duration_ms: 1.450274
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0430663Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:50.0431298Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.0530665Z # Subtest: native trigger accepts recognized Trial/Daily runs and checks sum, identity and exact fields
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.0542053Z ok 12 - native trigger accepts recognized Trial/Daily runs and checks sum, identity and exact fields
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.0543662Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.0544279Z   duration_ms: 976.334929
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.0544952Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.0545530Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5806885Z # Subtest: native policy identities match the runtime's official track, build and Daily keys
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5809327Z ok 13 - native policy identities match the runtime's official track, build and Daily keys
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5810727Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5811402Z   duration_ms: 247.175021
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5812098Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5812616Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5814096Z # Subtest: board resources are separate and their complete native policy is pinned on both hosts
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5815671Z ok 14 - board resources are separate and their complete native policy is pinned on both hosts
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5835590Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5836279Z   duration_ms: 47.689145
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5837201Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5837896Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5839175Z # Subtest: board policy migrations retain all rows and recognize only the two known prior layouts
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5840917Z ok 15 - board policy migrations retain all rows and recognize only the two known prior layouts
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5842078Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5842759Z   duration_ms: 236.564489
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5843882Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5844513Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.5999460Z # Subtest: board transport keeps the browser global receiver
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6014091Z ok 16 - board transport keeps the browser global receiver
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6078562Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6094063Z   duration_ms: 53.901542
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6094725Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6095297Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6096239Z # Subtest: leaderboards can be browsed before a run without inventing a score
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6097448Z ok 17 - leaderboards can be browsed before a run without inventing a score
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6098238Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6098773Z   duration_ms: 2.613459
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6099308Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6099775Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6100876Z # Subtest: strict run boundary rejects missing identifiers, unsupported content and mismatched captured daily
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6102549Z ok 18 - strict run boundary rejects missing identifiers, unsupported content and mismatched captured daily
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6103808Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6104283Z   duration_ms: 0.681866
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6104803Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6105269Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6106326Z # Subtest: retention uses exact expiry and preserves active interleaved records and principal-time ties
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6107882Z ok 19 - retention uses exact expiry and preserves active interleaved records and principal-time ties
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6108833Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6109294Z   duration_ms: 0.970145
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6109810Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6110274Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6111157Z # Subtest: standings keep the captured physics revision in their comparison key
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6112365Z ok 20 - standings keep the captured physics revision in their comparison key
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6113357Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6113824Z   duration_ms: 0.634277
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6114338Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6115162Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6116084Z # Subtest: two outbox clients reconcile timeout-after-acceptance once with original id
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6117392Z ok 21 - two outbox clients reconcile timeout-after-acceptance once with original id
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6118236Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6118701Z   duration_ms: 59.719532
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6119218Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6119677Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6120554Z # Subtest: failed refresh retains cached standings and removes expired rows offline
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6121799Z ok 22 - failed refresh retains cached standings and removes expired rows offline
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6122609Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6123253Z   duration_ms: 3.722835
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6123796Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6124307Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6125359Z # Subtest: public board reads paginate safely and rank records across page boundaries
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6127077Z ok 23 - public board reads paginate safely and rank records across page boundaries
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6127968Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6128475Z   duration_ms: 30.190764
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6129028Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6129545Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6130434Z # Subtest: empty Pagelove paginator sentinel reads as an empty board
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6131549Z ok 24 - empty Pagelove paginator sentinel reads as an empty board
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6132321Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6132807Z   duration_ms: 3.225004
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6133609Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6134098Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6135069Z # Subtest: bounded reads retry temporary provider errors, while writes remain single-shot
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6136429Z ok 25 - bounded reads retry temporary provider errors, while writes remain single-shot
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6137341Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6137854Z   duration_ms: 886.972686
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6138407Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6138850Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6139929Z # (node:2431) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6141263Z # (Use `node --trace-warnings ...` to show where the warning was created)
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6142794Z # Subtest: unconfigured board makes no network request and terminal history does not fill pending capacity
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6144600Z ok 26 - unconfigured board makes no network request and terminal history does not fill pending capacity
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6145589Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6146076Z   duration_ms: 33.511968
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6146700Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6147240Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6148272Z # Subtest: daily captured before UTC midnight survives finish, reopen and upload two days later
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6149753Z ok 27 - daily captured before UTC midnight survives finish, reopen and upload two days later
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6150708Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6151197Z   duration_ms: 6.319352
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6151755Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6152244Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6153522Z # Subtest: pending capacity preserves all queued identities and a permanent rejection is not retried
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6155141Z ok 28 - pending capacity preserves all queued identities and a permanent rejection is not retried
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6156119Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6156609Z   duration_ms: 91.043682
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6157169Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:25:51.6157673Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4804141Z # Subtest: all 81 builds accelerate, brake, remain finite and respect boost capacity
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4811591Z ok 29 - all 81 builds accelerate, brake, remain finite and respect boost capacity
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4815126Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4826017Z   duration_ms: 677.363221
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4826707Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4827274Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4922203Z # Completed 36 six-car races without a forced finish.
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4972924Z # Subtest: six-car races across twelve tracks: three laps at Club, one at Relaxed and Expert
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4975522Z ok 30 - six-car races across twelve tracks: three laps at Club, one at Relaxed and Expert
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4976639Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4977214Z   duration_ms: 58297.042279
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4977838Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4978367Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4979369Z # Subtest: campaign commits once, DNF does not advance, standings use points and wins
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4980777Z ok 31 - campaign commits once, DNF does not advance, standings use points and wins
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4983579Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4984188Z   duration_ms: 1.724321
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4984820Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4985362Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4986329Z # Subtest: daily schedule covers every 12-day block with no consecutive duplicate
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4987705Z ok 32 - daily schedule covers every 12-day block with no consecutive duplicate
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4988623Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4989481Z   duration_ms: 0.80576
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4990104Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.4990638Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5212274Z # Subtest: publication receipts bind identity and destination but cannot authorize unresolved acceptance
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5214845Z ok 33 - publication receipts bind identity and destination but cannot authorize unresolved acceptance
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5216527Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5217178Z   duration_ms: 3.941543
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5217796Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5218345Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5253654Z # Subtest: segment oracle handles crossing centers, parallel overlap, endpoints and degenerate points
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5334418Z ok 34 - segment oracle handles crossing centers, parallel overlap, endpoints and degenerate points
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5353822Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5399812Z   duration_ms: 2.919623
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5443863Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5446214Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5447686Z # Subtest: full capsule side hits a wall between old sample circles
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5448959Z ok 35 - full capsule side hits a wall between old sample circles
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5449778Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5450326Z   duration_ms: 1.170448
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5452878Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5455533Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5462887Z # Subtest: pure rotation reaches a wall at the analytic first contact angle
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5464552Z ok 36 - pure rotation reaches a wall at the analytic first contact angle
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5465456Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5466994Z   duration_ms: 0.602411
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5478969Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5487297Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5498702Z # Subtest: high-speed head-on cars collide before crossing and conserve linear momentum
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5510452Z ok 37 - high-speed head-on cars collide before crossing and conserve linear momentum
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5523171Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5529516Z   duration_ms: 1.168415
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5536838Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5540940Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5542178Z # Subtest: initial wall penetration resolves on the wall normal without a checkpoint motion segment
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5544071Z ok 38 - initial wall penetration resolves on the wall normal without a checkpoint motion segment
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5548200Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5548753Z   duration_ms: 0.498025
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5549337Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5549817Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5574244Z # Subtest: wall impact followed by a car impact is resolved in the remaining step
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5597603Z ok 39 - wall impact followed by a car impact is resolved in the remaining step
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5598595Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5602503Z   duration_ms: 0.984429
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5603692Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5604287Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5610459Z # Subtest: parallel true miss and separating tangent do not invent a contact
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5634261Z ok 40 - parallel true miss and separating tangent do not invent a contact
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5635745Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5663905Z   duration_ms: 0.415991
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5667130Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5667700Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5668912Z # Subtest: existing native colon routes have portable independent backups and root rollback paths remain readable
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5673747Z ok 41 - existing native colon routes have portable independent backups and root rollback paths remain readable
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5675057Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5676916Z   duration_ms: 27.619253
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5677745Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5678285Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5679660Z # Subtest: HTML publication tolerates serialization but rejects changed runtime references
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5683797Z ok 42 - HTML publication tolerates serialization but rejects changed runtime references
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5684830Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5685379Z   duration_ms: 10.276627
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5685944Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5686740Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5687713Z # Subtest: publication identity preserves executable text and exact non-HTML bytes
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5689040Z ok 43 - publication identity preserves executable text and exact non-HTML bytes
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5689920Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5690437Z   duration_ms: 0.690447
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5690987Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5691494Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5692917Z # Subtest: public identity permits only the observed Pagelove footer and keeps authoring strict
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5696981Z ok 44 - public identity permits only the observed Pagelove footer and keeps authoring strict
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5698062Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5698631Z   duration_ms: 18.194011
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5701695Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5702253Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5703578Z # Subtest: group rigid transform preserves topology and IDs and inverse restores coordinates
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5706700Z ok 45 - group rigid transform preserves topology and IDs and inverse restores coordinates
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5708372Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5708941Z   duration_ms: 8.722242
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5711927Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5712493Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5713837Z # Subtest: recipe edits preserve references and reassignment releases an in-use recipe
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5715414Z ok 46 - recipe edits preserve references and reassignment releases an in-use recipe
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5716477Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5717053Z   duration_ms: 41.263528
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5717665Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5718171Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5719180Z # Subtest: partial surface only changes its bounded span and survives HTML round trip
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5720609Z ok 47 - partial surface only changes its bounded span and survives HTML round trip
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5721534Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5722046Z   duration_ms: 13.322922
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5722621Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5723694Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5724829Z # Subtest: recipes resolve bounded native behavior, duplicate references and reject executable or in-use deletion
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5726450Z ok 48 - recipes resolve bounded native behavior, duplicate references and reject executable or in-use deletion
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5727366Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5727708Z   duration_ms: 15.210878
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5728103Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5728444Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5729241Z # Subtest: Files keeps export and readable drafts available after storage read failure
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5730473Z ok 49 - Files keeps export and readable drafts available after storage read failure
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5731228Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5731465Z   duration_ms: 541.364802
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5731705Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5731914Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5732490Z # Subtest: draft entry validates sources, preserves corrupt records and reports incomplete reads
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5734117Z ok 50 - draft entry validates sources, preserves corrupt records and reports incomplete reads
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5735256Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5735480Z   duration_ms: 240.853613
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5735734Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5735934Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5741133Z # AI lap evidence [{"track":"yard-loop","time":36,"contacts":0,"resets":0,"gate":0},{"track":"tin-can-alley","time":49,"contacts":0,"resets":0,"gate":0},{"track":"gravel-shift","time":42,"contacts":0,"resets":0,"gate":0},{"track":"dockside-dash","time":47,"contacts":0,"resets":0,"gate":0},{"track":"container-switchback","time":56,"contacts":0,"resets":0,"gate":0},{"track":"salt-flat-sprint","time":56,"contacts":0,"resets":0,"gate":0},{"track":"furnace-bend","time":54,"contacts":0,"resets":0,"gate":0},{"track":"mudworks","time":48,"contacts":0,"resets":0,"gate":0},{"track":"crusher-circuit","time":63,"contacts":0,"resets":0,"gate":0},{"track":"night-sort","time":57,"contacts":0,"resets":0,"gate":0},{"track":"redline-ridge","time":54,"contacts":0,"resets":0,"gate":0},{"track":"the-big-salvage","time":68,"contacts":0,"resets":0,"gate":0}]
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5746996Z # Subtest: 12 authoritative documents round trip with all owned fields
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5748060Z ok 51 - 12 authoritative documents round trip with all owned fields
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5748725Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5749095Z   duration_ms: 101.906083
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5749552Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5749928Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5750582Z # Subtest: independent rounded rectangle length and arc endpoint
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5751561Z ok 52 - independent rounded rectangle length and arc endpoint
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5752199Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5752561Z   duration_ms: 0.34099
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5753429Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5753844Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5754492Z # Subtest: all 81 unique legal builds, masses and tire tradeoffs
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5755418Z ok 53 - all 81 unique legal builds, masses and tire tradeoffs
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5756075Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5756457Z   duration_ms: 0.77175
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5756918Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5757305Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5757991Z # Subtest: hostile/unknown imports are rejected before reconstruction
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5758986Z ok 54 - hostile/unknown imports are rejected before reconstruction
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5759628Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5759998Z   duration_ms: 14.595731
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5760442Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5760825Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5761625Z # Subtest: geometry gaps, disconnected roads, overlaps and missing respawns fail
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5762815Z ok 55 - geometry gaps, disconnected roads, overlaps and missing respawns fail
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5763873Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5764248Z   duration_ms: 17.721754
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5764703Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5765042Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5765830Z # Subtest: finite gate accepts forward center crossing, rejects reverse and outside
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5767032Z ok 56 - finite gate accepts forward center crossing, rejects reverse and outside
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5767829Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5768205Z   duration_ms: 0.300253
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5768621Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5768973Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5769708Z # Subtest: swept circle catches high-speed wall and ignores parallel miss
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5770807Z ok 57 - swept circle catches high-speed wall and ignores parallel miss
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5771505Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5771881Z   duration_ms: 0.510579
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5772296Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5772650Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5783933Z # Subtest: out-of-order finish gives no lap or charge; reset preserves sequence
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5785171Z ok 58 - out-of-order finish gives no lap or charge; reset preserves sequence
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5785930Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5786319Z   duration_ms: 0.606078
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5786743Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5787127Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5787900Z # Subtest: legal gates award once and exact crossing time rounds splits once
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5789287Z ok 59 - legal gates award once and exact crossing time rounds splits once
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5790010Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5790232Z   duration_ms: 1.478798
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5790465Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5790668Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5791010Z # Subtest: pause does not advance simulation, boost or timers
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5791495Z ok 60 - pause does not advance simulation, boost or timers
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5791822Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5792027Z   duration_ms: 0.705145
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5792255Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5792453Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5792884Z # Subtest: DNF history records elapsed time without rewriting completed lap splits
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5801787Z ok 61 - DNF history records elapsed time without rewriting completed lap splits
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5802255Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5802469Z   duration_ms: 1.034653
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5803251Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5827952Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5828769Z # Subtest: Workshop completion never awards League progress or cup points
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5829894Z ok 62 - Workshop completion never awards League progress or cup points
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5830585Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5830945Z   duration_ms: 0.342192
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5831361Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5831714Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5832451Z # Subtest: all circuits finish through legal AI controls without teleports
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5833952Z ok 63 - all circuits finish through legal AI controls without teleports
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5834674Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5835077Z   duration_ms: 4144.279195
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5835538Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5835915Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5836891Z # Subtest: test evidence retains different runs and never overwrites a historical receipt
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5838226Z ok 64 - test evidence retains different runs and never overwrites a historical receipt
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5839012Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5839416Z   duration_ms: 26.154474
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5839851Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5840243Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5840960Z # Subtest: high-DPR and large surfaces stay within pixel and hardware budgets
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5842082Z ok 65 - high-DPR and large surfaces stay within pixel and hardware budgets
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5842775Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5843415Z   duration_ms: 2.49166
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5843839Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5844153Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5845018Z # Subtest: mobile defaults migrate old preferences and preserve explicit graphics choice
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5846355Z ok 66 - mobile defaults migrate old preferences and preserve explicit graphics choice
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5847186Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5847550Z   duration_ms: 2.135331
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5847955Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5848322Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5849252Z # Subtest: surface checks detect loss without relying on browser events and reject empty allocation
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5850800Z ok 67 - surface checks detect loss without relying on browser events and reject empty allocation
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5851686Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5852073Z   duration_ms: 0.392908
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5852477Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5852824Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5854170Z # Subtest: a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5855813Z ok 68 - a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5856739Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5857119Z   duration_ms: 2.537686
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5857551Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5857941Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5858897Z # Subtest: a failed optional board cache does not turn a successful read into an unavailable board
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5860325Z ok 69 - a failed optional board cache does not turn a successful read into an unavailable board
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5861494Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5861915Z   duration_ms: 39.039554
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5862350Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5862731Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5864235Z # Subtest: nickname normalization preserves Unicode and invalid/storage failures preserve the saved preference
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5865963Z ok 70 - nickname normalization preserves Unicode and invalid/storage failures preserve the saved preference
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5866914Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5867282Z   duration_ms: 1.567684
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5867690Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5868029Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5869003Z # Subtest: unavailable board never blocks name entry, invalid input stays open, queue survives reopen
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5870543Z ok 71 - unavailable board never blocks name entry, invalid input stays open, queue survives reopen
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5871460Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5871855Z   duration_ms: 29.964794
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5872616Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5873371Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5874462Z # Subtest: queued identity cannot change payload; manual retry respects server delay and another tab's lease
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5876011Z ok 72 - queued identity cannot change payload; manual retry respects server delay and another tab's lease
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5876932Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5877338Z   duration_ms: 6.293194
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5877760Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5878127Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5878996Z # Subtest: a request outliving its lease is attempted once per pump and stays recoverable
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5880301Z ok 73 - a request outliving its lease is attempted once per pump and stays recoverable
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5881128Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5881518Z   duration_ms: 4.603684
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5881935Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5882296Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5883391Z # Subtest: server Retry-After dates and seconds defer a queue read without a retry storm
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5884758Z ok 74 - server Retry-After dates and seconds defer a queue read without a retry storm
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5885576Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5885929Z   duration_ms: 6.475406
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5886362Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5886734Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5887830Z # Subtest: all 81 builds have measured acceleration, governed speed, braking, skidpad, slalom and surface recovery
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5889540Z ok 75 - all 81 builds have measured acceleration, governed speed, braking, skidpad, slalom and surface recovery
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5890512Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5890898Z   duration_ms: 6407.554484
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5891341Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5891705Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5892536Z # Subtest: boost, pad, handbrake, reset, pause and finish interactions remain bounded
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5894306Z ok 76 - boost, pad, handbrake, reset, pause and finish interactions remain bounded
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5895084Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5895461Z   duration_ms: 1.998194
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5895895Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5896288Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5897384Z # Subtest: native routes use explicit source fragments and an inert unknown-slug chooser without server JavaScript
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5899074Z ok 77 - native routes use explicit source fragments and an inert unknown-slug chooser without server JavaScript
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5900055Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5900430Z   duration_ms: 588.334406
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5900859Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5901225Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5902121Z # Subtest: worker checks actual cached bytes, repairs corruption, and survives runtime restart
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5903759Z ok 78 - worker checks actual cached bytes, repairs corruption, and survives runtime restart
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5904645Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5905089Z   duration_ms: 58.111257
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5905505Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5905863Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5906745Z # Subtest: installed native-route fallback preserves URL meaning and verified cache bytes
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5908723Z ok 79 - installed native-route fallback preserves URL meaning and verified cache bytes
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5909530Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5909908Z   duration_ms: 36.98112
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5910322Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5910683Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5911684Z # Subtest: native-route fallback preserves success/authorization responses and refuses corrupt shells
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5913499Z ok 80 - native-route fallback preserves success/authorization responses and refuses corrupt shells
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5914424Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5914800Z   duration_ms: 9.693587
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5915213Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5915580Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5916650Z # Subtest: failed B installation preserves complete A; missing, corrupt and quota-failed B never report readiness
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5918361Z ok 81 - failed B installation preserves complete A; missing, corrupt and quota-failed B never report readiness
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5919590Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5919968Z   duration_ms: 16.733289
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5920407Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5920769Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5921773Z # Subtest: activation rejects stale acknowledgement, cancellation, expired request and newly opened window
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5923773Z ok 82 - activation rejects stale acknowledgement, cancellation, expired request and newly opened window
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5924654Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5924865Z   duration_ms: 17.991112
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5925117Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5925315Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5925810Z # Subtest: duplicate activation clicks do not skip waiting twice; unsafe other tab blocks update
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5926566Z ok 83 - duplicate activation clicks do not skip waiting twice; unsafe other tab blocks update
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5927018Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5927212Z   duration_ms: 13.341031
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5927442Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5927658Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5928222Z # Subtest: rollback to retained A restores A resources with server absent and does not touch application storage
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5929090Z ok 84 - rollback to retained A restores A resources with server absent and does not touch application storage
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5929597Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5929790Z   duration_ms: 8.779537
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5930015Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5930214Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5930759Z # Subtest: new worker verifies retained release bytes and refuses corrupt or inventory-less offline responses
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5931618Z ok 85 - new worker verifies retained release bytes and refuses corrupt or inventory-less offline responses
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5932111Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5932300Z   duration_ms: 14.998603
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5932524Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5932719Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5933876Z # Subtest: retirement keeps current, previous, open-client and legacy packs; a nonresponding client vetoes cleanup
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5935440Z ok 86 - retirement keeps current, previous, open-client and legacy packs; a nonresponding client vetoes cleanup
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5936403Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5936629Z   duration_ms: 1226.561916
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5936877Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5937075Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5937569Z # Subtest: legacy client without update acknowledgement blocks explicit activation safely
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5938268Z ok 87 - legacy client without update acknowledgement blocks explicit activation safely
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5938756Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5939123Z   duration_ms: 35.314854
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5939376Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:26:49.5939570Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6088425Z # Subtest: seeded AI holds legal decisions for its reaction interval and varies reproducibly
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6139789Z ok 88 - seeded AI holds legal decisions for its reaction interval and varies reproducibly
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6140729Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6141183Z   duration_ms: 1.532479
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6142402Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6142786Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6144279Z # Subtest: continuous twelve-event campaign persists every three-lap race and resumes captured attempts after database reopen
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6146295Z ok 89 - continuous twelve-event campaign persists every three-lap race and resumes captured attempts after database reopen
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6147453Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6147855Z   duration_ms: 93090.120452
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6148329Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6148735Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6265531Z # Subtest: catalog replacement preserves unknown owner content by refusing the write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6266963Z ok 90 - catalog replacement preserves unknown owner content by refusing the write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6269114Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6271008Z   duration_ms: 30.466083
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6272875Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6273996Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6275492Z # Subtest: listing timeout after acceptance reconciles once with the original identity
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6276415Z ok 91 - listing timeout after acceptance reconciles once with the original identity
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6277044Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6277402Z   duration_ms: 2.299706
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6277794Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6278135Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6278918Z # Subtest: publication remains acknowledged with exact playable link when catalog fails
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6280111Z ok 92 - publication remains acknowledged with exact playable link when catalog fails
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6280970Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6281419Z   duration_ms: 26.433983
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6281828Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6282044Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6283418Z # Subtest: owner read includes revision needed for later listing retry
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6284497Z ok 93 - owner read includes revision needed for later listing retry
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6285081Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6285510Z   duration_ms: 14.602162
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6285957Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:27:33.6286370Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:24.5227529Z # Subtest: actual publisher commands retain promotion phases, recover failures and conditionally restore two releases
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:24.5229465Z ok 94 - actual publisher commands retain promotion phases, recover failures and conditionally restore two releases
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:24.5230302Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:24.5230742Z   duration_ms: 142316.944283
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:24.5231164Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:24.5232905Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8741368Z # Subtest: supported publisher refuses corrupt backups and concurrent state after recovery preparation
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8745371Z ok 95 - supported publisher refuses corrupt backups and concurrent state after recovery preparation
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8746517Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8747210Z   duration_ms: 12352.256599
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8747683Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8748049Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8918792Z # Subtest: unsupported saved parts recover without discarding rewards or the original record
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8919750Z ok 96 - unsupported saved parts recover without discarding rewards or the original record
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8933817Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8952649Z   duration_ms: 26.996765
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8953377Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8953722Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8954572Z # Subtest: concurrent draft rejection followed by open preserves the unsaved working copy
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8955866Z ok 97 - concurrent draft rejection followed by open preserves the unsaved working copy
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8956661Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8957016Z   duration_ms: 14.386071
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8957418Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8957753Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8958512Z # Subtest: quota rejection followed by navigation retains draft and allows export
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8959643Z ok 98 - quota rejection followed by navigation retains draft and allows export
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8960347Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8961128Z   duration_ms: 6.185288
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8961519Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8961849Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8962485Z # Subtest: opening a saved draft preserves zoom pan and selection
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8963726Z ok 99 - opening a saved draft preserves zoom pan and selection
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8964332Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8964684Z   duration_ms: 7.251234
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8965075Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8965400Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8966281Z # Subtest: result transaction abort at after-result rolls back rewards, best and ghost together
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8967636Z ok 100 - result transaction abort at after-result rolls back rewards, best and ghost together
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8968424Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8968757Z   duration_ms: 8.968291
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8969154Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8969492Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8970325Z # Subtest: result transaction abort at after-best rolls back rewards, best and ghost together
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8971965Z ok 101 - result transaction abort at after-best rolls back rewards, best and ghost together
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8972759Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8973444Z   duration_ms: 4.946837
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8973869Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8974228Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8975093Z # Subtest: schema migration preserves v1 progress drafts ghosts and archives unsupported records
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8976484Z ok 102 - schema migration preserves v1 progress drafts ghosts and archives unsupported records
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8977314Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8977660Z   duration_ms: 5.633703
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8978046Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8978393Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8979316Z # Subtest: backup restore is atomic, rejects malformed ghosts, and category reset preserves other data
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8980776Z ok 103 - backup restore is atomic, rejects malformed ghosts, and category reset preserves other data
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8981658Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8982004Z   duration_ms: 9.757619
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8982404Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8982739Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8990020Z # Subtest: outbox claims are exclusive, expired leases recover and late responses cannot acknowledge a new claim
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8991564Z ok 104 - outbox claims are exclusive, expired leases recover and late responses cannot acknowledge a new claim
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8992123Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8992340Z   duration_ms: 4.324291
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8992580Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8992780Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8993454Z # Subtest: closed storage connection rejects without claiming success
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8994038Z ok 105 - closed storage connection rejects without claiming success
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8994412Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8994642Z   duration_ms: 2.201485
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8994871Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8995093Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8995896Z # Subtest: cup continuation consumes captured track build parts and seed despite changed defaults
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8996911Z ok 106 - cup continuation consumes captured track build parts and seed despite changed defaults
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8997637Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8998030Z   duration_ms: 4.855816
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8998385Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8998810Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.8999399Z # Subtest: performance degradation requires sustained overload and survives recovery
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9000329Z ok 107 - performance degradation requires sustained overload and survives recovery
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9001021Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9001339Z   duration_ms: 0.262291
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9011424Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9011732Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9012242Z # Subtest: backup rejects malformed result and ghost timelines before replacing any saves
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9014227Z ok 108 - backup rejects malformed result and ghost timelines before replacing any saves
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9014837Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9015113Z   duration_ms: 5.873323
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9015603Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9015809Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9016515Z # Subtest: a player can explicitly retry a denied valid score with the same identity, reconcile lost acceptance and avoid automatic retries
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9017640Z ok 109 - a player can explicitly retry a denied valid score with the same identity, reconcile lost acceptance and avoid automatic retries
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9018238Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9018443Z   duration_ms: 42.23927
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9018682Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9018883Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9019390Z # Subtest: manual rejected-score retry cannot exceed pending capacity or mutate its captured score
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9020178Z ok 110 - manual rejected-score retry cannot exceed pending capacity or mutate its captured score
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9020636Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9020834Z   duration_ms: 57.409139
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9021070Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9021413Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9021927Z # Subtest: release gate refuses missing asset, stale source, omitted evidence and failed provider gate
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9022732Z ok 111 - release gate refuses missing asset, stale source, omitted evidence and failed provider gate
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9023508Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9023724Z   duration_ms: 2572.336206
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9023965Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9024169Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9024667Z # Subtest: malformed unfinished results cannot make a saved campaign unreadable or award progress
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9025430Z ok 112 - malformed unfinished results cannot make a saved campaign unreadable or award progress
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9025884Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9026081Z   duration_ms: 13.832003
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9026309Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9026504Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9027516Z # Subtest: conditional A→B→A root restoration reconciles ambiguity and preserves user documents and dependencies
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9028532Z ok 113 - conditional A→B→A root restoration reconciles ambiguity and preserves user documents and dependencies
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9029060Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9029266Z   duration_ms: 4.031242
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9029493Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9029692Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9030117Z # Subtest: rollback refuses stale state and altered baseline before the first write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9030762Z ok 114 - rollback refuses stale state and altered baseline before the first write
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9031171Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9031365Z   duration_ms: 0.950491
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9031587Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9031780Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9032193Z # Subtest: daily invitation retains its original date in text and playable URL
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9032795Z ok 115 - daily invitation retains its original date in text and playable URL
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9033469Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9033678Z   duration_ms: 1.212802
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9033906Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9034109Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9034520Z # Subtest: league invitation reports position without inventing global rank
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9035138Z ok 116 - league invitation reports position without inventing global rank
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9035525Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9035718Z   duration_ms: 0.27199
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9035936Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9036133Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9036681Z # Subtest: failed native sharing falls through to clipboard; failed clipboard preserves complete invitation
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9037536Z ok 117 - failed native sharing falls through to clipboard; failed clipboard preserves complete invitation
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9038019Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9038210Z   duration_ms: 0.543088
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9038439Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9038632Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9039025Z # Subtest: cancel does not mutate a result, retry sharing or open a fallback
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9039667Z ok 118 - cancel does not mutate a result, retry sharing or open a fallback
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9040230Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9040450Z   duration_ms: 0.259466
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9040677Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9040868Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9041427Z # Subtest: startup missing either required stylesheet keeps controls inert and exposes independent recovery
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9042284Z ok 119 - startup missing either required stylesheet keeps controls inert and exposes independent recovery
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9042774Z   ---
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9043213Z   duration_ms: 15.277871
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9043514Z   type: 'test'
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9043710Z   ...
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9043885Z 1..119
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9044074Z # tests 119
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9044264Z # suites 0
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9044450Z # pass 119
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9044746Z # fail 0
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9045072Z # cancelled 0
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9045455Z # skipped 0
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9045782Z # todo 0
+Automated regression suite	Run node --test tests/*.test.mjs	2026-10-18T02:28:36.9046139Z # duration_ms 168631.703497
+Automated regression suite	Run actions/upload-artifact@v4	﻿2026-10-18T02:28:36.9099400Z ##[group]Run actions/upload-artifact@v4
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9099716Z with:
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9099921Z   name: automated-evidence
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9100218Z   path: audit/
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9100426Z   if-no-files-found: warn
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9100665Z   compression-level: 6
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9100883Z   overwrite: false
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9101105Z   include-hidden-files: false
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:36.9101353Z ##[endgroup]
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:37.0816968Z (node:2885) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:37.0817851Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:37.1795407Z With the provided path, there will be 586 files uploaded
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:37.1800584Z Artifact name is valid!
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:37.1801344Z Root directory input is valid!
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:37.5714456Z Beginning upload of artifact content to blob storage
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:38.3936543Z (node:2885) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:39.2638365Z Uploaded bytes 7221788
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:39.3361515Z Finished uploading artifact content to blob storage!
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:39.3363265Z SHA256 digest of uploaded artifact zip is 3fa9d6d59f61e60c47cc5a7dd7fdf60d90bbe78fd133cca39188088df70430bc
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:39.3365053Z Finalizing artifact upload
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:39.5846092Z Artifact automated-evidence.zip successfully finalized. Artifact ID 12122238606
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:39.5847896Z Artifact automated-evidence has been successfully uploaded! Final size is 7221788 bytes. Artifact ID is 12122238606
+Automated regression suite	Run actions/upload-artifact@v4	2026-10-18T02:28:39.5854931Z Artifact download URL: https://github.com/wesley83/scrap-league/actions/runs/39090035499/artifacts/12122238606
+Automated regression suite	Post Run oven-sh/setup-bun@v2	﻿2026-10-18T02:28:39.6106745Z Post job cleanup.
+Automated regression suite	Post Run actions/setup-node@v4	﻿2026-10-18T02:28:39.7888501Z Post job cleanup.
+Automated regression suite	Post Run actions/setup-node@v4	2026-10-18T02:28:39.9237090Z (node:2906) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Automated regression suite	Post Run actions/setup-node@v4	2026-10-18T02:28:39.9238098Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Automated regression suite	Post Run actions/checkout@v4	﻿2026-10-18T02:28:39.9391748Z Post job cleanup.
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0281634Z [command]/usr/bin/git version
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0322215Z git version 2.55.0
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0361043Z Temporarily overriding HOME='/home/runner/work/_temp/de3a8feb-954f-4c8a-991a-ae74203db14a' before making global git config changes
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0362712Z Adding repository directory to the temporary git global config as a safe directory
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0368255Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/scrap-league/scrap-league
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0404773Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0438984Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0664798Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0691843Z http.https://github.com/.extraheader
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0702778Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0734849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0951705Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Automated regression suite	Post Run actions/checkout@v4	2026-10-18T02:28:40.0981738Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Automated regression suite	Complete job	﻿2026-10-18T02:28:40.1336629Z Cleaning up orphan processes
+Automated regression suite	Complete job	2026-10-18T02:28:40.1661545Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Exact candidate acceptance	Set up job	﻿2026-10-18T02:28:45.6025373Z Current runner version: '2.337.0'
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6052488Z ##[group]Runner Image Provisioner
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6053565Z Hosted Compute Agent
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6054193Z Version: 20261012.601
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6054864Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6055649Z Build Date: 2026-10-12T17:48:21Z
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6056335Z Worker ID: {0190c6c7-4452-486b-8d1c-632f03112579}
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6057030Z Region: westcentralus
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6057667Z Cloud: Azure
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6058235Z ##[endgroup]
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6060038Z ##[group]Operating System
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6060718Z Ubuntu
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6061354Z 24.04.5
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6062168Z LTS
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6062745Z ##[endgroup]
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6063341Z ##[group]Runner Image
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6063961Z Image: ubuntu-24.04
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6064523Z Version: 20261012.334.1
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6065636Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6069051Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6070848Z ##[endgroup]
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6073166Z ##[group]GITHUB_TOKEN Permissions
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6076410Z Contents: read
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6077458Z Metadata: read
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6079051Z ##[endgroup]
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6082591Z Secret source: Actions
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6083798Z Cache mode: write
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6084756Z Prepare workflow directory
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6436350Z Prepare all required actions
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.6484891Z Getting action download info
+Exact candidate acceptance	Set up job	2026-10-18T02:28:45.9596224Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Exact candidate acceptance	Set up job	2026-10-18T02:28:46.0579502Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Exact candidate acceptance	Set up job	2026-10-18T02:28:46.1495286Z Download action repository 'oven-sh/setup-bun@v2' (SHA:0c5077e51419868618aeaa5fe8019c62421857d6)
+Exact candidate acceptance	Set up job	2026-10-18T02:28:46.7038699Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Exact candidate acceptance	Set up job	2026-10-18T02:28:46.9221060Z Complete job name: Exact candidate acceptance
+Exact candidate acceptance	Run actions/checkout@v4	﻿2026-10-18T02:28:47.0114855Z ##[group]Run actions/checkout@v4
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0115859Z with:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0116386Z   repository: wesley83/scrap-league
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0122111Z   token: ***
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0122696Z   ssh-strict: true
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0123188Z   ssh-user: git
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0123687Z   persist-credentials: true
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0124219Z   clean: true
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0124711Z   sparse-checkout-cone-mode: true
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0125287Z   fetch-depth: 1
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0125767Z   fetch-tags: false
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0126255Z   show-progress: true
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0126748Z   lfs: false
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0127213Z   submodules: false
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0127706Z   set-safe-directory: true
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0128263Z   allow-unsafe-pr-checkout: false
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.0129286Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1225851Z Syncing repository: wesley83/scrap-league
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1227925Z ##[group]Getting Git version info
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1228813Z Working directory is '/home/runner/work/scrap-league/scrap-league'
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1230135Z [command]/usr/bin/git version
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1320387Z git version 2.55.0
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1342694Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1359533Z Temporarily overriding HOME='/home/runner/work/_temp/932fe85c-2292-4c41-b12f-0f99e1d6d2da' before making global git config changes
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1363340Z Adding repository directory to the temporary git global config as a safe directory
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1366497Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/scrap-league/scrap-league
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1422926Z Deleting the contents of '/home/runner/work/scrap-league/scrap-league'
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1427568Z ##[group]Initializing the repository
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1431383Z [command]/usr/bin/git init /home/runner/work/scrap-league/scrap-league
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1544188Z hint: Using 'master' as the name for the initial branch. This default branch name
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1545904Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1547767Z hint: to use in all of your new repositories, which will suppress this warning,
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1549290Z hint: call:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1550105Z hint:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1551055Z hint: 	git config --global init.defaultBranch <name>
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1552001Z hint:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1552890Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1553939Z hint: 'development'. The just-created branch can be renamed via this command:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1554754Z hint:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1555229Z hint: 	git branch -m <name>
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1555943Z hint:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1557066Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1558224Z Initialized empty Git repository in /home/runner/work/scrap-league/scrap-league/.git/
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1561341Z [command]/usr/bin/git remote add origin https://github.com/wesley83/scrap-league
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1634405Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1635291Z ##[group]Disabling automatic garbage collection
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1638267Z [command]/usr/bin/git config --local gc.auto 0
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1668342Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1669169Z ##[group]Setting up auth
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1675236Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.1705658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2062285Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2095572Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2318826Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2350207Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2573238Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2609824Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2618705Z ##[group]Fetching the repository
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:47.2620474Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6e1fbea07cecc75ef1ab15390a69d0b688d61fa7:refs/remotes/origin/codex/release-remediation
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7389271Z From https://github.com/wesley83/scrap-league
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7392131Z  * [new ref]         6e1fbea07cecc75ef1ab15390a69d0b688d61fa7 -> origin/codex/release-remediation
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7395939Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7397124Z ##[group]Determining the checkout info
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7398647Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7405752Z [command]/usr/bin/git sparse-checkout disable
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7456791Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7485116Z ##[group]Checking out the ref
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.7495554Z [command]/usr/bin/git checkout --progress --force -B codex/release-remediation refs/remotes/origin/codex/release-remediation
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.9931003Z Switched to a new branch 'codex/release-remediation'
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.9935774Z branch 'codex/release-remediation' set up to track 'origin/codex/release-remediation'.
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.9950699Z ##[endgroup]
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:48.9995404Z [command]/usr/bin/git log -1 --format=%H
+Exact candidate acceptance	Run actions/checkout@v4	2026-10-18T02:28:49.0018085Z 6e1fbea07cecc75ef1ab15390a69d0b688d61fa7
+Exact candidate acceptance	Run actions/setup-node@v4	﻿2026-10-18T02:28:49.0380749Z ##[group]Run actions/setup-node@v4
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.0381198Z with:
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.0381456Z   node-version: 22
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.0381735Z   always-auth: false
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.0382254Z   check-latest: false
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.0384829Z   token: ***
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.0385096Z ##[endgroup]
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.1816102Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.1821212Z (node:2375) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.1823088Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.1824925Z ##[group]Environment details
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.6093219Z node: v22.23.3
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.6093786Z npm: 10.9.9
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.6094276Z yarn: 1.22.22
+Exact candidate acceptance	Run actions/setup-node@v4	2026-10-18T02:28:49.6095189Z ##[endgroup]
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	﻿2026-10-18T02:28:49.6278249Z ##[group]Run oven-sh/setup-bun@v2
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:49.6278592Z with:
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:49.6278818Z   bun-version: 1.4.3
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:49.6279050Z   no-cache: false
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:49.6281434Z   token: ***
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:49.6281646Z ##[endgroup]
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:49.9763765Z Cache hit for: bun-+NUKu9E/U4apAe78eSCZvQ/GSdc=
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.1947397Z Received 25165824 of 41001436 (61.4%), 24.0 MBs/sec
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.3447751Z Received 41001436 of 41001436 (100.0%), 34.0 MBs/sec
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.3450349Z Cache Size: ~39 MB (41001436 B)
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.3499846Z [command]/usr/bin/tar -xf /home/runner/work/_temp/505eff9b-af7b-4a50-9993-58a76524fb0b/cache.tzst -P -C /home/runner/work/scrap-league/scrap-league --use-compress-program unzstd
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.5090976Z Cache restored successfully
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.5119825Z [command]/home/runner/.bun/bin/bun --revision
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.5155001Z 1.4.3+c6da4a4d3
+Exact candidate acceptance	Run oven-sh/setup-bun@v2	2026-10-18T02:28:51.5160404Z Using a cached version of Bun: 1.4.3+c6da4a4d3
+Exact candidate acceptance	Run bun install --frozen-lockfile	﻿2026-10-18T02:28:51.5285091Z ##[group]Run bun install --frozen-lockfile
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.5285535Z ^[[36;1mbun install --frozen-lockfile^[[0m
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.5571731Z shell: /usr/bin/bash -e {0}
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.5572374Z ##[endgroup]
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.5700547Z bun install v1.4.3 (c6da4a4d3)
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9211353Z 
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9212082Z + fake-indexeddb@6.2.6
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9212761Z + jsqr@1.4.0
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9213307Z + linkedom@0.18.12
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9213868Z + prettier@3.9.10
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9214368Z + sharp@0.35.5
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9214852Z + three@0.180.0
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9215178Z 
+Exact candidate acceptance	Run bun install --frozen-lockfile	2026-10-18T02:28:51.9232849Z 27 packages installed [350.00ms]
+Exact candidate acceptance	Run node tools/build.mjs	﻿2026-10-18T02:28:51.9290049Z ##[group]Run node tools/build.mjs
+Exact candidate acceptance	Run node tools/build.mjs	2026-10-18T02:28:51.9290394Z ^[[36;1mnode tools/build.mjs^[[0m
+Exact candidate acceptance	Run node tools/build.mjs	2026-10-18T02:28:51.9350740Z shell: /usr/bin/bash -e {0}
+Exact candidate acceptance	Run node tools/build.mjs	2026-10-18T02:28:51.9351009Z ##[endgroup]
+Exact candidate acceptance	Run node tools/build.mjs	2026-10-18T02:28:52.3955717Z Generated Scrap League's host-pinned trial and daily board documents.
+Exact candidate acceptance	Run node tools/build.mjs	2026-10-18T02:28:52.6934866Z Built sl-5c1afcc9442899: 12 tracks / 81 builds / 4 cups / 48 offline files / 51 public files
+Exact candidate acceptance	Run node tools/release-gate.mjs local	﻿2026-10-18T02:28:52.7081790Z ##[group]Run node tools/release-gate.mjs local
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-18T02:28:52.7082607Z ^[[36;1mnode tools/release-gate.mjs local^[[0m
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-18T02:28:52.7143371Z shell: /usr/bin/bash -e {0}
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-18T02:28:52.7143657Z ##[endgroup]
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-18T02:28:53.7185999Z Release gate passed: sl-5c1afcc9442899
+Exact candidate acceptance	Run actions/upload-artifact@v4	﻿2026-10-18T02:28:53.7340837Z ##[group]Run actions/upload-artifact@v4
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7341161Z with:
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7341375Z   name: acceptance-evidence
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7341639Z   path: audit/
+Exact candidate acceptance	Run actions/upload-artifact@v4	dist/release.json
+Exact candidate acceptance	Run actions/upload-artifact@v4	
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7342417Z   if-no-files-found: warn
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7342695Z   compression-level: 6
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7342924Z   overwrite: false
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7343149Z   include-hidden-files: false
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.7343400Z ##[endgroup]
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.8929463Z (node:2461) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.8930327Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.9901116Z Multiple search paths detected. Calculating the least common ancestor of all paths
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.9903860Z The least common ancestor is /home/runner/work/scrap-league/scrap-league. This will be the root directory of the artifact
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.9905104Z With the provided path, there will be 582 files uploaded
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.9909644Z Artifact name is valid!
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:53.9910371Z Root directory input is valid!
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:54.3123819Z Beginning upload of artifact content to blob storage
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:55.0831106Z (node:2461) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:55.7556261Z Uploaded bytes 6947339
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:55.8131386Z Finished uploading artifact content to blob storage!
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:55.8133257Z SHA256 digest of uploaded artifact zip is 665dc5a9514a883bd42da1e9fbb1974c7a9a447f33883e96ce98de8864a87365
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:55.8134384Z Finalizing artifact upload
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:56.0793989Z Artifact acceptance-evidence.zip successfully finalized. Artifact ID 12122347807
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:56.0795862Z Artifact acceptance-evidence has been successfully uploaded! Final size is 6947339 bytes. Artifact ID is 12122347807
+Exact candidate acceptance	Run actions/upload-artifact@v4	2026-10-18T02:28:56.0801347Z Artifact download URL: https://github.com/wesley83/scrap-league/actions/runs/39090035499/artifacts/12122347807
+Exact candidate acceptance	Post Run oven-sh/setup-bun@v2	﻿2026-10-18T02:28:56.1033885Z Post job cleanup.
+Exact candidate acceptance	Post Run actions/setup-node@v4	﻿2026-10-18T02:28:56.2800970Z Post job cleanup.
+Exact candidate acceptance	Post Run actions/setup-node@v4	2026-10-18T02:28:56.4399182Z (node:2481) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Exact candidate acceptance	Post Run actions/setup-node@v4	2026-10-18T02:28:56.4400690Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Exact candidate acceptance	Post Run actions/checkout@v4	﻿2026-10-18T02:28:56.4565402Z Post job cleanup.
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5431779Z [command]/usr/bin/git version
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5472726Z git version 2.55.0
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5512613Z Temporarily overriding HOME='/home/runner/work/_temp/dabb27c0-3508-47bc-9100-0d7d2a1dca7a' before making global git config changes
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5514451Z Adding repository directory to the temporary git global config as a safe directory
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5518338Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/scrap-league/scrap-league
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5557634Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5595283Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5834648Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5860613Z http.https://github.com/.extraheader
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5872311Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.5906461Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.6137861Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Exact candidate acceptance	Post Run actions/checkout@v4	2026-10-18T02:28:56.6171726Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Exact candidate acceptance	Complete job	﻿2026-10-18T02:28:56.6565277Z Cleaning up orphan processes
+Exact candidate acceptance	Complete job	2026-10-18T02:28:56.6888696Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

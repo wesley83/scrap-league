@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-17T23:49:47.630Z",
+  "report": [
+    {
+      "file": "audit/remediation-handling.json",
+      "previousSha256": "38f021c585a5609d707e4df895a6ba51a9e5fcfe92d2c68c0f5cae79bb78d867",
+      "currentSha256": "312877b182b1279b26b42576d5cf6a3363c3988e160d30a86d4ed9b6c4f0c3d1",
+      "restored": true
+    },
+    {
+      "file": "audit/remediation-persisted-campaigns.json",
+      "previousSha256": "fe879c7f957fc410a3be3ee6ec2695fad04d197fe41991b111502bdcd69e9d3e",
+      "currentSha256": "c639a1e88489c55d2b31ccb64d2703b83a0dadea72bac55295eab9a02a81c782",
+      "restored": true
+    },
+    {
+      "file": "audit/remediation-simulation-races.json",
+      "previousSha256": "492bd14955255871defde04bd94912c18c68b84f3a5417587c64eb6cd6a2a0b1",
+      "currentSha256": "196d99ed72a04a90d19be5766f43f8b36c3f862db7f35e37622d5eb65f6350c8",
+      "restored": true
+    },
+    {
+      "file": "audit/build.json",
+      "previousSha256": "c52a00aebab4b96b532484b62d313c8c4975cf272fc1fa54708f934e064adb11",
+      "currentSha256": "262b4c12be880a3876fb906af6973248ecf0da56d294a07ce598e7de46ab87f0",
+      "restored": false
+    },
+    {
+      "file": "audit/current-acceptance.json",
+      "previousSha256": "b34f05ccbac829d19feb2a53bc2004b5a91ae9ba88fad8e0f7a2ce60225e70a1",
+      "currentSha256": "b34f05ccbac829d19feb2a53bc2004b5a91ae9ba88fad8e0f7a2ce60225e70a1",
+      "restored": false
+    }
+  ]
+}

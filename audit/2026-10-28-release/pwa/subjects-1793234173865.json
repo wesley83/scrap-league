@@ -1,0 +1,16 @@
+{
+  "A": "sl-28ec5378c02128",
+  "B": "sl-c84ff03afc7e71",
+  "hashes": {
+    "A": {
+      "index.html": "d78876f2f1f3f792a2dec2925af18475bad964a1e90c53b531b6a6cd94b14001",
+      "sw.js": "4c93d4b4bd2f2f0c7ca705e35492886c09908cc54429c5d3f120f5d5a9760160",
+      "release.json": "4cb937f512e887ba8753fc9f93eaac502eecda13f21d46969fc28f174754a284"
+    },
+    "B": {
+      "index.html": "0cc0f2ceed7f727c8328db1ed6d3db5313e28828aeafabf5cb5ddad40c0a9a84",
+      "sw.js": "0bd9c1bb7d8fcab0a8d46ba66b32a5d9e05b0263caa9638b64f1c6ba3343ab2c",
+      "release.json": "8e25c5ce8b195fdfc7ec58ddc056223d65f58dda8d3acfe5e7b53b03d5dd5afa"
+    }
+  }
+}

@@ -1,120 +1,836 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import {fileURLToPath} from 'node:url';
-import {createHash} from 'node:crypto';
-import {DOMParser} from 'linkedom';
+import { verifyRelease } from "./release-gate.mjs";
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
+import { DOMParser } from "linkedom";
+import { restoreRoot } from "./rollback.mjs";
+import { openDeploymentJournal, readDeploymentJournal, safeError } from "./deployment-journal.mjs";
 
-const root=path.resolve(fileURLToPath(new URL('../',import.meta.url)));
-const origin='https://hire-poker-8313.onpagelove.com';
-const dav='https://dav-hire-poker-8313.onpagelove.com';
-const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.webmanifest':'application/manifest+json','.txt':'text/plain; charset=utf-8'};
-let key='',baseline=new Map(),backupDirectory='',authenticated=false;
+const root = path.resolve(fileURLToPath(new URL("../", import.meta.url)));
+const origin = "https://hire-poker-8313.onpagelove.com";
+const dav = "https://dav-hire-poker-8313.onpagelove.com";
+const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
+const types = {
+  ".png": "image/png",
+  ".ico": "image/x-icon",
+  ".ttf": "font/ttf",
+  ".html": "text/html; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".json": "application/json",
+  ".svg": "image/svg+xml",
+  ".webmanifest": "application/manifest+json",
+  ".txt": "text/plain; charset=utf-8",
+};
+let key = "",
+  baseline = new Map(),
+  backupDirectory = "",
+  authenticated = false;
+let rollbackPlan = null;
+let journal = null, publicationPin = null, knownWrite = false, uncertainWrite = false;
+const publicationFingerprint = async () => sha(Buffer.concat(await Promise.all(
+  ["requirements.json", "audit/current-acceptance.json", "dist/release.json"].map(
+    name => fs.readFile(path.join(root, name)),
+  ),
+)));
+async function recheckPublication(stage, authorization) {
+  const candidate = await verifyRelease(root, stage, authorization);
+  if (publicationPin && await publicationFingerprint() !== publicationPin)
+    throw Error("Publication decision changed during promotion");
+  return candidate;
+}
+async function executeOperation(action) {
+  try {
+    const result = await action();
+    if (journal) {
+      result.journal = journal.relative;
+      await journal.record("operation-complete");
+    }
+    return result;
+  } catch (error) {
+    if (journal) {
+      await journal.record(uncertainWrite ? "outcome-unknown" : knownWrite ? "recovery-required" : "operation-failed",
+        { error: safeError(error), knownWrite, uncertainWrite });
+      error.message = safeError(error) + "; journal " + journal.relative;
+    }
+    throw error;
+  } finally {
+    await journal?.close(); journal = null; publicationPin = null;
+    knownWrite = uncertainWrite = false;
+  }
+}
+async function prepareRollback(id) {
+  if (
+    !authenticated ||
+    !/^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z$/.test(id)
+  )
+    throw Error("Authenticate and choose an existing baseline directory.");
+  const directory = path.join(root, ".local/deployment-baselines", id),
+    meta = JSON.parse(
+      await fs.readFile(path.join(directory, "baseline.json"), "utf8"),
+    );
+  if (meta.origin !== origin || meta.dav !== dav)
+    throw Error("Rollback baseline belongs to another host.");
+  const entries = [];
+  for (const name of ["/index.html", "/release.json", "/sw.js"]) {
+    const saved = meta.entries.find((e) => e.path === name),
+      bytes = await fs.readFile(path.join(directory, name.slice(1))),
+      current = await read(name);
+    if (
+      saved?.status !== 200 ||
+      sha(bytes) !== saved.sha256 ||
+      current.status !== 200 ||
+      !current.etag
+    )
+      throw Error("Incomplete rollback baseline: " + name);
+    entries.push({
+      path: name,
+      bytes,
+      hash: sha(bytes),
+      etag: current.etag,
+      currentHash: sha(current.bytes),
+    });
+  }
+  const previous = JSON.parse(
+    entries.find((e) => e.path === "/release.json").bytes,
+  );
+  for (const file of previous.files.filter((f) => f.url !== "./")) {
+    if (
+      !/^\.\/releases\/sl-[a-f0-9]{14}\/[a-zA-Z0-9_./-]+$/.test(file.url) ||
+      file.url.includes("..")
+    )
+      throw Error("Invalid old dependency.");
+    const live = await read(file.url.slice(1), true);
+    if (live.status !== 200 || sha(live.bytes) !== file.hash)
+      throw Error("Old dependency unavailable: " + file.url);
+  }
+  rollbackPlan = { id, release: previous.release, entries };
+  return {
+    prepared: true,
+    baseline: id,
+    release: previous.release,
+    entries: entries.map((e) => ({
+      path: e.path,
+      currentHash: e.currentHash,
+      targetHash: e.hash,
+    })),
+    scope:
+      "Three root entries only; native routes, user documents and immutable releases retained",
+  };
+}
+async function rollback() {
+  if (!rollbackPlan) throw Error("Prepare a verified rollback first.");
+  const plan = rollbackPlan;
+  rollbackPlan = null;
+  journal = await openDeploymentJournal(root, "rollback", { origin, dav,
+    baseline: plan.id, candidate: plan.release,
+    scope: "Three root entries only; native routes and application data retained" });
+  await journal.record("preflight-passed");
+  for (const entry of plan.entries) {
+    if (sha(await fs.readFile(path.join(root, ".local/deployment-baselines", plan.id, backupRelativePath(entry.path)))) !== entry.hash)
+      throw Error("Rollback backup changed: " + entry.path);
+    await journal.record("backup-verified", { path: entry.path, sha256: entry.hash });
+  }
+  const files = await restoreRoot(plan.entries, {
+    read,
+    write: (name, bytes, etag) =>
+      request(dav, name, {
+        method: "PUT",
+        headers: {
+          "If-Match": etag,
+          "Content-Type": types[path.extname(name)],
+        },
+        body: bytes,
+      }),
+    equivalent,
+    record: async (state, detail) => {
+      if (state === "write-intent") uncertainWrite = true;
+      if (["entry-promoted-unverified", "authoring-readback-verified"].includes(state)) {
+        knownWrite = true; uncertainWrite = false;
+      }
+      await journal.record(state, detail);
+    },
+  });
+  for (const file of files) {
+    const live = await read(
+        file.path === "/index.html" ? "/" : file.path,
+        true,
+      ),
+      target = plan.entries.find((e) => e.path === file.path);
+    if (
+      live.status !== 200 ||
+      !publicEquivalent(file.path, target.bytes, live.bytes)
+    )
+      throw Error("Public rollback mismatch: " + file.path);
+    await journal.record("entry-live-verified", { path: file.path,
+      status: live.status, sha256: sha(live.bytes) });
+  }
+  const receipt = {
+    utc: new Date().toISOString(),
+    origin,
+    journal: journal.relative,
+    release: plan.release,
+    files,
+    scope: "Conditional root rollback; no asset or application-data deletion",
+  };
+  await fs.writeFile(
+    path.join(root, "audit/rollback.json"),
+    JSON.stringify(receipt, null, 2),
+  );
+  await journal.record("live-verified", { release: plan.release });
+  return receipt;
+}
 
-function knownProviderFooter(element){
- if(!element||element.localName!=='div'||element.attributes.length!==1||!element.hasAttribute('style'))return false;
- const styleIs=(raw,expected)=>{const entries=raw.split(';').map(x=>x.trim()).filter(Boolean).map(x=>{const i=x.indexOf(':');return[x.slice(0,i).trim(),x.slice(i+1).trim()];});return entries.length===Object.keys(expected).length&&entries.every(([k,v])=>expected[k]===v)&&new Set(entries.map(([k])=>k)).size===entries.length;};
- if(!styleIs(element.getAttribute('style'),{position:'fixed',bottom:'0',left:'0',right:'0',padding:'8px',background:'#f0f0f0','text-align':'center','font-size':'12px',color:'#666','z-index':'9999',opacity:'0.8','border-top':'1px solid #ddd'}))return false;
- const children=[...element.children],link=children[0];
- return children.length===1&&link.localName==='a'&&link.children.length===0&&link.attributes.length===2&&link.getAttribute('href')==='https://pagelove.com/'&&styleIs(link.getAttribute('style')||'',{color:'#4a90d9','text-decoration':'none'})&&link.textContent.trim()==='Pagelove'&&element.textContent.replace(/\s+/g,' ').trim()==='Powered by Pagelove';
+let recoveryPlan = null;
+async function prepareRecovery(relative) {
+  if (!authenticated) throw Error("Authenticate before preparing recovery");
+  const rows = await readDeploymentJournal(root, relative), identity = rows[0]?.identity;
+  if (rows[0]?.operation !== "deploy" || identity?.origin !== origin || identity?.dav !== dav)
+    throw Error("Recovery requires a deployment journal for this host");
+  const candidate = await verifyRelease(root, "staged");
+  if (identity.candidate?.sourceHash !== candidate.source.hash ||
+      identity.candidate?.outputHash !== candidate.outputHash ||
+      identity.decisionHash !== await publicationFingerprint())
+    throw Error("Recovery candidate or acceptance changed; review a new operation");
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z$/.test(identity.baseline))
+    throw Error("Invalid recovery baseline");
+  const directory = path.join(root, ".local/deployment-baselines", identity.baseline);
+  const saved = JSON.parse(await fs.readFile(path.join(directory, "baseline.json"), "utf8"));
+  if (saved.origin !== origin || saved.dav !== dav) throw Error("Recovery backup host changed");
+  for (const entry of saved.entries) {
+    if (entry.status === 200 && sha(await fs.readFile(path.join(directory, backupRelativePath(entry.path)))) !== entry.sha256)
+      throw Error("Recovery backup changed: " + entry.path);
+  }
+  for (const row of rows.filter(row => row.state === "backup-verified" && row.baseline?.relative)) {
+    if (sha(await fs.readFile(path.join(directory, backupRelativePath(row.path)))) !== row.baseline.sha256)
+      throw Error("Recovery backup changed: " + row.path);
+  }
+  const intents = new Map(rows.filter(row => row.state === "write-intent").map(row => [row.path, row]));
+  const entries = [];
+  for (const [name, intent] of intents) {
+    const current = await read(name);
+    const known = rows.filter(row => row.path === name && row.state === "authoring-readback-verified").at(-1);
+    const matchesTarget = current.status === 200 && [intent.targetSha256, known?.artifactSha256].includes(sha(current.bytes));
+    const matchesBefore = current.status === intent.baselineStatus && sha(current.bytes) === intent.baselineSha256;
+    if (!matchesTarget && !matchesBefore) throw Error("Unexpected remote state prevents recovery: " + name);
+    entries.push({ path: name, status: current.status, etag: current.etag, sha256: sha(current.bytes),
+      disposition: matchesTarget ? "candidate-present" : "previous-present" });
+  }
+  recoveryPlan = { journal: relative, entries };
+  return { prepared: true, recovery: relative, entries,
+    scope: "Conditional forward completion; retained original journal/backups; no deletes or blind write replay" };
 }
-export function htmlIdentity(bytes,allowProviderFooter=false){
- const doc=new DOMParser().parseFromString(bytes.toString('utf8'),'text/html');
- if(allowProviderFooter&&knownProviderFooter(doc.body.lastElementChild))doc.body.lastElementChild.remove();
- doc.documentElement.normalize();
- function visit(n){
-  if(n.nodeType===3){const text=n.textContent.replace(/\r\n/g,'\n');return /^(SCRIPT|STYLE|PRE)$/.test(n.parentNode?.nodeName)?text.trim():text.replace(/\s+/g,' ').trim();}
-  if(n.nodeType!==1)return null;
-  return[n.localName,[...n.attributes].filter(a=>!/^xmlns(?::|$)/.test(a.name)).map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0])),[...n.childNodes].map(visit).filter(x=>x!==null&&x!=='')];
- }
- return sha(JSON.stringify(visit(doc.documentElement)));
-}
-export const equivalent=(name,a,b)=>name.endsWith('.html')?htmlIdentity(a)===htmlIdentity(b):a.equals(b);
-export const publicEquivalent=(name,a,b)=>name.endsWith('.html')?htmlIdentity(a,true)===htmlIdentity(b,true):a.equals(b);
-
-async function request(base,name,options={}){
- if(![origin,dav].includes(base)||!name.startsWith('/')||name.includes('..')||name.includes('?')||name.includes('#'))throw Error('Unpinned request');
- const r=await fetch(base+name,{...options,headers:{...(base===dav?{Authorization:'Bearer '+key}:{}),...options.headers},redirect:'manual',cache:'no-store',signal:AbortSignal.timeout(25000)});
- if(r.status>=300&&r.status<400)throw Error('Redirect refused at '+name);
- return{status:r.status,etag:r.headers.get('etag'),type:r.headers.get('content-type'),bytes:Buffer.from(await r.arrayBuffer())};
-}
-async function read(name,publicRead=false){const r=await request(publicRead?origin:dav,name);if(![200,404].includes(r.status))throw Error('Read '+name+' returned '+r.status);return r;}
-async function remember(name){
- const r=await read(name);if(r.status===200&&!r.etag)throw Error('Missing conditional-write ETag: '+name);
- baseline.set(name,r);
- if(r.status===200){const target=path.join(backupDirectory,name.slice(1));await fs.mkdir(path.dirname(target),{recursive:true});await fs.writeFile(target,r.bytes);}
- return r;
-}
-async function put(name,bytes,immutable=false){
- const before=baseline.get(name)||await remember(name);
- if(before.status===200&&equivalent(name,bytes,before.bytes))return{path:name,status:'unchanged',bytes:before.bytes.length,sha256:sha(before.bytes)};
- if(immutable&&before.status===200)throw Error('Immutable file conflict: '+name);
- const current=await read(name);if(current.status!==before.status||current.etag!==before.etag)throw Error('Concurrent remote change: '+name);
- const condition=current.status===404?{'If-None-Match':'*'}:{'If-Match':current.etag};
- let response,ambiguous=false;
- try{response=await request(dav,name,{method:'PUT',headers:{...condition,'Content-Type':types[path.extname(name)]||'application/octet-stream'},body:bytes});}
- catch{ambiguous=true;}
- const after=await read(name);
- if(after.status!==200||!equivalent(name,bytes,after.bytes))throw Error('Write/readback mismatch: '+name+' (write '+(response?.status||'ambiguous')+')');
- if(response&&!([200,201,204].includes(response.status)))throw Error('Write refused: '+name+' '+response.status);
- return{path:name,status:ambiguous?'reconciled':response.status,bytes:after.bytes.length,sha256:sha(after.bytes),sourceSha256:sha(bytes)};
-}
-async function walk(relative){const files=[];for(const entry of await fs.readdir(path.join(root,relative),{withFileTypes:true})){const name=relative+'/'+entry.name;if(entry.isDirectory())files.push(...await walk(name));else files.push(name);}return files.sort();}
-async function authenticate(secret){
- if(typeof secret!=='string'||!secret.startsWith('pk_'))throw Error('Provide the owner key through hidden input');
- key=secret;
- const probe=await request(dav,'/',{method:'PROPFIND',headers:{Depth:'0'}});
- if(probe.status!==207)throw Error('Authoring authentication failed: '+probe.status);
- backupDirectory=path.join(root,'.local','deployment-baselines',new Date().toISOString().replace(/[:.]/g,'-'));
- await fs.mkdir(backupDirectory,{recursive:true});baseline=new Map();
- const entries=[];for(const name of['/index.html','/sw.js','/release.json']){const r=await remember(name);entries.push({path:name,status:r.status,bytes:r.bytes.length,sha256:sha(r.bytes),etag:r.etag});}
- const publicPage=await read('/',true);authenticated=true;
- await fs.writeFile(path.join(backupDirectory,'baseline.json'),JSON.stringify({utc:new Date().toISOString(),origin,dav,entries},null,2));
- return{authenticated:true,origin,authoringStatus:probe.status,publicStatus:publicPage.status,entries,privateBackupSaved:true};
-}
-async function deploy(){
- if(!authenticated)throw Error('Authenticate and read the baseline first');
- const release=JSON.parse(await fs.readFile(path.join(root,'dist/release.json'),'utf8'));
- if(!/^sl-[a-f0-9]{14}$/.test(release.release))throw Error('Invalid release identifier');
- const files=[];
- for(const entry of release.files){const name=entry.url==='./'?'/index.html':entry.url.slice(1);if(name!=='/index.html'&&!name.startsWith('/releases/'+release.release+'/'))throw Error('Invalid inventory path');const bytes=await fs.readFile(path.join(root,'dist',name));if(sha(bytes)!==entry.hash)throw Error('Distribution changed: '+name);if(name!=='/index.html')files.push({name,bytes,immutable:true});}
- for(const name of await walk('content'))files.push({name:'/'+name,bytes:await fs.readFile(path.join(root,name)),immutable:false});
- const directories=new Set();for(const f of files){let dir=path.posix.dirname(f.name);while(dir!=='/'){directories.add(dir+'/');dir=path.posix.dirname(dir);}}
- for(const directory of [...directories].sort((a,b)=>a.length-b.length)){const r=await request(dav,directory,{method:'MKCOL'});if(![201,405].includes(r.status))throw Error('Directory creation '+directory+' returned '+r.status);}
- const written=[];
- for(const file of files){written.push(await put(file.name,file.bytes,file.immutable));console.log(JSON.stringify({staged:file.name}));}
- // Public dependencies must be available before the root page starts referencing them.
- const publicFiles=[];
- for(const file of files){const live=await read(file.name,true);if(live.status!==200||!publicEquivalent(file.name,file.bytes,live.bytes))throw Error('Public dependency mismatch: '+file.name);publicFiles.push({path:file.name,status:live.status,sha256:sha(live.bytes),bytes:live.bytes.length,type:live.type});}
- const index=await fs.readFile(path.join(root,'dist/index.html'));
- written.push(await put('/index.html',index));
- const publicIndex=await read('/',true);
- if(publicIndex.status!==200||!publicEquivalent('/index.html',index,publicIndex.bytes))throw Error('Public entry semantic mismatch');
- // Pagelove may serialize authored HTML. Verify its semantics, then pin the exact
- // served bytes in the offline inventory; script/style bytes remain strict.
- const published=structuredClone(release);published.files.find(f=>f.url==='./').hash=sha(publicIndex.bytes);
- const workerSource=await fs.readFile(path.join(root,'dist/sw.js'),'utf8');
- const original='INVENTORY='+JSON.stringify(release.files)+';';
- if(!workerSource.includes(original))throw Error('Worker inventory does not match the release');
- const worker=Buffer.from(workerSource.replace(original,'INVENTORY='+JSON.stringify(published.files)+';'));
- written.push(await put('/release.json',Buffer.from(JSON.stringify(published,null,2))));
- written.push(await put('/sw.js',worker));
- for(const[name,bytes]of[['/sw.js',worker],['/release.json',Buffer.from(JSON.stringify(published,null,2))]]){const live=await read(name,true);if(live.status!==200||!bytes.equals(live.bytes))throw Error('Public entry readback failed: '+name);publicFiles.push({path:name,status:live.status,sha256:sha(live.bytes),bytes:live.bytes.length,type:live.type});}
- publicFiles.push({path:'/',status:200,sha256:sha(publicIndex.bytes),bytes:publicIndex.bytes.length,type:publicIndex.type});
- const receipt={utc:new Date().toISOString(),origin,authoringHost:dav,release:release.release,publication:'Immutable assets and authored content staged and publicly verified before conditional root entry promotion',htmlSerializationAdjusted:sha(index)!==sha(publicIndex.bytes),sourceIndexSha256:sha(index),publicIndexSha256:sha(publicIndex.bytes),files:written,publicFiles,credentialStored:false,baselineBackup:'Local ignored .local/deployment-baselines only',applicationServices:'Local saves/editor only; shared boards and owner publishing UI remain disconnected'};
- await fs.writeFile(path.join(root,'audit/deployment.json'),JSON.stringify(receipt,null,2));
- return{deployed:true,origin,release:release.release,verifiedPublicFiles:publicFiles.length,htmlSerializationAdjusted:receipt.htmlSerializationAdjusted,receipt:'audit/deployment.json'};
+async function recover() {
+  if (!recoveryPlan) throw Error("Prepare a verified recovery first");
+  const plan = recoveryPlan; recoveryPlan = null;
+  const recheck = async () => {
+    for (const entry of plan.entries) {
+      const current = await read(entry.path);
+      if (current.status !== entry.status || current.etag !== entry.etag || sha(current.bytes) !== entry.sha256)
+        throw Error("Remote state changed after recovery preparation: " + entry.path);
+    }
+  };
+  await recheck();
+  // A failed operation's original baseline describes pre-write state. Keep it
+  // immutable and capture a separate verified baseline for forward recovery.
+  await authenticate(key);
+  await recheck();
+  const result = await deploy();
+  await journal.record("recovered-operation", { fromJournal: plan.journal });
+  return { ...result, recoveredFrom: plan.journal };
 }
 
-if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- if(process.stdin.isTTY)process.stdin.setRawMode(true);
- process.stdin.setEncoding('utf8');let buffer='',busy=false;
- console.log('Ready for hidden JSON input: auth, deploy, quit.');
- process.stdin.on('data',async chunk=>{
-  if(chunk.includes('\u0003'))process.exit(0);buffer+=chunk;const n=buffer.search(/[\r\n]/);if(n<0)return;
-  const line=buffer.slice(0,n).trim();buffer=buffer.slice(n+1);if(!line)return;
-  if(busy){console.log(JSON.stringify({error:'An operation is already running'}));return;}busy=true;
-  try{const c=JSON.parse(line);if(c.op==='quit'){key='';process.exit(0);}const result=c.op==='auth'?await authenticate(c.key):c.op==='deploy'?await deploy():(()=>{throw Error('Unsupported operation');})();console.log(JSON.stringify(result));}
-  catch(e){console.log(JSON.stringify({error:e.message}));}finally{busy=false;}
- });
+function knownProviderFooter(element) {
+  if (
+    !element ||
+    element.localName !== "div" ||
+    element.attributes.length !== 1 ||
+    !element.hasAttribute("style")
+  )
+    return false;
+  const styleIs = (raw, expected) => {
+    const entries = raw
+      .split(";")
+      .map((x) => x.trim())
+      .filter(Boolean)
+      .map((x) => {
+        const i = x.indexOf(":");
+        return [x.slice(0, i).trim(), x.slice(i + 1).trim()];
+      });
+    return (
+      entries.length === Object.keys(expected).length &&
+      entries.every(([k, v]) => expected[k] === v) &&
+      new Set(entries.map(([k]) => k)).size === entries.length
+    );
+  };
+  if (
+    !styleIs(element.getAttribute("style"), {
+      position: "fixed",
+      bottom: "0",
+      left: "0",
+      right: "0",
+      padding: "8px",
+      background: "#f0f0f0",
+      "text-align": "center",
+      "font-size": "12px",
+      color: "#666",
+      "z-index": "9999",
+      opacity: "0.8",
+      "border-top": "1px solid #ddd",
+    })
+  )
+    return false;
+  const children = [...element.children],
+    link = children[0];
+  return (
+    children.length === 1 &&
+    link.localName === "a" &&
+    link.children.length === 0 &&
+    link.attributes.length === 2 &&
+    link.getAttribute("href") === "https://pagelove.com/" &&
+    styleIs(link.getAttribute("style") || "", {
+      color: "#4a90d9",
+      "text-decoration": "none",
+    }) &&
+    link.textContent.trim() === "Pagelove" &&
+    element.textContent.replace(/\s+/g, " ").trim() === "Powered by Pagelove"
+  );
+}
+export function htmlIdentity(bytes, allowProviderFooter = false) {
+  const doc = new DOMParser().parseFromString(
+    bytes.toString("utf8"),
+    "text/html",
+  );
+  if (allowProviderFooter && knownProviderFooter(doc.body.lastElementChild))
+    doc.body.lastElementChild.remove();
+  doc.documentElement.normalize();
+  function visit(n) {
+    if (n.nodeType === 3) {
+      const text = n.textContent.replace(/\r\n/g, "\n");
+      return /^(SCRIPT|STYLE|PRE)$/.test(n.parentNode?.nodeName)
+        ? text.trim()
+        : text.replace(/\s+/g, " ").trim();
+    }
+    if (n.nodeType !== 1) return null;
+    return [
+      n.localName,
+      [...n.attributes]
+        .filter((a) => !/^xmlns(?::|$)/.test(a.name))
+        .map((a) => [a.name, a.value])
+        .sort((a, b) => a[0].localeCompare(b[0])),
+      [...n.childNodes].map(visit).filter((x) => x !== null && x !== ""),
+    ];
+  }
+  return sha(JSON.stringify(visit(doc.documentElement)));
+}
+const htmlResource = (name) =>
+  name.endsWith(".html") || /^\/(?:editor|track)\/[^/]+$/.test(name);
+export const equivalent = (name, a, b) =>
+  htmlResource(name) ? htmlIdentity(a) === htmlIdentity(b) : a.equals(b);
+export const publicEquivalent = (name, a, b) =>
+  htmlResource(name)
+    ? htmlIdentity(a, true) === htmlIdentity(b, true)
+    : a.equals(b);
+
+function assertPublicType(name, response) {
+  const actual = response.type?.split(";")[0].trim().toLowerCase();
+  const expected = htmlResource(name) ? "text/html" : types[path.extname(name)]?.split(";")[0];
+  const aliases = { ".js": ["text/javascript", "application/javascript"],
+    ".ico": ["image/x-icon", "image/vnd.microsoft.icon"] };
+  if (response.status !== 200 || (expected && !(aliases[path.extname(name)] || [expected]).includes(actual)))
+    throw Error("Public resource status/type mismatch: " + name);
+}
+
+async function assertComposedEntry(file, live) {
+  assertPublicType(file.name, live);
+  const actual = new DOMParser().parseFromString(live.bytes.toString(), "text/html");
+  const source = new DOMParser().parseFromString(file.bytes.toString(), "text/html");
+  const includes = [...source.querySelectorAll("p\\:include")];
+  for (const include of includes) {
+    const resource = include.getAttribute("resource"), selector = include.getAttribute("selector");
+    if (!resource?.startsWith("/") || resource.includes("..")) throw Error("Unpinned composed dependency");
+    const local = resource.startsWith("/content/") ? root : path.join(root, "dist");
+    const dependency = new DOMParser().parseFromString(await fs.readFile(path.join(local,resource), "utf8"), "text/html");
+    const expected = dependency.querySelector(selector), observed = actual.querySelector(selector);
+    const wrap = node => Buffer.from("<html><head></head><body>" + node.outerHTML + "</body></html>");
+    if (!expected || !observed || !publicEquivalent("/composed.html", wrap(expected), wrap(observed)))
+      throw Error("Public composed dependency mismatch: " + file.name + " " + selector);
+  }
+  if (actual.querySelector("p\\:include")) throw Error("Unresolved public include: " + file.name);
+  if (actual.querySelector("#routed-track")?.getAttribute("data-track-id") !== source.querySelector("#routed-track")?.getAttribute("data-track-id"))
+    throw Error("Public route identity mismatch: " + file.name);
+}
+
+async function request(base, name, options = {}) {
+  if (
+    ![origin, dav].includes(base) ||
+    !name.startsWith("/") ||
+    name.includes("..") ||
+    name.includes("?") ||
+    name.includes("#")
+  )
+    throw Error("Unpinned request");
+  const r = await fetch(base + name, {
+    ...options,
+    headers: {
+      ...(base === dav ? { Authorization: "Bearer " + key } : {}),
+      ...options.headers,
+    },
+    redirect: "manual",
+    cache: "no-store",
+    signal: AbortSignal.timeout(25000),
+  });
+  if (r.status >= 300 && r.status < 400)
+    throw Error("Redirect refused at " + name);
+  return {
+    status: r.status,
+    etag: r.headers.get("etag"),
+    type: r.headers.get("content-type"),
+    bytes: Buffer.from(await r.arrayBuffer()),
+  };
+}
+async function read(name, publicRead = false) {
+  const r = await request(publicRead ? origin : dav, name);
+  if (![200, 404].includes(r.status))
+    throw Error("Read " + name + " returned " + r.status);
+  return r;
+}
+export function backupRelativePath(name) {
+  if (["/index.html", "/sw.js", "/release.json"].includes(name))
+    return name.slice(1);
+  // Native route names such as :slug are URLs, not portable filenames.
+  return "resources/" + sha(Buffer.from(name)) + ".bin";
+}
+export async function saveBaseline(directory, name, response) {
+  const relative = backupRelativePath(name),
+    target = path.join(directory, relative);
+  await fs.mkdir(path.dirname(target), { recursive: true });
+  await fs.writeFile(target, response.bytes);
+  if (relative.startsWith("resources/"))
+    await fs.writeFile(
+      target + ".json",
+      JSON.stringify({
+        path: name,
+        etag: response.etag,
+        sha256: sha(response.bytes),
+      }),
+    );
+  return relative;
+}
+async function remember(name) {
+  const r = await read(name);
+  if (r.status === 200 && !r.etag)
+    throw Error("Missing conditional-write ETag: " + name);
+  if (r.status === 200) {
+    const relative = await saveBaseline(backupDirectory, name, r);
+    if (sha(await fs.readFile(path.join(backupDirectory, relative))) !== sha(r.bytes))
+      throw Error("Backup verification failed: " + name);
+    await journal?.record("backup-verified", { path: name, baseline: {
+      status: r.status, etag: r.etag, sha256: sha(r.bytes), relative,
+    } });
+  }
+  baseline.set(name, r);
+  return r;
+}
+async function put(name, bytes, immutable = false, entry = false, authorization = null) {
+  const before = baseline.get(name) || (await remember(name));
+  if (before.status === 200 && equivalent(name, bytes, before.bytes)) {
+    if (entry) await recheckPublication("staged", authorization);
+    return {
+      path: name,
+      status: "unchanged",
+      bytes: before.bytes.length,
+      sha256: sha(before.bytes),
+    };
+  }
+  if (immutable && before.status === 200)
+    throw Error("Immutable file conflict: " + name);
+  const current = await read(name);
+  if (current.status !== before.status || current.etag !== before.etag)
+    throw Error("Concurrent remote change: " + name);
+  const condition =
+    current.status === 404
+      ? { "If-None-Match": "*" }
+      : { "If-Match": current.etag };
+  if (entry) await recheckPublication("staged", authorization);
+  let response,
+    ambiguous = false;
+  await journal?.record("write-intent", { path: name, entry,
+    targetSha256: sha(bytes), condition, baselineSha256: sha(current.bytes),
+    baselineStatus: current.status });
+  uncertainWrite = true;
+  try {
+    response = await request(dav, name, {
+      method: "PUT",
+      headers: {
+        ...condition,
+        "Content-Type": htmlResource(name)
+          ? "text/html; charset=utf-8"
+          : types[path.extname(name)] || "application/octet-stream",
+      },
+      body: bytes,
+    });
+    if ([200, 201, 204].includes(response.status)) {
+      knownWrite = true; uncertainWrite = false;
+      await journal?.record(entry ? "entry-promoted-unverified" : "dependency-written-unverified",
+        { path: name, responseStatus: response.status, targetSha256: sha(bytes) });
+    }
+  } catch {
+    ambiguous = true;
+    await journal?.record("outcome-unknown", { path: name, entry, reason: "Write response unavailable; reconcile without replay" });
+  }
+  const after = await read(name);
+  if (after.status !== 200 || !equivalent(name, bytes, after.bytes))
+    throw Error(
+      "Write/readback mismatch: " +
+        name +
+        " (write " +
+        (response?.status || "ambiguous") +
+        ")",
+    );
+  if (response && ![200, 201, 204].includes(response.status))
+    throw Error("Write refused: " + name + " " + response.status);
+  knownWrite = true; uncertainWrite = false;
+  await journal?.record("authoring-readback-verified", { path: name, entry,
+    sha256: sha(after.bytes), etag: after.etag, reconciled: ambiguous });
+  return {
+    path: name,
+    status: ambiguous ? "reconciled" : response.status,
+    bytes: after.bytes.length,
+    sha256: sha(after.bytes),
+    sourceSha256: sha(bytes),
+  };
+}
+async function walk(relative) {
+  const files = [];
+  for (const entry of await fs.readdir(path.join(root, relative), {
+    withFileTypes: true,
+  })) {
+    const name = relative + "/" + entry.name;
+    if (entry.isDirectory()) files.push(...(await walk(name)));
+    else files.push(name);
+  }
+  return files.sort();
+}
+async function authenticate(secret) {
+  if (typeof secret !== "string" || !secret.startsWith("pk_"))
+    throw Error("Provide the owner key through hidden input");
+  key = secret;
+  const probe = await request(dav, "/", {
+    method: "PROPFIND",
+    headers: { Depth: "0" },
+  });
+  if (probe.status !== 207)
+    throw Error("Authoring authentication failed: " + probe.status);
+  backupDirectory = path.join(
+    root,
+    ".local",
+    "deployment-baselines",
+    new Date().toISOString().replace(/[:.]/g, "-"),
+  );
+  await fs.mkdir(backupDirectory, { recursive: true });
+  baseline = new Map();
+  const entries = [];
+  for (const name of ["/index.html", "/sw.js", "/release.json"]) {
+    const r = await remember(name);
+    entries.push({
+      path: name,
+      status: r.status,
+      bytes: r.bytes.length,
+      sha256: sha(r.bytes),
+      etag: r.etag,
+    });
+  }
+  const publicPage = await read("/", true);
+  authenticated = true;
+  await fs.writeFile(
+    path.join(backupDirectory, "baseline.json"),
+    JSON.stringify(
+      { utc: new Date().toISOString(), origin, dav, entries },
+      null,
+      2,
+    ),
+  );
+  return {
+    authenticated: true,
+    origin,
+    authoringStatus: probe.status,
+    publicStatus: publicPage.status,
+    entries,
+    privateBackupSaved: true,
+  };
+}
+async function deploy(publicationAuthorization = null) {
+  const verified = await verifyRelease(root, "local", publicationAuthorization);
+  if (!authenticated) throw Error("Authenticate and read the baseline first");
+  publicationPin = await publicationFingerprint();
+  journal = await openDeploymentJournal(root, "deploy", { origin, dav,
+    candidate: { release: verified.release, sourceHash: verified.source.hash, outputHash: verified.outputHash },
+    previous: baseline.get("/release.json")?.status === 200
+      ? sha(baseline.get("/release.json").bytes) : null,
+    baseline: path.basename(backupDirectory), decisionHash: publicationPin });
+  await journal.record("preflight-passed");
+  const backupMeta = JSON.parse(await fs.readFile(path.join(backupDirectory, "baseline.json"), "utf8"));
+  if (backupMeta.origin !== origin || backupMeta.dav !== dav)
+    throw Error("Backup metadata host changed");
+  for (const name of ["/index.html", "/sw.js", "/release.json"]) {
+    const saved = baseline.get(name);
+    const meta = backupMeta.entries.find(entry => entry.path === name);
+    if (!meta || meta.status !== saved.status || meta.etag !== saved.etag || meta.sha256 !== sha(saved.bytes))
+      throw Error("Backup metadata changed: " + name);
+    if (saved?.status === 200 && sha(await fs.readFile(path.join(backupDirectory, backupRelativePath(name)))) !== sha(saved.bytes))
+      throw Error("Backup verification failed: " + name);
+    await journal.record("backup-verified", { path: name, baseline: {
+      status: saved.status, etag: saved.etag, sha256: sha(saved.bytes) } });
+  }
+  const release = JSON.parse(
+    await fs.readFile(path.join(root, "dist/release.json"), "utf8"),
+  );
+  if (!/^sl-[a-f0-9]{14}$/.test(release.release))
+    throw Error("Invalid release identifier");
+  const files = [];
+  for (const entry of release.files) {
+    const name = entry.url === "./" ? "/index.html" : entry.url.slice(1);
+    if (
+      name !== "/index.html" &&
+      !name.startsWith("/releases/" + release.release + "/")
+    )
+      throw Error("Invalid inventory path");
+    const bytes = await fs.readFile(path.join(root, "dist", name));
+    if (sha(bytes) !== entry.hash) throw Error("Distribution changed: " + name);
+    if (name !== "/index.html") files.push({ name, bytes, immutable: true });
+  }
+  for (const name of await walk("content"))
+    files.push({
+      name: "/" + name,
+      bytes: await fs.readFile(path.join(root, name)),
+      immutable: false,
+    });
+  const nativeEntries = [];
+  for (const entry of release.nativeFiles)
+    nativeEntries.push({
+      name: entry.url,
+      bytes: await fs.readFile(path.join(root, "dist", entry.file)),
+      immutable: false,
+    });
+  const directories = new Set();
+  for (const f of [...files, ...nativeEntries]) {
+    let dir = path.posix.dirname(f.name);
+    while (dir !== "/") {
+      directories.add(dir + "/");
+      dir = path.posix.dirname(dir);
+    }
+  }
+  for (const directory of [...directories].sort(
+    (a, b) => a.length - b.length,
+  )) {
+    const r = await request(dav, directory, { method: "MKCOL" });
+    if (![201, 405].includes(r.status))
+      throw Error("Directory creation " + directory + " returned " + r.status);
+  }
+  const written = [];
+  for (const file of files) {
+    written.push(await put(file.name, file.bytes, file.immutable));
+    console.log(JSON.stringify({ staged: file.name }));
+  }
+  // Public dependencies must be available before the root page starts referencing them.
+  const publicFiles = [];
+  for (const file of files) {
+    const live = await read(file.name, true);
+    assertPublicType(file.name, live);
+    if (
+      live.status !== 200 ||
+      !publicEquivalent(file.name, file.bytes, live.bytes)
+    )
+      throw Error("Public dependency mismatch: " + file.name);
+    publicFiles.push({
+      path: file.name,
+      status: live.status,
+      sha256: sha(live.bytes),
+      bytes: live.bytes.length,
+      type: live.type,
+    });
+  }
+  await journal.record("dependencies-staged", { files: publicFiles.length });
+  await recheckPublication("staged", publicationAuthorization);
+  // Native routes are entry points too. Require staged acceptance or the exact
+  // candidate authorization; included shells are already publicly verified.
+  for (const file of nativeEntries) {
+    written.push(await put(file.name, file.bytes, false, true, publicationAuthorization));
+    const live = await read(file.name, true);
+    // Exact route source is read through DAV; public composition is covered by P07.
+    await assertComposedEntry(file, live);
+    await journal.record("entry-live-verified", { path: file.name, status: live.status, sha256: sha(live.bytes) });
+    publicFiles.push({
+      path: file.name,
+      status: live.status,
+      sha256: sha(live.bytes),
+      bytes: live.bytes.length,
+      type: live.type,
+    });
+  }
+  const index = await fs.readFile(path.join(root, "dist/index.html"));
+  written.push(await put("/index.html", index, false, true, publicationAuthorization));
+  const publicIndex = await read("/", true);
+  assertPublicType("/index.html", publicIndex);
+  if (
+    publicIndex.status !== 200 ||
+    !publicEquivalent("/index.html", index, publicIndex.bytes)
+  )
+    throw Error("Public entry semantic mismatch");
+  await journal.record("entry-live-verified", { path: "/index.html", status: publicIndex.status, sha256: sha(publicIndex.bytes) });
+  // Pagelove may serialize authored HTML. Verify its semantics, then pin the exact
+  // served bytes in the offline inventory; script/style bytes remain strict.
+  const published = structuredClone(release);
+  for (const inventory of [published.files, published.offlineFiles])
+    for (const entry of inventory) {
+      const served = publicFiles.find((f) => f.path === entry.url.slice(1));
+      if (served) entry.hash = served.sha256;
+    }
+  published.files.find((f) => f.url === "./").hash = sha(publicIndex.bytes);
+  published.offlineFiles.find((f) => f.url === "./").hash = sha(
+    publicIndex.bytes,
+  );
+  const workerSource = await fs.readFile(path.join(root, "dist/sw.js"), "utf8");
+  const original = "INVENTORY=" + JSON.stringify(release.offlineFiles) + ";";
+  if (!workerSource.includes(original))
+    throw Error("Worker inventory does not match the release");
+  const worker = Buffer.from(
+    workerSource.replace(
+      original,
+      "INVENTORY=" + JSON.stringify(published.offlineFiles) + ";",
+    ),
+  );
+  written.push(
+    await put("/release.json", Buffer.from(JSON.stringify(published, null, 2)), false, true, publicationAuthorization),
+  );
+  written.push(await put("/sw.js", worker, false, true, publicationAuthorization));
+  for (const [name, bytes] of [
+    ["/sw.js", worker],
+    ["/release.json", Buffer.from(JSON.stringify(published, null, 2))],
+  ]) {
+    const live = await read(name, true);
+    assertPublicType(name, live);
+    if (live.status !== 200 || !bytes.equals(live.bytes))
+      throw Error("Public entry readback failed: " + name);
+    await journal.record("entry-live-verified", { path: name, status: live.status, sha256: sha(live.bytes) });
+    publicFiles.push({
+      path: name,
+      status: live.status,
+      sha256: sha(live.bytes),
+      bytes: live.bytes.length,
+      type: live.type,
+    });
+  }
+  publicFiles.push({
+    path: "/",
+    status: 200,
+    sha256: sha(publicIndex.bytes),
+    bytes: publicIndex.bytes.length,
+    type: publicIndex.type,
+  });
+  const receipt = {
+    utc: new Date().toISOString(),
+    origin,
+    journal: journal.relative,
+    authoringHost: dav,
+    release: release.release,
+    sourceHash: verified.source.hash,
+    outputHash: verified.outputHash,
+    publicationAuthorization: publicationAuthorization
+      ? {
+          path: publicationAuthorization,
+          sha256: sha(
+            await fs.readFile(path.join(root, publicationAuthorization)),
+          ),
+        }
+      : null,
+    productAcceptance: publicationAuthorization
+      ? "Required pre-promotion acceptance passed; historical operation receipt retained"
+      : "Required pre-promotion acceptance passed",
+    publication:
+      "Immutable assets and authored content staged and publicly verified before conditional root entry promotion",
+    htmlSerializationAdjusted: sha(index) !== sha(publicIndex.bytes),
+    sourceIndexSha256: sha(index),
+    publicIndexSha256: sha(publicIndex.bytes),
+    files: written,
+    publicFiles,
+    credentialStored: false,
+    baselineBackup: "Local ignored .local/deployment-baselines only",
+    applicationServices:
+      "Owner publication/discovery plus separately provisioned casual Trial/Daily boards",
+  };
+  await fs.writeFile(
+    path.join(root, "audit/deployment.json"),
+    JSON.stringify(receipt, null, 2),
+  );
+  await journal.record("live-verified", { release: release.release, publicFiles: publicFiles.length });
+  return {
+    deployed: true,
+    origin,
+    release: release.release,
+    verifiedPublicFiles: publicFiles.length,
+    htmlSerializationAdjusted: receipt.htmlSerializationAdjusted,
+    receipt: "audit/deployment.json",
+  };
+}
+
+if (
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
+) {
+  if (process.stdin.isTTY) process.stdin.setRawMode(true);
+  process.stdin.setEncoding("utf8");
+  let buffer = "",
+    busy = false;
+  console.log(
+    "Ready for hidden JSON input: auth, deploy, publish-candidate, prepare-rollback, rollback, inspect-journal, prepare-recovery, recover, quit.",
+  );
+  process.stdin.on("data", async (chunk) => {
+    if (chunk.includes("\u0003")) process.exit(0);
+    buffer += chunk;
+    const n = buffer.search(/[\r\n]/);
+    if (n < 0) return;
+    const line = buffer.slice(0, n).trim();
+    buffer = buffer.slice(n + 1);
+    if (!line) return;
+    if (busy) {
+      console.log(JSON.stringify({ error: "An operation is already running" }));
+      return;
+    }
+    busy = true;
+    try {
+      const c = JSON.parse(line);
+      if (c.op === "quit") {
+        key = "";
+        process.exit(0);
+      }
+      const result =
+        c.op === "auth"
+          ? await authenticate(c.key)
+          : c.op === "deploy"
+            ? await executeOperation(() => deploy())
+            : c.op === "publish-candidate"
+              ? await executeOperation(() => deploy(c.authorization || "missing"))
+              : c.op === "prepare-rollback"
+                ? await prepareRollback(c.baseline)
+                : c.op === "rollback"
+                  ? await executeOperation(() => rollback())
+                  : c.op === "inspect-journal"
+                    ? { journal: c.journal, records: await readDeploymentJournal(root, c.journal) }
+                    : c.op === "prepare-recovery"
+                      ? await prepareRecovery(c.journal)
+                      : c.op === "recover"
+                        ? await executeOperation(() => recover())
+                  : (() => {
+                      throw Error("Unsupported operation");
+                    })();
+      console.log(JSON.stringify(result));
+    } catch (e) {
+      console.log(JSON.stringify({ error: e.message }));
+    } finally {
+      busy = false;
+    }
+  });
 }

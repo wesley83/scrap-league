@@ -1,0 +1,977 @@
+{
+  "name": "Enlarged home text",
+  "status": "failed",
+  "detail": {
+    "rows": [
+      {
+        "viewport": [
+          320,
+          568
+        ],
+        "textScale": 2,
+        "containers": [
+          {
+            "selector": ".home-copy",
+            "x": 0,
+            "y": 200,
+            "width": 289.3333435058594,
+            "height": 1646.979248046875,
+            "right": 289.3333435058594,
+            "bottom": 1846.979248046875,
+            "scrollWidth": 289,
+            "clientWidth": 289,
+            "display": "flex"
+          },
+          {
+            "selector": ".home-actions",
+            "x": 20,
+            "y": 1157.666748046875,
+            "width": 249.33334350585938,
+            "height": 302,
+            "right": 269.3333435058594,
+            "bottom": 1459.666748046875,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "display": "grid"
+          },
+          {
+            "selector": ".secondary-actions",
+            "x": 20,
+            "y": 1471.666748046875,
+            "width": 249.33334350585938,
+            "height": 147.33334350585938,
+            "right": 269.3333435058594,
+            "bottom": 1619.0000915527344,
+            "scrollWidth": 249,
+            "clientWidth": 249,
+            "display": "grid"
+          }
+        ],
+        "buttons": [
+          {
+            "id": "home",
+            "text": "SCRAPLEAGUE04",
+            "x": 14,
+            "y": 3.6666667461395264,
+            "width": 220.14584350585938,
+            "height": 48,
+            "right": 234.14584350585938,
+            "bottom": 51.666666746139526,
+            "scrollWidth": 220,
+            "clientWidth": 220,
+            "visible": true,
+            "textFits": true,
+            "hit": "SPAN"
+          },
+          {
+            "id": "sound-toggle",
+            "text": "Sound off",
+            "x": 223.4791717529297,
+            "y": -8.666666984558105,
+            "width": 81.16667175292969,
+            "height": 72.66667175292969,
+            "right": 304.6458435058594,
+            "bottom": 64.00000476837158,
+            "scrollWidth": 80,
+            "clientWidth": 80,
+            "visible": false,
+            "textFits": true,
+            "hit": "sound-toggle"
+          },
+          {
+            "id": "settings-button",
+            "text": "Settings",
+            "x": 201.9791717529297,
+            "y": -8.666666984558105,
+            "width": 102.71875,
+            "height": 72.66667175292969,
+            "right": 304.6979217529297,
+            "bottom": 64.00000476837158,
+            "scrollWidth": 101,
+            "clientWidth": 101,
+            "visible": false,
+            "textFits": true,
+            "hit": "settings-button"
+          },
+          {
+            "id": "quick-race",
+            "text": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+            "x": 0,
+            "y": 157,
+            "width": 249.33334350585938,
+            "height": 238.6666717529297,
+            "right": 249.33334350585938,
+            "bottom": 395.6666717529297,
+            "scrollWidth": 248,
+            "clientWidth": 248,
+            "visible": true,
+            "textFits": true,
+            "hit": "SPAN"
+          },
+          {
+            "id": "race-button",
+            "text": "Race the league YARD SHIFT",
+            "x": 0,
+            "y": 186.33334350585938,
+            "width": 120.66667175292969,
+            "height": 180.33334350585938,
+            "right": 120.66667175292969,
+            "bottom": 366.66668701171875,
+            "scrollWidth": 119,
+            "clientWidth": 119,
+            "visible": true,
+            "textFits": true,
+            "hit": "race-button"
+          },
+          {
+            "id": "daily-button",
+            "text": "Daily Spec 10-18 · UTC",
+            "x": 128.6666717529297,
+            "y": 186.33334350585938,
+            "width": 120.66667175292969,
+            "height": 180.33334350585938,
+            "right": 249.33334350585938,
+            "bottom": 366.66668701171875,
+            "scrollWidth": 119,
+            "clientWidth": 119,
+            "visible": true,
+            "textFits": true,
+            "hit": "daily-button"
+          },
+          {
+            "id": "workshop-button",
+            "text": "Track Workshop MAKE YOUR OWN CIRCUIT",
+            "x": 0,
+            "y": 219.33334350585938,
+            "width": 249.33334350585938,
+            "height": 113.66667175292969,
+            "right": 249.33334350585938,
+            "bottom": 333.00001525878906,
+            "scrollWidth": 248,
+            "clientWidth": 248,
+            "visible": true,
+            "textFits": true,
+            "hit": "SMALL"
+          },
+          {
+            "id": "trial-button",
+            "text": "Time Trial",
+            "x": 0,
+            "y": 241,
+            "width": 121.66667175292969,
+            "height": 70.66667175292969,
+            "right": 121.66667175292969,
+            "bottom": 311.6666717529297,
+            "scrollWidth": 120,
+            "clientWidth": 120,
+            "visible": true,
+            "textFits": true,
+            "hit": "trial-button"
+          },
+          {
+            "id": "leaderboard-button",
+            "text": "Leaderboards",
+            "x": 127.66667175292969,
+            "y": 241,
+            "width": 121.66667175292969,
+            "height": 70.66667175292969,
+            "right": 249.33334350585938,
+            "bottom": 311.6666717529297,
+            "scrollWidth": 120,
+            "clientWidth": 120,
+            "visible": true,
+            "textFits": true,
+            "hit": "leaderboard-button"
+          },
+          {
+            "id": "garage-button",
+            "text": "Garage",
+            "x": 0,
+            "y": 241,
+            "width": 121.66667175292969,
+            "height": 70.66667175292969,
+            "right": 121.66667175292969,
+            "bottom": 311.6666717529297,
+            "scrollWidth": 120,
+            "clientWidth": 120,
+            "visible": true,
+            "textFits": true,
+            "hit": "garage-button"
+          },
+          {
+            "id": "lesson-button",
+            "text": "Driving school",
+            "x": 127.66667175292969,
+            "y": 241,
+            "width": 121.66667175292969,
+            "height": 70.66667175292969,
+            "right": 249.33334350585938,
+            "bottom": 311.6666717529297,
+            "scrollWidth": 120,
+            "clientWidth": 120,
+            "visible": true,
+            "textFits": true,
+            "hit": "lesson-button"
+          }
+        ],
+        "failures": [
+          "sound-toggle clipped or obstructed",
+          "settings-button clipped or obstructed",
+          "Document horizontal overflow"
+        ]
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "textScale": 2,
+        "containers": [
+          {
+            "selector": ".home-copy",
+            "x": 0,
+            "y": 212,
+            "width": 359.3333435058594,
+            "height": 1380.416748046875,
+            "right": 359.3333435058594,
+            "bottom": 1592.416748046875,
+            "scrollWidth": 359,
+            "clientWidth": 359,
+            "display": "flex"
+          },
+          {
+            "selector": ".home-actions",
+            "x": 20,
+            "y": 1022.8333740234375,
+            "width": 319.3333435058594,
+            "height": 220.6666717529297,
+            "right": 339.3333435058594,
+            "bottom": 1243.5000457763672,
+            "scrollWidth": 319,
+            "clientWidth": 319,
+            "display": "grid"
+          },
+          {
+            "selector": ".secondary-actions",
+            "x": 20,
+            "y": 1255.5,
+            "width": 319.3333435058594,
+            "height": 147.33334350585938,
+            "right": 339.3333435058594,
+            "bottom": 1402.8333435058594,
+            "scrollWidth": 319,
+            "clientWidth": 319,
+            "display": "grid"
+          }
+        ],
+        "buttons": [
+          {
+            "id": "home",
+            "text": "SCRAPLEAGUE04",
+            "x": 14,
+            "y": 3.6666667461395264,
+            "width": 220.14584350585938,
+            "height": 48,
+            "right": 234.14584350585938,
+            "bottom": 51.666666746139526,
+            "scrollWidth": 220,
+            "clientWidth": 220,
+            "visible": true,
+            "textFits": true,
+            "hit": "SPAN"
+          },
+          {
+            "id": "sound-toggle",
+            "text": "Sound off",
+            "x": 254.14584350585938,
+            "y": -8.666666984558105,
+            "width": 81.16667175292969,
+            "height": 72.66667175292969,
+            "right": 335.31251525878906,
+            "bottom": 64.00000476837158,
+            "scrollWidth": 80,
+            "clientWidth": 80,
+            "visible": false,
+            "textFits": true,
+            "hit": "sound-toggle"
+          },
+          {
+            "id": "settings-button",
+            "text": "Settings",
+            "x": 271.97918701171875,
+            "y": -8.666666984558105,
+            "width": 102.71875,
+            "height": 72.66667175292969,
+            "right": 374.69793701171875,
+            "bottom": 64.00000476837158,
+            "scrollWidth": 101,
+            "clientWidth": 101,
+            "visible": false,
+            "textFits": true,
+            "hit": "settings-button"
+          },
+          {
+            "id": "quick-race",
+            "text": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+            "x": 0,
+            "y": 348.8333435058594,
+            "width": 319.3333435058594,
+            "height": 136,
+            "right": 319.3333435058594,
+            "bottom": 484.8333435058594,
+            "scrollWidth": 318,
+            "clientWidth": 318,
+            "visible": true,
+            "textFits": true,
+            "hit": "SPAN"
+          },
+          {
+            "id": "race-button",
+            "text": "Race the league YARD SHIFT",
+            "x": 0,
+            "y": 354.8333435058594,
+            "width": 155.6666717529297,
+            "height": 123,
+            "right": 155.6666717529297,
+            "bottom": 477.8333435058594,
+            "scrollWidth": 154,
+            "clientWidth": 154,
+            "visible": true,
+            "textFits": true,
+            "hit": "race-button"
+          },
+          {
+            "id": "daily-button",
+            "text": "Daily Spec 10-18 · UTC",
+            "x": 163.6666717529297,
+            "y": 354.8333435058594,
+            "width": 155.6666717529297,
+            "height": 123,
+            "right": 319.3333435058594,
+            "bottom": 477.8333435058594,
+            "scrollWidth": 154,
+            "clientWidth": 154,
+            "visible": true,
+            "textFits": true,
+            "hit": "daily-button"
+          },
+          {
+            "id": "workshop-button",
+            "text": "Track Workshop MAKE YOUR OWN CIRCUIT",
+            "x": 0,
+            "y": 371.8333435058594,
+            "width": 319.3333435058594,
+            "height": 89.66667175292969,
+            "right": 319.3333435058594,
+            "bottom": 461.50001525878906,
+            "scrollWidth": 318,
+            "clientWidth": 318,
+            "visible": true,
+            "textFits": true,
+            "hit": "workshop-button"
+          },
+          {
+            "id": "trial-button",
+            "text": "Time Trial",
+            "x": 0,
+            "y": 381.5,
+            "width": 156.6666717529297,
+            "height": 70.66667175292969,
+            "right": 156.6666717529297,
+            "bottom": 452.1666717529297,
+            "scrollWidth": 155,
+            "clientWidth": 155,
+            "visible": true,
+            "textFits": true,
+            "hit": "trial-button"
+          },
+          {
+            "id": "leaderboard-button",
+            "text": "Leaderboards",
+            "x": 162.6666717529297,
+            "y": 381.5,
+            "width": 156.6666717529297,
+            "height": 70.66667175292969,
+            "right": 319.3333435058594,
+            "bottom": 452.1666717529297,
+            "scrollWidth": 155,
+            "clientWidth": 155,
+            "visible": true,
+            "textFits": true,
+            "hit": "leaderboard-button"
+          },
+          {
+            "id": "garage-button",
+            "text": "Garage",
+            "x": 0,
+            "y": 381.5,
+            "width": 156.6666717529297,
+            "height": 70.66667175292969,
+            "right": 156.6666717529297,
+            "bottom": 452.1666717529297,
+            "scrollWidth": 155,
+            "clientWidth": 155,
+            "visible": true,
+            "textFits": true,
+            "hit": "garage-button"
+          },
+          {
+            "id": "lesson-button",
+            "text": "Driving school",
+            "x": 162.6666717529297,
+            "y": 381.5,
+            "width": 156.6666717529297,
+            "height": 70.66667175292969,
+            "right": 319.3333435058594,
+            "bottom": 452.1666717529297,
+            "scrollWidth": 155,
+            "clientWidth": 155,
+            "visible": true,
+            "textFits": true,
+            "hit": "lesson-button"
+          }
+        ],
+        "failures": [
+          "sound-toggle clipped or obstructed",
+          "settings-button clipped or obstructed",
+          "Document horizontal overflow"
+        ]
+      },
+      {
+        "viewport": [
+          432,
+          900
+        ],
+        "textScale": 2,
+        "containers": [
+          {
+            "selector": ".home-copy",
+            "x": 0,
+            "y": 228.7916717529297,
+            "width": 401.3333435058594,
+            "height": 1277.4375,
+            "right": 401.3333435058594,
+            "bottom": 1506.2291717529297,
+            "scrollWidth": 401,
+            "clientWidth": 401,
+            "display": "flex"
+          },
+          {
+            "selector": ".home-actions",
+            "x": 20,
+            "y": 1028.375,
+            "width": 361.3333435058594,
+            "height": 220.6666717529297,
+            "right": 381.3333435058594,
+            "bottom": 1249.0416717529297,
+            "scrollWidth": 361,
+            "clientWidth": 361,
+            "display": "grid"
+          },
+          {
+            "selector": ".secondary-actions",
+            "x": 20,
+            "y": 1261.041748046875,
+            "width": 361.3333435058594,
+            "height": 94,
+            "right": 381.3333435058594,
+            "bottom": 1355.041748046875,
+            "scrollWidth": 361,
+            "clientWidth": 361,
+            "display": "grid"
+          }
+        ],
+        "buttons": [
+          {
+            "id": "home",
+            "text": "SCRAPLEAGUE04",
+            "x": 14,
+            "y": 3.6666667461395264,
+            "width": 220.14584350585938,
+            "height": 48,
+            "right": 234.14584350585938,
+            "bottom": 51.666666746139526,
+            "scrollWidth": 220,
+            "clientWidth": 220,
+            "visible": true,
+            "textFits": true,
+            "hit": "SPAN"
+          },
+          {
+            "id": "sound-toggle",
+            "text": "Sound off",
+            "x": 254.14584350585938,
+            "y": -8.666666984558105,
+            "width": 81.16667175292969,
+            "height": 72.66667175292969,
+            "right": 335.31251525878906,
+            "bottom": 64.00000476837158,
+            "scrollWidth": 80,
+            "clientWidth": 80,
+            "visible": false,
+            "textFits": true,
+            "hit": "sound-toggle"
+          },
+          {
+            "id": "settings-button",
+            "text": "Settings",
+            "x": 313.97918701171875,
+            "y": -8.666666984558105,
+            "width": 102.71875,
+            "height": 72.66667175292969,
+            "right": 416.69793701171875,
+            "bottom": 64.00000476837158,
+            "scrollWidth": 101,
+            "clientWidth": 101,
+            "visible": false,
+            "textFits": true,
+            "hit": "settings-button"
+          },
+          {
+            "id": "quick-race",
+            "text": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+            "x": 0,
+            "y": 376.375,
+            "width": 361.3333435058594,
+            "height": 136,
+            "right": 361.3333435058594,
+            "bottom": 512.375,
+            "scrollWidth": 360,
+            "clientWidth": 360,
+            "visible": true,
+            "textFits": true,
+            "hit": "SPAN"
+          },
+          {
+            "id": "race-button",
+            "text": "Race the league YARD SHIFT",
+            "x": 0,
+            "y": 383.04168701171875,
+            "width": 176.6666717529297,
+            "height": 123,
+            "right": 176.6666717529297,
+            "bottom": 506.04168701171875,
+            "scrollWidth": 175,
+            "clientWidth": 175,
+            "visible": true,
+            "textFits": true,
+            "hit": "race-button"
+          },
+          {
+            "id": "daily-button",
+            "text": "Daily Spec 10-18 · UTC",
+            "x": 184.6666717529297,
+            "y": 383.04168701171875,
+            "width": 176.6666717529297,
+            "height": 123,
+            "right": 361.3333435058594,
+            "bottom": 506.04168701171875,
+            "scrollWidth": 175,
+            "clientWidth": 175,
+            "visible": true,
+            "textFits": true,
+            "hit": "daily-button"
+          },
+          {
+            "id": "workshop-button",
+            "text": "Track Workshop MAKE YOUR OWN CIRCUIT",
+            "x": 0,
+            "y": 400.04168701171875,
+            "width": 361.3333435058594,
+            "height": 89.66667175292969,
+            "right": 361.3333435058594,
+            "bottom": 489.70835876464844,
+            "scrollWidth": 360,
+            "clientWidth": 360,
+            "visible": true,
+            "textFits": true,
+            "hit": "workshop-button"
+          },
+          {
+            "id": "trial-button",
+            "text": "Time Trial",
+            "x": 0,
+            "y": 422.375,
+            "width": 177.6666717529297,
+            "height": 44,
+            "right": 177.6666717529297,
+            "bottom": 466.375,
+            "scrollWidth": 176,
+            "clientWidth": 176,
+            "visible": true,
+            "textFits": true,
+            "hit": "trial-button"
+          },
+          {
+            "id": "leaderboard-button",
+            "text": "Leaderboards",
+            "x": 183.6666717529297,
+            "y": 422.375,
+            "width": 177.6666717529297,
+            "height": 44,
+            "right": 361.3333435058594,
+            "bottom": 466.375,
+            "scrollWidth": 176,
+            "clientWidth": 176,
+            "visible": true,
+            "textFits": true,
+            "hit": "leaderboard-button"
+          },
+          {
+            "id": "garage-button",
+            "text": "Garage",
+            "x": 0,
+            "y": 445.04168701171875,
+            "width": 177.6666717529297,
+            "height": 44,
+            "right": 177.6666717529297,
+            "bottom": 489.04168701171875,
+            "scrollWidth": 176,
+            "clientWidth": 176,
+            "visible": true,
+            "textFits": true,
+            "hit": "garage-button"
+          },
+          {
+            "id": "lesson-button",
+            "text": "Driving school",
+            "x": 183.6666717529297,
+            "y": 445.04168701171875,
+            "width": 177.6666717529297,
+            "height": 44,
+            "right": 361.3333435058594,
+            "bottom": 489.04168701171875,
+            "scrollWidth": 176,
+            "clientWidth": 176,
+            "visible": true,
+            "textFits": true,
+            "hit": "lesson-button"
+          }
+        ],
+        "failures": [
+          "sound-toggle clipped or obstructed",
+          "settings-button clipped or obstructed",
+          "Document horizontal overflow"
+        ]
+      },
+      {
+        "viewport": [
+          844,
+          390
+        ],
+        "textScale": 2,
+        "containers": [
+          {
+            "selector": ".home-copy",
+            "x": 0,
+            "y": 64,
+            "width": 406.04168701171875,
+            "height": 1535.822998046875,
+            "right": 406.04168701171875,
+            "bottom": 1599.822998046875,
+            "scrollWidth": 406,
+            "clientWidth": 406,
+            "display": "block"
+          },
+          {
+            "selector": ".home-actions",
+            "x": 24,
+            "y": 1107.96875,
+            "width": 358.04168701171875,
+            "height": 223.33334350585938,
+            "right": 382.04168701171875,
+            "bottom": 1331.3020935058594,
+            "scrollWidth": 358,
+            "clientWidth": 358,
+            "display": "grid"
+          },
+          {
+            "selector": ".secondary-actions",
+            "x": 24,
+            "y": 1343.3021240234375,
+            "width": 358.04168701171875,
+            "height": 99.33333587646484,
+            "right": 382.04168701171875,
+            "bottom": 1442.6354598999023,
+            "scrollWidth": 358,
+            "clientWidth": 358,
+            "display": "grid"
+          }
+        ],
+        "buttons": [
+          {
+            "id": "home",
+            "text": "SCRAPLEAGUE04",
+            "x": 24,
+            "y": 7.364583492279053,
+            "width": 282.03125,
+            "height": 48.59375,
+            "right": 306.03125,
+            "bottom": 55.95833349227905,
+            "scrollWidth": 284,
+            "clientWidth": 282,
+            "visible": true,
+            "textFits": false,
+            "hit": "SPAN"
+          },
+          {
+            "id": "sound-toggle",
+            "text": "Sound off",
+            "x": 413.7083435058594,
+            "y": 5.333333492279053,
+            "width": 130.3854217529297,
+            "height": 52.66666793823242,
+            "right": 544.0937652587891,
+            "bottom": 58.000001430511475,
+            "scrollWidth": 129,
+            "clientWidth": 129,
+            "visible": true,
+            "textFits": true,
+            "hit": "sound-toggle"
+          },
+          {
+            "id": "settings-button",
+            "text": "Settings",
+            "x": 552.09375,
+            "y": 5.333333492279053,
+            "width": 116,
+            "height": 52.66666793823242,
+            "right": 668.09375,
+            "bottom": 58.000001430511475,
+            "scrollWidth": 115,
+            "clientWidth": 115,
+            "visible": true,
+            "textFits": true,
+            "hit": "settings-button"
+          },
+          {
+            "id": "fullscreen",
+            "text": "Full screen",
+            "x": 676.09375,
+            "y": 5.333333492279053,
+            "width": 143.90625,
+            "height": 52.66666793823242,
+            "right": 820,
+            "bottom": 58.000001430511475,
+            "scrollWidth": 143,
+            "clientWidth": 143,
+            "visible": true,
+            "textFits": true,
+            "hit": "fullscreen"
+          },
+          {
+            "id": "quick-race",
+            "text": "LET’S RACE2 LAPS · 5 RIVALS · JUMP IN",
+            "x": 24,
+            "y": 141.30209350585938,
+            "width": 358.04168701171875,
+            "height": 136,
+            "right": 382.04168701171875,
+            "bottom": 277.3020935058594,
+            "scrollWidth": 357,
+            "clientWidth": 357,
+            "visible": true,
+            "textFits": true,
+            "hit": "SPAN"
+          },
+          {
+            "id": "race-button",
+            "text": "Race the league YARD SHIFT",
+            "x": 24,
+            "y": 97.30208587646484,
+            "width": 114.01042175292969,
+            "height": 223.33334350585938,
+            "right": 138.0104217529297,
+            "bottom": 320.6354293823242,
+            "scrollWidth": 113,
+            "clientWidth": 113,
+            "visible": true,
+            "textFits": true,
+            "hit": "race-button"
+          },
+          {
+            "id": "daily-button",
+            "text": "Daily Spec 10-18 · UTC",
+            "x": 146.0104217529297,
+            "y": 97.30208587646484,
+            "width": 114.01042175292969,
+            "height": 223.33334350585938,
+            "right": 260.0208435058594,
+            "bottom": 320.6354293823242,
+            "scrollWidth": 113,
+            "clientWidth": 113,
+            "visible": true,
+            "textFits": true,
+            "hit": "daily-button"
+          },
+          {
+            "id": "workshop-button",
+            "text": "Track Workshop MAKE YOUR OWN CIRCUIT",
+            "x": 268.0208435058594,
+            "y": 97.30208587646484,
+            "width": 114.01042175292969,
+            "height": 223.33334350585938,
+            "right": 382.03126525878906,
+            "bottom": 320.6354293823242,
+            "scrollWidth": 113,
+            "clientWidth": 113,
+            "visible": true,
+            "textFits": true,
+            "hit": "workshop-button"
+          },
+          {
+            "id": "trial-button",
+            "text": "Time Trial",
+            "x": 24,
+            "y": 159.30209350585938,
+            "width": 85.01042175292969,
+            "height": 99.33333587646484,
+            "right": 109.01042175292969,
+            "bottom": 258.6354293823242,
+            "scrollWidth": 84,
+            "clientWidth": 84,
+            "visible": true,
+            "textFits": true,
+            "hit": "trial-button"
+          },
+          {
+            "id": "leaderboard-button",
+            "text": "Leaderboards",
+            "x": 115.01042175292969,
+            "y": 159.30209350585938,
+            "width": 85.01042175292969,
+            "height": 99.33333587646484,
+            "right": 200.02084350585938,
+            "bottom": 258.6354293823242,
+            "scrollWidth": 84,
+            "clientWidth": 84,
+            "visible": true,
+            "textFits": true,
+            "hit": "leaderboard-button"
+          },
+          {
+            "id": "garage-button",
+            "text": "Garage",
+            "x": 206.02084350585938,
+            "y": 159.30209350585938,
+            "width": 85.01042175292969,
+            "height": 99.33333587646484,
+            "right": 291.03126525878906,
+            "bottom": 258.6354293823242,
+            "scrollWidth": 84,
+            "clientWidth": 84,
+            "visible": true,
+            "textFits": true,
+            "hit": "garage-button"
+          },
+          {
+            "id": "lesson-button",
+            "text": "Driving school",
+            "x": 297.03125,
+            "y": 159.30209350585938,
+            "width": 85.01042175292969,
+            "height": 99.33333587646484,
+            "right": 382.0416717529297,
+            "bottom": 258.6354293823242,
+            "scrollWidth": 84,
+            "clientWidth": 84,
+            "visible": true,
+            "textFits": true,
+            "hit": "lesson-button"
+          }
+        ],
+        "failures": [
+          "home clipped or obstructed"
+        ]
+      }
+    ],
+    "failures": [
+      {
+        "viewport": [
+          320,
+          568
+        ],
+        "error": "sound-toggle clipped or obstructed"
+      },
+      {
+        "viewport": [
+          320,
+          568
+        ],
+        "error": "settings-button clipped or obstructed"
+      },
+      {
+        "viewport": [
+          320,
+          568
+        ],
+        "error": "Document horizontal overflow"
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "error": "sound-toggle clipped or obstructed"
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "error": "settings-button clipped or obstructed"
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "error": "Document horizontal overflow"
+      },
+      {
+        "viewport": [
+          432,
+          900
+        ],
+        "error": "sound-toggle clipped or obstructed"
+      },
+      {
+        "viewport": [
+          432,
+          900
+        ],
+        "error": "settings-button clipped or obstructed"
+      },
+      {
+        "viewport": [
+          432,
+          900
+        ],
+        "error": "Document horizontal overflow"
+      },
+      {
+        "viewport": [
+          844,
+          390
+        ],
+        "error": "home clipped or obstructed"
+      }
+    ]
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "viewport": [
+      432,
+      900
+    ],
+    "release": "http://127.0.0.1:4440/releases/sl-4261a19d07730c/"
+  },
+  "receiptUTC": "2026-10-18T04:31:04.838Z",
+  "release": "sl-4261a19d07730c",
+  "sourceHash": "3d797db1838326279889e0fe6c7ff55b791d1c7f28ff9818db1aaf51fd56a7fb",
+  "verifiers": {
+    "serverSha256": "b0dcd67f3ff250bd383059eb4f14ca326eadba1ee239d4ae01d357181afe5953",
+    "labSha256": "c614b4cee7f4987ab9c7c677185b7806b724fc9f1362d1b71782bb76a71c3cb8"
+  },
+  "scope": "Actual Chromium iframe CSS viewport; local inspection hook and provider-footer fixture declared; no native/physical-device claim"
+}

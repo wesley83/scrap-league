@@ -1,0 +1,52 @@
+{
+  "utc": "2026-10-17T02:30:31.675Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "policyRevision": "scrap-league-casual-v1",
+  "tests": [
+    {
+      "name": "bounded-page-read",
+      "mode": "trial",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "trial",
+      "testId": "644159c1-c600-4c79-8d93-606874b7c4e5",
+      "state": "failed",
+      "status": 422,
+      "response": "<div itemscope itemtype=\"https://dombase.pagelove.team/ns/error/ShapeConstraint\"><ul itemprop=\"problems\"><li itemprop=\"problem\"><span itemprop=\"message\">Shape constraints violated</span></li><li itemprop=\"problem\"><span itemprop=\"message\">https://pagelove.org/ShapeConstraint #runs: Attribute &lt;p:paginate&gt; on &lt;ul&gt; matched by '#runs' is not permitted by the selector or any matching permit</span></li><li itemprop=\"problem\"><span itemprop=\"message\">https://pagelove.org/ShapeConstraint #runs: Attribute &lt;p:paginate&gt; on &lt;ul&gt; matched by '#runs' is not permitted by the selector or any matching permit</span></li></ul></div>"
+    },
+    {
+      "name": "bounded-page-read",
+      "mode": "daily",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "daily",
+      "testId": "26d4a490-2dd8-402b-9be4-f08453f97665",
+      "state": "failed",
+      "status": 422,
+      "response": "<div itemscope itemtype=\"https://dombase.pagelove.team/ns/error/ShapeConstraint\"><ul itemprop=\"problems\"><li itemprop=\"problem\"><span itemprop=\"message\">Shape constraints violated</span></li><li itemprop=\"problem\"><span itemprop=\"message\">https://pagelove.org/ShapeConstraint #runs: Attribute &lt;p:paginate&gt; on &lt;ul&gt; matched by '#runs' is not permitted by the selector or any matching permit</span></li><li itemprop=\"problem\"><span itemprop=\"message\">https://pagelove.org/ShapeConstraint #runs: Attribute &lt;p:paginate&gt; on &lt;ul&gt; matched by '#runs' is not permitted by the selector or any matching permit</span></li></ul></div>"
+    }
+  ],
+  "cleanup": {
+    "trial": {
+      "removed": 0,
+      "state": "no-test-rows-stored"
+    },
+    "daily": {
+      "removed": 0,
+      "state": "no-test-rows-stored"
+    }
+  },
+  "providerWideReadiness": "not available; endpoint observations are not a global guarantee",
+  "passed": false,
+  "failures": [
+    "valid-public-write failed for trial.",
+    "valid-public-write failed for daily."
+  ],
+  "scope": "Anonymous public endpoint checks; local results remain authoritative; synthetic run rows are conditionally removed when ETags permit"
+}

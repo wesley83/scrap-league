@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Grip Specialist",
+    "meters": 400,
+    "exitKmh": 92,
+    "incidents": 0,
+    "maxSlip": 0.8
+  },
+  {
+    "name": "Straight-Line Rocket",
+    "meters": 368,
+    "exitKmh": 112,
+    "incidents": 0,
+    "maxSlip": 1.3
+  },
+  {
+    "name": "Stable All-Rounder",
+    "meters": 367,
+    "exitKmh": 107,
+    "incidents": 0,
+    "maxSlip": 1.2
+  }
+]

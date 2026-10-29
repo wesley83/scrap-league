@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-16T17:04:47.103Z",
+  "release": "sl-e9b542fba38243",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "rows": [
+    {
+      "name": "Portrait racing and missed graphics event",
+      "status": "passed",
+      "detail": {
+        "size": [
+          412,
+          855
+        ],
+        "title": "SALT FLAT SPRINT / DAILY SPEC",
+        "stoppedTime": "00:00.850",
+        "missedEventPaused": true,
+        "freshCanvas": true,
+        "explicitResume": true,
+        "scope": "Desktop browser with 412x915 iframe; real WEBGL_lose_context fault, propagation intentionally suppressed. Not a physical Pixel/Edge test."
+      }
+    },
+    {
+      "name": "Failed repair stays paused and retry recovers",
+      "status": "passed",
+      "detail": {
+        "injectedCreationFailure": true,
+        "timePreserved": true,
+        "retryRecovered": true
+      }
+    }
+  ]
+}

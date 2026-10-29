@@ -1,0 +1,14 @@
+HTTP/1.1 404 The specified blob does not exist.
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: x-ms-request-id,Server,x-ms-version,x-ms-error-code,Content-Length,Date,Transfer-Encoding
+Content-Length: 215
+Content-Type: application/xml
+Date: Thu, 29 Oct 2026 00:48:26 GMT
+Server: Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+X-Ms-Error-Code: BlobNotFound
+X-Ms-Request-Id: e00bee54-e01e-0006-183f-67a855000000
+X-Ms-Version: 2025-11-05
+
+﻿<?xml version="1.0" encoding="utf-8"?><Error><Code>BlobNotFound</Code><Message>The specified blob does not exist.
+RequestId:e00bee54-e01e-0006-183f-67a855000000
+Time:2026-10-29T00:48:26.8930955Z</Message></Error>

@@ -1,0 +1,12 @@
+✔ publication receipts bind identity and destination but cannot authorize unresolved acceptance (3.7491ms)
+✔ a generic deploy instruction and agent receipt cannot waive blocked, partial or unexecuted outcomes (2.6942ms)
+✔ release gate refuses missing asset, stale source, omitted evidence and failed provider gate (2197.9782ms)
+✔ startup missing either required stylesheet keeps controls inert and exposes independent recovery (9.5038ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2628.0994

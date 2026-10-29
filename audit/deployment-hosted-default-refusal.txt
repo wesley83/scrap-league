@@ -1,0 +1,6 @@
+Exact candidate acceptance	Run node tools/release-gate.mjs local	﻿2026-10-16T16:37:47.5548866Z ##[group]Run node tools/release-gate.mjs local
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-16T16:37:47.5549303Z ^[[36;1mnode tools/release-gate.mjs local^[[0m
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-16T16:37:47.5613089Z shell: /usr/bin/bash -e {0}
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-16T16:37:47.5613425Z ##[endgroup]
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-16T16:37:47.9785927Z Release gate refused: Required acceptance is missing or not passed: J01
+Exact candidate acceptance	Run node tools/release-gate.mjs local	2026-10-16T16:37:47.9876611Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-17T22:44:20.406Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "owned": [
+    "/boards/audit-47880d93-ce9a-47d1-8938-df9da8cf0af0-daily.html"
+  ],
+  "created": [
+    "/boards/audit-47880d93-ce9a-47d1-8938-df9da8cf0af0-daily.html"
+  ],
+  "mirrors": [
+    {
+      "mode": "daily",
+      "path": "/boards/audit-47880d93-ce9a-47d1-8938-df9da8cf0af0-daily.html",
+      "type": "urn:ScrapLeague:ProbeRun:47880d93-ce9a-47d1-8938-df9da8cf0af0:daily",
+      "sourceETag": "\"8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607\"",
+      "emptyPolicySha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607",
+      "normalizedMirrorSha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607"
+    }
+  ],
+  "routes": [],
+  "checks": [
+    {
+      "name": "daily: positive public write/readback",
+      "state": "passed",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ],
+      "oneCopy": true,
+      "durationMs": 1883
+    },
+    {
+      "name": "daily: duplicate identity",
+      "state": "failed",
+      "detail": "Duplicate was not rejected with one copy preserved: {\"status\":500,\"oneCopy\":true}",
+      "durationMs": 1327
+    },
+    {
+      "name": "complete daily boundary fixture",
+      "state": "passed",
+      "executed": true,
+      "durationMs": 4032
+    }
+  ],
+  "only": "duplicate",
+  "attempts": [
+    {
+      "name": "daily: positive public write/readback",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/boards/audit-47880d93-ce9a-47d1-8938-df9da8cf0af0-daily.html",
+      "status": 204,
+      "absent": true
+    }
+  ],
+  "scope": "Actual public application endpoints on this host, using nonce-owned empty policy mirrors with unique run namespaces. Only resource paths/type namespaces differ from retained production policy; no live policy or player record is changed.",
+  "passed": false
+}

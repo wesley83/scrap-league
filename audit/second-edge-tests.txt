@@ -1,0 +1,20 @@
+✔ Files keeps export and readable drafts available after storage read failure (249.4529ms)
+✔ draft entry validates sources, preserves corrupt records and reports incomplete reads (134.4694ms)
+✔ worker checks actual cached bytes, repairs corruption, and survives runtime restart (48.1367ms)
+✔ installed native-route fallback preserves URL meaning and verified cache bytes (28.2096ms)
+✔ native-route fallback preserves success/authorization responses and refuses corrupt shells (8.7467ms)
+✔ failed B installation preserves complete A; missing, corrupt and quota-failed B never report readiness (14.8476ms)
+✔ activation rejects stale acknowledgement, cancellation, expired request and newly opened window (23.0145ms)
+✔ duplicate activation clicks do not skip waiting twice; unsafe other tab blocks update (22.011ms)
+✔ rollback to retained A restores A resources with server absent and does not touch application storage (12.8927ms)
+✔ new worker verifies retained release bytes and refuses corrupt or inventory-less offline responses (10.1186ms)
+✔ retirement keeps current, previous, open-client and legacy packs; a nonresponding client vetoes cleanup (1217.6306ms)
+✔ legacy client without update acknowledgement blocks explicit activation safely (44.1409ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1557.1293

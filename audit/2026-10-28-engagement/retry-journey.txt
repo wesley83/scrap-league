@@ -1,0 +1,42 @@
+- banner:
+  - button "Scrap League home":
+    - text: SCRAP
+    - generic: LEAGUE
+    - generic: "04"
+  - navigation "Game tools":
+    - button "Toggle sound": Sound off
+    - button "Settings"
+- main:
+  - generic "Overhead racing view. W throttle · S brake · A left · D right · Space handbrake · Left Shift boost · R reset · Escape pause"
+  - generic: POSITION
+  - strong: 1/1
+  - generic: LAP
+  - strong: 1/3
+  - generic: RACE TIME
+  - strong: 00:00.000
+  - button "Reset"
+  - button "Pause"
+  - generic: YARD LOOP / GOLD 01:34.514 · CREW GHOST
+  - generic "Road ahead": Straight · find your line
+  - generic: "2"
+  - status: "Chase gold: 01:34.514 · clean exits earn boost"
+  - strong: "0"
+  - generic: KM/H
+  - progressbar "Boost charge"
+  - generic "Circuit map and next checkpoint"
+  - slider "Steering pad":
+    - generic: ↔
+    - generic: STEER
+  - button "GAS"
+  - button "BRAKE"
+  - button "SLIDE"
+  - button "BOOST"
+- dialog "PAUSED":
+  - heading "PAUSED" [level=2]
+  - paragraph: Take a breath. The race clock is stopped.
+  - button "Resume" [active]
+  - button "Settings"
+  - button "Reset car to checkpoint"
+  - button "Restart race"
+  - button "Back to yard"
+- generic "Review controls"

@@ -1,0 +1,94 @@
+{
+  "utc": "2026-10-17T02:34:35.972Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "policyRevision": "scrap-league-casual-v1",
+  "tests": [
+    {
+      "name": "bounded-page-read",
+      "mode": "trial",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "trial",
+      "testId": "63404192-aa6d-40d6-999a-2ff7e72581ec",
+      "state": "failed",
+      "status": 503,
+      "response": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>503 Service Unavailable - Budget Exceeded</title>\n  </head>\n  <body itemscope itemtype=\"https://schema.org/FailedActionStatus\">\n    <h1 itemprop=\"name\">Budget Exceeded</h1>\n    <p itemprop=\"description\">The request exceeded the allocated memory budget.</p>\n\n    <div itemscope itemtype=\"https://pagelove.org/BudgetLimit\">\n      <span itemprop=\"resourceType\">memory</span>\n      <dl>\n        <dt>Allocated:</dt>\n        <dd><span itemprop=\"allocated\">33507518</span> bytes</dd>\n        <dt>Consumed:</dt>\n        <dd><span itemprop=\"consumed\">33507518</span> bytes</dd>\n      </dl>\n    </div>\n  </body>\n</html>"
+    },
+    {
+      "name": "bounded-page-read",
+      "mode": "daily",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "daily",
+      "testId": "93b2e39f-40b3-4606-ac6b-5aa5cd5cf71d",
+      "state": "passed",
+      "status": 206
+    },
+    {
+      "name": "public-write-readback",
+      "mode": "daily",
+      "testId": "93b2e39f-40b3-4606-ac6b-5aa5cd5cf71d",
+      "state": "failed",
+      "status": 1
+    },
+    {
+      "name": "duplicate-run-rejected",
+      "mode": "daily",
+      "testId": "93b2e39f-40b3-4606-ac6b-5aa5cd5cf71d",
+      "state": "passed",
+      "status": 500
+    },
+    {
+      "name": "duplicate-not-appended",
+      "mode": "daily",
+      "testId": "93b2e39f-40b3-4606-ac6b-5aa5cd5cf71d",
+      "state": "passed",
+      "status": 1
+    },
+    {
+      "name": "split-arithmetic-rejected",
+      "mode": "daily",
+      "testId": "6afd12a8-8626-4ec8-9a84-c00196178e0a",
+      "state": "passed",
+      "status": 422
+    },
+    {
+      "name": "client-expiry-rejected",
+      "mode": "daily",
+      "testId": "59507eb5-1103-4168-b641-f0551aa9964c",
+      "state": "passed",
+      "status": 422
+    },
+    {
+      "name": "unsupported-build-rejected",
+      "mode": "daily",
+      "testId": "dddcbf69-ce78-4f50-9732-70bf2cdd0995",
+      "state": "passed",
+      "status": 500
+    }
+  ],
+  "cleanup": {
+    "trial": {
+      "removed": 0,
+      "state": "no-test-rows-stored"
+    },
+    "daily": {
+      "removed": 1,
+      "state": "conditionally-removed",
+      "etagConfirmed": true
+    }
+  },
+  "providerWideReadiness": "not available; endpoint observations are not a global guarantee",
+  "passed": false,
+  "failures": [
+    "valid-public-write failed for trial.",
+    "public-write-readback failed for daily."
+  ],
+  "scope": "Anonymous public endpoint checks; local results remain authoritative; synthetic run rows are conditionally removed when ETags permit"
+}

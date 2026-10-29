@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-16T17:20:29.837Z",
+  "stagedFiles": 16,
+  "stagedMatchesWorktree": true,
+  "credentialScan": "passed",
+  "patch": {
+    "privatePath": ".local/mobile-deployer.patch",
+    "sha256": "ca7f3e002e96d8cf0e3cf7995bdccb365277d57c2d1259bc2aa712286ba49361"
+  },
+  "upstream": [
+    {
+      "path": "fonts/Barlow-OFL.txt",
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "note": "Original upstream whitespace preserved byte-for-byte; diff --check warnings confined to these copied assets."
+    },
+    {
+      "path": "fonts/BebasNeue-OFL.txt",
+      "sha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+      "note": "Original upstream whitespace preserved byte-for-byte; diff --check warnings confined to these copied assets."
+    },
+    {
+      "path": "vendor/three.core.js",
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "note": "Original upstream whitespace preserved byte-for-byte; diff --check warnings confined to these copied assets."
+    }
+  ],
+  "files": {
+    "audit/2026-10-16-remediation.md": "eddbe894671b1c7e59c0c5db9bae68d55516beb00fb0fe9b5e4944c25cb5bfbf",
+    "audit/current-acceptance.json": "1bacccbde25dd1553907bd075e120585f8409a1ac12a8e600ef3effa0d235d42",
+    "audit/deployment-authorization-2026-10-16.json": "2a05e811d8158853b43b5ba34f8e48dc00d62c584ddb354a815435348c9e2021",
+    "audit/mobile-acceptance-before-publication.json": "1bacccbde25dd1553907bd075e120585f8409a1ac12a8e600ef3effa0d235d42",
+    "audit/mobile-candidate-verification.json": "f7498bf1fd99845d6a4d783454adab0737e475eb3276a6d2c59b5b9bdaef6d06",
+    "audit/mobile-deployer-remediation-handling.json": "ca5dac77d822068c51fe5a6c1ec4c015473774e6ecc117d0f71d9eff02a275bc",
+    "audit/mobile-deployer-remediation-persisted-campaigns.json": "54c4f1d806b35e4b69e4093afe72f096994b596d853c053d2a9d387035d5feea",
+    "audit/mobile-deployer-remediation-simulation-races.json": "197835c07bdb5c426a1941789d8dbb7f0a7be207c6909e622e666972f8ebd9af",
+    "audit/mobile-graphics-tests-before-deployer-fix.txt": "0564bf8e070ae7c4cc6cda1500c9eb17d02c72518ebba940525030bf75bb3947",
+    "audit/mobile-graphics-tests-final.txt": "841f42bc826576604a313b0dce78b3c2819bceacf54814b278033c0279ef32ae",
+    "audit/mobile-publication-first-attempt-acceptance.json": "a476cc134eb7588f58a130810d7d243401764869c6cc6c8b8b9874e5684cff1d",
+    "audit/mobile-publication-first-attempt-authorization.json": "0a281c68349799d8b6461ddd64aa99c82f9b058936f25130d9d13c82d7b7f05c",
+    "audit/screenshots/mobile-graphics-local-portrait.png": "efdae0336f6b388ee5ea1e58980d222c46bc12b5e53022c85b60d8df1ff09f98",
+    "dist/release.json": "68a76d99134ca4584245bd2686ea4a62d4ca6b21eb6eb644c8e2f92f6b1eaecd",
+    "tests/deployment.test.mjs": "426cee2939e788f7b928a88b7fc5850b8a83470bf14f76eee69012f0eeedf1e5",
+    "tools/deploy-pagelove.mjs": "bf15401d0d313c9d39fd268d9f4e016ee2369a80cdaa583a5b4722f62f1252fa"
+  }
+}

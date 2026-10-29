@@ -1,0 +1,126 @@
+{
+  "release": "sl-c792be00a08805",
+  "at": "2026-10-17T21:12:10.878Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "results": [
+    {
+      "name": "Twelve events, reload and ending",
+      "status": "passed",
+      "durationMs": 34046,
+      "details": {
+        "rows": [
+          {
+            "event": 1,
+            "elapsedMs": 101725,
+            "laps": 3,
+            "place": 1,
+            "contacts": 89
+          },
+          {
+            "event": 2,
+            "elapsedMs": 141483,
+            "laps": 3,
+            "place": 1,
+            "contacts": 264
+          },
+          {
+            "event": 3,
+            "elapsedMs": 120039,
+            "laps": 3,
+            "place": 1,
+            "contacts": 537
+          },
+          {
+            "event": 4,
+            "elapsedMs": 134034,
+            "laps": 3,
+            "place": 1,
+            "contacts": 86
+          },
+          {
+            "event": 5,
+            "elapsedMs": 164323,
+            "laps": 3,
+            "place": 1,
+            "contacts": 485
+          },
+          {
+            "event": 6,
+            "elapsedMs": 161547,
+            "laps": 3,
+            "place": 2,
+            "contacts": 1080
+          },
+          {
+            "event": 7,
+            "elapsedMs": 155891,
+            "laps": 3,
+            "place": 1,
+            "contacts": 724
+          },
+          {
+            "event": 8,
+            "elapsedMs": 137658,
+            "laps": 3,
+            "place": 1,
+            "contacts": 71
+          },
+          {
+            "event": 9,
+            "elapsedMs": 183270,
+            "laps": 3,
+            "place": 1,
+            "contacts": 312
+          },
+          {
+            "event": 10,
+            "elapsedMs": 162209,
+            "laps": 3,
+            "place": 1,
+            "contacts": 291
+          },
+          {
+            "event": 11,
+            "elapsedMs": 158542,
+            "laps": 3,
+            "place": 2,
+            "contacts": 1847
+          },
+          {
+            "event": 12,
+            "elapsedMs": 199718,
+            "laps": 3,
+            "place": 1,
+            "contacts": 731
+          }
+        ],
+        "reloadAfterFirstRound": true,
+        "allFourScenes": true,
+        "heldEnding": true,
+        "reducedMotion": true,
+        "muted": true,
+        "scope": "Legal synthetic controller through actual UI/persistence; no human enjoyment claim"
+      }
+    },
+    {
+      "name": "New circuit, source and failed save",
+      "status": "failed",
+      "error": "Cannot read properties of null (reading 'click')",
+      "stack": "TypeError: Cannot read properties of null (reading 'click')\n    at New circuit, source and failed save (http://127.0.0.1:4399/__audit__/lab.js:280:49)\n    at async record (http://127.0.0.1:4399/__audit__/lab.js:33:21)"
+    },
+    {
+      "name": "Gamepad menu, race and interruption",
+      "status": "passed",
+      "durationMs": 7141,
+      "details": {
+        "menuConfirm": true,
+        "range": true,
+        "trigger": true,
+        "startPauseResume": true,
+        "disconnect": true,
+        "heldFocusCancellation": true,
+        "syntheticGamepad": true
+      }
+    }
+  ]
+}

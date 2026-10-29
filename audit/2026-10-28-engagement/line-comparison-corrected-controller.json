@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "yard-loop",
+    "build": "starter",
+    "choice": "safe",
+    "elapsedMs": 35883,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 0,
+    "gravelSeconds": 0
+  },
+  {
+    "slug": "yard-loop",
+    "build": "starter",
+    "choice": "inside",
+    "elapsedMs": 35659,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 1.0083333333333333,
+    "gravelSeconds": 4.083333333333333
+  },
+  {
+    "slug": "yard-loop",
+    "build": "mixed",
+    "choice": "safe",
+    "elapsedMs": 36956,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 0,
+    "gravelSeconds": 0
+  },
+  {
+    "slug": "yard-loop",
+    "build": "mixed",
+    "choice": "inside",
+    "elapsedMs": 36697,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 1.0083333333333333,
+    "gravelSeconds": 4.566666666666666
+  },
+  {
+    "slug": "dockside-dash",
+    "build": "starter",
+    "choice": "safe",
+    "elapsedMs": 46739,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 1.0083333333333333,
+    "gravelSeconds": 9.125
+  },
+  {
+    "slug": "dockside-dash",
+    "build": "starter",
+    "choice": "inside",
+    "elapsedMs": 46489,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 2.0166666666666666,
+    "gravelSeconds": 13.183333333333334
+  },
+  {
+    "slug": "dockside-dash",
+    "build": "mixed",
+    "choice": "safe",
+    "elapsedMs": 46002,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 1.0083333333333333,
+    "gravelSeconds": 8.3
+  },
+  {
+    "slug": "dockside-dash",
+    "build": "mixed",
+    "choice": "inside",
+    "elapsedMs": 45714,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 2.0166666666666666,
+    "gravelSeconds": 12.85
+  },
+  {
+    "slug": "furnace-bend",
+    "build": "starter",
+    "choice": "safe",
+    "elapsedMs": 54007,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 0,
+    "gravelSeconds": 5.958333333333333
+  },
+  {
+    "slug": "furnace-bend",
+    "build": "starter",
+    "choice": "inside",
+    "elapsedMs": 53649,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 1.0083333333333333,
+    "gravelSeconds": 7.666666666666667
+  },
+  {
+    "slug": "furnace-bend",
+    "build": "mixed",
+    "choice": "safe",
+    "elapsedMs": 54279,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 0,
+    "gravelSeconds": 5.433333333333334
+  },
+  {
+    "slug": "furnace-bend",
+    "build": "mixed",
+    "choice": "inside",
+    "elapsedMs": 53970,
+    "dnf": false,
+    "incidents": 0,
+    "resets": 0,
+    "padSeconds": 1.0083333333333333,
+    "gravelSeconds": 7.083333333333333
+  }
+]

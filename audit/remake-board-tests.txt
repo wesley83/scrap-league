@@ -1,0 +1,21 @@
+✔ board transport keeps the browser global receiver (32.5198ms)
+✔ leaderboards can be browsed before a run without inventing a score (5.5468ms)
+✔ strict run boundary rejects missing identifiers, unsupported content and mismatched captured daily (0.8924ms)
+✔ retention uses exact expiry and preserves active interleaved records and principal-time ties (1.2177ms)
+✔ standings keep the captured physics revision in their comparison key (0.8405ms)
+✔ two outbox clients reconcile timeout-after-acceptance once with original id (16.0585ms)
+✔ failed refresh retains cached standings and removes expired rows offline (3.469ms)
+✔ public board reads paginate safely and rank records across page boundaries (16.4132ms)
+✔ empty Pagelove paginator sentinel reads as an empty board (2.4663ms)
+✔ bounded reads retry temporary provider errors, while writes remain single-shot (770.5689ms)
+✔ unconfigured board makes no network request and terminal history does not fill pending capacity (15.5155ms)
+✔ daily captured before UTC midnight survives finish, reopen and upload two days later (5.8695ms)
+✔ pending capacity preserves all queued identities and a permanent rejection is not retried (47.4197ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1596.4455

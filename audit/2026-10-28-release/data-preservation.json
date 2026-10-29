@@ -1,0 +1,62 @@
+{
+  "utc": "2026-10-29T00:35:46.419Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "path": "/boards/trial.html",
+  "synthetic": {
+    "id": "cbc86f91-b380-4668-bb49-729f5de59b6b",
+    "alias": "Release check",
+    "mode": "trial",
+    "trackId": "51000000-0000-4000-8000-000000000001",
+    "trackRevision": "1cf692adf1cafd165f2912437ede9bc39852af30797894304c29523c821dfd52",
+    "rulesRevision": "scrap-physics-v1.2.0",
+    "buildRevision": "01cd0e3bf38d746d23c2c4915d249d622c2aa22316ff087ea1d543b7b8ba1bf7",
+    "assist": "steering-off:manual",
+    "laps": 3,
+    "challenge": "",
+    "elapsedMs": 480000,
+    "splits": [
+      160000,
+      160000,
+      160000
+    ]
+  },
+  "before": {
+    "etag": "\"90643b59a4ecb2304db2ea49891fae73e28a33d9ea7ac831cd208a1564e7cef9\"",
+    "rows": []
+  },
+  "state": "passed",
+  "scope": "Owned synthetic row and unchanged hashes of pre-existing rows; no private row payload recorded.",
+  "attempts": [
+    {
+      "utc": "2026-10-29T00:35:47.164Z",
+      "status": 206,
+      "detail": ""
+    }
+  ],
+  "populated": {
+    "utc": "2026-10-29T00:35:47.475Z",
+    "etag": "\"932717fb7071297e25a9dc3adec6e0eefa2100831067f58d089b7a113b6c2d2c\"",
+    "rows": [
+      {
+        "id": "cbc86f91-b380-4668-bb49-729f5de59b6b",
+        "hash": "3bd9711267c616e2ac897d2ab9ceb82fe37340a21a6cfd7eaa5a95690414e56c"
+      }
+    ]
+  },
+  "after": {
+    "utc": "2026-10-29T00:54:02.910Z",
+    "etag": "\"932717fb7071297e25a9dc3adec6e0eefa2100831067f58d089b7a113b6c2d2c\"",
+    "rows": [
+      {
+        "id": "cbc86f91-b380-4668-bb49-729f5de59b6b",
+        "hash": "3bd9711267c616e2ac897d2ab9ceb82fe37340a21a6cfd7eaa5a95690414e56c"
+      }
+    ],
+    "preserved": true
+  },
+  "cleanup": {
+    "utc": "2026-10-29T00:54:04.356Z",
+    "ownedRowAbsent": true,
+    "otherRowsPreserved": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "release": "sl-475e681fb90505",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "All tracks and recovery",
+      "status": "passed",
+      "durationMs": 229,
+      "details": {
+        "tracks": [
+          {
+            "name": "Yard Loop",
+            "valid": true,
+            "samples": 328
+          },
+          {
+            "name": "Tin Can Alley",
+            "valid": true,
+            "samples": 396
+          },
+          {
+            "name": "Gravel Shift",
+            "valid": true,
+            "samples": 368
+          },
+          {
+            "name": "Dockside Dash",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Container Switchback",
+            "valid": true,
+            "samples": 408
+          },
+          {
+            "name": "Salt Flat Sprint",
+            "valid": true,
+            "samples": 528
+          },
+          {
+            "name": "Furnace Bend",
+            "valid": true,
+            "samples": 388
+          },
+          {
+            "name": "Mudworks",
+            "valid": true,
+            "samples": 448
+          },
+          {
+            "name": "Crusher Circuit",
+            "valid": true,
+            "samples": 488
+          },
+          {
+            "name": "Night Sort",
+            "valid": true,
+            "samples": 476
+          },
+          {
+            "name": "Redline Ridge",
+            "valid": true,
+            "samples": 548
+          },
+          {
+            "name": "The Big Salvage",
+            "valid": true,
+            "samples": 548
+          }
+        ],
+        "recovery": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:47:26.275Z",
+        "release": "sl-475e681fb90505",
+        "entry": "http://127.0.0.1:4417/?parity-return=1792280805495",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1100,
+          582
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": true,
+        "view": "race",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:47:26.508Z",
+  "sourceHash": "d5463fe122c30415d82618cf1e5b7d7fc8c23d4bc6f9b402d13e3bab7624b8fa",
+  "serverSha256": "4adb53cbe44385e8967d1cc5ea6560eecd125a33d5d4b3a897344b494f0dbf00",
+  "labSha256": "2cd8660febf1207226b9084de5174aa68b916db7d1e2a03ea5f20ac1830e503b"
+}

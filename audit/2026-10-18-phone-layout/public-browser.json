@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-18T04:53:40.242Z",
+  "release": "sl-28ec5378c02128",
+  "beforeUpdate": {
+    "utc": "2026-10-18T04:49:51.499Z",
+    "release": "sl-5c1afcc9442899"
+  },
+  "publicUpdateApplied": true,
+  "homeGeometry": {
+    "bodyLayout": "flex",
+    "cssDisplay": "block",
+    "scrollWidth": 569,
+    "stageHeight": 587.3333740234375,
+    "width": 569
+  },
+  "speed": 57,
+  "time": "00:09.767",
+  "scope": "Actual public root and ordinary PWA update from 5c to the responsive release; trusted connector W input. Phone geometry separately measured in real 320–1440 CSS-pixel fixtures, not a physical-phone claim."
+}

@@ -1,0 +1,21 @@
+✖ actual publisher commands retain promotion phases, recover failures and conditionally restore two releases (11613.8842ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11870.3228
+
+✖ failing tests:
+
+test at tests\publisher-command.test.mjs:7:1
+✖ actual publisher commands retain promotion phases, recover failures and conditionally restore two releases (11613.8842ms)
+  Error: Journal chain changed; recovery refused
+      at file:///C:/Users/Wesley/Documents/ChatGPT/Demos/scrap-league/tools/deployment-journal.mjs:46:13
+      at Array.map (<anonymous>)
+      at readDeploymentJournal (file:///C:/Users/Wesley/Documents/ChatGPT/Demos/scrap-league/tools/deployment-journal.mjs:42:40)
+      at async TestContext.<anonymous> (file:///C:/Users/Wesley/Documents/ChatGPT/Demos/scrap-league/tests/publisher-command.test.mjs:14:15)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "yard-loop",
+    "tires": "road",
+    "choice": "safe",
+    "elapsedMs": 35883,
+    "gravel": 0,
+    "pads": 0
+  },
+  {
+    "slug": "yard-loop",
+    "tires": "road",
+    "choice": "inside",
+    "elapsedMs": 35659,
+    "gravel": 4.083333333333326,
+    "pads": 1.0083333333333322
+  },
+  {
+    "slug": "yard-loop",
+    "tires": "mixed",
+    "choice": "safe",
+    "elapsedMs": 36956,
+    "gravel": 0,
+    "pads": 0
+  },
+  {
+    "slug": "yard-loop",
+    "tires": "mixed",
+    "choice": "inside",
+    "elapsedMs": 36697,
+    "gravel": 4.566666666666683,
+    "pads": 1.0083333333333322
+  },
+  {
+    "slug": "dockside-dash",
+    "tires": "road",
+    "choice": "safe",
+    "elapsedMs": 46739,
+    "gravel": 9.125000000000123,
+    "pads": 1.0083333333333322
+  },
+  {
+    "slug": "dockside-dash",
+    "tires": "road",
+    "choice": "inside",
+    "elapsedMs": 46489,
+    "gravel": 13.183333333333225,
+    "pads": 2.016666666666662
+  },
+  {
+    "slug": "dockside-dash",
+    "tires": "mixed",
+    "choice": "safe",
+    "elapsedMs": 46002,
+    "gravel": 8.30000000000017,
+    "pads": 1.0083333333333322
+  },
+  {
+    "slug": "dockside-dash",
+    "tires": "mixed",
+    "choice": "inside",
+    "elapsedMs": 45714,
+    "gravel": 12.84999999999991,
+    "pads": 2.016666666666662
+  },
+  {
+    "slug": "furnace-bend",
+    "tires": "road",
+    "choice": "safe",
+    "elapsedMs": 54007,
+    "gravel": 5.958333333333419,
+    "pads": 0
+  },
+  {
+    "slug": "furnace-bend",
+    "tires": "road",
+    "choice": "inside",
+    "elapsedMs": 53649,
+    "gravel": 7.6666666666668375,
+    "pads": 1.0083333333333322
+  },
+  {
+    "slug": "furnace-bend",
+    "tires": "mixed",
+    "choice": "safe",
+    "elapsedMs": 54279,
+    "gravel": 5.433333333333393,
+    "pads": 0
+  },
+  {
+    "slug": "furnace-bend",
+    "tires": "mixed",
+    "choice": "inside",
+    "elapsedMs": 53970,
+    "gravel": 7.083333333333475,
+    "pads": 1.0083333333333322
+  }
+]

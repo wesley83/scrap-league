@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-16T18:38:09.839Z",
+  "subjects": {
+    "A": "sl-eca6f97d1308a3",
+    "B": "sl-644d25b8e44419",
+    "hashes": {
+      "A": {
+        "index.html": "6b763669841296bb57545918c40709e977c04013fadcf6218c842800302e6935",
+        "sw.js": "176952a57e480c6b2b203201a6be7986705fcbb1e83d946a9daf934cc542caa1",
+        "release.json": "6511c1d23650399b985cc22d51c983f400917c2f1dc9c22b28b320199cb273ca"
+      },
+      "B": {
+        "index.html": "f079c74bd076a74676b9c4e20e74247ec0cfae72d8a45bf1e587da8e266b37db",
+        "sw.js": "1377cbdde6d59f3cb5371ed79e33e11a2fc22df21c0db7834087d6fc35d1c0ec",
+        "release.json": "ac7397d9cad1aaeca2111ff163bcb21c051d1715569db9f4a84ae8bba1406c61"
+      }
+    },
+    "phase": "A",
+    "offline": false,
+    "corrupt": false,
+    "delay": 0,
+    "requests": []
+  },
+  "environment": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "scope": "Real service workers on isolated localhost; synthetic progression; ordinary game UI for draft edits and activation; no physical device or process restart claim",
+  "results": [
+    {
+      "name": "7. Manual check during a slow new download",
+      "status": "gap",
+      "detail": {
+        "gap": true,
+        "trigger": "Manual check discovers a valid next worker; its main.js download is delayed 3 seconds",
+        "firstMessage": "Offline files checked and verified.",
+        "firstDialog": "SETTINGS",
+        "afterDownloadDialog": "SETTINGS",
+        "needsSecondCheck": true,
+        "secondCheckShowsApplyUpdate": true,
+        "active": "sl-644d25b8e44419",
+        "waiting": "sl-eca6f97d1308a3",
+        "scope": "A retained release is used as the valid next update; it is not activated"
+      },
+      "utc": "2026-10-16T18:38:09.839Z"
+    }
+  ]
+}

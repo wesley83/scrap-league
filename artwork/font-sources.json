@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-16T13:04:52.024Z",
+  "files": [
+    {
+      "name": "BebasNeue-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/bebasneue/BebasNeue-Regular.ttf",
+      "bytes": 61400,
+      "sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
+    },
+    {
+      "name": "BebasNeue-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/bebasneue/OFL.txt",
+      "bytes": 4337,
+      "sha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341"
+    },
+    {
+      "name": "Barlow-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Regular.ttf",
+      "bytes": 104068,
+      "sha256": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea"
+    },
+    {
+      "name": "Barlow-SemiBold.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-SemiBold.ttf",
+      "bytes": 108348,
+      "sha256": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5"
+    },
+    {
+      "name": "Barlow-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/OFL.txt",
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
+    }
+  ]
+}

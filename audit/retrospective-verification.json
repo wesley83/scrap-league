@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-16T12:15:33.596Z",
+  "actor": "Codex",
+  "baselineCommit": "b777c24e317f27d4347d379863717531195ea9f8",
+  "reviewScope": "Retrospective only; no gameplay/source fixes or provider writes",
+  "checks": {
+    "requirementRows": 69,
+    "formalStatusRows": 43,
+    "qualitativeHandbookRows": 26,
+    "acceptedExceptions": 0,
+    "localSourceLinksValid": true,
+    "currentTestDefinitions": 24,
+    "fullSuiteRerun": false,
+    "reason": "Review-only changes; focused probes reproduce new findings without rewriting prior simulation evidence.",
+    "applicationFilesByteIdenticalToPackagedRelease": 12,
+    "editorProbesReproduced": 2,
+    "publicFaviconHttpStatus": 200,
+    "publicSocialMetaTagCount": 0,
+    "githubWorkflows": 0,
+    "githubRulesets": 0,
+    "releaseBranchProtected": false,
+    "credentialPatternScan": "No key-shaped values in newly authored review artifacts"
+  },
+  "artifacts": [
+    {
+      "path": "audit/2026-10-16-creation-retrospective.md",
+      "sha256": "e021e3a018a6eb33d8c0869f262e1d1c03399ab8c5cfa9cfe67c50231fe6b763"
+    },
+    {
+      "path": "audit/retrospective-requirements.json",
+      "sha256": "40afdb13ddfb9d0df408fc1e7ed33cb8ee447013e9ec0677b2672d8859187942"
+    },
+    {
+      "path": "audit/retrospective-probes.mjs",
+      "sha256": "535c7b4c4ee9928194182d066a09d4eeee963832e1eea5677d578cd12e7f1b22"
+    },
+    {
+      "path": "audit/retrospective-probe-evidence.json",
+      "sha256": "156bba68fcba702653d19c75c36d4d21ddfeee95927f5966bd067e2572e0234c"
+    },
+    {
+      "path": "audit/retrospective-live-evidence.json",
+      "sha256": "c894529f77cad5d0b3bcd3523dcae6d875d2e44879678029b5d54c794079e4e4"
+    }
+  ]
+}

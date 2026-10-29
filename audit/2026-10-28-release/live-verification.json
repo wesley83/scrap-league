@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-29T00:54:15.837Z",
+  "passed": true,
+  "release": "sl-c84ff03afc7e71",
+  "sourceHash": "59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37",
+  "outputHash": "0d8db25f539f9b68ad5207f1107f2318830ebf6cf8a1e502b813ad9f1def01a1",
+  "journal": "audit/deployments/2026-10-29T00-50-58-640Z-f778c7b8-159b-4e85-8c44-3e17162852cb.jsonl",
+  "journalSha256": "a8717a3b7e9c39b02a2b0328aaf73ab49bd83eb0704cccc3136ead19e2714fa2",
+  "journalRecords": 362,
+  "publicResources": 116,
+  "verifiedInventory": 55,
+  "nativeRoutes": 28,
+  "services": [
+    {
+      "route": "/boards/trial.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 17082,
+      "sha256": "847f02826ffbbc962a36241928899ffef479a911d8aca55c914f3456fe8b29a7"
+    },
+    {
+      "route": "/boards/daily.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 32822,
+      "sha256": "1d8423ffeae4bb3e0968e6036b90abb865ca8083a3d7ce294c85757ea3d2905a"
+    },
+    {
+      "route": "/workshop-tracks/catalog.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 929,
+      "sha256": "bc9d9b61fb8ce5fe09a2ddb49591a9c1697641586907a8d5372e7275c7481b6b"
+    }
+  ],
+  "scope": "Supported publisher verified actual status/type/hash and semantic composed entry dependencies. Independent final published inventory/journal comparison and actual board/catalog availability. Provider burst reliability is not established."
+}

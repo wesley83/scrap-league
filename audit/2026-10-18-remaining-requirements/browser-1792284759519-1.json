@@ -1,0 +1,35 @@
+{
+  "release": "sl-b63afc9cbb2339",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Recreate twelve official circuits in Workshop",
+      "status": "failed",
+      "error": "Pad blueprint has no source road",
+      "stack": "Error: Pad blueprint has no source road\n    at check (http://127.0.0.1:4430/__audit__/lab.js:7:25)\n    at Recreate twelve official circuits in Workshop (http://127.0.0.1:4430/__audit__/journeys.js:50:6)\n    at async record (http://127.0.0.1:4430/__audit__/lab.js:36:21)\n    at async button.onclick (http://127.0.0.1:4430/__audit__/lab.js:1183:7)",
+      "qualification": {
+        "utc": "2026-10-18T00:52:35.042Z",
+        "release": "sl-b63afc9cbb2339",
+        "entry": "http://127.0.0.1:4430/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1280,
+          720
+        ],
+        "canvas": [
+          1062,
+          798
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "start",
+        "sourceReady": false,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-18T00:52:39.519Z",
+  "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+  "serverSha256": "230b7260e8a62798366409c86defc995211c82d59c9bc3a1b58ad1b633d4c2a5",
+  "labSha256": "43bd3efab48c37c6f8f310e9296cb6f04d04096bf76cc6d96745c4686a806544"
+}

@@ -1,0 +1,645 @@
+{
+  "utc": "2026-10-17T22:27:40.489Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "owned": [
+    "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html",
+    "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html",
+    "/editor/qa-13095337-valid",
+    "/editor/qa-13095337-missing-track",
+    "/editor/qa-13095337-missing-shell"
+  ],
+  "created": [
+    "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html",
+    "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html",
+    "/editor/qa-13095337-valid",
+    "/editor/qa-13095337-missing-track",
+    "/editor/qa-13095337-missing-shell"
+  ],
+  "mirrors": [
+    {
+      "mode": "trial",
+      "path": "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html",
+      "type": "urn:ScrapLeague:ProbeRun:13095337-591c-4fb9-acc1-c8ea18098fd6:trial",
+      "sourceETag": "\"0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142\"",
+      "emptyPolicySha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142",
+      "normalizedMirrorSha256": "0dd69336c1bac250c1ce574f01f138d92592c579c8d32b63d223cc25cc236142"
+    },
+    {
+      "mode": "daily",
+      "path": "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html",
+      "type": "urn:ScrapLeague:ProbeRun:13095337-591c-4fb9-acc1-c8ea18098fd6:daily",
+      "sourceETag": "\"8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607\"",
+      "emptyPolicySha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607",
+      "normalizedMirrorSha256": "8c40a26dd46b5d98715167f67fecaaf8ebcf10391b6959854cdc90ea54181607"
+    }
+  ],
+  "routes": [
+    {
+      "kind": "valid",
+      "path": "/editor/qa-13095337-valid",
+      "status": 200,
+      "gameShell": true,
+      "track": true,
+      "recovery": false,
+      "release": "sl-6f79bfd18ca0be"
+    },
+    {
+      "kind": "missing-track",
+      "path": "/editor/qa-13095337-missing-track",
+      "status": 404,
+      "gameShell": false,
+      "track": false,
+      "recovery": false,
+      "release": "sl-6f79bfd18ca0be"
+    },
+    {
+      "kind": "missing-shell",
+      "path": "/editor/qa-13095337-missing-shell",
+      "status": 404,
+      "gameShell": false,
+      "track": false,
+      "recovery": false,
+      "release": "sl-6f79bfd18ca0be"
+    }
+  ],
+  "checks": [
+    {
+      "name": "trial: positive public write/readback",
+      "state": "passed",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ],
+      "oneCopy": true,
+      "durationMs": 1849
+    },
+    {
+      "name": "trial: reject missing field",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 1330
+    },
+    {
+      "name": "trial: reject extra field",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 826
+    },
+    {
+      "name": "trial: reject wrong numeric type",
+      "state": "failed",
+      "detail": "No validating 422 observed: [{\"status\":403,\"detail\":\"<!DOCTYPE html>\\n<html>\\n<head>\\n    <meta charset=\\\"UTF-8\\\">\\n    <title>403 Forbidden</title>\\n</head>\\n<body itemscope itemtype=\\\"https://pagelove.org/1.0/Error\\\">\\n    <h1>403 Forbidden</h1>\\n    <p itemprop=\\\"message\\\">You do not have permission to access this resource.</p>\\n    <dl>\\n        <dt>Resource</dt>\\n        <dd itemprop=\\\"resource\\\">/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html</dd>\\n    </dl>\\n</body>\\n</html>\"}]",
+      "durationMs": 233
+    },
+    {
+      "name": "trial: reject invalid splits",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 745
+    },
+    {
+      "name": "trial: reject wrong content revision",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 911
+    },
+    {
+      "name": "trial: reject client receipt",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 2041
+    },
+    {
+      "name": "trial: reject client expiry",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 745
+    },
+    {
+      "name": "trial: reject injected markup",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 1966
+    },
+    {
+      "name": "trial: duplicate identity",
+      "state": "passed",
+      "status": 422,
+      "oneCopy": true,
+      "durationMs": 864
+    },
+    {
+      "name": "trial: anonymous PUT denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 345
+    },
+    {
+      "name": "trial: anonymous PATCH denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 267
+    },
+    {
+      "name": "trial: active deletion denied",
+      "state": "failed",
+      "detail": "Future cutoff did not preserve active records: 500",
+      "durationMs": 1077
+    },
+    {
+      "name": "retention: interleaved physical cleanup and eligibility boundary",
+      "state": "failed",
+      "detail": "Access cleanup did not remove only expired rows before boundary",
+      "durationMs": 2830
+    },
+    {
+      "name": "trial: unscoped anonymous DELETE denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 475
+    },
+    {
+      "name": "complete trial boundary fixture",
+      "state": "passed",
+      "executed": true,
+      "durationMs": 17197
+    },
+    {
+      "name": "daily: positive public write/readback",
+      "state": "passed",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ],
+      "oneCopy": true,
+      "durationMs": 1495
+    },
+    {
+      "name": "daily: reject missing field",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 1517
+    },
+    {
+      "name": "daily: reject extra field",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 2293
+    },
+    {
+      "name": "daily: reject wrong numeric type",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 741
+    },
+    {
+      "name": "daily: reject invalid splits",
+      "state": "failed",
+      "detail": "No validating 422 observed: [{\"status\":403,\"detail\":\"<!DOCTYPE html>\\n<html>\\n<head>\\n    <meta charset=\\\"UTF-8\\\">\\n    <title>403 Forbidden</title>\\n</head>\\n<body itemscope itemtype=\\\"https://pagelove.org/1.0/Error\\\">\\n    <h1>403 Forbidden</h1>\\n    <p itemprop=\\\"message\\\">You do not have permission to access this resource.</p>\\n    <dl>\\n        <dt>Resource</dt>\\n        <dd itemprop=\\\"resource\\\">/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html</dd>\\n    </dl>\\n</body>\\n</html>\"}]",
+      "durationMs": 243
+    },
+    {
+      "name": "daily: reject wrong content revision",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 870
+    },
+    {
+      "name": "daily: reject client receipt",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 1987
+    },
+    {
+      "name": "daily: reject client expiry",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 2133
+    },
+    {
+      "name": "daily: reject injected markup",
+      "state": "passed",
+      "status": 422,
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ],
+      "notStored": true,
+      "durationMs": 2157
+    },
+    {
+      "name": "daily: duplicate identity",
+      "state": "failed",
+      "detail": "Duplicate was not safely rejected: 500",
+      "durationMs": 765
+    },
+    {
+      "name": "daily: anonymous PUT denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 403
+    },
+    {
+      "name": "daily: anonymous PATCH denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 288
+    },
+    {
+      "name": "daily: active deletion denied",
+      "state": "passed",
+      "status": 403,
+      "unchanged": true,
+      "durationMs": 823
+    },
+    {
+      "name": "daily: unscoped anonymous DELETE denied",
+      "state": "passed",
+      "status": 401,
+      "unchanged": true,
+      "durationMs": 346
+    },
+    {
+      "name": "complete daily boundary fixture",
+      "state": "passed",
+      "executed": true,
+      "durationMs": 16475
+    },
+    {
+      "name": "native composition: valid",
+      "state": "passed",
+      "status": 200,
+      "gameShell": true,
+      "track": true,
+      "recovery": false,
+      "requiresInstalledClientRecovery": false,
+      "durationMs": 213
+    },
+    {
+      "name": "native composition: missing-track",
+      "state": "passed",
+      "status": 404,
+      "gameShell": false,
+      "track": false,
+      "recovery": false,
+      "requiresInstalledClientRecovery": true,
+      "bodyPreview": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Not Found</h1>\n    <meta itemprop=\"statusCode\" content=\"404\">\n    <p itemprop=\"description\">no matches found for selector article</p>\n  </body>\n</html>",
+      "durationMs": 205
+    },
+    {
+      "name": "native composition: missing-shell",
+      "state": "passed",
+      "status": 404,
+      "gameShell": false,
+      "track": false,
+      "recovery": false,
+      "requiresInstalledClientRecovery": true,
+      "bodyPreview": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found - Error</title>\n  </head>\n  <body itemscope itemtype=\"http://pagelove.org/Error\">\n    <h1 itemprop=\"name\">Not Found</h1>\n    <meta itemprop=\"statusCode\" content=\"404\">\n    <p itemprop=\"description\">no matches found for selector #game-shell</p>\n  </body>\n</html>",
+      "durationMs": 152
+    }
+  ],
+  "attempts": [
+    {
+      "name": "trial: positive public write/readback",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "trial: reject missing field",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "trial: reject extra field",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "trial: reject wrong numeric type",
+      "attempts": [
+        {
+          "status": 403,
+          "detail": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>403 Forbidden</title>\n</head>\n<body itemscope itemtype=\"https://pagelove.org/1.0/Error\">\n    <h1>403 Forbidden</h1>\n    <p itemprop=\"message\">You do not have permission to access this resource.</p>\n    <dl>\n        <dt>Resource</dt>\n        <dd itemprop=\"resource\">/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html</dd>\n    </dl>\n</body>\n</html>"
+        }
+      ]
+    },
+    {
+      "name": "trial: reject invalid splits",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "trial: reject wrong content revision",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "trial: reject client receipt",
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "trial: reject client expiry",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "trial: reject injected markup",
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: positive public write/readback",
+      "attempts": [
+        {
+          "status": 206,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: reject missing field",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: reject extra field",
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: reject wrong numeric type",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: reject invalid splits",
+      "attempts": [
+        {
+          "status": 403,
+          "detail": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>403 Forbidden</title>\n</head>\n<body itemscope itemtype=\"https://pagelove.org/1.0/Error\">\n    <h1>403 Forbidden</h1>\n    <p itemprop=\"message\">You do not have permission to access this resource.</p>\n    <dl>\n        <dt>Resource</dt>\n        <dd itemprop=\"resource\">/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html</dd>\n    </dl>\n</body>\n</html>"
+        }
+      ]
+    },
+    {
+      "name": "daily: reject wrong content revision",
+      "attempts": [
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: reject client receipt",
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: reject client expiry",
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "daily: reject injected markup",
+      "attempts": [
+        {
+          "status": 500,
+          "detail": "<div itemscope itemtype=\"https://pagelove.org/Error\">\n    <meta itemprop=\"type\" content=\"TriggerError\">\n    <meta itemprop=\"source\" content=\"/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html\">\n    <meta itemprop=\"phase\" content=\"action\">\n    <p itemprop=\"message\">Trigger action failed: javascript/module binding exceeded memory budget</p>\n</div>"
+        },
+        {
+          "status": 422,
+          "detail": ""
+        }
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/editor/qa-13095337-missing-shell",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/editor/qa-13095337-missing-track",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/editor/qa-13095337-valid",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-daily.html",
+      "status": 204,
+      "absent": true
+    },
+    {
+      "path": "/boards/audit-13095337-591c-4fb9-acc1-c8ea18098fd6-trial.html",
+      "status": 204,
+      "absent": true
+    }
+  ],
+  "scope": "Actual public application endpoints on this host, using nonce-owned empty policy mirrors with unique run namespaces. Only resource paths/type namespaces differ from retained production policy; no live policy or player record is changed.",
+  "retentionRan": true,
+  "passed": false
+}

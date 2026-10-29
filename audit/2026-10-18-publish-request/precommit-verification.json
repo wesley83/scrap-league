@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-18T00:40:06.063Z",
+  "retainedHashesChecked": 247,
+  "guideEdition": "2.10.0",
+  "guideDigest": "b805bc8e89e61d567fac2d26d5e8bcc33e75e57964924a0b7aa6a3be7105c0f4",
+  "candidate": {
+    "release": "sl-b63afc9cbb2339",
+    "sourceHash": "9e10a98cb441eb3e4153f4e85911bb5c407a2dff5c15c38c3ae4a6d593d93a59",
+    "outputHash": "8bcdf0696e1bfcfd57e5f824df7a11095e2059fc799ac147f796f3cb81372e0c"
+  },
+  "priorTests": {
+    "passed": 115,
+    "failed": 0
+  },
+  "priorFinalOriginBrowserObservations": 19,
+  "sourceChangesSinceValidation": false,
+  "publisherResult": {
+    "error": "Required acceptance is missing or not passed: J02"
+  },
+  "productAcceptance": "not-accepted"
+}

@@ -1,0 +1,72 @@
+{
+  "utc": "2026-10-17T20:36:13.243Z",
+  "release": "sl-60bf1fb46ea8c0",
+  "implementationCommit": "8777624",
+  "origin": "https://hire-poker-8313.onpagelove.com/",
+  "sourceHash": "9d53f05db30246ba66a01a171cc87930962ad38a9d8c0fe22e5e7a3ba301695c",
+  "outputHash": "a485e889b0b0a03cce2e0d68c9be9d5f0306e3a39ecd2fd79d4a3fe2e7f98841",
+  "deploymentReceipt": "audit/deployment.json",
+  "verifiedPublicFilesAndRoutes": 110,
+  "browserMethod": "Codex in-app Chromium browser; normal UI, actual pointer hold, explicit viewport overrides; no physical phone claim",
+  "update": {
+    "previousCachedRelease": "sl-644d25b8e44419",
+    "throughNormalControls": true,
+    "newOverheadHomeLoaded": true,
+    "displayedProgressRetained": "4/12 parts, 0/12 events",
+    "preferencesRetained": [
+      "touch enabled",
+      "manual throttle",
+      "safer graphics"
+    ],
+    "offlinePack": "verified"
+  },
+  "leaderboards": {
+    "trial": "No times for this combination yet. Set the first one.",
+    "daily": "No times for this combination yet. Set the first one.",
+    "dailyTrack": "Container Switchback",
+    "dailyBuild": "Kite / Longrunner / Mixed / Capacitor",
+    "dailyDate": "2026-10-17 UTC",
+    "readResult": "passed on same origin",
+    "writeLimit": "Earlier public probe accepted/read back valid records but some duplicate and split-arithmetic requests returned provider memory-budget errors. That failed probe remains unresolved."
+  },
+  "racing": {
+    "viewports": [
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ]
+    ],
+    "pageloveFooterPresent": true,
+    "rendererVisible": true,
+    "manualControlsVisible": [
+      "steer",
+      "gas",
+      "brake",
+      "slide",
+      "boost"
+    ],
+    "actualGasHoldMs": 1200,
+    "observedSpeedKmh": 59,
+    "pauseAndResume": true
+  },
+  "workshop": {
+    "opened": true,
+    "validity": "651 m · 12 pieces · Race-ready",
+    "userDraftNotEdited": true
+  },
+  "screenshots": [
+    "audit/screenshots/remake-live-home.jpg",
+    "audit/screenshots/remake-live-board.jpg",
+    "audit/screenshots/remake-live-phone.jpg",
+    "audit/screenshots/remake-live-landscape.jpg",
+    "audit/screenshots/remake-live-workshop.jpg"
+  ],
+  "viewportReset": true,
+  "productAcceptance": "incomplete; observations scoped as recorded, pre-promotion authorization and ledger retained",
+  "promotionLedger": "audit/acceptance-arcade-at-promotion.json",
+  "promotionAuthorization": "audit/deployment-authorization-arcade-at-promotion.json"
+}

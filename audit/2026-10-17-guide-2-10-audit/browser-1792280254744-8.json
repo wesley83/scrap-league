@@ -1,0 +1,42 @@
+{
+  "release": "sl-8c38d2602f174d",
+  "scope": "controlled browser fixture; normal browser input recorded separately",
+  "results": [
+    {
+      "name": "Name form 200 percent reflow",
+      "status": "passed",
+      "durationMs": 438,
+      "details": {
+        "width": 320,
+        "height": 568,
+        "fontScale": 2,
+        "allComputedFontsDoubled": true,
+        "overflow": 0,
+        "focusedNameVisible": true
+      },
+      "qualification": {
+        "utc": "2026-10-17T23:37:34.300Z",
+        "release": "sl-8c38d2602f174d",
+        "entry": "http://127.0.0.1:4417/?css-restored=1792280226593",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "actualViewport": [
+          1100,
+          800
+        ],
+        "canvas": [
+          1650,
+          1128
+        ],
+        "renderer": "CanvasRenderingContext2D",
+        "safeGraphics": false,
+        "view": "result",
+        "sourceReady": true,
+        "initialState": "retained isolated audit-origin state; individual fixtures declare resets"
+      }
+    }
+  ],
+  "receiptUTC": "2026-10-17T23:37:34.744Z",
+  "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
+  "serverSha256": "e55a49556fc3bef2f2f43b1611812364134f365e5154156b17052eb281a87b9c",
+  "labSha256": "2cd8660febf1207226b9084de5174aa68b916db7d1e2a03ea5f20ac1830e503b"
+}

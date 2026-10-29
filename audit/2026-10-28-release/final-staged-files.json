@@ -1,0 +1,117 @@
+{
+  "utc": "2026-10-29T00:58:38.931Z",
+  "scope": "Audit-only closure; source/inventory/output unchanged from 27d3f86; generated patch/manifest exclude themselves",
+  "release": "sl-c84ff03afc7e71",
+  "sourceHash": "59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37",
+  "outputHash": "0d8db25f539f9b68ad5207f1107f2318830ebf6cf8a1e502b813ad9f1def01a1",
+  "liveGate": "passed",
+  "credentialPatternMatches": 0,
+  "workingBytesEqualStagedBytes": true,
+  "files": [
+    {
+      "path": "audit/2026-10-28-release/coverage-review.md",
+      "bytes": 8675,
+      "sha256": "bdc4877e4a661fc7643568636c164bd587abb2554aff0ba051c5479479e6cffe"
+    },
+    {
+      "path": "audit/2026-10-28-release/data-preservation.json",
+      "bytes": 1824,
+      "sha256": "0741c4b3dc60a790689813ace4572a3af53cad4456d38393e0cdb33ae9b50d1d"
+    },
+    {
+      "path": "audit/2026-10-28-release/deployment-receipt.json",
+      "bytes": 56842,
+      "sha256": "db65945b50921c18a62b13466b99356d8178a0740dc3bf60876f2bde36162df0"
+    },
+    {
+      "path": "audit/2026-10-28-release/evidence-review.md",
+      "bytes": 14643,
+      "sha256": "a255f215bf12fb8a8704f2919ecc2c43c857206b11fdf80f576ba24bcf97107f"
+    },
+    {
+      "path": "audit/2026-10-28-release/finalize.mjs",
+      "bytes": 2578,
+      "sha256": "7c8769651ecc6647bb1a604502a6a1c3449318e28bb09cb8fa86ea182bc954e9"
+    },
+    {
+      "path": "audit/2026-10-28-release/hosted-ci-raw.json",
+      "bytes": 4693,
+      "sha256": "66d231c218ab6c3d32c1c408f3915a027b0c77d17fa6e994bfc051d07c924c7c"
+    },
+    {
+      "path": "audit/2026-10-28-release/hosted-ci.json",
+      "bytes": 1092,
+      "sha256": "694759f5424dd7fbb301d5ca99e529bef0d1fd4c201077252c92d5694912d880"
+    },
+    {
+      "path": "audit/2026-10-28-release/hosted-watch.txt",
+      "bytes": 9274,
+      "sha256": "c32ce25e57e971b17918a73165ac42209082403e18f88dbc2e2b6ea5fb675a52"
+    },
+    {
+      "path": "audit/2026-10-28-release/live-verification.json",
+      "bytes": 1439,
+      "sha256": "6405740a03bf003cb6918412e26315e70e2dafe7e5640cb2e4179b672c5014d0"
+    },
+    {
+      "path": "audit/2026-10-28-release/observations.md",
+      "bytes": 2811,
+      "sha256": "e3626f52e6f58411580440d2380e0d91092b0dd9fdff37cb53e4e45803522949"
+    },
+    {
+      "path": "audit/2026-10-28-release/public-browser.json",
+      "bytes": 1149,
+      "sha256": "bc7a97e92b8c83e11bc36cb0840ee0e0e714ef463121f69a11cd8f451718cbd0"
+    },
+    {
+      "path": "audit/2026-10-28-release/public-browser.txt",
+      "bytes": 3226,
+      "sha256": "cb6373919edc20610e8da62b629dd53fcb1cbbfc25fa295e8a98bef6e61ad79c"
+    },
+    {
+      "path": "audit/2026-10-28-release/public-release.png",
+      "bytes": 40714,
+      "sha256": "635cbc6552bd1b8204a8e16563a80b5c265f4b08de887c9fd5657ffb073db863"
+    },
+    {
+      "path": "audit/2026-10-28-release/report.md",
+      "bytes": 2987,
+      "sha256": "e5b460eee8901cb670a1728ac1fbdfbe4691cfb17a042d9d7c1f94047bebce41"
+    },
+    {
+      "path": "audit/2026-10-28-release/reuse.json",
+      "bytes": 51116,
+      "sha256": "5bab017fad872cf9bda7d6bad16d9fa910211b01ffcb9e52f597a29b65843f9d"
+    },
+    {
+      "path": "audit/2026-10-28-release/running-job-log-response.txt",
+      "bytes": 674,
+      "sha256": "be847f00ce1394137853880021ad8d64e64f23b75dc2704024b03779aac63e9e"
+    },
+    {
+      "path": "audit/2026-10-28-release/verify-live.mjs",
+      "bytes": 3273,
+      "sha256": "1592aa11ec7c848101ff4f92249c26f54959cb4f70b7631521d3e36c06541123"
+    },
+    {
+      "path": "audit/2026-10-28-release/workshop-publication.json",
+      "bytes": 1337,
+      "sha256": "1a1d55631c81fd0de8fab4e068cc565525320a9e89080573e1ff7ca15db196c5"
+    },
+    {
+      "path": "audit/current-acceptance.json",
+      "bytes": 1166384,
+      "sha256": "3bf72042de198daad0c2c47b5e4839716fdcac329830c0c8f9cb6694504702be"
+    },
+    {
+      "path": "audit/deployment.json",
+      "bytes": 56842,
+      "sha256": "db65945b50921c18a62b13466b99356d8178a0740dc3bf60876f2bde36162df0"
+    },
+    {
+      "path": "audit/deployments/2026-10-29T00-50-58-640Z-f778c7b8-159b-4e85-8c44-3e17162852cb.jsonl",
+      "bytes": 206097,
+      "sha256": "a8717a3b7e9c39b02a2b0328aaf73ab49bd83eb0704cccc3136ead19e2714fa2"
+    }
+  ]
+}

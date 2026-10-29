@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-29T00:49:49.473Z",
+  "conclusion": "success",
+  "headSha": "27d3f86b4ec893799217f850560ca65bf1cd0267",
+  "jobs": [
+    {
+      "name": "Automated regression suite",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/wesley83/scrap-league/actions/runs/40796036506/job/123192625838"
+    },
+    {
+      "name": "Exact candidate acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/wesley83/scrap-league/actions/runs/40796036506/job/123194054772"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/wesley83/scrap-league/actions/runs/40796036506",
+  "sourceHash": "59b801fac6a0fa67b4a85dce57845782637dae876bfcb7e0f49336708e678a37",
+  "outputHash": "0d8db25f539f9b68ad5207f1107f2318830ebf6cf8a1e502b813ad9f1def01a1",
+  "artifactRelease": "sl-c84ff03afc7e71",
+  "artifactsMatch": true,
+  "scope": "Hosted Node 22/Bun 1.4.3 frozen install, build and 128 tests; exact candidate gate passed. Downloaded hosted release inventory and acceptance source/output match local."
+}

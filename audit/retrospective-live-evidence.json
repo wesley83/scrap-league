@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-16T12:08:20.843Z",
+  "method": "Unauthenticated HTTPS GET of public initial HTML and favicon; no scripts executed.",
+  "origin": "https://hire-poker-8313.onpagelove.com/",
+  "status": 200,
+  "htmlSha256": "48a21db8a1518c849dc2b67b37c6c9c27b96120829549efd3e145f9b664214d2",
+  "base": "./releases/sl-b5f8aa986aa675/",
+  "icons": [
+    "<link rel=\"icon\" href=\"icon.svg\" type=\"image/svg+xml\">"
+  ],
+  "social": [],
+  "icon": {
+    "url": "https://hire-poker-8313.onpagelove.com/releases/sl-b5f8aa986aa675/icon.svg",
+    "status": 200,
+    "contentType": "image/svg+xml"
+  },
+  "github": {
+    "observedUtc": "2026-10-16T12:08:20.845Z",
+    "method": "Authenticated read-only gh api calls in this retrospective; sanitized results only",
+    "workflows": {
+      "total_count": 0,
+      "workflows": []
+    },
+    "rulesets": [],
+    "branchProtection": {
+      "branch": "codex/initial-release",
+      "httpStatus": 404,
+      "message": "Branch not protected"
+    }
+  }
+}

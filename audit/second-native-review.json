@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-17T23:02:12.356Z",
+  "baseline": "b251d62",
+  "files": 112,
+  "diff": "audit/second-native-diff.patch",
+  "sha256": "83c2353af293f8ed88d9166ed8376d9cda63e10c0fffe3f0676f3f05ec6f7179",
+  "credentialScan": "passed",
+  "sourceWhitespaceCheck": "passed; raw logs, patch context and upstream license whitespace preserved",
+  "checks": "111 unit tests; all JS/CSS bytes match the sixteen-check browser runtime; composed native page inspected at desktop and fixed phone-frame dimensions"
+}

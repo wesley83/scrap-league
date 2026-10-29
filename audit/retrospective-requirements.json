@@ -1,0 +1,974 @@
+{
+  "title": "Scrap League retrospective requirement ledger",
+  "utc": "2026-10-16T12:13:57.292Z",
+  "evidenceContext": {
+    "sourceCommit": "b777c24e317f27d4347d379863717531195ea9f8",
+    "deployedCodeCommit": "740bcbcba5515c3a97a38fc0802e45b5a3ff7a83",
+    "release": "sl-b5f8aa986aa675",
+    "priorBrowserRelease": "sl-6e6641f094887e",
+    "inheritance": "Publication receipt records CSS as the only changed runtime asset. Earlier evidence is inherited only for unchanged behavior, never upgraded to a broader journey.",
+    "environment": "Current Windows/Node source review and isolated in-memory Workshop probes; live HTTPS metadata and GitHub API reads. Prior browser: Windows/Codex in-app Chromium, exact browser version and hardware unrecorded."
+  },
+  "statusSemantics": {
+    "Passed": "The stated row is supported within its explicit evidence scope; not certification of neighboring requirements.",
+    "Failed": "A required implementation/control is missing or contradicted, or a defect is reproduced.",
+    "Not run": "The complete required acceptance has not been executed/evidenced; partial evidence may exist.",
+    "Blocked": "A stated dependency prevents completion; not an accepted scope exception.",
+    "Accepted exception": "Requires explicit human acceptance of the named scope and consequence; no such row is recorded."
+  },
+  "topicSemantics": "Handbook topics use qualitative coverage, not pass percentages. These broad topics are not 26 independently executed tests.",
+  "counts": {
+    "journeys": 18,
+    "persistence": 9,
+    "milestones": 6,
+    "handbookTopics": 26,
+    "releaseControls": 10
+  },
+  "journeys": [
+    {
+      "id": "J01",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Keyboard driving and custom test lap observed; complete fresh-player Yard Loop plus novice observation/recording not established.",
+      "evidence": [
+        "ACCEPTANCE.md:26",
+        "audit/browser-game-review.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J02",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Keyboard pause/resume observed; full settings/focus and physical gamepad/touch journey not established. Source has direct settings resume and no paused-state gamepad polling.",
+      "evidence": [
+        "ACCEPTANCE.md:27",
+        "app/main.js:26",
+        "app/main.js:37",
+        "audit/browser-game-review.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J03",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "One-round pure idempotence fixture and transaction code exist; real three-race cup/reload/transaction-abort journey absent. Captured pending build/seed recovery is also incomplete.",
+      "evidence": [
+        "ACCEPTANCE.md:28",
+        "tests/campaign.test.mjs:6",
+        "app/main.js:17",
+        "app/storage.js:13"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J04",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "36 independent AI-driven races are not a persisted full campaign or human completion; designed campaign scenes remain incomplete.",
+      "evidence": [
+        "ACCEPTANCE.md:29",
+        "tests/campaign.test.mjs:5",
+        "IMPLEMENTATION-STATUS.md:13"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J05",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Garage and basic all-build bench exercised; full tradeoff measurements and player comprehension missing.",
+      "evidence": [
+        "ACCEPTANCE.md:30",
+        "tests/campaign.test.mjs:4"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J06",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Timing fixtures and best/ghost implementation exist; compatible ghost replay and improved-best UI journey not certified.",
+      "evidence": [
+        "ACCEPTANCE.md:31",
+        "tests/engine.test.mjs:13",
+        "audit/browser-game-review.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J07",
+      "group": "Player journey",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Daily identity is captured but complete midnight/later-upload path is unavailable because submissions are not implemented; no injected midnight UI test.",
+      "evidence": [
+        "ACCEPTANCE.md:32",
+        "app/main.js:19",
+        "IMPLEMENTATION-STATUS.md:17"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J08",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "New closed circuit and valid lap observed with keyboard/pointer; gap correction and real-touch complete journey not established.",
+      "evidence": [
+        "ACCEPTANCE.md:33",
+        "audit/browser-game-review.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J09",
+      "group": "Player journey",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "History/reload/test exercised in parts; stored editor view reset reproduced and failed-save navigation discards working copy. Full five-AI return/context journey missing.",
+      "evidence": [
+        "ACCEPTANCE.md:34",
+        "app/workshop.js:9",
+        "app/workshop.js:23",
+        "audit/retrospective-probe-evidence.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J10",
+      "group": "Player journey",
+      "status": "Passed",
+      "coverage": "Scoped journey evidence",
+      "finding": "Canonical round-trip and hostile import fixtures plus export/import UI evidence satisfy this row within tested inputs. No universal parser-security claim.",
+      "evidence": [
+        "ACCEPTANCE.md:35",
+        "tests/engine.test.mjs:5",
+        "tests/engine.test.mjs:8",
+        "audit/browser-game-review.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J11",
+      "group": "Player journey",
+      "status": "Failed",
+      "coverage": "Unavailable complete flow",
+      "finding": "Owner publishing UI absent; fixture adapter checks do not establish two real owner-editor conflict recovery.",
+      "evidence": [
+        "ACCEPTANCE.md:36",
+        "IMPLEMENTATION-STATUS.md:17",
+        "tests/authoring.test.mjs"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J12",
+      "group": "Player journey",
+      "status": "Failed",
+      "coverage": "Not implemented",
+      "finding": "Discovery catalog publication/retry flow absent.",
+      "evidence": [
+        "ACCEPTANCE.md:37",
+        "IMPLEMENTATION-STATUS.md:17"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J13",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Server-off reload and editing/racing observed in existing worker-controlled tab; cold process restart and installed phone untested.",
+      "evidence": [
+        "ACCEPTANCE.md:38",
+        "audit/browser-game-review.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J14",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Manual safe-screen update observed; natural foreground/reconnect discovery, physical installation and full fault lab missing.",
+      "evidence": [
+        "ACCEPTANCE.md:39",
+        "app/main.js:42",
+        "audit/publication-receipt.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J15",
+      "group": "Player journey",
+      "status": "Failed",
+      "coverage": "Not implemented",
+      "finding": "Durable result outbox and live ambiguous-acceptance reconciliation absent.",
+      "evidence": [
+        "ACCEPTANCE.md:40",
+        "IMPLEMENTATION-STATUS.md:17"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J16",
+      "group": "Player journey",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Some interruption pauses exist, but context restoration reloads and rotation/pointer cancellation do not implement promised explicit-resume behavior.",
+      "evidence": [
+        "ACCEPTANCE.md:41",
+        "app/renderer.js:6",
+        "app/main.js:39",
+        "app/main.js:40"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J17",
+      "group": "Player journey",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Failure fallback drops canonical URL; daily date/place and scorecard missing. Actual receiving-app test absent.",
+      "evidence": [
+        "ACCEPTANCE.md:42",
+        "app/main.js:32"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "J18",
+      "group": "Player journey",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Reduced motion/mute/low effects exist; all scene/readability/listening journey unverified; audio generation not suspended.",
+      "evidence": [
+        "ACCEPTANCE.md:43",
+        "app/main.js:3",
+        "app/audio.js:6"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    }
+  ],
+  "persistence": [
+    {
+      "id": "P01",
+      "group": "Persistence or provider boundary",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Draft save/navigation failure reproduced; quota, transaction, crash and schema fault matrix incomplete.",
+      "evidence": [
+        "ACCEPTANCE.md:63",
+        "audit/retrospective-probe-evidence.json",
+        "app/storage.js:12"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P02",
+      "group": "Persistence or provider boundary",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "One transaction and pure idempotence exist; actual IndexedDB abort/retry and best/ghost consistency not fault-tested.",
+      "evidence": [
+        "ACCEPTANCE.md:64",
+        "app/storage.js:13",
+        "tests/campaign.test.mjs:6"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P03",
+      "group": "Persistence or provider boundary",
+      "status": "Failed",
+      "coverage": "Not implemented",
+      "finding": "Outbox, leases, two-tab reconciliation and queue failure behavior absent.",
+      "evidence": [
+        "ACCEPTANCE.md:65",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P04",
+      "group": "Persistence or provider boundary",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Conditional deployment uses actual provider; isolated track adapter has fixtures. Full owner authoring wrong-key/create/conflict/ambiguous matrix not run on application path.",
+      "evidence": [
+        "ACCEPTANCE.md:66",
+        "tests/authoring.test.mjs",
+        "audit/deployment.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P05",
+      "group": "Persistence or provider boundary",
+      "status": "Failed",
+      "coverage": "Not implemented",
+      "finding": "Public record endpoint/enforcement absent; local validator alone insufficient.",
+      "evidence": [
+        "ACCEPTANCE.md:67",
+        "tests/authoring.test.mjs:6",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P06",
+      "group": "Persistence or provider boundary",
+      "status": "Failed",
+      "coverage": "Not implemented",
+      "finding": "Online five-day retention and enforcement/physical cleanup evidence absent.",
+      "evidence": [
+        "ACCEPTANCE.md:68",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P07",
+      "group": "Persistence or provider boundary",
+      "status": "Failed",
+      "coverage": "Not implemented",
+      "finding": "Native editor routes/composition and failure fallback absent.",
+      "evidence": [
+        "ACCEPTANCE.md:69",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P08",
+      "group": "Persistence or provider boundary",
+      "status": "Blocked",
+      "coverage": "Provider dependency unresolved",
+      "finding": "Supported public-policy activation procedure/readiness not established for this application. Static DAV deployment does not prove it.",
+      "evidence": [
+        "ACCEPTANCE.md:70",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "P09",
+      "group": "Persistence or provider boundary",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Old release assets and local drafts preserved through actual update; populated online Workshop/catalog/board migration not exercised because these services are absent.",
+      "evidence": [
+        "ACCEPTANCE.md:71",
+        "audit/publication-receipt.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M01",
+      "group": "Milestone",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Model and handling foundation exists; full collision/input/recovery contracts and all-build bench exit criteria unmet.",
+      "evidence": [
+        "ACCEPTANCE.md:15",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "M02",
+      "group": "Milestone",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Playable race and meaningful editor delivered; failed-save recovery defect means required recovery boundary incomplete.",
+      "evidence": [
+        "ACCEPTANCE.md:16",
+        "audit/browser-game-review.json",
+        "audit/retrospective-probe-evidence.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "M03",
+      "group": "Milestone",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Content and garage counts delivered; official UI authoring provenance and human handling review not completed.",
+      "evidence": [
+        "ACCEPTANCE.md:17",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "M04",
+      "group": "Milestone",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Local saves, daily/ghost/offline basics present; sharing/install/audio/failure acceptance incomplete.",
+      "evidence": [
+        "ACCEPTANCE.md:18",
+        "audit/browser-game-review.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "M05",
+      "group": "Milestone",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Static hosting and disconnected owner adapter delivered; agreed online application flows absent.",
+      "evidence": [
+        "ACCEPTANCE.md:19",
+        "IMPLEMENTATION-STATUS.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "M06",
+      "group": "Milestone",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Complete assets, enforced CI, rollback and full human/device acceptance absent; no accepted exceptions.",
+      "evidence": [
+        "ACCEPTANCE.md:20",
+        "audit/retrospective-live-evidence.json",
+        "ASSETS.md:7"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    }
+  ],
+  "handbookTopics": [
+    {
+      "id": "H01",
+      "group": "Handbook topic",
+      "topic": "Player contract",
+      "coverage": "Partial",
+      "finding": "Playable modes exist; full natural journeys unfinished.",
+      "related": [
+        "J01",
+        "J03",
+        "J04"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H02",
+      "group": "Handbook topic",
+      "topic": "Document model",
+      "coverage": "Substantial partial evidence",
+      "finding": "Shared semantic model/compiler and independent fixtures exist; broader schema/failure coverage remains.",
+      "related": [
+        "J10",
+        "M01"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H03",
+      "group": "Handbook topic",
+      "topic": "Pagelove suitability",
+      "coverage": "Partial",
+      "finding": "Document-first content and hosting used; native/online services absent.",
+      "related": [
+        "P04",
+        "P05",
+        "P07",
+        "P08"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H04",
+      "group": "Handbook topic",
+      "topic": "Extensibility and editor",
+      "coverage": "Partial",
+      "finding": "Integrated editor works; scope and failure-recovery gaps remain.",
+      "related": [
+        "J08",
+        "J09",
+        "M02"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H05",
+      "group": "Handbook topic",
+      "topic": "State input and simulation",
+      "coverage": "Partial",
+      "finding": "Fixed-step and legal controls exist; interruption/collision contracts incomplete.",
+      "related": [
+        "J02",
+        "J16",
+        "M01"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H06",
+      "group": "Handbook topic",
+      "topic": "Engagement",
+      "coverage": "Not validated",
+      "finding": "Progression and named rivals exist; human engagement review absent.",
+      "related": [
+        "J01",
+        "J04",
+        "J05"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H07",
+      "group": "Handbook topic",
+      "topic": "Balance",
+      "coverage": "Not validated",
+      "finding": "Basic benches and AI completion do not establish tradeoffs or difficulty.",
+      "related": [
+        "J05",
+        "M03"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H08",
+      "group": "Handbook topic",
+      "topic": "Scoring and fairness",
+      "coverage": "Partial",
+      "finding": "Independent crossing arithmetic and idempotence fixtures; complete campaign/ghost/degradation verification missing.",
+      "related": [
+        "J03",
+        "J06",
+        "P02"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H09",
+      "group": "Handbook topic",
+      "topic": "Effect interactions",
+      "coverage": "Partial",
+      "finding": "Implemented core effects; specified interaction matrix incomplete.",
+      "related": [
+        "M01"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H10",
+      "group": "Handbook topic",
+      "topic": "Leaderboards",
+      "coverage": "Not implemented",
+      "finding": "Public boards and durable outbox absent.",
+      "related": [
+        "J15",
+        "P03",
+        "P05"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H11",
+      "group": "Handbook topic",
+      "topic": "Daily and expiry",
+      "coverage": "Partial",
+      "finding": "Downloaded dated schedule exists; midnight/online historical/expiry flows incomplete.",
+      "related": [
+        "J07",
+        "P06"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H12",
+      "group": "Handbook topic",
+      "topic": "Screens and inputs",
+      "coverage": "Partial",
+      "finding": "Desktop/narrow emulation observed; full physical-input/device matrix missing.",
+      "related": [
+        "J02",
+        "J08",
+        "J16"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H13",
+      "group": "Handbook topic",
+      "topic": "Accessibility",
+      "coverage": "Partial",
+      "finding": "Semantic controls and reduced motion exist; remapping/HUD and AT/zoom review incomplete.",
+      "related": [
+        "J18"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H14",
+      "group": "Handbook topic",
+      "topic": "Scenes and audio",
+      "coverage": "Partial",
+      "finding": "Procedural engine/motifs and held result dialog exist; full scenes/cues/suspension/listening absent.",
+      "related": [
+        "J04",
+        "J18"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H15",
+      "group": "Handbook topic",
+      "topic": "Performance",
+      "coverage": "Not measured against budgets",
+      "finding": "No sustained baseline-device budget receipt; degradation contract incomplete.",
+      "related": [
+        "M01",
+        "M06"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H16",
+      "group": "Handbook topic",
+      "topic": "Brand and assets",
+      "coverage": "Incomplete",
+      "finding": "SVG exists; social/install/font pack incomplete.",
+      "related": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H17",
+      "group": "Handbook topic",
+      "topic": "Sharing",
+      "coverage": "Incomplete",
+      "finding": "Basic share exists; link lost on failure and complete fallbacks absent.",
+      "related": [
+        "J17"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H18",
+      "group": "Handbook topic",
+      "topic": "Offline and updates",
+      "coverage": "Partial",
+      "finding": "Hashed install and manual update exercised; full readiness/cache-loss/multi-client laboratory missing.",
+      "related": [
+        "J13",
+        "J14"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H19",
+      "group": "Handbook topic",
+      "topic": "Installation and fullscreen",
+      "coverage": "Partial",
+      "finding": "Manifest/gesture control exist; chosen icons and installed-device review incomplete.",
+      "related": [
+        "C02",
+        "J13",
+        "J14"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H20",
+      "group": "Handbook topic",
+      "topic": "Release",
+      "coverage": "Partial",
+      "finding": "Careful staging/readback; no enforced acceptance or tested rollback.",
+      "related": [
+        "C04",
+        "C05",
+        "C06",
+        "C08"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H21",
+      "group": "Handbook topic",
+      "topic": "Complete review",
+      "coverage": "Incomplete",
+      "finding": "Broad exact-release journeys/human evidence not complete.",
+      "related": [
+        "M06",
+        "C09",
+        "C10"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H22",
+      "group": "Handbook topic",
+      "topic": "Incidents and audit",
+      "coverage": "Partial",
+      "finding": "Plans/receipts preserved; prior progression anomaly root cause unresolved.",
+      "related": [
+        "C09",
+        "C10"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H23",
+      "group": "Handbook topic",
+      "topic": "Genre adaptation",
+      "coverage": "Partial",
+      "finding": "Racing invariants and integrated editor adapted; continuous collision and human race behavior unfinished.",
+      "related": [
+        "M01",
+        "M03"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H24",
+      "group": "Handbook topic",
+      "topic": "Templates",
+      "coverage": "Not operationalized",
+      "finding": "Design checklist existed but did not gate implementation or publishing.",
+      "related": [
+        "M06",
+        "C04",
+        "C05"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H25",
+      "group": "Handbook topic",
+      "topic": "Corrections from prior game",
+      "coverage": "Partial",
+      "finding": "DAV trust and device limits retained; social/startup/audio/update lessons not fully implemented.",
+      "related": [
+        "C01",
+        "J16",
+        "J17",
+        "J18"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    },
+    {
+      "id": "H26",
+      "group": "Handbook topic",
+      "topic": "Source mapping and Appendix A",
+      "coverage": "Documented, incompletely executed",
+      "finding": "Reference snapshots and rule mapping preserved; mapping was treated as sufficient traceability without complete runtime proof.",
+      "related": [
+        "M06"
+      ],
+      "source": "ACCEPTANCE.md best-practice coverage table; references/GAME-DEVELOPMENT-BEST-PRACTICES.md",
+      "context": "evidenceContext"
+    }
+  ],
+  "releaseControls": [
+    {
+      "id": "C01",
+      "group": "Release control",
+      "status": "Failed",
+      "coverage": "Missing",
+      "finding": "OG artwork and initial social metadata absent in live HTML.",
+      "evidence": [
+        "references/GAME-DEVELOPMENT-BEST-PRACTICES.md:473",
+        "audit/retrospective-live-evidence.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C02",
+      "group": "Release control",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "SVG favicon works; required chosen raster/touch/maskable set absent.",
+      "evidence": [
+        "references/GAME-DEVELOPMENT-BEST-PRACTICES.md:454",
+        "ASSETS.md:7",
+        "tools/build.mjs:6"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C03",
+      "group": "Release control",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Asset inventory documents existing procedural sources/licenses but defers required posters/fonts; no complete export/source checklist.",
+      "evidence": [
+        "ASSETS.md",
+        "GAME-DESIGN.md:137"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C04",
+      "group": "Release control",
+      "status": "Failed",
+      "coverage": "Not enforced",
+      "finding": "Zero Actions workflows/rulesets; release branch unprotected; no required failing-fixture gate.",
+      "evidence": [
+        "ARCHITECTURE.md:193",
+        "audit/retrospective-live-evidence.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C05",
+      "group": "Release control",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Publisher verifies dist bytes but does not bind acceptance receipt to clean current source and rebuild.",
+      "evidence": [
+        "tools/deploy-pagelove.mjs:77",
+        "references/GAME-DEVELOPMENT-BEST-PRACTICES.md:599"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C06",
+      "group": "Release control",
+      "status": "Passed",
+      "coverage": "Existing published paths only",
+      "finding": "51 public paths verified during deployment with strict semantic normalization; omission detection is not part of this pass.",
+      "evidence": [
+        "audit/deployment.json",
+        "tests/deployment.test.mjs",
+        "audit/publication-receipt.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C07",
+      "group": "Release control",
+      "status": "Passed",
+      "coverage": "Recorded publication scope",
+      "finding": "Publication evidence records hidden-stdin credential handling and no public secret/private backup inclusion. No new credential use in retrospective.",
+      "evidence": [
+        "audit/publication-receipt.json",
+        "audit/2026-10-16-publication.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C08",
+      "group": "Release control",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "Previous releases/baselines retained; end-to-end rollback drill not evidenced.",
+      "evidence": [
+        "ARCHITECTURE.md:192",
+        "audit/2026-10-16-publication.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C09",
+      "group": "Release control",
+      "status": "Failed",
+      "coverage": "Partial",
+      "finding": "Receipts identify OS/browser family and release, but omit exact browser/hardware and persistent screenshot/recording artifacts required for repeatable acceptance.",
+      "evidence": [
+        "ACCEPTANCE.md:89",
+        "audit/browser-game-review.json",
+        "audit/publication-receipt.json"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    },
+    {
+      "id": "C10",
+      "group": "Release control",
+      "status": "Not run",
+      "coverage": "Partial",
+      "finding": "24 current test definitions identified; prior 21 gameplay/authoring tests plus three publication tests recorded separately. No fresh full-suite run asserted in this review and no single complete acceptance receipt.",
+      "evidence": [
+        "package.json",
+        "tests",
+        "audit/2026-10-16-implementation.md",
+        "audit/2026-10-16-publication.md"
+      ],
+      "context": "evidenceContext",
+      "acceptedException": null
+    }
+  ]
+}

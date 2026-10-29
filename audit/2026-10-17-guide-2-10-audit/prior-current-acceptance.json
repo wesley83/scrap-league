@@ -1,0 +1,3393 @@
+{
+  "version": 2,
+  "utc": "2026-10-17T23:06:28.039Z",
+  "release": "sl-8c38d2602f174d",
+  "sourceHash": "13db745d910749cd0c22bcbd15257e8047e684e38933fd449624007672336197",
+  "outputHash": "ee95a4e2771ff97d5fbc3c0086e0310c742c705239709385d582978ebfccf422",
+  "scopeChange": "Real-hardware and human-playtesting requirements removed by explicit user instruction. No other outcome waived.",
+  "status": "not-accepted",
+  "evidenceReuse": {
+    "path": "audit/second-verification.json",
+    "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f",
+    "note": "Risk-based reuse of byte-identical gameplay/render/storage modules; current changed behavior directly checked. Historical scopes and failures remain intact."
+  },
+  "requirements": [
+    {
+      "id": "J01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Account-free Quick Race and action-based practice pass in the current browser fixture. Actual normal-browser offline keyboard racing separately passed.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J02",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current injected gamepad confirms Settings, changes range, returns, drives, pauses/resumes and cancels on disconnect. Independent pointer ownership/resize and keyboard focus-release checks pass; normal browser keyboard racing also passed.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current exact-runtime twelve-event UI campaign reloads after the first round, checks round increment and unique event awards, and finishes all four cups. Atomic idempotence regressions independently pass.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "fe879c7f957fc410a3be3ee6ec2695fad04d197fe41991b111502bdcd69e9d3e"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J04",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current exact-runtime twelve-event campaign finishes every three-lap event through legal car-controller inputs, observes all four scenes and holds the readable ending for 5.5 seconds. Accelerated simulation ticks are not a human pacing measurement.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "fe879c7f957fc410a3be3ee6ec2695fad04d197fe41991b111502bdcd69e9d3e"
+        },
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J05",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current garage fixture compares matching tire descriptions/grip, equips rally tires, drives and returns with selection preserved. All 81 independent handling measurements pass.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+        },
+        {
+          "path": "audit/remediation-handling.json",
+          "sha256": "38f021c585a5609d707e4df895a6ba51a9e5fcfe92d2c68c0f5cae79bb78d867"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J06",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current browser completes a slower then improved three-lap solo run, saves/loads a compatible ghost and confirms the better best. Independent split arithmetic regressions pass.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J07",
+      "stage": "local",
+      "status": "passed",
+      "note": "Injected clock crosses UTC midnight between capture and result; database reopen and upload two days later retain the original challenge and confirm once in a fixture endpoint.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J08",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current browser authors eight road pieces through editor controls, closes the successor gap, sets gates/grid, validates and drives three laps. This is the semantic form route, not a claim about every possible input sequence.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/browser-game-review.json",
+          "sha256": "40b97a8a541814953df6782b12c0d9f4e5c50713c304fafe7251d386e1761c94"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current editor saves/reloads, tests with five AI, returns with history, and preserves source on failed save. Actual closed IndexedDB still allows Files/export; delayed entry/corrupt source recovery and last-navigation-intent ordering pass.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J10",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canonical authoritative round trips and hostile/unknown/executable import refusal fixtures pass.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J11",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Two stale owner revisions exercised against a uniquely owned provider document; conditional update succeeded and stale revision was refused without replacing the accepted track.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J12",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Production publication wrapper on a disposable live circuit encounters an actual 412 from an injected stale catalog ETag; the exact public track remains semantically readable and listing retry succeeds. This is endpoint/function evidence, not a full owner-key form browser journey.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/handbook-workshop-at-promotion.json",
+          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J13",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Final installed runtime loads fresh documents, recovers deep links, edits/saves/reloads offline with its server stopped and retains progress/nickname. Native process capture approval timed out, so actual browser-process restart is not established.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J14",
+      "stage": "local",
+      "status": "passed",
+      "note": "Normal installed browser copy updates from sl-de66ac8ab06a61 to the current runtime through explicit game controls, retaining progress. Current foreground/reconnect discovery and visible review control pass injected-worker tests; activation is never automatic.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-update-eca6.json",
+          "sha256": "b27b2a0fbde191d3667bc2095212f458a2059daf7692ef2a2a45c4f6dd4f295f"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
+          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        },
+        {
+          "path": "audit/deployment-browser-verification.json",
+          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
+        },
+        {
+          "path": "audit/pwa-update-verification/six-scenarios.json",
+          "sha256": "976e6443e917c985183033c4619b27f3dcc9ea1fc2aaeabe7f5bf7dbb56bf16e"
+        },
+        {
+          "path": "audit/pwa-update-verification/browser-results.json",
+          "sha256": "f434ccaa4dbf6c2fe5c006c0202bab1df30c7668f1ca4a355ef8e127e7192aa4"
+        },
+        {
+          "path": "audit/pwa-update-verification/REPORT.md",
+          "sha256": "e7c1c0729ce4f45ddff8f695408635867d38be934199f4938f863e5f1689034a"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J15",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Two independent production Store/Boards connections reconcile an intentionally dropped response after actual public acceptance: one claim, original identity, one public copy and confirmed outbox. IndexedDB is emulated in this endpoint fixture; browser storage and leases are covered separately. Owned row conditionally removed.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J16",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canvas failure injection and replacement preserve the paused race and clock. Six viewport layouts and independent pointer cancellation pass; actual offline keyboard input works. No physical-device claim.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J17",
+      "stage": "local",
+      "status": "passed",
+      "note": "Complete invitations and independently decoded scorecard are verified. Browser-executed production sharing fixtures cover success, cancellation without fallback side effects, clipboard fallback and denied-clipboard manual fallback. Navigator APIs are injected; no OS share-sheet or external-message claim.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-garage-share-final.json",
+          "sha256": "e5ef0d453a9e470990c94c4dbf61c550ebb7045712b06e8a603d970759726504"
+        },
+        {
+          "path": "audit/remediation-scorecard-verification.json",
+          "sha256": "2b87dc719e4b61777dd3ac0bb283c10337e5a4cee17accfc081563398d5302d5"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "J18",
+      "stage": "local",
+      "status": "passed",
+      "note": "Exact current twelve-event campaign runs muted, reduced motion and low effects, checks all scene captions and held ending. Existing bounded audio signal/voice tests pass; no perceptual listening claim.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remediation-browser-lab-scenes.json",
+          "sha256": "1853b58b83fa43fd5636ced26bc930896c101c2347d986144a891fa7b499d91e"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "stage": "local",
+      "status": "partial",
+      "note": "Migration, conflict, quota, abort/reopen, backup and actual closed-connection/export recovery pass. Complete process-crash-before/after-commit matrix remains unverified because isolated native browser control was unavailable.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-lab-first-pass.json",
+          "sha256": "55f5caa07403793665045c3489f0a857b3a5887df41bbf549785017324bf6a2e"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "stage": "local",
+      "status": "passed",
+      "note": "Result and best transaction aborts preserve rewards/best/ghost atomically; same-ID retries retain one consistent record.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Exclusive/expired leases, late responses, closed storage, ambiguous acceptance, full pending capacity and permanent rejection are covered by passing fixtures.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-boundary-tests.txt",
+          "sha256": "372faeea950aeb77cb0b2f0bfffe94880c7e7e3332914576d93cf59abc887a42"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Current live production publication functions pass pinned-host writes, wrong credential, stale baseline, create-only 412, lost accepted-response reconciliation and public semantic readback. Complete browser owner-key form operation is not inferred from these endpoint checks.",
+      "artifacts": [
+        {
+          "path": "audit/handbook-workshop-publication.json",
+          "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
+        },
+        {
+          "path": "audit/handbook-workshop-at-promotion.json",
+          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Live nonce policy mirrors rejected missing/extra/type/split/revision/client receipt/expiry/markup and prohibited mutations. Daily duplicate request still encountered provider 500 while one stored copy remained. Complete all-field public matrix and consistent explicit duplicate rejection are not established; raw failures and cleanup retained.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
+          "sha256": "607b3b99beb47da37aa1c1e7138d88a5a8990621d1e858d98f9468b01d21a1dc"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-35-54-307Z.json",
+          "sha256": "0ae852a171adbcee7eb6c10445b00580cab88caf72c9bd4d1bc00db3962c7d9e"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-44-20-406Z.json",
+          "sha256": "a461286357e5bc21b937cdb58299aac7908adc74646c11d257c2852fc36db221"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Server receipt/five-day lifetime and exact inclusive expiry/offline filtering pass local contracts. Actual public access removes multiple interleaved expired rows, preserves active controls, removes a near-boundary row and remains stable on repeat; independent owner DAV inspection confirms physical removal. Owner-seeded times exercise the predicate without claiming five elapsed days.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
+          "sha256": "607b3b99beb47da37aa1c1e7138d88a5a8990621d1e858d98f9468b01d21a1dc"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-35-54-307Z.json",
+          "sha256": "0ae852a171adbcee7eb6c10445b00580cab88caf72c9bd4d1bc00db3962c7d9e"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-44-20-406Z.json",
+          "sha256": "a461286357e5bc21b937cdb58299aac7908adc74646c11d257c2852fc36db221"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Actual provider fixtures verify intended shell/track and 404 on missing includes. Final installed browser with server stopped recovers track links, hostile chooser and next saved-editor action; worker fixtures additionally cover HTTP404/503, success/auth passthrough, cache integrity and no API/query interception. First-ever clients without a verified pack retain provider errors.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-provider-probe-method-failure.json",
+          "sha256": "275cb6bbd0fb20f503d73fa3d776dff4398263589c72f3f95c00124c4e7440d6"
+        },
+        {
+          "path": "audit/remediation-provider-probe.json",
+          "sha256": "0ff2db8eb13ac1593759ce52cc012f2b8550c467f53f6bc77395f0be075edea3"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
+          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-browser-verification.json",
+          "sha256": "b3425e65127fab43d64bce5b3dd51072e90fe236f8ed8874e7c1c78a91762510"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
+          "sha256": "607b3b99beb47da37aa1c1e7138d88a5a8990621d1e858d98f9468b01d21a1dc"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-35-54-307Z.json",
+          "sha256": "0ae852a171adbcee7eb6c10445b00580cab88caf72c9bd4d1bc00db3962c7d9e"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-44-20-406Z.json",
+          "sha256": "a461286357e5bc21b937cdb58299aac7908adc74646c11d257c2852fc36db221"
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "stage": "staged",
+      "status": "blocked",
+      "note": "No supported provider-wide readiness procedure is available. Public reads/writes are observed; 500 memory-budget and earlier 403 responses remain recorded. Hosts are not presumed to have different capabilities.",
+      "artifacts": [
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Both existing boards and Workshop catalog retain identical owner hashes across this pass's promotions; baseline catalog has no referenced definitions. 50 original, 50 first-intermediate and 50 pre-native-fix immutable dependencies remain intact. Earlier populated owned fixture evidence stays scoped to its prior promotion.",
+      "artifacts": [
+        {
+          "path": "audit/second-data-preservation.json",
+          "sha256": "febba83bf411b92605ffb26af5c4eae6eedb7797e542c7aa7d678b86d47bb856"
+        },
+        {
+          "path": "audit/second-old-client-after.json",
+          "sha256": "356fdf3b9f7551a0eb6806b16a1e2519ff930ef8793c283b6139ca756762c3c1"
+        },
+        {
+          "path": "audit/second-intermediate-after.json",
+          "sha256": "1375ed2e542de1cbf7e0cd40a9ce96f4b741ee24eb30ecbfe81f5b03d91bb99b"
+        },
+        {
+          "path": "audit/second-pre-native-after.json",
+          "sha256": "67e1059fe9f1742c97541ce4cec9cef536b498bc391379e2a66a4bf7cea1310e"
+        },
+        {
+          "path": "audit/handbook-data-preservation.json",
+          "sha256": "f8b5f656f16b2467693b52014893f8bd409e6fcd88e548025d8575687da7ea7b"
+        },
+        {
+          "path": "audit/handbook-workshop-publication.json",
+          "sha256": "587cfcb052028fdd7cae09467553109070f4b86f9fb8d2793ab37d8c2193f52a"
+        },
+        {
+          "path": "audit/deployment.json",
+          "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Shared model/source/compiler, collision/handling, transactional editor source, controls and recovery pass current tests; renderer remains a derived view.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-final.json",
+          "sha256": "b88a3ca50b3f351d76632362551eb29b1ecafaad6492bbb2866f80517568a2c1"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "stage": "local",
+      "status": "passed",
+      "note": "Normal-browser keyboard creator journey builds eight pieces, closes/validates, tests real driving with five AI, returns, undoes/redoes, downloads HTML, imports a new copy and recovers saved/offline edits. Separate current legal-controller fixture finishes three laps on the same authored model. All-keyboard activation is connector-focused rather than an exhaustive sequential-Tab claim.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "stage": "local",
+      "status": "partial",
+      "note": "All references/builds and continuous seeded campaigns pass. Originals were CLI-authored; editing copies through Workshop does not retroactively satisfy original authoring provenance.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-persisted-campaigns.json",
+          "sha256": "fe879c7f957fc410a3be3ee6ec2695fad04d197fe41991b111502bdcd69e9d3e"
+        },
+        {
+          "path": "audit/remediation-browser-ui-first-run.json",
+          "sha256": "4bae84c2a6367bdc4f85aeaa1dd6655bb5cc630fba67cacfa4e1497c51a3e7c3"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "stage": "local",
+      "status": "blocked",
+      "note": "Current saves/ghosts/daily/offline/update/sharing/input evidence passes with explicit unchanged-module reuse. Actual browser-process cold relaunch remains unavailable after native control approval timed out.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "stage": "staged",
+      "status": "partial",
+      "note": "Current public boundary and physical retention coverage increased; existing owner conflict/lost-response and queue reconciliation evidence is retained for unchanged functions. Provider-wide readiness is unsupported and intermittent 500/503 remains unresolved.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-33-47-870Z.json",
+          "sha256": "feb1685e93c4bb33a438fe72526de42c91fc713c63c97bde59c48a2a7a44154a"
+        },
+        {
+          "path": "audit/boards-provisioning-2026-10-17T02-42-31-412Z.json",
+          "sha256": "d3300a309b62e1e9c0f8ecc59a4bd9c0fad006069f9a5cfc3d8c334867a17e42"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-21-55-590Z.json",
+          "sha256": "a7b5ca32c79216b4bc50d0c65614e2040917c6e15ac0f9806092b3aff8a8426a"
+        },
+        {
+          "path": "audit/boards-public-check-2026-10-17T15-24-51-724Z.json",
+          "sha256": "29374eec5e7b01d5b1574f56c7ea50332c092d1d533c29486466b866271ad314"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/handbook-workshop-at-promotion.json",
+          "sha256": "77daab1c62b30989893051199def2948ca6d5b63279434d0ec867c8ef95fd9f1"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-40-49-414Z.json",
+          "sha256": "607b3b99beb47da37aa1c1e7138d88a5a8990621d1e858d98f9468b01d21a1dc"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-35-54-307Z.json",
+          "sha256": "0ae852a171adbcee7eb6c10445b00580cab88caf72c9bd4d1bc00db3962c7d9e"
+        },
+        {
+          "path": "audit/provider-gap-probe-2026-10-17T22-44-20-406Z.json",
+          "sha256": "a461286357e5bc21b937cdb58299aac7908adc74646c11d257c2852fc36db221"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "stage": "live",
+      "status": "blocked",
+      "note": "Exact corrected candidate is committed, pushed, deployed and live-verified. All independently repairable confirmed defects in this pass are corrected; retained process-recovery/provider/provenance requirements still prevent full product acceptance. Strict gate is unchanged.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment.json",
+          "sha256": "317293c0cd0aacd72be090b5e3494af53fd779aae71ea0e812a3fb63580447cd"
+        },
+        {
+          "path": "audit/mobile-baseline/deployment-live-readback.json",
+          "sha256": "22ee042e666e306a3419077e6b5b3d875179d35e9988e2bb27878c60aa898b30"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C01",
+      "stage": "local",
+      "status": "passed",
+      "note": "Both newly authored overhead posters decode; initial OG/Twitter metadata validates in the build. Public readback is separate.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "stage": "local",
+      "status": "passed",
+      "note": "ICO and all declared PNG sizes decode. Tiny/light/dark and mask-safe visual sheet was inspected. Icons are unchanged from that browser check.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/screenshots/remediation-icons.jpg",
+          "sha256": "8ae2d0569c2d27bcaeeea7270eea9abf199dfd38a61bd4c3c00be6408abaf576"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "stage": "local",
+      "status": "passed",
+      "note": "Canvas runtime assets, retained editable SVG poster sources, icon sources, fonts/licenses and offline/public inventories validate. No Three.js shipped in the new release.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "stage": "staged",
+      "status": "passed",
+      "note": "Hosted commit 69aabbf passed the complete Automated regression suite. Its separate Exact candidate acceptance job rebuilt the exact source then refused unverified J13. Required default-branch checks remain recorded in the retained policy receipt; no gate was weakened.",
+      "artifacts": [
+        {
+          "path": "audit/handbook-hosted-ci.json",
+          "sha256": "bc783f8d06d3e71ab89e8a8f33541bf8839c3dcdad5dbf716cc4dcfaf574d066"
+        },
+        {
+          "path": "audit/handbook-hosted-acceptance.txt",
+          "sha256": "37bc76128efd56877e4df815c1a7582f473e1151f94b23af5cf9a9cf50468cb9"
+        },
+        {
+          "path": "audit/remediation-required-checks.json",
+          "sha256": "27b7934a8ef0a3e360aa8fca365d71aec8a055410ca52b3f827dfcae6608761f"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "stage": "local",
+      "status": "passed",
+      "note": "Package/deployment share exact source-input identity and stage gates. Missing asset, stale source, missing evidence and failed provider acceptance are refused in isolated copies.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "stage": "live",
+      "status": "passed",
+      "note": "Published sl-8c38d2602f174d from df8e30b; all 112 public assets/routes read back. Normal older installed public client explicitly updated, kept progress/driver/draft, verified offline pack, drove with real keys and opened the native editor. Exact screenshots and bounded observations retained.",
+      "artifacts": [
+        {
+          "path": "audit/deployment.json",
+          "sha256": "eb67c1bbf8883d120d86bdba0c8304f71f23b5cd26bf9385438697bae9bf6a65"
+        },
+        {
+          "path": "audit/second-live-verification.json",
+          "sha256": "6d111ad0137835be7cbb0654afdff7560c78137fff84a6c342ad0b20e9431d17"
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "stage": "local",
+      "status": "passed",
+      "note": "Source identity scans credential-like values; private baselines and dependencies are excluded by explicit package inventory. Deployment input is hidden and credentials remain in RAM.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "stage": "local",
+      "status": "passed",
+      "note": "Conditional A-to-B-to-A root restoration reconciles ambiguity; stale/tampered plans fail before writing; unrelated records and immutable dependencies preserved.",
+      "artifacts": [
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "stage": "local",
+      "status": "passed",
+      "note": "Current browser/campaign/performance receipts retain exact runtime, UA and method; normal update/offline evidence has explicit limitations. Raw failed attempts and isolated successful follow-ups are preserved.",
+      "artifacts": [
+        {
+          "path": "audit/remediation-native-and-assets.json",
+          "sha256": "10120b02bcfd2db63ad04bfbbf0a36215a5abd5a313d3b4b60fe6e15bd8b2560"
+        },
+        {
+          "path": "audit/remediation-input-large-text.json",
+          "sha256": "7c7819101c1ea76807ab74ddbf9eb3e7379f94268923738fc6c6f60dbec2c66f"
+        },
+        {
+          "path": "audit/screenshots/remediation-yard.jpg",
+          "sha256": "cfab60732e8614832e806671a45315810787f8840a92131dbcb0064f4f4334b2"
+        },
+        {
+          "path": "audit/mobile-graphics-browser.json",
+          "sha256": "c62968ebced0d16c98446ccb47892936731f64631a1f6eed6344692ad9542140"
+        },
+        {
+          "path": "audit/deployment-browser-verification.json",
+          "sha256": "612ac6356139877fe488726a0641eb0364f5879fc2b6608c97430a3d088feb73"
+        },
+        {
+          "path": "audit/screenshots/mobile-graphics-live-portrait.png",
+          "sha256": "347e54f65062eaa83aa5310ed2882549de574b974b1b34c36da01898e1b43279"
+        },
+        {
+          "path": "audit/screenshots/mobile-graphics-live-landscape.png",
+          "sha256": "fa2c904f66e50036edfe276f432d46fdf7deee90f4e0a39ed86628c88b2c32d1"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "stage": "local",
+      "status": "passed",
+      "note": "Full suite passes 111 tests, and final current browser checks pass. Exact candidate ledger preserves incomplete adopted outcomes; strict full-product gate remains distinct from explicitly authorized candidate publication.",
+      "artifacts": [
+        {
+          "path": "audit/leaderboard-local-tests.txt",
+          "sha256": "4103f9d7457d1bbf0cfa49d87bd147178ce1a17ef96c6f55576212e4fe9e43c5"
+        },
+        {
+          "path": "audit/deployment-candidate-tests.txt",
+          "sha256": "fcdece4c0878f4039c34edebc817de605aa8d50490f6ac9766b56ff1d469d1f2"
+        },
+        {
+          "path": "audit/remake-verification.json",
+          "sha256": "3ddb34f35b4607f84cb783d7e10d480bd37da4d7ecb15a859b9245b728b49f3e"
+        },
+        {
+          "path": "audit/remake-unit-tests-final.txt",
+          "sha256": "d229f87d7f00ef5caa3d78a415478ce2754f44afffbaacc6fb997143a6cd2ae6"
+        },
+        {
+          "path": "audit/remake-prompt-tests.txt",
+          "sha256": "7a514675e2ee24436f7db5be344bda268957a58528b61ec279158bb70ce76a56"
+        },
+        {
+          "path": "audit/handbook-verification.json",
+          "sha256": "f1cb9c2fa563327828b8e6e7de40024c5f1dbabe5e0a401d162f6b99c138cade"
+        },
+        {
+          "path": "audit/handbook-unit-tests.txt",
+          "sha256": "40b3ac05288ed70a2b167fa45014ba1b5e8de29a974e29d2f5d970b5443d0c7a"
+        },
+        {
+          "path": "audit/handbook-browser.json",
+          "sha256": "3024db801fa5f519bd7758dd4647db2e34cfc35148c74e8b3becc457fdf2a0e2"
+        },
+        {
+          "path": "audit/handbook-campaign-final.json",
+          "sha256": "ad0957bb7a6e68a8211ce45bbb5d05c8b9fa7dd628f68f5bd69f69e5d1049919"
+        },
+        {
+          "path": "audit/handbook-performance.json",
+          "sha256": "db91b81ef6037b9c3a9668ec1f07e978a7428fae3dbe74af2498f22246856477"
+        },
+        {
+          "path": "audit/handbook-default-quality.json",
+          "sha256": "7d9e1211c9d536ae5bd508cddc836955f4c674a3951803d6c7fef9be8eef0ac9"
+        },
+        {
+          "path": "audit/handbook-offline-browser.json",
+          "sha256": "325265416e9d53197b9b82084f971b43bfb3623043a895ff70be38689db00058"
+        },
+        {
+          "path": "audit/handbook-live-outbox.json",
+          "sha256": "3e160ff79e8e880f464576ee2e560b32f3e503d053c6bcf8c0e8168d71dc0540"
+        },
+        {
+          "path": "audit/second-verification.json",
+          "sha256": "63a4a843139feb2d428b04c7eeccf3631b5aafed21f3aa5ca97155449a4ad44f"
+        },
+        {
+          "path": "audit/second-unit-tests.txt",
+          "sha256": "0ec798b71bc7de03ad323eda00258ebefbda6d589624d0dcf0667e6c2c6e3275"
+        },
+        {
+          "path": "audit/second-browser.json",
+          "sha256": "861d27d013293814eacaba603c3db31e9db2308b03af12f71081f0b995e15e37"
+        },
+        {
+          "path": "audit/second-keyboard-offline.json",
+          "sha256": "cb03e89dcd9819df916bcd23887bbebcc5d7aa0d84875f47a2de3eb8211d1062"
+        },
+        {
+          "path": "audit/2026-10-17-handbook-second-pass.md",
+          "sha256": "700ccc7430d032d47e1576678dd95fe38a6bdaf714c3a910db7254d8afeb2208"
+        }
+      ]
+    }
+  ],
+  "publication": {
+    "release": "sl-8c38d2602f174d",
+    "authorization": "audit/deployment-authorization-2026-10-17.json",
+    "note": "User requests commit, push and deploy after this comparison. Exact candidate publication remains separate from incomplete broad product acceptance."
+  },
+  "previousPublication": {
+    "release": "sl-eca6f97d1308a3",
+    "sourceCommit": "6a7ff1ce6890e3e4a656eecc17952e27130b197e",
+    "authorization": "audit/deployment-authorization-2026-10-16.json",
+    "prePublicationLedger": "audit/deployment-acceptance-before-publication.json",
+    "receipt": "audit/deployment.json",
+    "note": "Completed under explicit user authorization. Current ledger includes subsequent live evidence, so the prior ledger-bound authorization cannot be reused unchanged."
+  }
+}

@@ -1,0 +1,22 @@
+✔ unsupported saved parts recover without discarding rewards or the original record (15.5377ms)
+✔ concurrent draft rejection followed by open preserves the unsaved working copy (6.4159ms)
+✔ quota rejection followed by navigation retains draft and allows export (3.4035ms)
+✔ opening a saved draft preserves zoom pan and selection (1.974ms)
+✔ result transaction abort at after-result rolls back rewards, best and ghost together (4.3748ms)
+✔ result transaction abort at after-best rolls back rewards, best and ghost together (3.1909ms)
+✔ schema migration preserves v1 progress drafts ghosts and archives unsupported records (3.1584ms)
+✔ backup restore is atomic, rejects malformed ghosts, and category reset preserves other data (7.5045ms)
+✔ outbox claims are exclusive, expired leases recover and late responses cannot acknowledge a new claim (2.4261ms)
+✔ closed storage connection rejects without claiming success (0.8951ms)
+✔ cup continuation consumes captured track build parts and seed despite changed defaults (1.936ms)
+✔ performance degradation requires sustained overload and survives recovery (0.2793ms)
+✔ backup rejects malformed result and ghost timelines before replacing any saves (2.9413ms)
+✔ malformed unfinished results cannot make a saved campaign unreadable or award progress (11.1925ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 540.0504

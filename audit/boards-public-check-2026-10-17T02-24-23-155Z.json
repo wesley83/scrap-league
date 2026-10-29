@@ -1,0 +1,50 @@
+{
+  "utc": "2026-10-17T02:24:23.155Z",
+  "origin": "https://hire-poker-8313.onpagelove.com",
+  "policyRevision": "scrap-league-casual-v1",
+  "tests": [
+    {
+      "name": "bounded-page-read",
+      "mode": "trial",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "trial",
+      "testId": "01488b02-cf10-4d61-9536-23611bd728d8",
+      "state": "failed",
+      "status": 422
+    },
+    {
+      "name": "bounded-page-read",
+      "mode": "daily",
+      "state": "passed",
+      "rows": 0
+    },
+    {
+      "name": "valid-public-write",
+      "mode": "daily",
+      "testId": "8d6169bd-99f0-4fc8-856e-7744481e0c17",
+      "state": "failed",
+      "status": 422
+    }
+  ],
+  "cleanup": {
+    "trial": {
+      "removed": 0,
+      "state": "no-test-rows-stored"
+    },
+    "daily": {
+      "removed": 0,
+      "state": "no-test-rows-stored"
+    }
+  },
+  "providerWideReadiness": "not available; endpoint observations are not a global guarantee",
+  "passed": false,
+  "failures": [
+    "valid-public-write failed for trial.",
+    "valid-public-write failed for daily."
+  ],
+  "scope": "Anonymous public endpoint checks; local results remain authoritative; synthetic run rows are conditionally removed when ETags permit"
+}
